@@ -14,6 +14,15 @@ export const fi = (icon: string, h: string, p: string, d: number) => `
 
 export const mstat = (n: string, l: string) => `<div class="mstat"><div class="n">${n}</div><div class="l">${l}</div></div>`
 
+/** AI-mode callout — hidden until the ✦ AI toggle is on. One per key slide. */
+export const aiNote = (agent: string, title: string, body: string, stat?: string) => `
+  <div class="ai-note">
+    <div class="ai-note-head"><span class="ai-note-bot">✦</span><span class="ai-note-agent">${agent}</span><span class="ai-note-tag">AI Labs inside</span></div>
+    <h5>${title}</h5>
+    <p>${body}</p>
+    ${stat ? `<div class="ai-note-stat">${stat}</div>` : ''}
+  </div>`
+
 /** Buyer-lens problem map — "your reality → what kills it", persona-framed, stat-anchored. */
 export const problemSlide = (
   id: string,

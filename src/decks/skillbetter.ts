@@ -1,5 +1,5 @@
 import type { SlideDef } from '../lib/types'
-import { bframe, fi, icons, outcomeSlide, problemSlide } from './html'
+import { bframe, fi, icons, outcomeSlide, problemSlide, aiNote } from './html'
 
 export const skillbetterSlides: SlideDef[] = [
   {
@@ -108,7 +108,9 @@ export const skillbetterSlides: SlideDef[] = [
         </div>
         <div class="phonecap" style="margin-top:14px;">Learner home · gamified journeys · leaderboards — the live app</div>
       </div>
-    </div>`,
+    </div>
+    ${aiNote('Translation engine', 'One master course, every language', 'Speech and text models localise video, voice and quizzes together — tone-controlled, industry-aware, reviewed by humans.', '500K+ translations · <15 min per course')}
+    `,
   },
   {
     id: 'sk3c', theme: 'dark', title: 'The learner experience',
@@ -281,7 +283,9 @@ export const skillbetterSlides: SlideDef[] = [
         ${bframe('assets/product/gobetter/lms/course-builder-wizard-with-preview.jpg', 'gobetter · Course Builder', 'Guided course builder with a <b>live phone preview</b> before publishing')}
       </div>
       <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:90ch;">Overview → Levels → Cards → Preview: admins see exactly what the learner will see before a course ships. One catalogue serves retail, logistics, sales and corporate teams.</p>
-    </div>`,
+    </div>
+    ${aiNote('AI Theo · learning tutor', 'Answers from your SOPs, cited', 'Retrieval over your approved content means Theo teaches your way — and every question asked becomes a signal of what to train next.', '10M+ queries answered')}
+    `,
   },
   {
     id: 'sk5b', theme: 'light', title: 'Journeys & assessment governance',

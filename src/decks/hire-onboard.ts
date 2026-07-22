@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe, fi, icons, outcomeSlide, problemSlide } from './html'
+import { bframe, fi, icons, outcomeSlide, problemSlide, aiNote } from './html'
 
 const groupHire = groupSlides.find((s) => s.id === 's7')!
 
@@ -45,7 +45,9 @@ export const hireOnboardSlides: SlideDef[] = [
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.check}</svg></span><h4>Offers</h4><p>Auto-generated offer and appointment letters</p></div>
       </div>
       <div class="clientline rise" style="animation-delay:.4s;margin-top:14px;">Real-time pipeline analytics: source performance · stage conversion · time-to-hire — per requisition</div>
-    </div>`,
+    </div>
+    ${aiNote('AI Jack · screening agent', 'Every applicant interviewed, overnight', 'Conversational screening over WhatsApp and voice bots score fit against the role rubric — recruiters open a ranked shortlist, not an inbox.', 'AI screening cuts time-to-hire 30–50% (LinkedIn/McKinsey)')}
+    `,
   },
   {
     id: 'ho3', theme: 'light', title: 'The ATS surface',
@@ -86,7 +88,9 @@ export const hireOnboardSlides: SlideDef[] = [
           </div>
         </div>
       </div>
-    </div>`,
+    </div>
+    ${aiNote('AI Mia · onboarding agent', 'Documents checked as they upload', 'OCR and face-match validate IDs in the flow; gaps are chased by the agent in the worker’s language, not by HR on the phone.', '45-min onboarding · zero re-entry')}
+    `,
   },
   {
     id: 'ho3b', theme: 'dark', title: 'The candidate journey',
@@ -112,7 +116,9 @@ export const hireOnboardSlides: SlideDef[] = [
           <div class="phonecap" style="margin-top:12px;">Role &amp; pay intent · ranked matches with fit scores · progressive documents — experience prototype</div>
         </div>
       </div>
-    </div>`,
+    </div>
+    ${aiNote('Matching models', 'Fit scores candidates can see', 'Role, locality, language and availability feed an explainable match score — candidates apply to jobs they’ll accept, dropping funnel leakage.', 'Conversational AI cuts candidate drop-off up to 40%')}
+    `,
   },
   {
     id: 'ho4b', theme: 'light', title: 'Onboarding capability map',

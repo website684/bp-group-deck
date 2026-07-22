@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe, icons, outcomeSlide, problemSlide } from './html'
+import { bframe, icons, outcomeSlide, problemSlide, aiNote } from './html'
 
 const groupPayroll = groupSlides.find((s) => s.id === 's8b')!
 
@@ -58,7 +58,9 @@ export const payrollSlides: SlideDef[] = [
         ${bframe('assets/product/gobetter/payroll/vendor-reconciliation-table-detail.jpg', 'gobetter · Payroll · Vendor Detail', 'Vendor-level payroll tied to reconciliation status and actions')}
       </div>
       <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:92ch;">This is the proof behind the claim: principal employers monitor statutory exposure on a dashboard — not through email chains and spreadsheets.</p>
-    </div>`,
+    </div>
+    ${aiNote('AI Dev · statutory watchdog', 'OCR + reconciliation that never sleeps', 'Document AI reads every vendor challan — UANs, amounts, periods — and matches them worker-by-worker against computed dues, flagging shortfalls the same day.', 'Reliance: −80% vendor non-compliance')}
+    `,
   },
   {
     id: 'py4', theme: 'light', title: 'Payroll operations',
@@ -86,7 +88,9 @@ export const payrollSlides: SlideDef[] = [
         ${bframe('assets/product/figma/payroll/salary-structure-validation-error.jpg', 'gobetter · Payroll · Salary Structure', 'A compliance guardrail firing — <b>Basic pay below the ₹6,000 configured minimum is blocked inline</b>', 'mid')}
       </div>
       <p class="lede rise" style="animation-delay:.4s;margin-top:14px;margin-bottom:64px;max-width:94ch;">One-time components (a Diwali bonus, a Pongal incentive) apply to one month without touching the salary template — and minimum-wage validation blocks a bad structure before it ever reaches a pay run.</p>
-    </div>`,
+    </div>
+    ${aiNote('Anomaly detection', 'Every pay run pre-screened', 'Models compare each worker’s computed pay against history and cohort — outliers surface for review before disbursement, not in a grievance.', '−90% payroll leakage at Reliance')}
+    `,
   },
   {
     id: 'py4b', theme: 'light', title: 'Controlled pay cycles',

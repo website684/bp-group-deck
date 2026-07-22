@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe, icons, outcomeSlide, problemSlide } from './html'
+import { bframe, icons, outcomeSlide, problemSlide, aiNote } from './html'
 
 const groupAttend = groupSlides.find((s) => s.id === 's8')!
 
@@ -52,7 +52,9 @@ export const attendanceSlides: SlideDef[] = [
           <div class="phonecap" style="margin-top:12px;">Daily log · monthly summary with earnings · guided regularisation — current product design</div>
         </div>
       </div>
-    </div>`,
+    </div>
+    ${aiNote('AI Zara · roster agent', 'Absence, predicted before it happens', 'Models trained on punch history, leave patterns and festive seasonality flag likely no-shows a day ahead — the replacement is confirmed before the shift opens.', 'Absence prediction cuts absenteeism 15–20% (IBM/Humana deployments)')}
+    `,
   },
   {
     id: 'at2b', theme: 'light', title: 'Capability map',
@@ -86,7 +88,9 @@ export const attendanceSlides: SlideDef[] = [
       <div class="tags rise" style="animation-delay:.4s;margin-top:14px;">
         <span class="tag">Reusable shift cards — define timings once</span><span class="tag">Daily shift counts</span><span class="tag">Site &amp; associate filters</span><span class="tag">Bulk operations with undo</span>
       </div>
-    </div>`,
+    </div>
+    ${aiNote('Demand forecasting', 'Rosters sized by forecast, not by habit', 'Sales, footfall and order-volume signals size tomorrow’s roster per site — overstaffed valleys and understaffed peaks both shrink.', 'AI scheduling cuts labor waste 18–22% (MIT Sloan)')}
+    `,
   },
   {
     id: 'at3b', theme: 'light', title: 'Policy engine',
@@ -114,7 +118,9 @@ export const attendanceSlides: SlideDef[] = [
         ${bframe('assets/product/gobetter/attendance/associate-filters-regularization.jpg', 'gobetter · Attend · Exception console', 'Exception filter pills — irregularity, no-show, review — with <b>bulk log edit</b>')}
       </div>
       <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:92ch;">Approve All / Reject All with expiring-SLA counters: managers clear a day's exceptions in one sitting, and every correction stays on the log.</p>
-    </div>`,
+    </div>
+    ${aiNote('Spoof detection', 'Computer vision on every punch', 'Liveness and face-match models score each check-in; suspect punches route to the Possible Spoofs queue instead of payroll.', 'Zepto: 0 spoofs across 967 sites')}
+    `,
   },
   {
     id: 'at5', theme: 'dark', title: 'Proof',

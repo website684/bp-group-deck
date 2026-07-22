@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe, icons, outcomeSlide, problemSlide } from './html'
+import { bframe, icons, outcomeSlide, problemSlide, aiNote } from './html'
 
 const groupVerify = groupSlides.find((s) => s.id === 'sv')!
 
@@ -61,7 +61,9 @@ export const verifySlides: SlideDef[] = [
         ${bframe('assets/product/gobetter/verify/bgv-individual-report-red-case.jpg', 'gobetter · Verify · Individual report', 'A red case in full: Aadhaar flag, tenure timeline, <b>downloadable PDF report</b>')}
       </div>
       <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:92ch;">Red, yellow and green tabs work as a triage queue. Click any associate and the full case opens — who employed them, when, and exactly which check flagged.</p>
-    </div>`,
+    </div>
+    ${aiNote('AI Cole · verification agent', 'Court records read by AI, not interns', 'NLP scans pan-India court and police records, matching identity variants and surfacing only relevant hits — fewer false positives, no manual backlog.', '50K+ cases/day · <24 hr TAT')}
+    `,
   },
   {
     id: 'vf4', theme: 'light', title: 'Differentiated checks',
@@ -80,7 +82,9 @@ export const verifySlides: SlideDef[] = [
       <div class="rise" style="animation-delay:.35s">
         ${bframe('assets/product/gobetter/verify/bgv-address-legal-verification.jpg', 'gobetter · Verify · Address, Court & Police checks', 'Address, court and police verification detail — <b>all green, dated, audit-ready</b>')}
       </div>
-    </div>`,
+    </div>
+    ${aiNote('Liveness models', 'A photo of a photo doesn’t pass', 'Face-match with liveness detection defeats printed photos and screen replays at enrolment and every re-verification.', '99.2% face-match accuracy')}
+    `,
   },
   outcomeSlide('vf4b', 'What verification at frontline speed protects.', [
     { n: '<24 hr', what: 'Hiring speed, kept', how: 'Verification stops being the bottleneck between offer and first shift — high-churn roles fill this week, not next.', proof: '50K+ cases/day · minutes for identity' },

@@ -1,5 +1,5 @@
 import type { SlideDef } from '../lib/types'
-import { bframe, fi, icons, outcomeSlide, problemSlide } from './html'
+import { aiNote, bframe, fi, icons, outcomeSlide, problemSlide } from './html'
 
 export const aiLabsSlides: SlideDef[] = [
   {
@@ -46,7 +46,9 @@ export const aiLabsSlides: SlideDef[] = [
       <div class="rise" style="animation-delay:.35s">
         ${bframe('assets/website-sections/ailabs-hero.png', 'ai-labs.betterplace.ai/build', 'The agent studio — <b>build an AI worker for your frontline in 10 minutes</b>')}
       </div>
-    </div>`,
+    </div>
+    ${aiNote('The runtime', 'Every ✦ note in every deck runs on this', 'Screening bots, spoof detection, challan OCR, absence prediction, the learning tutor — all agents on this one studio and runtime. One platform to govern, one meter to read.', 'Flip the ✦ AI switch in any deck to see the agents at work')}
+    `,
   },
   {
     id: 'ai3', theme: 'light', title: 'Deterministic vs chatbots',

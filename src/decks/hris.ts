@@ -1,5 +1,5 @@
 import type { SlideDef } from '../lib/types'
-import { bframe, outcomeSlide, problemSlide } from './html'
+import { bframe, outcomeSlide, problemSlide, aiNote } from './html'
 
 export const hrisSlides: SlideDef[] = [
   {
@@ -35,7 +35,9 @@ export const hrisSlides: SlideDef[] = [
         ${bframe('assets/product/gobetter/hris/employee-master-card-grid.jpg', 'gobetter · All Associates', 'The employee master — <b>1,014 associates</b> with role, site and hierarchy, searchable')}
       </div>
       <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:92ch;">Sites follow one hierarchy — country → state → city → site — and a configurable workflow engine (Business Flow) runs your processes, with real role-based access control.</p>
-    </div>`,
+    </div>
+    ${aiNote('Workforce copilot', 'Ask your workforce a question', '“Which sites are trending short next week?” — natural-language queries over the one worker record, answered with the chart, not a ticket to the BI team.', 'Embedded analytics, no data team needed')}
+    `,
   },
   {
     id: 'hr3', theme: 'light', title: '360° profile & governance',

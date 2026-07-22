@@ -30,6 +30,7 @@ interface Props {
 
 export default function DeckPlayer({ deck, client, initialSlide = 0, shareMode = false, onExit }: Props) {
   const [cur, setCur] = useState(Math.min(Math.max(initialSlide, 0), deck.slides.length - 1))
+  const [aiMode, setAiMode] = useState(false)
   const deckRef = useRef<HTMLDivElement>(null)
   const curRef = useRef(0)
   curRef.current = cur
@@ -81,7 +82,7 @@ export default function DeckPlayer({ deck, client, initialSlide = 0, shareMode =
   const accent = client?.color || '#FFC401'
 
   return (
-    <div className="player" style={{ ['--client' as never]: accent }}>
+    <div className={`player${aiMode ? ' ai-mode' : ''}`} style={{ ['--client' as never]: accent }}>
       <div className="deck" ref={deckRef}>
         {deck.slides.map((s, i) => (
           <section
@@ -125,6 +126,9 @@ export default function DeckPlayer({ deck, client, initialSlide = 0, shareMode =
         <span className="pageno">{String(cur + 1).padStart(2, '0')} / {String(n).padStart(2, '0')}</span>
         <button className="arrow" aria-label="Next" onClick={() => go(cur + 1)}>
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+        <button className={`ai-toggle${aiMode ? ' on' : ''}`} title="Show how AI Labs powers each capability" onClick={() => setAiMode(!aiMode)}>
+          <span className="d" />✦ AI
         </button>
         <button className="arrow" aria-label="Download PDF" title="Download as PDF (print)" onClick={() => window.print()}>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>

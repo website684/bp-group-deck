@@ -1,5 +1,6 @@
 // AUTO-GENERATED from clients/betterplace-group/index.html — edit slides here freely.
 import type { SlideDef } from '../lib/types'
+import { aiNote } from './html'
 
 export const groupSlides: SlideDef[] = [
   {
@@ -213,6 +214,8 @@ export const groupSlides: SlideDef[] = [
         <div class="rown svc"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Platform Services — managed staffing &amp; gig</div>
       </div>
     </div>
+  
+  ${aiNote('The agent layer', 'An agent works every stage of this rail', 'Screening, verification, onboarding, rostering, payroll checks and tutoring each run as AI Labs agents on one runtime — flip the ✦ AI switch on any deck to see them.', '−70% time-to-hire · 3× faster upskilling')}
   `,
   },
   {
@@ -359,6 +362,8 @@ export const groupSlides: SlideDef[] = [
         </div>
       </div>
     </div>
+  
+  ${aiNote('Spoof detection + AI Zara', 'Vision on every punch, prediction on every roster', 'Liveness models score each check-in; absence prediction flags tomorrow’s no-shows today.', 'AI scheduling cuts labor waste 18–22% (MIT Sloan)')}
   `,
   },
   {

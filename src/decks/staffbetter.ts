@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { outcomeSlide, problemSlide } from './html'
+import { outcomeSlide, problemSlide, aiNote } from './html'
 
 const groupStaff = groupSlides.find((s) => s.id === 's11')!
 
@@ -46,7 +46,9 @@ export const staffbetterSlides: SlideDef[] = [
         <div class="cap"><h4>One partner across markets</h4><p>AasaanJobs (India) · MyRobin (Indonesia) · Troopers (Malaysia) — 500+ cities on one relationship</p></div>
       </div>
       <div class="clientline rise" style="animation-delay:.5s;margin-top:14px;">Every deployed worker is BGV-verified and runs on the same goBetter platform — attendance, payroll and training included</div>
-    </div>`,
+    </div>
+    ${aiNote('Matching models', 'The right worker from 25M profiles', 'Skill, proximity, wage-fit and verified history rank candidates for every requisition — deployment in 24–72 hours starts with a shortlist, not a search.', '40% faster time-to-hire')}
+    `,
   },
   {
     id: 'sb4', theme: 'light', title: 'Proof',

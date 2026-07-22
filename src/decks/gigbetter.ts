@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { outcomeSlide, problemSlide } from './html'
+import { outcomeSlide, problemSlide, aiNote } from './html'
 
 const groupGig = groupSlides.find((s) => s.id === 's12')!
 
@@ -55,7 +55,9 @@ export const gigbetterSlides: SlideDef[] = [
         </div>
       </div>
       <div class="clientline rise" style="animation-delay:.4s;margin-top:16px;">Verticals: last-mile delivery · retail &amp; merchandising · warehouse ops · events · telecalling · field audits &amp; mystery shopping · exam proctoring · <b style="color:var(--navy)">AI data annotation (new)</b></div>
-    </div>`,
+    </div>
+    ${aiNote('Deployment engine', 'Matched by skill, proximity and rating', 'Task requirements meet worker history in real time; no-show risk scores decide who gets backup pre-assigned.', '<4% no-shows · 2–4 hr replacement')}
+    `,
   },
   {
     id: 'gb4', theme: 'light', title: 'Proof',
