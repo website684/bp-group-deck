@@ -13,7 +13,8 @@ export const skillbetterSlides: SlideDef[] = [
       <div class="stats rise" style="animation-delay:.45s;margin-top:30px;">
         <div class="stat"><div class="n"><em>88</em>%</div><div class="l">Completion vs 25% industry</div></div>
         <div class="stat"><div class="n">35+</div><div class="l">Languages out of the box</div></div>
-        <div class="stat"><div class="n">25L+</div><div class="l">Frontline learners</div></div>
+        <div class="stat"><div class="n">25L+</div><div class="l">Active monthly learners</div></div>
+        <div class="stat"><div class="n">100M+</div><div class="l">Learning minutes delivered</div></div>
       </div>
     </div>
     <div class="chero" style="width:clamp(300px,30vw,420px);top:56%;">
@@ -22,6 +23,21 @@ export const skillbetterSlides: SlideDef[] = [
         <div class="phone p2"><img src="assets/product/app-home.webp" alt="Learner home"/></div>
         <div class="phone p3"><img src="assets/product/app-leaderboard.webp" alt="Leaderboard"/></div>
       </div>
+    </div>`,
+  },
+  {
+    id: 'sk1b', theme: 'darker', title: 'Voices from the frontline',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">Real voices · 300M+ frontline workers</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:28ch;">Your workers already told you why training fails.</h2>
+      <div class="quotes rise" style="animation-delay:.2s">
+        <div class="quote"><p>I received minimal training before starting — it slowed me down for weeks.</p><span class="qtag">20% churn in 90 days</span></div>
+        <div class="quote"><p>The materials are in English. Most of us understand our own language far better.</p><span class="qtag">70% prefer vernacular</span></div>
+        <div class="quote"><p>There's no ongoing training. We figure everything out ourselves.</p><span class="qtag">Low skill retention</span></div>
+        <div class="quote"><p>We don't get regular feedback, so it's hard to know how to improve.</p><span class="qtag">Performance gaps</span></div>
+      </div>
+      <div class="probfoot rise" style="animation-delay:.45s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">The business bill: high churn · inconsistent customer experience · compliance risk · <b>₹15K+ training cost per head that nobody finishes.</b></div>
     </div>`,
   },
   {
@@ -37,17 +53,17 @@ export const skillbetterSlides: SlideDef[] = [
             <ul>
               <li>Desktop-first — field workers never log in</li>
               <li>English-only content for a multilingual workforce</li>
-              <li>No hooks to bring lapsed learners back</li>
+              <li>45+ days to onboard; 50–70% frontline attrition</li>
               <li>10–15% active use; ~30% of certifications lapse — licence fees accrue anyway</li>
             </ul>
           </div>
           <div class="col good">
             <h4>skillBetter</h4>
             <ul>
-              <li>Built for the worker's own phone, any language</li>
+              <li>Built for the worker's own phone, low bandwidth, any language</li>
               <li>Reels, streaks, badges &amp; leaderboards that pull people back</li>
               <li>AI tutor re-engages lapsed learners automatically</li>
-              <li>Mandatory courses pushed to the top of the app</li>
+              <li>Mandatory courses enforced — 30% lower compliance risk</li>
             </ul>
           </div>
         </div>
@@ -64,16 +80,16 @@ export const skillbetterSlides: SlideDef[] = [
     </div>`,
   },
   {
-    id: 'sk3', theme: 'light', title: 'Capabilities',
+    id: 'sk3', theme: 'light', title: 'Core capabilities',
     html: `
     <div class="slidebody split">
       <div>
         <span class="eyebrow rise">What your team gets</span>
         <h2 class="rise" style="animation-delay:.08s;">One upload. <span style="color:var(--navy)">Every language your team speaks.</span></h2>
         <div class="featlist">
-          ${fi(icons.lang, 'AI translation in under 15 minutes', 'Any video, PDF or PPT into any of 35+ Indian languages — conversational, not literal. Record once in English; your team watches it in Tamil by lunch.', 0.24)}
+          ${fi(icons.lang, 'AI translation in under 15 minutes', 'Any video, PDF or PPT into any of 35+ languages — context-aware and conversational, not literal. 500K+ translations delivered. Record once in English; your team watches it in Tamil by lunch.', 0.24)}
           ${fi(icons.play, 'Reels for learning', 'Instagram-style micro-content, plus an AI generator that turns your PDFs into reels.', 0.32)}
-          ${fi(icons.trophy, 'Gamification that moves numbers', 'Points, badges, streaks, leaderboards — +19.7% week-on-week retention at Meesho.', 0.40)}
+          ${fi(icons.trophy, 'Gamification that moves numbers', 'Coins, badges, streaks, leaderboards and role-specific journeys — +65% voluntary participation, +19.7% week-on-week retention at Meesho.', 0.40)}
           ${fi(icons.book, '250+ ready courses, free', 'POSH, safety, retail selling, last-mile — plus in-house custom content development.', 0.48)}
           ${fi(icons.plug, 'Plugs into PMS / HRMS', 'Assignments, completions and records sync over API. Zepto gates order delivery on training completion.', 0.56)}
         </div>
@@ -89,17 +105,46 @@ export const skillbetterSlides: SlideDef[] = [
     </div>`,
   },
   {
+    id: 'sk3b', theme: 'light', title: 'Platform capabilities grid',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">The complete platform</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Everything L&amp;D needs to run frontline training at scale.</h2>
+      <div class="capgrid rise" style="animation-delay:.2s">
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.doc}</svg></span><h4>Assessments &amp; surveys</h4><p>12+ question types with auto-scoring</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.search}</svg></span><h4>One-click discovery</h4><p>Folder-based catalogues, instant relevant content</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.cam}</svg></span><h4>In-app live classes</h4><p>ILT without Zoom or Meet</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.chart}</svg></span><h4>Analytics dashboard</h4><p>250+ real-time data points — user, city, partner</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.users}</svg></span><h4>In-app chat</h4><p>Direct messaging and learner support</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.zap}</svg></span><h4>Event-based learning</h4><p>Trigger training on business moments — new SKU, audit, incident</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.trophy}</svg></span><h4>Leaderboards &amp; rewards</h4><p>Team and regional rankings, coins and badges</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.shield}</svg></span><h4>Certifications</h4><p>Auto-generated, tamper-proof, audit-ready</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.play}</svg></span><h4>Social feeds</h4><p>Updates, recognition, peer content</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.chart}</svg></span><h4>Performance tracking</h4><p>KPIs, goals and progress in the learner app</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.lock}</svg></span><h4>Mandatory enforcement</h4><p>Critical courses pinned to the top of the app</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.book}</svg></span><h4>QR classroom attendance</h4><p>In-person training, digitally recorded</p></div>
+      </div>
+      <div class="clientline rise" style="animation-delay:.4s;margin-top:14px;">250+ ready courses in the library · custom content built in-house · works in low-bandwidth field conditions</div>
+    </div>`,
+  },
+  {
     id: 'sk4', theme: 'light', title: 'Proctored assessments',
     html: `
     <div class="slidebody split">
       <div>
         <span class="eyebrow rise">Assessments you can defend</span>
         <h2 class="rise" style="animation-delay:.08s;">No face on camera? <span style="color:var(--navy)">The exam pauses itself.</span></h2>
-        <p class="lede rise" style="animation-delay:.16s;margin-top:12px;">Certificates only mean something if the right person earned them. skillBetter proctors every exam with live face detection, a visible strike system and auto-pause — across 12+ question types.</p>
+        <p class="lede rise" style="animation-delay:.16s;margin-top:12px;">Certificates only mean something if the right person earned them. skillBetter proctors every exam with live face detection, a visible strike system and auto-pause.</p>
         <div class="featlist">
-          ${fi(icons.eye, 'Live face detection', 'The camera watches for the enrolled learner; absence or a second face pauses the exam instantly.', 0.28)}
-          ${fi(icons.warn, 'Visible strike system', 'Learners see strike 1/3 on screen — enforcement is transparent, not a surprise at the end.', 0.36)}
-          ${fi(icons.chart, '250+ analytics data points', 'Scores by user, city and partner — exportable, audit-ready.', 0.44)}
+          ${fi(icons.eye, '99.2% face-detection accuracy', 'The camera watches for the enrolled learner; absence or a second face pauses the exam instantly.', 0.28)}
+          ${fi(icons.warn, 'Visible strike system', 'Learners see strike 1/3 on screen — enforcement is transparent, not a surprise at the end. Three strikes ends the exam.', 0.36)}
+          ${fi(icons.shield, 'Tamper-proof certification', 'Digital certificates with audit-ready records — multi-factor checks stop proxy test-takers.', 0.44)}
+        </div>
+        <div class="modelrow rise" style="grid-template-columns:repeat(3,1fr);animation-delay:.52s;margin-top:16px;">
+          ${'' /* integrity stats */}
+          <div class="mstat"><div class="n">99.2%</div><div class="l">Face-detection accuracy</div></div>
+          <div class="mstat"><div class="n">12+</div><div class="l">Question types, auto-scored</div></div>
+          <div class="mstat"><div class="n">24/7</div><div class="l">Real-time integrity alerts</div></div>
         </div>
       </div>
       <div class="rise" style="animation-delay:.35s;display:flex;flex-direction:column;align-items:center;">
@@ -107,6 +152,26 @@ export const skillbetterSlides: SlideDef[] = [
           <div class="phone p2" style="margin:0;width:clamp(170px,17vw,215px);"><img src="assets/product/proctoring-no-face-detected.png" alt="Live proctoring — no face detected, strike 1 of 3"/></div>
         </div>
         <div class="phonecap" style="margin-top:14px;">Live enforcement in production — <b style="color:var(--navy)">"No face detected · strike 1/3 · exam paused"</b></div>
+      </div>
+    </div>`,
+  },
+  {
+    id: 'sk4b', theme: 'darker', title: 'AI inside the LMS',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">AI that works for your workforce</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:28ch;">A tutor that never sleeps, in every language you employ.</h2>
+      <div class="mediasplit" style="align-items:center;">
+        <div class="featlist" style="margin-top:14px;">
+          ${fi(icons.bot, '24/7 AI chatbot — voice and text', 'Trained on your SOPs, answers in 35+ languages with citations. 10M+ queries answered. A technician in Madurai asks in Tamil; the answer comes from your service manual in 4 seconds.', 0.24)}
+          ${fi(icons.lang, 'AI translation engine', 'Entire courses translated in minutes — context-aware, industry-specific, meaning preserved. 500K+ translations shipped.', 0.34)}
+          ${fi(icons.zap, 'AI re-engagement', 'Lapsed learners get nudged back automatically — the platform chases completion so your L&D team doesn’t.', 0.44)}
+          ${fi(icons.shield, 'Patent-protected, enterprise-grade', 'SOC 2 compliant, private deployment options, 100M+ AI interactions to date.', 0.54)}
+        </div>
+        <div class="rise" style="animation-delay:.3s">
+          <div class="boteye" style="margin:0 auto;"><span class="ring"></span><video src="assets/product/bot_eye_video.mp4" poster="assets/product/bot_eye_static_square.jpeg" autoplay muted loop playsinline></video></div>
+          <div class="eyecap"><div class="t">Powered by AI Labs</div><div class="s">Same engine, deeper story →<br/>ask for the AI Labs deck</div></div>
+        </div>
       </div>
     </div>`,
   },
@@ -130,10 +195,28 @@ export const skillbetterSlides: SlideDef[] = [
       <span class="eyebrow rise">Proof at enterprise scale</span>
       <h2 class="rise" style="animation-delay:.08s;color:#fff;">The completion numbers, with names on them.</h2>
       <div class="cases" style="margin-top:16px;">
-        <div class="case rise" style="--pc:#1B2D93;animation-delay:.2s"><div class="ch"><span class="cn">Amazon · GSF Learning Academy</span><span class="ct">E-commerce &amp; logistics</span></div><p>Role-aware, event-based learning across two business units with 222 custom audits, in multiple Indian languages.</p><div class="cm"><div class="m"><div class="mn">91%</div><div class="ml">completion vs &lt;30% industry</div></div><div class="m"><div class="mn">222</div><div class="ml">custom audits</div></div></div></div>
-        <div class="case rise" style="--pc:#D0271D;animation-delay:.28s"><div class="ch"><span class="cn">Meesho</span><span class="ct">Social commerce</span></div><p>Reels, peer video and gamified challenges for a 1.5-lakh workforce and reseller base.</p><div class="cm"><div class="m"><div class="mn">2M+</div><div class="ml">resellers trained</div></div><div class="m"><div class="mn">+19.7%</div><div class="ml">WoW retention</div></div></div></div>
-        <div class="case rise" style="--pc:#32CAD4;animation-delay:.36s"><div class="ch"><span class="cn">Reliance Retail</span><span class="ct">Retail · 18,000+ stores</span></div><p>500K+ associates trained in 14 languages — live in 8 weeks.</p><div class="cm"><div class="m"><div class="mn">60%+</div><div class="ml">training cost reduction</div></div><div class="m"><div class="mn">8 wks</div><div class="ml">to go live</div></div></div></div>
-        <div class="case rise" style="--pc:#FF9518;animation-delay:.44s"><div class="ch"><span class="cn">Zepto</span><span class="ct">Quick-commerce</span></div><p>Order delivery gated on training completion via deep API integration — only certified riders deploy.</p><div class="cm"><div class="m"><div class="mn">100%</div><div class="ml">certified before first order</div></div></div></div>
+        <div class="case rise" style="--pc:#1B2D93;animation-delay:.2s"><div class="ch"><span class="cn">Reliance Retail Skill Academy</span><span class="ct">Retail · 18,000+ stores</span></div><p>India's largest skilled talent pool on the Samarth platform — skills repository, AI course recommendations, standardized onboarding. 4.7★ on Play Store, 1.7L+ downloads.</p><div class="cm"><div class="m"><div class="mn">500K+</div><div class="ml">people skilled</div></div><div class="m"><div class="mn">60%</div><div class="ml">cost savings</div></div><div class="m"><div class="mn">1.5L+</div><div class="ml">annual hires</div></div></div></div>
+        <div class="case rise" style="--pc:#D0271D;animation-delay:.28s"><div class="ch"><span class="cn">Meesho Reseller Academy</span><span class="ct">Social commerce</span></div><p>Vernacular micro-learning in 10+ languages for resellers — product knowledge, order management, customer handling.</p><div class="cm"><div class="m"><div class="mn">2M+</div><div class="ml">resellers trained</div></div><div class="m"><div class="mn">85%</div><div class="ml">completion vs 30%</div></div><div class="m"><div class="mn">+40%</div><div class="ml">sales uplift</div></div></div></div>
+        <div class="case rise" style="--pc:#FF9518;animation-delay:.36s"><div class="ch"><span class="cn">Hindalco · Aditya Birla Group</span><span class="ct">Manufacturing · $26B metals</span></div><p>E-Karyashala: self-paced, gamified shop-floor training with mandatory completion tracking — 60+ technical modules, 50+ assessments.</p><div class="cm"><div class="m"><div class="mn">3×</div><div class="ml">training coverage</div></div><div class="m"><div class="mn">1,200+</div><div class="ml">training hours</div></div><div class="m"><div class="mn">1,000+</div><div class="ml">workers upskilled</div></div></div></div>
+        <div class="case rise" style="--pc:#32CAD4;animation-delay:.44s"><div class="ch"><span class="cn">Amazon · GSF Learning Academy</span><span class="ct">E-commerce &amp; logistics</span></div><p>Role-aware, event-based learning across two business units with 222 custom audits, in multiple Indian languages.</p><div class="cm"><div class="m"><div class="mn">91%</div><div class="ml">completion vs &lt;30%</div></div><div class="m"><div class="mn">222</div><div class="ml">custom audits</div></div></div></div>
+      </div>
+      <div class="testimonial rise" style="animation-delay:.55s"><p>"The skillBetter team is agile, responsive, and turns customer feedback into reality by co-creating solutions."</p><div class="who">Dr. Mayuk Dasgupta — Digital Culture &amp; Capability Building, Hindalco</div></div>
+    </div>`,
+  },
+  {
+    id: 'sk6b', theme: 'light', title: 'Enterprise-grade',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">Enterprise-ready &amp; globally backed</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:28ch;">Built for your security review, <span style="color:var(--navy)">not just your L&amp;D team.</span></h2>
+      <div class="capgrid three rise" style="animation-delay:.2s">
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.lock}</svg></span><h4>Enterprise security</h4><p>SOC 2 Type II · ISO 27001 · data localization in India &amp; SEA · enterprise-grade encryption</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.plug}</svg></span><h4>Seamless integration</h4><p>Pre-built connectors for Workday, Salesforce and SAP · API-first architecture · custom workflow automation</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.globe}</svg></span><h4>Global footprint</h4><p>Operations across India, SEA and GCC · multi-timezone support · local-language teams</p></div>
+      </div>
+      <div class="rise" style="animation-delay:.35s;margin-top:20px;padding-top:16px;border-top:1px solid var(--border);display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+        <div class="tblock"><div class="h">Certified &amp; compliant</div><div class="certs" style="margin-top:6px;"><img src="assets/compliance/iso-27001.svg" alt="ISO 27001" style="height:42px"/><img src="assets/compliance/soc-2.svg" alt="SOC 2" style="height:42px"/><img src="assets/compliance/gdpr.svg" alt="GDPR" style="height:42px"/><img src="assets/compliance/dpdpa.svg" alt="DPDPA" style="height:42px"/></div></div>
+        <div class="tblock" style="border-left:1px solid var(--border);padding-left:24px;"><div class="h">Backed by</div><div class="v" style="margin-top:8px;">British International Investment · Macquarie · Jungle Ventures · 3one4 Capital · CX Partners</div></div>
       </div>
     </div>`,
   },

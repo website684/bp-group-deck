@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe } from './html'
+import { bframe, icons } from './html'
 
 const groupPayroll = groupSlides.find((s) => s.id === 's8b')!
 
@@ -22,6 +22,25 @@ export const payrollSlides: SlideDef[] = [
     </div>`,
   },
   { ...groupPayroll, id: 'py2', title: 'Challan OCR & reconciliation' },
+  {
+    id: 'py2b', theme: 'light', title: 'Capability map',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">The full surface — payroll plus the compliance shield</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">From attendance to statutory filing, <span style="color:var(--navy)">every step on one platform.</span></h2>
+      <div class="capgrid rise" style="animation-delay:.2s">
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.zap}</svg></span><h4>Automated computation</h4><p>Payroll computed straight from attendance — zero manual entry</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.shield}</svg></span><h4>Minimum-wage validation</h4><p>Per state and skill category, checked on every run</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.doc}</svg></span><h4>Salary structure templates</h4><p>Reusable compensation rules — configure once, apply to thousands</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.card}</svg></span><h4>Wage-register &amp; invoice recon</h4><p>Vendor invoices reconciled against actual attendance</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.check}</svg></span><h4>Auto compliance payments</h4><p>PF, ESI, Professional Tax, LWF — separate workspaces, on schedule</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.search}</svg></span><h4>Challan OCR + recon</h4><p>Vendor PF/ESI challans read and matched worker-by-worker</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.doc}</svg></span><h4>Final settlement &amp; reimbursements</h4><p>F&amp;F and claims inside the same operating surface</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.chart}</svg></span><h4>Audit trail</h4><p>Every rupee traceable — batch stages, statuses, history</p></div>
+      </div>
+      <div class="clientline rise" style="animation-delay:.4s;margin-top:14px;">Payroll Inputs · Run Payroll · Final Settlement · Invoice · Reports · Compliances · Reimbursements — the actual module map</div>
+    </div>`,
+  },
   {
     id: 'py3', theme: 'light', title: 'Reconciliation console',
     html: `
@@ -48,6 +67,19 @@ export const payrollSlides: SlideDef[] = [
       <div class="tags rise" style="animation-delay:.4s;margin-top:14px;">
         <span class="tag">Computation from attendance</span><span class="tag">Minimum-wage validation by state</span><span class="tag">Salary structure templates</span><span class="tag">Vendor invoicing in-platform</span><span class="tag">PF · ESI · PT · LWF workspaces</span>
       </div>
+    </div>`,
+  },
+  {
+    id: 'py4b', theme: 'light', title: 'Controlled pay cycles',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">Controls &amp; configuration · real product</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">A pay run is a controlled workflow, <span style="color:var(--navy)">not a spreadsheet ritual.</span></h2>
+      <div class="shotgrid rise" style="animation-delay:.22s;margin-top:18px;">
+        ${bframe('assets/product/gobetter/payroll/salary-structure-templates.jpg', 'gobetter · Payroll · Salary Structures', 'Reusable salary structure templates — compensation rules configured once')}
+        ${bframe('assets/product/gobetter/payroll/raise-invoice-vendor.jpg', 'gobetter · Payroll · Raise Invoice', 'Vendor invoicing inside the platform — tied to the same attendance and payroll data')}
+      </div>
+      <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:92ch;">Month picker → inputs → batch pipeline → disbursement: operators see where a run is waiting or failed before drilling down, and vendors invoice against verified numbers.</p>
     </div>`,
   },
   {

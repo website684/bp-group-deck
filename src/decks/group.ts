@@ -439,12 +439,12 @@ export const groupSlides: SlideDef[] = [
           </div>
         </div>
         <div>
-          <div class="phones" style="min-height:clamp(270px,29vw,370px);">
+          <div class="phones" style="min-height:clamp(230px,24vw,320px);">
             <div class="phone p1"><img src="assets/product/app-gamification.webp" alt="skillBetter gamification"/></div>
             <div class="phone p2"><img src="assets/product/app-home.webp" alt="skillBetter learner home"/></div>
             <div class="phone p3"><img src="assets/product/app-leaderboard.webp" alt="skillBetter leaderboard"/></div>
           </div>
-          <div class="phonecap" style="margin-top:14px;padding-bottom:52px;">Learner home · Gamification · Leaderboards — live in the skillBetter app</div>
+          <div class="phonecap" style="margin-top:10px;">Learner home · Gamification · Leaderboards — live in the skillBetter app</div>
         </div>
       </div>
     </div>

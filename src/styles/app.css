@@ -87,6 +87,7 @@ body { overflow: auto; background: #05081f; }
 .bframe .bbar .bdots i { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
 .bframe .bbar .burl { font-family: var(--mono); font-size: 9.5px; color: var(--muted); background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 3px 10px; flex: 1; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .bframe img { width: 100%; display: block; }
+.bframe.crop img { max-height: 46vh; object-fit: cover; object-position: top; }
 .bcap { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: 10px; text-align: center; }
 .dark .bcap, .darker .bcap { color: rgba(255,255,255,.5); }
 .bcap b { color: var(--navy); } .dark .bcap b, .darker .bcap b { color: var(--yellow); }
@@ -159,6 +160,36 @@ body { overflow: auto; background: #05081f; }
 .chat .hook .ht { font-family: var(--mono); font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
 .chat .hook .opt { font-size: .72rem; font-weight: 600; color: var(--navy); background: var(--surface); border-radius: 7px; padding: 6px 9px; margin-top: 4px; }
 .chat .hook .opt.on { background: var(--navy); color: #fff; }
+
+/* dense capability grid (platform capabilities) */
+.capgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
+.capgrid.three { grid-template-columns: repeat(3, 1fr); }
+.cap { background: #fff; border: 1px solid var(--border); border-radius: 13px; padding: 14px 15px; }
+.dark .cap, .darker .cap { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.12); }
+.cap .ci { width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; background: var(--surface); color: var(--navy); margin-bottom: 9px; }
+.dark .cap .ci, .darker .cap .ci { background: rgba(255,255,255,.08); color: var(--yellow); }
+.cap .ci svg { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.cap h4 { font-family: var(--disp); font-weight: 700; font-size: .88rem; color: var(--ink); line-height: 1.2; }
+.dark .cap h4, .darker .cap h4 { color: #fff; }
+.cap p { font-size: .74rem; line-height: 1.4; color: var(--muted); margin-top: 4px; }
+.dark .cap p, .darker .cap p { color: rgba(255,255,255,.6); }
+
+/* frontline voice quotes */
+.quotes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 16px; }
+.quote { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 15px; padding: 20px 22px; position: relative; }
+.light .quote { background: #fff; border-color: var(--border); }
+.quote::before { content: '"'; font-family: var(--disp); font-weight: 800; font-size: 2.6rem; line-height: 1; color: var(--yellow); display: block; margin-bottom: 2px; }
+.quote p { font-size: .95rem; line-height: 1.55; color: rgba(255,255,255,.85); font-style: italic; }
+.light .quote p { color: var(--text); }
+.quote .qtag { display: inline-block; margin-top: 12px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--red-soft); background: rgba(208,39,29,.1); border-radius: 20px; padding: 5px 10px; }
+.quote.win .qtag { color: #1a8f52; background: rgba(61,190,123,.12); }
+
+/* attributed testimonial */
+.testimonial { background: linear-gradient(90deg, var(--navy), var(--navy-deep)); border-radius: 16px; padding: 20px 26px; color: #fff; margin-top: 16px; }
+.testimonial p { font-size: 1.02rem; line-height: 1.6; font-style: italic; color: rgba(255,255,255,.92); }
+.testimonial .who { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--yellow); margin-top: 10px; }
+
+@media (max-width: 960px) { .capgrid, .capgrid.three, .quotes { grid-template-columns: 1fr 1fr; } }
 
 /* generic centered divider headline for section slides */
 .bigsay { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; height: 100%; position: relative; z-index: 2; }

@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe } from './html'
+import { bframe, icons } from './html'
 
 const groupVerify = groupSlides.find((s) => s.id === 'sv')!
 
@@ -22,6 +22,28 @@ export const verifySlides: SlideDef[] = [
     </div>`,
   },
   { ...groupVerify, id: 'vf2', title: 'Six checks, one report' },
+  {
+    id: 'vf2b', theme: 'light', title: 'The six-point check',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">What each check actually covers</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:28ch;">Six checks. Every worker. <span style="color:var(--navy)">One-click initiation.</span></h2>
+      <div class="capgrid three rise" style="animation-delay:.2s">
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.user}</svg></span><h4>Identity</h4><p>Aadhaar, PAN &amp; government-ID validation in seconds, with face-match liveness detection</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.building}</svg></span><h4>Physical / address</h4><p>Current and permanent address, geo-tagged digital or physical confirmation</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.users}</svg></span><h4>Career</h4><p>Employment history via EPFO integration plus digital reference checks on SMS/WhatsApp</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.card}</svg></span><h4>Financial</h4><p>Bank account validation and credit signals where the role warrants</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.zap}</svg></span><h4>Health</h4><p>Fitness certificates collected and tracked per role requirements</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.shield}</svg></span><h4>Legal</h4><p>AI court-record scan pan-India plus police verification — tamper-proof records</p></div>
+      </div>
+      <div class="vflow rise" style="animation-delay:.4s;margin-top:20px;">
+        <span class="vstep done">Initiate — one click or API</span><span class="varrow">→</span>
+        <span class="vstep done">Worker self-serves on phone</span><span class="varrow">→</span>
+        <span class="vstep done">Checks run in parallel</span><span class="varrow">→</span>
+        <span class="vstep">Red / Yellow / Green report · &lt;24 hr</span>
+      </div>
+    </div>`,
+  },
   {
     id: 'vf3', theme: 'light', title: 'Portfolio & case view',
     html: `

@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe } from './html'
+import { bframe, icons } from './html'
 
 const groupAttend = groupSlides.find((s) => s.id === 's8')!
 
@@ -16,12 +16,32 @@ export const attendanceSlides: SlideDef[] = [
       <div class="stats rise" style="animation-delay:.45s;margin-top:30px;">
         <div class="stat"><div class="n">−90%</div><div class="l">Payroll leakage</div></div>
         <div class="stat"><div class="n">967</div><div class="l">Sites live at Zepto alone</div></div>
+        <div class="stat"><div class="n">18,026</div><div class="l">Face-registered in one org</div></div>
         <div class="stat"><div class="n">Minutes</div><div class="l">Shortfall fixes, not hours</div></div>
       </div>
       <div class="mdcover ghost">AT</div>
     </div>`,
   },
   { ...groupAttend, id: 'at2', title: 'Face + geo attendance' },
+  {
+    id: 'at2b', theme: 'light', title: 'Capability map',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">The full surface — one system, not a punch clock</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Attendance is the front door. <span style="color:var(--navy)">Behind it sits a workforce OS.</span></h2>
+      <div class="capgrid rise" style="animation-delay:.2s">
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.user}</svg></span><h4>Facial + geo attendance</h4><p>Face recognition with AI spoof detection, geo-fenced marking</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.clock}</svg></span><h4>Rostering &amp; shifts</h4><p>Weekly grids, reusable shift cards, bulk tools, publish step</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.chart}</svg></span><h4>Demand planning</h4><p>Forecast and plan deployment across sites; shortfall management in minutes</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.doc}</svg></span><h4>Leave management</h4><p>Full leave workflows — periods, locations, optional holidays</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.users}</svg></span><h4>Vendor / CLMS control</h4><p>Per-vendor deployment rules, work-order tracking, compliance view</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.check}</svg></span><h4>Approvals queue</h4><p>Regularisation, leave, reconciliation, possible spoofs — bulk approve/reject with SLA counters</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.warn}</svg></span><h4>Alert management</h4><p>Shift-wise, overtime, leave, sync and regularisation alerts</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.chart}</svg></span><h4>Reports, self-serve</h4><p>Muster roll, attendance log, overtime — filtered by role, gender, location</p></div>
+      </div>
+      <div class="clientline rise" style="animation-delay:.4s;margin-top:14px;">Live dashboards: real-time present/absent by site · exception filter pills: irregularity, no-show, review, weekly-off</div>
+    </div>`,
+  },
   {
     id: 'at3', theme: 'light', title: 'Rostering console',
     html: `
@@ -30,24 +50,39 @@ export const attendanceSlides: SlideDef[] = [
       <h2 class="rise" style="animation-delay:.08s;max-width:28ch;">Plan a week of shifts for a whole site — <span style="color:var(--navy)">then hit publish.</span></h2>
       <div class="shotgrid rise" style="animation-delay:.22s;margin-top:18px;">
         ${bframe('assets/product/gobetter/attendance/roster-weekly-grid.jpg', 'gobetter · Attend · Roster Management', 'Weekly associate-by-day roster — bulk tools, copy/paste, undo, <b>publish step</b>')}
-        ${bframe('assets/product/gobetter/attendance/shift-configuration-cards.jpg', 'gobetter · Attend · Shift Configuration', 'Reusable shift cards — define timings once, use them on every roster')}
+        ${bframe('assets/product/gobetter/attendance/roster-associate-level-shifts.jpg', 'gobetter · Attend · Associate shifts', 'Drill to one associate’s week — inspect or change individual shift assignments')}
       </div>
-      <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:90ch;">Deployment planning is a grid, not a WhatsApp thread: filter by site or associate, fill gaps in bulk, and publish a week in minutes.</p>
+      <div class="tags rise" style="animation-delay:.4s;margin-top:14px;">
+        <span class="tag">Reusable shift cards — define timings once</span><span class="tag">Daily shift counts</span><span class="tag">Site &amp; associate filters</span><span class="tag">Bulk operations with undo</span>
+      </div>
     </div>`,
   },
   {
-    id: 'at4', theme: 'light', title: 'Approvals & governance',
+    id: 'at3b', theme: 'light', title: 'Policy engine',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">Configuration depth · real product</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Your attendance policy, <span style="color:var(--navy)">enforced by software — not circulars.</span></h2>
+      <div class="shotgrid rise" style="animation-delay:.22s;margin-top:18px;">
+        ${bframe('assets/product/gobetter/attendance/org-level-configuration.jpg', 'gobetter · Attend · Org Configuration', 'The policy engine — full/half-day thresholds, OT caps, buffers, <b>edit windows</b>', true)}
+        ${bframe('assets/product/gobetter/attendance/holiday-configuration.jpg', 'gobetter · Attend · Holiday Configuration', 'Regional, public and optional holidays — by location or selected sites', true)}
+      </div>
+      <div class="tags rise" style="animation-delay:.4s;margin-top:14px;">
+        <span class="tag">Forced logout &amp; elapsed-hour rules</span><span class="tag">Manager approvals &amp; OT pre-approval</span><span class="tag">Associate self-regularisation limits</span><span class="tag">Site auto-configuration</span><span class="tag">Verify-status checks at marking</span><span class="tag">Named BetterPlace + client SPOCs</span>
+      </div>
+    </div>`,
+  },
+  {
+    id: 'at4', theme: 'light', title: 'Approvals & exceptions',
     html: `
     <div class="slidebody">
       <span class="eyebrow rise">Exceptions &amp; governance · real product</span>
       <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Every exception lands in one queue — <span style="color:var(--navy)">including possible spoofs.</span></h2>
       <div class="shotgrid rise" style="animation-delay:.22s;margin-top:18px;">
         ${bframe('assets/product/gobetter/attendance/approvals-regularisation-queue.jpg', 'gobetter · Attend · Approvals', 'One approvals queue: regularisation, leave, reconciliation and the <b>AI possible-spoofs</b> tab')}
-        ${bframe('assets/product/gobetter/attendance/org-level-configuration.jpg', 'gobetter · Attend · Org Configuration', 'The policy engine — thresholds, buffers, OT caps, edit windows — <b>your rules, enforced</b>')}
+        ${bframe('assets/product/gobetter/attendance/associate-filters-regularization.jpg', 'gobetter · Attend · Exception console', 'Exception filter pills — irregularity, no-show, review — with <b>bulk log edit</b>')}
       </div>
-      <div class="tags rise" style="animation-delay:.4s;margin-top:14px;">
-        <span class="tag">Muster roll &amp; OT reports, self-serve</span><span class="tag">Leave &amp; holiday configuration by location</span><span class="tag">Shift, OT &amp; sync alerts</span><span class="tag">Named BetterPlace + client SPOCs</span>
-      </div>
+      <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:92ch;">Approve All / Reject All with expiring-SLA counters: managers clear a day's exceptions in one sitting, and every correction stays on the log.</p>
     </div>`,
   },
   {

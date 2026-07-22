@@ -24,6 +24,26 @@ export const staffingSlides: SlideDef[] = [
   { ...groupStaff, id: 'st2', title: 'staffBetter' },
   { ...groupGig, id: 'st3', title: 'gigBetter' },
   {
+    id: 'st3b', theme: 'light', title: 'How an engagement runs',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">The operating commitments</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:28ch;">SLAs you can hold us to, <span style="color:var(--navy)">in the contract.</span></h2>
+      <div class="modelrow rise" style="animation-delay:.2s;margin-top:16px;">
+        <div class="mstat"><div class="n">24–72 hr</div><div class="l">Full-time deployment from the verified 25M+ pool</div></div>
+        <div class="mstat"><div class="n">&lt;24 hr</div><div class="l">Gig deployment, 1 to 500+ workers</div></div>
+        <div class="mstat"><div class="n">2–4 hr</div><div class="l">Metro replacement SLA</div></div>
+        <div class="mstat"><div class="n">100%</div><div class="l">Outcome billing — GPS check-in + photo proof per task</div></div>
+      </div>
+      <div class="capgrid rise" style="animation-delay:.35s;grid-template-columns:repeat(3,1fr);margin-top:18px;">
+        <div class="cap"><h4>Employer of record</h4><p>PF, ESIC, payroll, gratuity, labour law — our liability, with real-time reporting to you</p></div>
+        <div class="cap"><h4>Worker welfare built in</h4><p>Statutory benefits, job-accident insurance, early wage access — the reasons workers stay</p></div>
+        <div class="cap"><h4>200+ role categories</h4><p>Warehouse, retail, delivery, F&amp;B, security, manufacturing, BPO, healthcare support</p></div>
+      </div>
+      <div class="clientline rise" style="animation-delay:.5s;margin-top:14px;">Every deployed worker is BGV-verified and app-tracked on the same goBetter platform you saw earlier</div>
+    </div>`,
+  },
+  {
     id: 'st4', theme: 'light', title: 'Proof',
     html: `
     <div class="slidebody">

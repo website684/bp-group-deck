@@ -141,6 +141,25 @@ export const aiLabsSlides: SlideDef[] = [
     </div>`,
   },
   {
+    id: 'ai6b', theme: 'light', title: 'Under the hood',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">For your architects &amp; CISO</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Private inference, guardrails, and write-back into <span style="color:var(--navy)">your systems.</span></h2>
+      <div class="capgrid rise" style="animation-delay:.2s">
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.lock}</svg></span><h4>Private LLM inference</h4><p>vLLM on dedicated GPU — your data never leaves the platform; data stays in India</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.plug}</svg></span><h4>MCP tools, live write-back</h4><p>Agents read and write into client systems — Kong → Kafka orchestration underneath</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.book}</svg></span><h4>Knowledge layer</h4><p>Your documents via embeddings → OpenSearch; answers cited back to source</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.layers}</svg></span><h4>Context &amp; memory layers</h4><p>Per-worker context with PII isolation between conversations</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.shield}</svg></span><h4>Guardrails that act</h4><p>PII masking, prompt-injection, toxicity, leakage &amp; hallucination guards — a breach pauses the agent and raises an event</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.chart}</svg></span><h4>Cost governance</h4><p>Token logs, per-agent/team/month limits — full cost visibility on a dashboard</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.globe}</svg></span><h4>White-label ready</h4><p>Ships as your agents, in your brand, in your app</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.check}</svg></span><h4>Certified</h4><p>ISO 27001 · SOC 2 · deterministic mode for regulated flows</p></div>
+      </div>
+      <div class="clientline rise" style="animation-delay:.4s;margin-top:14px;">Every conversation ships structured data as a by-product — feeding the single worker profile</div>
+    </div>`,
+  },
+  {
     id: 'ai7', theme: 'darker', title: 'Pricing',
     html: `
     <div class="slidebody">
