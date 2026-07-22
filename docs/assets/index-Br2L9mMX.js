@@ -559,7 +559,7 @@ Error generating stack: `+e.message+`
     </div>
   `}],b=(e,t,n,r=!1)=>`
   <div>
-    <div class="bframe${r?` crop`:``}">
+    <div class="bframe${r?` crop`:``}${r===`mid`?` mid`:``}">
       <div class="bbar"><span class="bdots"><i></i><i></i><i></i></span><span class="burl">${t}</span></div>
       <img src="${e}" alt="${n||t}" loading="lazy"/>
     </div>
@@ -1123,9 +1123,9 @@ Error generating stack: `+e.message+`
       <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Attendance → variables → eligibility → run. <span style="color:var(--navy)">Never one opaque button.</span></h2>
       <div class="shotgrid rise" style="animation-delay:.22s;margin-top:18px;">
         ${b(`assets/product/figma/payroll/run-payroll-batch-overview.jpg`,`gobetter · Payroll · Run Payroll`,`The batch workspace — month lock, attendance input, workflow progress, <b>employee states</b>`,!0)}
-        ${b(`assets/product/figma/payroll/salary-structure-validation-error.jpg`,`gobetter · Payroll · Salary Structure`,`A compliance guardrail firing — <b>Basic pay below the ₹6,000 configured minimum is blocked inline</b>`,!0)}
+        ${b(`assets/product/figma/payroll/salary-structure-validation-error.jpg`,`gobetter · Payroll · Salary Structure`,`A compliance guardrail firing — <b>Basic pay below the ₹6,000 configured minimum is blocked inline</b>`,`mid`)}
       </div>
-      <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:94ch;">One-time components (a Diwali bonus, a Pongal incentive) apply to one month without touching the salary template — and minimum-wage validation blocks a bad structure before it ever reaches a pay run.</p>
+      <p class="lede rise" style="animation-delay:.4s;margin-top:14px;margin-bottom:64px;max-width:94ch;">One-time components (a Diwali bonus, a Pongal incentive) apply to one month without touching the salary template — and minimum-wage validation blocks a bad structure before it ever reaches a pay run.</p>
     </div>`},{id:`py4b`,theme:`light`,title:`Controlled pay cycles`,html:`
     <div class="slidebody">
       <span class="eyebrow rise">Controls &amp; configuration · real product</span>

@@ -1,8 +1,8 @@
 // Shared HTML snippets for authored slides (same class vocabulary as legacy-deck.css / app.css)
 
-export const bframe = (src: string, url: string, cap?: string, crop = false) => `
+export const bframe = (src: string, url: string, cap?: string, crop: boolean | 'mid' = false) => `
   <div>
-    <div class="bframe${crop ? ' crop' : ''}">
+    <div class="bframe${crop ? ' crop' : ''}${crop === 'mid' ? ' mid' : ''}">
       <div class="bbar"><span class="bdots"><i></i><i></i><i></i></span><span class="burl">${url}</span></div>
       <img src="${src}" alt="${cap || url}" loading="lazy"/>
     </div>
