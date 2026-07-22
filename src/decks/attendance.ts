@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe, icons } from './html'
+import { bframe, icons, outcomeSlide } from './html'
 
 const groupAttend = groupSlides.find((s) => s.id === 's8')!
 
@@ -23,6 +23,31 @@ export const attendanceSlides: SlideDef[] = [
     </div>`,
   },
   { ...groupAttend, id: 'at2', title: 'Face + geo attendance' },
+  {
+    id: 'at2c', theme: 'dark', title: 'The worker’s view',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">The worker's own phone · latest product design</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:28ch;">Workers see their hours, their pay — and fix errors themselves.</h2>
+      <div class="mediasplit" style="align-items:center;">
+        <div>
+          <div class="featlist" style="margin-top:10px;">
+            <div class="fi rise" style="animation-delay:.24s"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${icons.card}</svg></span><div><h4>Attendance-to-pay transparency</h4><p>The monthly view connects working days, OT and leave to a visible earnings total — "why is my salary short?" calls stop.</p></div></div>
+            <div class="fi rise" style="animation-delay:.32s"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${icons.clock}</svg></span><div><h4>Daily logs with IN/OUT proof</h4><p>Hours, shift, role, site and map on every day — pending approvals visible to the worker, not just HR.</p></div></div>
+            <div class="fi rise" style="animation-delay:.40s"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${icons.check}</svg></span><div><h4>Controlled self-regularisation</h4><p>Missed punch? The worker corrects it in a guided flow — time, shift, structured reason, review, send. Every correction lands in the manager's approval queue.</p></div></div>
+          </div>
+        </div>
+        <div class="rise" style="animation-delay:.3s">
+          <div class="phones" style="min-height:clamp(280px,30vw,390px);">
+            <div class="phone p1"><img src="assets/product/figma/attendance/daily-attendance-log-pending-approval.png" alt="Daily attendance log"/></div>
+            <div class="phone p2"><img src="assets/product/figma/attendance/monthly-attendance-summary.png" alt="Monthly summary with earnings"/></div>
+            <div class="phone p3"><img src="assets/product/figma/attendance/regularisation-final-review.png" alt="Regularisation review"/></div>
+          </div>
+          <div class="phonecap" style="margin-top:12px;">Daily log · monthly summary with earnings · guided regularisation — current product design</div>
+        </div>
+      </div>
+    </div>`,
+  },
   {
     id: 'at2b', theme: 'light', title: 'Capability map',
     html: `
@@ -98,6 +123,12 @@ export const attendanceSlides: SlideDef[] = [
       <div class="probfoot rise" style="animation-delay:.45s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">Spoof-proof attendance is the foundation of leakage-free payroll — <b>the two ship as one system.</b></div>
     </div>`,
   },
+  outcomeSlide('at5b', 'What spoof-proof attendance changes downstream.', [
+    { n: '−90%', what: 'Payroll leakage, gone', how: 'Ghost workers and buddy punching stop paying out the moment attendance is face-verified — on a 10,000-strong contract workforce that is crores a year, recovered.', proof: 'Reliance: 90% ↓ leakage · 300K workers' },
+    { n: '−40%', what: 'Cost to run attendance ops', how: 'Rostering grids, bulk approvals and self-regularisation replace supervisors doing attendance arithmetic all morning.', proof: 'Zepto: 40% cost saving · 967 sites' },
+    { n: 'Minutes', what: 'Shortfall response time', how: 'Live present/absent by site means today’s gap is filled today — not discovered in next week’s report.', proof: 'Real-time dashboards, every site' },
+    { n: '+15%', what: 'HR team capacity back', how: 'Exception queues with Approve All and SLA counters turn a day of chasing into a sitting — HR works on people, not punches.', proof: 'One approvals queue, incl. spoof review' },
+  ], 'One month, one site, side-by-side with your current attendance source — then count the difference yourself.'),
   {
     id: 'at6', theme: 'darker', title: 'Next steps',
     html: `

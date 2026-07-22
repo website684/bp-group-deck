@@ -46,7 +46,7 @@ export default function Hub({ client, onOpen, onEditClient }: Props) {
         <h1>{client?.name ? `Present BetterPlace to ${client.name}.` : 'Present BetterPlace.'}</h1>
         <p>One platform for the frontline — hire, verify, manage, train, pay and staff. Open the full story, or go as deep as the room wants on any product.</p>
         <div className="hub-cta-row">
-          <button className="btn-primary big" onClick={() => onOpen('group')}>▶ Present the group story <span>20 slides · 15 min</span></button>
+          <button className="btn-primary big" onClick={() => onOpen('group')}>▶ Present the group story <span>{decks.find((d) => d.id === 'group')!.slides.length} slides · 15 min</span></button>
           <button className="btn-ghost" onClick={() => { setPicking(!picking); setPicked([]) }}>
             {picking ? 'Cancel custom flow' : 'Build a custom flow'}
           </button>

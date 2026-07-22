@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe, icons } from './html'
+import { bframe, icons, outcomeSlide } from './html'
 
 const groupPayroll = groupSlides.find((s) => s.id === 's8b')!
 
@@ -70,6 +70,19 @@ export const payrollSlides: SlideDef[] = [
     </div>`,
   },
   {
+    id: 'py4c', theme: 'light', title: 'The payroll workspace',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">The payroll workspace · latest product design</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Attendance → variables → eligibility → run. <span style="color:var(--navy)">Never one opaque button.</span></h2>
+      <div class="shotgrid rise" style="animation-delay:.22s;margin-top:18px;">
+        ${bframe('assets/product/figma/payroll/run-payroll-batch-overview.jpg', 'gobetter · Payroll · Run Payroll', 'The batch workspace — month lock, attendance input, workflow progress, <b>employee states</b>', true)}
+        ${bframe('assets/product/figma/payroll/salary-structure-validation-error.jpg', 'gobetter · Payroll · Salary Structure', 'A compliance guardrail firing — <b>Basic pay below the ₹6,000 configured minimum is blocked inline</b>', true)}
+      </div>
+      <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:94ch;">One-time components (a Diwali bonus, a Pongal incentive) apply to one month without touching the salary template — and minimum-wage validation blocks a bad structure before it ever reaches a pay run.</p>
+    </div>`,
+  },
+  {
     id: 'py4b', theme: 'light', title: 'Controlled pay cycles',
     html: `
     <div class="slidebody">
@@ -94,6 +107,12 @@ export const payrollSlides: SlideDef[] = [
       <div class="probfoot rise" style="animation-delay:.4s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">Every challan checked, every month. <b>You see gaps before the auditor does — with documented proof of due diligence.</b></div>
     </div>`,
   },
+  outcomeSlide('py5b', 'What this saves you — beyond the payroll team’s weekends.', [
+    { n: '−90%', what: 'Payroll leakage recovered', how: 'Pay computes from face-verified attendance with minimum-wage guardrails — over- and under-payment both stop.', proof: 'Reliance: 90% ↓ leakage' },
+    { n: '−80%', what: 'Principal-employer exposure', how: 'Every vendor challan OCR-checked monthly, worker-by-worker — documented due diligence under contract-labour law instead of discovered liability at audit.', proof: '3,000+ vendors reconciled at Reliance' },
+    { n: 'Days → hours', what: 'Pay-cycle close time', how: 'Controlled batches with visible failure states replace spreadsheet consolidation — reruns target the failed slice, not the whole month.', proof: 'Batch pipeline with per-stage status' },
+    { n: '0', what: 'Audit-day surprises', how: 'Challan history, reconciliation records and an immutable trail live on the platform — the audit file writes itself all year.', proof: 'PF · ESI · PT · LWF workspaces' },
+  ], 'Send one month of vendor challans through our OCR health check — the gap report usually pays for the pilot.'),
   {
     id: 'py6', theme: 'darker', title: 'Next steps',
     html: `

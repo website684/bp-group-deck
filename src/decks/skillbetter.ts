@@ -1,5 +1,5 @@
 import type { SlideDef } from '../lib/types'
-import { bframe, fi, icons } from './html'
+import { bframe, fi, icons, outcomeSlide } from './html'
 
 export const skillbetterSlides: SlideDef[] = [
   {
@@ -105,6 +105,32 @@ export const skillbetterSlides: SlideDef[] = [
     </div>`,
   },
   {
+    id: 'sk3c', theme: 'dark', title: 'The learner experience',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">The learner experience · latest product design</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:28ch;">A feed they scroll, chapters they finish, quizzes that answer back.</h2>
+      <div class="mediasplit" style="align-items:center;">
+        <div>
+          <div class="featlist" style="margin-top:10px;">
+            ${fi(icons.play, 'New Feed — reel-style learning', 'Short-form portrait video cards on the learner home: training that looks like the apps they already scroll.', 0.24)}
+            ${fi(icons.book, 'Chaptered courses with resume', 'Mandatory markers, language selector, chapter states and a Resume CTA — progress never gets lost.', 0.32)}
+            ${fi(icons.check, 'Quizzes that teach', 'Image MCQs with hints and instant feedback on wrong answers — assessment as a learning moment.', 0.40)}
+            ${fi(icons.doc, 'Offline downloads', 'Chapters download for low-network field days — learning survives the warehouse basement.', 0.48)}
+          </div>
+        </div>
+        <div class="rise" style="animation-delay:.3s">
+          <div class="phones" style="min-height:clamp(280px,30vw,390px);">
+            <div class="phone p1"><img src="assets/product/figma/skilling/skillbetter-mobile-course-overview-chapter-states.png" alt="Course overview with chapter states"/></div>
+            <div class="phone p2"><img src="assets/product/figma/skilling/mobile-learning-home-new-feed.png" alt="Learner home with New Feed"/></div>
+            <div class="phone p3"><img src="assets/product/figma/skilling/skillbetter-mobile-image-mcq-feedback.png" alt="Image MCQ with instant feedback"/></div>
+          </div>
+          <div class="phonecap" style="margin-top:12px;">Course overview · New Feed home · image MCQ — current product design</div>
+        </div>
+      </div>
+    </div>`,
+  },
+  {
     id: 'sk3b', theme: 'light', title: 'Platform capabilities grid',
     html: `
     <div class="slidebody">
@@ -169,8 +195,7 @@ export const skillbetterSlides: SlideDef[] = [
           ${fi(icons.shield, 'Patent-protected, enterprise-grade', 'SOC 2 compliant, private deployment options, 100M+ AI interactions to date.', 0.54)}
         </div>
         <div class="rise" style="animation-delay:.3s">
-          <div class="boteye" style="margin:0 auto;"><span class="ring"></span><video src="assets/product/bot_eye_video.mp4" poster="assets/product/bot_eye_static_square.jpeg" autoplay muted loop playsinline></video></div>
-          <div class="eyecap"><div class="t">Powered by AI Labs</div><div class="s">Same engine, deeper story →<br/>ask for the AI Labs deck</div></div>
+          ${bframe('assets/product/figma/skilling/ai-course-translation-management.jpg', 'gobetter · Skilling · AI Translation', 'The translation console — <b>AI or manual per language</b>, voice &amp; tone choices, retry &amp; edit')}
         </div>
       </div>
     </div>`,
@@ -186,6 +211,19 @@ export const skillbetterSlides: SlideDef[] = [
         ${bframe('assets/product/gobetter/lms/course-builder-wizard-with-preview.jpg', 'gobetter · Course Builder', 'Guided course builder with a <b>live phone preview</b> before publishing')}
       </div>
       <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:90ch;">Overview → Levels → Cards → Preview: admins see exactly what the learner will see before a course ships. One catalogue serves retail, logistics, sales and corporate teams.</p>
+    </div>`,
+  },
+  {
+    id: 'sk5b', theme: 'light', title: 'Journeys & assessment governance',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">Journeys &amp; governance · the admin side, continued</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Onboarding journeys and compliance assessments <span style="color:var(--navy)">run themselves.</span></h2>
+      <div class="shotgrid rise" style="animation-delay:.22s;margin-top:18px;">
+        ${bframe('assets/product/figma/skilling/playlist-library-onboarding-journeys.jpg', 'gobetter · Skilling · Playlist Library', 'Learning journeys at scale — <b>298 playlists</b> with status, language, distribution &amp; scheduling')}
+        ${bframe('assets/product/figma/skilling/assessment-advanced-settings.jpg', 'gobetter · Skilling · Assessment Settings', 'Recurring compliance assessments — schedule, occurrences, <b>automated reminders &amp; push cadence</b>')}
+      </div>
+      <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:92ch;">Set a quarterly POSH assessment once: it re-runs, reminds and reports on its own. Your L&amp;D team stops being the follow-up department.</p>
     </div>`,
   },
   {
@@ -220,6 +258,12 @@ export const skillbetterSlides: SlideDef[] = [
       </div>
     </div>`,
   },
+  outcomeSlide('sk6c', 'What 88% completion actually buys you.', [
+    { n: '−60%', what: 'Training cost per certified worker', how: 'AI translation replaces per-language content production; 250+ ready courses replace vendor commissions; completion means the spend lands.', proof: 'Reliance: 60% cost saving · 14 languages' },
+    { n: 'Weeks → days', what: 'Time-to-productive for new joiners', how: '3× faster onboarding: a hire sells, picks or repairs sooner — every day earlier is a day of output you currently lose.', proof: 'Meesho: 3× faster · +40% sales uplift' },
+    { n: '−15%', what: 'Attrition in the first 90 days', how: 'Workers who feel invested in stay; gamified journeys and recognition are retention levers, not toys.', proof: '+19.7% WoW retention at Meesho' },
+    { n: '100%', what: 'Compliance you can show an auditor', how: 'Mandatory enforcement, proctored exams and tamper-proof certificates — audit findings become screenshots, not scrambles.', proof: '91% completion on 222 Amazon audits' },
+  ], 'Put your own numbers in: workforce size × attrition × ₹15K training cost — we’ll model the saving in the first call.'),
   {
     id: 'sk7', theme: 'darker', title: 'Next steps',
     html: `

@@ -11,7 +11,7 @@ as the room wants into any product — like a PPT, but alive in the browser.
   persists locally and appears on every slide (`BetterPlace ✕ Client` strip).
 - **Hub** — present the full group story (21 slides), or open any drill-down:
   AI Labs (flagship) · skillBetter LMS · Hire & Onboard · verifyBetter BGV ·
-  Attendance · Payroll & Compliance · goBetter HRIS · staffBetter & gigBetter ·
+  Attendance · Payroll & Compliance · goBetter HRIS · staffBetter · gigBetter ·
   5 industry lenses (Retail/Q-commerce, Manufacturing, Logistics, BFSI, Tech & Services).
 - **Custom flow** — pick modules; the app stitches group opening + modules + proof close.
 - **Deck player** — keyboard (←/→/space/Esc), click, swipe, dot nav, count-ups,

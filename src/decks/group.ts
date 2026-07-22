@@ -561,6 +561,24 @@ export const groupSlides: SlideDef[] = [
   `,
   },
   {
+    id: "s13b",
+    theme: "darker",
+    title: "THE OUTCOME LEDGER",
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">The outcome ledger · why end-to-end beats five point tools</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:30ch;">Each module pays for itself. Together they change your P&amp;L.</h2>
+      <div class="ledger rise" style="animation-delay:.18s">
+        <div class="lrow rise" style="animation-delay:.22s"><div class="ln">Crores</div><div class="lw"><h4>Leakage &amp; liability, recovered</h4><p>Face-verified attendance kills ghost payroll; challan OCR kills inherited PF/ESI exposure — the two biggest silent costs of a contract workforce.</p></div><div class="lp">Reliance: <b>−90% leakage · −80% vendor risk</b></div></div>
+        <div class="lrow rise" style="animation-delay:.31s"><div class="ln">Weeks</div><div class="lw"><h4>Recovered on every ramp</h4><p>AI-screened funnels, 10-minute onboarding and &lt;24hr BGV mean sites open and seasons start on time — with workers who arrive trained.</p></div><div class="lp"><b>−60% hiring lead-time · 45-min rider onboarding</b></div></div>
+        <div class="lrow rise" style="animation-delay:.40s"><div class="ln">−15%</div><div class="lw"><h4>Attrition, the compounding save</h4><p>Trained, fairly-paid, benefit-covered workers stay — and every point of churn saved cancels a hire, a check, and a training cycle you'd have paid for again.</p></div><div class="lp">88% training completion · welfare stack · <b>rehires clear in minutes</b></div></div>
+        <div class="lrow rise" style="animation-delay:.49s"><div class="ln">1</div><div class="lw"><h4>Partner where you had a patchwork</h4><p>One contract, one worker record, one compliance standard across 8 markets — the integration project you never have to run.</p></div><div class="lp"><b>25M+ profiles · 1,000+ enterprises · IN · SEA · GCC</b></div></div>
+      </div>
+      <div class="clientline rise" style="color:rgba(255,255,255,.6);margin-top:16px;animation-delay:.6s">Every number above has a named client behind it — the next four slides show them.</div>
+    </div>
+  `,
+  },
+  {
     id: "s14",
     theme: "light",
     title: "USE CASES",

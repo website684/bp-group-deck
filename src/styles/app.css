@@ -191,6 +191,16 @@ body { overflow: auto; background: #05081f; }
 
 @media (max-width: 960px) { .capgrid, .capgrid.three, .quotes { grid-template-columns: 1fr 1fr; } }
 
+/* outcome ledger rows */
+.ledger { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+.lrow { display: grid; grid-template-columns: 220px 1fr 260px; gap: 20px; align-items: center; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.12); border-left: 4px solid var(--yellow); border-radius: 14px; padding: 16px 22px; }
+.lrow .ln { font-family: var(--disp); font-weight: 800; font-size: clamp(1.6rem, 2.6vw, 2.3rem); line-height: 1; color: var(--yellow); letter-spacing: -.02em; }
+.lrow .lw h4 { font-family: var(--disp); font-weight: 700; font-size: 1.02rem; color: #fff; }
+.lrow .lw p { font-size: .84rem; line-height: 1.45; color: rgba(255,255,255,.72); margin-top: 3px; }
+.lrow .lp { font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.55); text-align: right; line-height: 1.6; }
+.lrow .lp b { color: #7ee6ac; }
+@media (max-width: 960px) { .lrow { grid-template-columns: 1fr; gap: 8px; } .lrow .lp { text-align: left; } }
+
 /* generic centered divider headline for section slides */
 .bigsay { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; height: 100%; position: relative; z-index: 2; }
 .bigsay h2 { font-size: clamp(2.2rem, 5vw, 4.2rem) !important; color: #fff; max-width: 24ch; }

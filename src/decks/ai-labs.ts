@@ -1,5 +1,5 @@
 import type { SlideDef } from '../lib/types'
-import { bframe, fi, icons } from './html'
+import { bframe, fi, icons, outcomeSlide } from './html'
 
 export const aiLabsSlides: SlideDef[] = [
   {
@@ -108,7 +108,7 @@ export const aiLabsSlides: SlideDef[] = [
         </div>
         <p class="lede rise" style="animation-delay:.36s;margin-top:18px;">A rider photographs their ID, picks their hub on a map, passes the safety quiz and gets certified — all inside one WhatsApp thread.</p>
       </div>
-      <div class="rise" style="animation-delay:.3s">
+      <div class="rise" style="animation-delay:.3s;display:flex;gap:16px;align-items:flex-start;justify-content:center;">
         <div class="chat">
           <div class="chd"><span class="cav">🤖</span><b>AI Mia · Onboarding</b><span>Live</span></div>
           <div class="cbody">
@@ -119,8 +119,12 @@ export const aiLabsSlides: SlideDef[] = [
             <div class="msg me">Done! What's next?</div>
             <div class="msg bot">That's it — certificate issued. See you Monday, 9 AM, Bhiwandi hub. 🎉</div>
           </div>
+          <div class="bcap" style="padding:8px 0;">Docs · quiz · <b>45-min onboarding</b></div>
         </div>
-        <div class="bcap">One thread · docs verified · quiz passed · <b>45-minute onboarding</b></div>
+        <div style="max-width:300px;">
+          <div class="bframe"><div class="bbar"><span class="bdots"><i></i><i></i><i></i></span><span class="burl">Embedded support agent · live design</span></div><img src="assets/product/figma/ailabs/in-context-support-agent-chatbot.png" alt="In-context support agent with order lookup" loading="lazy"/></div>
+          <div class="bcap">Real product: agent drawer with <b>live order lookup</b></div>
+        </div>
       </div>
     </div>`,
   },
@@ -175,6 +179,12 @@ export const aiLabsSlides: SlideDef[] = [
       </div>
     </div>`,
   },
+  outcomeSlide('ai7b', 'What hiring agents does to your cost base.', [
+    { n: '₹0.37', what: 'Per resolved interaction', how: 'Helpdesk questions, onboarding steps and L&D chasing move from salaried hours to fractions of a rupee — 5,000 workers served for ~₹1,860 a month.', proof: 'Credit calculator, customer-facing' },
+    { n: '−70%', what: 'Time-to-hire on agent-run funnels', how: 'Screening, scheduling and verification run overnight without adding recruiter headcount for peaks.', proof: 'Live at Subway · IFFCO Tokio' },
+    { n: '−38%', what: 'L&D operations time', how: 'A background agent auto-assigns, reminds, syncs and reports — your team designs learning instead of chasing it.', proof: 'Measured on the L&D ops agent' },
+    { n: '3×', what: 'Coaching capacity, zero new trainers', how: 'AI Max roleplays with 30,000 sales pros simultaneously — every rep practises before every real call.', proof: 'IFFCO Tokio, in production' },
+  ], 'Bring one painful process to a 30-minute call — we build the agent live and you extrapolate the maths.'),
   {
     id: 'ai8', theme: 'dark', title: 'Proof + next steps',
     html: `

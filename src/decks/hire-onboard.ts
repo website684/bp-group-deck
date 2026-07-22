@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe, fi, icons } from './html'
+import { bframe, fi, icons, outcomeSlide } from './html'
 
 const groupHire = groupSlides.find((s) => s.id === 's7')!
 
@@ -83,6 +83,32 @@ export const hireOnboardSlides: SlideDef[] = [
     </div>`,
   },
   {
+    id: 'ho3b', theme: 'dark', title: 'The candidate journey',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">The candidate's side · white-labelled journey (Subway prototype)</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:28ch;">No CV. No app install. <span style="color:var(--yellow)">A ranked, verified applicant in minutes.</span></h2>
+      <div class="mediasplit" style="align-items:center;">
+        <div>
+          <div class="featlist" style="margin-top:10px;">
+            ${fi(icons.map, 'Role, pay and location up front', 'Candidates pick role cards with pay bands and preferred locations — intent captured before a recruiter spends a minute.', 0.24)}
+            ${fi(icons.doc, 'Progressive, non-blocking documents', 'Selfie and Aadhaar collected in-flow; everything else deferred so candidates finish instead of dropping off.', 0.32)}
+            ${fi(icons.zap, 'Explainable job matches', 'Fit-scored, ranked recommendations with one-tap apply — commute-aware via locality and pincode.', 0.40)}
+            ${fi(icons.globe, 'Your brand, their language', 'The whole journey ships white-labelled, with language selection on the first screen.', 0.48)}
+          </div>
+        </div>
+        <div class="rise" style="animation-delay:.3s">
+          <div class="phones" style="min-height:clamp(280px,30vw,390px);">
+            <div class="phone p1"><img src="assets/product/hire-journey/subway-role-location.png" alt="Role, pay band and location selection"/></div>
+            <div class="phone p2"><img src="assets/product/hire-journey/subway-job-matches.png" alt="Ranked job matches with fit scores"/></div>
+            <div class="phone p3"><img src="assets/product/hire-journey/subway-document-upload.png" alt="Progressive document upload"/></div>
+          </div>
+          <div class="phonecap" style="margin-top:12px;">Role &amp; pay intent · ranked matches with fit scores · progressive documents — experience prototype</div>
+        </div>
+      </div>
+    </div>`,
+  },
+  {
     id: 'ho4b', theme: 'light', title: 'Onboarding capability map',
     html: `
     <div class="slidebody">
@@ -116,6 +142,12 @@ export const hireOnboardSlides: SlideDef[] = [
       <div class="probfoot rise" style="animation-delay:.6s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">In production for <b>IFFCO Tokio</b> and <b>Subway</b> — funnel: 4,820 sourced → 1,960 AI-screened → 720 interviewed → 540 offered → <b>505 onboarded</b>.</div>
     </div>`,
   },
+  outcomeSlide('ho5b', 'What changes in your hiring P&L.', [
+    { n: '−60%', what: 'Time-to-hire', how: 'AI screens overnight and recruiters meet a ranked shortlist — festive and launch ramps stop slipping by weeks.', proof: 'AI screening live at IFFCO Tokio, Subway' },
+    { n: '−20%', what: 'Cost per acquisition', how: 'WhatsApp-apply and voice-bot screening replace call-center hours and job-board waste per hire.', proof: 'Voice screening at ₹5/min vs ₹12 industry' },
+    { n: '10 min', what: 'Offer-to-payroll-ready', how: 'Docs, BGV, bank and e-sign on the worker\\u2019s phone with zero re-entry — day-one no-shows and week-one paperwork both shrink.', proof: 'Funnel: 4,820 sourced → 505 onboarded' },
+    { n: '100%', what: 'Hires verified before day one', how: 'Every onboard is BGV-checked and training-gated on the same record — bad hires caught before the uniform, not after the incident.', proof: 'verifyBetter + skillBetter on one record' },
+  ], 'Run your highest-volume role through the funnel for two weeks — we benchmark TAT and CPA against your current numbers.'),
   {
     id: 'ho6', theme: 'darker', title: 'Next steps',
     html: `

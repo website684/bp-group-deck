@@ -14,6 +14,32 @@ export const fi = (icon: string, h: string, p: string, d: number) => `
 
 export const mstat = (n: string, l: string) => `<div class="mstat"><div class="n">${n}</div><div class="l">${l}</div></div>`
 
+/** Outcome ledger slide — the "what changes in your business" slide every deck carries. */
+export const outcomeSlide = (
+  id: string,
+  headline: string,
+  items: { n: string; what: string; how: string; proof: string }[],
+  foot: string,
+): { id: string; theme: 'darker'; title: string; html: string } => ({
+  id,
+  theme: 'darker',
+  title: 'Outcomes',
+  html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">The outcomes · what actually changes for you</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:30ch;">${headline}</h2>
+      <div class="ledger rise" style="animation-delay:.2s">
+        ${items.map((o, i) => `
+        <div class="lrow rise" style="animation-delay:${0.24 + i * 0.09}s">
+          <div class="ln">${o.n}</div>
+          <div class="lw"><h4>${o.what}</h4><p>${o.how}</p></div>
+          <div class="lp">${o.proof}</div>
+        </div>`).join('')}
+      </div>
+      <div class="clientline rise" style="color:rgba(255,255,255,.6);margin-top:18px;animation-delay:.7s">${foot}</div>
+    </div>`,
+})
+
 export const icons = {
   search: '<circle cx="11" cy="11" r="8"/><path d="M21 21l-4-4"/>',
   doc: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/>',
