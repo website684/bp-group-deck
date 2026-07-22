@@ -207,6 +207,70 @@ export const skillbetterSlides: SlideDef[] = [
     </div>`,
   },
   {
+    id: 'sk4c', theme: 'light', title: 'AI content studio',
+    html: `
+    <div class="slidebody split">
+      <div>
+        <span class="eyebrow rise">AI content studio · human-approved</span>
+        <h2 class="rise" style="animation-delay:.08s;">Your SME gives it an hour. <span style="color:var(--navy)">The course ships the same afternoon.</span></h2>
+        <div class="featlist">
+          ${fi(icons.doc, 'Brief in, course out', 'Drop a SOP, PPT or video and a topic brief — the studio drafts the outline, chapters, quiz and reels-style cards.', 0.24)}
+          ${fi(icons.check, 'A human approves every stage', 'Your L&D team reviews the outline, edits the cards and signs off before anything reaches a learner — AI does the heavy lifting, people keep control.', 0.32)}
+          ${fi(icons.lang, 'Then 35+ languages, automatically', 'The approved course goes through the translation console — voice and tone per language, live the same day.', 0.40)}
+          ${fi(icons.layers, 'Every depth, one workflow', 'Nano cards for daily briefs (3–5 min), full courses, or multi-course journeys — reels, video, 12+ quiz types, AI roleplay and live classes.', 0.48)}
+        </div>
+      </div>
+      <div class="rise" style="animation-delay:.35s">
+        <div class="aistudio">
+          <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="ttl">gobetter · Skilling · Create with AI</span></div>
+          <div class="body">
+            <div class="brief"><span class="bi">✦</span><span class="bt">Brief: <em>"Festive-season upselling for store associates — from the attached playbook"</em><span class="cursor"></span></span></div>
+            <div class="gen">
+              <div class="gline"><span class="gi">1</span><span><b>Outline drafted</b> — 5 chapters · 14 cards · 8-question quiz</span><span class="gs">✓ Generated</span></div>
+              <div class="gline hitl"><span class="gi">2</span><span><b>L&amp;D review</b> — 2 cards edited, 1 example replaced</span><span class="gs">Priya · approved</span></div>
+              <div class="gline"><span class="gi">3</span><span><b>Reels &amp; quiz built</b> — portrait video cards + image MCQs</span><span class="gs">✓ Generated</span></div>
+              <div class="gline"><span class="gi">4</span><span><b>Translated</b> — Hindi · Tamil · Telugu · Bengali · Marathi</span><span class="gs">✓ 5 languages</span></div>
+            </div>
+            <div class="formats"><span>Reels</span><span>Video</span><span>12+ quiz types</span><span>AI roleplay</span><span>Live class</span><span>Nano · Course · Journey</span></div>
+            <div class="prog">Published to 4,200 store associates — <b>brief to live in one afternoon</b></div>
+          </div>
+        </div>
+      </div>
+    </div>`,
+  },
+  {
+    id: 'sk4d', theme: 'light', title: 'Skills intelligence',
+    html: `
+    <div class="slidebody split">
+      <div>
+        <span class="eyebrow rise">Skills intelligence · on the worker record</span>
+        <h2 class="rise" style="animation-delay:.08s;">Know exactly who can do what — <span style="color:var(--navy)">before you roster them.</span></h2>
+        <p class="lede rise" style="animation-delay:.16s;margin-top:10px;">Every course, assessment and certification writes back to the role–skill map. Gaps trigger journeys automatically; expiring certifications resurface before they lapse.</p>
+        <div class="featlist">
+          ${fi(icons.chart, 'Role–skill mapping, live', 'Coverage by role, site and skill — the treemap your L&D reviews and your ops team plans against.', 0.28)}
+          ${fi(icons.zap, 'Gaps auto-assign learning', 'A skill below threshold pushes the journey to exactly the workers who need it — nobody audits spreadsheets.', 0.36)}
+          ${fi(icons.shield, 'And here’s the part nobody else has', 'Skills sit on the same worker record as attendance, BGV and payroll — so certification can gate rostering and dispatch, the way Zepto gates deliveries.', 0.44)}
+        </div>
+      </div>
+      <div class="rise" style="animation-delay:.35s">
+        <div class="skillmap">
+          <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="ttl">gobetter · Skilling · Role–skill coverage · Mumbai region</span></div>
+          <table>
+            <thead><tr><th>Role</th><th>Safety</th><th>POSH</th><th>Product</th><th>Selling</th><th>SOP</th></tr></thead>
+            <tbody>
+              <tr><td>Store associate</td><td><span class="cell c-hi">96%</span></td><td><span class="cell c-hi">99%</span></td><td><span class="cell c-md">71%</span></td><td><span class="cell c-lo">54%</span></td><td><span class="cell c-hi">92%</span></td></tr>
+              <tr><td>Picker · dark store</td><td><span class="cell c-hi">98%</span></td><td><span class="cell c-hi">97%</span></td><td><span class="cell c-hi">94%</span></td><td><span class="cell c-md">—</span></td><td><span class="cell c-md">76%</span></td></tr>
+              <tr><td>Field engineer</td><td><span class="cell c-md">82%</span></td><td><span class="cell c-hi">95%</span></td><td><span class="cell c-lo">61%</span></td><td><span class="cell c-md">70%</span></td><td><span class="cell c-hi">91%</span></td></tr>
+              <tr><td>Telesales rep</td><td><span class="cell c-hi">99%</span></td><td><span class="cell c-hi">98%</span></td><td><span class="cell c-md">78%</span></td><td><span class="cell c-hi">88%</span></td><td><span class="cell c-md">80%</span></td></tr>
+            </tbody>
+          </table>
+          <div class="foot"><span><b>2 gaps flagged</b> — Selling (store associates), Product (field engineers)</span><span class="act">Journeys auto-assigned → 1,340 workers</span></div>
+        </div>
+        <div class="bcap">Live coverage by role and region — gaps close themselves</div>
+      </div>
+    </div>`,
+  },
+  {
     id: 'sk5', theme: 'light', title: 'Admin console',
     html: `
     <div class="slidebody">

@@ -239,6 +239,46 @@ body { overflow: auto; background: #05081f; }
   .bc-row { grid-template-columns: 100px 1fr 50px; }
 }
 
+/* ---------- AI content studio mock (LMS deck) ---------- */
+.aistudio { background: #fff; border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 24px 60px rgba(27,45,147,.14); overflow: hidden; }
+.aistudio .bar { display: flex; align-items: center; gap: 9px; padding: 10px 15px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.aistudio .bar .dots { display: flex; gap: 5px; } .aistudio .bar .dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+.aistudio .bar .ttl { font-family: var(--mono); font-size: 10px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.aistudio .body { padding: 14px 16px 16px; }
+.aistudio .brief { display: flex; gap: 10px; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 10px 13px; }
+.aistudio .brief .bi { width: 30px; height: 30px; border-radius: 9px; background: var(--navy); color: var(--yellow); display: grid; place-items: center; flex: none; font-size: 14px; }
+.aistudio .brief .bt { font-size: .82rem; color: var(--ink); font-weight: 600; }
+.aistudio .brief .bt em { font-style: normal; color: var(--muted); font-weight: 500; }
+.aistudio .brief .cursor { display: inline-block; width: 2px; height: 14px; background: var(--navy); vertical-align: middle; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.aistudio .gen { margin-top: 11px; display: flex; flex-direction: column; gap: 6px; }
+.aistudio .gline { display: flex; align-items: center; gap: 9px; padding: 7px 11px; border-radius: 9px; background: var(--paper); border: 1px solid var(--surface-2); font-size: .78rem; color: var(--text); }
+.aistudio .gline .gi { width: 22px; height: 22px; border-radius: 6px; background: #fff; border: 1px solid var(--border); display: grid; place-items: center; color: var(--navy); flex: none; font-size: 11px; }
+.aistudio .gline b { color: var(--ink); }
+.aistudio .gline .gs { margin-left: auto; font-family: var(--mono); font-size: 8.5px; font-weight: 700; color: var(--green); background: rgba(61,190,123,.13); border-radius: 20px; padding: 3px 8px; white-space: nowrap; }
+.aistudio .gline.hitl .gs { color: var(--navy-2); background: var(--surface); }
+.aistudio .formats { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px; }
+.aistudio .formats span { font-size: 10px; font-weight: 600; background: var(--surface); color: var(--navy); border-radius: 6px; padding: 4px 8px; }
+.aistudio .prog { margin-top: 12px; display: flex; align-items: center; gap: 10px; background: linear-gradient(90deg, var(--navy), var(--navy-deep)); border-radius: 10px; padding: 10px 14px; color: #fff; font-size: .78rem; }
+.aistudio .prog b { color: var(--yellow); }
+
+/* ---------- skills intelligence heatmap (LMS deck) ---------- */
+.skillmap { background: #fff; border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 24px 60px rgba(27,45,147,.14); overflow: hidden; }
+.skillmap .bar { display: flex; align-items: center; gap: 9px; padding: 10px 15px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.skillmap .bar .dots { display: flex; gap: 5px; } .skillmap .bar .dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+.skillmap .bar .ttl { font-family: var(--mono); font-size: 10px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.skillmap table { width: 100%; border-collapse: collapse; }
+.skillmap th { font-family: var(--mono); font-size: 8px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); padding: 8px 6px; text-align: center; border-bottom: 1px solid var(--border); }
+.skillmap th:first-child, .skillmap td:first-child { text-align: left; padding-left: 14px; font-size: .76rem; font-weight: 600; color: var(--ink); white-space: nowrap; }
+.skillmap td { padding: 6px; text-align: center; }
+.skillmap .cell { display: inline-block; min-width: 44px; border-radius: 6px; padding: 5px 7px; font-family: var(--mono); font-size: 9.5px; font-weight: 700; }
+.skillmap .c-hi { background: rgba(61,190,123,.16); color: #1a8f52; }
+.skillmap .c-md { background: rgba(255,196,1,.18); color: #8a6d00; }
+.skillmap .c-lo { background: rgba(208,39,29,.12); color: var(--red); }
+.skillmap .foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 14px; background: var(--surface); border-top: 1px solid var(--border); font-size: .74rem; color: var(--text); }
+.skillmap .foot b { color: var(--navy); }
+.skillmap .foot .act { font-family: var(--mono); font-size: 9px; font-weight: 700; color: #fff; background: var(--navy); border-radius: 20px; padding: 5px 11px; white-space: nowrap; }
+
 /* ---------- ROI calculator ---------- */
 .roi-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(24px, 4vw, 56px); align-items: start; max-width: 1200px; }
 .roi-inputs input[type="range"] { width: 100%; accent-color: var(--client, var(--yellow)); margin: 4px 0 6px; }
