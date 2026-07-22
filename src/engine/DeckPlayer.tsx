@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { DeckDef, ClientConfig, SlideDef } from '../lib/types'
+import { getAIOverlay } from '../decks/ai-overlays'
 
 function countUp(section: HTMLElement) {
   section.querySelectorAll<HTMLElement>('[data-t]').forEach((el) => {
@@ -31,6 +32,7 @@ interface Props {
 export default function DeckPlayer({ deck, client, initialSlide = 0, shareMode = false, onExit }: Props) {
   const [cur, setCur] = useState(Math.min(Math.max(initialSlide, 0), deck.slides.length - 1))
   const [aiMode, setAiMode] = useState(false)
+  const [aiOpen, setAiOpen] = useState(false)
   const deckRef = useRef<HTMLDivElement>(null)
   const curRef = useRef(0)
   curRef.current = cur
@@ -130,6 +132,11 @@ export default function DeckPlayer({ deck, client, initialSlide = 0, shareMode =
         <button className={`ai-toggle${aiMode ? ' on' : ''}`} title="Show how AI Labs powers each capability" onClick={() => setAiMode(!aiMode)}>
           <span className="d" />✦ AI
         </button>
+        {aiMode && (
+          <button className="ai-toggle" title="The full AI picture for this area" onClick={() => setAiOpen(true)}>
+            What AI does here →
+          </button>
+        )}
         <button className="arrow" aria-label="Download PDF" title="Download as PDF (print)" onClick={() => window.print()}>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
         </button>
@@ -139,6 +146,50 @@ export default function DeckPlayer({ deck, client, initialSlide = 0, shareMode =
           </button>
         )}
       </div>
+
+      {aiOpen && (() => {
+        const ov = getAIOverlay(deck.id)
+        return (
+          <div className="ai-overlay" onClick={(e) => { if (e.target === e.currentTarget) setAiOpen(false) }}>
+            <div className="ai-poster">
+              <button className="ai-close" onClick={() => setAiOpen(false)}>✕ Close</button>
+              <span className="ai-kicker">✦ AI Labs × {ov.domain}{client?.name ? ` · for ${client.name}` : ''}</span>
+              <h1>{ov.headline}</h1>
+              <p className="ai-sub">{ov.sub}</p>
+              <div className="ai-levers">
+                {ov.levers.map((l) => (
+                  <div key={l.title} className="ai-lever">
+                    <div className="ln">{l.n}</div>
+                    <h4>{l.title}</h4>
+                    <p>{l.desc}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="ai-roster">
+                <span className="ai-roster-label">The agents on this job</span>
+                {ov.agents.map((a) => (
+                  <span key={a.name} className={`ai-chip ${a.status}`}><i />{a.name} <em>· {a.role}</em></span>
+                ))}
+              </div>
+              <div className="ai-rail">
+                <span><b>1</b> AI does the heavy lifting</span><i>→</i>
+                <span><b>2</b> Your team reviews</span><i>→</i>
+                <span><b>3</b> Deterministic where it must be</span><i>→</i>
+                <span><b>4</b> Every action on the audit log</span>
+              </div>
+              <div className="ai-poster-foot">
+                <span>Private LLMs · data stays in India · ISO 27001 · SOC 2 · credits from ₹0.37/interaction</span>
+                <div className="ai-poster-ctas">
+                  {deck.id !== 'ai-labs' && (
+                    <button className="btn-primary" onClick={() => { window.location.hash = '/deck/ai-labs' }}>Open the AI Labs deck →</button>
+                  )}
+                  <a className="btn-ghost" href={`mailto:anuj.saxena@betterplace.co.in?subject=${encodeURIComponent(`AI in ${ov.domain}${client?.name ? ' — ' + client.name : ''}`)}`}>Talk AI with us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      })()}
 
       {shareMode && (
         <a
