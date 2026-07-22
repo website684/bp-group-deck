@@ -24,19 +24,34 @@ export const aiNote = (agent: string, title: string, body: string, stat?: string
   </div>`
 
 /** Buyer-lens problem map — "your reality → what kills it", persona-framed, stat-anchored. */
+type ProblemRow = { pain: string; painDetail: string; painStat: string; fix: string; fixDetail: string; fixStat: string }
+
+/** Two-slide variant: 4 rows split into 2 + 2 so type stays presentation-sized. */
+export const problemSlides = (
+  id: string,
+  persona: string,
+  headlineA: string,
+  headlineB: string,
+  rows: ProblemRow[],
+  sources: string,
+) => [
+  problemSlide(id, persona, headlineA, rows.slice(0, 2), sources),
+  problemSlide(`${id}-2`, persona, headlineB, rows.slice(2), sources),
+]
+
 export const problemSlide = (
   id: string,
   persona: string,
   headline: string,
-  rows: { pain: string; painDetail: string; painStat: string; fix: string; fixDetail: string; fixStat: string }[],
+  rows: ProblemRow[],
   sources: string,
 ): { id: string; theme: 'light'; title: string; html: string } => ({
   id,
   theme: 'light',
-  title: 'The problems we kill',
+  title: 'The problems we solve',
   html: `
     <div class="slidebody">
-      <span class="eyebrow rise">${persona} · the problems on your desk → what kills them</span>
+      <span class="eyebrow rise">${persona} · the problems on your desk → what changes</span>
       <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">${headline}</h2>
       <div class="pmap">
         ${rows.map((r, i) => `

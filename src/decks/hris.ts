@@ -1,5 +1,5 @@
 import type { SlideDef } from '../lib/types'
-import { bframe, outcomeSlide, problemSlide, aiNote } from './html'
+import { bframe, outcomeSlide, problemSlides, aiNote } from './html'
 
 export const hrisSlides: SlideDef[] = [
   {
@@ -18,7 +18,7 @@ export const hrisSlides: SlideDef[] = [
       <div class="mdcover ghost">go</div>
     </div>`,
   },
-  problemSlide('hr1b', 'For the head of HR', 'Five systems, five headcounts, zero truth.', [
+  ...problemSlides('hr1b', 'For the head of HR', 'Five systems, five headcounts, zero truth.', 'And every audit question turns into a project.', [
     { pain: 'Nobody agrees how many workers you have', painDetail: 'The ATS, the attendance vendor, payroll and the staffing agency each hold a different list — reconciliation is a monthly project.', painStat: '5+ tools · 0 integrations, typically', fix: 'One record every module reads and writes', fixDetail: 'Onboard, Verify, Attend, Payroll and Upskill share one associate master — there is only one answer to "how many".', fixStat: 'One login · one worker record' },
     { pain: 'Incomplete records break things downstream', painDetail: 'A missing bank detail blocks a pay run; a missing ID blocks BGV — discovered at the worst moment.', painStat: 'Gaps found at payroll time, not entry time', fix: 'Completeness enforced with deep-linked banners', fixDetail: '"Missing information for BGV / Payroll" points the admin at the exact field before it blocks anything.', fixStat: 'Gap banners live in production' },
     { pain: 'Audit questions take weeks to answer', painDetail: '"Who employed this worker in March, at which site, and who changed their record?" — today that answer lives in six inboxes.', painStat: 'Evidence assembly: days per query', fix: '360° profiles with locks and log history', fixDetail: 'Tenure timelines across client, vendor and subvendor; profile locking; every change on the log.', fixStat: 'Same-screen answers' },

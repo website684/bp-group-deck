@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe, icons, outcomeSlide, problemSlide, aiNote } from './html'
+import { bframe, icons, outcomeSlide, problemSlides, aiNote } from './html'
 
 const groupPayroll = groupSlides.find((s) => s.id === 's8b')!
 
@@ -21,7 +21,7 @@ export const payrollSlides: SlideDef[] = [
       <div class="mdcover ghost">PF</div>
     </div>`,
   },
-  problemSlide('py1b', 'For compliance & finance', 'The penalty clock is already running on someone’s delay.', [
+  ...problemSlides('py1b', 'For compliance & finance', 'The penalty clock is already running on someone’s delay.', 'And the leakage hides where nobody reconciles.', [
     { pain: 'A vendor’s PF default becomes your bill', painDetail: 'As principal employer you are jointly liable under contract-labour law when a contractor underpays — and you find out at the audit, years of interest later.', painStat: '7Q interest: 12% p.a. + 14B damages up to 100% of arrears', fix: 'Challan OCR reconciles every vendor, monthly', fixDetail: 'PF/ESI challans read automatically and matched worker-by-worker against computed dues; gaps flagged the month they happen, with documented due diligence.', fixStat: 'Reliance: −80% vendor non-compliance' },
     { pain: 'Minimum-wage misses hide in salary structures', painDetail: 'State- and skill-level wage floors change; one wrong Basic in a template quietly violates on thousands of workers.', painStat: 'Per-state floors · revised twice yearly', fix: 'Validation blocks bad structures before payroll', fixDetail: 'Inline minimum-wage guardrails stop a non-compliant Basic at data entry — not in a labour-department notice.', fixStat: 'Blocking error, screenshot on the next slide' },
     { pain: 'Payroll leakage no one can locate', painDetail: 'Ghost workers, unverified overtime and manual consolidation mean you pay a workforce that partially isn’t there.', painStat: 'Time theft ≈ 1.5–5% of gross payroll · APA', fix: 'Pay computes from face-verified attendance only', fixDetail: 'The attendance→payroll pipe is one system: no punch, no pay — and every rupee traces back to a verified log.', fixStat: 'Reliance: −90% payroll leakage' },
@@ -69,8 +69,8 @@ export const payrollSlides: SlideDef[] = [
       <span class="eyebrow rise">Payroll operations · real product</span>
       <h2 class="rise" style="animation-delay:.08s;max-width:28ch;">From attendance to bank file — <span style="color:var(--navy)">zero manual entry.</span></h2>
       <div class="shotgrid rise" style="animation-delay:.22s;margin-top:18px;">
-        ${bframe('assets/product/gobetter/payroll/payroll-batch-status-pipeline.jpg', 'gobetter · Payroll · Run Payroll', 'The batch pipeline — see where a pay run is waiting or failed before drilling down')}
-        ${bframe('assets/product/gobetter/payroll/pf-challan-upload-list.jpg', 'gobetter · Payroll · Compliances', 'PF challan upload &amp; history — <b>statutory evidence, on the record</b>')}
+        ${bframe('assets/product/gobetter/payroll/payroll-batch-status-pipeline.jpg', 'gobetter · Payroll · Run Payroll', 'The batch pipeline — see where a pay run is waiting or failed before drilling down', true)}
+        ${bframe('assets/product/gobetter/payroll/pf-challan-upload-list.jpg', 'gobetter · Payroll · Compliances', 'PF challan upload &amp; history — <b>statutory evidence, on the record</b>', true)}
       </div>
       <div class="tags rise" style="animation-delay:.4s;margin-top:14px;">
         <span class="tag">Computation from attendance</span><span class="tag">Minimum-wage validation by state</span><span class="tag">Salary structure templates</span><span class="tag">Vendor invoicing in-platform</span><span class="tag">PF · ESI · PT · LWF workspaces</span>
@@ -87,7 +87,7 @@ export const payrollSlides: SlideDef[] = [
         ${bframe('assets/product/figma/payroll/run-payroll-batch-overview.jpg', 'gobetter · Payroll · Run Payroll', 'The batch workspace — month lock, attendance input, workflow progress, <b>employee states</b>', true)}
         ${bframe('assets/product/figma/payroll/salary-structure-validation-error.jpg', 'gobetter · Payroll · Salary Structure', 'A compliance guardrail firing — <b>Basic pay below the ₹6,000 configured minimum is blocked inline</b>', 'mid')}
       </div>
-      <p class="lede rise" style="animation-delay:.4s;margin-top:14px;margin-bottom:64px;max-width:94ch;">One-time components (a Diwali bonus, a Pongal incentive) apply to one month without touching the salary template — and minimum-wage validation blocks a bad structure before it ever reaches a pay run.</p>
+      <p class="lede rise" style="animation-delay:.4s;margin-top:14px;max-width:94ch;">One-time components (a Diwali bonus, a Pongal incentive) apply to one month without touching the salary template — and minimum-wage validation blocks a bad structure before it ever reaches a pay run.</p>
     </div>
     ${aiNote('Anomaly detection', 'Every pay run pre-screened', 'Models compare each worker’s computed pay against history and cohort — outliers surface for review before disbursement, not in a grievance.', '−90% payroll leakage at Reliance')}
     `,
@@ -99,8 +99,8 @@ export const payrollSlides: SlideDef[] = [
       <span class="eyebrow rise">Controls &amp; configuration · real product</span>
       <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">A pay run is a controlled workflow, <span style="color:var(--navy)">not a spreadsheet ritual.</span></h2>
       <div class="shotgrid rise" style="animation-delay:.22s;margin-top:18px;">
-        ${bframe('assets/product/gobetter/payroll/salary-structure-templates.jpg', 'gobetter · Payroll · Salary Structures', 'Reusable salary structure templates — compensation rules configured once')}
-        ${bframe('assets/product/gobetter/payroll/raise-invoice-vendor.jpg', 'gobetter · Payroll · Raise Invoice', 'Vendor invoicing inside the platform — tied to the same attendance and payroll data')}
+        ${bframe('assets/product/gobetter/payroll/salary-structure-templates.jpg', 'gobetter · Payroll · Salary Structures', 'Reusable salary structure templates — compensation rules configured once', true)}
+        ${bframe('assets/product/gobetter/payroll/raise-invoice-vendor.jpg', 'gobetter · Payroll · Raise Invoice', 'Vendor invoicing inside the platform — tied to the same attendance and payroll data', true)}
       </div>
       <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:92ch;">Month picker → inputs → batch pipeline → disbursement: operators see where a run is waiting or failed before drilling down, and vendors invoice against verified numbers.</p>
     </div>`,

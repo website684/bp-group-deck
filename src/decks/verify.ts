@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe, icons, outcomeSlide, problemSlide, aiNote } from './html'
+import { bframe, icons, outcomeSlide, problemSlides, aiNote } from './html'
 
 const groupVerify = groupSlides.find((s) => s.id === 'sv')!
 
@@ -21,7 +21,7 @@ export const verifySlides: SlideDef[] = [
       <div class="mdcover ghost">✓</div>
     </div>`,
   },
-  problemSlide('vf1b', 'For HR & trust-and-safety', 'One in ten frontline applications isn’t what it claims.', [
+  ...problemSlides('vf1b', 'For HR & trust-and-safety', 'One in ten frontline applications isn’t what it claims.', 'And slow checks cost you the honest nine.', [
     { pain: 'Discrepancies are the norm, not the edge case', painDetail: 'Inflated experience, unverifiable addresses, false credentials — retail hiring runs a double-digit discrepancy rate.', painStat: '10.3% discrepancy in retail hiring · AuthBridge FY26', fix: 'Six checks on every worker, digitally', fixDetail: 'Identity, address, career, financial, health, legal — run in parallel from one click, at 50K+ cases a day.', fixStat: 'Red/yellow/green triage per case' },
     { pain: 'BGV speed decides whether the hire happens', painDetail: 'Frontline candidates take the job that starts first — a two-week verification is an offer you made to a competitor’s employee.', painStat: 'Traditional BGV: 1–3 weeks', fix: 'Reports inside 24 hours, identity in minutes', fixDetail: 'Digital-first checks with EPFO integration and AI court-record scans — candidates verify themselves on their own phones.', fixStat: '<24 hr TAT · 50K+ cases/day' },
     { pain: 'The worker in a customer’s home is your brand', painDetail: 'One fraudulent identity behind a uniform — a theft, an assault — costs more than every check you’ll ever run.', painStat: 'One incident > years of BGV budget', fix: 'Liveness-checked identity, tamper-proof records', fixDetail: 'Face-match liveness stops photo-of-a-photo fraud; court and police checks come back dated and audit-ready.', fixStat: 'Swiggy · Licious · Royal Orchid live' },

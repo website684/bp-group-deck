@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe, fi, icons, outcomeSlide, problemSlide, aiNote } from './html'
+import { bframe, fi, icons, outcomeSlide, problemSlides, aiNote } from './html'
 
 const groupHire = groupSlides.find((s) => s.id === 's7')!
 
@@ -21,7 +21,7 @@ export const hireOnboardSlides: SlideDef[] = [
       <div class="mdcover ghost">GO</div>
     </div>`,
   },
-  problemSlide('ho1b', 'For talent acquisition', 'Frontline hiring is a treadmill set to festive speed.', [
+  ...problemSlides('ho1b', 'For talent acquisition', 'Frontline hiring is a treadmill set to festive speed.', 'And the funnel leaks exactly where nobody is watching.', [
     { pain: 'Attrition means you never stop hiring', painDetail: 'At 15% monthly churn a 1,000-worker operation re-hires its entire workforce every seven months — with festive peaks hitting 23%.', painStat: '15%/mo avg · 23% festive peak · Frontline Index', fix: 'An always-on funnel instead of hiring sprints', fixDetail: 'Standing requisitions across boards, QR posters, referrals and WhatsApp-apply keep the pipeline warm before the spike hits.', fixStat: 'Post once, fan out everywhere' },
     { pain: 'Application forms lose the best candidates', painDetail: 'Frontline workers don’t have CVs and won’t install an app to apply — every extra screen is drop-off.', painStat: 'App-install + CV = abandoned applications', fix: 'No CV, no install — apply in minutes', fixDetail: 'Guided, vernacular, WhatsApp-first application with progressive documents: selfie and Aadhaar in-flow, the rest deferred.', fixStat: 'Subway journey: role + pay intent up front' },
     { pain: 'Recruiters drown in unfit applications', painDetail: 'Thousands apply, a fraction fit — your team spends its week rejecting instead of closing.', painStat: '4,820 sourced → 720 worth interviewing', fix: 'AI screens overnight, ranks by fit', fixDetail: 'AI Jack interviews over WhatsApp, voice bots call and score — recruiters open a ranked shortlist at 9 AM.', fixStat: '−60% time-to-hire · −20% CPA' },

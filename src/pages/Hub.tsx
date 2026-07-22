@@ -92,6 +92,37 @@ export default function Hub({ client, shareMode = false, onOpen, onEditClient }:
         )}
       </div>
 
+      <section className="hub-section">
+        <h2>Start from your problem</h2>
+        <div className="hub-grid problems">
+          <button className="deck-card lead" onClick={() => onOpen('custom', ['staffbetter', 'gigbetter'])}>
+            <h3>I need to fill workforce demand</h3>
+            <p>Verified workers deployed in 24–72 hours — full-time or on-demand gig.</p>
+            <span className="dc-go">staffBetter + gigBetter →</span>
+          </button>
+          <button className="deck-card lead" onClick={() => onOpen('attendance')}>
+            <h3>I need control over attendance & sites</h3>
+            <p>Face-verified punches, live rosters, exceptions in one queue.</p>
+            <span className="dc-go">Attendance →</span>
+          </button>
+          <button className="deck-card lead" onClick={() => onOpen('payroll')}>
+            <h3>I need to kill payroll & compliance exposure</h3>
+            <p>Challan reconciliation, wage validation, an audit file that's always ready.</p>
+            <span className="dc-go">Payroll & Compliance →</span>
+          </button>
+          <button className="deck-card lead" onClick={() => onOpen('skillbetter')}>
+            <h3>I need frontline readiness & training</h3>
+            <p>88% completion in 35+ languages — proctored, measured, gamified.</p>
+            <span className="dc-go">skillBetter →</span>
+          </button>
+          <button className="deck-card lead" onClick={() => onOpen('hris')}>
+            <h3>I need one workforce system of record</h3>
+            <p>Every module reading one worker record — with built-in analytics.</p>
+            <span className="dc-go">goBetter HRIS →</span>
+          </button>
+        </div>
+      </section>
+
       {(['ai', 'product', 'services', 'industry'] as const).map((g) => (
         <section key={g} className="hub-section">
           <h2>{groupLabels[g]}</h2>

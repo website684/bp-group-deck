@@ -598,7 +598,7 @@ export const groupSlides: SlideDef[] = [
         <div class="lrow rise" style="animation-delay:.40s"><div class="ln">−15%</div><div class="lw"><h4>Attrition, the compounding save</h4><p>Trained, fairly-paid, benefit-covered workers stay — and every point of churn saved cancels a hire, a check, and a training cycle you'd have paid for again.</p></div><div class="lp">88% training completion · welfare stack · <b>rehires clear in minutes</b></div></div>
         <div class="lrow rise" style="animation-delay:.49s"><div class="ln">1</div><div class="lw"><h4>Partner where you had a patchwork</h4><p>One contract, one worker record, one compliance standard across 8 markets — the integration project you never have to run.</p></div><div class="lp"><b>25M+ profiles · 1,000+ enterprises · IN · SEA · GCC</b></div></div>
       </div>
-      <div class="clientline rise" style="color:rgba(255,255,255,.6);margin-top:16px;animation-delay:.6s">Every number above has a named client behind it — the next four slides show them.</div>
+      <div class="clientline rise" style="color:rgba(255,255,255,.6);margin-top:16px;animation-delay:.6s">Every number above has a named client behind it — the outcomes slide ahead shows them.</div>
     </div>
   `,
   },

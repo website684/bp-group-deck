@@ -14,8 +14,11 @@ import { industryDecks } from './industries'
 export const decks: DeckDef[] = [
   {
     id: 'group', next: 'ai-labs', title: 'The BetterPlace Group Story', group: 'story',
-    tagline: 'The full company pitch — problem, model, every product, proof and how to start. The one to open the meeting with.',
-    slides: groupSlides,
+    tagline: 'The executive pitch in 16 slides — problem, cost, model, every product, proof and how to start. The one to open the meeting with.',
+    // Executive cut: cover → problem → cost → buyer value → model → lifecycle →
+    // products → AI → services → outcomes → why us → start. Deep decks carry the rest.
+    slides: ['s1', 's2', 's13b', 's2b', 's5', 's6', 's7', 's8', 's8b', 's9', 's10', 's11', 's12', 's14', 's14b', 'sclose']
+      .map((id) => groupSlides.find((s) => s.id === id)!),
   },
   {
     id: 'ai-labs', next: 'skillbetter', title: 'AI Labs', group: 'ai',
