@@ -1,32 +1,34 @@
-# React + TypeScript + Vite
+# BetterPlace One — Enterprise Sales Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A hosted, clickable group pitch deck for BetterPlace. Open it before any client meeting,
+brand it with the client's logo and colour, and present the group story or drill as deep
+as the room wants into any product — like a PPT, but alive in the browser.
 
-Currently, two official plugins are available:
+**Live:** https://website684.github.io/bp-group-deck/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What's inside
+- **Setup screen** — client name, logo upload, brand colour, industry lens. Branding
+  persists locally and appears on every slide (`BetterPlace ✕ Client` strip).
+- **Hub** — present the full group story (21 slides), or open any drill-down:
+  AI Labs (flagship) · skillBetter LMS · Hire & Onboard · verifyBetter BGV ·
+  Attendance · Payroll & Compliance · goBetter HRIS · staffBetter & gigBetter ·
+  5 industry lenses (Retail/Q-commerce, Manufacturing, Logistics, BFSI, Tech & Services).
+- **Custom flow** — pick modules; the app stitches group opening + modules + proof close.
+- **Deck player** — keyboard (←/→/space/Esc), click, swipe, dot nav, count-ups,
+  choreographed entrances. Deep-link any slide: `#/deck/ai-labs?s=4`.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## Develop
+```bash
+npm install
+npm run dev          # local
+npm run build        # production → dist/
+rm -rf docs && cp -R dist docs   # Pages serves /docs on main
+git add -A && git commit -m "update" && git push
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Editing content
+Slides are HTML strings in `src/decks/*.ts` using the proven Palette A class vocabulary
+(`src/styles/legacy-deck.css`, extracted from the studio's betterplace-group sample deck,
+plus new components in `src/styles/app.css`: `.bframe` browser frames, `.vs` compare
+strips, `.tiers`, `.chat`, `.mdcover`). Knowledge sources live in the Deck Studio
+`knowledge/` pack — keep facts in sync with it.
