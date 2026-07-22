@@ -83,7 +83,7 @@ export const verifySlides: SlideDef[] = [
     </div>`,
   },
   outcomeSlide('vf4b', 'What verification at frontline speed protects.', [
-    { n: '<24 hr', what: 'Hiring velocity kept', how: 'Verification stops being the bottleneck between offer and first shift — high-churn roles fill this week, not next.', proof: '50K+ cases/day · minutes for identity' },
+    { n: '<24 hr', what: 'Hiring speed, kept', how: 'Verification stops being the bottleneck between offer and first shift — high-churn roles fill this week, not next.', proof: '50K+ cases/day · minutes for identity' },
     { n: '1', what: 'Bad hire caught early pays for thousands of checks', how: 'A theft, an assault, one fraudulent identity in a customer\\u2019s home — the incident you prevent is the whole business case.', proof: 'Swiggy · Licious · Royal Orchid live' },
     { n: '−50%+', what: 'Re-verification cost on rehires', how: 'Frontline churn means the same workers return; profiles on the 25M+ layer re-clear in minutes instead of full-price rechecks.', proof: 'Shared worker-intelligence layer' },
     { n: '100%', what: 'Defensible, DPDPA-compliant records', how: 'Red/yellow/green case files with dated checks and PDF reports — when a client or regulator asks, you answer same-day.', proof: 'Audit-ready case trail, every worker' },

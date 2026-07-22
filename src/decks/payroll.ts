@@ -117,7 +117,7 @@ export const payrollSlides: SlideDef[] = [
     { n: '−90%', what: 'Payroll leakage recovered', how: 'Pay computes from face-verified attendance with minimum-wage guardrails — over- and under-payment both stop.', proof: 'Reliance: 90% ↓ leakage' },
     { n: '−80%', what: 'Principal-employer exposure', how: 'Every vendor challan OCR-checked monthly, worker-by-worker — documented due diligence under contract-labour law instead of discovered liability at audit.', proof: '3,000+ vendors reconciled at Reliance' },
     { n: 'Days → hours', what: 'Pay-cycle close time', how: 'Controlled batches with visible failure states replace spreadsheet consolidation — reruns target the failed slice, not the whole month.', proof: 'Batch pipeline with per-stage status' },
-    { n: '0', what: 'Audit-day surprises', how: 'Challan history, reconciliation records and an immutable trail live on the platform — the audit file writes itself all year.', proof: 'PF · ESI · PT · LWF workspaces' },
+    { n: '0', what: 'Audit-day surprises', how: 'Challan history, reconciliation records and an immutable trail live on the platform — when the notice arrives, the evidence is already filed.', proof: 'PF · ESI · PT · LWF workspaces' },
   ], 'Send one month of vendor challans through our OCR health check — the gap report usually pays for the pilot.'),
   {
     id: 'py6', theme: 'darker', title: 'Next steps',

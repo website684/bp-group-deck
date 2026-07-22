@@ -476,7 +476,7 @@ export const groupSlides: SlideDef[] = [
     html: `
     <div class="slidebody">
       <span class="eyebrow rise">AI Labs · the engine behind every module</span>
-      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:24ch;">You don't just buy software. You <span style="color:var(--yellow)">hire agents.</span></h2>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:24ch;">You don't buy software. You <span style="color:var(--yellow)">hire agents.</span></h2>
       <p class="lede rise" style="animation-delay:.18s;margin-top:12px;max-width:76ch;">Build an AI worker in 10 minutes — no code. Chatbots, voice agents and step-by-step workflows, trained on your documents, connected to your systems, on private LLMs. They run quizzes, cameras and forms right inside the chat — and every hire, check and course above runs on them.</p>
       <div class="ailwrap">
         <div class="rise" style="animation-delay:.26s">

@@ -76,7 +76,7 @@ export const hrisSlides: SlideDef[] = [
   outcomeSlide('hr3c', 'What one worker record saves across the year.', [
     { n: '0', what: 'Re-entry between systems', how: 'The record created at hiring is the one payroll pays and training tracks — the CSV-export-and-reimport ritual between five vendors ends.', proof: 'Onboard → Verify → Attend → Payroll → Upskill, one login' },
     { n: 'Hours → minutes', what: 'Answering "who is this worker?"', how: '360° profiles with tenure timelines and log history — vendor disputes and audit queries resolve from one screen.', proof: '1,014-associate demo master, searchable' },
-    { n: 'Enforced', what: 'Data completeness, not hoped for', how: 'Missing-info banners deep-link to the exact gap per module — records complete themselves before they block a pay run or a BGV.', proof: 'Cross-module gap banners in production' },
+    { n: 'Enforced', what: 'Records complete before they block anything', how: 'Missing-info banners deep-link to the exact gap per module — a missing bank detail gets fixed at entry, not on payday.', proof: 'Cross-module gap banners in production' },
     { n: 'Built in', what: 'Workforce BI without a data project', how: 'Embedded QuickSight dashboards over attendance, payroll and shortfalls — filterable by state, city, site from day one.', proof: '18,026 face-registered in one org\\u2019s view' },
   ], 'This layer comes free with any module you adopt — it is why starting anywhere still compounds.'),
   {

@@ -255,7 +255,7 @@ export const skillbetterSlides: SlideDef[] = [
       <h2 class="rise" style="animation-delay:.08s;max-width:28ch;">Built for your security review, <span style="color:var(--navy)">not just your L&amp;D team.</span></h2>
       <div class="capgrid three rise" style="animation-delay:.2s">
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.lock}</svg></span><h4>Enterprise security</h4><p>SOC 2 Type II · ISO 27001 · data localization in India &amp; SEA · enterprise-grade encryption</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.plug}</svg></span><h4>Seamless integration</h4><p>Pre-built connectors for Workday, Salesforce and SAP · API-first architecture · custom workflow automation</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.plug}</svg></span><h4>Plugs into your stack</h4><p>Pre-built connectors for Workday, Salesforce and SAP · API-first · no re-entry between systems</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.globe}</svg></span><h4>Global footprint</h4><p>Operations across India, SEA and GCC · multi-timezone support · local-language teams</p></div>
       </div>
       <div class="rise" style="animation-delay:.35s;margin-top:20px;padding-top:16px;border-top:1px solid var(--border);display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
@@ -268,7 +268,7 @@ export const skillbetterSlides: SlideDef[] = [
     { n: '−60%', what: 'Training cost per certified worker', how: 'AI translation replaces per-language content production; 250+ ready courses replace vendor commissions; completion means the spend lands.', proof: 'Reliance: 60% cost saving · 14 languages' },
     { n: 'Weeks → days', what: 'Time-to-productive for new joiners', how: '3× faster onboarding: a hire sells, picks or repairs sooner — every day earlier is a day of output you currently lose.', proof: 'Meesho: 3× faster · +40% sales uplift' },
     { n: '−15%', what: 'Attrition in the first 90 days', how: 'Workers who feel invested in stay; gamified journeys and recognition are retention levers, not toys.', proof: '+19.7% WoW retention at Meesho' },
-    { n: '100%', what: 'Compliance you can show an auditor', how: 'Mandatory enforcement, proctored exams and tamper-proof certificates — audit findings become screenshots, not scrambles.', proof: '91% completion on 222 Amazon audits' },
+    { n: '100%', what: 'Compliance you can show an auditor', how: 'Mandatory enforcement, proctored exams and tamper-proof certificates — when the auditor asks, you pull up the record instead of pulling a late night.', proof: '91% completion on 222 Amazon audits' },
   ], 'Put your own numbers in: workforce size × attrition × ₹15K training cost — we’ll model the saving in the first call.'),
   {
     id: 'sk7', theme: 'darker', title: 'Next steps',

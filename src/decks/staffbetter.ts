@@ -62,7 +62,7 @@ export const staffbetterSlides: SlideDef[] = [
   },
   outcomeSlide('sb5', 'What staffBetter changes in your operations.', [
     { n: '−40%', what: 'Time-to-fill collapses', how: 'Roles filled from a pre-verified pool in 24–72 hours instead of agency cycles of weeks — sites open on schedule, revenue days stop leaking.', proof: 'Mahindra: 300+ hires in 3 months' },
-    { n: '₹0', what: 'Statutory exposure on staffed workers', how: 'As employer of record, PF, ESIC, gratuity and labour-law liability sit with us — your audit file stays clean by construction.', proof: 'EoR across India · Indonesia · Malaysia' },
+    { n: '₹0', what: 'Statutory exposure on staffed workers', how: 'As employer of record, PF, ESIC, gratuity and labour-law liability sit with us — the exposure never lands on your books in the first place.', proof: 'EoR across India · Indonesia · Malaysia' },
     { n: '−15%', what: 'Frontline attrition', how: 'Insurance, early wage access and upskilling make deployed workers stay — every point of churn saved is a hiring and training cycle you never pay for.', proof: 'Welfare stack on every deployment' },
     { n: '1', what: 'Vendor, many markets', how: 'One contract replaces a patchwork of city agencies — one SLA, one compliance standard, one dashboard.', proof: '500+ cities · 3 country brands' },
   ], 'Bring us your hardest-to-staff site — we’ll quote fill rate and time-to-deploy against your current agency.'),

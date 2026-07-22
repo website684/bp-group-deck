@@ -130,7 +130,7 @@ export const attendanceSlides: SlideDef[] = [
     </div>`,
   },
   outcomeSlide('at5b', 'What spoof-proof attendance changes downstream.', [
-    { n: '−90%', what: 'Payroll leakage, gone', how: 'Ghost workers and buddy punching stop paying out the moment attendance is face-verified — on a 10,000-strong contract workforce that is crores a year, recovered.', proof: 'Reliance: 90% ↓ leakage · 300K workers' },
+    { n: '−90%', what: 'Payroll leakage, gone', how: 'Ghost workers and buddy punching stop paying out once attendance is face-verified — on a 10,000-strong contract workforce, that’s crores a year back in your budget.', proof: 'Reliance: 90% ↓ leakage · 300K workers' },
     { n: '−40%', what: 'Cost to run attendance ops', how: 'Rostering grids, bulk approvals and self-regularisation replace supervisors doing attendance arithmetic all morning.', proof: 'Zepto: 40% cost saving · 967 sites' },
     { n: 'Minutes', what: 'Shortfall response time', how: 'Live present/absent by site means today’s gap is filled today — not discovered in next week’s report.', proof: 'Real-time dashboards, every site' },
     { n: '+15%', what: 'HR team capacity back', how: 'Exception queues with Approve All and SLA counters turn a day of chasing into a sitting — HR works on people, not punches.', proof: 'One approvals queue, incl. spoof review' },
