@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import type { ClientConfig, DeckDef } from '../lib/types'
 import { decks, composeCustom, COMPOSABLE } from '../decks/registry'
+import { buildShareUrl } from '../lib/share'
 
 interface Props {
   client: ClientConfig | null
+  shareMode?: boolean
   onOpen: (deckId: string, custom?: string[]) => void
   onEditClient: () => void
 }
@@ -16,10 +18,21 @@ const groupLabels: Record<string, string> = {
   industry: 'Industry lenses',
 }
 
-export default function Hub({ client, onOpen, onEditClient }: Props) {
+export default function Hub({ client, shareMode = false, onOpen, onEditClient }: Props) {
   const [picking, setPicking] = useState(false)
   const [picked, setPicked] = useState<string[]>([])
+  const [copied, setCopied] = useState(false)
   const accent = client?.color || '#FFC401'
+
+  const copyShareLink = async () => {
+    try {
+      await navigator.clipboard.writeText(buildShareUrl(client))
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      prompt('Copy this client link:', buildShareUrl(client))
+    }
+  }
 
   const toggle = (id: string) =>
     setPicked((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]))
@@ -38,7 +51,12 @@ export default function Hub({ client, onOpen, onEditClient }: Props) {
             </>
           )}
         </div>
-        <button className="btn-ghost small" onClick={onEditClient}>Edit client branding</button>
+        {!shareMode && (
+          <div style={{ display: 'flex', gap: 10 }}>
+            <button className="btn-ghost small" onClick={copyShareLink}>{copied ? '✓ Link copied' : 'Copy client link'}</button>
+            <button className="btn-ghost small" onClick={onEditClient}>Edit client branding</button>
+          </div>
+        )}
       </header>
 
       <div className="hub-hero">
@@ -49,6 +67,9 @@ export default function Hub({ client, onOpen, onEditClient }: Props) {
           <button className="btn-primary big" onClick={() => onOpen('group')}>▶ Present the group story <span>{decks.find((d) => d.id === 'group')!.slides.length} slides · 15 min</span></button>
           <button className="btn-ghost" onClick={() => { setPicking(!picking); setPicked([]) }}>
             {picking ? 'Cancel custom flow' : 'Build a custom flow'}
+          </button>
+          <button className="btn-ghost" onClick={() => { window.location.hash = '/roi' }}>
+            💰 See what you'd save
           </button>
         </div>
         {picking && (

@@ -13,52 +13,52 @@ import { industryDecks } from './industries'
 
 export const decks: DeckDef[] = [
   {
-    id: 'group', title: 'The BetterPlace Group Story', group: 'story',
+    id: 'group', next: 'ai-labs', title: 'The BetterPlace Group Story', group: 'story',
     tagline: 'The full company pitch — problem, model, every product, proof and how to start. The one to open the meeting with.',
     slides: groupSlides,
   },
   {
-    id: 'ai-labs', title: 'AI Labs', group: 'ai',
+    id: 'ai-labs', next: 'skillbetter', title: 'AI Labs', group: 'ai',
     tagline: 'The flagship. Build an AI worker in 10 minutes — the studio, the agent roster, deterministic workflows, in-chat apps, pricing and live proof.',
     slides: aiLabsSlides,
   },
   {
-    id: 'skillbetter', title: 'skillBetter · LMS', group: 'product',
+    id: 'skillbetter', next: 'hire-onboard', title: 'skillBetter · LMS', group: 'product',
     tagline: '88% completion vs 25% industry — translation in 15 minutes, reels, gamification, proctored assessments, admin console.',
     slides: skillbetterSlides,
   },
   {
-    id: 'hire-onboard', title: 'Hire & Onboard', group: 'product',
+    id: 'hire-onboard', next: 'verify', title: 'Hire & Onboard', group: 'product',
     tagline: 'Full ATS + digital onboarding: WhatsApp-apply, AI screening, 10-minute self-onboarding straight into payroll.',
     slides: hireOnboardSlides,
   },
   {
-    id: 'verify', title: 'verifyBetter · BGV', group: 'product',
+    id: 'verify', next: 'attendance', title: 'verifyBetter · BGV', group: 'product',
     tagline: 'India’s first digital frontline BGV — 50K cases/day, <24hr TAT, red/yellow/green portfolio view.',
     slides: verifySlides,
   },
   {
-    id: 'attendance', title: 'Attendance · manageBetter', group: 'product',
+    id: 'attendance', next: 'payroll', title: 'Attendance · manageBetter', group: 'product',
     tagline: 'Face-verified, geo-fenced, spoof-proof attendance with rostering, approvals and a policy engine.',
     slides: attendanceSlides,
   },
   {
-    id: 'payroll', title: 'Payroll & Compliance', group: 'product',
+    id: 'payroll', next: 'hris', title: 'Payroll & Compliance', group: 'product',
     tagline: 'Never inherit a vendor’s PF/ESI liability — challan OCR, worker-by-worker reconciliation, audit-ready.',
     slides: payrollSlides,
   },
   {
-    id: 'hris', title: 'goBetter HRIS Core', group: 'product',
+    id: 'hris', next: 'staffbetter', title: 'goBetter HRIS Core', group: 'product',
     tagline: 'One worker record every module reads — employee master, 360° profiles, embedded BI.',
     slides: hrisSlides,
   },
   {
-    id: 'staffbetter', title: 'staffBetter · Managed Staffing', group: 'services',
+    id: 'staffbetter', next: 'gigbetter', title: 'staffBetter · Managed Staffing', group: 'services',
     tagline: 'Full-time frontline staffing with employer-of-record compliance — deployed in 24–72 hours from the verified 25M+ pool.',
     slides: staffbetterSlides,
   },
   {
-    id: 'gigbetter', title: 'gigBetter · On-demand Gig', group: 'services',
+    id: 'gigbetter', next: 'ai-labs', title: 'gigBetter · On-demand Gig', group: 'services',
     tagline: 'Outcome-billed gig deployment in under 24 hours — GPS + photo proof on every task, <4% no-shows.',
     slides: gigbetterSlides,
   },

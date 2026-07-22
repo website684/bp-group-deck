@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react'
 import Setup from './pages/Setup'
 import Hub from './pages/Hub'
+import Roi from './pages/Roi'
 import DeckPlayer from './engine/DeckPlayer'
 import { loadClient } from './lib/client'
+import { parseShare } from './lib/share'
 import { getDeck, buildCustomDeck } from './decks/registry'
+
+const share = parseShare()
 
 function parseHash(): { route: string; id?: string; mods?: string[]; slide?: number } {
   const h = window.location.hash.replace(/^#\/?/, '')
@@ -12,6 +16,7 @@ function parseHash(): { route: string; id?: string; mods?: string[]; slide?: num
   const parts = path.split('/').filter(Boolean)
   if (parts[0] === 'setup') return { route: 'setup' }
   if (parts[0] === 'hub') return { route: 'hub' }
+  if (parts[0] === 'roi') return { route: 'roi' }
   if (parts[0] === 'deck' && parts[1]) {
     const q = new URLSearchParams(query || '')
     const mods = q.get('mods')?.split(',').filter(Boolean)
@@ -31,11 +36,16 @@ export default function App() {
     return () => window.removeEventListener('hashchange', onHash)
   }, [])
 
-  const client = loadClient()
+  // Share mode: the link a client opens — branded from URL params, seller tools hidden.
+  const client = share.active ? share.client : loadClient()
   const nav = (to: string) => { window.location.hash = to }
 
-  if (hash.route === 'setup' || (hash.route === 'root' && !client)) {
+  if (!share.active && (hash.route === 'setup' || (hash.route === 'root' && !client))) {
     return <Setup initial={client} onDone={() => { bump((x) => x + 1); nav('/hub') }} />
+  }
+
+  if (hash.route === 'roi') {
+    return <Roi client={client} onBack={() => nav('/hub')} />
   }
 
   if (hash.route === 'deck' && hash.id) {
@@ -43,13 +53,14 @@ export default function App() {
       ? buildCustomDeck(hash.mods)
       : getDeck(hash.id)
     if (deck) {
-      return <DeckPlayer key={window.location.hash} deck={deck} client={client} initialSlide={hash.slide ?? 0} onExit={() => nav('/hub')} />
+      return <DeckPlayer key={window.location.hash} deck={deck} client={client} initialSlide={hash.slide ?? 0} shareMode={share.active} onExit={() => nav('/hub')} />
     }
   }
 
   return (
     <Hub
       client={client}
+      shareMode={share.active}
       onOpen={(id, custom) => nav(custom?.length ? `/deck/custom?mods=${custom.join(',')}` : `/deck/${id}`)}
       onEditClient={() => nav('/setup')}
     />

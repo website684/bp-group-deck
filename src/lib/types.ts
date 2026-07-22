@@ -13,6 +13,8 @@ export interface DeckDef {
   tagline: string
   group: 'story' | 'product' | 'services' | 'industry' | 'ai'
   slides: SlideDef[]
+  /** id of the deck to suggest when this one ends ("Where next?") */
+  next?: string
 }
 
 export interface ClientConfig {

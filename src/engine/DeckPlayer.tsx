@@ -24,10 +24,11 @@ interface Props {
   deck: DeckDef
   client: ClientConfig | null
   initialSlide?: number
+  shareMode?: boolean
   onExit: () => void
 }
 
-export default function DeckPlayer({ deck, client, initialSlide = 0, onExit }: Props) {
+export default function DeckPlayer({ deck, client, initialSlide = 0, shareMode = false, onExit }: Props) {
   const [cur, setCur] = useState(Math.min(Math.max(initialSlide, 0), deck.slides.length - 1))
   const deckRef = useRef<HTMLDivElement>(null)
   const curRef = useRef(0)
@@ -125,7 +126,24 @@ export default function DeckPlayer({ deck, client, initialSlide = 0, onExit }: P
         <button className="arrow" aria-label="Next" onClick={() => go(cur + 1)}>
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 6l6 6-6 6"/></svg>
         </button>
+        <button className="arrow" aria-label="Download PDF" title="Download as PDF (print)" onClick={() => window.print()}>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+        </button>
+        {cur === n - 1 && deck.next && (
+          <button className="nextdeck" onClick={() => { window.location.hash = `/deck/${deck.next}` }}>
+            Next: {deck.next.replace(/-/g, ' ')} →
+          </button>
+        )}
       </div>
+
+      {shareMode && (
+        <a
+          className="demo-cta"
+          href={`mailto:anuj.saxena@betterplace.co.in,onkar.vartak@betterplace.co.in?subject=${encodeURIComponent(`Demo request${client?.name ? ' — ' + client.name : ''} (via BetterPlace deck)`)}&body=${encodeURIComponent('Hi — we went through the BetterPlace deck and would like a 30-minute demo. Areas of interest: ')}`}
+        >
+          Book a 30-min demo →
+        </a>
+      )}
     </div>
   )
 }
