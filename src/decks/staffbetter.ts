@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { outcomeSlide } from './html'
+import { outcomeSlide, problemSlide } from './html'
 
 const groupStaff = groupSlides.find((s) => s.id === 's11')!
 
@@ -22,6 +22,11 @@ export const staffbetterSlides: SlideDef[] = [
       <div class="mdcover ghost">SB</div>
     </div>`,
   },
+  problemSlide('sb1b', 'For HR & operations', 'The agency model gives you bodies. You need a workforce.', [
+    { pain: 'Agency quality is a lottery, refreshed monthly', painDetail: 'Unscreened candidates churn out as fast as they arrive — you pay sourcing fees for the same seat several times a year.', painStat: '40–50% of frontline workers switching for pay/balance', fix: 'A verified pool with welfare that retains', fixDetail: 'BGV-verified candidates from the 25M+ pool, kept by insurance, early wage access and upskilling — churn drops because staying pays.', fixStat: 'Mahindra: 1,000+ execs built and kept' },
+    { pain: 'Your vendor’s compliance gap is your liability', painDetail: 'When the staffing agency underpays PF or misses ESIC, the principal-employer exposure lands on you.', painStat: '14B damages up to 100% of arrears', fix: 'We are the employer of record', fixDetail: 'PF, ESIC, payroll, gratuity and labour-law compliance sit with us — with real-time reporting so you can see it, not hope it.', fixStat: 'EoR across India · Indonesia · Malaysia' },
+    { pain: 'Every city means another vendor hunt', painDetail: 'Multi-city expansion multiplies agencies, contracts, rate cards and compliance standards.', painStat: 'One agency per city = ungovernable', fix: 'One partner, 500+ cities, three markets', fixDetail: 'AasaanJobs, MyRobin and Troopers run on one relationship, one SLA and one platform you can audit.', fixStat: '24–72 hr deployment anywhere' },
+  ], 'McKinsey frontline retention research · EPFO 14B · Mahindra Holidays engagement'),
   { ...groupStaff, id: 'sb2', title: 'staffBetter capabilities' },
   {
     id: 'sb3', theme: 'light', title: 'How an engagement runs',

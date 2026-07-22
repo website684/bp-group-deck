@@ -87,7 +87,7 @@ body { overflow: auto; background: #05081f; }
 .bframe .bbar .bdots i { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
 .bframe .bbar .burl { font-family: var(--mono); font-size: 9.5px; color: var(--muted); background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 3px 10px; flex: 1; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .bframe img { width: 100%; display: block; }
-.bframe.crop img { max-height: 46vh; object-fit: cover; object-position: top; }
+.bframe.crop img { max-height: 42vh; object-fit: cover; object-position: top; }
 .bcap { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: 10px; text-align: center; }
 .dark .bcap, .darker .bcap { color: rgba(255,255,255,.5); }
 .bcap b { color: var(--navy); } .dark .bcap b, .darker .bcap b { color: var(--yellow); }
@@ -190,6 +190,34 @@ body { overflow: auto; background: #05081f; }
 .testimonial .who { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--yellow); margin-top: 10px; }
 
 @media (max-width: 960px) { .capgrid, .capgrid.three, .quotes { grid-template-columns: 1fr 1fr; } }
+
+/* problem→fix map rows (buyer-lens slides) */
+.pmap { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+.pmrow { display: grid; grid-template-columns: 1.06fr 0.94fr; gap: 0; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); background: #fff; }
+.dark .pmrow, .darker .pmrow { border-color: rgba(255,255,255,.12); background: rgba(255,255,255,.04); }
+.pmrow .pain { padding: 11px 16px; border-left: 4px solid var(--red); }
+.pmrow .fix { padding: 11px 16px; background: rgba(61,190,123,.07); border-left: 1px dashed var(--border); }
+.dark .pmrow .fix, .darker .pmrow .fix { background: rgba(61,190,123,.08); border-left-color: rgba(255,255,255,.14); }
+.pmrow h4 { font-family: var(--disp); font-weight: 700; font-size: .95rem; color: var(--ink); line-height: 1.25; }
+.dark .pmrow h4, .darker .pmrow h4 { color: #fff; }
+.pmrow .pain h4::before { content: "✕  "; color: var(--red); font-weight: 800; }
+.pmrow .fix h4::before { content: "✓  "; color: var(--green); font-weight: 800; }
+.pmrow p { font-size: .8rem; line-height: 1.45; color: var(--text); margin-top: 4px; }
+.dark .pmrow p, .darker .pmrow p { color: rgba(255,255,255,.72); }
+.pmrow .stat { display: inline-block; margin-top: 5px; font-family: var(--mono); font-size: 9px; letter-spacing: .06em; text-transform: uppercase; color: var(--red); background: rgba(208,39,29,.08); border-radius: 20px; padding: 3px 9px; }
+.pmrow .fix .stat { color: #1a8f52; background: rgba(61,190,123,.13); }
+.pmfoot { font-family: var(--mono); font-size: 9.5px; letter-spacing: .05em; color: var(--muted); margin-top: 12px; }
+.dark .pmfoot, .darker .pmfoot { color: rgba(255,255,255,.45); }
+@media (max-width: 960px) { .pmrow { grid-template-columns: 1fr; } }
+
+/* persona cards (group deck — every seat at the table) */
+.personas { display: grid; grid-template-columns: repeat(5, 1fr); gap: 13px; margin-top: 18px; }
+.persona { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-top: 3px solid var(--pc, var(--yellow)); border-radius: 15px; padding: 17px 16px; }
+.persona .who { font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--pc, var(--yellow)); }
+.persona h4 { font-family: var(--disp); font-weight: 700; font-size: 1rem; color: #fff; margin: 7px 0 8px; line-height: 1.3; }
+.persona p { font-size: .78rem; line-height: 1.5; color: rgba(255,255,255,.7); }
+.persona .get { margin-top: 10px; font-size: .74rem; font-weight: 600; color: #7ee6ac; line-height: 1.45; }
+@media (max-width: 960px) { .personas { grid-template-columns: 1fr 1fr; } }
 
 /* outcome ledger rows */
 .ledger { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }

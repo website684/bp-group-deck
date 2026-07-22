@@ -14,6 +14,32 @@ export const fi = (icon: string, h: string, p: string, d: number) => `
 
 export const mstat = (n: string, l: string) => `<div class="mstat"><div class="n">${n}</div><div class="l">${l}</div></div>`
 
+/** Buyer-lens problem map — "your reality → what kills it", persona-framed, stat-anchored. */
+export const problemSlide = (
+  id: string,
+  persona: string,
+  headline: string,
+  rows: { pain: string; painDetail: string; painStat: string; fix: string; fixDetail: string; fixStat: string }[],
+  sources: string,
+): { id: string; theme: 'light'; title: string; html: string } => ({
+  id,
+  theme: 'light',
+  title: 'The problems we kill',
+  html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">${persona} · the problems on your desk → what kills them</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">${headline}</h2>
+      <div class="pmap">
+        ${rows.map((r, i) => `
+        <div class="pmrow rise" style="animation-delay:${0.2 + i * 0.09}s">
+          <div class="pain"><h4>${r.pain}</h4><p>${r.painDetail}</p><span class="stat">${r.painStat}</span></div>
+          <div class="fix"><h4>${r.fix}</h4><p>${r.fixDetail}</p><span class="stat">${r.fixStat}</span></div>
+        </div>`).join('')}
+      </div>
+      <div class="pmfoot rise" style="animation-delay:.6s">Sources: ${sources}</div>
+    </div>`,
+})
+
 /** Outcome ledger slide — the "what changes in your business" slide every deck carries. */
 export const outcomeSlide = (
   id: string,

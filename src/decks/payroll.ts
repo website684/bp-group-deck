@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe, icons, outcomeSlide } from './html'
+import { bframe, icons, outcomeSlide, problemSlide } from './html'
 
 const groupPayroll = groupSlides.find((s) => s.id === 's8b')!
 
@@ -21,6 +21,12 @@ export const payrollSlides: SlideDef[] = [
       <div class="mdcover ghost">PF</div>
     </div>`,
   },
+  problemSlide('py1b', 'For compliance & finance', 'The penalty clock is already running on someone’s delay.', [
+    { pain: 'A vendor’s PF default becomes your bill', painDetail: 'As principal employer you are jointly liable under contract-labour law when a contractor underpays — and you find out at the audit, years of interest later.', painStat: '7Q interest: 12% p.a. + 14B damages up to 100% of arrears', fix: 'Challan OCR reconciles every vendor, monthly', fixDetail: 'PF/ESI challans read automatically and matched worker-by-worker against computed dues; gaps flagged the month they happen, with documented due diligence.', fixStat: 'Reliance: −80% vendor non-compliance' },
+    { pain: 'Minimum-wage misses hide in salary structures', painDetail: 'State- and skill-level wage floors change; one wrong Basic in a template quietly violates on thousands of workers.', painStat: 'Per-state floors · revised twice yearly', fix: 'Validation blocks bad structures before payroll', fixDetail: 'Inline minimum-wage guardrails stop a non-compliant Basic at data entry — not in a labour-department notice.', fixStat: 'Blocking error, screenshot on the next slide' },
+    { pain: 'Payroll leakage no one can locate', painDetail: 'Ghost workers, unverified overtime and manual consolidation mean you pay a workforce that partially isn’t there.', painStat: 'Time theft ≈ 1.5–5% of gross payroll · APA', fix: 'Pay computes from face-verified attendance only', fixDetail: 'The attendance→payroll pipe is one system: no punch, no pay — and every rupee traces back to a verified log.', fixStat: 'Reliance: −90% payroll leakage' },
+    { pain: 'Audit prep is a quarterly fire drill', painDetail: 'Challans in email, registers in Excel, proofs with vendors — assembling one audit response takes weeks.', painStat: 'Evidence scattered across 5+ places', fix: 'The audit file writes itself all year', fixDetail: 'Challan history, reconciliation status and batch trails live on the platform — PF · ESI · PT · LWF, one workspace each.', fixStat: 'Same-day audit answers' },
+  ], 'EPFO Sections 7Q & 14B (post-Jun 2024 rates) · American Payroll Association · Reliance Retail deployment'),
   { ...groupPayroll, id: 'py2', title: 'Challan OCR & reconciliation' },
   {
     id: 'py2b', theme: 'light', title: 'Capability map',

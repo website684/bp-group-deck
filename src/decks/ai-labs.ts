@@ -1,5 +1,5 @@
 import type { SlideDef } from '../lib/types'
-import { bframe, fi, icons, outcomeSlide } from './html'
+import { bframe, fi, icons, outcomeSlide, problemSlide } from './html'
 
 export const aiLabsSlides: SlideDef[] = [
   {
@@ -23,6 +23,12 @@ export const aiLabsSlides: SlideDef[] = [
     </div>
     <div class="mdcover ghost">AI</div>`,
   },
+  problemSlide('ai1b', 'For founders & COOs', 'Ops headcount grows with your workforce. It doesn’t have to.', [
+    { pain: 'Every 1,000 workers adds support and admin heads', painDetail: 'Helpdesk tickets, onboarding paperwork and L&D chasing scale linearly with the frontline — margin erodes as you grow.', painStat: 'L&D admin alone: ~60% of team time', fix: 'Agents absorb the volume at ₹0.37 a conversation', fixDetail: 'Onboarding, helpdesk, compliance and coaching run as agents — 5,000 workers served for about ₹1,860 a month.', fixStat: '−38% L&D ops time, measured' },
+    { pain: 'Generic chatbots are a compliance incident waiting', painDetail: 'A probabilistic bot can skip step 5 of your safety induction or invent a policy answer — unacceptable in BFSI, pharma, manufacturing.', painStat: 'No audit trail = no defence', fix: 'Deterministic workflows with guardrails that act', fixDetail: 'Every mandatory step runs in order, every time; PII masking and hallucination guards pause the agent and raise an event.', fixStat: '100% audit trail per worker' },
+    { pain: 'AI pilots die in the IT and vendor queue', painDetail: 'Six months of scoping, a data-science hire, an integration project — most frontline AI never ships.', painStat: 'Typical enterprise AI pilot: quarters', fix: 'Built by your ops team in 10 minutes, no code', fixDetail: 'Pick a brain, feed your documents, toggle capabilities, embed in WhatsApp or your app — MCP write-back handles systems.', fixStat: 'Subway HRMS integration: one day' },
+    { pain: 'Your workforce data trains someone else’s model', painDetail: 'Sending worker conversations to public AI APIs is a DPDPA and confidentiality problem your board will ask about.', painStat: 'Public-API AI = data leaves the building', fix: 'Private LLMs, data stays in India', fixDetail: 'vLLM on dedicated GPU, ISO 27001 · SOC 2, per-agent cost limits and token logs — white-label if you want it invisible.', fixStat: 'Your data never leaves the platform' },
+  ], 'AI Labs production metrics · IFFCO Tokio & Subway deployments'),
   {
     id: 'ai2', theme: 'light', title: 'The Studio',
     html: `

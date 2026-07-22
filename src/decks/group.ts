@@ -69,6 +69,25 @@ export const groupSlides: SlideDef[] = [
   `,
   },
   {
+    id: "s2b",
+    theme: "darker",
+    title: "EVERY SEAT AT THE TABLE",
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">One platform · a different win for every seat at your table</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:30ch;">Whoever you brought to this meeting, we built something for them.</h2>
+      <div class="personas">
+        <div class="persona rise" style="--pc:#FFC401;animation-delay:.22s"><div class="who">CHRO / Head of HR</div><h4>One truth about your workforce</h4><p>One record from hire to rehire — headcount, history and audit answers from a single screen.</p><div class="get">→ goBetter HRIS · Hire &amp; Onboard decks</div></div>
+        <div class="persona rise" style="--pc:#32CAD4;animation-delay:.30s"><div class="who">COO / Ops head</div><h4>Sites staffed, shifts filled, no ghosts</h4><p>Face-verified attendance, live shortfall visibility, rosters published in minutes.</p><div class="get">→ Attendance · gigBetter decks</div></div>
+        <div class="persona rise" style="--pc:#E8503F;animation-delay:.38s"><div class="who">CFO / Compliance</div><h4>Leakage stopped, liability shielded</h4><p>−90% payroll leakage; every vendor challan reconciled; 12%-interest surprises never accrue.</p><div class="get">→ Payroll &amp; Compliance · verifyBetter decks</div></div>
+        <div class="persona rise" style="--pc:#3DBE7B;animation-delay:.46s"><div class="who">L&amp;D head</div><h4>Training the frontline finishes</h4><p>88% completion in 35+ languages, proctored and audit-ready — with ROI you can show.</p><div class="get">→ skillBetter deck</div></div>
+        <div class="persona rise" style="--pc:#7C6BF0;animation-delay:.54s"><div class="who">Founder / CEO</div><h4>Ops that scale without headcount</h4><p>AI agents at ₹0.37 an interaction, one partner across 8 markets, outcomes with named proof.</p><div class="get">→ AI Labs deck · the outcome ledger ahead</div></div>
+      </div>
+      <div class="clientline rise" style="color:rgba(255,255,255,.6);margin-top:18px;animation-delay:.65s">This deck is clickable — from the menu, open the deep-dive for whoever is in the room.</div>
+    </div>
+  `,
+  },
+  {
     id: "s3",
     theme: "dark",
     title: "WHO WE ARE",

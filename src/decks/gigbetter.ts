@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { outcomeSlide } from './html'
+import { outcomeSlide, problemSlide } from './html'
 
 const groupGig = groupSlides.find((s) => s.id === 's12')!
 
@@ -22,6 +22,11 @@ export const gigbetterSlides: SlideDef[] = [
       <div class="mdcover ghost">GG</div>
     </div>`,
   },
+  problemSlide('gb1b', 'For operations & finance', 'You staff for the peak and pay for the valley.', [
+    { pain: 'Fixed headcount sized to the busiest week', painDetail: 'Festive, audit season, launches — capacity built for spikes idles the rest of the year on your payroll.', painStat: 'Peak-sized teams · 52-week cost', fix: 'Scale 1 → 500+ inside 24 hours, then back down', fixDetail: 'AI-matched gig workers by skill, proximity and rating — deployed for the spike, gone with it.', fixStat: '<24 hr deployment · 2–4 hr replacement' },
+    { pain: 'You pay invoices you can’t verify', painDetail: 'Field vendors bill on claimed attendance and claimed tasks — disputes are monthly, proof is nobody’s.', painStat: 'Claimed work ≠ verified work', fix: '100% outcome billing with GPS + photo proof', fixDetail: 'Every billed task carries a location check-in and photo evidence — the invoice argument ends.', fixStat: 'Audit any task, any time' },
+    { pain: 'Gig quality collapses exactly when you need it', painDetail: 'No-shows spike on the days that matter most, and replacements take days you don’t have.', painStat: 'Industry no-show rates run double digits', fix: 'Rated, insured supply that returns', fixDetail: 'Pre-screened workers with job insurance and early wage access — quality supply that shows up again.', fixStat: '<4% no-shows · 95% proctor retention' },
+  ], 'gigBetter deployment data · assessment-platform engagement (5,000 drives)'),
   { ...groupGig, id: 'gb2', title: 'gigBetter capabilities' },
   {
     id: 'gb3', theme: 'light', title: 'The economics',

@@ -1,5 +1,5 @@
 import type { SlideDef } from '../lib/types'
-import { bframe, fi, icons, outcomeSlide } from './html'
+import { bframe, fi, icons, outcomeSlide, problemSlide } from './html'
 
 export const skillbetterSlides: SlideDef[] = [
   {
@@ -79,6 +79,12 @@ export const skillbetterSlides: SlideDef[] = [
       </div>
     </div>`,
   },
+  problemSlide('sk2b', 'For the L&D leader', 'Every pain on your review deck, matched to the feature that kills it.', [
+    { pain: 'Onboarding takes 45+ days you don’t have', painDetail: 'At 15% monthly attrition, a slow ramp means workers leave around the time they become productive.', painStat: '45+ days typical · 15%/mo churn', fix: 'Journeys that certify in days', fixDetail: 'Role-specific playlists, bite-sized chapters and event-based triggers — 3× faster time-to-productive.', fixStat: 'Zepto riders: certified before first order' },
+    { pain: 'English content, vernacular workforce', painDetail: '70% of frontline workers learn better in their own language; per-language content production is unaffordable.', painStat: '70% prefer vernacular · ₹15K+ cost/head', fix: 'One upload → 35+ languages in minutes', fixDetail: 'The AI translation console converts video, PDF and PPT with voice and tone control — record once in English, live in Tamil by lunch.', fixStat: '500K+ translations · <15 min' },
+    { pain: 'Compliance completion you can’t defend', painDetail: 'Certificates without proctoring collapse under audit; chasing completion eats 60% of L&D admin time.', painStat: '~30% of certifications lapse untracked', fix: 'Proctored, enforced, self-running', fixDetail: '99.2% face-detection proctoring, mandatory-course pinning, recurring assessments with automated reminders.', fixStat: 'Amazon: 91% completion, 222 audits' },
+    { pain: 'No line of sight to training ROI', painDetail: 'Licence fees accrue while dashboards show enrolments, not behaviour — the CFO asks what changed and you can’t answer.', painStat: '10–15% active use on traditional LMS', fix: '250+ data points, tied to outcomes', fixDetail: 'Completion by user, city and partner; performance tracking in the learner app; API sync into your PMS.', fixStat: 'Meesho: +40% sales uplift, measured' },
+  ], 'skillBetter deployment data · BetterPlace Frontline Index FY23 · client case studies'),
   {
     id: 'sk3', theme: 'light', title: 'Core capabilities',
     html: `
@@ -220,8 +226,8 @@ export const skillbetterSlides: SlideDef[] = [
       <span class="eyebrow rise">Journeys &amp; governance · the admin side, continued</span>
       <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Onboarding journeys and compliance assessments <span style="color:var(--navy)">run themselves.</span></h2>
       <div class="shotgrid rise" style="animation-delay:.22s;margin-top:18px;">
-        ${bframe('assets/product/figma/skilling/playlist-library-onboarding-journeys.jpg', 'gobetter · Skilling · Playlist Library', 'Learning journeys at scale — <b>298 playlists</b> with status, language, distribution &amp; scheduling')}
-        ${bframe('assets/product/figma/skilling/assessment-advanced-settings.jpg', 'gobetter · Skilling · Assessment Settings', 'Recurring compliance assessments — schedule, occurrences, <b>automated reminders &amp; push cadence</b>')}
+        ${bframe('assets/product/figma/skilling/playlist-library-onboarding-journeys.jpg', 'gobetter · Skilling · Playlist Library', 'Learning journeys at scale — <b>298 playlists</b> with status, language, distribution &amp; scheduling', true)}
+        ${bframe('assets/product/figma/skilling/assessment-advanced-settings.jpg', 'gobetter · Skilling · Assessment Settings', 'Recurring compliance assessments — schedule, occurrences, <b>automated reminders &amp; push cadence</b>', true)}
       </div>
       <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:92ch;">Set a quarterly POSH assessment once: it re-runs, reminds and reports on its own. Your L&amp;D team stops being the follow-up department.</p>
     </div>`,

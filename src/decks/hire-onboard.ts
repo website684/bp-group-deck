@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe, fi, icons, outcomeSlide } from './html'
+import { bframe, fi, icons, outcomeSlide, problemSlide } from './html'
 
 const groupHire = groupSlides.find((s) => s.id === 's7')!
 
@@ -21,6 +21,12 @@ export const hireOnboardSlides: SlideDef[] = [
       <div class="mdcover ghost">GO</div>
     </div>`,
   },
+  problemSlide('ho1b', 'For talent acquisition', 'Frontline hiring is a treadmill set to festive speed.', [
+    { pain: 'Attrition means you never stop hiring', painDetail: 'At 15% monthly churn a 1,000-worker operation re-hires its entire workforce every seven months — with festive peaks hitting 23%.', painStat: '15%/mo avg · 23% festive peak · Frontline Index', fix: 'An always-on funnel instead of hiring sprints', fixDetail: 'Standing requisitions across boards, QR posters, referrals and WhatsApp-apply keep the pipeline warm before the spike hits.', fixStat: 'Post once, fan out everywhere' },
+    { pain: 'Application forms lose the best candidates', painDetail: 'Frontline workers don’t have CVs and won’t install an app to apply — every extra screen is drop-off.', painStat: 'App-install + CV = abandoned applications', fix: 'No CV, no install — apply in minutes', fixDetail: 'Guided, vernacular, WhatsApp-first application with progressive documents: selfie and Aadhaar in-flow, the rest deferred.', fixStat: 'Subway journey: role + pay intent up front' },
+    { pain: 'Recruiters drown in unfit applications', painDetail: 'Thousands apply, a fraction fit — your team spends its week rejecting instead of closing.', painStat: '4,820 sourced → 720 worth interviewing', fix: 'AI screens overnight, ranks by fit', fixDetail: 'AI Jack interviews over WhatsApp, voice bots call and score — recruiters open a ranked shortlist at 9 AM.', fixStat: '−60% time-to-hire · −20% CPA' },
+    { pain: 'Offer accepted ≠ day-one arrival', painDetail: 'Between offer and joining, paperwork friction and silence lose signed candidates to whoever onboards faster.', painStat: 'Offer-to-join dropout is the silent leak', fix: '10-minute onboarding on their own phone', fixDetail: 'Docs, BGV, bank and e-sign complete before the excitement fades — the record lands in payroll untouched.', fixStat: '505 of 540 offers onboarded' },
+  ], 'BetterPlace Frontline Index FY23 · production funnel data · Subway candidate-journey prototype'),
   { ...groupHire, id: 'ho2', title: 'The hiring pipeline' },
   {
     id: 'ho2b', theme: 'light', title: 'ATS capability map',

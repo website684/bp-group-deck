@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe, icons, outcomeSlide } from './html'
+import { bframe, icons, outcomeSlide, problemSlide } from './html'
 
 const groupAttend = groupSlides.find((s) => s.id === 's8')!
 
@@ -22,6 +22,12 @@ export const attendanceSlides: SlideDef[] = [
       <div class="mdcover ghost">AT</div>
     </div>`,
   },
+  problemSlide('at1b', 'For the ops leader', 'You already suspect the muster is lying to you.', [
+    { pain: 'Buddy punching pays ghosts every month', painDetail: '74% of employers lose to time theft — a colleague swipes for a friend who isn’t on site, and payroll pays reality it never saw.', painStat: '≈2.2% of gross payroll lost · Nucleus Research', fix: 'Face + geo check-in, spoofs queued for review', fixDetail: 'AI face-match with liveness inside a geo-fence; suspect punches land in a "Possible spoofs" approval tab, not in payroll.', fixStat: 'Zepto: 0 spoofs across 967 sites' },
+    { pain: 'You learn about no-shows at shift start', painDetail: 'The gap surfaces when the line is already short — then it’s WhatsApp panic and overtime you didn’t budget.', painStat: 'Frontline attrition peaks 23% in festive months', fix: 'Live present/absent by site, roster gaps flagged', fixDetail: 'Real-time dashboards and weekly roster grids show tomorrow’s shortfall today — filled in minutes, not discovered at 9 AM.', fixStat: 'Shortfall fixes: hours → minutes' },
+    { pain: 'OT and attendance disputes eat supervisor hours', painDetail: 'Missed punches become arguments; corrections happen in Excel with no trail an auditor will accept.', painStat: 'Manual musters = unauditable corrections', fix: 'Worker self-service with controlled regularisation', fixDetail: 'Workers see hours, earnings and IN/OUT proof on their phone and correct errors through a guided, reasoned, approved flow.', fixStat: 'Every correction logged + approved' },
+    { pain: 'Every site runs its own attendance culture', painDetail: 'Thresholds, buffers and holiday rules live in local spreadsheets — policy exists on paper, not in practice.', painStat: 'Multi-site = multi-truth', fix: 'One policy engine across every site and vendor', fixDetail: 'Org-level thresholds, OT caps, edit windows, holiday tables and per-vendor rules — configured once, enforced everywhere.', fixStat: 'Reliance: 3,000+ vendors, one rule engine' },
+  ], 'Nucleus Research / APA time-theft studies · BetterPlace Frontline Index FY23 · client deployments'),
   { ...groupAttend, id: 'at2', title: 'Face + geo attendance' },
   {
     id: 'at2c', theme: 'dark', title: 'The worker’s view',
