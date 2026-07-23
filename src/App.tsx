@@ -40,7 +40,8 @@ export default function App() {
   const client = share.active ? share.client : loadClient()
   const nav = (to: string) => { window.location.hash = to }
 
-  if (!share.active && (hash.route === 'setup' || (hash.route === 'root' && !client))) {
+  // The front page is the hub; client setup is opt-in via the top-right button.
+  if (!share.active && hash.route === 'setup') {
     return <Setup initial={client} onDone={() => { bump((x) => x + 1); nav('/hub') }} />
   }
 
