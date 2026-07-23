@@ -72,11 +72,32 @@ export default function DeckPlayer({ deck, client, initialSlide = 0, shareMode =
     const root = deckRef.current
     if (!root) return
     const active = root.children[cur] as HTMLElement | undefined
+    let builderTimer: number | undefined
     if (active) {
       active.scrollTop = 0
       countUp(active)
       active.querySelectorAll<HTMLVideoElement>('video').forEach((v) => { v.play().catch(() => {}) })
+      // Animated plan builder (incentives deck): auto-advance Business → Brand → Reward → Done
+      const builder = active.querySelector('#builder')
+      if (builder) {
+        const stages = builder.querySelectorAll('.bstage')
+        const steps = builder.querySelectorAll('.bstep')
+        const crumbs = builder.querySelectorAll('.bcrumb')
+        let i = 0
+        const render = () => {
+          stages.forEach((s, k) => s.classList.toggle('show', k === i))
+          steps.forEach((s, k) => {
+            s.classList.remove('on', 'done')
+            if (k < i) s.classList.add('done')
+            if (k === i) s.classList.add('on')
+          })
+          crumbs.forEach((c, k) => c.classList.toggle('on', k < i))
+        }
+        render()
+        builderTimer = window.setInterval(() => { i = (i + 1) % stages.length; render() }, 2400)
+      }
     }
+    return () => { if (builderTimer) window.clearInterval(builderTimer) }
   }, [cur])
 
   const slide: SlideDef = deck.slides[cur]

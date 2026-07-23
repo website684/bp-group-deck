@@ -10,6 +10,8 @@ import { hrisSlides } from './hris'
 import { staffbetterSlides } from './staffbetter'
 import { gigbetterSlides } from './gigbetter'
 import { industryDecks } from './industries'
+import { incentivesSlides } from './incentives'
+import { salesStorySlides } from './sales-story'
 
 export const decks: DeckDef[] = [
   {
@@ -19,6 +21,11 @@ export const decks: DeckDef[] = [
     // products → AI → services → outcomes → why us → start. Deep decks carry the rest.
     slides: ['s1', 's2', 's13b', 's2b', 's5', 's6', 's7', 's8', 's8b', 's9', 's10', 's11', 's12', 's14', 's14b', 'sclose']
       .map((id) => groupSlides.find((s) => s.id === id)!),
+  },
+  {
+    id: 'sales-story', next: 'incentives', title: 'goBetter for Sales Teams', group: 'story',
+    tagline: 'The story for revenue leaders — field and retail sellers hired, trained, coached, tracked and incentivised on one platform.',
+    slides: salesStorySlides,
   },
   {
     id: 'ai-labs', next: 'skillbetter', title: 'AI Labs', group: 'ai',
@@ -46,7 +53,12 @@ export const decks: DeckDef[] = [
     slides: attendanceSlides,
   },
   {
-    id: 'payroll', next: 'hris', title: 'Payroll & Compliance', group: 'product',
+    id: 'incentives', next: 'hris', title: 'goBetter Incentives', group: 'product',
+    tagline: 'Every sale rewarded, every rupee explained — AI-built schemes, live earnings in the associate’s pocket, disputes that close themselves.',
+    slides: incentivesSlides,
+  },
+  {
+    id: 'payroll', next: 'incentives', title: 'Payroll & Compliance', group: 'product',
     tagline: 'Never inherit a vendor’s PF/ESI liability — challan OCR, worker-by-worker reconciliation, audit-ready.',
     slides: payrollSlides,
   },
@@ -73,7 +85,7 @@ export function getDeck(id: string): DeckDef | undefined {
 }
 
 /** Modules that can be stitched into a custom flow */
-export const COMPOSABLE = ['ai-labs', 'skillbetter', 'hire-onboard', 'verify', 'attendance', 'payroll', 'hris', 'staffbetter', 'gigbetter']
+export const COMPOSABLE = ['ai-labs', 'skillbetter', 'hire-onboard', 'verify', 'attendance', 'payroll', 'incentives', 'hris', 'staffbetter', 'gigbetter']
 
 export function composeCustom(mods: string[]): SlideDef[] {
   const opening = groupSlides.filter((s) => ['s1', 's2', 's3', 's5'].includes(s.id))

@@ -133,6 +133,39 @@ const OVERLAYS: Record<string, AIOverlayDef> = {
       { name: 'Risk scoring', role: 'No-show prediction', status: 'beta' },
     ],
   },
+  'incentives': {
+    domain: 'Sales incentives',
+    headline: 'AI that builds the scheme, sets fair targets, and catches the gaming.',
+    sub: 'Describe an incentive in a sentence and it becomes a working plan — simulated on last month’s real sales before a rupee is committed.',
+    levers: [
+      { n: '1 sentence', title: 'Scheme → working plan', desc: '"2% on watches, ₹500 per smartwatch, Diwali bonus, cap ₹40K" — the copilot builds it, you review and launch.' },
+      { n: 'Fair', title: 'Targets set per person', desc: 'Targets based on what each seller actually sells — reachable, not demoralising.' },
+      { n: 'Pre-launch', title: 'Cost simulated on real sales', desc: 'Run any scheme against last month’s data — see total cost and every payout before committing.' },
+      { n: 'Caught', title: 'Gaming & mistakes flagged', desc: 'Split bills, month-end spikes and returns-after-payday spotted before they cost you.' },
+    ],
+    agents: [
+      { name: 'Plan copilot', role: 'Scheme authoring', status: 'beta' },
+      { name: 'File mapper', role: 'Messy CSV → clean data', status: 'live' },
+      { name: 'Gaming detector', role: 'Anomaly flags', status: 'beta' },
+    ],
+  },
+  'sales-story': {
+    domain: 'Sales teams',
+    headline: 'AI working every seat of your revenue team.',
+    sub: 'Screening calls, roleplay coaching, mid-pitch answers, incentive copilots — the selling lifecycle runs on AI Labs agents.',
+    levers: [
+      { n: '30–50%', title: 'Faster seller hiring', desc: 'AI voice calls screen every applicant in their language the day they apply.' },
+      { n: '30,000', title: 'Reps coached by AI Max', desc: 'Live roleplays scored on tone, empathy and accuracy — running today at IFFCO Tokio.' },
+      { n: '4 sec', title: 'Mid-pitch answers', desc: 'AI Theo answers spec and policy questions from your documents while the customer is still there.' },
+      { n: '1 sentence', title: 'Incentive schemes built by AI', desc: 'The plan copilot turns a description into a simulated, launch-ready scheme.' },
+    ],
+    agents: [
+      { name: 'AI Max', role: 'Sales coach', status: 'live' },
+      { name: 'AI Jack', role: 'Screening', status: 'beta' },
+      { name: 'AI Theo', role: 'Product tutor', status: 'live' },
+      { name: 'Plan copilot', role: 'Incentives', status: 'beta' },
+    ],
+  },
   'group': {
     domain: 'The whole lifecycle',
     headline: 'One AI runtime working every stage of your frontline.',
