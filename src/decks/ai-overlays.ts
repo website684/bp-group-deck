@@ -189,6 +189,7 @@ const OVERLAYS: Record<string, AIOverlayDef> = {
 
 export function getAIOverlay(deckId: string): AIOverlayDef {
   if (OVERLAYS[deckId]) return OVERLAYS[deckId]
+  if (deckId === 'gobetter') return OVERLAYS['group']
   if (deckId.startsWith('ind-')) return OVERLAYS['group']
   return OVERLAYS['group']
 }

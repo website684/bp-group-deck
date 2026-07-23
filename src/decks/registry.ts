@@ -12,6 +12,7 @@ import { gigbetterSlides } from './gigbetter'
 import { industryDecks } from './industries'
 import { incentivesSlides } from './incentives'
 import { salesStorySlides } from './sales-story'
+import { gobetterSlides } from './gobetter'
 
 export const decks: DeckDef[] = [
   {
@@ -31,6 +32,11 @@ export const decks: DeckDef[] = [
     id: 'ai-labs', next: 'skillbetter', title: 'AI Labs', group: 'ai',
     tagline: 'The flagship. Build an AI worker in 10 minutes — the studio, the agent roster, deterministic workflows, in-chat apps, pricing and live proof.',
     slides: aiLabsSlides,
+  },
+  {
+    id: 'gobetter', next: 'ai-labs', title: 'goBetter · The Full Suite', group: 'product',
+    tagline: 'All eight software modules in one deck — hire, onboard, verify, attend, payroll, incentives, LMS and the HRIS core they share.',
+    slides: gobetterSlides,
   },
   {
     id: 'skillbetter', next: 'hire-onboard', title: 'skillBetter · LMS', group: 'product',
