@@ -74,7 +74,7 @@ export default function Hub({ client, shareMode = false, onOpen, onEditClient }:
         </p>
         <div className="hub-cta-row">
           <button className="btn-primary big" onClick={() => onOpen('group')}>▶ The 15-minute company story <span>{decks.find((d) => d.id === 'group')!.slides.length} slides</span></button>
-          <button className="btn-ghost" onClick={() => onOpen('sales-story')}>For sales teams →</button>
+          <button className="btn-story big" onClick={() => onOpen('sales-story')}>▶ goBetter for Sales Teams <span>{decks.find((d) => d.id === 'sales-story')!.slides.length} slides · field & retail sellers</span></button>
           <button className="btn-ghost" onClick={() => { window.location.hash = '/roi' }}>💰 What you'd save</button>
           <button className="btn-ghost" onClick={() => { setPicking(!picking); setPicked([]) }}>
             {picking ? 'Cancel' : 'Mix your own deck'}
