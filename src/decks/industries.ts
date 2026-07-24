@@ -1,6 +1,7 @@
 import type { SlideDef, DeckDef } from '../lib/types'
 
 interface AgentSpec { name: string; role: string; desc: string; color: string; status: 'live' | 'beta' | 'soon' }
+interface CapSpec { h: string; p: string }
 interface IndustryDef {
   id: string
   label: string
@@ -11,13 +12,27 @@ interface IndustryDef {
   agents: AgentSpec[]
   caseHtml: string
   start: { h: string; p: string }[]
+  /** optional sector-specific capability slide (eyebrow, headline, 6 capability tiles) */
+  caps?: { eyebrow: string; headline: string; foot: string; items: CapSpec[] }
 }
 
 const agentCard = (a: AgentSpec, d: number) => `
   <div class="ag rise" style="--ac:${a.color};animation-delay:${d}s"><div class="agtop"><span class="agbot"><span class="head"></span><span class="eyes"><i></i><i></i></span></span><span class="agstat ${a.status}"><span class="d"></span>${a.status === 'live' ? 'Live' : a.status === 'beta' ? 'Beta' : 'Soon'}</span></div><div class="role">${a.role}</div><h4>${a.name}</h4><p>${a.desc}</p></div>`
 
 function industrySlides(def: IndustryDef): SlideDef[] {
-  return [
+  const capsSlide: SlideDef | null = def.caps ? {
+    id: `${def.id}-2b`, theme: 'light', title: 'Sector capabilities',
+    html: `
+      <div class="slidebody">
+        <span class="eyebrow rise">${def.caps.eyebrow}</span>
+        <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">${def.caps.headline}</h2>
+        <div class="capgrid rise" style="animation-delay:.2s">
+          ${def.caps.items.map((c) => `<div class="cap"><h4>${c.h}</h4><p>${c.p}</p></div>`).join('')}
+        </div>
+        <div class="clientline rise" style="animation-delay:.4s;margin-top:14px;">${def.caps.foot}</div>
+      </div>`,
+  } : null
+  const base: SlideDef[] = [
     {
       id: `${def.id}-1`, theme: 'dark', title: `${def.label} cover`,
       html: `
@@ -68,6 +83,9 @@ function industrySlides(def: IndustryDef): SlideDef[] {
       </div>`,
     },
   ]
+  // capability slide sits right after the problems slide (index 2)
+  if (capsSlide) base.splice(2, 0, capsSlide)
+  return base
 }
 
 const INDUSTRIES: IndustryDef[] = [
@@ -122,6 +140,19 @@ const INDUSTRIES: IndustryDef[] = [
       { h: 'Challan health check', p: 'Last month’s vendor challans through our OCR — every short-payment and wrong UAN, itemised.' },
       { h: 'Safety agent pilot', p: 'Your induction SOP as a deterministic agent, with camera proof and certificates, in two weeks.' },
     ],
+    caps: {
+      eyebrow: 'Built for contract labour on the factory floor',
+      headline: 'The compliance surface a plant actually runs on.',
+      foot: 'Everything ties to one worker record — so a gate pass can’t issue without a valid work order, BGV and safety induction behind it.',
+      items: [
+        { h: 'Work-order deployment', p: 'Every contract worker mapped to a work order / PO; headcount, wages and billing tracked against it, per contractor.' },
+        { h: 'CLRA compliance', p: 'Contract Labour Act registers, licence limits and principal-employer obligations tracked — worker counts stay inside each contractor’s licensed strength.' },
+        { h: 'WC / EC policy tracking', p: 'Workmen’s Compensation cover recorded per worker and contractor; expiries flagged before anyone works uninsured.' },
+        { h: 'Gate pass', p: 'Digital gate-pass issue and expiry for workers and visitors; entry gated on a valid pass, biometric at the gate, VAMS-style visitor flow.' },
+        { h: 'Factory approval flows', p: 'Multi-level, plant-specific approval chains for deployment, regularisation, overtime and exits — configured to how your plant signs off.' },
+        { h: 'Safety induction gating', p: 'Induction SOP + quiz + certificate required before a pass activates; ISO-ready audit logs for every worker who entered.' },
+      ],
+    },
   },
   {
     id: 'ind-log', label: 'Logistics & Delivery',
