@@ -37,12 +37,11 @@ export const hireOnboardSlides: SlideDef[] = [
       <div class="capgrid rise" style="animation-delay:.2s">
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.doc}</svg></span><h4>Job openings</h4><p>Requisitions per role, site and city — with approval chains</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.layers}</svg></span><h4>Custom workflows</h4><p>Pipeline stages per client and market, exactly as your process runs</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.globe}</svg></span><h4>Your career site, live</h4><p>An opening publishes to your branded career page (with YouTube JD); candidates search and apply directly</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.search}</svg></span><h4>Multi-channel sourcing</h4><p>Career page, boards, referrals, QR codes, vendors, WhatsApp-apply</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.users}</svg></span><h4>Recruiter console</h4><p>Pipelines, assignments, approvals, role-based access</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.mic}</svg></span><h4>Interviews</h4><p>AI or human rounds, structured question sets per role</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.chart}</svg></span><h4>Fit scores</h4><p>Ranked shortlists against the role rubric</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.doc}</svg></span><h4>Forms &amp; screening</h4><p>Custom application forms and questionnaires per opening</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.check}</svg></span><h4>Offers</h4><p>Auto-generated offer and appointment letters</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.mic}</svg></span><h4>Interviews</h4><p>Schedule AI or human rounds (three by default, configurable) with structured questions; interviewers add notes live</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.chart}</svg></span><h4>Fit scores</h4><p>Ranked shortlists against the role rubric; AI scores video interviews on responses and delivery</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.check}</svg></span><h4>Offer → enrol</h4><p>Auto-generated offer &amp; appointment letters; the candidate gets a link to enrol straight into goBetter</p></div>
       </div>
       <div class="clientline rise" style="animation-delay:.4s;margin-top:14px;">Real-time pipeline analytics: source performance · stage conversion · time-to-hire — per requisition</div>
     </div>
@@ -127,8 +126,8 @@ export const hireOnboardSlides: SlideDef[] = [
       <span class="eyebrow rise">manageBetter Onboarding — the complete surface</span>
       <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Everything between "offer signed" and "first shift" — <span style="color:var(--navy)">handled.</span></h2>
       <div class="capgrid rise" style="animation-delay:.2s">
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.doc}</svg></span><h4>Document collection</h4><p>API-based — IDs, certificates, right-to-work, configurable per state</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.shield}</svg></span><h4>Verification</h4><p>ID checks tied into verifyBetter BGV with face-match</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.doc}</svg></span><h4>One or thousands at once</h4><p>Onboard individually by mobile number (with a duplicate-profile check) or bulk via Excel — vendor, sub-vendor and tags captured on the way in</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.shield}</svg></span><h4>Verification</h4><p>ID checks tied into verifyBetter BGV with face-match, initiated as they join</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.check}</svg></span><h4>e-Sign</h4><p>Contracts and policy acknowledgements signed digitally</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.card}</svg></span><h4>Bank &amp; statutory setup</h4><p>Captured once, payroll-ready; PF/ESI templates auto-generated</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.zap}</svg></span><h4>Platform onboarding</h4><p>App access, role, site and shift assigned on completion</p></div>

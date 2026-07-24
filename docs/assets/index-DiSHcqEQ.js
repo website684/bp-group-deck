@@ -878,9 +878,9 @@ Error generating stack: `+e.message+`
       <span class="eyebrow rise">The complete platform</span>
       <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Everything L&amp;D needs to run frontline training at scale.</h2>
       <div class="capgrid rise" style="animation-delay:.2s">
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.doc}</svg></span><h4>Assessments &amp; surveys</h4><p>12+ question types with auto-scoring</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.search}</svg></span><h4>One-click discovery</h4><p>Folder-based catalogues, instant relevant content</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.cam}</svg></span><h4>In-app live classes</h4><p>ILT without Zoom or Meet</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.doc}</svg></span><h4>Assessments &amp; surveys</h4><p>12+ question types, auto-scored; workers answer with photo, video, audio or a document; manual evaluation where you need it</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.layers}</svg></span><h4>Courses, levels &amp; playlists</h4><p>Break a course into beginner→advanced levels; bundle courses and assessments into a playlist with one combined score</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.cam}</svg></span><h4>In-app live classes</h4><p>Host live webinars on-platform — e.g. a session on day 7 after joining, no Zoom or Meet</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.chart}</svg></span><h4>Analytics dashboard</h4><p>250+ real-time data points — user, city, partner</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.users}</svg></span><h4>In-app chat</h4><p>Direct messaging and learner support</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.zap}</svg></span><h4>Event-based learning</h4><p>Trigger training on business moments — new SKU, audit, incident</p></div>
@@ -1083,14 +1083,14 @@ Error generating stack: `+e.message+`
       <span class="eyebrow rise">The full surface — one system, not a punch clock</span>
       <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Attendance is the front door. <span style="color:var(--navy)">Behind it sits a workforce OS.</span></h2>
       <div class="capgrid rise" style="animation-delay:.2s">
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.user}</svg></span><h4>Facial + geo attendance</h4><p>Face recognition with AI spoof detection, geo-fenced marking</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.clock}</svg></span><h4>Rostering &amp; shifts</h4><p>Weekly grids, reusable shift cards, bulk tools, publish step</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.user}</svg></span><h4>Facial + geo attendance</h4><p>Face recognition with AI spoof detection, geo-fenced marking; faces registered right inside Attend</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.clock}</svg></span><h4>Rostering &amp; shifts</h4><p>Name a shift, set start/end — present &amp; half-day values auto-calculate with a tolerance buffer; roster by grid or Excel</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.chart}</svg></span><h4>Demand planning</h4><p>Forecast and plan deployment across sites; shortfall management in minutes</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.doc}</svg></span><h4>Leave management</h4><p>Full leave workflows — periods, locations, optional holidays</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.doc}</svg></span><h4>Leave management</h4><p>Full leave workflows; workers see their quota and apply from the app, managers approve on mobile</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.users}</svg></span><h4>Vendor / CLMS control</h4><p>Per-vendor deployment rules, work-order tracking, compliance view</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.check}</svg></span><h4>Approvals queue</h4><p>Regularisation, leave, reconciliation, possible spoofs — bulk approve/reject with SLA counters</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.warn}</svg></span><h4>Alert management</h4><p>Shift-wise, overtime, leave, sync and regularisation alerts</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.chart}</svg></span><h4>Reports, self-serve</h4><p>Muster roll, attendance log, overtime — filtered by role, gender, location</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.check}</svg></span><h4>Approvals queue</h4><p>Regularisation, leave, reconciliation, possible spoofs — bulk approve/reject on mobile with SLA counters</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.card}</svg></span><h4>Payslip in the worker app</h4><p>The same app that marks attendance shows each worker their payslip, holidays and salary by month</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.chart}</svg></span><h4>Reports, self-serve</h4><p>Muster Roll, Attendance Log &amp; Overtime — the OT report names who worked it, how long, who approved</p></div>
       </div>
       <div class="clientline rise" style="animation-delay:.4s;margin-top:14px;">Live dashboards: real-time present/absent by site · exception filter pills: irregularity, no-show, review, weekly-off</div>
     </div>`},{id:`at3`,theme:`light`,title:`Rostering console`,html:`
@@ -1166,8 +1166,8 @@ Error generating stack: `+e.message+`
       <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">From attendance to statutory filing, <span style="color:var(--navy)">every step on one platform.</span></h2>
       <div class="capgrid rise" style="animation-delay:.2s">
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.zap}</svg></span><h4>Automated computation</h4><p>Payroll computed straight from attendance — zero manual entry</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.doc}</svg></span><h4>Variable inputs by Excel</h4><p>Incentives and one-offs uploaded before the run flow straight into the computation</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.shield}</svg></span><h4>Minimum-wage validation</h4><p>Per state and skill category, checked on every run</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.doc}</svg></span><h4>Salary structure templates</h4><p>Reusable compensation rules — configure once, apply to thousands</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.card}</svg></span><h4>Wage-register &amp; invoice recon</h4><p>Vendor invoices reconciled against actual attendance</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.check}</svg></span><h4>Auto compliance payments</h4><p>PF, ESI, Professional Tax, LWF — separate workspaces, on schedule</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.search}</svg></span><h4>Challan OCR + recon</h4><p>Vendor PF/ESI challans read and matched worker-by-worker</p></div>
@@ -1352,12 +1352,11 @@ Error generating stack: `+e.message+`
       <div class="capgrid rise" style="animation-delay:.2s">
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.doc}</svg></span><h4>Job openings</h4><p>Requisitions per role, site and city — with approval chains</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.layers}</svg></span><h4>Custom workflows</h4><p>Pipeline stages per client and market, exactly as your process runs</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.globe}</svg></span><h4>Your career site, live</h4><p>An opening publishes to your branded career page (with YouTube JD); candidates search and apply directly</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.search}</svg></span><h4>Multi-channel sourcing</h4><p>Career page, boards, referrals, QR codes, vendors, WhatsApp-apply</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.users}</svg></span><h4>Recruiter console</h4><p>Pipelines, assignments, approvals, role-based access</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.mic}</svg></span><h4>Interviews</h4><p>AI or human rounds, structured question sets per role</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.chart}</svg></span><h4>Fit scores</h4><p>Ranked shortlists against the role rubric</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.doc}</svg></span><h4>Forms &amp; screening</h4><p>Custom application forms and questionnaires per opening</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.check}</svg></span><h4>Offers</h4><p>Auto-generated offer and appointment letters</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.mic}</svg></span><h4>Interviews</h4><p>Schedule AI or human rounds (three by default, configurable) with structured questions; interviewers add notes live</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.chart}</svg></span><h4>Fit scores</h4><p>Ranked shortlists against the role rubric; AI scores video interviews on responses and delivery</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.check}</svg></span><h4>Offer → enrol</h4><p>Auto-generated offer &amp; appointment letters; the candidate gets a link to enrol straight into goBetter</p></div>
       </div>
       <div class="clientline rise" style="animation-delay:.4s;margin-top:14px;">Real-time pipeline analytics: source performance · stage conversion · time-to-hire — per requisition</div>
     </div>
@@ -1426,8 +1425,8 @@ Error generating stack: `+e.message+`
       <span class="eyebrow rise">manageBetter Onboarding — the complete surface</span>
       <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Everything between "offer signed" and "first shift" — <span style="color:var(--navy)">handled.</span></h2>
       <div class="capgrid rise" style="animation-delay:.2s">
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.doc}</svg></span><h4>Document collection</h4><p>API-based — IDs, certificates, right-to-work, configurable per state</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.shield}</svg></span><h4>Verification</h4><p>ID checks tied into verifyBetter BGV with face-match</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.doc}</svg></span><h4>One or thousands at once</h4><p>Onboard individually by mobile number (with a duplicate-profile check) or bulk via Excel — vendor, sub-vendor and tags captured on the way in</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.shield}</svg></span><h4>Verification</h4><p>ID checks tied into verifyBetter BGV with face-match, initiated as they join</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.check}</svg></span><h4>e-Sign</h4><p>Contracts and policy acknowledgements signed digitally</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.card}</svg></span><h4>Bank &amp; statutory setup</h4><p>Captured once, payroll-ready; PF/ESI templates auto-generated</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.zap}</svg></span><h4>Platform onboarding</h4><p>App access, role, site and shift assigned on completion</p></div>

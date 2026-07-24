@@ -139,9 +139,9 @@ export const skillbetterSlides: SlideDef[] = [
       <span class="eyebrow rise">The complete platform</span>
       <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Everything L&amp;D needs to run frontline training at scale.</h2>
       <div class="capgrid rise" style="animation-delay:.2s">
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.doc}</svg></span><h4>Assessments &amp; surveys</h4><p>12+ question types with auto-scoring</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.search}</svg></span><h4>One-click discovery</h4><p>Folder-based catalogues, instant relevant content</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.cam}</svg></span><h4>In-app live classes</h4><p>ILT without Zoom or Meet</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.doc}</svg></span><h4>Assessments &amp; surveys</h4><p>12+ question types, auto-scored; workers answer with photo, video, audio or a document; manual evaluation where you need it</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.layers}</svg></span><h4>Courses, levels &amp; playlists</h4><p>Break a course into beginner→advanced levels; bundle courses and assessments into a playlist with one combined score</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.cam}</svg></span><h4>In-app live classes</h4><p>Host live webinars on-platform — e.g. a session on day 7 after joining, no Zoom or Meet</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.chart}</svg></span><h4>Analytics dashboard</h4><p>250+ real-time data points — user, city, partner</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.users}</svg></span><h4>In-app chat</h4><p>Direct messaging and learner support</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.zap}</svg></span><h4>Event-based learning</h4><p>Trigger training on business moments — new SKU, audit, incident</p></div>
