@@ -166,6 +166,23 @@ const OVERLAYS: Record<string, AIOverlayDef> = {
       { name: 'Plan copilot', role: 'Incentives', status: 'beta' },
     ],
   },
+  'mfg-story': {
+    domain: 'Manufacturing plants',
+    headline: 'AI working every gate, shift and safety induction.',
+    sub: 'Verification, safety induction, statutory watch and technical tutoring run as AI Labs agents across the contract-labour lifecycle.',
+    levers: [
+      { n: 'Pre-gate', title: 'Safety induction, deterministic', desc: 'AI Rhea runs SOP + video + quiz before a gate pass activates — no un-inducted worker enters.' },
+      { n: 'Monthly', title: 'Statutory watchdog', desc: 'AI Dev reads every vendor challan by OCR and flags short-payments, licence breaches and WC expiries.' },
+      { n: '4 sec', title: 'Machine & SOP answers', desc: 'AI Theo answers technical and safety questions from your manuals, in the operator’s language.' },
+      { n: '<24 hr', title: 'Contractor verification', desc: 'AI Cole face-matches and API-checks every vendor worker before they reach the gate.' },
+    ],
+    agents: [
+      { name: 'AI Rhea', role: 'Safety induction', status: 'live' },
+      { name: 'AI Dev', role: 'Statutory watch', status: 'beta' },
+      { name: 'AI Theo', role: 'Technical tutor', status: 'live' },
+      { name: 'AI Cole', role: 'Verification', status: 'beta' },
+    ],
+  },
   'group': {
     domain: 'The whole lifecycle',
     headline: 'One AI runtime working every stage of your frontline.',

@@ -125,6 +125,23 @@ export const salesStorySlides: SlideDef[] = [
     </div>`,
   },
   {
+    id: 'ss7b', theme: 'light', title: 'Field-sales capability surface',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">Built for how a field-sales fleet actually runs</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">The daily surface a beat team lives on.</h2>
+      <div class="capgrid rise" style="animation-delay:.2s">
+        <div class="cap"><h4>Beat plan &amp; territory</h4><p>Assign beats, routes and territories; geo-fenced check-in proves the visit was made, not just claimed.</p></div>
+        <div class="cap"><h4>Store &amp; dealer visits</h4><p>Visit logging with photo proof, order/DSR capture and last-order recall at the point of the visit.</p></div>
+        <div class="cap"><h4>Attendance → pay → incentive</h4><p>Days worked and visits feed payroll and incentive payouts automatically — no month-end reconciliation fight.</p></div>
+        <div class="cap"><h4>Live incentive in pocket</h4><p>Every rep sees earnings, target progress and "one more sale is worth ₹X" between calls.</p></div>
+        <div class="cap"><h4>Product &amp; pitch readiness</h4><p>Reels for new SKUs and offers, proctored certification, and AI Max roleplay before the real call.</p></div>
+        <div class="cap"><h4>Territory dashboards</h4><p>Area managers see coverage, shortfall and who’s one push from target — steer the day, not the post-mortem.</p></div>
+      </div>
+      <div class="clientline rise" style="animation-delay:.4s;margin-top:14px;">One worker record from hire to quota — hiring, verification, attendance, training and incentives all agree who your best sellers are.</div>
+    </div>`,
+  },
+  {
     id: 'ss8', theme: 'dark', title: 'Proof',
     html: `
     <div class="slidebody">

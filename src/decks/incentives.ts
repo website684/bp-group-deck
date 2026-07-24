@@ -312,8 +312,8 @@ export const incentivesSlides: SlideDef[] = [
           <div class="vizcap" style="margin-top:12px;">Describe the scheme → a working, editable plan</div>
         </div>
         <div>
-          <span class="eyebrow rise">Not just automated — intelligent</span>
-          <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:20ch;">Let AI do the heavy lifting.</h2>
+          <span class="eyebrow rise">What the AI does for you</span>
+          <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:20ch;">AI handles the hard parts of incentives.</h2>
           <div class="featlist rise" style="animation-delay:.18s;margin-top:16px;">
             <div class="fi"><div class="fic"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V4s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg></div><div><h4 style="color:#fff">Describe it, don't build it</h4><p>Type any scheme in a sentence and it's set up for you — ready to review. No formulas, no waiting on IT.</p></div></div>
             <div class="fi"><div class="fic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-6"/></svg></div><div><h4 style="color:#fff">Fair targets, set for you</h4><p>Targets based on what each person actually sells — so the scheme feels reachable, not demoralising.</p></div></div>

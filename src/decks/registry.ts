@@ -12,6 +12,7 @@ import { gigbetterSlides } from './gigbetter'
 import { industryDecks } from './industries'
 import { incentivesSlides } from './incentives'
 import { salesStorySlides } from './sales-story'
+import { mfgStorySlides } from './mfg-story'
 import { gobetterSlides } from './gobetter'
 
 export const decks: DeckDef[] = [
@@ -24,9 +25,14 @@ export const decks: DeckDef[] = [
       .map((id) => groupSlides.find((s) => s.id === id)!),
   },
   {
-    id: 'sales-story', next: 'incentives', title: 'goBetter for Sales Teams', group: 'story',
+    id: 'sales-story', next: 'mfg-story', title: 'goBetter for Sales Teams', group: 'story',
     tagline: 'The story for revenue leaders — field and retail sellers hired, trained, coached, tracked and incentivised on one platform.',
     slides: salesStorySlides,
+  },
+  {
+    id: 'mfg-story', next: 'gobetter', title: 'goBetter for Manufacturing', group: 'story',
+    tagline: 'The story for plant leaders — contract labour sourced, verified, gate-passed, attended, paid, kept compliant and safety-trained on one platform.',
+    slides: mfgStorySlides,
   },
   {
     id: 'ai-labs', next: 'skillbetter', title: 'AI Labs', group: 'ai',
