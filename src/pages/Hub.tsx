@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { ClientConfig, DeckDef } from '../lib/types'
 import { decks, composeCustom, COMPOSABLE } from '../decks/registry'
 import { buildShareUrl } from '../lib/share'
+import { clientAccentVars, industryDeckId } from '../lib/theme'
 
 interface Props {
   client: ClientConfig | null
@@ -40,7 +41,7 @@ export default function Hub({ client, shareMode = false, onOpen, onEditClient }:
   )
 
   return (
-    <div className="hubpage" style={{ ['--client' as never]: accent }}>
+    <div className="hubpage" style={{ ['--client' as never]: accent, ...clientAccentVars(client?.color) }}>
       <header className="hubpage-top">
         <div className="marks">
           <img src="assets/logo/bp-white.png" alt="BetterPlace" className="hub-bp" />
@@ -75,6 +76,11 @@ export default function Hub({ client, shareMode = false, onOpen, onEditClient }:
         <div className="hub-cta-row">
           <button className="btn-primary big" onClick={() => onOpen('group')}>▶ The 15-minute company story <span>{decks.find((d) => d.id === 'group')!.slides.length} slides</span></button>
           <button className="btn-story big" onClick={() => onOpen('sales-story')}>▶ goBetter for Sales Teams <span>{decks.find((d) => d.id === 'sales-story')!.slides.length} slides · field & retail sellers</span></button>
+          {industryDeckId(client?.industry) && (
+            <button className="btn-ghost" onClick={() => onOpen(industryDeckId(client!.industry)!)}>
+              Built for {client!.industry} →
+            </button>
+          )}
           <button className="btn-ghost" onClick={() => { window.location.hash = '/roi' }}>💰 What you'd save</button>
           <button className="btn-ghost" onClick={() => { setPicking(!picking); setPicked([]) }}>
             {picking ? 'Cancel' : 'Mix your own deck'}

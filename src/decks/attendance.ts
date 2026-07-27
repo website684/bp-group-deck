@@ -108,6 +108,35 @@ export const attendanceSlides: SlideDef[] = [
     </div>`,
   },
   {
+    id: 'at-ot', theme: 'light', title: 'Overtime management',
+    html: `
+    <div class="slidebody split">
+      <div>
+        <span class="eyebrow rise">Blue-collar overtime · cost meets compliance</span>
+        <h2 class="rise" style="animation-delay:.08s;">Overtime approved <span style="color:var(--navy)">before it’s worked</span> — and paid the way the law requires.</h2>
+        <div class="featlist" style="margin-top:6px;">
+          <div class="fi rise" style="animation-delay:.24s"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${icons.clock}</svg></span><div><h4>Pre-approved, not post-argued</h4><p>OT is sanctioned by the plant’s approval chain before the hours are worked — supervisors raise it, managers approve on mobile.</p></div></div>
+          <div class="fi rise" style="animation-delay:.32s"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${icons.shield}</svg></span><div><h4>Paid at the statutory multiple</h4><p>Overtime computes at twice the ordinary wage — Factories Act §59, carried into the new Labour Codes — straight into payroll, no manual multiplier.</p></div></div>
+          <div class="fi rise" style="animation-delay:.40s"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${icons.warn}</svg></span><div><h4>Held inside statutory caps</h4><p>Daily, weekly and quarterly OT-hour limits configured per state; the system flags a worker nearing the cap before it’s breached.</p></div></div>
+          <div class="fi rise" style="animation-delay:.48s"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${icons.chart}</svg></span><div><h4>A self-serve OT register</h4><p>The Overtime report names who worked it, how long, on which shift and who approved — the audit answer, generated.</p></div></div>
+        </div>
+      </div>
+      <div class="rise" style="animation-delay:.35s;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;align-self:start;">
+        <div style="font-size:clamp(10px,1cqw,12px);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);">One OT line, computed</div>
+        <div style="display:flex;align-items:baseline;gap:10px;margin:12px 0 6px;"><span style="font-size:clamp(34px,4.4cqw,52px);font-weight:800;color:var(--navy);line-height:1;">2×</span><span style="font-size:clamp(13px,1.3cqw,16px);color:var(--text);">ordinary wage,<br/>beyond 9 hrs/day or 48 hrs/week</span></div>
+        <div style="height:1px;background:var(--border);margin:16px 0;"></div>
+        <div style="display:flex;flex-direction:column;gap:9px;font-size:clamp(12px,1.2cqw,13.5px);">
+          <div style="display:flex;justify-content:space-between;"><span style="color:var(--muted)">Sanctioned OT hours</span><b style="color:var(--text)">3.0 hrs</b></div>
+          <div style="display:flex;justify-content:space-between;"><span style="color:var(--muted)">Quarter cap status</span><b style="color:#3DBE7B">41 / 50 hrs</b></div>
+          <div style="display:flex;justify-content:space-between;"><span style="color:var(--muted)">Approved by</span><b style="color:var(--text)">Shift in-charge</b></div>
+        </div>
+        <p style="font-size:clamp(11px,1.05cqw,12.5px);color:var(--text);margin-top:16px;border-left:3px solid var(--yellow);padding-left:12px;"><b>Straight talk:</b> where a plant is genuinely hourly, tell us early — OT is measured in hours but normalised to days for computation. Naming the boundary up front keeps a pilot clean.</p>
+      </div>
+    </div>
+    ${aiNote('Policy engine', 'The cap that enforces itself', 'OT limits, spread-over and rest rules are wired into marking and approval per state — a breach is blocked or escalated at source, not found in a labour-department notice.', 'Factories Act §51 / §59 / §64–65 · state-configurable')}
+    `,
+  },
+  {
     id: 'at4', theme: 'light', title: 'Approvals & exceptions',
     html: `
     <div class="slidebody">

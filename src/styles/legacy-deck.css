@@ -17,8 +17,8 @@
   .dark{background:radial-gradient(120% 100% at 78% 6%,#22307e 0%,#141c52 42%,#0a0f30 82%);color:#fff;}
   .darker{background:linear-gradient(160deg,#0c1240 0%,#0a0f30 60%,#070a24 100%);color:#fff;}
 
-  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;color:var(--navy);}
-  .dark .eyebrow,.darker .eyebrow{color:var(--yellow);}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;color:var(--accent-onlight,var(--navy));}
+  .dark .eyebrow,.darker .eyebrow{color:var(--accent-ondark,var(--yellow));}
   .eyebrow::before{content:"";width:24px;height:2px;background:currentColor;}
   h1{font-family:var(--disp);font-weight:800;line-height:1.02;letter-spacing:-.03em;}
   h2{font-family:var(--disp);font-weight:800;line-height:1.06;letter-spacing:-.025em;font-size:clamp(1.75rem,3.5vw,2.9rem);margin-top:12px;}
@@ -197,10 +197,10 @@
   /* nav */
   .nav{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:50;display:flex;align-items:center;gap:12px;background:rgba(10,15,48,.72);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14);padding:7px 14px;border-radius:999px;}
   .nav .arrow{width:28px;height:28px;border-radius:50%;border:none;background:rgba(255,255,255,.1);color:#fff;cursor:pointer;display:grid;place-items:center;transition:.2s;}
-  .nav .arrow:hover{background:var(--yellow);color:var(--ink);}
+  .nav .arrow:hover{background:var(--accent-ondark,var(--yellow));color:var(--ink);}
   .dots{display:flex;gap:6px;}
   .nd{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.28);cursor:pointer;transition:.25s;}
-  .nd.on{background:var(--yellow);width:20px;border-radius:4px;}
+  .nd.on{background:var(--accent-ondark,var(--yellow));width:20px;border-radius:4px;}
   .pageno{font-family:var(--mono);font-size:10.5px;color:rgba(255,255,255,.6);min-width:46px;text-align:center;}
 
   .rise{opacity:0;transform:translateY(18px);}

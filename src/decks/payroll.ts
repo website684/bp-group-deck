@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe, icons, outcomeSlide, problemSlides, aiNote } from './html'
+import { bframe, fi, icons, outcomeSlide, problemSlides, aiNote } from './html'
 
 const groupPayroll = groupSlides.find((s) => s.id === 's8b')!
 
@@ -104,6 +104,97 @@ export const payrollSlides: SlideDef[] = [
       </div>
       <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:92ch;">Month picker → inputs → batch pipeline → disbursement: operators see where a run is waiting or failed before drilling down, and vendors invoice against verified numbers.</p>
     </div>`,
+  },
+  {
+    id: 'py-vendor', theme: 'light', title: 'Vendor management & CLRA',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">Vendor management &amp; compliance</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Every contractor, every document — <span style="color:var(--navy)">a governed record, not a filing cabinet.</span></h2>
+      <div class="mediasplit" style="align-items:start;">
+        <div class="featlist">
+          ${fi(icons.building, 'The contractor record', 'KYC, GST, PAN, bank and agreement captured once; sub-vendors and SPOCs mapped under each contractor.', 0.24)}
+          ${fi(icons.shield, 'Compliance document vault', 'CLRA licence, WC/EC policy, PF/ESI codes — stored with validity dates and expiry alerts, before anyone works uninsured.', 0.32)}
+          ${fi(icons.repeat, 'Work order / PO deployment', 'Each worker mapped to a work order; headcount, wage rate and billing tracked against it, per contractor.', 0.40)}
+          ${fi(icons.bot, 'Licence-strength control', 'Deployment held inside each contractor’s licensed worker count — the system won’t let you over-deploy.', 0.48)}
+        </div>
+        <div class="rise" style="animation-delay:.35s;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px 22px 20px;">
+          <h4 style="font-size:clamp(15px,1.5cqw,18px);color:var(--navy);margin-bottom:6px;">The CLRA paper trail, generated</h4>
+          <p style="font-size:clamp(12px,1.15cqw,13.5px);color:var(--muted);margin-bottom:14px;">The registers a labour inspector asks for — produced from live data, not assembled by hand.</p>
+          <div class="tags">
+            <span class="tag">Register of Contractors (Form XII)</span>
+            <span class="tag">Register of Workmen (Form XIII)</span>
+            <span class="tag">Muster Roll (Form XVI)</span>
+            <span class="tag">Register of Wages (Form XVII)</span>
+            <span class="tag">Wage Slips (Form XIX)</span>
+            <span class="tag">Form V certificate for the licence</span>
+            <span class="tag">Overtime register (Form XXIII)</span>
+            <span class="tag">Annual returns (Form XXIV/XXV)</span>
+          </div>
+          <p style="font-size:clamp(11px,1.05cqw,12.5px);color:var(--text);margin-top:14px;border-left:3px solid var(--yellow);padding-left:12px;">CLRA bites once a contractor deploys <b>20+ workers</b>. Above that line, stale registers are the audit finding — here they’re a live view on the same data that runs attendance and payroll.</p>
+        </div>
+      </div>
+    </div>
+    ${aiNote('AI Dev · statutory watchdog', 'The compliance officer that never sleeps', 'An agent chases each contractor’s documents, reads uploaded challans and policies by OCR, and flags a licence-strength breach or a WC-policy expiry before it becomes a notice.', 'Live pattern in BPCL’s IOWMS vendor platform')}
+    `,
+  },
+  {
+    id: 'py-invoice', theme: 'light', title: 'Invoice & billing reconciliation',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">Invoice &amp; billing · the leakage nobody sees</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Pay the contractor for the work that <span style="color:var(--navy)">actually happened.</span></h2>
+      <div class="mediasplit" style="align-items:start;">
+        <div class="featlist">
+          ${fi(icons.card, 'Invoice against verified attendance', 'The contractor’s bill matches line-by-line to face-verified, geo-fenced attendance on the same work order — not to a claimed headcount.', 0.24)}
+          ${fi(icons.search, 'Wage-register reconciliation', 'Rates checked against the agreed work-order rate and the state minimum wage for that skill category, before approval.', 0.32)}
+          ${fi(icons.check, 'Statutory hold on payment', 'Following EPFO’s own guidance, an invoice can be gated until PF/ESI for the period is evidenced — so you never fund a default.', 0.40)}
+          ${fi(icons.doc, 'Raise invoice in-platform', 'Vendor invoicing, approvals and credit notes sit in the same surface as the attendance and payroll they draw on.', 0.48)}
+        </div>
+        <div class="rise" style="animation-delay:.35s;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px;">
+          <h4 style="font-size:clamp(15px,1.5cqw,18px);color:var(--navy);margin-bottom:14px;">A worked example</h4>
+          <div style="display:flex;flex-direction:column;gap:11px;font-size:clamp(12px,1.2cqw,14px);">
+            <div style="display:flex;justify-content:space-between;"><span style="color:var(--muted)">Invoiced headcount</span><b style="color:var(--text)">212 workers</b></div>
+            <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:11px;"><span style="color:var(--muted)">Gate-verified attendance</span><b style="color:var(--text)">196 workers</b></div>
+            <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:11px;"><span style="color:var(--muted)">Below-minimum-wage lines</span><b style="color:#D0271D">3 flagged</b></div>
+            <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:11px;"><span style="color:var(--muted)">Period PF/ESI evidenced</span><b style="color:#D36703">Pending</b></div>
+          </div>
+          <p style="font-size:clamp(11px,1.05cqw,12.5px);color:var(--text);margin-top:16px;border-left:3px solid var(--yellow);padding-left:12px;">The invoice is held: <b>16 phantom line-items</b> and 3 wage-floor breaches itemised, challans required before release.</p>
+        </div>
+      </div>
+    </div>
+    ${aiNote('AI Dev · invoice reconciliation', 'Every rupee traces back to a face at your gate', 'The invoice-to-attendance-to-statutory link is checked automatically before payment — the same link the −90% payroll-leakage number at Reliance comes from.', 'Reliance: −90% payroll leakage')}
+    `,
+  },
+  {
+    id: 'py-scorecard', theme: 'light', title: 'AI Vendor Scorecard',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">AI Vendor Scorecard · vendor performance</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Stop renewing contractors on gut feel. <span style="color:var(--navy)">Rank them on the numbers.</span></h2>
+      <div class="rise" style="animation-delay:.2s;margin-top:12px;background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+        <div style="display:grid;grid-template-columns:1.6fr 1fr .9fr .9fr 1fr .7fr;gap:8px;padding:9px 18px;font-size:clamp(10px,1cqw,12px);font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--border);">
+          <span>Contractor</span><span>Fill rate</span><span>Attend</span><span>Attrition</span><span>Compliance</span><span style="text-align:right">Grade</span>
+        </div>
+        ${[
+          { n: 'Apex Manpower', fill: 96, att: '94%', attr: '11%', comp: '100%', g: 'A', c: '#3DBE7B' },
+          { n: 'Sunrise Labour', fill: 88, att: '90%', attr: '19%', comp: '96%', g: 'B', c: '#2142B9' },
+          { n: 'Metro Staffing', fill: 74, att: '82%', attr: '31%', comp: '81%', g: 'C', c: '#FF9518' },
+          { n: 'Delta Contractors', fill: 61, att: '76%', attr: '44%', comp: '68%', g: 'D', c: '#D0271D' },
+        ].map((r, i) => `
+        <div class="rise" style="animation-delay:${0.3 + i * 0.08}s;display:grid;grid-template-columns:1.6fr 1fr .9fr .9fr 1fr .7fr;gap:8px;align-items:center;padding:10px 18px;font-size:clamp(12px,1.2cqw,14px);${i < 3 ? 'border-bottom:1px solid var(--border);' : ''}">
+          <span style="font-weight:700;color:var(--text)">${r.n}</span>
+          <span style="display:flex;align-items:center;gap:8px;"><span style="flex:1;height:6px;border-radius:4px;background:var(--surface-2);overflow:hidden;"><span style="display:block;height:100%;width:${r.fill}%;background:${r.c};"></span></span><b style="color:var(--text)">${r.fill}%</b></span>
+          <span style="color:var(--muted)">${r.att}</span>
+          <span style="color:var(--muted)">${r.attr}</span>
+          <span style="color:var(--muted)">${r.comp}</span>
+          <span style="text-align:right"><span style="display:inline-block;width:26px;height:26px;line-height:26px;text-align:center;border-radius:7px;font-weight:800;color:#fff;background:${r.c};">${r.g}</span></span>
+        </div>`).join('')}
+      </div>
+      <p class="lede rise" style="animation-delay:.6s;margin-top:12px;max-width:100ch;font-size:clamp(13px,1.35cqw,16px);">Each metric pulled from live operating data and weighted to what your plant values — the D-grade vendor surfaces before the next work order goes to them. <span style="color:var(--muted);">Illustrative; weightings configurable, KPIs are staffing best practice, not a statutory list.</span></p>
+    </div>
+    ${aiNote('AI Dev · vendor performance agent', 'A ranked answer, every month', 'The same closed loop that runs attendance, payroll and compliance feeds the score — so the grade reflects what actually happened on your floor, not what a contractor claims in a review meeting.', 'Renewal, rate and volume decisions on numbers both sides can see')}
+    `,
   },
   {
     id: 'py5', theme: 'dark', title: 'Proof',

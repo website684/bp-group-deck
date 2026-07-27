@@ -92,6 +92,32 @@ export const hireOnboardSlides: SlideDef[] = [
     `,
   },
   {
+    id: 'ho-aadhaar', theme: 'light', title: 'Aadhaar OTP onboarding',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">Aadhaar OTP onboarding · identity in one step</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:32ch;">A verified worker <span style="color:var(--navy)">in the time it takes to read an OTP.</span></h2>
+      <div class="mediasplit" style="align-items:start;">
+        <div class="rise" style="animation-delay:.28s;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;">
+          <div class="rail" style="grid-template-columns:1fr;gap:10px;margin-top:0;">
+            <div class="rstage"><div class="rn">STEP 01</div><h4>Worker enters Aadhaar</h4><ul><li>On their own phone, in their language, with explicit consent captured</li></ul></div>
+            <div class="rstage"><div class="rn">STEP 02</div><h4>OTP or offline eKYC confirms identity</h4><ul><li>A one-time code (where authorised) or a signed Aadhaar XML confirms they’re the holder</li></ul></div>
+            <div class="rstage"><div class="rn">STEP 03</div><h4>Verified demographics returned</h4><ul><li>Name, DOB, gender, address &amp; photo populate from the signed record — identity only</li></ul></div>
+            <div class="rstage"><div class="rn">STEP 04</div><h4>Straight into the worker record</h4><ul><li>Bank &amp; statutory details complete the profile — payroll-ready, zero re-entry</li></ul></div>
+          </div>
+        </div>
+        <div class="featlist">
+          ${fi(icons.zap, 'Minutes, not days', 'Identity is confirmed the moment the OTP is entered — no waiting on a manual document review to clear a worker for the gate.', 0.32)}
+          ${fi(icons.shield, 'Consent-based & compliant', 'Runs on the consent-driven eKYC route permitted for private employers — OTP where authorised, offline Aadhaar XML otherwise — with masked Aadhaar, not raw-number storage.', 0.40)}
+          ${fi(icons.user, 'Fewer fake & duplicate profiles', 'A verified identity at the front door stops the same worker being onboarded twice under two contractors — and keeps ghost profiles out.', 0.48)}
+          ${fi(icons.doc, 'Feeds BGV, gate & payroll', 'The verified identity flows into the six-point BGV, the gate pass and the payroll record on the same platform.', 0.56)}
+        </div>
+      </div>
+    </div>
+    ${aiNote('AI Mia · onboarding agent', 'Aadhaar first, the rest checked in the flow', 'Beyond Aadhaar, the agent OCRs and face-matches the remaining documents and chases what’s missing in the worker’s language — so HR isn’t on the phone and the worker finishes in one sitting.', '10-minute self-onboarding · zero HR re-entry')}
+    `,
+  },
+  {
     id: 'ho3b', theme: 'dark', title: 'The candidate journey',
     html: `
     <div class="slidebody">

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { DeckDef, ClientConfig, SlideDef } from '../lib/types'
 import { getAIOverlay } from '../decks/ai-overlays'
+import { clientAccentVars } from '../lib/theme'
 
 function countUp(section: HTMLElement) {
   section.querySelectorAll<HTMLElement>('[data-t]').forEach((el) => {
@@ -105,7 +106,7 @@ export default function DeckPlayer({ deck, client, initialSlide = 0, shareMode =
   const accent = client?.color || '#FFC401'
 
   return (
-    <div className={`player${aiMode ? ' ai-mode' : ''}`} style={{ ['--client' as never]: accent }}>
+    <div className={`player${aiMode ? ' ai-mode' : ''}`} style={{ ['--client' as never]: accent, ...clientAccentVars(client?.color) }}>
       <div className="deck" ref={deckRef}>
         {deck.slides.map((s, i) => (
           <section
