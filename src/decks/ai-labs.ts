@@ -1,5 +1,5 @@
 import type { SlideDef } from '../lib/types'
-import { aiNote, bframe, fi, icons, outcomeSlide, problemSlides } from './html'
+import { aiNote, fi, icons, outcomeSlide, problemSlides } from './html'
 
 export const aiLabsSlides: SlideDef[] = [
   {
@@ -44,7 +44,32 @@ export const aiLabsSlides: SlideDef[] = [
         </div>
       </div>
       <div class="rise" style="animation-delay:.35s">
-        ${bframe('assets/website-sections/ailabs-hero.png', 'ai-labs.betterplace.ai/build', 'The agent studio — <b>build an AI worker for your frontline in 10 minutes</b>')}
+        <div class="conmock agentbuild">
+          <div class="left">
+            <div class="fld"><div class="lb">Agent name</div><div class="val">Mia — onboarding agent<span class="cursor"></span></div></div>
+            <div class="fld"><div class="lb">Brain</div><div class="brains"><span class="brain sel">Private vLLM · in-India</span><span class="brain">Claude</span><span class="brain">GPT</span></div></div>
+            <div class="fld"><div class="lb">Capabilities</div><div class="togs">
+              <span class="tog flip" style="--d:.9s">See · vision<span class="sw"></span></span>
+              <span class="tog flip" style="--d:1.1s">Hear · voice<span class="sw"></span></span>
+              <span class="tog flip" style="--d:1.3s">Speak · 24 languages<span class="sw"></span></span>
+              <span class="tog flip" style="--d:1.5s">Read · documents<span class="sw"></span></span>
+            </div></div>
+            <div class="fld"><div class="lb">Knowledge</div><div class="docs">
+              <span class="doc2"><svg viewBox="0 0 24 24">${icons.doc}</svg>Safety_SOP_v4.pdf<span class="ok2">✓ indexed</span></span>
+              <span class="doc2"><svg viewBox="0 0 24 24">${icons.doc}</svg>HR_policy_2026.docx<span class="ok2">✓ indexed</span></span>
+              <span class="doc2"><svg viewBox="0 0 24 24">${icons.doc}</svg>Grooming_standards.pptx<span class="ok2">✓ indexed</span></span>
+            </div></div>
+            <div class="deployrow"><span class="deploy">Deploy to WhatsApp →</span><span class="clockc">Build time&nbsp;&nbsp;<b>09:42</b></span></div>
+          </div>
+          <div class="right">
+            <div class="plb">Live preview · Hindi</div>
+            <div class="pmsg me" style="--d:1.7s">PF balance kaise check karun?</div>
+            <div class="pmsg bot" style="--d:2.3s">UMANG app ya missed call 011-22901406 se — aapka UAN active hai. Main steps bhejta hoon 👇<span class="cite">HR_policy_2026.docx · p.14</span></div>
+            <div class="pmsg me" style="--d:3.1s">Aur safety shoes kab milenge?</div>
+            <div class="pmsg bot" style="--d:3.7s">Day-1 induction par, gate office se. Size aaj confirm kar dijiye.<span class="cite">Safety_SOP_v4.pdf · §2.3</span></div>
+          </div>
+        </div>
+        <div class="bcap">The studio — brain, capabilities, your documents, live preview. <b>No code, no data-science hires.</b></div>
       </div>
     </div>
     ${aiNote('The runtime', 'Every ✦ note in every deck runs on this', 'Screening bots, spoof detection, challan OCR, absence prediction, the learning tutor — all agents on this one studio and runtime. One platform to govern, one meter to read.', 'Flip the ✦ AI switch in any deck to see the agents at work')}

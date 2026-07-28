@@ -80,6 +80,42 @@ export const skillbetterSlides: SlideDef[] = [
     </div>`,
   },
   {
+    id: 'sk2b', theme: 'dark', title: 'Learning in the flow of work',
+    html: `
+    <div class="slidebody split">
+      <div>
+        <span class="eyebrow rise">Point-of-need learning · in the flow of work</span>
+        <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:24ch;">Training doesn't wait for a classroom. <span style="color:var(--yellow)">It finds the worker.</span></h2>
+        <div class="featlist">
+          ${fi(icons.zap, 'Lands where they already are', 'The goBetter app — or straight into WhatsApp via an AI Labs agent. No new app to install, nothing to learn before learning.', 0.24)}
+          ${fi(icons.play, 'Two minutes, at the moment of need', 'A new SKU, an incident, tomorrow’s audit — the right micro-lesson triggers on the business event, not the training calendar.', 0.32)}
+          ${fi(icons.chart, 'Completion is the floor. Performance is the goal.', 'Quiz scores, roleplay ratings and on-the-job KPIs write back to the same worker record as attendance and payroll.', 0.40)}
+          ${fi(icons.bot, 'Nudges that close the loop', 'AI Theo re-engages lapsed learners in their own language — your L&D team stops being the follow-up department.', 0.48)}
+        </div>
+      </div>
+      <div class="rise" style="animation-delay:.3s">
+        <div class="phoneshell">
+          <div class="scr">
+            <div class="wahd"><span class="wav">T</span><div><b>skillBetter · AI Theo</b><span>online · Hindi</span></div></div>
+            <div class="wabody">
+              <div class="wam" style="--d:.8s">Namaste Sunita! Kal store audit hai — 2-minute ka refresher taiyaar hai 👇</div>
+              <div class="lesson" style="--d:1.5s">
+                <div class="lth"></div>
+                <div class="lbody"><div class="lt">Fire exit &amp; extinguisher check</div><div class="ls">2 min · Hindi · 4 cards + quiz</div><div class="lprog"><i></i></div></div>
+              </div>
+              <div class="wam me3" style="--d:3.1s">Done ✅</div>
+              <div class="wam" style="--d:3.6s">Shabash! Quiz 3/3 sahi 🎯</div>
+              <div class="badge2" style="--d:4.2s">🏅 Safety badge · +50 coins</div>
+            </div>
+          </div>
+        </div>
+        <div class="phonecap" style="margin-top:14px;">A real pattern: event-triggered micro-lesson, delivered in WhatsApp, certified in 2 minutes</div>
+      </div>
+    </div>
+    ${aiNote('AI Theo · learning tutor', 'The lesson that delivers itself', 'Business events trigger the journey; the agent delivers, quizzes, certifies and chases — in the worker’s language, inside the chat they already use.', '10M+ queries answered · 35+ languages')}
+    `,
+  },
+  {
     id: 'sk3', theme: 'light', title: 'Core capabilities',
     html: `
     <div class="slidebody split">
@@ -133,26 +169,61 @@ export const skillbetterSlides: SlideDef[] = [
     </div>`,
   },
   {
-    id: 'sk3b', theme: 'light', title: 'Platform capabilities grid',
+    id: 'sk3b', theme: 'light', title: 'The complete platform',
     html: `
     <div class="slidebody">
-      <span class="eyebrow rise">The complete platform</span>
-      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Everything L&amp;D needs to run frontline training at scale.</h2>
-      <div class="capgrid rise" style="animation-delay:.2s">
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.doc}</svg></span><h4>Assessments &amp; surveys</h4><p>12+ question types, auto-scored; workers answer with photo, video, audio or a document; manual evaluation where you need it</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.layers}</svg></span><h4>Courses, levels &amp; playlists</h4><p>Break a course into beginner→advanced levels; bundle courses and assessments into a playlist with one combined score</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.cam}</svg></span><h4>In-app live classes</h4><p>Host live webinars on-platform — e.g. a session on day 7 after joining, no Zoom or Meet</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.chart}</svg></span><h4>Analytics dashboard</h4><p>250+ real-time data points — user, city, partner</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.users}</svg></span><h4>In-app chat</h4><p>Direct messaging and learner support</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.zap}</svg></span><h4>Event-based learning</h4><p>Trigger training on business moments — new SKU, audit, incident</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.trophy}</svg></span><h4>Leaderboards &amp; rewards</h4><p>Team and regional rankings, coins and badges</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.shield}</svg></span><h4>Certifications</h4><p>Auto-generated, tamper-proof, audit-ready</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.play}</svg></span><h4>Social feeds</h4><p>Updates, recognition, peer content</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.chart}</svg></span><h4>Performance tracking</h4><p>KPIs, goals and progress in the learner app</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.lock}</svg></span><h4>Mandatory enforcement</h4><p>Critical courses pinned to the top of the app</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.book}</svg></span><h4>QR classroom attendance</h4><p>In-person training, digitally recorded</p></div>
+      <span class="eyebrow rise">The complete platform · one worker record underneath</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">One platform, four jobs: <span style="color:var(--navy)">learn, engage, assess, prove.</span></h2>
+      <div class="rise" style="animation-delay:.22s;margin-top:16px;max-width:960px;">
+        <div class="conmock tabshow" data-cycle="3400">
+          <div class="tabs"><span class="cyc">▶ Learn</span><span class="cyc">🔥 Engage</span><span class="cyc">✓ Assess</span><span class="cyc">📊 Prove</span></div>
+          <div class="panes">
+            <div class="cycpane">
+              <div class="pdesc"><h4>Reels, courses &amp; journeys — in 35+ languages</h4><p>Instagram-style micro-content, chaptered courses with resume, multi-course onboarding journeys — with offline downloads for low-network field days. Levels take a learner beginner → advanced.</p><span class="pstat">88% completion vs 25% industry</span></div>
+              <div class="pviz">
+                <div class="reel"><span class="rprog"></span><span class="plybtn"></span><span class="rcap">Festive upselling · 90 sec</span></div>
+                <div class="reel"><span class="rprog"></span><span class="plybtn"></span><span class="rcap">5S on the shop floor · 2 min</span></div>
+                <div class="reel"><span class="rprog"></span><span class="plybtn"></span><span class="rcap">Greeting the customer · 60 sec</span></div>
+              </div>
+            </div>
+            <div class="cycpane">
+              <div class="pdesc"><h4>Streaks, coins, leaderboards &amp; social feeds</h4><p>Gamification that moves numbers, not just badges — team and regional rankings, recognition feeds, in-app chat and rewards that pull people back daily.</p><span class="pstat">+65% voluntary participation · +19.7% WoW retention</span></div>
+              <div class="pviz">
+                <div class="lb">
+                  <div class="lbrow"><span class="medal">🥇</span><b>Sunita D.</b><span class="pts">2,410 pts</span></div>
+                  <div class="lbrow"><span class="medal">🥈</span><b>Ravi K.</b><span class="pts">2,180 pts</span></div>
+                  <div class="lbrow me2"><span class="medal">🥉</span><b>You</b><span class="pts">2,090 pts</span></div>
+                  <div class="streak">🔥 12-day streak · +50 coins today</div>
+                </div>
+              </div>
+            </div>
+            <div class="cycpane">
+              <div class="pdesc"><h4>Proctored, auto-scored, defensible</h4><p>12+ question types answered by photo, video, audio or document; live face-detection proctoring pauses the exam when the learner leaves; tamper-proof certificates. In-app live classes and QR classroom attendance included.</p><span class="pstat">99.2% face-detection accuracy</span></div>
+              <div class="pviz">
+                <div class="quiz">
+                  <div class="qq">A customer wants a refund without a bill. First step?</div>
+                  <div class="qo">Escalate to the store manager</div>
+                  <div class="qo right">✓ Look up the purchase on the app</div>
+                  <div class="qo">Refuse the refund</div>
+                  <div class="prct"><i></i>Proctoring active · face verified</div>
+                </div>
+              </div>
+            </div>
+            <div class="cycpane">
+              <div class="pdesc"><h4>250+ data points, straight to the board</h4><p>Completion, scores, certification currency and skill coverage by role, city and partner — with API sync into your PMS/HRMS, and mandatory courses enforced at the top of the app.</p><span class="pstat">222 custom audits at Amazon · 91% completion</span></div>
+              <div class="pviz">
+                <div class="ana">
+                  <div class="abar"><span class="al">Completion</span><span class="track"><span class="fill" style="--w:88%"></span></span><b>88%</b></div>
+                  <div class="abar"><span class="al">Pass rate</span><span class="track"><span class="fill" style="--w:84%"></span></span><b>84%</b></div>
+                  <div class="abar"><span class="al">Certs current</span><span class="track"><span class="fill" style="--w:92%"></span></span><b>92%</b></div>
+                  <div class="abar"><span class="al">Daily active</span><span class="track"><span class="fill" style="--w:76%"></span></span><b>76%</b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="clientline rise" style="animation-delay:.4s;margin-top:14px;">250+ ready courses in the library · custom content built in-house · works in low-bandwidth field conditions</div>
+      <div class="clientline rise" style="animation-delay:.4s;margin-top:14px;">250+ ready courses free · custom content built in-house · event-based triggers · works in low-bandwidth field conditions</div>
     </div>`,
   },
   {

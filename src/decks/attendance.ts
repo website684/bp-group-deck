@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe, icons, outcomeSlide, problemSlides, aiNote } from './html'
+import { bframe, fi, icons, outcomeSlide, problemSlides, aiNote } from './html'
 
 const groupAttend = groupSlides.find((s) => s.id === 's8')!
 
@@ -78,15 +78,48 @@ export const attendanceSlides: SlideDef[] = [
   {
     id: 'at3', theme: 'light', title: 'Rostering console',
     html: `
-    <div class="slidebody">
-      <span class="eyebrow rise">The ops console · real product</span>
-      <h2 class="rise" style="animation-delay:.08s;max-width:28ch;">Plan a week of shifts for a whole site — <span style="color:var(--navy)">then hit publish.</span></h2>
-      <div class="shotgrid rise" style="animation-delay:.22s;margin-top:18px;">
-        ${bframe('assets/product/gobetter/attendance/roster-weekly-grid.jpg', 'gobetter · Attend · Roster Management', 'Weekly associate-by-day roster — bulk tools, copy/paste, undo, <b>publish step</b>')}
-        ${bframe('assets/product/gobetter/attendance/roster-associate-level-shifts.jpg', 'gobetter · Attend · Associate shifts', 'Drill to one associate’s week — inspect or change individual shift assignments')}
+    <div class="slidebody split">
+      <div>
+        <span class="eyebrow rise">The ops console · rostering &amp; demand</span>
+        <h2 class="rise" style="animation-delay:.08s;">Plan a week of shifts for a whole site — <span style="color:var(--navy)">then hit publish.</span></h2>
+        <div class="featlist">
+          ${fi(icons.clock, 'Shift cards, defined once', 'Name a shift, set the timings and tolerance buffer — reuse it across sites; present and half-day values auto-calculate.', 0.24)}
+          ${fi(icons.warn, 'Gaps surface before the shift does', 'The grid flags tomorrow’s unfilled slot today — watch the Thursday gap on the right resolve itself.', 0.32)}
+          ${fi(icons.zap, 'Bulk tools with undo', 'Copy a week, paste a pattern, fix one associate’s day — then publish, and everyone is notified on WhatsApp.', 0.40)}
+          ${fi(icons.chart, 'Demand planning built in', 'Forecast deployment across sites; shortfall management drops from hours to minutes.', 0.48)}
+        </div>
       </div>
-      <div class="tags rise" style="animation-delay:.4s;margin-top:14px;">
-        <span class="tag">Reusable shift cards — define timings once</span><span class="tag">Daily shift counts</span><span class="tag">Site &amp; associate filters</span><span class="tag">Bulk operations with undo</span>
+      <div class="rise" style="animation-delay:.3s">
+        <div class="conmock rosterviz" data-cycle="2800">
+          <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="ttl">gobetter · Attend · Roster · Site BLR-04 · Week 32</span><span class="liv">Live</span></div>
+          <div class="body">
+            <div class="rhead"><span>Associate</span><span>Mon</span><span>Tue</span><span class="today">Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+            <div class="rrow">
+              <div class="who"><b>Ravi Kumar</b><span>Security guard</span></div>
+              <span class="cellc sh-m" style="--i:0">M</span><span class="cellc sh-m" style="--i:1">M</span><span class="cellc sh-m" style="--i:2">M</span><span class="cellc sh-m" style="--i:3">M</span><span class="cellc sh-e" style="--i:4">E</span><span class="cellc sh-e" style="--i:5">E</span><span class="cellc sh-o" style="--i:6">off</span>
+            </div>
+            <div class="rrow">
+              <div class="who"><b>Sunita Devi</b><span>Housekeeping</span></div>
+              <span class="cellc sh-e" style="--i:7">E</span><span class="cellc sh-e" style="--i:8">E</span><span class="cellc sh-o" style="--i:9">off</span>
+              <span class="gapcell"><span class="cyc g1">GAP</span><span class="cyc g2">AI: Priya S.</span><span class="cyc g3">Priya S. ✓</span></span>
+              <span class="cellc sh-e" style="--i:10">E</span><span class="cellc sh-m" style="--i:11">M</span><span class="cellc sh-m" style="--i:12">M</span>
+            </div>
+            <div class="rrow">
+              <div class="who"><b>Mohan Lal</b><span>Loader · Bay 2</span></div>
+              <span class="cellc sh-n" style="--i:13">N</span><span class="cellc sh-n" style="--i:14">N</span><span class="cellc sh-n" style="--i:15">N</span><span class="cellc sh-o" style="--i:16">off</span><span class="cellc sh-n" style="--i:17">N</span><span class="cellc sh-n" style="--i:18">N</span><span class="cellc sh-m" style="--i:19">M</span>
+            </div>
+            <div class="rrow">
+              <div class="who"><b>Asha Kumari</b><span>Store associate</span></div>
+              <span class="cellc sh-m" style="--i:20">M</span><span class="cellc sh-o" style="--i:21">off</span><span class="cellc sh-m" style="--i:22">M</span><span class="cellc sh-m" style="--i:23">M</span><span class="cellc sh-m" style="--i:24">M</span><span class="cellc sh-e" style="--i:25">E</span><span class="cellc sh-e" style="--i:26">E</span>
+            </div>
+            <div class="rfoot">
+              <div class="cycpane"><span class="fdot2 r"></span><span><b>1 unfilled shift</b> detected for Thu — housekeeping, evening</span><span class="pubbtn">Publish week</span></div>
+              <div class="cycpane"><span class="fdot2 y"></span><span><b>AI Zara suggests Priya S.</b> — 4.8 rating · 2.1 km away · inside OT cap</span><span class="pubbtn">Publish week</span></div>
+              <div class="cycpane"><span class="fdot2 g"></span><span><b>Roster published</b> — 27 shifts · 4 associates notified on WhatsApp</span><span class="pubbtn">Published ✓</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="bcap">The weekly grid — gaps flagged, AI-suggested, filled and published</div>
       </div>
     </div>
     ${aiNote('Demand forecasting', 'Rosters sized by forecast, not by habit', 'Sales, footfall and order-volume signals size tomorrow’s roster per site — overstaffed valleys and understaffed peaks both shrink.', 'AI scheduling cuts labor waste 18–22% (MIT Sloan)')}
@@ -95,43 +128,52 @@ export const attendanceSlides: SlideDef[] = [
   {
     id: 'at3b', theme: 'light', title: 'Policy engine',
     html: `
-    <div class="slidebody">
-      <span class="eyebrow rise">Configuration depth · real product</span>
-      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Your attendance policy, <span style="color:var(--navy)">enforced by software — not circulars.</span></h2>
-      <div class="shotgrid rise" style="animation-delay:.22s;margin-top:18px;">
-        ${bframe('assets/product/gobetter/attendance/org-level-configuration.jpg', 'gobetter · Attend · Org Configuration', 'The policy engine — full/half-day thresholds, OT caps, buffers, <b>edit windows</b>', true)}
-        ${bframe('assets/product/gobetter/attendance/holiday-configuration.jpg', 'gobetter · Attend · Holiday Configuration', 'Regional, public and optional holidays — by location or selected sites', true)}
+    <div class="slidebody split">
+      <div>
+        <span class="eyebrow rise">The policy engine · what happens on every punch</span>
+        <h2 class="rise" style="animation-delay:.08s;">Your attendance policy, <span style="color:var(--navy)">enforced by software — not circulars.</span></h2>
+        <p class="lede rise" style="animation-delay:.16s;margin-top:10px;">Watch one punch run the gauntlet: every rule you configure — thresholds, buffers, caps, edit windows — fires on every check-in, on every site, identically.</p>
+        <div class="tags rise" style="animation-delay:.3s;margin-top:16px;">
+          <span class="tag">Full/half-day thresholds</span><span class="tag">Forced logout &amp; elapsed-hour rules</span><span class="tag">OT pre-approval &amp; state caps</span><span class="tag">Self-regularisation limits</span><span class="tag">Holiday tables by region</span><span class="tag">Verify-status checks at marking</span><span class="tag">Per-vendor rules</span>
+        </div>
+        <p class="lede rise" style="animation-delay:.42s;margin-top:16px;">Configured once at org level, inherited by every site and vendor — <b>Reliance runs 3,000+ vendors on one rule engine.</b></p>
       </div>
-      <div class="tags rise" style="animation-delay:.4s;margin-top:14px;">
-        <span class="tag">Forced logout &amp; elapsed-hour rules</span><span class="tag">Manager approvals &amp; OT pre-approval</span><span class="tag">Associate self-regularisation limits</span><span class="tag">Site auto-configuration</span><span class="tag">Verify-status checks at marking</span><span class="tag">Named BetterPlace + client SPOCs</span>
+      <div class="rise" style="animation-delay:.3s">
+        <div class="conmock ruleflow">
+          <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="ttl">gobetter · Attend · Policy engine</span><span class="liv">Every punch</span></div>
+          <div class="body">
+            <div class="punch">
+              <span class="pav"><svg viewBox="0 0 24 24">${icons.user}</svg></span>
+              <div><b>IN punch · Ravi Kumar</b><span>09:04 · BLR-04 main gate</span></div>
+              <span class="face">Face match ✓ 99.1%</span>
+            </div>
+            <div class="rules">
+              <div class="rule" style="--i:0"><span class="ri"><svg viewBox="0 0 24 24">${icons.map}</svg></span><b>Geo-fence</b><span class="cfg">150 m radius</span><span class="st ok">✓ Inside fence</span></div>
+              <div class="rule" style="--i:1"><span class="ri"><svg viewBox="0 0 24 24">${icons.clock}</svg></span><b>Shift match</b><span class="cfg">Morning 09:00–18:00</span><span class="st ok">✓ In 20-min buffer</span></div>
+              <div class="rule" style="--i:2"><span class="ri"><svg viewBox="0 0 24 24">${icons.check}</svg></span><b>Day threshold</b><span class="cfg">Full 9h · half 5h</span><span class="st ok">✓ Full-day eligible</span></div>
+              <div class="rule flag" style="--i:3"><span class="ri"><svg viewBox="0 0 24 24">${icons.warn}</svg></span><b>OT cap watch</b><span class="cfg">State quarterly cap</span><span class="st warn">⚠ 38 of 40h this month</span></div>
+              <div class="rule" style="--i:4"><span class="ri"><svg viewBox="0 0 24 24">${icons.lock}</svg></span><b>Edit window</b><span class="cfg">48h regularisation</span><span class="st ok">✓ Locked after approval</span></div>
+            </div>
+            <div class="verdict"><b>Present · Full day</b> — flows to payroll untouched<span class="arr">Every check logged</span></div>
+          </div>
+        </div>
+        <div class="bcap">One punch, five rules, one auditable verdict — identically on every site</div>
       </div>
     </div>`,
   },
   {
     id: 'at-ot', theme: 'light', title: 'Overtime management',
     html: `
-    <div class="slidebody split">
-      <div>
-        <span class="eyebrow rise">Blue-collar overtime · cost meets compliance</span>
-        <h2 class="rise" style="animation-delay:.08s;">Overtime approved <span style="color:var(--navy)">before it’s worked</span> — and paid the way the law requires.</h2>
-        <div class="featlist" style="margin-top:6px;">
-          <div class="fi rise" style="animation-delay:.24s"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${icons.clock}</svg></span><div><h4>Pre-approved, not post-argued</h4><p>OT is sanctioned by the plant’s approval chain before the hours are worked — supervisors raise it, managers approve on mobile.</p></div></div>
-          <div class="fi rise" style="animation-delay:.32s"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${icons.shield}</svg></span><div><h4>Paid at the statutory multiple</h4><p>Overtime computes at twice the ordinary wage — Factories Act §59, carried into the new Labour Codes — straight into payroll, no manual multiplier.</p></div></div>
-          <div class="fi rise" style="animation-delay:.40s"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${icons.warn}</svg></span><div><h4>Held inside statutory caps</h4><p>Daily, weekly and quarterly OT-hour limits configured per state; the system flags a worker nearing the cap before it’s breached.</p></div></div>
-          <div class="fi rise" style="animation-delay:.48s"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${icons.chart}</svg></span><div><h4>A self-serve OT register</h4><p>The Overtime report names who worked it, how long, on which shift and who approved — the audit answer, generated.</p></div></div>
-        </div>
+    <div class="slidebody">
+      <span class="eyebrow rise">Blue-collar overtime · cost meets compliance</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:34ch;">Overtime approved <span style="color:var(--navy)">before it’s worked</span> — and paid as the law requires.</h2>
+      <div class="capgrid rise" style="animation-delay:.2s;margin-top:14px;">
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.clock}</svg></span><h4>Pre-approved, not post-argued</h4><p>Sanctioned by the plant’s approval chain before the hours are worked — raised by supervisors, approved on mobile</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.shield}</svg></span><h4>Paid at the statutory 2×</h4><p>Twice the ordinary wage — Factories Act §59, carried into the new Labour Codes — computed straight into payroll</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.warn}</svg></span><h4>Held inside statutory caps</h4><p>Daily, weekly and quarterly OT limits per state; a worker nearing the cap is flagged before it’s breached</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.chart}</svg></span><h4>A self-serve OT register</h4><p>The Overtime report names who worked it, how long, which shift and who approved — the audit answer, generated</p></div>
       </div>
-      <div class="rise" style="animation-delay:.35s;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;align-self:start;">
-        <div style="font-size:clamp(10px,1cqw,12px);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);">One OT line, computed</div>
-        <div style="display:flex;align-items:baseline;gap:10px;margin:12px 0 6px;"><span style="font-size:clamp(34px,4.4cqw,52px);font-weight:800;color:var(--navy);line-height:1;">2×</span><span style="font-size:clamp(13px,1.3cqw,16px);color:var(--text);">ordinary wage,<br/>beyond 9 hrs/day or 48 hrs/week</span></div>
-        <div style="height:1px;background:var(--border);margin:16px 0;"></div>
-        <div style="display:flex;flex-direction:column;gap:9px;font-size:clamp(12px,1.2cqw,13.5px);">
-          <div style="display:flex;justify-content:space-between;"><span style="color:var(--muted)">Sanctioned OT hours</span><b style="color:var(--text)">3.0 hrs</b></div>
-          <div style="display:flex;justify-content:space-between;"><span style="color:var(--muted)">Quarter cap status</span><b style="color:#3DBE7B">41 / 50 hrs</b></div>
-          <div style="display:flex;justify-content:space-between;"><span style="color:var(--muted)">Approved by</span><b style="color:var(--text)">Shift in-charge</b></div>
-        </div>
-        <p style="font-size:clamp(11px,1.05cqw,12.5px);color:var(--text);margin-top:16px;border-left:3px solid var(--yellow);padding-left:12px;"><b>Straight talk:</b> where a plant is genuinely hourly, tell us early — OT is measured in hours but normalised to days for computation. Naming the boundary up front keeps a pilot clean.</p>
-      </div>
+      <div class="clientline rise" style="animation-delay:.42s;margin-top:14px;"><b style="color:var(--navy)">2× ordinary wage</b> beyond 9 hrs/day or 48 hrs/week · sanctioned before it’s worked · held inside the state quarter cap · hourly plants: OT normalised to days</div>
     </div>
     ${aiNote('Policy engine', 'The cap that enforces itself', 'OT limits, spread-over and rest rules are wired into marking and approval per state — a breach is blocked or escalated at source, not found in a labour-department notice.', 'Factories Act §51 / §59 / §64–65 · state-configurable')}
     `,

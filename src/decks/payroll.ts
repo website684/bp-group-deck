@@ -53,11 +53,26 @@ export const payrollSlides: SlideDef[] = [
     <div class="slidebody">
       <span class="eyebrow rise">The compliance control room · real product</span>
       <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Every vendor's status on one screen — <span style="color:var(--navy)">before the auditor asks.</span></h2>
-      <div class="shotgrid rise" style="animation-delay:.22s;margin-top:18px;">
-        ${bframe('assets/product/gobetter/payroll/vendor-reconciliation-dashboard.jpg', 'gobetter · Payroll · Reconcile Dashboard', 'Vendors by period — <b>pending · failed · awaiting payrun · success</b>')}
-        ${bframe('assets/product/gobetter/payroll/vendor-reconciliation-table-detail.jpg', 'gobetter · Payroll · Vendor Detail', 'Vendor-level payroll tied to reconciliation status and actions')}
+      <div class="rise" style="animation-delay:.22s;margin-top:16px;max-width:980px;">
+        <div class="conmock reconboard">
+          <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="ttl">gobetter · Payroll · Vendor reconciliation · Jul 2026</span><span class="liv">Challan OCR live</span></div>
+          <div class="body">
+            <div class="sumrow">
+              <div class="sum"><b data-t="23">23</b><span>Vendors this period</span></div>
+              <div class="sum ok"><b data-t="19">19</b><span>Reconciled ✓</span></div>
+              <div class="sum wt"><b>3</b><span>Awaiting challan</span></div>
+              <div class="sum bad"><b>1</b><span>PF shortfall found</span></div>
+            </div>
+            <div class="vrow hd"><span>Vendor</span><span>Workers</span><span>Computed dues</span><span>Challan paid</span><span>Status</span></div>
+            <div class="vrow" style="--i:0"><b>Apex Manpower Pvt Ltd</b><span class="num">1,240</span><span class="num">₹18.42L</span><span class="num">₹18.42L</span><span class="pill ok">Reconciled ✓</span></div>
+            <div class="vrow" style="--i:1"><b>Sunrise Facility Services</b><span class="num">862</span><span class="num">₹12.10L</span><span class="num">₹12.10L</span><span class="pill ok">Reconciled ✓</span></div>
+            <div class="vrow" style="--i:2"><b>Metro Staffing Co.</b><span class="num">410</span><span class="num">₹6.21L</span><span class="num">—</span><span class="pill wt">Awaiting challan · day 4</span></div>
+            <div class="vrow flag" style="--i:3"><b>Delta Contractors</b><span class="num">296</span><span class="num">₹4.61L</span><span class="num">₹3.19L</span><span class="pill bad">₹1.42L short</span></div>
+            <div class="gapline"><svg viewBox="0 0 24 24">${icons.warn}</svg><span><b>Delta Contractors: 61 UANs unmatched, ₹1.42L PF short for Jul</b> — flagged the month it happened, worker-by-worker, with your due diligence on the record.</span></div>
+          </div>
+        </div>
+        <div class="bcap">Every vendor challan read by OCR and matched against computed dues — the principal employer's exposure, one screen</div>
       </div>
-      <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:92ch;">This is the proof behind the claim: principal employers monitor statutory exposure on a dashboard — not through email chains and spreadsheets.</p>
     </div>
     ${aiNote('AI Dev · statutory watchdog', 'OCR + reconciliation that never sleeps', 'Document AI reads every vendor challan — UANs, amounts, periods — and matches them worker-by-worker against computed dues, flagging shortfalls the same day.', 'Reliance: −80% vendor non-compliance')}
     `,
@@ -65,17 +80,40 @@ export const payrollSlides: SlideDef[] = [
   {
     id: 'py4', theme: 'light', title: 'Payroll operations',
     html: `
-    <div class="slidebody">
-      <span class="eyebrow rise">Payroll operations · real product</span>
-      <h2 class="rise" style="animation-delay:.08s;max-width:28ch;">From attendance to bank file — <span style="color:var(--navy)">zero manual entry.</span></h2>
-      <div class="shotgrid rise" style="animation-delay:.22s;margin-top:18px;">
-        ${bframe('assets/product/gobetter/payroll/payroll-batch-status-pipeline.jpg', 'gobetter · Payroll · Run Payroll', 'The batch pipeline — see where a pay run is waiting or failed before drilling down', true)}
-        ${bframe('assets/product/gobetter/payroll/pf-challan-upload-list.jpg', 'gobetter · Payroll · Compliances', 'PF challan upload &amp; history — <b>statutory evidence, on the record</b>', true)}
+    <div class="slidebody split">
+      <div>
+        <span class="eyebrow rise">Payroll operations · one pay run, start to finish</span>
+        <h2 class="rise" style="animation-delay:.08s;">From attendance to bank file — <span style="color:var(--navy)">zero manual entry.</span></h2>
+        <p class="lede rise" style="animation-delay:.16s;margin-top:10px;">A pay run is a controlled workflow with visible stages — not a spreadsheet ritual. Watch July close on the right: every guardrail fires before a rupee moves.</p>
+        <div class="tags rise" style="animation-delay:.3s;margin-top:16px;">
+          <span class="tag">Computation from face-verified attendance</span><span class="tag">Variable inputs by Excel</span><span class="tag">Minimum-wage validation by state</span><span class="tag">Salary structure templates</span><span class="tag">PF · ESI · PT · LWF workspaces</span><span class="tag">Vendor invoicing in-platform</span>
+        </div>
+        <p class="lede rise" style="animation-delay:.42s;margin-top:16px;">Reruns target the failed slice, not the whole month — <b>pay-cycle close drops from days to hours.</b></p>
       </div>
-      <div class="tags rise" style="animation-delay:.4s;margin-top:14px;">
-        <span class="tag">Computation from attendance</span><span class="tag">Minimum-wage validation by state</span><span class="tag">Salary structure templates</span><span class="tag">Vendor invoicing in-platform</span><span class="tag">PF · ESI · PT · LWF workspaces</span>
+      <div class="rise" style="animation-delay:.3s">
+        <div class="conmock ruleflow">
+          <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="ttl">gobetter · Payroll · Run Payroll · Jul 2026</span><span class="liv">Batch live</span></div>
+          <div class="body">
+            <div class="punch">
+              <span class="pav"><svg viewBox="0 0 24 24">${icons.card}</svg></span>
+              <div><b>Pay run · 736 workers</b><span>Site BLR-04 · month locked · Jul 2026</span></div>
+              <span class="face">Attendance source ✓</span>
+            </div>
+            <div class="rules">
+              <div class="rule" style="--i:0"><span class="ri"><svg viewBox="0 0 24 24">${icons.user}</svg></span><b>Attendance locked</b><span class="cfg">face-verified only</span><span class="st ok">✓ 736 of 736 days in</span></div>
+              <div class="rule" style="--i:1"><span class="ri"><svg viewBox="0 0 24 24">${icons.doc}</svg></span><b>Variables loaded</b><span class="cfg">Excel · one-time</span><span class="st ok">✓ Diwali bonus applied</span></div>
+              <div class="rule flag" style="--i:2"><span class="ri"><svg viewBox="0 0 24 24">${icons.shield}</svg></span><b>Wage-floor check</b><span class="cfg">state × skill grid</span><span class="st warn">⚠ 2 structures blocked</span></div>
+              <div class="rule" style="--i:3"><span class="ri"><svg viewBox="0 0 24 24">${icons.chart}</svg></span><b>Anomaly screen</b><span class="cfg">vs history &amp; cohort</span><span class="st warn">⚠ 3 outliers held</span></div>
+              <div class="rule" style="--i:4"><span class="ri"><svg viewBox="0 0 24 24">${icons.check}</svg></span><b>Bank file + payslips</b><span class="cfg">to worker app</span><span class="st ok">✓ Generated</span></div>
+            </div>
+            <div class="verdict"><b>731 paid on the 1st</b> — 5 held for human review<span class="arr">Every rupee traceable</span></div>
+          </div>
+        </div>
+        <div class="bcap">The batch pipeline — guardrails fire in-flow, failures rerun as a slice</div>
       </div>
-    </div>`,
+    </div>
+    ${aiNote('AI Dev · payroll copilot', 'The outliers are found before the payout', 'Anomaly models screen every computed pay against history and cohort; the flagged few wait for a human — the other 731 go out on time.', 'Days → hours pay-cycle close')}
+    `,
   },
   {
     id: 'py4c', theme: 'light', title: 'The payroll workspace',
@@ -91,19 +129,6 @@ export const payrollSlides: SlideDef[] = [
     </div>
     ${aiNote('Anomaly detection', 'Every pay run pre-screened', 'Models compare each worker’s computed pay against history and cohort — outliers surface for review before disbursement, not in a grievance.', '−90% payroll leakage at Reliance')}
     `,
-  },
-  {
-    id: 'py4b', theme: 'light', title: 'Controlled pay cycles',
-    html: `
-    <div class="slidebody">
-      <span class="eyebrow rise">Controls &amp; configuration · real product</span>
-      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">A pay run is a controlled workflow, <span style="color:var(--navy)">not a spreadsheet ritual.</span></h2>
-      <div class="shotgrid rise" style="animation-delay:.22s;margin-top:18px;">
-        ${bframe('assets/product/gobetter/payroll/salary-structure-templates.jpg', 'gobetter · Payroll · Salary Structures', 'Reusable salary structure templates — compensation rules configured once', true)}
-        ${bframe('assets/product/gobetter/payroll/raise-invoice-vendor.jpg', 'gobetter · Payroll · Raise Invoice', 'Vendor invoicing inside the platform — tied to the same attendance and payroll data', true)}
-      </div>
-      <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:92ch;">Month picker → inputs → batch pipeline → disbursement: operators see where a run is waiting or failed before drilling down, and vendors invoice against verified numbers.</p>
-    </div>`,
   },
   {
     id: 'py-vendor', theme: 'light', title: 'Vendor management & CLRA',

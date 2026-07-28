@@ -74,6 +74,7 @@ export default function DeckPlayer({ deck, client, initialSlide = 0, shareMode =
     if (!root) return
     const active = root.children[cur] as HTMLElement | undefined
     let builderTimer: number | undefined
+    const cycleTimers: number[] = []
     if (active) {
       active.scrollTop = 0
       countUp(active)
@@ -97,9 +98,44 @@ export default function DeckPlayer({ deck, client, initialSlide = 0, shareMode =
         render()
         builderTimer = window.setInterval(() => { i = (i + 1) % stages.length; render() }, 2400)
       }
+      // Generic auto-cycler: any [data-cycle="ms"] container advances its .cyc children
+      // (steps get .on when active, .done when passed; .cycpane siblings show/hide in sync).
+      active.querySelectorAll<HTMLElement>('[data-cycle]').forEach((box) => {
+        const steps = box.querySelectorAll<HTMLElement>('.cyc')
+        const panes = box.querySelectorAll<HTMLElement>('.cycpane')
+        const n = Math.max(steps.length, panes.length)
+        if (!n) return
+        let i = 0
+        const render = () => {
+          steps.forEach((s, k) => {
+            s.classList.toggle('on', k === i)
+            s.classList.toggle('done', k < i)
+          })
+          panes.forEach((p, k) => p.classList.toggle('on', k === i))
+        }
+        render()
+        cycleTimers.push(window.setInterval(() => { i = (i + 1) % n; render() }, Number(box.dataset.cycle) || 2600))
+      })
     }
-    return () => { if (builderTimer) window.clearInterval(builderTimer) }
+    return () => {
+      if (builderTimer) window.clearInterval(builderTimer)
+      cycleTimers.forEach((t) => window.clearInterval(t))
+    }
   }, [cur])
+
+  // Cursor spotlight on cards: track pointer position as CSS vars on hoverable surfaces
+  useEffect(() => {
+    const sel = '.cap, .case, .ctac, .tier, .ag, .mstat, .icard, .fi, .rstage, .pmrow, .lrow, .quote'
+    const onMove = (e: PointerEvent) => {
+      const el = (e.target as HTMLElement | null)?.closest?.(sel) as HTMLElement | null
+      if (!el) return
+      const r = el.getBoundingClientRect()
+      el.style.setProperty('--mx', `${((e.clientX - r.left) / r.width) * 100}%`)
+      el.style.setProperty('--my', `${((e.clientY - r.top) / r.height) * 100}%`)
+    }
+    document.addEventListener('pointermove', onMove, { passive: true })
+    return () => document.removeEventListener('pointermove', onMove)
+  }, [])
 
   const slide: SlideDef = deck.slides[cur]
   const darkStrip = slide.theme !== 'light'

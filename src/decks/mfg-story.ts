@@ -80,8 +80,8 @@ export const mfgStorySlides: SlideDef[] = [
     <div class="slidebody">
       <span class="eyebrow rise">AI Vendor Scorecard · which contractors to keep</span>
       <h2 class="rise" style="animation-delay:.08s;max-width:32ch;">Which contractor keeps your lines staffed — <span style="color:var(--navy)">and keeps you compliant?</span></h2>
-      <div class="rise" style="animation-delay:.2s;margin-top:14px;background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;">
-        <div style="display:grid;grid-template-columns:1.6fr 1fr .9fr .9fr 1fr .7fr;gap:8px;padding:12px 18px;font-size:clamp(10px,1cqw,12px);font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--border);">
+      <div class="rise" style="animation-delay:.2s;margin-top:12px;background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+        <div style="display:grid;grid-template-columns:1.6fr 1fr .9fr .9fr 1fr .7fr;gap:8px;padding:9px 18px;font-size:clamp(10px,1cqw,12px);font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--border);">
           <span>Contractor</span><span>Fill rate</span><span>Attend</span><span>Attrition</span><span>Compliance</span><span style="text-align:right">Grade</span>
         </div>
         ${[
@@ -90,7 +90,7 @@ export const mfgStorySlides: SlideDef[] = [
           { n: 'Metro Staffing', fill: 74, att: '82%', attr: '31%', comp: '81%', g: 'C', c: '#FF9518' },
           { n: 'Delta Contractors', fill: 61, att: '76%', attr: '44%', comp: '68%', g: 'D', c: '#D0271D' },
         ].map((r, i) => `
-        <div class="rise" style="animation-delay:${0.3 + i * 0.08}s;display:grid;grid-template-columns:1.6fr 1fr .9fr .9fr 1fr .7fr;gap:8px;align-items:center;padding:13px 18px;font-size:clamp(12px,1.2cqw,14px);${i < 3 ? 'border-bottom:1px solid var(--border);' : ''}">
+        <div class="rise" style="animation-delay:${0.3 + i * 0.08}s;display:grid;grid-template-columns:1.6fr 1fr .9fr .9fr 1fr .7fr;gap:8px;align-items:center;padding:10px 18px;font-size:clamp(12px,1.2cqw,14px);${i < 3 ? 'border-bottom:1px solid var(--border);' : ''}">
           <span style="font-weight:700;color:var(--text)">${r.n}</span>
           <span style="display:flex;align-items:center;gap:8px;"><span style="flex:1;height:6px;border-radius:4px;background:var(--surface-2);overflow:hidden;"><span style="display:block;height:100%;width:${r.fill}%;background:${r.c};"></span></span><b style="color:var(--text)">${r.fill}%</b></span>
           <span style="color:var(--muted)">${r.att}</span>
@@ -99,8 +99,7 @@ export const mfgStorySlides: SlideDef[] = [
           <span style="text-align:right"><span style="display:inline-block;width:26px;height:26px;line-height:26px;text-align:center;border-radius:7px;font-weight:800;color:#fff;background:${r.c};">${r.g}</span></span>
         </div>`).join('')}
       </div>
-      <p class="lede rise" style="animation-delay:.6s;margin-top:14px;max-width:96ch;">Fill rate, attendance, attrition, statutory compliance, invoice accuracy and safety incidents — pulled from the same closed loop that runs your gate, payroll and challan reconciliation. The good contractors earn more work; the D-grade one surfaces before the next work order goes to them.</p>
-      <div class="probfoot rise" style="animation-delay:.72s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">AI Dev, your statutory watchdog, feeds the score — so a renewal rests on <b>what actually happened on your floor</b>, not a contractor’s review-meeting claim. <span style="opacity:.7;font-weight:400;">Illustrative — weightings configurable.</span></div>
+      <div class="probfoot rise" style="animation-delay:.62s;margin-top:14px;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">Pulled from the same loop that runs your gate, payroll and challan reconciliation — AI Dev feeds the score, so a renewal rests on <b>what happened on your floor</b>, not a review-meeting claim. <span style="opacity:.7;font-weight:400;">Illustrative — weightings configurable.</span></div>
     </div>`,
   },
   {

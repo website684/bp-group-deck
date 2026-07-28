@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { groupSlides } from './group'
-import { bframe, fi, icons, outcomeSlide, problemSlides, aiNote } from './html'
+import { fi, icons, outcomeSlide, problemSlides, aiNote } from './html'
 
 const groupHire = groupSlides.find((s) => s.id === 's7')!
 
@@ -63,7 +63,22 @@ export const hireOnboardSlides: SlideDef[] = [
         </div>
       </div>
       <div class="rise" style="animation-delay:.35s">
-        ${bframe('assets/product/gobetter/hire/onboarding-status-funnel.jpg', 'gobetter · Onboarding status', 'The onboarding funnel — drop-off counts and conversion at every stage, <b>bottlenecks visible</b>')}
+        <div class="conmock shortlist">
+          <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="ttl">gobetter · Hire · Store Associate · Andheri West</span><span class="liv">Ranked</span></div>
+          <div class="body">
+            <div class="aiban">
+              <span class="av"><svg viewBox="0 0 24 24">${icons.bot}</svg></span>
+              <div><b>AI Jack screened 1,960 applicants overnight</b><span>WhatsApp + voice · scored against the role rubric</span></div>
+              <span class="wave"><i></i><i></i><i></i><i></i><i></i></span>
+            </div>
+            <div class="crow top" style="--i:0"><span class="rank">1</span><span class="cav2">PS</span><div class="cwho"><b>Priya Sharma</b><span>2.1 km · Hindi + English · 2y retail</span></div><div class="fitc"><span class="track"><span class="fill" style="width:94%"></span></span><b>94</b></div><span class="cst grn">Interview 10 AM</span></div>
+            <div class="crow" style="--i:1"><span class="rank">2</span><span class="cav2">RV</span><div class="cwho"><b>Rahul Verma</b><span>3.4 km · Hindi · POS certified</span></div><div class="fitc"><span class="track"><span class="fill" style="width:91%"></span></span><b>91</b></div><span class="cst grn">Interview 11 AM</span></div>
+            <div class="crow" style="--i:2"><span class="rank">3</span><span class="cav2">SP</span><div class="cwho"><b>Sneha Patil</b><span>1.8 km · Marathi + Hindi · fresher</span></div><div class="fitc"><span class="track"><span class="fill" style="width:88%"></span></span><b>88</b></div><span class="cst blu">Shortlisted</span></div>
+            <div class="crow" style="--i:3"><span class="rank">4</span><span class="cav2">AJ</span><div class="cwho"><b>Amit Joshi</b><span>4.9 km · Hindi · 1y QSR</span></div><div class="fitc"><span class="track"><span class="fill" style="width:84%"></span></span><b>84</b></div><span class="cst blu">Shortlisted</span></div>
+            <div class="crow" style="--i:4"><span class="rank">5</span><span class="cav2">KR</span><div class="cwho"><b>Kiran Rao</b><span>2.7 km · Telugu + Hindi · fresher</span></div><div class="fitc"><span class="track"><span class="fill" style="width:81%"></span></span><b>81</b></div><span class="cst blu">Shortlisted</span></div>
+          </div>
+        </div>
+        <div class="bcap">Monday 9 AM: recruiters open <b>this</b> — not 1,960 unread applications</div>
       </div>
     </div>`,
   },
