@@ -284,7 +284,7 @@ canvas#field{position:fixed;inset:0;z-index:0;pointer-events:none}
       <span class="kicker r">The studio · live capture</span>
       <h2 class="r d1">Watch an agent get <span class="hl">hired.</span></h2>
       <div class="vidshell r d2">
-        <video id="demoVid" src="ailabs-demo.mp4" poster="ailabs-demo-poster.jpg" preload="metadata" playsinline controls controlslist="nodownload"></video>
+        <video id="demoVid" preload="metadata" playsinline controls controlslist="nodownload"></video>
         <button class="vplay" id="vplay" aria-label="Play the AI Labs demo"><span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button>
       </div>
       <div class="vcap r d3">1 min 42 s · real product · sound on</div>
@@ -337,7 +337,11 @@ function go(i){
   setTimeout(()=>lock=false,700);
 }
 /* ---------- demo video ---------- */
+/* hosts differ on trailing slashes (/ailabs-overview vs /ailabs-overview/), so resolve media against this page's directory explicitly */
 const dvid=document.getElementById('demoVid'),vpl=document.getElementById('vplay');
+const pdir=location.pathname.replace(/\/index\.html$/,'').replace(/\/+$/,'')+'/';
+dvid.poster=pdir+'ailabs-demo-poster.jpg';
+dvid.src=pdir+'ailabs-demo.mp4';
 vpl.onclick=()=>dvid.play();
 dvid.onplay=()=>vpl.classList.add('hide');
 dvid.onended=()=>vpl.classList.remove('hide');
