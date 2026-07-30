@@ -143,6 +143,19 @@ canvas#field{position:fixed;inset:0;z-index:0;pointer-events:none}
 .s3foot p b{color:#fff}
 .s3foot .num{font-family:'Poppins';font-weight:800;font-size:clamp(22px,2vw,30px);color:var(--yellow);white-space:nowrap}
 
+/* ---------- SLIDE 4 · DEMO VIDEO ---------- */
+.s4wrap{max-width:1200px;width:100%;text-align:center}
+.s4 .kicker{justify-content:center}
+.s4 h2{font-size:clamp(24px,2.6vw,38px);font-weight:800;letter-spacing:-.8px;margin:12px 0 18px}
+.s4 h2 .hl{color:var(--yellow)}
+.vidshell{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55);background:#000;max-width:min(1020px,86vw);margin:0 auto}
+.vidshell video{display:block;width:100%;max-height:56vh;object-fit:contain;background:#000}
+.vplay{position:absolute;inset:0;display:grid;place-items:center;background:rgba(7,12,40,.32);cursor:pointer;transition:opacity .35s;border:0;width:100%}
+.vplay .pbtn{width:84px;height:84px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(255,196,1,.22),0 18px 50px rgba(0,0,0,.5);animation:pulse 2.4s infinite}
+.vplay .pbtn svg{width:30px;height:30px;fill:var(--ink);margin-left:5px}
+.vplay.hide{opacity:0;pointer-events:none}
+.vcap{margin-top:13px;font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--dim2)}
+
 @media (max-width:980px){
   .s1wrap{grid-template-columns:1fr}.orbit{display:none}
   .statrow{grid-template-columns:repeat(2,auto);gap:22px}
@@ -264,6 +277,19 @@ canvas#field{position:fixed;inset:0;z-index:0;pointer-events:none}
       </div>
     </div>
   </section>
+
+  <!-- ================= SLIDE 4 · THE DEMO ================= -->
+  <section class="slide s4" data-i="3">
+    <div class="s4wrap">
+      <span class="kicker r">The studio · live capture</span>
+      <h2 class="r d1">Watch an agent get <span class="hl">hired.</span></h2>
+      <div class="vidshell r d2">
+        <video id="demoVid" src="ailabs-demo.mp4" poster="ailabs-demo-poster.jpg" preload="metadata" playsinline controls controlslist="nodownload"></video>
+        <button class="vplay" id="vplay" aria-label="Play the AI Labs demo"><span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button>
+      </div>
+      <div class="vcap r d3">1 min 42 s · real product · sound on</div>
+    </div>
+  </section>
 </div>
 
 <div class="hint" id="hint">Scroll · arrow keys · swipe</div>
@@ -307,8 +333,14 @@ function go(i){
   [...dots.children].forEach((d,k)=>d.classList.toggle('on',k===cur));
   document.getElementById('hint').style.opacity=cur?0:1;
   if(cur===0)startType();if(slides[cur].querySelector('[data-count]'))runCounts(slides[cur]);
+  const dv=document.getElementById('demoVid');if(dv&&cur!==3&&!dv.paused)dv.pause();
   setTimeout(()=>lock=false,700);
 }
+/* ---------- demo video ---------- */
+const dvid=document.getElementById('demoVid'),vpl=document.getElementById('vplay');
+vpl.onclick=()=>dvid.play();
+dvid.onplay=()=>vpl.classList.add('hide');
+dvid.onended=()=>vpl.classList.remove('hide');
 document.getElementById('next').onclick=()=>go(cur+1);
 document.getElementById('prev').onclick=()=>go(cur-1);
 addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown',' ','PageDown'].includes(e.key))go(cur+1);if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key))go(cur-1)});
