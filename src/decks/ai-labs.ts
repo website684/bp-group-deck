@@ -7,9 +7,9 @@ export const aiLabsSlides: SlideDef[] = [
     html: `
     <div class="glow"></div>
     <div class="mdcover">
-      <span class="mdkicker rise" style="animation-delay:.05s">AI Labs · the flagship</span>
-      <h1 class="rise" style="animation-delay:.15s">You don't buy software.<br/>You <span style="color:var(--yellow)">hire agents.</span></h1>
-      <p class="sub rise" style="animation-delay:.3s">Build an AI worker for your frontline in 10 minutes — chat, voice and step-by-step workflows, trained on your documents, connected to your systems. Without code.</p>
+      <span class="mdkicker rise" style="animation-delay:.05s">AI Labs · the AI employee studio</span>
+      <h1 class="rise" style="animation-delay:.15s">You don't buy software.<br/>You <span style="color:var(--yellow)">hire AI employees.</span></h1>
+      <p class="sub rise" style="animation-delay:.3s"><b style="color:#fff;">AI Labs is our studio for building AI employees</b> — agents that hold voice conversations in 24 languages, read photos and documents, and do real work inside your systems. Built in 10 minutes without code, running on our own private cloud — so your data never leaves.</p>
       <div class="stats rise" style="animation-delay:.45s;margin-top:34px;">
         <div class="stat"><div class="n">10 <em>min</em></div><div class="l">To a working agent</div></div>
         <div class="stat"><div class="n">24</div><div class="l">Languages, live</div></div>
@@ -22,6 +22,54 @@ export const aiLabsSlides: SlideDef[] = [
       <div class="boteye rise" style="animation-delay:.4s;position:absolute;inset:0;margin:auto;width:62%;"><span class="ring"></span><video src="assets/product/bot_eye_video.mp4" poster="assets/product/bot_eye_static_square.jpeg" autoplay muted loop playsinline></video></div>
     </div>
     <div class="mdcover ghost">AI</div>`,
+  },
+  {
+    id: 'ai1w', theme: 'light', title: 'What is AI Labs',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">What is AI Labs · in plain words</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">A studio where you build <span style="color:var(--navy)">AI employees.</span></h2>
+      <p class="lede rise" style="animation-delay:.16s;margin-top:10px;max-width:96ch;">Not a chatbot you bolt on. A workbench where your own team builds AI workers — describe the job the way you'd brief a new joiner, and the studio builds the employee. Here's what every agent can do:</p>
+      <div class="capgrid rise" style="animation-delay:.26s;grid-template-columns:repeat(3,1fr);">
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.mic}</svg></span><h4>Speaks &amp; listens</h4><p>Real voice calls and WhatsApp chats in 24 languages — it holds the conversation, not a menu</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.eye}</svg></span><h4>Sees photos &amp; video</h4><p>Checks an ID card, a helmet on a head, a shelf display, a damaged package — from a phone camera</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.doc}</svg></span><h4>Reads your documents</h4><p>SOPs, policies, price lists — answers from your content and shows the page it came from</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.plug}</svg></span><h4>Connects to any system</h4><p>HRMS, SAP, attendance, payroll — it doesn't just answer, it looks things up and updates records</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.check}</svg></span><h4>Follows your process</h4><p>Step-by-step workflows that cannot skip a step — safe for inductions, compliance, verifications</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.layers}</svg></span><h4>Remembers every worker</h4><p>Knows who it's talking to and what was said last time — conversation forty builds on conversation one</p></div>
+      </div>
+      <div class="probfoot rise" style="animation-delay:.44s">If you can describe the job to a new employee, you can build the agent. <b>10 minutes, no code, no data-science team.</b></div>
+    </div>`,
+  },
+  {
+    id: 'ai1x', theme: 'light', title: 'How it is built',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">Why it's different · how it's built</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Most tools rent AI by the API call. <span style="color:var(--navy)">We built our own.</span></h2>
+      <p class="lede rise" style="animation-delay:.16s;margin-top:10px;max-width:100ch;">AI Labs runs open-source AI models deployed on <b>our own cloud</b>, with memory and context engineering built on top. That one decision is why it's private, why it's compliant, and why it stays cheap at 100,000 workers.</p>
+      <div class="vs rise" style="animation-delay:.28s">
+        <div class="col bad">
+          <h4>Typical AI tool</h4>
+          <ul>
+            <li>A thin layer over someone else's AI API — every conversation is sent to a third party</li>
+            <li>Your workers' chats, IDs and documents leave your control; DPDP has no good answer</li>
+            <li>Pays a per-call toll to the API owner — costs explode at frontline volume</li>
+            <li>A chat widget. Voice calls, WhatsApp and photo analysis are add-ons or missing</li>
+          </ul>
+        </div>
+        <div class="col good">
+          <h4>AI Labs</h4>
+          <ul>
+            <li>Open-source models on BetterPlace's own cloud — no third party in the loop</li>
+            <li>Data never leaves the platform, memory kept per worker — ISO 27001 · SOC 2, DPDP-defensible</li>
+            <li>No per-token toll, so high volume stays cheap — ₹0.37 a conversation, voice at ₹5/min</li>
+            <li>Voice calls, WhatsApp, in-app and web — with vision and documents built in</li>
+          </ul>
+        </div>
+      </div>
+      <div class="probfoot rise" style="animation-delay:.44s">When the auditor asks <b>"where does worker data go?"</b> — your answer is one word: <b>nowhere.</b></div>
+    </div>`,
   },
   ...problemSlides('ai1b', 'For founders & COOs', 'Ops headcount grows with your workforce. It doesn’t have to.', 'And generic AI can’t be trusted with your compliance.', [
     { pain: 'Every 1,000 workers adds support and admin heads', painDetail: 'Helpdesk tickets, onboarding paperwork and L&D chasing scale linearly with the frontline — margin erodes as you grow.', painStat: 'L&D admin alone: ~60% of team time', fix: 'Agents absorb the volume at ₹0.37 a conversation', fixDetail: 'Onboarding, helpdesk, compliance and coaching run as agents — 5,000 workers served for about ₹1,860 a month.', fixStat: '−38% L&D ops time, measured' },
