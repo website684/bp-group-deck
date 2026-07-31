@@ -15,9 +15,9 @@ export const staffbetterSlides: SlideDef[] = [
       <p class="sub rise" style="animation-delay:.3s">Full-time staffing across India &amp; Southeast Asia, drawn from the verified 25M+ pool. We become the employer of record and carry the full compliance load — you direct the work.</p>
       <div class="stats rise" style="animation-delay:.45s;margin-top:30px;">
         <div class="stat"><div class="n">40K+</div><div class="l">Workers managed / month</div></div>
-        <div class="stat"><div class="n">$105M+</div><div class="l">Annual gross revenue</div></div>
+        <div class="stat"><div class="n">&gt;95%</div><div class="l">Client retention</div></div>
         <div class="stat"><div class="n">24–72 hr</div><div class="l">Deployment from verified pool</div></div>
-        <div class="stat"><div class="n">200+</div><div class="l">Role categories</div></div>
+        <div class="stat"><div class="n">6,000+</div><div class="l">Pin codes covered in India</div></div>
       </div>
       <div class="mdcover ghost">SB</div>
     </div>`,
@@ -42,7 +42,7 @@ export const staffbetterSlides: SlideDef[] = [
       </div>
       <div class="capgrid three rise" style="animation-delay:.35s;margin-top:18px;">
         <div class="cap"><h4>Employer of record, end to end</h4><p>PF, ESIC, payroll, gratuity, labour-law compliance — our liability, not yours, with real-time reporting</p></div>
-        <div class="cap"><h4>Worker welfare that cuts churn</h4><p>Statutory benefits, job-accident insurance, early wage access — the reasons deployed workers stay</p></div>
+        <div class="cap"><h4>Worker welfare that cuts churn</h4><p>Statutory benefits, insurance, early wage access — plus grievance redressal that answers in 8h 35m and resolves 94% within SLA</p></div>
         <div class="cap"><h4>One partner across markets</h4><p>AasaanJobs (India) · MyRobin (Indonesia) · Troopers (Malaysia) — 500+ cities on one relationship</p></div>
       </div>
       <div class="clientline rise" style="animation-delay:.5s;margin-top:14px;">Every deployed worker is BGV-verified and runs on the same goBetter platform — attendance, payroll and training included</div>
@@ -56,8 +56,9 @@ export const staffbetterSlides: SlideDef[] = [
     <div class="slidebody">
       <span class="eyebrow rise">Proof</span>
       <h2 class="rise" style="animation-delay:.08s;max-width:28ch;">From HNI sales floors to <span style="color:var(--navy)">1,000-exec teams.</span></h2>
-      <div class="cases" style="grid-template-columns:1fr;max-width:860px;margin-top:16px;">
+      <div class="cases" style="grid-template-columns:1fr 1fr;margin-top:16px;">
         <div class="case rise" style="--pc:#FF9518;animation-delay:.22s"><div class="ch"><span class="cn">Mahindra Holidays</span><span class="ct">Staffing · hospitality</span></div><p>Exclusive vendor for HNI telemarketing and field sales — luxury packages of ₹2–16L, sourced pan-India, quality-screened and deployed compliantly.</p><div class="cm"><div class="m"><div class="mn">300+</div><div class="ml">quality hires in 3 months</div></div><div class="m"><div class="mn">1,000+</div><div class="ml">execs on the team today</div></div><div class="m"><div class="mn">Exclusive</div><div class="ml">vendor status earned</div></div></div></div>
+        <div class="case rise" style="--pc:#1B2D93;animation-delay:.3s"><div class="ch"><span class="cn">The Aasaanjobs engine</span><span class="ct">India staffing · run rate</span></div><p>Our India brand runs 23,000+ outsourced staff for Amazon, Flipkart, DMart, Nykaa, Nestlé and 1,100+ enterprise partners — offers to onboarding as a measured pipeline.</p><div class="cm"><div class="m"><div class="mn">~4,600</div><div class="ml">offers a month, 2,500 joinings</div></div><div class="m"><div class="mn">90%</div><div class="ml">offer letters within 1 day</div></div><div class="m"><div class="mn">94%</div><div class="ml">grievances resolved in SLA</div></div></div></div>
       </div>
       <div class="probfoot rise" style="animation-delay:.4s">Industries staffed: warehouse &amp; logistics · retail &amp; sales · delivery · F&amp;B &amp; hospitality · security &amp; facilities · manufacturing · BPO · healthcare support</div>
     </div>`,

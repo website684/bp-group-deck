@@ -8,6 +8,7 @@ import { verifySlides } from './verify'
 import { hireOnboardSlides } from './hire-onboard'
 import { hrisSlides } from './hris'
 import { staffbetterSlides } from './staffbetter'
+import { aasaanjobsSlides } from './aasaanjobs'
 import { gigbetterSlides } from './gigbetter'
 import { industryDecks } from './industries'
 import { incentivesSlides } from './incentives'
@@ -80,9 +81,14 @@ export const decks: DeckDef[] = [
     slides: hrisSlides,
   },
   {
-    id: 'staffbetter', next: 'gigbetter', title: 'staffBetter · Managed Staffing', group: 'services',
+    id: 'staffbetter', next: 'aasaanjobs', title: 'staffBetter · Managed Staffing', group: 'services',
     tagline: 'Full-time frontline staffing with employer-of-record compliance — deployed in 24–72 hours from the verified 25M+ pool.',
     slides: staffbetterSlides,
+  },
+  {
+    id: 'aasaanjobs', next: 'gigbetter', title: 'Aasaanjobs · Staffing Solutions', group: 'services',
+    tagline: 'The India staffing brand — 23,000+ outsourced manpower, 25+ cities, >95% client retention. Recruitment, onboarding and payroll end to end.',
+    slides: aasaanjobsSlides,
   },
   {
     id: 'gigbetter', next: 'ai-labs', title: 'gigBetter · On-demand Gig', group: 'services',
@@ -97,7 +103,7 @@ export function getDeck(id: string): DeckDef | undefined {
 }
 
 /** Modules that can be stitched into a custom flow */
-export const COMPOSABLE = ['ai-labs', 'skillbetter', 'hire-onboard', 'verify', 'attendance', 'payroll', 'incentives', 'hris', 'staffbetter', 'gigbetter']
+export const COMPOSABLE = ['ai-labs', 'skillbetter', 'hire-onboard', 'verify', 'attendance', 'payroll', 'incentives', 'hris', 'staffbetter', 'aasaanjobs', 'gigbetter']
 
 export function composeCustom(mods: string[]): SlideDef[] {
   const opening = groupSlides.filter((s) => ['s1', 's2', 's3', 's5'].includes(s.id))

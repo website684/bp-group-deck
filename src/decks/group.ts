@@ -526,10 +526,10 @@ export const groupSlides: SlideDef[] = [
         </div>
         <div class="stats" style="margin-top:22px;gap:20px 30px;">
           <div class="stat"><div class="n">40,000+</div><div class="l">Workers managed / month</div></div>
-          <div class="stat"><div class="n">$105M+</div><div class="l">Annual gross revenue</div></div>
+          <div class="stat"><div class="n">&gt;95%</div><div class="l">Client retention</div></div>
           <div class="stat"><div class="n">40%</div><div class="l">Faster time-to-hire</div></div>
         </div>
-        <div class="clientline">500+ cities · India · Indonesia · Malaysia · Singapore · UAE — powered by <span class="cl-n">Aasaanjobs</span>, <span class="cl-n">MyRobin</span> &amp; <span class="cl-n">Troopers</span></div>
+        <div class="clientline">500+ cities · 6,000+ Indian pin codes · Indonesia · Malaysia · Singapore · UAE — powered by <span class="cl-n">Aasaanjobs</span>, <span class="cl-n">MyRobin</span> &amp; <span class="cl-n">Troopers</span></div>
       </div>
     </div>
   `,
