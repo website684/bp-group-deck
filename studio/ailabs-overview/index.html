@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+<title>AI Labs — BetterPlace · Investor Overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B2D93; --navy-deep:#101B57; --ink:#0B1237; --ink2:#070C28;
+  --yellow:#FFC401; --cyan:#39D2E8; --mint:#3BE8B0; --coral:#FF7A6B; --violet:#8B7CFF;
+  --white:#FFFFFF; --dim:rgba(255,255,255,.62); --dim2:rgba(255,255,255,.4);
+  --line:rgba(255,255,255,.1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden;background:var(--ink2);color:#fff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+.mono{font-family:'JetBrains Mono',monospace}
+canvas#field{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+/* ---------- deck chrome ---------- */
+.deck{position:relative;z-index:1;height:100%}
+.slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:84px 6vw 10vh;opacity:0;visibility:hidden;transform:translateY(28px) scale(.985);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1),visibility 0s .65s}
+.slide.on{opacity:1;visibility:visible;transform:none;transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:22px 34px;pointer-events:none}
+.brand{display:flex;align-items:center;gap:12px;font-family:'Poppins';font-weight:700;font-size:15px;letter-spacing:.2px}
+.brand .dotmark{width:11px;height:11px;border-radius:50%;background:var(--yellow);box-shadow:0 0 18px rgba(255,196,1,.8);animation:pulse 2.6s infinite}
+.brand em{font-style:normal;color:var(--yellow)}
+.conf{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:2.5px;color:var(--dim2);text-transform:uppercase}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.35);opacity:.7}}
+.navbar{position:fixed;bottom:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:center;gap:20px;padding:20px}
+.ndots{display:flex;gap:9px}
+.nd{width:8px;height:8px;border-radius:20px;background:rgba(255,255,255,.18);cursor:pointer;transition:.35s;border:0}
+.nd.on{width:30px;background:var(--yellow)}
+.arrows{display:flex;gap:8px}
+.arr{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.04);color:#fff;font-size:15px;cursor:pointer;transition:.25s;display:grid;place-items:center;backdrop-filter:blur(6px)}
+.arr:hover{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.hint{position:fixed;bottom:74px;left:50%;transform:translateX(-50%);z-index:5;font-family:'JetBrains Mono';font-size:10px;letter-spacing:2px;color:var(--dim2);text-transform:uppercase;animation:hintFloat 2.4s ease-in-out infinite;transition:opacity .5s}
+@keyframes hintFloat{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-5px)}}
+
+/* ---------- reveal engine ---------- */
+.r{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.slide.on .r{opacity:1;transform:none}
+.slide.on .r.d1{transition-delay:.12s}.slide.on .r.d2{transition-delay:.24s}.slide.on .r.d3{transition-delay:.38s}
+.slide.on .r.d4{transition-delay:.52s}.slide.on .r.d5{transition-delay:.66s}.slide.on .r.d6{transition-delay:.8s}
+
+.kicker{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono';font-size:11.5px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan)}
+.kicker::before{content:'';width:26px;height:2px;background:var(--cyan)}
+
+/* ---------- SLIDE 1 ---------- */
+.s1wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:5vw;align-items:center;max-width:1340px;width:100%}
+.s1 h1{font-size:clamp(38px,4.6vw,66px);line-height:1.06;font-weight:800;letter-spacing:-1.5px;margin:22px 0 8px}
+.s1 h1 .hl{color:var(--yellow);position:relative;display:inline-block}
+.s1 h1 .typed{color:var(--yellow)}
+.caret{display:inline-block;width:3px;height:.9em;background:var(--yellow);margin-left:3px;vertical-align:-.08em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.s1 .lede{font-size:clamp(15px,1.25vw,18.5px);line-height:1.65;color:var(--dim);max-width:52ch;margin-top:18px}
+.s1 .lede b{color:#fff;font-weight:600}
+.pillrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:40px;border:1px solid var(--line);background:rgba(255,255,255,.045);font-size:13px;font-weight:500;backdrop-filter:blur(6px)}
+.pill i{width:7px;height:7px;border-radius:50%;flex:none}
+.pill.p1 i{background:var(--mint);box-shadow:0 0 10px var(--mint)}
+.pill.p2 i{background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.pill.p3 i{background:var(--yellow);box-shadow:0 0 10px var(--yellow)}
+.statrow{display:grid;grid-template-columns:repeat(4,auto);gap:clamp(20px,3vw,48px);margin-top:38px}
+.stat .n{font-family:'Poppins';font-size:clamp(26px,2.6vw,40px);font-weight:700;letter-spacing:-1px}
+.stat .n em{font-style:normal;color:var(--yellow)}
+.stat .l{font-family:'JetBrains Mono';font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--dim2);margin-top:5px}
+
+/* orbit visual */
+.orbit{position:relative;width:min(30vw,420px);aspect-ratio:1;margin:auto}
+.core{position:absolute;inset:34%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3D52E0,var(--navy) 55%,var(--navy-deep));display:grid;place-items:center;box-shadow:0 0 80px rgba(61,82,224,.5),inset 0 0 40px rgba(0,0,0,.4);animation:coreBreathe 4s ease-in-out infinite}
+@keyframes coreBreathe{0%,100%{box-shadow:0 0 60px rgba(61,82,224,.45),inset 0 0 40px rgba(0,0,0,.4)}50%{box-shadow:0 0 110px rgba(61,82,224,.75),inset 0 0 40px rgba(0,0,0,.4)}}
+.core span{font-family:'Poppins';font-weight:800;font-size:clamp(15px,1.4vw,20px);letter-spacing:.5px;text-align:center;line-height:1.25}
+.core span em{font-style:normal;color:var(--yellow)}
+.ring{position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(255,255,255,.14)}
+.ring.r2{inset:12%;border-color:rgba(255,255,255,.09)}
+.orbiters{position:absolute;inset:0;animation:spin 26s linear infinite}
+.orbiters.o2{inset:12%;animation:spinRev 34s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes spinRev{to{transform:rotate(-360deg)}}
+.ob{position:absolute;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-family:'Poppins';font-weight:700;font-size:13px;color:var(--ink);box-shadow:0 6px 20px rgba(0,0,0,.45)}
+.ob small{position:absolute;bottom:-16px;font-family:'JetBrains Mono';font-size:8px;letter-spacing:1px;color:var(--dim2)}
+.orbiters .ob{animation:spinRev 26s linear infinite}
+.orbiters.o2 .ob{animation:spin 34s linear infinite}
+.ob1{top:-8px;left:calc(50% - 26px);background:var(--yellow)}
+.ob2{bottom:6%;right:2%;background:var(--cyan)}
+.ob3{bottom:6%;left:2%;background:var(--mint)}
+.ob4{top:-6px;left:calc(50% - 22px);background:var(--coral);width:44px;height:44px;font-size:11px}
+.ob5{bottom:-2%;left:calc(50% - 22px);background:var(--violet);width:44px;height:44px;font-size:11px;color:#fff}
+
+/* ---------- SLIDE 2 ---------- */
+.s2wrap{max-width:1340px;width:100%}
+.s2 h2{font-size:clamp(26px,2.75vw,40px);font-weight:800;letter-spacing:-1px;line-height:1.12;margin:12px 0 6px;max-width:34ch}
+.s2 h2 .hl{color:var(--yellow)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.panel{border-radius:18px;padding:18px 22px;border:1px solid var(--line);position:relative;overflow:hidden}
+.panel.problem{background:linear-gradient(160deg,rgba(255,122,107,.09),rgba(255,255,255,.02))}
+.panel.answer{background:linear-gradient(160deg,rgba(59,232,176,.10),rgba(255,255,255,.02))}
+.panel .ptag{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:9px;display:block}
+.problem .ptag{color:var(--coral)}.answer .ptag{color:var(--mint)}
+.panel h3{font-size:clamp(16px,1.4vw,19px);font-weight:700;line-height:1.3;margin-bottom:10px}
+.plist{list-style:none;display:grid;gap:8px}
+.plist li{display:flex;gap:10px;font-size:12.5px;line-height:1.45;color:var(--dim)}
+.plist li b{color:#fff;font-weight:600}
+.plist .mk{flex:none;width:19px;height:19px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:700;margin-top:1px}
+.problem .mk{background:rgba(255,122,107,.18);color:var(--coral)}
+.answer .mk{background:rgba(59,232,176,.18);color:var(--mint)}
+.econ{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+.ecard{border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.035);padding:13px 18px;position:relative;overflow:hidden;transition:transform .3s,border-color .3s}
+.ecard:hover{transform:translateY(-4px);border-color:rgba(255,196,1,.45)}
+.ecard::after{content:'';position:absolute;left:0;top:0;height:3px;width:100%;background:linear-gradient(90deg,var(--yellow),transparent)}
+.ecard .big{font-family:'Poppins';font-size:clamp(22px,2.1vw,32px);font-weight:700;color:var(--yellow);letter-spacing:-.5px}
+.ecard .cap{font-size:12.5px;color:var(--dim);margin-top:5px;line-height:1.45}
+.moat{margin-top:14px;border-radius:14px;padding:11px 20px;background:linear-gradient(90deg,rgba(27,45,147,.55),rgba(16,27,87,.35));border:1px solid rgba(139,124,255,.3);display:flex;align-items:center;gap:16px}
+.moat .mi{flex:none;width:38px;height:38px;border-radius:12px;background:rgba(139,124,255,.2);display:grid;place-items:center;font-size:17px}
+.moat p{font-size:13.5px;line-height:1.55;color:var(--dim)}
+.moat p b{color:#fff}
+
+/* ---------- SLIDE 3 ---------- */
+.slide.s3{padding-bottom:calc(10vh + 40px)}
+.s3wrap{max-width:1380px;width:100%}
+.s3 h2{font-size:clamp(23px,2.4vw,34px);font-weight:800;letter-spacing:-.8px;margin:10px 0 4px}
+.s3 h2 .hl{color:var(--yellow)}
+.s3 .sub{color:var(--dim);font-size:13.5px;max-width:110ch;line-height:1.5}
+.bench{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:14px}
+.agent{border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.035);padding:11px 13px 10px;position:relative;overflow:hidden;transition:transform .32s cubic-bezier(.22,1,.36,1),border-color .32s,background .32s;opacity:0;transform:translateY(18px) scale(.96)}
+.slide.on .agent{opacity:1;transform:none;transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1),border-color .3s,background .3s}
+.agent:hover{transform:translateY(-5px) !important;border-color:var(--ac);background:rgba(255,255,255,.06)}
+.agent .face{width:31px;height:31px;border-radius:10px;display:grid;place-items:center;font-family:'Poppins';font-weight:800;font-size:13px;color:var(--ink);background:var(--ac);box-shadow:0 4px 16px color-mix(in srgb,var(--ac) 40%,transparent);margin-bottom:6px;position:relative}
+.agent .face .live{position:absolute;top:-3px;right:-3px;width:11px;height:11px;border-radius:50%;background:var(--mint);border:2px solid var(--ink2);animation:pulse 2s infinite}
+.agent h4{font-size:14.5px;font-weight:700;letter-spacing:-.2px}
+.agent .role{font-size:11.5px;color:var(--dim);margin-top:2px;line-height:1.35}
+.agent .st{display:inline-block;margin-top:7px;font-family:'JetBrains Mono';font-size:8.5px;letter-spacing:1.6px;text-transform:uppercase;padding:3px 8px;border-radius:20px}
+.st.live{background:rgba(59,232,176,.15);color:var(--mint)}
+.st.beta{background:rgba(57,210,232,.13);color:var(--cyan)}
+.st.soon{background:rgba(255,255,255,.08);color:var(--dim2)}
+.s3foot{margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-radius:16px;padding:11px 24px;background:linear-gradient(90deg,rgba(255,196,1,.12),rgba(255,196,1,.03));border:1px solid rgba(255,196,1,.3)}
+.s3foot p{font-size:clamp(13px,1.1vw,15px);line-height:1.5;color:var(--dim)}
+.s3foot p b{color:#fff}
+.s3foot .num{font-family:'Poppins';font-weight:800;font-size:clamp(22px,2vw,30px);color:var(--yellow);white-space:nowrap}
+
+/* ---------- SLIDE 4 · DEMO VIDEO ---------- */
+.s4wrap{max-width:1200px;width:100%;text-align:center}
+.s4 .kicker{justify-content:center}
+.s4 h2{font-size:clamp(24px,2.6vw,38px);font-weight:800;letter-spacing:-.8px;margin:12px 0 18px}
+.s4 h2 .hl{color:var(--yellow)}
+.vidshell{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55);background:#000;max-width:min(1020px,86vw);margin:0 auto}
+.vidshell video{display:block;width:100%;max-height:56vh;object-fit:contain;background:#000}
+.vplay{position:absolute;inset:0;display:grid;place-items:center;background:rgba(7,12,40,.32);cursor:pointer;transition:opacity .35s;border:0;width:100%}
+.vplay .pbtn{width:84px;height:84px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(255,196,1,.22),0 18px 50px rgba(0,0,0,.5);animation:pulse 2.4s infinite}
+.vplay .pbtn svg{width:30px;height:30px;fill:var(--ink);margin-left:5px}
+.vplay.hide{opacity:0;pointer-events:none}
+.vcap{margin-top:13px;font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--dim2)}
+
+@media (max-width:980px){
+  .s1wrap{grid-template-columns:1fr}.orbit{display:none}
+  .statrow{grid-template-columns:repeat(2,auto);gap:22px}
+  .duo,.econ{grid-template-columns:1fr}
+  .bench{grid-template-columns:repeat(2,1fr)}
+  .slide{overflow-y:auto;align-items:flex-start;padding-top:11vh}
+  .s3foot{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<canvas id="field"></canvas>
+
+<div class="topbar">
+  <div class="brand"><span class="dotmark"></span>betterplace <span style="color:var(--dim2);font-weight:400">·</span> <em>AI Labs</em></div>
+  <div class="conf">Investor overview · Confidential</div>
+</div>
+
+<div class="deck" id="deck">
+
+  <!-- ================= SLIDE 1 · WHAT IS AI LABS ================= -->
+  <section class="slide s1 on" data-i="0">
+    <div class="s1wrap">
+      <div>
+        <span class="kicker r">AI Labs · What it is</span>
+        <h1 class="r d1">You don't buy software.<br>You <span class="typed" id="typed"></span><span class="caret"></span></h1>
+        <p class="lede r d2">AI Labs is BetterPlace's agent studio: <b>private, secure, radically cheap AI employees</b> for the frontline. Chat, voice and step-by-step workflows — trained on an enterprise's own documents, connected to their systems, built in minutes without code. The models run on <b>our infrastructure; client data never leaves the platform.</b></p>
+        <div class="pillrow r d3">
+          <span class="pill p1"><i></i>Private LLM — data stays in</span>
+          <span class="pill p2"><i></i>Deterministic workflows — every step, every time</span>
+          <span class="pill p3"><i></i>ISO 27001 · SOC 2</span>
+        </div>
+        <div class="statrow r d4">
+          <div class="stat"><div class="n" data-count="10">0</div><div class="l">min to a working agent</div></div>
+          <div class="stat"><div class="n" data-count="24">0</div><div class="l">languages, live</div></div>
+          <div class="stat"><div class="n">₹<span data-count="0.37" data-dec="2">0</span></div><div class="l">per interaction, typical</div></div>
+          <div class="stat"><div class="n"><em><span data-count="0">0</span></em></div><div class="l">data-science hires needed</div></div>
+        </div>
+      </div>
+      <div class="orbit r d3">
+        <div class="ring"></div><div class="ring r2"></div>
+        <div class="core"><span>One runtime.<br><em>Many agents.</em></span></div>
+        <div class="orbiters">
+          <div class="ob ob1">M<small>MAX</small></div>
+          <div class="ob ob2">T<small>THEO</small></div>
+          <div class="ob ob3">Mi<small>MIA</small></div>
+        </div>
+        <div class="orbiters o2">
+          <div class="ob ob4">D<small>DEV</small></div>
+          <div class="ob ob5">Z<small>ZARA</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SLIDE 2 · PROBLEM → WHY THIS WINS ================= -->
+  <section class="slide s2" data-i="1">
+    <div class="s2wrap">
+      <span class="kicker r">The problem · and why this model wins</span>
+      <h2 class="r d1">300 million frontline workers. <span class="hl">Almost none of the software industry builds for them.</span></h2>
+      <div class="duo">
+        <div class="panel problem r d2">
+          <span class="ptag">The problem</span>
+          <h3>Frontline operations run on people doing robotic work</h3>
+          <ul class="plist">
+            <li><span class="mk">✕</span><span><b>Onboarding takes days,</b> screening takes weeks — humans chasing documents, reading challans, scheduling interviews by phone.</span></li>
+            <li><span class="mk">✕</span><span><b>Generic chatbots can't be trusted here.</b> A probabilistic bot that skips step 5 of a safety induction is a liability, not a product.</span></li>
+            <li><span class="mk">✕</span><span><b>Enterprise AI is priced for desks,</b> not for a 100,000-person deskless workforce that speaks 24 languages.</span></li>
+          </ul>
+        </div>
+        <div class="panel answer r d3">
+          <span class="ptag">The AI Labs answer</span>
+          <h3>Agents that work like employees — at machine cost</h3>
+          <ul class="plist">
+            <li><span class="mk">✓</span><span><b>Deterministic flows:</b> every mandatory step runs, in order, with an audit log — safe for BFSI, pharma, manufacturing.</span></li>
+            <li><span class="mk">✓</span><span><b>Apps inside the chat:</b> camera proof, document upload, quizzes, location — the agent doesn't just talk, it operates.</span></li>
+            <li><span class="mk">✓</span><span><b>Write-back to client systems</b> (MCP tools) — agents act in the ATS, payroll and rosters, not beside them.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="econ r d4">
+        <div class="ecard"><div class="big">+40%</div><div class="cap">sales uplift at Meesho with AI-coached sellers — agents that grow revenue, not just cut cost</div></div>
+        <div class="ecard"><div class="big">−60%</div><div class="cap">time-to-hire when agents screen every applicant — capacity that scales without headcount</div></div>
+        <div class="ecard"><div class="big">72×</div><div class="cap">faster onboarding — 3 days of human back-office collapses to a 45-minute agent flow</div></div>
+        <div class="ecard"><div class="big">~58%</div><div class="cap">cheaper voice AI (₹5/min vs ₹12 industry) — a support &amp; screening cost line that halves</div></div>
+      </div>
+      <div class="moat r d5">
+        <span class="mi">🏰</span>
+        <p><b>The moat is distribution + data — and the revenue compounds.</b> Agents deploy inside a platform already running millions of frontline workers at India's largest enterprises, and every conversation ships structured workforce data back into one worker record. Agents are usage-priced, so <b>every agent an account hires is expansion revenue at near-zero acquisition cost.</b> Rivals start with a model; we start with the workforce.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SLIDE 3 · THE AGENT BENCH ================= -->
+  <section class="slide s3" data-i="2">
+    <div class="s3wrap">
+      <span class="kicker r">The roster · one runtime, many employees</span>
+      <h2 class="r d1">Meet the workforce <span class="hl">behind the workforce.</span></h2>
+      <p class="sub r d2">Every agent runs on the same conversational runtime — only the persona, data sources and scoring rubric change. Build the core once, hire it many times. This is the bench today and the bench being hired next.</p>
+      <div class="bench" id="bench">
+        <div class="agent" style="--ac:var(--yellow)"><div class="face">M<span class="live"></span></div><h4>AI Max</h4><div class="role">Sales roleplay coach — tone, empathy &amp; accuracy scored live</div><span class="st live">Live · ~30,000 coached</span></div>
+        <div class="agent" style="--ac:var(--cyan)"><div class="face">T<span class="live"></span></div><h4>AI Theo</h4><div class="role">Tutor &amp; helpdesk — cited answers from company docs, 24×7</div><span class="st live">Live</span></div>
+        <div class="agent" style="--ac:var(--mint)"><div class="face">Mi<span class="live"></span></div><h4>AI Mia</h4><div class="role">Onboarding — docs, ID APIs &amp; training in one WhatsApp thread</div><span class="st live">Live</span></div>
+        <div class="agent" style="--ac:var(--coral)"><div class="face">R<span class="live"></span></div><h4>AI Rhea</h4><div class="role">Safety induction — SOP, video, quiz &amp; certificate, enforced</div><span class="st live">Live</span></div>
+        <div class="agent" style="--ac:var(--violet)"><div class="face" style="color:#fff">J</div><h4>AI Jack</h4><div class="role">Talent screening — voice calls every applicant, ranks fit</div><span class="st beta">Beta</span></div>
+        <div class="agent" style="--ac:var(--cyan)"><div class="face">C</div><h4>AI Cole</h4><div class="role">Verification — face-match &amp; API checks before day one</div><span class="st beta">Beta</span></div>
+        <div class="agent" style="--ac:var(--yellow)"><div class="face">D</div><h4>AI Dev</h4><div class="role">Statutory watchdog — reads every vendor challan by OCR</div><span class="st beta">Beta</span></div>
+        <div class="agent" style="--ac:var(--mint)"><div class="face">Z</div><h4>AI Zara</h4><div class="role">Rosters &amp; no-shows — chases confirmations, fills gaps early</div><span class="st beta">Beta</span></div>
+        <div class="agent" style="--ac:var(--violet)"><div class="face" style="color:#fff">I</div><h4>AI Ivy</h4><div class="role">Structured interviews — consistent, bias-checked, recorded</div><span class="st soon">Planned</span></div>
+        <div class="agent" style="--ac:var(--coral)"><div class="face">K</div><h4>AI Kai</h4><div class="role">Daily safety briefings — 2-minute quiz, visible per site</div><span class="st soon">Planned</span></div>
+        <div class="agent" style="--ac:var(--cyan)"><div class="face">N</div><h4>AI Nova</h4><div class="role">Store helpdesk — offers, returns &amp; policy, no human handoff</div><span class="st soon">Planned</span></div>
+        <div class="agent" style="--ac:var(--yellow)"><div class="face">Re</div><h4>AI Remy</h4><div class="role">Shrink &amp; audit — checklists with camera proof in chat</div><span class="st soon">Planned</span></div>
+        <div class="agent" style="--ac:var(--mint)"><div class="face">V</div><h4>AI Vera</h4><div class="role">Compliance assessor — regulator-ready certification flows</div><span class="st soon">Planned</span></div>
+        <div class="agent" style="--ac:var(--violet)"><div class="face" style="color:#fff">＋</div><h4>Your agent</h4><div class="role">Named, trained and live in 10 minutes — that's the studio</div><span class="st soon">Built to order</span></div>
+      </div>
+      <div class="s3foot r d5">
+        <p><b>Every conversation ships structured data back into one worker record</b> — the agents get smarter about India's frontline with every shift worked. Software you rent. <b>A workforce you grow.</b></p>
+        <div class="num">13 agents · 1 runtime</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SLIDE 4 · THE DEMO ================= -->
+  <section class="slide s4" data-i="3">
+    <div class="s4wrap">
+      <span class="kicker r">The studio · live capture</span>
+      <h2 class="r d1">Watch an agent get <span class="hl">hired.</span></h2>
+      <div class="vidshell r d2">
+        <video id="demoVid" preload="metadata" playsinline controls controlslist="nodownload"></video>
+        <button class="vplay" id="vplay" aria-label="Play the AI Labs demo"><span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button>
+      </div>
+      <div class="vcap r d3">1 min 42 s · real product · sound on</div>
+    </div>
+  </section>
+</div>
+
+<div class="hint" id="hint">Scroll · arrow keys · swipe</div>
+<div class="navbar">
+  <div class="arrows"><button class="arr" id="prev">←</button></div>
+  <div class="ndots" id="dots"></div>
+  <div class="arrows"><button class="arr" id="next">→</button></div>
+</div>
+
+<script>
+/* ---------- particle field ---------- */
+const cv=document.getElementById('field'),cx=cv.getContext('2d');let W,H,pts=[];
+function sz(){W=cv.width=innerWidth*devicePixelRatio;H=cv.height=innerHeight*devicePixelRatio;cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px'}
+sz();addEventListener('resize',sz);
+const N=Math.min(90,Math.floor(innerWidth/16));
+for(let i=0;i<N;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.18*devicePixelRatio,vy:(Math.random()-.5)*.18*devicePixelRatio,r:(Math.random()*1.4+.5)*devicePixelRatio});
+function tick(){
+  cx.clearRect(0,0,W,H);
+  const g=cx.createRadialGradient(W*.75,H*.3,0,W*.75,H*.3,Math.max(W,H)*.7);
+  g.addColorStop(0,'rgba(27,45,147,.35)');g.addColorStop(1,'rgba(7,12,40,0)');
+  cx.fillStyle=g;cx.fillRect(0,0,W,H);
+  for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}
+  cx.strokeStyle='rgba(120,140,255,.07)';cx.lineWidth=devicePixelRatio;
+  for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+    const a=pts[i],b=pts[j],d=(a.x-b.x)**2+(a.y-b.y)**2,m=(150*devicePixelRatio)**2;
+    if(d<m){cx.globalAlpha=1-d/m;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke();}
+  }
+  cx.globalAlpha=1;
+  for(const p of pts){cx.fillStyle='rgba(160,175,255,.5)';cx.beginPath();cx.arc(p.x,p.y,p.r,0,7);cx.fill();}
+  requestAnimationFrame(tick);
+}
+tick();
+
+/* ---------- slide engine ---------- */
+const slides=[...document.querySelectorAll('.slide')],dots=document.getElementById('dots');
+let cur=0,lock=false;
+slides.forEach((_,i)=>{const b=document.createElement('button');b.className='nd'+(i?'':' on');b.onclick=()=>go(i);dots.appendChild(b)});
+function go(i){
+  if(i<0||i>=slides.length||i===cur||lock)return;lock=true;
+  slides[cur].classList.remove('on');cur=i;slides[cur].classList.add('on');
+  [...dots.children].forEach((d,k)=>d.classList.toggle('on',k===cur));
+  document.getElementById('hint').style.opacity=cur?0:1;
+  if(cur===0)startType();if(slides[cur].querySelector('[data-count]'))runCounts(slides[cur]);
+  const dv=document.getElementById('demoVid');if(dv&&cur!==3&&!dv.paused)dv.pause();
+  setTimeout(()=>lock=false,700);
+}
+/* ---------- demo video ---------- */
+/* hosts differ on trailing slashes (/ailabs-overview vs /ailabs-overview/), so resolve media against this page's directory explicitly */
+const dvid=document.getElementById('demoVid'),vpl=document.getElementById('vplay');
+const pdir=location.pathname.replace(/\/index\.html$/,'').replace(/\/+$/,'')+'/';
+dvid.poster=pdir+'ailabs-demo-poster.jpg';
+dvid.src=pdir+'ailabs-demo.mp4';
+vpl.onclick=()=>dvid.play();
+dvid.onplay=()=>vpl.classList.add('hide');
+dvid.onended=()=>vpl.classList.remove('hide');
+document.getElementById('next').onclick=()=>go(cur+1);
+document.getElementById('prev').onclick=()=>go(cur-1);
+addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown',' ','PageDown'].includes(e.key))go(cur+1);if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key))go(cur-1)});
+let wt=0;addEventListener('wheel',e=>{const n=Date.now();if(n-wt<900||Math.abs(e.deltaY)<24)return;wt=n;go(cur+(e.deltaY>0?1:-1))},{passive:true});
+let ty=null;addEventListener('touchstart',e=>ty=e.touches[0].clientY,{passive:true});
+addEventListener('touchend',e=>{if(ty===null)return;const d=ty-e.changedTouches[0].clientY;if(Math.abs(d)>60)go(cur+(d>0?1:-1));ty=null},{passive:true});
+
+/* ---------- typewriter (slide 1) ---------- */
+const words=['hire agents.','hire AI Max.','hire AI Mia.','hire a workforce.'];
+const typedEl=document.getElementById('typed');let tw=0,tc=0,del=false,ttimer=null;
+function typeStep(){
+  const w=words[tw];
+  if(!del){tc++;if(tc===w.length){del=true;ttimer=setTimeout(typeStep,1900);typedEl.textContent=w;return}}
+  else{tc--;if(tc===0){del=false;tw=(tw+1)%words.length}}
+  typedEl.textContent=w.slice(0,tc);
+  ttimer=setTimeout(typeStep,del?38:75);
+}
+function startType(){clearTimeout(ttimer);tw=0;tc=0;del=false;typeStep()}
+startType();
+
+/* ---------- counters ---------- */
+function runCounts(sl){
+  sl.querySelectorAll('[data-count]').forEach(el=>{
+    const t=parseFloat(el.dataset.count),dec=+(el.dataset.dec||0),s=performance.now();
+    function f(n){const p=Math.min(1,(n-s)/1300),e=1-Math.pow(1-p,3);el.textContent=(t*e).toFixed(dec);if(p<1)requestAnimationFrame(f)}
+    requestAnimationFrame(f);
+  });
+}
+runCounts(slides[0]);
+</script>
+</body>
+</html>
