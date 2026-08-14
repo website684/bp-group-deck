@@ -605,7 +605,7 @@ Error generating stack: `+e.message+`
     <div class="mdcover">
       <span class="mdkicker rise" style="animation-delay:.05s">AI Labs · the AI employee studio</span>
       <h1 class="rise" style="animation-delay:.15s">You don't buy software.<br/>You <span style="color:var(--yellow)">hire AI employees.</span></h1>
-      <p class="sub rise" style="animation-delay:.3s"><b style="color:#fff;">AI Labs is our studio for building AI employees</b> — agents that hold voice conversations in 24 languages, read photos and documents, and do real work inside your systems. Built in 10 minutes without code, running on our own private cloud — so your data never leaves.</p>
+      <p class="sub rise" style="animation-delay:.3s"><b style="color:#fff;">AI Labs is our studio for building AI employees</b> — agents that make real phone calls in 24 languages, read documents, analyse photos and video, browse the web, and do real work inside your systems. Built in 10 minutes without code, on our own private cloud — so your data never leaves.</p>
       <div class="stats rise" style="animation-delay:.45s;margin-top:34px;">
         <div class="stat"><div class="n">10 <em>min</em></div><div class="l">To a working agent</div></div>
         <div class="stat"><div class="n">24</div><div class="l">Languages, live</div></div>
@@ -623,40 +623,64 @@ Error generating stack: `+e.message+`
       <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">A studio where you build <span style="color:var(--navy)">AI employees.</span></h2>
       <p class="lede rise" style="animation-delay:.16s;margin-top:10px;max-width:96ch;">Not a chatbot you bolt on. A workbench where your own team builds AI workers — describe the job the way you'd brief a new joiner, and the studio builds the employee. Here's what every agent can do:</p>
       <div class="capgrid rise" style="animation-delay:.26s;grid-template-columns:repeat(3,1fr);">
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${T.mic}</svg></span><h4>Speaks &amp; listens</h4><p>Real voice calls and WhatsApp chats in 24 languages — it holds the conversation, not a menu</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${T.eye}</svg></span><h4>Sees photos &amp; video</h4><p>Checks an ID card, a helmet on a head, a shelf display, a damaged package — from a phone camera</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${T.doc}</svg></span><h4>Reads your documents</h4><p>SOPs, policies, price lists — answers from your content and shows the page it came from</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${T.plug}</svg></span><h4>Connects to any system</h4><p>HRMS, SAP, attendance, payroll — it doesn't just answer, it looks things up and updates records</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${T.check}</svg></span><h4>Follows your process</h4><p>Step-by-step workflows that cannot skip a step — safe for inductions, compliance, verifications</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${T.layers}</svg></span><h4>Remembers every worker</h4><p>Knows who it's talking to and what was said last time — conversation forty builds on conversation one</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${T.mic}</svg></span><h4>Speaks · listens · calls</h4><p>Natural, fast voice in 24 languages — including real telephone calls to an ordinary phone. Live now</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${T.eye}</svg></span><h4>Sees photos &amp; video</h4><p>Workers upload images or video in the chat — or feed it from your systems. IDs, helmets, shelves, damage. Live now</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${T.doc}</svg></span><h4>Reads any document</h4><p>Upload a document mid-conversation — the agent reads it and answers, citing the page it came from. Live now</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${T.globe}</svg></span><h4>Browses the web</h4><p>Searches webpages for live context when your documents aren't enough — with sources shown. Live now</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${T.plug}</svg></span><h4>Connects &amp; acts in your systems</h4><p>HRMS, SAP, attendance, payroll — it looks things up and updates records, not just answers</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${T.check}</svg></span><h4>Follows process, remembers people</h4><p>Workflows that cannot skip a step, and per-worker memory — conversation forty builds on conversation one</p></div>
       </div>
       <div class="probfoot rise" style="animation-delay:.44s">If you can describe the job to a new employee, you can build the agent. <b>10 minutes, no code, no data-science team.</b></div>
-    </div>`},{id:`ai1x`,theme:`light`,title:`How it is built`,html:`
+    </div>`},{id:`ai1v`,theme:`darker`,title:`The value`,html:`
+    <div class="glow"></div>
     <div class="slidebody">
-      <span class="eyebrow rise">Why it's different · how it's built</span>
-      <h2 class="rise" style="animation-delay:.08s;max-width:30ch;">Most tools rent AI by the API call. <span style="color:var(--navy)">We built our own.</span></h2>
-      <p class="lede rise" style="animation-delay:.16s;margin-top:10px;max-width:100ch;">AI Labs runs open-source AI models deployed on <b>our own cloud</b>, with memory and context engineering built on top. That one decision is why it's private, why it's compliant, and why it stays cheap at 100,000 workers.</p>
-      <div class="vs rise" style="animation-delay:.28s">
-        <div class="col bad">
-          <h4>Typical AI tool</h4>
-          <ul>
-            <li>A thin layer over someone else's AI API — every conversation is sent to a third party</li>
-            <li>Your workers' chats, IDs and documents leave your control; DPDP has no good answer</li>
-            <li>Pays a per-call toll to the API owner — costs explode at frontline volume</li>
-            <li>A chat widget. Voice calls, WhatsApp and photo analysis are add-ons or missing</li>
-          </ul>
+      <span class="eyebrow rise">What this buys you</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:30ch;">Intelligence at industrial scale. <span style="color:var(--yellow)">At frontline prices.</span></h2>
+      <div class="aival rise" style="animation-delay:.2s">
+        <div class="vt" style="--vc:var(--yellow)"><div class="n">₹0.37</div><div class="w">per conversation</div><p>A full multi-step support or onboarding conversation — for less than a rupee.</p></div>
+        <div class="vt" style="--vc:#39D2E8"><div class="n">₹5<small>/min</small></div><div class="w">real phone calls</div><p>The agent calls an ordinary phone and holds the conversation — vs ₹12/min industry.</p></div>
+        <div class="vt" style="--vc:#3BE8B0"><div class="n">10 <small>min</small></div><div class="w">brief → working employee</div><p>Described like a job brief, built without code, live on your channels the same morning.</p></div>
+        <div class="vt" style="--vc:#8B7CFF"><div class="n">30,000</div><div class="w">workers served at once</div><p>One agent coaches an entire salesforce simultaneously — capacity has no headcount.</p></div>
+        <div class="vt" style="--vc:#FF9518"><div class="n">24</div><div class="w">languages, one build</div><p>Build the agent once — it speaks, listens and writes in every language your frontline does.</p></div>
+        <div class="vt" style="--vc:#FF7A6B"><div class="n">0</div><div class="w">bytes leave the platform</div><p>Safe and secure — your data stays with you, on our private cloud in India. Always.</p></div>
+      </div>
+      <div class="probfoot rise" style="animation-delay:.45s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">The maths a CFO checks: <b>5,000 workers on an agent ≈ ₹1,860 a month</b> — less than one hour of one employee.</div>
+    </div>`},{id:`ai1x`,theme:`light`,title:`Why we are different`,html:`
+    <div class="slidebody">
+      <span class="eyebrow rise">Why we're different · the architecture is the moat</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:44ch;font-size:clamp(22px,2.2vw,34px);">Other tools rent intelligence by the API call. <span style="color:var(--navy)">Ours lives with your data.</span></h2>
+      <div class="aidiff rise" style="animation-delay:.2s">
+        <div class="pane them">
+          <div class="ph">✕ How most AI tools work</div>
+          <div class="node">Your workers' chats · IDs · documents<small>collected in their widget</small></div>
+          <div class="pipe" style="--pc:#D0271D"></div>
+          <div class="exit"><span>Leaves your control</span></div>
+          <div class="pipe" style="--pc:#D0271D"></div>
+          <div class="node alien">Third-party AI API<small>someone else's cloud · often outside India</small></div>
+          <div class="toll"><span>Per-token toll on every message</span><span>DPDP: no good answer</span><span>Voice &amp; vision: add-ons</span></div>
         </div>
-        <div class="col good">
-          <h4>AI Labs</h4>
-          <ul>
-            <li>Open-source models on BetterPlace's own cloud — no third party in the loop</li>
-            <li>Data never leaves the platform, memory kept per worker — ISO 27001 · SOC 2, DPDP-defensible</li>
-            <li>No per-token toll, so high volume stays cheap — ₹0.37 a conversation, voice at ₹5/min</li>
-            <li>Voice calls, WhatsApp, in-app and web — with vision and documents built in</li>
-          </ul>
+        <div class="pane us">
+          <div class="ph">✓ How AI Labs works</div>
+          <div class="fence">
+            <span class="fl">BetterPlace private cloud · in India · ISO 27001 · SOC 2</span>
+            <div class="node" style="margin-top:6px;">Your channels<small>app · web · document &amp; photo upload in chat · real phone calls</small></div>
+            <div class="pipe"></div>
+            <div class="agrow">
+              <div class="node">AI Mia<small>onboarding</small></div>
+              <div class="node">AI Max<small>coaching</small></div>
+              <div class="node">AI Theo<small>tutor</small></div>
+            </div>
+            <div class="pipe"></div>
+            <div class="node">Open-source models on our GPUs<small>+ your documents · per-worker memory · web browsing for context</small></div>
+          </div>
+          <div class="toll"><span>Nothing crosses the fence — ever</span><span>No per-token toll → ₹0.37/conversation</span><span>DPDP-defensible by design</span></div>
         </div>
       </div>
-      <div class="probfoot rise" style="animation-delay:.44s">When the auditor asks <b>"where does worker data go?"</b> — your answer is one word: <b>nowhere.</b></div>
+      <div class="bigwords rise" style="animation-delay:.42s">
+        <b>PRIVATE.<br/><em>Your data never leaves.</em></b>
+        <b>DETERMINISTIC.<br/><em>Every step runs. Every time.</em></b>
+        <b class="gold">₹0.37.<br/><em>A conversation, at any scale.</em></b>
+      </div>
     </div>`},...S(`ai1b`,`For founders & COOs`,`Ops headcount grows with your workforce. It doesn’t have to.`,`And generic AI can’t be trusted with your compliance.`,[{pain:`Every 1,000 workers adds support and admin heads`,painDetail:`Helpdesk tickets, onboarding paperwork and L&D chasing scale linearly with the frontline — margin erodes as you grow.`,painStat:`L&D admin alone: ~60% of team time`,fix:`Agents absorb the volume at ₹0.37 a conversation`,fixDetail:`Onboarding, helpdesk, compliance and coaching run as agents — 5,000 workers served for about ₹1,860 a month.`,fixStat:`−38% L&D ops time, measured`},{pain:`Generic chatbots are a compliance incident waiting to happen`,painDetail:`A probabilistic bot can skip step 5 of your safety induction or invent a policy answer — unacceptable in BFSI, pharma, manufacturing.`,painStat:`No audit trail = no defence`,fix:`Deterministic workflows with guardrails that act`,fixDetail:`Every mandatory step runs in order, every time; PII masking and hallucination guards pause the agent and raise an event.`,fixStat:`100% audit trail per worker`},{pain:`AI pilots die in the IT and vendor queue`,painDetail:`Six months of scoping, a data-science hire, an integration project — most frontline AI never ships.`,painStat:`Typical enterprise AI pilot: quarters`,fix:`Built by your ops team in 10 minutes, no code`,fixDetail:`Pick a brain, feed your documents, toggle capabilities, embed in WhatsApp or your app — MCP write-back handles systems.`,fixStat:`Subway HRMS integration: one day`},{pain:`Your workforce data trains someone else’s model`,painDetail:`Sending worker conversations to public AI APIs is a DPDPA and confidentiality problem your board will ask about.`,painStat:`Public-API AI = data leaves the building`,fix:`Private LLMs, data stays in India`,fixDetail:`vLLM on dedicated GPU, ISO 27001 · SOC 2, per-agent cost limits and token logs — white-label if you want it invisible.`,fixStat:`Your data never leaves the platform`}],`AI Labs production metrics · IFFCO Tokio & Subway deployments`),{id:`ai2`,theme:`light`,title:`The Studio`,html:`
     <div class="slidebody split">
       <div>
