@@ -681,6 +681,34 @@ Error generating stack: `+e.message+`
         <b>DETERMINISTIC.<br/><em>Every step runs. Every time.</em></b>
         <b class="gold">₹0.37.<br/><em>A conversation, at any scale.</em></b>
       </div>
+    </div>`},{id:`ai1y`,theme:`light`,title:`The stack`,html:`
+    <div class="slidebody">
+      <span class="eyebrow rise">How it's built · the stack, layer by layer</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:44ch;font-size:clamp(22px,2.2vw,34px);">"Open-source LLM on our cloud" is just the middle. <span style="color:var(--navy)">Here's the whole machine.</span></h2>
+      <div class="aidiff rise" style="grid-template-columns:1fr;animation-delay:.2s;max-width:1080px;">
+        <div class="pane us" style="padding:14px 18px;">
+          <div class="fence">
+            <span class="fl">BetterPlace private cloud · nothing calls out · ISO 27001 · SOC 2</span>
+            <div class="agrow" style="grid-template-columns:repeat(3,1fr);margin-top:8px;">
+              <div class="node"><b>Channels</b><small>in-app &amp; web chat · document, photo &amp; video upload in conversation</small></div>
+              <div class="node"><b>Voice &amp; telephony</b><small>fast natural voice · real phone calls, both directions</small></div>
+              <div class="node"><b>In-chat apps</b><small>quiz · camera · upload · location — the agent operates, not just chats</small></div>
+            </div>
+            <div class="pipe"></div>
+            <div class="node"><b>Agent runtime</b><small>persona + deterministic workflow engine — wrapped in guardrails: PII masking, injection &amp; hallucination checks that pause the agent and raise an event</small></div>
+            <div class="pipe"></div>
+            <div class="node"><b>Private inference — open-source LLMs on dedicated GPUs</b><small>models served by us (vLLM), weights live with us — no external AI API, no per-token toll</small></div>
+            <div class="pipe"></div>
+            <div class="agrow" style="grid-template-columns:1fr 1fr;">
+              <div class="node"><b>Knowledge layer</b><small>your documents → embeddings → search index — every answer cited to its source; web browsing when your documents aren't enough</small></div>
+              <div class="node"><b>Memory &amp; context</b><small>per-worker memory with PII isolation — every conversation writes to one worker record</small></div>
+            </div>
+            <div class="pipe"></div>
+            <div class="node"><b>Integration layer</b><small>API gateway (Kong) → event orchestration (Kafka) → MCP tools with live write-back into HRMS, SAP, attendance &amp; payroll</small></div>
+          </div>
+          <div class="toll"><span>Token logs · per-agent &amp; per-team cost limits</span><span>Deterministic mode for regulated flows</span><span>White-label — ships as your agents, in your app</span></div>
+        </div>
+      </div>
     </div>`},...S(`ai1b`,`For founders & COOs`,`Ops headcount grows with your workforce. It doesn’t have to.`,`And generic AI can’t be trusted with your compliance.`,[{pain:`Every 1,000 workers adds support and admin heads`,painDetail:`Helpdesk tickets, onboarding paperwork and L&D chasing scale linearly with the frontline — margin erodes as you grow.`,painStat:`L&D admin alone: ~60% of team time`,fix:`Agents absorb the volume at ₹0.37 a conversation`,fixDetail:`Onboarding, helpdesk, compliance and coaching run as agents — 5,000 workers served for about ₹1,860 a month.`,fixStat:`−38% L&D ops time, measured`},{pain:`Generic chatbots are a compliance incident waiting to happen`,painDetail:`A probabilistic bot can skip step 5 of your safety induction or invent a policy answer — unacceptable in BFSI, pharma, manufacturing.`,painStat:`No audit trail = no defence`,fix:`Deterministic workflows with guardrails that act`,fixDetail:`Every mandatory step runs in order, every time; PII masking and hallucination guards pause the agent and raise an event.`,fixStat:`100% audit trail per worker`},{pain:`AI pilots die in the IT and vendor queue`,painDetail:`Six months of scoping, a data-science hire, an integration project — most frontline AI never ships.`,painStat:`Typical enterprise AI pilot: quarters`,fix:`Built by your ops team in 10 minutes, no code`,fixDetail:`Pick a brain, feed your documents, toggle capabilities, embed in WhatsApp or your app — MCP write-back handles systems.`,fixStat:`Subway HRMS integration: one day`},{pain:`Your workforce data trains someone else’s model`,painDetail:`Sending worker conversations to public AI APIs is a DPDPA and confidentiality problem your board will ask about.`,painStat:`Public-API AI = data leaves the building`,fix:`Private LLMs, data stays in India`,fixDetail:`vLLM on dedicated GPU, ISO 27001 · SOC 2, per-agent cost limits and token logs — white-label if you want it invisible.`,fixStat:`Your data never leaves the platform`}],`AI Labs production metrics · IFFCO Tokio & Subway deployments`),{id:`ai2`,theme:`light`,title:`The Studio`,html:`
     <div class="slidebody split">
       <div>
