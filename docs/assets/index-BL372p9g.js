@@ -3067,20 +3067,23 @@ Error generating stack: `+e.message+`
         <div class="clientline rise" style="animation-delay:.55s;margin-top:12px;">This isn't ceremony. 5.6% of gig background checks surface a discrepancy — on a 10,000-rider fleet, that's <b>560 doors you were right to check before they were knocked on.</b></div>
       </div>
       <div class="rise" style="animation-delay:.35s">
-        <div class="jobmock">
-          <div class="jm-screen">
-            <div class="jm-top"><h5>Verification · Ravi K.</h5><p>Case #48-2211 · started 11:52 pm · <b>4 checks</b></p></div>
-            <div class="jm-checks">
-              <div class="jm-check" style="--d:.5s"><span class="tick">✓</span><div>Criminal record<small>312 court sources searched · 0 records</small></div></div>
-              <div class="jm-check" style="--d:.85s"><span class="tick">✓</span><div>eFIR<small>No police complaints matched</small></div></div>
-              <div class="jm-check" style="--d:1.2s"><span class="tick">✓</span><div>Document match<small>Aadhaar verified · face match 98.4%</small></div></div>
-              <div class="jm-check" style="--d:1.55s"><span class="tick">✓</span><div>Physical address<small>Visited &amp; confirmed · Marathahalli</small></div></div>
+        <div class="funmock">
+          <div class="fm-bar"><i></i><i></i><i></i><span>gobetter · verify · Monday batch (42)</span></div>
+          <div class="fm-body">
+            <div class="fm-sum">
+              <span class="g">38<small>green</small></span>
+              <span class="y">2<small>yellow · review</small></span>
+              <span class="r">2<small>red · rejected</small></span>
             </div>
-            <div class="jm-verdict" style="--d:2s">GREEN · cleared 4/4 · 8:41 am</div>
-            <div class="jm-foot"><em></em>Fleet view: red / yellow / green, live</div>
+            <div class="fm-rows">
+              <div class="fm-row hl" style="--d:.5s"><span><b>Ravi K.</b><br/><small>Criminal ✓ · eFIR ✓ · Docs 98.4% ✓ · Address visited ✓</small></span><span class="fm-chip g">GREEN · 8:41 AM</span></div>
+              <div class="fm-row" style="--d:.8s"><span><b>Suresh M.</b> <small>address mismatch — re-verification sent</small></span><span class="fm-chip y">YELLOW</span></div>
+              <div class="fm-row" style="--d:1s"><span><b>Amit D.</b> <small>court record matched — case file attached</small></span><span class="fm-chip r">RED</span></div>
+              <div class="fm-row" style="--d:1.2s"><span><b>Vikram S.</b> <small>face match failed at 61% — not the applicant</small></span><span class="fm-chip r">RED</span></div>
+            </div>
           </div>
         </div>
-        <div class="mockcap">What the ops team wakes up to · <b>turnaround &lt;24 hr</b></div>
+        <div class="mockcap">What the ops team wakes up to · every case dated &amp; audit-ready · <b>turnaround &lt;24 hr</b></div>
       </div>
     </div>`},{id:`ns7`,theme:`light`,title:`Day 2 · Ravi joins from a tea stall`,html:`
     <div class="slidebody split">
@@ -3120,19 +3123,23 @@ Error generating stack: `+e.message+`
         <div class="clientline rise" style="animation-delay:.5s;margin-top:12px;">This layer runs at Zepto today: <b>15,000 workers, 967 geo-fenced sites, 40% measured cost savings.</b> Everything downstream — pay, incentives, compliance — computes from it.</div>
       </div>
       <div class="rise" style="animation-delay:.35s">
-        <div class="jobmock">
-          <div class="jm-screen">
-            <div class="jm-top"><h5>Mark attendance</h5><p>Shift 7:00–15:00 · <b>HSR dark store</b></p></div>
-            <div class="jm-map"><span class="tag">HSR HUB · GEO-FENCE</span><span class="zone"></span><span class="me"></span></div>
-            <div class="jm-checks">
-              <div class="jm-check" style="--d:.6s"><span class="tick">✓</span><div>Inside the zone<small>38 m from hub centre · 6:58 am</small></div></div>
-              <div class="jm-check" style="--d:.95s"><span class="tick">✓</span><div>Face matched · live<small>Spoof check passed — it&rsquo;s really Ravi</small></div></div>
+        <div class="funmock">
+          <div class="fm-bar"><i></i><i></i><i></i><span>gobetter · attend · HSR hub · live · 7:04 am</span></div>
+          <div class="fm-body">
+            <div class="fm-sum">
+              <span class="g">128<small>present</small></span>
+              <span class="y">6<small>late</small></span>
+              <span class="r">3<small>geo-fail</small></span>
             </div>
-            <div class="jm-verdict" style="--d:1.4s">Present · logged 6:58 am</div>
-            <div class="jm-foot"><em></em>Feeds payroll &amp; incentives directly</div>
+            <div class="fm-rows">
+              <div class="fm-row hl" style="--d:.5s"><span><b>Ravi K.</b><br/><small>6:58 am · inside zone (38 m) · face ✓ · liveness ✓</small></span><span class="fm-chip g">IN</span></div>
+              <div class="fm-row" style="--d:.8s"><span><b>Priya N.</b> <small>7:02 am · inside zone · face ✓</small></span><span class="fm-chip g">IN</span></div>
+              <div class="fm-row" style="--d:1s"><span><b>Deepak R.</b> <small>marked from 2.4 km away — rejected</small></span><span class="fm-chip r">GEO-FAIL</span></div>
+              <div class="fm-row" style="--d:1.2s"><span><b>Mohan T.</b> <small>photo-of-photo detected — spoof blocked</small></span><span class="fm-chip r">SPOOF</span></div>
+            </div>
           </div>
         </div>
-        <div class="mockcap">What Ravi&rsquo;s punch-in looks like · <b>no card, no register, no buddy-punching</b></div>
+        <div class="mockcap">The hub manager&rsquo;s live view while Ravi punches in · <b>no card, no register, no buddy-punching</b></div>
       </div>
     </div>`},{id:`ns9`,theme:`light`,title:`Day 30 · salary day`,html:`
     <div class="slidebody split">
