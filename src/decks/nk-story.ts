@@ -1,5 +1,5 @@
 import type { SlideDef } from '../lib/types'
-import { bframe, fi, icons } from './html'
+import { fi, icons } from './html'
 
 // "Why BetterPlace exists" — the story deck.
 // One rider, Ravi, 30 days. Every product enters as a character in his story.
@@ -70,14 +70,29 @@ export const nkStorySlides: SlideDef[] = [
           ${fi(icons.zap, 'If the client wants surge, not headcount', 'The gig engine deploys 1 to 500+ verified workers in under 24 hours, billed only on completed, GPS-proven tasks.', 0.48)}
         </div>
       </div>
-      <div class="rise" style="animation-delay:.35s;display:flex;flex-direction:column;align-items:center;gap:14px;">
-        <div style="max-width:300px;width:100%;">
-          ${bframe('assets/product/hire-journey/subway-job-matches.png', 'The worker&rsquo;s side of hiring', 'Fit-scored matches, <b>one tap, no CV</b> — food-retail client shown')}
+      <div class="rise" style="animation-delay:.35s">
+        <div class="jobmock">
+          <div class="jm-screen">
+            <div class="jm-top"><h5>Ravi, 3 roles match you</h5><p>Sorted by fit — <b>one tap, no CV</b> · हिंदी ✓</p></div>
+            <div class="jm-card hot" style="--d:.6s">
+              <div class="jm-row">
+                <div><div class="jm-org">Quick commerce · HSR hub</div><div class="jm-role">Delivery Partner</div><div class="jm-pay">₹22–28,000<small>/mo + incentives</small></div></div>
+                <div class="jm-score"><b>94</b><span>match</span></div>
+              </div>
+              <div class="jm-chips"><i class="ok">1.2 km from room</i><i class="ok">Own bike ✓</i><i class="ok">हिंदी ✓</i><i>Evening shifts</i></div>
+              <span class="jm-apply">Apply now →</span>
+            </div>
+            <div class="jm-card" style="--d:.95s">
+              <div class="jm-row">
+                <div><div class="jm-org">Fulfilment centre · Marathahalli</div><div class="jm-role">Warehouse Associate</div><div class="jm-pay">₹16,500<small>/mo</small></div></div>
+                <div class="jm-score"><b>78</b><span>match</span></div>
+              </div>
+              <div class="jm-chips"><i class="ok">3 km away</i><i>No experience needed</i></div>
+            </div>
+            <div class="jm-foot"><em></em>Verified profile · 30M+ pool · BGV-ready</div>
+          </div>
         </div>
-        <div class="stats" style="gap:16px 30px;justify-content:center;">
-          <div class="stat"><div class="n">3–4K</div><div class="l">Ravis join every month, India staffing</div></div>
-          <div class="stat"><div class="n">&lt;24 hr</div><div class="l">Apply to shortlist</div></div>
-        </div>
+        <div class="mockcap">What Ravi sees · 3–4K join like this every month · <b>apply → shortlist in &lt;24 hr</b></div>
       </div>
     </div>`,
   },
@@ -97,7 +112,20 @@ export const nkStorySlides: SlideDef[] = [
         <div class="clientline rise" style="animation-delay:.55s;margin-top:12px;">This isn't ceremony. 5.6% of gig background checks surface a discrepancy — on a 10,000-rider fleet, that's <b>560 doors you were right to check before they were knocked on.</b></div>
       </div>
       <div class="rise" style="animation-delay:.35s">
-        ${bframe('assets/product/gobetter/verify/bgv-insights-red-yellow-green.jpg', 'What the ops team sees · verification portfolio', 'The whole fleet at a glance — <b>red / yellow / green</b>, live', true)}
+        <div class="jobmock">
+          <div class="jm-screen">
+            <div class="jm-top"><h5>Verification · Ravi K.</h5><p>Case #48-2211 · started 11:52 pm · <b>4 checks</b></p></div>
+            <div class="jm-checks">
+              <div class="jm-check" style="--d:.5s"><span class="tick">✓</span><div>Criminal record<small>312 court sources searched · 0 records</small></div></div>
+              <div class="jm-check" style="--d:.85s"><span class="tick">✓</span><div>eFIR<small>No police complaints matched</small></div></div>
+              <div class="jm-check" style="--d:1.2s"><span class="tick">✓</span><div>Document match<small>Aadhaar verified · face match 98.4%</small></div></div>
+              <div class="jm-check" style="--d:1.55s"><span class="tick">✓</span><div>Physical address<small>Visited &amp; confirmed · Marathahalli</small></div></div>
+            </div>
+            <div class="jm-verdict" style="--d:2s">GREEN · cleared 4/4 · 8:41 am</div>
+            <div class="jm-foot"><em></em>Fleet view: red / yellow / green, live</div>
+          </div>
+        </div>
+        <div class="mockcap">What the ops team wakes up to · <b>turnaround &lt;24 hr</b></div>
       </div>
     </div>`,
   },
@@ -116,11 +144,17 @@ export const nkStorySlides: SlideDef[] = [
         </div>
       </div>
       <div class="rise" style="animation-delay:.35s">
-        ${bframe('assets/product/gobetter/hire/onboarding-status-funnel.jpg', 'What the ops team sees · onboarding funnel', 'Ravi&rsquo;s batch moving through the funnel — <b>who is stuck, and where</b>', true)}
-        <div class="stats" style="margin-top:16px;gap:16px 26px;">
-          <div class="stat"><div class="n">45 min</div><div class="l">Ravi's onboarding. It used to take 3 days</div></div>
-          <div class="stat"><div class="n">0</div><div class="l">Office visits, photocopies, queues</div></div>
+        <div class="funmock">
+          <div class="fm-bar"><i></i><i></i><i></i><span>gobetter · onboarding · Monday batch (42)</span></div>
+          <div class="fm-body">
+            <div class="fm-stage"><div class="lb"><span>Documents collected</span><b>42 / 42</b></div><div class="bar"><i style="--w:100%;--d:.4s"></i></div></div>
+            <div class="fm-stage"><div class="lb"><span>Verified</span><span><b>40</b> &nbsp;<span class="fl">2 flagged</span></span></div><div class="bar"><i style="--w:95%;--d:.65s"></i></div></div>
+            <div class="fm-stage"><div class="lb"><span>E-signed</span><b>39</b></div><div class="bar"><i style="--w:93%;--d:.9s"></i></div></div>
+            <div class="fm-stage"><div class="lb"><span>Payroll-ready</span><b>39</b></div><div class="bar"><i style="--w:93%;--d:1.15s"></i></div></div>
+            <div class="fm-ravi">✓ &nbsp;<b>Ravi K.</b>&nbsp; payroll-ready · 11:47 am · 45 minutes end to end</div>
+          </div>
         </div>
+        <div class="mockcap">What the ops team sees · who is stuck, and where · <b>0 office visits, 0 photocopies</b></div>
       </div>
     </div>`,
   },
@@ -139,7 +173,19 @@ export const nkStorySlides: SlideDef[] = [
         <div class="clientline rise" style="animation-delay:.5s;margin-top:12px;">This layer runs at Zepto today: <b>15,000 workers, 967 geo-fenced sites, 40% measured cost savings.</b> Everything downstream — pay, incentives, compliance — computes from it.</div>
       </div>
       <div class="rise" style="animation-delay:.35s">
-        ${bframe('assets/product/gobetter/attendance/roster-weekly-grid.jpg', 'What the ops team sees · the weekly roster', 'A week of shifts across the site — bulk tools, publish step', true)}
+        <div class="jobmock">
+          <div class="jm-screen">
+            <div class="jm-top"><h5>Mark attendance</h5><p>Shift 7:00–15:00 · <b>HSR dark store</b></p></div>
+            <div class="jm-map"><span class="tag">HSR HUB · GEO-FENCE</span><span class="zone"></span><span class="me"></span></div>
+            <div class="jm-checks">
+              <div class="jm-check" style="--d:.6s"><span class="tick">✓</span><div>Inside the zone<small>38 m from hub centre · 6:58 am</small></div></div>
+              <div class="jm-check" style="--d:.95s"><span class="tick">✓</span><div>Face matched · live<small>Spoof check passed — it&rsquo;s really Ravi</small></div></div>
+            </div>
+            <div class="jm-verdict" style="--d:1.4s">Present · logged 6:58 am</div>
+            <div class="jm-foot"><em></em>Feeds payroll &amp; incentives directly</div>
+          </div>
+        </div>
+        <div class="mockcap">What Ravi&rsquo;s punch-in looks like · <b>no card, no register, no buddy-punching</b></div>
       </div>
     </div>`,
   },
@@ -158,7 +204,25 @@ export const nkStorySlides: SlideDef[] = [
         <div class="clientline rise" style="animation-delay:.5s;margin-top:12px;">Measured at Reliance: <b>90% less payroll leakage, 80% less vendor non-compliance risk</b> — 3,000+ vendors on one rule engine. Ravi's payslip is the first financial document he has ever owned.</div>
       </div>
       <div class="rise" style="animation-delay:.35s">
-        ${bframe('assets/product/gobetter/payroll/vendor-reconciliation-dashboard.jpg', 'What the CFO sees · vendor reconciliation', 'Every vendor&rsquo;s statutory status — <b>pending · failed · success</b> — before the auditor asks', true)}
+        <div class="jobmock">
+          <div class="jm-screen">
+            <div class="jm-top"><h5>Salary credited 🎉</h5><p>30 Apr · 6:04 pm · <b>UTR N104…8821</b></p></div>
+            <div class="jm-pane" style="--d:.55s">
+              <div class="jm-salline"><span>Base · 26 verified shifts</span><b>₹16,500</b></div>
+              <div class="jm-salline"><span>Order incentives</span><b class="plus">+₹5,612</b></div>
+              <div class="jm-salline"><span>Rain-surge bonus</span><b class="plus">+₹2,500</b></div>
+              <div class="jm-salline"><span>PF (deposited <span class="ok">✓ challan verified</span>)</span><b>−₹1,980</b></div>
+              <div class="jm-salline total"><span>In your account</span><b>₹22,632</b></div>
+            </div>
+            <div class="jm-pane" style="--d:1s">
+              <div class="jm-salline" style="border:0;padding:0;"><span><b>This month&rsquo;s goal</b></span><b class="plus">+₹2,500</b></div>
+              <div class="jm-prog"><i style="--w:78%;--d:1.3s"></i></div>
+              <div class="jm-note">78% there — <b>412 more orders unlock the next slab.</b></div>
+            </div>
+            <div class="jm-foot"><em></em>Every rupee traceable to a verified shift</div>
+          </div>
+        </div>
+        <div class="mockcap">Ravi&rsquo;s first payslip — <b>the first financial document he has ever owned</b></div>
       </div>
     </div>`,
   },
@@ -176,8 +240,27 @@ export const nkStorySlides: SlideDef[] = [
         </div>
         <div class="clientline rise" style="animation-delay:.5s;margin-top:12px;">At a 3.5-month baseline, retention is the biggest lever in the business: <b>every month of tenure saved is a hiring cycle never paid for.</b> Where this runs: −15% attrition.</div>
       </div>
-      <div class="rise" style="animation-delay:.35s;max-width:320px;margin:0 auto;">
-        ${bframe('assets/product/app-gamification.webp', 'What Ravi sees · his learning journey', 'Streaks, badges, levels — <b>88% finish</b>')}
+      <div class="rise" style="animation-delay:.35s">
+        <div class="jobmock">
+          <div class="jm-screen">
+            <div class="jm-top"><h5>🔥 12-day streak</h5><p>2,340 XP · rank <b>#4</b> at HSR hub</p></div>
+            <div class="jm-card" style="--d:.55s">
+              <div class="jm-org">Tonight&rsquo;s reel · 3 min · हिंदी</div>
+              <div class="jm-role">Rain-day delivery, done safely</div>
+              <div class="jm-prog"><i style="--w:64%;--d:.9s"></i></div>
+              <div class="jm-note">2 of 3 cards watched</div>
+            </div>
+            <div class="jm-card hot" style="--d:.95s">
+              <div class="jm-row">
+                <div><div class="jm-org">Certificate earned</div><div class="jm-role">Surge-shift certified ✓</div></div>
+                <div class="jm-score"><b>+₹</b><span>better shifts</span></div>
+              </div>
+              <div class="jm-note"><b>Unlocked:</b> evening surge windows — the shifts that pay the bonus slab.</div>
+            </div>
+            <div class="jm-foot"><em></em>Skills live on Ravi&rsquo;s own record</div>
+          </div>
+        </div>
+        <div class="mockcap">Training between orders · <b>88% finish, against 25% industry</b></div>
       </div>
     </div>`,
   },
@@ -197,8 +280,26 @@ export const nkStorySlides: SlideDef[] = [
         </div>
         <div class="clientline rise" style="animation-delay:.45s;color:rgba(255,255,255,.65);margin-top:16px;">Skill someone publicly. Verify them once. Let them carry a record of their own into a job. That loop is the company.</div>
       </div>
-      <div class="rise" style="animation-delay:.35s;max-width:320px;margin:0 auto;">
-        ${bframe('assets/product/app-home.webp', 'The learner app · skillBetter engine', 'The engine behind Samarth — courses, certificates, <b>a profile that belongs to the worker</b>')}
+      <div class="rise" style="animation-delay:.35s">
+        <div class="jobmock">
+          <div class="jm-screen">
+            <div class="jm-top"><h5>Retail Samarth</h5><p>मुफ़्त retail skilling · <b>certificate + job profile</b></p></div>
+            <div class="jm-card" style="--d:.55s">
+              <div class="jm-org">Course 1 · ग्राहक सेवा</div>
+              <div class="jm-role">Customer service basics ✓</div>
+              <div class="jm-note">Completed · certificate issued</div>
+            </div>
+            <div class="jm-card" style="--d:.9s">
+              <div class="jm-org">Course 2 · billing</div>
+              <div class="jm-role">POS &amp; billing</div>
+              <div class="jm-prog"><i style="--w:45%;--d:1.2s"></i></div>
+              <div class="jm-note">In progress · 45%</div>
+            </div>
+            <div class="jm-verdict" style="--d:1.5s">Profile visible to 18,000+ stores</div>
+            <div class="jm-foot"><em></em>Free · open · 14 languages</div>
+          </div>
+        </div>
+        <div class="mockcap">A door, where there wasn&rsquo;t one · <b>800K+ downloads</b></div>
       </div>
     </div>`,
   },
