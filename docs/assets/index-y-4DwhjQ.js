@@ -3029,9 +3029,11 @@ Error generating stack: `+e.message+`
           ${b(w.zap,`If the client wants surge, not headcount`,`The gig engine deploys 1 to 500+ verified workers in under 24 hours, billed only on completed, GPS-proven tasks.`,.48)}
         </div>
       </div>
-      <div class="rise" style="animation-delay:.35s">
-        ${y(`assets/product/hire-journey/subway-job-matches.png`,`The worker&rsquo;s side of hiring · ranked matches`,`Fit-scored roles with pay bands, <b>one tap, no CV</b> — shown here for a food-retail client`,!0)}
-        <div class="stats" style="margin-top:16px;gap:16px 26px;">
+      <div class="rise" style="animation-delay:.35s;display:flex;flex-direction:column;align-items:center;gap:14px;">
+        <div style="max-width:300px;width:100%;">
+          ${y(`assets/product/hire-journey/subway-job-matches.png`,`The worker&rsquo;s side of hiring`,`Fit-scored matches, <b>one tap, no CV</b> — food-retail client shown`)}
+        </div>
+        <div class="stats" style="gap:16px 30px;justify-content:center;">
           <div class="stat"><div class="n">3–4K</div><div class="l">Ravis join every month, India staffing</div></div>
           <div class="stat"><div class="n">&lt;24 hr</div><div class="l">Apply to shortlist</div></div>
         </div>
