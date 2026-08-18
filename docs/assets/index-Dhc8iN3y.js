@@ -3247,7 +3247,7 @@ Error generating stack: `+e.message+`
               <div class="fm-row hl" style="--d:.8s"><span><b>Shree Staffing Co.</b> <small>PF short by ₹48,210 across 61 workers — caught now, not at the audit</small></span><span class="fm-chip r">PF SHORT</span></div>
               <div class="fm-row" style="--d:1.05s"><span><b>Balaji Facility Mgmt</b> <small>ESI challan late — escalation sent</small></span><span class="fm-chip y">LATE</span></div>
             </div>
-            <div class="fm-ravi" style="animation-delay:1.3s;">⚠ &nbsp;The law bills the <b>principal employer</b> for these — Reliance runs 3,000+ vendors here: <b>−90% leakage</b></div>
+            <div class="fm-ravi" style="animation-delay:1.3s;">⚠<span>The law bills the <b>principal employer</b> for these — Reliance runs 3,000+ vendors here: <b>−90% leakage</b></span></div>
           </div>
         </div>
       </div>
