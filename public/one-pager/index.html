@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<title>BetterPlace — on one page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B2D93;--deep:#101B57;--ink:#0B1237;--ink2:#070C28;--yellow:#FFC401;--cyan:#39D2E8;--mint:#3BE8B0;--violet:#8B7CFF;--coral:#FF7A6B;--dim:rgba(255,255,255,.66);--dim2:rgba(255,255,255,.42);--line:rgba(255,255,255,.1)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1a2140;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;display:grid;place-items:center;padding:26px}
+.page{width:1240px;background:radial-gradient(130% 60% at 85% -5%,#1e3078 0%,var(--ink) 42%,var(--ink2) 100%);color:#fff;border-radius:26px;padding:46px 54px 34px;position:relative;overflow:hidden}
+.page::before{content:'';position:absolute;left:-120px;bottom:-120px;width:380px;height:380px;border-radius:50%;border:1px dashed rgba(255,255,255,.1)}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.top .l{display:flex;align-items:center;gap:10px;font-family:'Poppins';font-weight:700;font-size:16px}
+.top .l i{width:11px;height:11px;border-radius:50%;background:var(--yellow);box-shadow:0 0 16px rgba(255,196,1,.8)}
+.top .r{font-family:'JetBrains Mono';font-size:10px;letter-spacing:2.6px;color:var(--dim2);text-transform:uppercase}
+.hero{display:grid;grid-template-columns:1.5fr 1fr;gap:30px;align-items:end;margin-bottom:8px}
+h1{font-size:46px;font-weight:800;letter-spacing:-1.4px;line-height:1.05}
+h1 em{font-style:normal;color:var(--yellow)}
+.hero p{font-size:15px;line-height:1.6;color:var(--dim);padding-bottom:6px}
+.hero p b{color:#fff}
+
+/* metro map */
+.metro{position:relative;margin:6px 0 4px}
+.metro svg{display:block;width:100%;height:auto}
+.st-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:21px;fill:#fff;letter-spacing:-.3px}
+.st-sub{font-family:'Inter',sans-serif;font-size:12.5px;fill:rgba(255,255,255,.62)}
+.st-num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:11px;fill:var(--yellow);letter-spacing:2px}
+.st-stat{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:12px;fill:var(--yellow)}
+.st-statc{fill:rgba(255,196,1,.12);stroke:rgba(255,196,1,.4);stroke-width:1}
+.line-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.6px;fill:var(--cyan)}
+.line-label.v{fill:var(--violet)}
+.line-label.loop{fill:var(--mint)}
+.mainline{stroke:var(--yellow);stroke-width:7;fill:none;stroke-linecap:round;stroke-dasharray:2600;stroke-dashoffset:2600;animation:draw 2.6s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.supply{stroke:var(--cyan);stroke-width:4;fill:none;stroke-linecap:round;opacity:.9}
+.express{stroke:var(--violet);stroke-width:4;fill:none;stroke-dasharray:10 8;opacity:.85;animation:express 1.2s linear infinite}
+@keyframes express{to{stroke-dashoffset:-18}}
+.loopline{stroke:var(--mint);stroke-width:3;fill:none;stroke-dasharray:5 7;opacity:.75;animation:express 1.6s linear infinite}
+.station{fill:#fff;stroke:var(--ink);stroke-width:5}
+.halo{fill:none;stroke:rgba(255,196,1,.35);stroke-width:2}
+.ichg{fill:var(--cyan)}
+
+/* pillars */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+.pl{border-radius:14px;padding:13px 16px;background:rgba(255,255,255,.045);border:1px solid var(--line);border-top:3px solid var(--pc)}
+.pl h3{font-size:15px;font-weight:700}
+.pl h3 span{font-family:'JetBrains Mono';font-size:9px;letter-spacing:1.6px;color:var(--pc);display:block;margin-bottom:3px;text-transform:uppercase}
+.pl p{font-size:11.5px;line-height:1.5;color:var(--dim);margin-top:4px}
+
+/* numbers */
+.numbers{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:16px;border-radius:16px;border:1px solid rgba(255,196,1,.3);background:linear-gradient(90deg,rgba(255,196,1,.1),rgba(255,196,1,.02));padding:16px 18px}
+.numbers .n b{display:block;font-family:'Poppins';font-weight:800;font-size:26px;letter-spacing:-.8px;color:var(--yellow)}
+.numbers .n span{font-family:'JetBrains Mono';font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:var(--dim)}
+
+/* proof */
+.proof{display:grid;grid-template-columns:1fr 1.05fr;gap:22px;margin-top:16px;align-items:center}
+.proof>*{min-width:0}
+.logos{font-family:'Poppins';font-weight:600;font-size:14px;line-height:2;color:rgba(255,255,255,.85)}
+.logos b{color:var(--dim2);font-family:'JetBrains Mono';font-weight:500;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:2px}
+.logos span{display:inline-block}
+.logos i{font-style:normal;color:rgba(255,255,255,.25);padding:0 8px}
+.cases{display:grid;gap:8px}
+.case1{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:12px;padding:9px 14px}
+.case1 b{font-family:'Poppins';font-weight:800;font-size:19px;color:var(--yellow);white-space:nowrap;flex:none;min-width:76px}
+.case1 p{font-size:11.5px;line-height:1.45;color:var(--dim)}
+.case1 p em{font-style:normal;color:#fff;font-weight:600}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+.foot span{font-family:'JetBrains Mono';font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--dim2)}
+.foot b{font-family:'Poppins';font-size:13px;color:#fff}
+@media print{body{background:#fff;padding:0}.page{border-radius:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top">
+    <div class="l"><i></i>betterplace</div>
+    <div class="r">The frontline workforce platform · on one page</div>
+  </div>
+
+  <div class="hero">
+    <h1>300 million Indians work on their feet.<br/><em>We built their operating system.</em></h1>
+    <p><b>One platform for the entire frontline lifecycle</b> — hire, verify, onboard, track, pay and train blue-collar workforces. Software, staffing and AI agents on one worker record. <b>30M+ workers. 1,100+ enterprises. Ten years in.</b></p>
+  </div>
+
+  <!-- ============ THE METRO MAP ============ -->
+  <div class="metro">
+    <svg viewBox="0 0 1140 470" xmlns="http://www.w3.org/2000/svg">
+      <!-- supply lines joining at HIRE -->
+      <path class="supply" d="M 40 40 C 90 40 110 96 160 104"/>
+      <path class="supply" d="M 40 168 C 90 168 110 118 160 108"/>
+      <text class="line-label" x="14" y="30">STAFFBETTER · 23K ON OUR PAYROLL</text>
+      <text class="line-label" x="14" y="196">GIGBETTER · DEPLOY &lt;24 HR</text>
+
+      <!-- main line: serpentine through 6 stations -->
+      <path class="mainline" d="M 160 106 H 980 C 1060 106 1060 130 1060 175 V 245 C 1060 300 1020 316 950 316 H 190 C 120 316 100 350 100 400"/>
+      <!-- rehire loop -->
+      <path class="loopline" d="M 100 418 C 100 452 210 452 400 452 H 900"/>
+      <text class="line-label loop" x="430" y="443">THE REHIRE LOOP — A VERIFIED WORKER COMES BACK IN MINUTES, NOT WEEKS</text>
+
+      <!-- AI express line -->
+      <path class="express" d="M 160 212 H 1000"/>
+      <text class="line-label v" x="392" y="200">AI LABS EXPRESS · AGENTS RUN EVERY STATION · ₹0.37 A CONVERSATION</text>
+
+      <!-- Row 1 stations -->
+      <g>
+        <circle class="halo" cx="160" cy="106" r="19"/><circle class="station" cx="160" cy="106" r="12"/><circle class="ichg" cx="160" cy="106" r="4"/>
+        <text class="st-num" x="132" y="46">01</text>
+        <text class="st-name" x="132" y="70">Hire</text>
+        <rect class="st-statc" x="128" y="128" rx="9" width="150" height="22"/><text class="st-stat" x="140" y="143">−60% time-to-hire</text>
+      </g>
+      <g>
+        <circle class="halo" cx="560" cy="106" r="19"/><circle class="station" cx="560" cy="106" r="12"/>
+        <text class="st-num" x="532" y="46">02</text>
+        <text class="st-name" x="532" y="70">Verify</text>
+        <rect class="st-statc" x="528" y="128" rx="9" width="212" height="22"/><text class="st-stat" x="540" y="143">CRC · eFIR · docs · &lt;24 hr</text>
+      </g>
+      <g>
+        <circle class="halo" cx="900" cy="106" r="19"/><circle class="station" cx="900" cy="106" r="12"/>
+        <text class="st-num" x="872" y="46">03</text>
+        <text class="st-name" x="872" y="70">Onboard</text>
+        <rect class="st-statc" x="868" y="128" rx="9" width="176" height="22"/><text class="st-stat" x="880" y="143">45 min, on the phone</text>
+      </g>
+
+      <!-- Row 2 stations -->
+      <g>
+        <circle class="halo" cx="900" cy="316" r="19"/><circle class="station" cx="900" cy="316" r="12"/>
+        <text class="st-num" x="872" y="366">04</text>
+        <text class="st-name" x="872" y="390">Attend</text>
+        <rect class="st-statc" x="868" y="252" rx="9" width="210" height="22"/><text class="st-stat" x="880" y="267">geo-fenced · spoof-proof</text>
+      </g>
+      <g>
+        <circle class="halo" cx="560" cy="316" r="19"/><circle class="station" cx="560" cy="316" r="12"/>
+        <text class="st-num" x="532" y="366">05</text>
+        <text class="st-name" x="532" y="390">Pay &amp; comply</text>
+        <rect class="st-statc" x="528" y="252" rx="9" width="190" height="22"/><text class="st-stat" x="540" y="267">−90% payroll leakage</text>
+      </g>
+      <g>
+        <circle class="halo" cx="190" cy="316" r="19"/><circle class="station" cx="190" cy="316" r="12"/>
+        <text class="st-num" x="162" y="366">06</text>
+        <text class="st-name" x="162" y="390">Grow</text>
+        <rect class="st-statc" x="158" y="252" rx="9" width="200" height="22"/><text class="st-stat" x="170" y="267">88% training completion</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- pillars -->
+  <div class="pillars">
+    <div class="pl" style="--pc:var(--yellow)"><h3><span>Software · goBetter</span>The workforce OS</h3><p>Hire, BGV, onboarding, attendance, payroll &amp; compliance, incentives, LMS — mobile-first, 35+ languages.</p></div>
+    <div class="pl" style="--pc:var(--cyan)"><h3><span>People · staffBetter</span>Staffing, compliance carried</h3><p>Full-time staffing as employer of record — 23,000+ on our payroll, &gt;95% client retention.</p></div>
+    <div class="pl" style="--pc:var(--mint)"><h3><span>Flex · gigBetter</span>On-demand gig workforce</h3><p>1 to 500+ verified workers in &lt;24 hours, billed only on GPS-proven task outcomes.</p></div>
+    <div class="pl" style="--pc:var(--violet)"><h3><span>AI · AI Labs</span>AI employees, private cloud</h3><p>Agents that call, see and act in 24 languages — on our own models, so client data never leaves.</p></div>
+  </div>
+
+  <!-- numbers -->
+  <div class="numbers">
+    <div class="n"><b>30M+</b><span>Worker profiles</span></div>
+    <div class="n"><b>1,100+</b><span>Enterprises</span></div>
+    <div class="n"><b>500+</b><span>Cities</span></div>
+    <div class="n"><b>8</b><span>Markets · India · SEA · GCC</span></div>
+    <div class="n"><b>$105M+</b><span>Gross revenue, staffing</span></div>
+    <div class="n"><b>2015</b><span>Building since</span></div>
+  </div>
+
+  <!-- proof -->
+  <div class="proof">
+    <div class="logos">
+      <b>Runs at</b>
+      <span>Reliance</span><i>·</i><span>Zepto</span><i>·</i><span>Amazon</span><i>·</i><span>Flipkart</span><i>·</i><span>Meesho</span><i>·</i><span>DMart</span><i>·</i><span>Nykaa</span><i>·</i><span>Nestlé</span><i>·</i><span>Titan</span><i>·</i><span>BPCL</span><i>·</i><span>Hindalco</span><i>·</i><span>IFFCO Tokio</span><i>·</i><span>Mahindra</span><i>·</i><span>SBI</span><i>·</i><span>MakeMyTrip</span>
+    </div>
+    <div class="cases">
+      <div class="case1"><b>300K</b><p><em>Reliance:</em> workers across 3,000+ vendors on one rule engine — payroll leakage down 90%.</p></div>
+      <div class="case1"><b>15,000</b><p><em>Zepto:</em> workers on geo-fenced, spoof-proof attendance across 967 sites — 40% cost saved.</p></div>
+      <div class="case1"><b>30,000</b><p><em>IFFCO Tokio:</em> salespeople coached by an AI agent, every day.</p></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <b>www.betterplace.co.in</b>
+    <span>ISO 27001 · SOC 2 · India · Southeast Asia · GCC</span>
+  </div>
+</div>
+</body>
+</html>
