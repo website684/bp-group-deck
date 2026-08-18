@@ -994,3 +994,23 @@ body { overflow: auto; background: #05081f; }
 .drow .dn { margin-left: auto; text-align: right; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.12rem; color: var(--yellow); white-space: nowrap; }
 .drow .dn small { display: block; font-family: 'JetBrains Mono', monospace; font-size: .5rem; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255,255,255,.5); margin-top: 1px; }
 @media print { .drow { animation: none !important; opacity: 1 !important; } .heroavatar .frame::before { animation: none !important; } }
+
+/* ---- print: keep story-deck split slides two-column, fit mocks on the page ---- */
+@media print {
+  .player .slidebody.split { display: grid !important; grid-template-columns: 1.1fr .9fr !important; gap: 30px !important; align-items: center !important; }
+  .player .meetgrid { grid-template-columns: 300px 1fr !important; }
+  .jobmock { transform: scale(.8); transform-origin: top center; }
+  .jobmock .jm-screen { min-height: 430px; }
+  .funmock { max-width: 430px; }
+  .player .agents { grid-template-columns: repeat(5, 1fr) !important; }
+  .player .modelrow { grid-template-columns: repeat(4, 1fr) !important; }
+  .mockcap { margin-top: 4px; }
+}
+
+/* ---- readability pass: bigger tracker + eyebrows ---- */
+.player .eyebrow { font-size: .82rem !important; letter-spacing: 2.4px !important; }
+.js-st span { font-size: .72rem; letter-spacing: 1.4px; margin-top: 7px; padding: 0 4px; }
+.js-st .prod { font-size: .74rem; margin-top: 2px; }
+.js-st i { width: 16px; height: 16px; }
+.js-st::before { top: 8px; }
+.jstrip { max-width: 940px; margin-bottom: 18px; }

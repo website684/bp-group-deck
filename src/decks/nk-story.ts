@@ -79,9 +79,9 @@ export const nkStorySlides: SlideDef[] = [
         <div>
           <div class="demandhead rise" style="animation-delay:.3s">Hiring Ravi&rsquo;s profile, right now, in his city</div>
           <div class="drows">
-            <div class="drow" style="--dc:#FFC401;--d:.4s"><span class="di"><svg viewBox="0 0 24 24">${icons.zap}</svg></span><div><h4>Quick commerce</h4><p>10-minute promises, 3.5-month rider tenure — the fleet is rebuilt three times a year</p></div><div class="dn">3×<small>fleet rebuilt / year</small></div></div>
-            <div class="drow" style="--dc:#39D2E8;--d:.55s"><span class="di"><svg viewBox="0 0 24 24">${icons.building}</svg></span><div><h4>E-commerce &amp; logistics</h4><p>Warehouses and last mile, with festive surges that double the floor overnight</p></div><div class="dn">Lakhs<small>seasonal roles / year</small></div></div>
-            <div class="drow" style="--dc:#3BE8B0;--d:.7s"><span class="di"><svg viewBox="0 0 24 24">${icons.users}</svg></span><div><h4>Organised retail</h4><p>One chain alone runs 1.5 lakh hires a year through its stores</p></div><div class="dn">1.5L+<small>hires / yr · one chain</small></div></div>
+            <div class="drow" style="--dc:#FFC401;--d:.4s"><span class="di"><svg viewBox="0 0 24 24">${icons.zap}</svg></span><div><h4>Quick commerce</h4><p>Zepto, Blinkit, Instamart — 10-minute promises on 3.5-month rider tenure. The fleet is rebuilt three times a year</p></div><div class="dn">3×<small>fleet rebuilt / year</small></div></div>
+            <div class="drow" style="--dc:#39D2E8;--d:.55s"><span class="di"><svg viewBox="0 0 24 24">${icons.building}</svg></span><div><h4>E-commerce &amp; logistics</h4><p>Amazon- and Flipkart-scale warehouses and last mile — festive surges double the floor overnight</p></div><div class="dn">Lakhs<small>seasonal roles / year</small></div></div>
+            <div class="drow" style="--dc:#3BE8B0;--d:.7s"><span class="di"><svg viewBox="0 0 24 24">${icons.users}</svg></span><div><h4>Organised retail</h4><p>Reliance Retail alone runs 1.5 lakh hires a year through its stores</p></div><div class="dn">1.5L+<small>hires / yr · one chain</small></div></div>
             <div class="drow" style="--dc:#8B7CFF;--d:.85s"><span class="di"><svg viewBox="0 0 24 24">${icons.mic}</svg></span><div><h4>BFSI &amp; field sales</h4><p>Feet-on-street teams backfilling 40–50% attrition, every single year</p></div><div class="dn">40–50%<small>annual attrition</small></div></div>
           </div>
         </div>
@@ -125,7 +125,7 @@ export const nkStorySlides: SlideDef[] = [
           <g>
             <circle class="halo" cx="900" cy="316" r="19"/><circle class="station" cx="900" cy="316" r="12"/>
             <text class="st-num" x="872" y="366">04</text><text class="st-name" x="872" y="390">Attend</text>
-            <rect class="st-statc" x="868" y="252" rx="9" width="210" height="22"/><text class="st-stat" x="880" y="267">geo-fenced · spoof-proof</text>
+            <rect class="st-statc" x="846" y="252" rx="9" width="200" height="22"/><text class="st-stat" x="858" y="267">geo-fenced · spoof-proof</text>
           </g>
           <g>
             <circle class="halo" cx="560" cy="316" r="19"/><circle class="station" cx="560" cy="316" r="12"/>
@@ -156,7 +156,7 @@ export const nkStorySlides: SlideDef[] = [
         <div class="ajrow"><span class="lb">May</span><span class="ajbar"><i style="--w:32%;--bc:#E85B4B;--d:.9s"></i></span><span class="pc">32</span></div>
         <div class="ajrow"><span class="lb">June</span><span class="ajbar"><i style="--w:24%;--bc:#D0271D;--d:1.05s"></i></span><span class="pc">24</span></div>
       </div>
-      <div class="probfoot rise" style="animation-delay:.5s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">A 10,000-rider fleet is rebuilt <b>about three times a year, in every city, forever</b>. Someone has to source, verify, onboard, track, pay and train that river of people. That someone is us. Watch it work — on Ravi.</div>
+      <div class="probfoot rise" style="animation-delay:.5s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">A 10,000-rider fleet is rebuilt <b>about three times a year, in every city, forever</b>. Someone has to source, verify, onboard, track, pay and train that river of people. That's the job we do — <b>the next six slides watch it happen to Ravi.</b></div>
     </div>`,
   },
   {
@@ -212,7 +212,7 @@ export const nkStorySlides: SlideDef[] = [
           ${fi(icons.check, 'Document matching', 'His Aadhaar verified over API and face-matched to the person who applied. Ravi is Ravi.', 0.40)}
           ${fi(icons.map, 'Physical address verification', 'Someone actually visits the address he gave. The customer whose door he will knock on deserves that.', 0.48)}
         </div>
-        <div class="clientline rise" style="animation-delay:.55s;margin-top:12px;">This isn't ceremony. 5.6% of gig background checks surface a discrepancy — on a 10,000-rider fleet, that's <b>560 doors you were right to check before they were knocked on.</b></div>
+        <div class="clientline rise" style="animation-delay:.55s;margin-top:12px;">5.6% of gig background checks surface a discrepancy. On a 10,000-rider fleet, that's <b>560 doors you were right to check before they were knocked on.</b></div>
       </div>
       <div class="rise" style="animation-delay:.35s">
         <div class="funmock">
@@ -288,10 +288,10 @@ export const nkStorySlides: SlideDef[] = [
               <span class="r">3<small>geo-fail</small></span>
             </div>
             <div class="fm-rows">
-              <div class="fm-row hl" style="--d:.5s"><span><b>Ravi K.</b><br/><small>6:58 am · inside zone (38 m) · face ✓ · liveness ✓</small></span><span class="fm-chip g">IN</span></div>
-              <div class="fm-row" style="--d:.8s"><span><b>Priya N.</b> <small>7:02 am · inside zone · face ✓</small></span><span class="fm-chip g">IN</span></div>
-              <div class="fm-row" style="--d:1s"><span><b>Deepak R.</b> <small>marked from 2.4 km away — rejected</small></span><span class="fm-chip r">GEO-FAIL</span></div>
-              <div class="fm-row" style="--d:1.2s"><span><b>Mohan T.</b> <small>photo-of-photo detected — spoof blocked</small></span><span class="fm-chip r">SPOOF</span></div>
+              <div class="fm-row hl" style="--d:.5s"><span><b>Ravi K.</b><br/><small>6:58 am · inside the zone (38 m) · face matched · real person ✓</small></span><span class="fm-chip g">IN</span></div>
+              <div class="fm-row" style="--d:.8s"><span><b>Priya N.</b> <small>7:02 am · inside the zone · face matched</small></span><span class="fm-chip g">IN</span></div>
+              <div class="fm-row" style="--d:1s"><span><b>Deepak R.</b> <small>tried to mark from 2.4 km away</small></span><span class="fm-chip r">WRONG PLACE</span></div>
+              <div class="fm-row" style="--d:1.2s"><span><b>Mohan T.</b> <small>held a photo up to the camera</small></span><span class="fm-chip r">FAKE PHOTO</span></div>
             </div>
           </div>
         </div>
@@ -304,14 +304,15 @@ export const nkStorySlides: SlideDef[] = [
     html: `
     <div class="slidebody split">${jstrip(5)}
       <div>
-        <span class="eyebrow rise">Day 30 · 6:04 pm · the message Ravi has been waiting for</span>
+        <span class="eyebrow rise">Day 30 · 6:04 pm · the message that rarely comes on time</span>
         <h2 class="rise" style="animation-delay:.08s;">Salary credited. Correct. On time. <span style="color:var(--navy)">Explained.</span></h2>
         <div class="featlist">
-          ${fi(icons.card, 'Computed from verified shifts', 'No punch, no pay — and no honest shift unpaid. Minimum-wage floors were validated before the structure was ever approved.', 0.24)}
-          ${fi(icons.shield, 'The part Ravi never sees', 'His vendor&rsquo;s PF/ESI challan is read automatically and reconciled worker-by-worker, monthly — because when a vendor underpays, the law sends the bill to the principal employer.', 0.32)}
-          ${fi(icons.trophy, 'The number that changes his week', 'Live incentives in his pocket after every order: "₹1.1L more this month unlocks +₹2,500." The scheme motivates while there is still a month to act on it.', 0.40)}
+          ${fi(icons.card, 'Paid on time, from verified shifts', 'Most contract workers are paid by a vendor running spreadsheets — salaries slip, sums are wrong. Here pay computes from face-verified attendance the day the cycle closes, with minimum-wage floors checked first.', 0.24)}
+          ${fi(icons.shield, 'PF · ESI · challan verification, every vendor, every month', 'Vendors skip or short statutory dues more often than anyone admits — and the law bills the principal employer for it. Every vendor&rsquo;s challan is read by OCR and reconciled worker-by-worker.', 0.32)}
+          ${fi(icons.building, 'Thousands of vendors, one admin console', 'The company&rsquo;s admin sees every vendor&rsquo;s payroll batch, filing status and compliance gap on one screen — Reliance runs 3,000+ vendors on this rule engine.', 0.40)}
+          ${fi(icons.trophy, 'The number that changes Ravi&rsquo;s week', 'Live incentives after every order — "₹1.1L more this month unlocks +₹2,500" — while there is still a month left to act on it.', 0.48)}
         </div>
-        <div class="clientline rise" style="animation-delay:.5s;margin-top:12px;">Measured at Reliance: <b>90% less payroll leakage, 80% less vendor non-compliance risk</b> — 3,000+ vendors on one rule engine. Ravi's payslip is the first financial document he has ever owned.</div>
+        <div class="clientline rise" style="animation-delay:.55s;margin-top:10px;">At Reliance: <b>−90% payroll leakage · −80% vendor non-compliance risk.</b></div>
       </div>
       <div class="rise" style="animation-delay:.35s">
         <div class="jobmock">
@@ -345,10 +346,10 @@ export const nkStorySlides: SlideDef[] = [
         <h2 class="rise" style="animation-delay:.08s;">The 3.5-month rider <span style="color:var(--navy)">decides to stay.</span></h2>
         <div class="featlist">
           ${fi(icons.play, 'Training that looks like Instagram', 'Reel-style lessons in his own language, watchable between orders. 88% completion, against 25% on a traditional LMS.', 0.24)}
-          ${fi(icons.check, 'Certificates that unlock work', 'At Zepto, only trained, certified riders go live — his new certificate is not a PDF, it is access to better shifts.', 0.32)}
-          ${fi(icons.trophy, 'A record that compounds', 'Every shift, certificate and verification lives on Ravi&rsquo;s own profile — and travels with him to the next job, the way a LinkedIn never could.', 0.40)}
+          ${fi(icons.check, 'Certificates that unlock work', 'At Zepto, only trained, certified riders go live — Ravi&rsquo;s new certificate opens the better-paying surge shifts.', 0.32)}
+          ${fi(icons.trophy, 'A record that compounds', 'Every shift, certificate and verification lives on Ravi&rsquo;s own profile and travels with him to the next job.', 0.40)}
         </div>
-        <div class="clientline rise" style="animation-delay:.5s;margin-top:12px;">At a 3.5-month baseline, retention is the biggest lever in the business: <b>every month of tenure saved is a hiring cycle never paid for.</b> Where this runs: −15% attrition.</div>
+        <div class="clientline rise" style="animation-delay:.5s;margin-top:12px;">At a 3.5-month baseline, retention is the biggest lever in the business. <b>Every month of tenure saved is a hiring cycle never paid for</b> — where this runs, attrition drops 15%.</div>
       </div>
       <div class="rise" style="animation-delay:.35s">
         <div class="jobmock">
@@ -439,7 +440,7 @@ export const nkStorySlides: SlideDef[] = [
           <div class="stat"><div class="n">8 weeks</div><div class="l">Idea to live</div></div>
           <div class="stat"><div class="n">1.5L+</div><div class="l">Annual hires through the funnel</div></div>
         </div>
-        <div class="clientline rise" style="animation-delay:.45s;color:rgba(255,255,255,.65);margin-top:16px;">Skill someone publicly. Verify them once. Let them carry a record of their own into a job. That loop is the company.</div>
+        <div class="clientline rise" style="animation-delay:.45s;color:rgba(255,255,255,.65);margin-top:16px;">Skill someone publicly, verify them once, and they carry a record of their own into a job — the same loop Ravi rode, opened to anyone with a phone.</div>
       </div>
       <div class="rise" style="animation-delay:.35s">
         <div class="jobmock">
