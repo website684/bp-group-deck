@@ -15,6 +15,7 @@ import { incentivesSlides } from './incentives'
 import { salesStorySlides } from './sales-story'
 import { mfgStorySlides } from './mfg-story'
 import { gobetterSlides } from './gobetter'
+import { nkStorySlides } from './nk-story'
 
 export const decks: DeckDef[] = [
   {
@@ -24,6 +25,11 @@ export const decks: DeckDef[] = [
     // products → AI → services → outcomes → why us → start. Deep decks carry the rest.
     slides: ['s1', 's2', 's13b', 's2b', 's5', 's6', 's7', 's8', 's8b', 's9', 's10', 's11', 's12', 's14', 's14b', 'sclose']
       .map((id) => groupSlides.find((s) => s.id === id)!),
+  },
+  {
+    id: 'why-betterplace', next: 'group', title: 'Why BetterPlace Exists · The Story', group: 'story',
+    tagline: 'The soul-of-the-company deck — the invisible workforce, one rider’s journey through everything we run, Retail Samarth, and the AI turn. Link-only; not listed on the hub.',
+    slides: nkStorySlides,
   },
   {
     id: 'sales-story', next: 'mfg-story', title: 'goBetter for Sales Teams', group: 'story',
