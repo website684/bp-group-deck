@@ -12,7 +12,7 @@ const STATIONS: Array<[string, string]> = [
   ['Onboard', 'goBetter Onboard'],
   ['Attend', 'goBetter Attend'],
   ['Pay', 'Payroll · Incentives'],
-  ['Grow', 'skillBetter'],
+  ['Upskill & engage', 'skillBetter'],
 ]
 const jstrip = (active: number) => `
       <div class="jstrip rise">${STATIONS.map(([name, prod], i) => `<div class="js-st${i + 1 < active ? ' done' : ''}${i + 1 === active ? ' act' : ''}"><i></i><span>${name}</span><span class="prod">${prod}</span></div>`).join('')}</div>`
@@ -47,7 +47,46 @@ export const nkStorySlides: SlideDef[] = [
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.users}</svg></span><h4>Hired, but not known</h4><p>Hired through vendors and contractors, a worker exists as a row in someone's Excel. No record, no history, nothing that belongs to them.</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.book}</svg></span><h4>Trained by luck</h4><p>About 5% of India's workforce has had formal skill training, while the WEF expects 40% of today's skills to be obsolete by 2030.</p></div>
       </div>
-      <div class="probfoot rise" style="animation-delay:.42s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">Roughly <b>300 million people</b>. One of them is <b>Ravi, 23</b>, who reached Bengaluru last week with a bike, a phone, and no CV. The rest of this deck is his first month.</div>
+      <div class="probfoot rise" style="animation-delay:.42s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">Roughly <b>300 million people</b>. The software industry spent thirty years building for the people at desks — and built them nothing. <b>One of them just got off a train in Bengaluru →</b></div>
+    </div>`,
+  },
+  {
+    id: 'ns2r', theme: 'darker', title: 'Meet Ravi',
+    html: `
+    <div class="glow"></div>
+    <div class="slidebody">
+      <span class="eyebrow rise">The supply side · and the demand side</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:38ch;">Meet Ravi. <span style="color:var(--yellow)">Everyone on the right wants to hire him.</span> They have no way to find him.</h2>
+      <div class="meetgrid">
+        <div class="heroavatar rise" style="animation-delay:.2s">
+          <div class="frame">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" fill="#131c4f"/>
+              <circle cx="50" cy="118" r="50" fill="#1B2D93"/>
+              <rect x="26" y="86" width="48" height="8" rx="3" fill="#FFC401" opacity=".92"/>
+              <circle cx="50" cy="46" r="21" fill="#e8a66b"/>
+              <path d="M27 44 A23 23 0 0 1 73 44 L73 36 A23 21 0 0 0 27 36 Z" fill="#FFC401"/>
+              <rect x="25" y="41" width="50" height="4" rx="2" fill="#d9a400"/>
+              <circle cx="43" cy="50" r="2.4" fill="#1c1c2e"/>
+              <circle cx="57" cy="50" r="2.4" fill="#1c1c2e"/>
+              <path d="M44 58 Q50 63 56 58" stroke="#1c1c2e" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hv-name">Ravi Kumar, 23</div>
+          <div class="hv-sub">Reached Bengaluru yesterday</div>
+          <div class="hv-chips"><span>3 yrs driving, Kanpur</span><span>Own bike</span><span>Smartphone</span><span>हिंदी</span><span>No CV</span><span>No references</span></div>
+        </div>
+        <div>
+          <div class="demandhead rise" style="animation-delay:.3s">Hiring Ravi&rsquo;s profile, right now, in his city</div>
+          <div class="drows">
+            <div class="drow" style="--dc:#FFC401;--d:.4s"><span class="di"><svg viewBox="0 0 24 24">${icons.zap}</svg></span><div><h4>Quick commerce</h4><p>10-minute promises, 3.5-month rider tenure — the fleet is rebuilt three times a year</p></div><div class="dn">3×<small>fleet rebuilt / year</small></div></div>
+            <div class="drow" style="--dc:#39D2E8;--d:.55s"><span class="di"><svg viewBox="0 0 24 24">${icons.building}</svg></span><div><h4>E-commerce &amp; logistics</h4><p>Warehouses and last mile, with festive surges that double the floor overnight</p></div><div class="dn">Lakhs<small>seasonal roles / year</small></div></div>
+            <div class="drow" style="--dc:#3BE8B0;--d:.7s"><span class="di"><svg viewBox="0 0 24 24">${icons.users}</svg></span><div><h4>Organised retail</h4><p>One chain alone runs 1.5 lakh hires a year through its stores</p></div><div class="dn">1.5L+<small>hires / yr · one chain</small></div></div>
+            <div class="drow" style="--dc:#8B7CFF;--d:.85s"><span class="di"><svg viewBox="0 0 24 24">${icons.mic}</svg></span><div><h4>BFSI &amp; field sales</h4><p>Feet-on-street teams backfilling 40–50% attrition, every single year</p></div><div class="dn">40–50%<small>annual attrition</small></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="probfoot rise" style="animation-delay:1s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">Demand was never the problem. <b>The two sides have no shared infrastructure</b> — no common identity, no trusted record, no pipe between them. That gap is the company.</div>
     </div>`,
   },
   {
@@ -95,7 +134,7 @@ export const nkStorySlides: SlideDef[] = [
           </g>
           <g>
             <circle class="halo" cx="190" cy="316" r="19"/><circle class="station" cx="190" cy="316" r="12"/>
-            <text class="st-num" x="162" y="366">06</text><text class="st-name" x="162" y="390">Grow</text>
+            <text class="st-num" x="162" y="366">06</text><text class="st-name" x="162" y="390">Upskill &amp; engage</text>
             <rect class="st-statc" x="158" y="252" rx="9" width="200" height="22"/><text class="st-stat" x="170" y="267">88% training completion</text>
           </g>
         </svg>
