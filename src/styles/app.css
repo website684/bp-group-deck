@@ -1014,3 +1014,24 @@ body { overflow: auto; background: #05081f; }
 .js-st i { width: 16px; height: 16px; }
 .js-st::before { top: 8px; }
 .jstrip { max-width: 940px; margin-bottom: 18px; }
+
+/* ---- pane tags: whose side of the platform is this? ---- */
+.panetag { display: inline-flex; align-items: center; gap: 7px; font-family: 'JetBrains Mono', monospace; font-size: .62rem; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; padding: 5px 13px; border-radius: 14px; margin-bottom: 10px; }
+.panetag i { font-style: normal; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.panetag.w { background: rgba(255,196,1,.16); color: #9a7500; }
+.panetag.e { background: rgba(27,45,147,.1); color: var(--navy); }
+.panewrap { text-align: center; }
+
+/* ---- fit pass: story slides inside the safe zone ---- */
+.jobmock .jm-screen { min-height: 436px; }
+.jstrip { margin-bottom: 8px; }
+.mockcap { margin-top: 8px; }
+.credcard { padding: 16px 18px; }
+.cc-me { margin-top: 10px; }
+.cc-grid { margin-top: 10px; }
+.cc-badges { margin-top: 9px; }
+.cc-foot { margin-top: 10px; padding-top: 8px; }
+.fm-sum { margin-bottom: 9px; }
+.fm-sum span { padding: 6px 4px 5px; }
+.fm-row { padding: 6px 4px; }
+.jm-card, .jm-pane { padding: 10px 12px; }

@@ -174,6 +174,7 @@ export const nkStorySlides: SlideDef[] = [
         </div>
       </div>
       <div class="rise" style="animation-delay:.35s">
+        <div class="panewrap"><span class="panetag w"><i></i>Ravi&rsquo;s screen</span></div>
         <div class="jobmock">
           <div class="jm-screen">
             <div class="jm-top"><h5>Ravi, 3 roles match you</h5><p>Sorted by fit — <b>one tap, no CV</b> · हिंदी ✓</p></div>
@@ -212,9 +213,10 @@ export const nkStorySlides: SlideDef[] = [
           ${fi(icons.check, 'Document matching', 'His Aadhaar verified over API and face-matched to the person who applied. Ravi is Ravi.', 0.40)}
           ${fi(icons.map, 'Physical address verification', 'Someone actually visits the address he gave. The customer whose door he will knock on deserves that.', 0.48)}
         </div>
-        <div class="clientline rise" style="animation-delay:.55s;margin-top:12px;">5.6% of gig background checks surface a discrepancy. On a 10,000-rider fleet, that's <b>560 doors you were right to check before they were knocked on.</b></div>
+        <div class="clientline rise" style="animation-delay:.55s;margin-top:10px;">5.6% of gig checks surface a discrepancy — at 10,000 riders, <b>560 doors you were right to check.</b></div>
       </div>
       <div class="rise" style="animation-delay:.35s">
+        <div class="panewrap"><span class="panetag e"><i></i>The employer&rsquo;s screen</span></div>
         <div class="funmock">
           <div class="fm-bar"><i></i><i></i><i></i><span>gobetter · verify · Monday batch (42)</span></div>
           <div class="fm-body">
@@ -250,6 +252,7 @@ export const nkStorySlides: SlideDef[] = [
         </div>
       </div>
       <div class="rise" style="animation-delay:.35s">
+        <div class="panewrap"><span class="panetag e"><i></i>The employer&rsquo;s screen</span></div>
         <div class="funmock">
           <div class="fm-bar"><i></i><i></i><i></i><span>gobetter · onboarding · Monday batch (42)</span></div>
           <div class="fm-body">
@@ -279,6 +282,7 @@ export const nkStorySlides: SlideDef[] = [
         <div class="clientline rise" style="animation-delay:.5s;margin-top:12px;">This layer runs at Zepto today: <b>15,000 workers, 967 geo-fenced sites, 40% measured cost savings.</b> Everything downstream — pay, incentives, compliance — computes from it.</div>
       </div>
       <div class="rise" style="animation-delay:.35s">
+        <div class="panewrap"><span class="panetag e"><i></i>The employer&rsquo;s screen</span></div>
         <div class="funmock">
           <div class="fm-bar"><i></i><i></i><i></i><span>gobetter · attend · HSR hub · live · 7:04 am</span></div>
           <div class="fm-body">
@@ -307,14 +311,24 @@ export const nkStorySlides: SlideDef[] = [
         <span class="eyebrow rise">Day 30 · 6:04 pm · the message that rarely comes on time</span>
         <h2 class="rise" style="animation-delay:.08s;">Salary credited. Correct. On time. <span style="color:var(--navy)">Explained.</span></h2>
         <div class="featlist">
-          ${fi(icons.card, 'Paid on time, from verified shifts', 'Most contract workers are paid by a vendor running spreadsheets — salaries slip, sums are wrong. Here pay computes from face-verified attendance the day the cycle closes, with minimum-wage floors checked first.', 0.24)}
-          ${fi(icons.shield, 'PF · ESI · challan verification, every vendor, every month', 'Vendors skip or short statutory dues more often than anyone admits — and the law bills the principal employer for it. Every vendor&rsquo;s challan is read by OCR and reconciled worker-by-worker.', 0.32)}
-          ${fi(icons.building, 'Thousands of vendors, one admin console', 'The company&rsquo;s admin sees every vendor&rsquo;s payroll batch, filing status and compliance gap on one screen — Reliance runs 3,000+ vendors on this rule engine.', 0.40)}
-          ${fi(icons.trophy, 'The number that changes Ravi&rsquo;s week', 'Live incentives after every order — "₹1.1L more this month unlocks +₹2,500" — while there is still a month left to act on it.', 0.48)}
+          ${fi(icons.card, 'Paid on time, from verified shifts', 'Vendor spreadsheets pay late and pay wrong. Here pay computes from face-verified attendance the day the cycle closes — minimum wage checked first.', 0.2)}
+          ${fi(icons.trophy, 'The number that changes Ravi&rsquo;s week', 'Live incentives after every order — "₹1.1L more this month unlocks +₹2,500."', 0.28)}
         </div>
-        <div class="clientline rise" style="animation-delay:.55s;margin-top:10px;">At Reliance: <b>−90% payroll leakage · −80% vendor non-compliance risk.</b></div>
+        <div class="demandhead rise" style="animation-delay:.34s;color:var(--navy);margin-top:4px;">The employer&rsquo;s screen — every vendor&rsquo;s PF &amp; ESI, checked monthly</div>
+        <div class="funmock rise" style="animation-delay:.4s;max-width:none;">
+          <div class="fm-bar"><i></i><i></i><i></i><span>gobetter · payroll · vendor compliance · April · 44 vendors</span></div>
+          <div class="fm-body">
+            <div class="fm-rows">
+              <div class="fm-row" style="--d:.55s"><span><b>Om Manpower Services</b> <small>challan verified, worker-by-worker</small></span><span class="fm-chip g">CLEAR</span></div>
+              <div class="fm-row hl" style="--d:.8s"><span><b>Shree Staffing Co.</b> <small>PF short by ₹48,210 across 61 workers — caught now, not at the audit</small></span><span class="fm-chip r">PF SHORT</span></div>
+              <div class="fm-row" style="--d:1.05s"><span><b>Balaji Facility Mgmt</b> <small>ESI challan late — escalation sent</small></span><span class="fm-chip y">LATE</span></div>
+            </div>
+            <div class="fm-ravi" style="animation-delay:1.3s;">⚠ &nbsp;The law bills the <b>principal employer</b> for these — Reliance runs 3,000+ vendors here: <b>−90% leakage</b></div>
+          </div>
+        </div>
       </div>
       <div class="rise" style="animation-delay:.35s">
+        <div class="panewrap"><span class="panetag w"><i></i>Ravi&rsquo;s screen</span></div>
         <div class="jobmock">
           <div class="jm-screen">
             <div class="jm-top"><h5>Salary credited 🎉</h5><p>30 Apr · 6:04 pm · <b>UTR N104…8821</b></p></div>
@@ -352,6 +366,7 @@ export const nkStorySlides: SlideDef[] = [
         <div class="clientline rise" style="animation-delay:.5s;margin-top:12px;">At a 3.5-month baseline, retention is the biggest lever in the business. <b>Every month of tenure saved is a hiring cycle never paid for</b> — where this runs, attrition drops 15%.</div>
       </div>
       <div class="rise" style="animation-delay:.35s">
+        <div class="panewrap"><span class="panetag w"><i></i>Ravi&rsquo;s screen</span></div>
         <div class="jobmock">
           <div class="jm-screen">
             <div class="jm-top"><h5>🔥 12-day streak</h5><p>2,340 XP · rank <b>#4</b> at HSR hub</p></div>
@@ -384,13 +399,13 @@ export const nkStorySlides: SlideDef[] = [
         <h2 class="rise" style="animation-delay:.08s;">A verified credential <span style="color:var(--navy)">Ravi keeps for life.</span></h2>
         <div class="featlist">
           ${fi(icons.shield, 'A verified identity', 'Background-checked once — criminal, eFIR, documents, address — and trusted everywhere on the platform.', 0.24)}
-          ${fi(icons.check, 'Skills that are certified', 'Every course finished and assessment passed is a certificate on the record, not a memory.', 0.32)}
-          ${fi(icons.clock, 'A work history that is proof', 'Verified shifts, sites and employers — the frontline&rsquo;s first CV that can&rsquo;t be embellished.', 0.40)}
-          ${fi(icons.card, 'An earnings trail', 'Payslips and a PF history in one place — the paper trail banks ask for and workers never had.', 0.48)}
+          ${fi(icons.check, 'Skills that are certified', 'Every course finished and assessment passed becomes a certificate on his record.', 0.32)}
+          ${fi(icons.clock, 'A history that is proof', 'Verified shifts, employers, payslips and a PF trail — the frontline&rsquo;s first CV that can&rsquo;t be embellished, and the paper trail banks ask for.', 0.40)}
         </div>
         <div class="clientline rise" style="animation-delay:.55s;margin-top:12px;">It belongs to Ravi and travels with him. For the employer, it&rsquo;s why the rehire loop takes minutes: <b>verify once, trust everywhere.</b></div>
       </div>
       <div class="rise" style="animation-delay:.35s">
+        <div class="panewrap"><span class="panetag w"><i></i>Ravi&rsquo;s credential</span></div>
         <div class="credcard">
           <div class="cc-head"><span>betterplace · <b>verified worker</b></span><span>BP-30M-118</span></div>
           <div class="cc-me">
@@ -443,6 +458,7 @@ export const nkStorySlides: SlideDef[] = [
         <div class="clientline rise" style="animation-delay:.45s;color:rgba(255,255,255,.65);margin-top:16px;">Skill someone publicly, verify them once, and they carry a record of their own into a job — the same loop Ravi rode, opened to anyone with a phone.</div>
       </div>
       <div class="rise" style="animation-delay:.35s">
+        <div class="panewrap"><span class="panetag w"><i></i>Ravi&rsquo;s screen</span></div>
         <div class="jobmock">
           <div class="jm-screen">
             <div class="jm-top"><h5>Retail Samarth</h5><p>मुफ़्त retail skilling · <b>certificate + job profile</b></p></div>
