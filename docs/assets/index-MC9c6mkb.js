@@ -3410,6 +3410,14 @@ Error generating stack: `+e.message+`
         <div class="mstat"><div class="n">10 min</div><div class="l">To build a new agent, no code</div></div>
         <div class="mstat"><div class="n">0</div><div class="l">Bytes of worker data leave our cloud</div></div>
       </div>
+    </div>`},{id:`ns12b`,theme:`light`,title:`Who trusts us`,html:`
+    <div class="slidebody">
+      <span class="eyebrow rise">Proof · who runs on this</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:34ch;">Names you know. <span style="color:var(--navy)">Frontlines we run.</span></h2>
+      <div class="rise" style="animation-delay:.22s;background:#fff;border-radius:18px;padding:20px 24px;box-shadow:0 18px 44px rgba(11,18,55,.1);border:1px solid rgba(11,18,55,.06);max-width:960px;margin:14px auto 0;">
+        <img src="assets/product/client-logo-wall.jpg" alt="Enterprises running on BetterPlace" style="display:block;width:100%;height:auto;" loading="lazy"/>
+      </div>
+      <div class="mockcap" style="margin-top:12px;">1,100+ enterprises · retail, e-commerce, quick commerce, BFSI, manufacturing, hospitality · <b>&gt;95% stay</b></div>
     </div>`},{id:`ns13`,theme:`dark`,title:`Why we exist`,html:`
     <div class="glow"></div>
     <div class="slidebody">
