@@ -306,48 +306,53 @@ export const nkStorySlides: SlideDef[] = [
   {
     id: 'ns9', theme: 'light', title: 'Day 30 · salary day',
     html: `
-    <div class="slidebody split">${jstrip(5)}
-      <div>
-        <span class="eyebrow rise">Day 30 · 6:04 pm · the message that rarely comes on time</span>
-        <h2 class="rise" style="animation-delay:.08s;">Salary credited. Correct. On time. <span style="color:var(--navy)">Explained.</span></h2>
-        <div class="featlist">
-          ${fi(icons.card, 'Paid on time, from verified shifts', 'Vendor spreadsheets pay late and pay wrong. Here pay computes from face-verified attendance the day the cycle closes — minimum wage checked first.', 0.2)}
-          ${fi(icons.trophy, 'The number that changes Ravi&rsquo;s week', 'Live incentives after every order — "₹1.1L more this month unlocks +₹2,500."', 0.28)}
-        </div>
-        <div class="demandhead rise" style="animation-delay:.34s;color:var(--navy);margin-top:4px;">The employer&rsquo;s screen — every vendor&rsquo;s PF &amp; ESI, checked monthly</div>
-        <div class="funmock rise" style="animation-delay:.4s;max-width:none;">
-          <div class="fm-bar"><i></i><i></i><i></i><span>gobetter · payroll · vendor compliance · April · 44 vendors</span></div>
-          <div class="fm-body">
-            <div class="fm-rows">
-              <div class="fm-row" style="--d:.55s"><span><b>Om Manpower Services</b> <small>challan verified, worker-by-worker</small></span><span class="fm-chip g">CLEAR</span></div>
-              <div class="fm-row hl" style="--d:.8s"><span><b>Shree Staffing Co.</b> <small>PF short by ₹48,210 across 61 workers — caught now, not at the audit</small></span><span class="fm-chip r">PF SHORT</span></div>
-              <div class="fm-row" style="--d:1.05s"><span><b>Balaji Facility Mgmt</b> <small>ESI challan late — escalation sent</small></span><span class="fm-chip y">LATE</span></div>
+    <div class="slidebody">${jstrip(5)}
+      <span class="eyebrow rise">Day 30 · 6:04 pm · the message that rarely comes on time</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:44ch;">Salary credited. Correct. On time. <span style="color:var(--navy)">Explained.</span></h2>
+      <div class="twopane">
+        <div class="tp emp rise" style="animation-delay:.2s">
+          <span class="panetag e"><i></i>The employer&rsquo;s side</span>
+          <p class="tpprob"><b>The problem:</b> thousands of vendors pay the workers, and when one skips PF or ESI the law bills the principal employer — usually discovered years later, at the audit.</p>
+          <div class="funmock">
+            <div class="fm-bar"><i></i><i></i><i></i><span>gobetter · vendor compliance · April · 44 vendors</span></div>
+            <div class="fm-body">
+              <div class="fm-sum">
+                <span class="g">41<small>vendors clear</small></span>
+                <span class="y">1<small>filed late</small></span>
+                <span class="r">2<small>PF short</small></span>
+              </div>
+              <div class="fm-rows">
+                <div class="fm-row" style="--d:.5s"><span><b>Om Manpower Services</b> <small>challan verified, worker-by-worker</small></span><span class="fm-chip g">CLEAR</span></div>
+                <div class="fm-row hl" style="--d:.7s"><span><b>Shree Staffing Co.</b> <small>PF short ₹48,210 · 61 workers</small></span><span class="fm-chip r">PF SHORT</span></div>
+                <div class="fm-row" style="--d:.9s"><span><b>Sunrise Contractors</b> <small>ESI not deposited · 24 workers</small></span><span class="fm-chip r">ESI SHORT</span></div>
+                <div class="fm-row" style="--d:1.1s"><span><b>Balaji Facility Mgmt</b> <small>challan late — escalation sent</small></span><span class="fm-chip y">LATE</span></div>
+              </div>
             </div>
-            <div class="fm-ravi" style="animation-delay:1.3s;">⚠<span>The law bills the <b>principal employer</b> for these — Reliance runs 3,000+ vendors here: <b>−90% leakage</b></span></div>
           </div>
+          <div class="mockcap">Caught this month, not at the audit · Reliance runs <b>3,000+ vendors</b> here · <b>−90% leakage</b></div>
         </div>
-      </div>
-      <div class="rise" style="animation-delay:.35s">
-        <div class="panewrap"><span class="panetag w"><i></i>Ravi&rsquo;s screen</span></div>
-        <div class="jobmock">
-          <div class="jm-screen">
-            <div class="jm-top"><h5>Salary credited 🎉</h5><p>30 Apr · 6:04 pm · <b>UTR N104…8821</b></p></div>
-            <div class="jm-pane" style="--d:.55s">
-              <div class="jm-salline"><span>Base · 26 verified shifts</span><b>₹16,500</b></div>
-              <div class="jm-salline"><span>Order incentives</span><b class="plus">+₹5,612</b></div>
-              <div class="jm-salline"><span>Rain-surge bonus</span><b class="plus">+₹2,500</b></div>
-              <div class="jm-salline"><span>PF (deposited <span class="ok">✓ challan verified</span>)</span><b>−₹1,980</b></div>
-              <div class="jm-salline total"><span>In your account</span><b>₹22,632</b></div>
+        <div class="tp wrk rise" style="animation-delay:.32s">
+          <span class="panetag w"><i></i>Ravi&rsquo;s side</span>
+          <p class="tpprob"><b>The problem:</b> pay arrives late, short, and unexplained — computed by a vendor on a spreadsheet, with no way to question it.</p>
+          <div class="jobmock">
+            <div class="jm-screen">
+              <div class="jm-top"><h5>Salary credited 🎉</h5><p>30 Apr · 6:04 pm · <b>UTR N104…8821</b></p></div>
+              <div class="jm-pane" style="--d:.6s">
+                <div class="jm-salline"><span>Base · 26 verified shifts</span><b>₹16,500</b></div>
+                <div class="jm-salline"><span>Order incentives</span><b class="plus">+₹5,612</b></div>
+                <div class="jm-salline"><span>Rain-surge bonus</span><b class="plus">+₹2,500</b></div>
+                <div class="jm-salline"><span>PF (deposited <span class="ok">✓ challan verified</span>)</span><b>−₹1,980</b></div>
+                <div class="jm-salline total"><span>In your account</span><b>₹22,632</b></div>
+              </div>
+              <div class="jm-pane" style="--d:1s">
+                <div class="jm-salline" style="border:0;padding:0;"><span><b>This month&rsquo;s goal</b></span><b class="plus">+₹2,500</b></div>
+                <div class="jm-prog"><i style="--w:78%;--d:1.3s"></i></div>
+                <div class="jm-note">78% there — <b>412 more orders unlock the next slab.</b></div>
+              </div>
             </div>
-            <div class="jm-pane" style="--d:1s">
-              <div class="jm-salline" style="border:0;padding:0;"><span><b>This month&rsquo;s goal</b></span><b class="plus">+₹2,500</b></div>
-              <div class="jm-prog"><i style="--w:78%;--d:1.3s"></i></div>
-              <div class="jm-note">78% there — <b>412 more orders unlock the next slab.</b></div>
-            </div>
-            <div class="jm-foot"><em></em>Every rupee traceable to a verified shift</div>
           </div>
+          <div class="mockcap">Paid from face-verified shifts, every line explained — <b>his first financial document</b></div>
         </div>
-        <div class="mockcap">Ravi&rsquo;s first payslip — <b>the first financial document he has ever owned</b></div>
       </div>
     </div>`,
   },

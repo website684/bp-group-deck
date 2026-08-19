@@ -16,6 +16,7 @@ import { salesStorySlides } from './sales-story'
 import { mfgStorySlides } from './mfg-story'
 import { gobetterSlides } from './gobetter'
 import { nkStorySlides } from './nk-story'
+import { nkRichStorySlides } from './nk-rich-story'
 
 export const decks: DeckDef[] = [
   {
@@ -30,6 +31,11 @@ export const decks: DeckDef[] = [
     id: 'why-betterplace', next: 'group', title: 'Why BetterPlace Exists · The Story', group: 'story',
     tagline: 'The soul-of-the-company deck — the invisible workforce, one rider’s journey through everything we run, Retail Samarth, and the AI turn. Link-only; not listed on the hub.',
     slides: nkStorySlides,
+  },
+  {
+    id: 'why-betterplace-nikhil', next: 'group', title: 'BetterPlace · The Product-Rich Nikhil Cut', group: 'story',
+    tagline: 'The original Ravi story, preserved and refined: designed product screens, worker versus employer value, operating proof and the business underneath.',
+    slides: nkRichStorySlides,
   },
   {
     id: 'sales-story', next: 'mfg-story', title: 'goBetter for Sales Teams', group: 'story',
