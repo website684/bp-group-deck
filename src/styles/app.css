@@ -1063,7 +1063,18 @@ body { overflow: auto; background: #05081f; }
 .nk-rich .clientline { border-left: 3px solid var(--yellow); padding-left: 13px; }
 
 @media print {
-  .player .slidebody.split.nk-rich { grid-template-columns: minmax(0,.96fr) minmax(0,1.04fr) !important; gap: 30px !important; }
+  .player .slidebody.split.nk-rich {
+    grid-template-columns: minmax(0,.96fr) minmax(0,1.04fr) !important;
+    gap: 30px !important; align-items: start !important;
+    margin-top: 14px !important; width: 111.12%; margin-left: -5.56%;
+    transform: scale(.90); transform-origin: top center; position: relative; top: 50px;
+  }
+  .player .slidebody.nk-rich:not(.split):has(> .jstrip) {
+    margin-top: 0 !important; width: 104.18%; margin-left: -2.09%;
+    transform: scale(.96); transform-origin: top center; position: relative; top: 24px;
+  }
+  .nk-rich:not(.split) > .jstrip { position: relative; top: 18px; margin-bottom: 30px; }
+  .nk-rich .jstrip { margin-bottom: 12px; }
   .nk-rich .jobmock { transform: scale(.78); transform-origin: top center; }
   .nk-rich .funmock { max-width: 480px; }
 }
@@ -1226,3 +1237,61 @@ body { overflow: auto; background: #05081f; }
 .tp { padding: 13px 15px 12px; }
 .tp .tpprob { margin: 2px 0 8px; }
 .tp .mockcap { margin-top: 8px; }
+
+/* ================= SAEL / manufacturing contract-labour deck ================= */
+/* compliance obligation map */
+.compmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 11px; margin-top: 16px; }
+.compcell { border-radius: 14px; border: 1px solid rgba(11,18,55,.1); background: #fff; padding: 12px 14px; box-shadow: 0 6px 18px rgba(11,18,55,.05); opacity: 0; transform: translateY(12px); animation: jmRise .55s cubic-bezier(.22,1,.36,1) forwards; animation-delay: var(--d,.3s); }
+.dark .compcell, .darker .compcell { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.12); box-shadow: none; }
+.compcell .act { font-family: 'JetBrains Mono', monospace; font-size: .55rem; letter-spacing: 1.4px; text-transform: uppercase; color: var(--cc, var(--navy)); font-weight: 700; }
+.dark .compcell .act, .darker .compcell .act { color: var(--cc, var(--yellow)); }
+.compcell h4 { font-family: 'Poppins', sans-serif; font-size: .88rem; font-weight: 700; margin-top: 3px; }
+.dark .compcell h4, .darker .compcell h4 { color: #fff; }
+.compcell p { font-size: .7rem; line-height: 1.45; color: #5b6486; margin-top: 3px; }
+.dark .compcell p, .darker .compcell p { color: rgba(255,255,255,.6); }
+.compcell .who { display: inline-block; margin-top: 6px; font-family: 'JetBrains Mono', monospace; font-size: .5rem; letter-spacing: .8px; padding: 3px 7px; border-radius: 9px; background: rgba(208,39,29,.1); color: #b01f16; }
+.compcell .who.ok { background: rgba(59,232,176,.16); color: #1d7a45; }
+.dark .compcell .who.ok, .darker .compcell .who.ok { color: #3BE8B0; }
+
+/* licensed strength meter (CLRA) */
+.lsmeter { display: grid; gap: 12px; margin-top: 14px; }
+.lsrow { display: grid; grid-template-columns: 190px 1fr 120px; align-items: center; gap: 14px; }
+.lsrow .nm { font-weight: 600; font-size: .84rem; color: var(--ink); text-align: right; }
+.dark .lsrow .nm, .darker .lsrow .nm { color: #fff; }
+.lsbar { position: relative; height: 26px; border-radius: 8px; background: rgba(11,18,55,.07); overflow: hidden; }
+.dark .lsbar, .darker .lsbar { background: rgba(255,255,255,.08); }
+.lsbar i { position: absolute; left: 0; top: 0; height: 100%; width: var(--w); border-radius: 8px; background: linear-gradient(90deg,#1B2D93,#3D52E0); transform: scaleX(0); transform-origin: left; animation: ajgrow .9s cubic-bezier(.22,1,.36,1) forwards; animation-delay: var(--d,.4s); }
+.lsbar.over i { background: linear-gradient(90deg,#D0271D,#FF7A6B); }
+.lsbar .cap { position: absolute; top: -3px; bottom: -3px; width: 3px; background: var(--yellow); box-shadow: 0 0 8px rgba(255,196,1,.9); left: var(--cap,100%); }
+.lsrow .vs { font-family: 'JetBrains Mono', monospace; font-size: .74rem; font-weight: 700; color: var(--ink); }
+.dark .lsrow .vs, .darker .lsrow .vs { color: #fff; }
+.lsrow .vs em { font-style: normal; color: #b01f16; }
+.lsrow .vs small { display: block; font-size: .55rem; font-weight: 500; color: #8a91ab; letter-spacing: .6px; }
+
+/* work order card */
+.wocard { border-radius: 16px; border: 1.5px solid rgba(27,45,147,.25); background: #fff; overflow: hidden; box-shadow: 0 14px 36px rgba(11,18,55,.1); }
+.wocard .wohead { background: linear-gradient(90deg,var(--navy),var(--navy-deep)); color: #fff; padding: 11px 16px; display: flex; justify-content: space-between; align-items: center; }
+.wocard .wohead b { font-family: 'Poppins', sans-serif; font-size: .92rem; }
+.wocard .wohead span { font-family: 'JetBrains Mono', monospace; font-size: .58rem; letter-spacing: 1.2px; opacity: .8; }
+.wogrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(11,18,55,.08); }
+.wogrid > div { background: #fff; padding: 9px 14px; }
+.wogrid .k { font-family: 'JetBrains Mono', monospace; font-size: .52rem; letter-spacing: 1.2px; text-transform: uppercase; color: #8a91ab; }
+.wogrid .v { font-family: 'Poppins', sans-serif; font-size: .84rem; font-weight: 700; color: var(--ink); margin-top: 2px; }
+.wogrid .v.ok { color: #1d7a45; }
+.wogrid .v.warn { color: #b01f16; }
+.wofoot { padding: 10px 16px; font-size: .7rem; color: #5b6486; background: #f7f8fc; border-top: 1px solid rgba(11,18,55,.06); }
+.wofoot b { color: var(--navy); }
+
+/* overtime meter */
+.otwrap { display: grid; gap: 10px; margin-top: 12px; }
+.otrow { display: grid; grid-template-columns: 150px 1fr 96px; gap: 12px; align-items: center; font-size: .8rem; }
+.otrow .nm { text-align: right; font-weight: 600; color: var(--ink); }
+.dark .otrow .nm, .darker .otrow .nm { color: #fff; }
+.otbar { height: 22px; border-radius: 7px; background: rgba(11,18,55,.07); position: relative; overflow: hidden; }
+.dark .otbar, .darker .otbar { background: rgba(255,255,255,.08); }
+.otbar i { position: absolute; left: 0; top: 0; height: 100%; width: var(--w); background: linear-gradient(90deg,#3BE8B0,#2ec27e); border-radius: 7px; transform: scaleX(0); transform-origin: left; animation: ajgrow .8s cubic-bezier(.22,1,.36,1) forwards; animation-delay: var(--d,.4s); }
+.otbar.hot i { background: linear-gradient(90deg,#FF9518,#FFC401); }
+.otbar.over i { background: linear-gradient(90deg,#D0271D,#FF7A6B); }
+.otrow .val { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: .74rem; color: var(--ink); }
+.dark .otrow .val, .darker .otrow .val { color: #fff; }
+.otrow .val em { font-style: normal; color: #b01f16; }

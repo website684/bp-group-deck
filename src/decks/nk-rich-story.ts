@@ -31,9 +31,10 @@ const COPY_EDITS: Record<string, Array<[string, string]>> = {
     ['The hub manager&rsquo;s live view while Ravi punches in · <b>no card, no register, no buddy-punching</b>', 'Worker benefit: a trusted shift history · <b>Employer benefit: live presence without cards, registers or buddy-punching</b>'],
   ],
   ns9: [
-    ['The employer&rsquo;s screen — every vendor&rsquo;s PF &amp; ESI, checked monthly', 'Employer view · every vendor liability, before the audit'],
-    ['Ravi&rsquo;s screen', 'Worker view · every rupee explained'],
-    ['Ravi&rsquo;s first payslip — <b>the first financial document he has ever owned</b>', 'Worker benefit: pay he can understand and prove · <b>Employer benefit: leakage and statutory exposure caught before payout</b>'],
+    ['The employer&rsquo;s side', 'Employer view · every liability before the audit'],
+    ['Ravi&rsquo;s side', 'Worker view · every rupee explained'],
+    ['Caught this month, not at the audit · Reliance runs <b>3,000+ vendors</b> here · <b>−90% leakage</b>', 'Employer benefit: leakage and statutory exposure caught before payout · <b>3,000+ vendors · −90% leakage</b>'],
+    ['Paid from face-verified shifts, every line explained — <b>his first financial document</b>', 'Worker benefit: pay he can understand, question and prove · <b>his first financial document</b>'],
   ],
   ns10: [
     ['Ravi&rsquo;s screen', 'Worker view · learning that unlocks earnings'],

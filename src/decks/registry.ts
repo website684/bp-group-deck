@@ -17,6 +17,7 @@ import { mfgStorySlides } from './mfg-story'
 import { gobetterSlides } from './gobetter'
 import { nkStorySlides } from './nk-story'
 import { nkRichStorySlides } from './nk-rich-story'
+import { saelSlides } from './sael'
 
 export const decks: DeckDef[] = [
   {
@@ -36,6 +37,11 @@ export const decks: DeckDef[] = [
     id: 'why-betterplace-nikhil', next: 'group', title: 'BetterPlace · The Product-Rich Nikhil Cut', group: 'story',
     tagline: 'The original Ravi story, preserved and refined: designed product screens, worker versus employer value, operating proof and the business underneath.',
     slides: nkRichStorySlides,
+  },
+  {
+    id: 'sael', next: 'mfg-story', title: 'SAEL · Contract Labour & Plant Compliance', group: 'story',
+    tagline: 'Built for the SAEL demo — work orders, CLRA licensed strength, vendor PF/ESI reconciliation, gate passes, attendance and overtime, closing on the BPCL deployment.',
+    slides: saelSlides,
   },
   {
     id: 'sales-story', next: 'mfg-story', title: 'goBetter for Sales Teams', group: 'story',
