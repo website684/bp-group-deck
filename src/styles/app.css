@@ -1318,3 +1318,11 @@ body { overflow: auto; background: #05081f; }
 .light .imp { background: rgba(208,39,29,.05); }
 .light .imp .n { color: #c02417; }
 .light .imp .l { color: #5b6486; }
+
+/* ---- full-bleed imported slide ---- */
+.player .slide.hasfull { padding: 0 !important; }
+.fullslide { position: absolute; inset: 0; display: grid; place-items: center; background: #fff; }
+.fullslide img { width: 100%; height: 100%; object-fit: contain; display: block; }
+/* imported slides carry their own header — hide the deck's brand strip on them */
+.player:has(.slide.active .fullslide) .brandstrip,
+.player:has(.slide.on .fullslide) .brandstrip { display: none; }

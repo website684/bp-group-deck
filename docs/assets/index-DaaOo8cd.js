@@ -3449,6 +3449,21 @@ Error generating stack: `+e.message+`
         <div class="stat"><div class="n">10+</div><div class="l">Years on frontline compliance</div></div>
       </div>
       <div class="mdcover ghost">CLRA</div>
+    </div>`},{id:`sl1b`,theme:`light`,title:`Who we are`,html:`
+    <div class="slidebody">
+      <span class="eyebrow rise">Who you would be working with</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:44ch;">Ten years building for the people <span style="color:var(--navy)">who work on their feet.</span></h2>
+      <p class="lede rise" style="animation-delay:.16s;margin-top:8px;max-width:104ch;">BetterPlace started in 2015 in Bengaluru with background verification, and grew into the platform that runs the whole working life of a frontline worker — hiring, verification, onboarding, attendance, payroll, compliance and training. Three parts to the business: <b>goBetter</b> is the software, <b>staffBetter</b> supplies and employs workers on our own payroll, and <b>gigBetter</b> handles on-demand deployment.</p>
+      <div class="modelrow rise" style="animation-delay:.26s;margin-top:14px;">
+        <div class="mstat"><div class="n">2015</div><div class="l">Founded · HQ Bengaluru</div></div>
+        <div class="mstat"><div class="n">30M+</div><div class="l">Verified worker profiles</div></div>
+        <div class="mstat"><div class="n">1,100+</div><div class="l">Enterprises · 500+ cities</div></div>
+        <div class="mstat"><div class="n">8</div><div class="l">Markets · India, SEA, GCC</div></div>
+      </div>
+      <div class="rise" style="animation-delay:.36s;background:#fff;border-radius:16px;padding:14px 18px;border:1px solid rgba(11,18,55,.07);box-shadow:0 12px 30px rgba(11,18,55,.07);max-width:1080px;margin:14px auto 0;">
+        <img src="assets/product/client-logo-wall.jpg" alt="Enterprises running on BetterPlace" style="display:block;width:100%;height:auto;max-height:29vh;object-fit:contain;" loading="lazy"/>
+      </div>
+      <div class="clientline rise" style="animation-delay:.46s;margin-top:10px;text-align:center;">ISO 27001 · SOC 2 · manufacturing customers include Reliance, Hindalco, AGI Glaspac, Yokohama and BPCL</div>
     </div>`},{id:`sl2`,theme:`dark`,title:`Your three workforces`,html:`
     <div class="slidebody">
       <span class="eyebrow rise">What we understand about SAEL</span>
@@ -3471,22 +3486,8 @@ Error generating stack: `+e.message+`
         </div>
       </div>
       <div class="probfoot rise" style="animation-delay:.44s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">One thing is common to all three: <b>most of the people on site are not on your payroll.</b> They work for contractors — and the law still treats them as your responsibility.</div>
-    </div>`},{id:`sl2b`,theme:`dark`,title:`Where it breaks at scale`,html:`
-    <div class="slidebody">
-      <span class="eyebrow rise">What we see in every plant at this size</span>
-      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:40ch;">At one plant this is manageable. <span style="color:var(--yellow)">Across plants, shifts and vendors it becomes a control problem.</span></h2>
-      <div class="capgrid rise" style="animation-delay:.2s;grid-template-columns:repeat(4,1fr);margin-top:16px;">
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.eye}</svg></span><h4>You cannot see who is deployed</h4><p>No live view of which workers are on which site and shift right now, across plants and contractors.</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.repeat}</svg></span><h4>The numbers never agree</h4><p>Attendance, payroll and the vendor's invoice each tell a different story, so someone reconciles them by hand every month.</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.clock}</svg></span><h4>Overtime runs unchecked</h4><p>Hours approved verbally, paid at the wrong rate, and past the quarterly cap before anyone notices.</p></div>
-        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.shield}</svg></span><h4>Filings are taken on trust</h4><p>PF and ESI are assumed to be deposited because the contractor says so. The proof only gets tested at an audit.</p></div>
-      </div>
-      <div class="impacts rise" style="animation-delay:.4s">
-        <div class="imp"><div class="n">18%</div><div class="l">of overtime cost leaks away when OT is uncontrolled</div></div>
-        <div class="imp"><div class="n">8%</div><div class="l">of total labour cost lost to manual process inefficiency</div></div>
-        <div class="imp"><div class="n">3–4 wks</div><div class="l">to prepare for an audit — work that should take hours</div></div>
-      </div>
-    </div>`},{id:`sl3`,theme:`light`,title:`Why now`,html:`
+    </div>`},{id:`sl2b`,theme:`light`,title:`Where it breaks at scale`,html:`
+    <div class="fullslide"><img src="assets/product/sael/breaks-at-scale.jpg" alt="Where frontline workforce systems break at scale"/></div>`},{id:`sl3`,theme:`light`,title:`Why now`,html:`
     <div class="slidebody split">
       <div>
         <span class="eyebrow rise">Why this matters more this year than last</span>
@@ -3695,36 +3696,7 @@ Error generating stack: `+e.message+`
       </div>
       <div class="probfoot rise" style="animation-delay:.45s">Because it is one record, a question like <b>"show me every worker of this contractor, on this order, in March, with their PF status"</b> is a filter — not a three-week reconciliation exercise.</div>
     </div>`},{id:`sl11b`,theme:`light`,title:`Eleven modules`,html:`
-    <div class="slidebody">
-      <span class="eyebrow rise">The full surface · hire to pay</span>
-      <h2 class="rise" style="animation-delay:.08s;max-width:44ch;">Eleven modules, configured on one platform — <span style="color:var(--navy)">not eleven tools that need stitching.</span></h2>
-      <div class="modgrid rise" style="animation-delay:.2s">
-        <div class="modcol" style="--gc:#1B2D93">
-          <div class="gh">Set up &amp; onboard</div>
-          <div class="modit"><h4>Organisation config</h4><p>Parent–child hierarchy and N-level structures that mirror your plants, units and reporting lines.</p></div>
-          <div class="modit"><h4>Worker onboarding</h4><p>Document collection, policy acknowledgement and induction workflows you configure.</p></div>
-          <div class="modit"><h4>Business &amp; approval flows</h4><p>Multi-level approvals mapped to how your plant actually signs off.</p></div>
-        </div>
-        <div class="modcol" style="--gc:#39D2E8">
-          <div class="gh">Time, pay &amp; exit</div>
-          <div class="modit"><h4>Attendance &amp; overtime</h4><p>Biometric and mobile geo-fenced capture, with overtime computed and alerted automatically.</p></div>
-          <div class="modit"><h4>Leave &amp; holiday</h4><p>Leave policies, holiday calendars and approvals set by site, role and worker type.</p></div>
-          <div class="modit"><h4>Payroll &amp; statutory</h4><p>Payroll, PF and ESIC filings, reimbursements, exit and full-and-final — reconciled for audit.</p></div>
-        </div>
-        <div class="modcol" style="--gc:#3BE8B0">
-          <div class="gh">Vendor &amp; compliance</div>
-          <div class="modit"><h4>Vendor management</h4><p>Vendor onboarding, policies and performance across every manpower vendor, on one dashboard.</p></div>
-          <div class="modit"><h4>Work orders &amp; CLRA</h4><p>Work order creation and management with CLRA tracking built in.</p></div>
-          <div class="modit"><h4>Billing &amp; invoicing</h4><p>Vendor invoices reconciled against attendance and the work order they belong to.</p></div>
-        </div>
-        <div class="modcol" style="--gc:#8B7CFF">
-          <div class="gh">Insight &amp; connect</div>
-          <div class="modit"><h4>Reports &amp; custom forms</h4><p>The MIS and forms each stakeholder needs, configured without waiting on IT.</p></div>
-          <div class="modit"><h4>Integrations</h4><p>API integrations with SAP, ERP and the plant systems already in your ecosystem.</p></div>
-        </div>
-      </div>
-      <div class="probfoot rise" style="animation-delay:.5s">Every module here is configured, connected and reconciled on one platform — which is what ends the fragmentation between vendor systems, plant systems and spreadsheets.</div>
-    </div>`},{id:`sl12`,theme:`darker`,title:`AI Labs`,html:`
+    <div class="fullslide"><img src="assets/product/sael/lifecycle-11-modules.jpg" alt="The complete contractual and frontline workforce lifecycle - eleven modules"/></div>`},{id:`sl12`,theme:`darker`,title:`AI Labs`,html:`
     <div class="glow"></div>
     <div class="slidebody">
       <span class="eyebrow rise">AI Labs · the layer underneath</span>
