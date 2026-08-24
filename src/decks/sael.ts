@@ -49,6 +49,25 @@ export const saelSlides: SlideDef[] = [
     </div>`,
   },
   {
+    id: 'sl2b', theme: 'dark', title: 'Where it breaks at scale',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">What we see in every plant at this size</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:40ch;">At one plant this is manageable. <span style="color:var(--yellow)">Across plants, shifts and vendors it becomes a control problem.</span></h2>
+      <div class="capgrid rise" style="animation-delay:.2s;grid-template-columns:repeat(4,1fr);margin-top:16px;">
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.eye}</svg></span><h4>You cannot see who is deployed</h4><p>No live view of which workers are on which site and shift right now, across plants and contractors.</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.repeat}</svg></span><h4>The numbers never agree</h4><p>Attendance, payroll and the vendor's invoice each tell a different story, so someone reconciles them by hand every month.</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.clock}</svg></span><h4>Overtime runs unchecked</h4><p>Hours approved verbally, paid at the wrong rate, and past the quarterly cap before anyone notices.</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.shield}</svg></span><h4>Filings are taken on trust</h4><p>PF and ESI are assumed to be deposited because the contractor says so. The proof only gets tested at an audit.</p></div>
+      </div>
+      <div class="impacts rise" style="animation-delay:.4s">
+        <div class="imp"><div class="n">18%</div><div class="l">of overtime cost leaks away when OT is uncontrolled</div></div>
+        <div class="imp"><div class="n">8%</div><div class="l">of total labour cost lost to manual process inefficiency</div></div>
+        <div class="imp"><div class="n">3–4 wks</div><div class="l">to prepare for an audit — work that should take hours</div></div>
+      </div>
+    </div>`,
+  },
+  {
     id: 'sl3', theme: 'light', title: 'Why now',
     html: `
     <div class="slidebody split">
@@ -293,6 +312,40 @@ export const saelSlides: SlideDef[] = [
     </div>`,
   },
   {
+    id: 'sl11b', theme: 'light', title: 'Eleven modules',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">The full surface · hire to pay</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:44ch;">Eleven modules, configured on one platform — <span style="color:var(--navy)">not eleven tools that need stitching.</span></h2>
+      <div class="modgrid rise" style="animation-delay:.2s">
+        <div class="modcol" style="--gc:#1B2D93">
+          <div class="gh">Set up &amp; onboard</div>
+          <div class="modit"><h4>Organisation config</h4><p>Parent–child hierarchy and N-level structures that mirror your plants, units and reporting lines.</p></div>
+          <div class="modit"><h4>Worker onboarding</h4><p>Document collection, policy acknowledgement and induction workflows you configure.</p></div>
+          <div class="modit"><h4>Business &amp; approval flows</h4><p>Multi-level approvals mapped to how your plant actually signs off.</p></div>
+        </div>
+        <div class="modcol" style="--gc:#39D2E8">
+          <div class="gh">Time, pay &amp; exit</div>
+          <div class="modit"><h4>Attendance &amp; overtime</h4><p>Biometric and mobile geo-fenced capture, with overtime computed and alerted automatically.</p></div>
+          <div class="modit"><h4>Leave &amp; holiday</h4><p>Leave policies, holiday calendars and approvals set by site, role and worker type.</p></div>
+          <div class="modit"><h4>Payroll &amp; statutory</h4><p>Payroll, PF and ESIC filings, reimbursements, exit and full-and-final — reconciled for audit.</p></div>
+        </div>
+        <div class="modcol" style="--gc:#3BE8B0">
+          <div class="gh">Vendor &amp; compliance</div>
+          <div class="modit"><h4>Vendor management</h4><p>Vendor onboarding, policies and performance across every manpower vendor, on one dashboard.</p></div>
+          <div class="modit"><h4>Work orders &amp; CLRA</h4><p>Work order creation and management with CLRA tracking built in.</p></div>
+          <div class="modit"><h4>Billing &amp; invoicing</h4><p>Vendor invoices reconciled against attendance and the work order they belong to.</p></div>
+        </div>
+        <div class="modcol" style="--gc:#8B7CFF">
+          <div class="gh">Insight &amp; connect</div>
+          <div class="modit"><h4>Reports &amp; custom forms</h4><p>The MIS and forms each stakeholder needs, configured without waiting on IT.</p></div>
+          <div class="modit"><h4>Integrations</h4><p>API integrations with SAP, ERP and the plant systems already in your ecosystem.</p></div>
+        </div>
+      </div>
+      <div class="probfoot rise" style="animation-delay:.5s">Every module here is configured, connected and reconciled on one platform — which is what ends the fragmentation between vendor systems, plant systems and spreadsheets.</div>
+    </div>`,
+  },
+  {
     id: 'sl12', theme: 'darker', title: 'AI Labs',
     html: `
     <div class="glow"></div>
@@ -330,16 +383,14 @@ export const saelSlides: SlideDef[] = [
         </div>
       </div>
       <div class="rise" style="animation-delay:.35s">
-        <div class="prodpanel">
-          <div class="pminihead">Also running on this stack</div>
-          <div class="stats" style="margin-top:14px;gap:18px 30px;">
-            <div class="stat"><div class="n">Reliance</div><div class="l">300K+ workers · 3,000+ vendors · one rule engine</div></div>
-            <div class="stat"><div class="n">Hindalco</div><div class="l">Shop-floor skilling across plants</div></div>
-            <div class="stat"><div class="n">AGI Glaspac</div><div class="l">Manufacturing workforce</div></div>
-            <div class="stat"><div class="n">Yokohama</div><div class="l">Plant operations</div></div>
-          </div>
-          <div class="clientline" style="margin-top:16px;">Ten years, 1,100+ enterprises, 500+ cities. The compliance primitives on the last few slides exist because customers like these asked for them.</div>
+        <div class="panewrap"><span class="panetag e" style="background:rgba(255,255,255,.1);color:#fff;"><i></i>Also running on this stack</span></div>
+        <div class="compmap" style="grid-template-columns:1fr 1fr;">
+          <div class="compcell" style="--cc:#FFC401;--d:.4s"><div class="act">Retail · 300K+ workers</div><h4>Reliance</h4><p>3,000+ vendors on one rule engine. Payroll leakage down 90%, vendor non-compliance down 80%.</p><span class="who ok">Live</span></div>
+          <div class="compcell" style="--cc:#39D2E8;--d:.48s"><div class="act">Metals · Aditya Birla</div><h4>Hindalco</h4><p>Shop-floor skilling across plants — 1,000+ workers, 60+ technical modules.</p><span class="who ok">Live</span></div>
+          <div class="compcell" style="--cc:#3BE8B0;--d:.56s"><div class="act">Glass manufacturing</div><h4>AGI Glaspac</h4><p>Plant workforce running on the same attendance and compliance spine.</p><span class="who ok">Live</span></div>
+          <div class="compcell" style="--cc:#8B7CFF;--d:.64s"><div class="act">Auto components</div><h4>Yokohama</h4><p>Plant operations, contract workforce managed on platform.</p><span class="who ok">Live</span></div>
         </div>
+        <div class="mockcap">Ten years · 1,100+ enterprises · 500+ cities. These compliance features exist because customers like these asked for them.</div>
       </div>
     </div>`,
   },

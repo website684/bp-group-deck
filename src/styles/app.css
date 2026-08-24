@@ -1295,3 +1295,26 @@ body { overflow: auto; background: #05081f; }
 .otrow .val { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: .74rem; color: var(--ink); }
 .dark .otrow .val, .darker .otrow .val { color: #fff; }
 .otrow .val em { font-style: normal; color: #b01f16; }
+
+/* ---- 11-module lifecycle grid ---- */
+.modgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; align-items: start; }
+.modcol { border-radius: 14px; padding: 12px 12px 13px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); }
+.light .modcol { background: #fff; border-color: rgba(11,18,55,.1); box-shadow: 0 6px 18px rgba(11,18,55,.05); }
+.modcol > .gh { font-family: 'JetBrains Mono', monospace; font-size: .55rem; letter-spacing: 1.8px; text-transform: uppercase; color: var(--gc, var(--yellow)); font-weight: 700; padding-bottom: 8px; margin-bottom: 9px; border-bottom: 1px solid rgba(255,255,255,.14); }
+.light .modcol > .gh { border-color: rgba(11,18,55,.1); }
+.modit { padding: 7px 0; }
+.modit + .modit { border-top: 1px dashed rgba(255,255,255,.12); }
+.light .modit + .modit { border-color: rgba(11,18,55,.08); }
+.modit h4 { font-family: 'Poppins', sans-serif; font-size: .8rem; font-weight: 700; color: #fff; }
+.light .modit h4 { color: var(--ink); }
+.modit p { font-size: .66rem; line-height: 1.45; color: rgba(255,255,255,.6); margin-top: 2px; }
+.light .modit p { color: #5b6486; }
+
+/* ---- break-at-scale impact tiles ---- */
+.impacts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+.imp { border-radius: 16px; padding: 16px 18px; background: rgba(208,39,29,.08); border: 1px solid rgba(208,39,29,.28); }
+.imp .n { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: clamp(26px,2.7vw,40px); letter-spacing: -1px; color: #FF7A6B; line-height: 1; }
+.imp .l { font-size: .78rem; line-height: 1.45; color: rgba(255,255,255,.72); margin-top: 6px; }
+.light .imp { background: rgba(208,39,29,.05); }
+.light .imp .n { color: #c02417; }
+.light .imp .l { color: #5b6486; }
