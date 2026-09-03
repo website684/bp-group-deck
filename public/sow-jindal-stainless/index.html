@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<title>Statement of Work — Jindal Stainless × BetterPlace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B2D93;--deep:#101B57;--ink:#0B1237;--yellow:#FFC401;--line:#dfe3ee;--muted:#5b6486;--soft:#f6f8fc}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#eef1f7;font-family:'Inter',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.62;font-size:10.4pt}
+.page{max-width:210mm;margin:0 auto;background:#fff;padding:22mm 20mm 18mm;box-shadow:0 2px 20px rgba(11,18,55,.1)}
+h1,h2,h3,h4{font-family:'Poppins',sans-serif;color:var(--ink)}
+/* cover */
+.cover{border-bottom:3px solid var(--navy);padding-bottom:18px;margin-bottom:24px}
+.brandline{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}
+.brandline .bp{display:flex;align-items:center;gap:9px;font-family:'Poppins';font-weight:700;font-size:15px}
+.brandline .bp i{width:10px;height:10px;border-radius:50%;background:var(--yellow);display:inline-block}
+.brandline .cf{font-family:'JetBrains Mono';font-size:8.5pt;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.cover .doctype{font-family:'JetBrains Mono';font-size:9pt;letter-spacing:3px;text-transform:uppercase;color:var(--navy);font-weight:700}
+.cover h1{font-size:30pt;line-height:1.12;letter-spacing:-.6px;margin:10px 0 6px}
+.cover h1 em{font-style:normal;color:var(--navy)}
+.cover .sub{font-size:12pt;color:var(--muted)}
+/* doc control */
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:9.4pt}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--soft);font-weight:700;font-family:'Poppins';font-size:9pt;color:var(--ink)}
+td.k{background:#fbfcfe;font-weight:600;width:30%}
+table.tight td,table.tight th{padding:5px 9px;font-size:9pt}
+/* sections */
+h2.sec{font-size:15pt;margin:30px 0 4px;padding-top:16px;border-top:2px solid var(--navy);letter-spacing:-.2px}
+h2.sec .num{color:var(--navy);font-family:'JetBrains Mono';font-size:11pt;margin-right:8px}
+h3{font-size:11.6pt;margin:18px 0 5px;color:var(--navy)}
+h3 .num{font-family:'JetBrains Mono';font-size:9.5pt;color:var(--muted);margin-right:6px}
+h4{font-size:10.2pt;margin:12px 0 3px}
+p{margin:6px 0}
+ul,ol{margin:6px 0 6px 20px}
+li{margin:3px 0}
+.lead{font-size:11pt;color:var(--muted)}
+.note{background:var(--soft);border-left:3px solid var(--navy);padding:10px 14px;margin:12px 0;font-size:9.6pt}
+.note b{color:var(--navy)}
+.warn{background:#fff8e6;border-left:3px solid var(--yellow);padding:10px 14px;margin:12px 0;font-size:9.6pt}
+.toc{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:16px 20px;margin:18px 0}
+.toc ol{margin-left:18px;columns:2;column-gap:30px;font-size:9.6pt}
+.toc li{margin:2px 0;break-inside:avoid}
+.pill{display:inline-block;font-family:'JetBrains Mono';font-size:8pt;letter-spacing:.8px;padding:2px 8px;border-radius:10px;background:rgba(27,45,147,.09);color:var(--navy);font-weight:700}
+.pill.p2{background:rgba(255,196,1,.22);color:#8a6d00}
+.pill.p3{background:rgba(59,232,176,.2);color:#1d7a45}
+.sign{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:26px}
+.sign div{border-top:1px solid var(--ink);padding-top:8px;font-size:9.4pt}
+.sign .role{color:var(--muted);font-size:8.8pt}
+.footer{margin-top:30px;padding-top:12px;border-top:1px solid var(--line);font-size:8.6pt;color:var(--muted);display:flex;justify-content:space-between}
+@media print{
+  body{background:#fff;font-size:9.6pt}
+  .page{box-shadow:none;max-width:none;padding:14mm 14mm}
+  h2.sec{page-break-after:avoid;break-after:avoid}
+  h3,h4{page-break-after:avoid;break-after:avoid}
+  table,.note,.warn{page-break-inside:avoid;break-inside:avoid}
+  tr{page-break-inside:avoid}
+  @page{size:A4;margin:12mm}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="brandline">
+  <div class="bp"><i></i>betterplace</div>
+  <div class="cf">Confidential · for Jindal Stainless Limited</div>
+</div>
+
+<div class="cover">
+  <div class="doctype">Statement of Work</div>
+  <h1>Frontline &amp; Contract Workforce Management Platform<br><em>Jindal Stainless Limited</em></h1>
+  <p class="sub">Platform scope, functional capability, implementation approach, integration, security and support</p>
+</div>
+
+<table class="tight">
+  <tr><td class="k">Document title</td><td>Statement of Work — Frontline &amp; Contract Workforce Management Platform</td></tr>
+  <tr><td class="k">Prepared for</td><td>Jindal Stainless Limited ("JSL", "the Customer")</td></tr>
+  <tr><td class="k">Prepared by</td><td>BetterPlace Safety Solutions Pvt. Ltd. ("BetterPlace", "the Service Provider")</td></tr>
+  <tr><td class="k">Version</td><td>1.0 — Draft for discussion</td></tr>
+  <tr><td class="k">Date</td><td>19 August 2026</td></tr>
+  <tr><td class="k">Author</td><td>Anuj Saxena, Director — Product, BetterPlace</td></tr>
+  <tr><td class="k">Status</td><td>Draft. Commercial terms, site list and final phase dates to be completed jointly before execution.</td></tr>
+  <tr><td class="k">Validity</td><td>90 days from the date above</td></tr>
+</table>
+
+<div class="toc">
+  <b style="font-family:Poppins;font-size:10.5pt">Contents</b>
+  <ol>
+    <li>Purpose and background</li>
+    <li>Scope summary</li>
+    <li>Platform overview and architecture</li>
+    <li>Organisation setup and worker master</li>
+    <li>Vendor management, work orders and CLRA</li>
+    <li>Sourcing and hiring</li>
+    <li>Background verification</li>
+    <li>Digital onboarding</li>
+    <li>Gate pass, safety induction and access control</li>
+    <li>Attendance, rostering and overtime</li>
+    <li>Leave and holiday management</li>
+    <li>Payroll and statutory compliance</li>
+    <li>Vendor billing and invoice reconciliation</li>
+    <li>Training and upskilling</li>
+    <li>Reports, MIS and analytics</li>
+    <li>Worker mobile application</li>
+    <li>AI Labs — intelligent agents</li>
+    <li>Integrations</li>
+    <li>Implementation plan and timeline</li>
+    <li>Data migration</li>
+    <li>Roles and responsibilities</li>
+    <li>Security, data protection and compliance</li>
+    <li>Support model and service levels</li>
+    <li>Training and change management</li>
+    <li>Acceptance criteria</li>
+    <li>Assumptions</li>
+    <li>Dependencies</li>
+    <li>Out of scope</li>
+    <li>Change control</li>
+    <li>Commercials</li>
+    <li>Signatures</li>
+  </ol>
+</div>
+
+<h2 class="sec"><span class="num">1</span>Purpose and background</h2>
+<p>This Statement of Work sets out the platform, functional capability, implementation approach and operating model that BetterPlace proposes to deliver to Jindal Stainless Limited for the management of its frontline and contract workforce.</p>
+<p>Jindal Stainless operates India's largest stainless steel manufacturing business, with integrated operations at Jajpur in Odisha and Hisar in Haryana, downstream and service centre facilities, and international operations including PT Jindal Stainless Indonesia and Iberjindal in Spain. The workforce combines permanent employees with a substantial contract workforce engaged through multiple manpower contractors across melting, rolling, finishing, projects, logistics and support functions.</p>
+<p>Two characteristics of the business make contract workforce control a material control problem rather than an administrative one. First, scale and multiplicity: contract labour is engaged through many contractors, across multiple states, under different state rules for minimum wages, factory operation and overtime. Second, the announced capacity expansion towards 4.2 MTPA, together with acquired assets being brought to fuller utilisation, means a sustained cycle of project mobilisation and demobilisation — each cycle bringing a fresh population of contractors, licences, inductions, gate passes and statutory obligations, frequently at sites where a construction phase and an operating phase overlap.</p>
+<p>As principal employer, JSL carries obligations for that contract workforce under the Contract Labour (Regulation and Abolition) Act 1970, the Employees' Provident Funds and Miscellaneous Provisions Act 1952 (including principal employer liability where a contractor defaults), the Employees' State Insurance Act 1948, the Employee's Compensation Act 1923, the Factories Act 1948 and applicable state rules. These obligations are also increasingly disclosed rather than merely held: JSL reports annually under the SEBI Business Responsibility and Sustainability Reporting framework, which places contract workforce, safety and worker welfare data on the public record.</p>
+<p>The purpose of this engagement is to place the entire contract workforce lifecycle — vendor onboarding, work orders, worker verification, onboarding, gate access, attendance, overtime, payroll inputs, statutory reconciliation, billing and training — on a single configurable platform, so that JSL has one authoritative worker record per person, per site, per contractor, and a continuously current compliance position rather than a periodic reconstruction exercise.</p>
+<div class="note"><b>Document intent.</b> This SOW is written to be comprehensive. Sections 4 to 18 describe the full capability available on the platform. The modules JSL elects to deploy, and the sequence of deployment, are set out in Section 19 and may be adjusted by mutual agreement without altering the capability described here.</div>
+
+<h2 class="sec"><span class="num">2</span>Scope summary</h2>
+<h3><span class="num">2.1</span>Functional scope</h3>
+<table>
+  <tr><th style="width:26%">Area</th><th>Included capability</th><th style="width:15%">Phase</th></tr>
+  <tr><td><b>Organisation and worker master</b></td><td>N-level organisation hierarchy, site registry, function and role master, 360° worker profile, profile locking and data-completeness controls</td><td><span class="pill">Phase 1</span></td></tr>
+  <tr><td><b>Vendor, work order and CLRA</b></td><td>Vendor onboarding and master, licence and document registry, work order creation and lifecycle, deployment tracking against sanctioned and licensed strength, CLRA register support</td><td><span class="pill">Phase 1</span></td></tr>
+  <tr><td><b>Verification</b></td><td>Six-head background verification with configurable check packs, bulk initiation, red/amber/green portfolio view, per-case audit trail</td><td><span class="pill">Phase 1</span></td></tr>
+  <tr><td><b>Onboarding</b></td><td>Digital document collection, e-sign, bank and statutory capture, bulk onboarding, vendor-led onboarding, first-day checklists</td><td><span class="pill">Phase 1</span></td></tr>
+  <tr><td><b>Gate pass and induction</b></td><td>Conditional gate pass issue, safety induction with assessment and certificate, pass and policy expiry control, visitor management</td><td><span class="pill">Phase 1</span></td></tr>
+  <tr><td><b>Attendance and overtime</b></td><td>Face and geo-fenced attendance, biometric device integration, shift and roster engine, regularisation workflow, overtime capture, approval and caps</td><td><span class="pill">Phase 1</span></td></tr>
+  <tr><td><b>Leave and holiday</b></td><td>Leave policies and quotas, holiday calendars by location, optional holidays, approval chains</td><td><span class="pill p2">Phase 2</span></td></tr>
+  <tr><td><b>Payroll and statutory</b></td><td>Attendance-driven payroll computation, minimum wage validation, PF/ESI/PT/LWF workspaces, vendor challan OCR and worker-level reconciliation, full and final settlement</td><td><span class="pill p2">Phase 2</span></td></tr>
+  <tr><td><b>Billing and invoicing</b></td><td>Vendor invoice generation and reconciliation against attendance and work orders, deduction handling, compliance-gated release</td><td><span class="pill p2">Phase 2</span></td></tr>
+  <tr><td><b>Training and upskilling</b></td><td>Multilingual mobile learning, safety and technical modules, assessments with proctoring, certification tracking, completion gating</td><td><span class="pill p2">Phase 2</span></td></tr>
+  <tr><td><b>Reports and analytics</b></td><td>Standard statutory and operational reports, self-serve report builder, embedded BI dashboards, custom forms</td><td><span class="pill">Phase 1</span></td></tr>
+  <tr><td><b>Worker mobile app</b></td><td>Attendance, logs, payslips, leave, learning, grievance and self-service in the worker's language</td><td><span class="pill">Phase 1</span></td></tr>
+  <tr><td><b>AI agents</b></td><td>Statutory reconciliation, verification, induction and worker query agents on BetterPlace private infrastructure</td><td><span class="pill p3">Phase 3</span></td></tr>
+  <tr><td><b>Integrations</b></td><td>SAP/ERP master and posting integration, biometric device integration, SSO, API and webhook framework</td><td><span class="pill">Phase 1–2</span></td></tr>
+</table>
+
+<h3><span class="num">2.2</span>Geographic and organisational scope</h3>
+<p>Deployment covers JSL manufacturing locations, project sites and offices to be listed in Annexure A at contract signature. The platform supports multi-state operation with state-specific configuration of minimum wages, statutory rules, holiday calendars, shift patterns and approval hierarchies. A single tenant will hold all sites, with role-based access controlling what each user sees.</p>
+
+<h3><span class="num">2.3</span>Deployment model</h3>
+<p>The platform is delivered as a multi-tenant SaaS application hosted on cloud infrastructure located in India, accessed through a web console for administrators and native mobile applications for workers and supervisors. No on-premise installation is required, other than optional biometric or face-recognition devices at plant gates.</p>
+
+<h2 class="sec"><span class="num">3</span>Platform overview and architecture</h2>
+<h3><span class="num">3.1</span>Design principle</h3>
+<p>The platform is built around a single worker record. Every module reads from and writes to the same record, so that a worker verified once is trusted everywhere, attendance computed once drives both payroll and billing, and a compliance status is a property of the record rather than a separate register maintained in parallel.</p>
+<table class="tight">
+  <tr><th style="width:24%">Layer</th><th>Function</th></tr>
+  <tr><td><b>Worker record</b></td><td>Identity, demographic and contact data, verification status and case history, employment and deployment history across contractors and sites, skills and certifications, statutory identifiers (UAN, ESIC IP, PAN, Aadhaar reference), bank details, documents</td></tr>
+  <tr><td><b>Organisation model</b></td><td>Legal entity, plant/unit, department, function, role/designation, site, cost centre and reporting hierarchy at N levels; each worker holds a default role and default site</td></tr>
+  <tr><td><b>Vendor and commercial model</b></td><td>Vendor master, licences and statutory registrations, work orders, rate cards, sanctioned strength, billing terms</td></tr>
+  <tr><td><b>Transaction layer</b></td><td>Attendance logs, regularisations, leave, overtime, gate events, payroll runs, invoices, training completions</td></tr>
+  <tr><td><b>Rule and workflow engine</b></td><td>Configurable business flows, multi-level approval chains, policy switches at organisation, site and associate level</td></tr>
+  <tr><td><b>Intelligence layer</b></td><td>AI agents for verification, statutory reconciliation, induction and worker support, running on BetterPlace-operated infrastructure</td></tr>
+  <tr><td><b>Reporting layer</b></td><td>Standard reports, report builder, custom forms and embedded BI dashboards</td></tr>
+</table>
+<h3><span class="num">3.2</span>Access and roles</h3>
+<p>Access is role-based and permission-aware. Typical roles provisioned for a manufacturing deployment include: corporate HR/IR administrator, plant HR, plant compliance officer, department supervisor, security and gate operator, contractor/vendor user (restricted to their own workers and work orders), finance/accounts payable user, auditor (read-only), and worker. Module visibility, site scope and action rights are configured per role.</p>
+
+<h2 class="sec"><span class="num">4</span>Organisation setup and worker master</h2>
+<h3><span class="num">4.1</span>Organisation configuration</h3>
+<ul>
+  <li>N-level organisation hierarchy mirroring JSL's legal entities, plants, units, departments and reporting lines, including parent–child structures.</li>
+  <li>Site registry with country, state/region, city and site, searchable and paginated, with site-specific rules for attendance, shifts and approvals.</li>
+  <li>Function and role master defining designations and departments; each worker carries a default role and default site.</li>
+  <li>Cost centre and department mapping for payroll and billing allocation.</li>
+</ul>
+<h3><span class="num">4.2</span>Worker master and 360° profile</h3>
+<ul>
+  <li>Employee master supporting large workforces with search across configurable fields, grid and list views, row selection, and bulk actions including bulk onboarding and export.</li>
+  <li>360° worker profile consolidating personal details, role, site, contractor, verification case and status, employment tenure timeline across client / vendor / sub-vendor, documents, statutory identifiers and log history.</li>
+  <li><b>Profile lock</b> control to freeze a record from further edits once finalised, with change history retained.</li>
+  <li><b>Data-completeness enforcement:</b> the profile surfaces a "missing information" banner that identifies exactly which fields are blocking verification or payroll processing and links directly to the gap.</li>
+  <li>Full log history on the record, providing an audit trail of who changed what and when.</li>
+</ul>
+
+<h2 class="sec"><span class="num">5</span>Vendor management, work orders and CLRA</h2>
+<p>This section addresses the core of the contract labour control problem: who the contractor is, what they are authorised to do, how many people they may deploy, and whether they are meeting their statutory obligations.</p>
+<h3><span class="num">5.1</span>Vendor onboarding and master</h3>
+<ul>
+  <li>Vendor registration with company details, GSTIN, PAN, PF and ESIC establishment codes, bank details and authorised signatories.</li>
+  <li>Document registry per vendor with validity tracking and expiry alerts: CLRA licence, PF and ESIC registration, GST registration, Workmen's Compensation / Employee's Compensation policy, shops and establishment registration, and any JSL-specific safety or quality certifications.</li>
+  <li>Per-vendor deployment rules, allowed sites, allowed roles and rate cards.</li>
+  <li>Vendor user access, so contractors transact on the platform directly rather than by email, while seeing only their own workers and orders.</li>
+  <li>Vendor performance and compliance visibility on a single dashboard across all manpower vendors.</li>
+</ul>
+<h3><span class="num">5.2</span>Work orders</h3>
+<ul>
+  <li>Work order creation against a vendor, capturing scope of work, plant/unit and department, sanctioned headcount by skill category, rate card, validity period, billing terms and applicable compliance conditions.</li>
+  <li>Every deployed contract worker is mapped to a work order, so headcount, wages and billing are tracked against that order per contractor.</li>
+  <li>Work order lifecycle: draft, approval, active, amendment, extension, closure — with configurable multi-level approval.</li>
+  <li>Real-time view of deployed versus sanctioned headcount per work order and per site.</li>
+  <li>Amendment history retained for audit.</li>
+</ul>
+<h3><span class="num">5.3</span>CLRA and licensed strength control</h3>
+<ul>
+  <li>Contractor licence recorded with licensed strength, validity and issuing authority.</li>
+  <li>Deployed worker count monitored against licensed strength; the platform flags and can block deployment or gate pass issue that would exceed the licence.</li>
+  <li>Support for the statutory register set maintained by the principal employer and contractor, including register of contractors, register of workmen and employment cards, generated from platform data rather than maintained separately.</li>
+  <li>Data and extracts to support half-yearly and annual return preparation.</li>
+  <li>Principal employer position visible at any time: which contractors are compliant, which are approaching licence or document expiry, and which have open gaps.</li>
+</ul>
+<div class="warn"><b>Statutory note.</b> The platform provides the data, controls, registers and audit trail required to evidence compliance. Determination of applicability, filing of statutory returns and legal interpretation remain with JSL and its advisors. BetterPlace configures the platform to JSL's stated interpretation of applicable rules.</div>
+
+<h2 class="sec"><span class="num">6</span>Sourcing and hiring</h2>
+<p>Included where JSL elects to run contract or direct frontline hiring on the platform.</p>
+<ul>
+  <li><b>Requisitions and openings</b> per role, site and city, with approval chains and vacancy tracking against filled versus total positions.</li>
+  <li><b>Configurable pipelines</b> — screening, interview, approval, offer — matching JSL's process rather than a fixed workflow.</li>
+  <li><b>Multi-channel sourcing:</b> branded career page, job boards, referrals, QR codes for walk-in and gate drives, vendor-submitted candidates, and WhatsApp-based application without app installation.</li>
+  <li><b>Application links and QR codes</b> per campaign, with views, starts, applications and conversion measured; links can be scoped to an opening or to all live openings.</li>
+  <li><b>Progressive candidate profiling</b> — role and location intent, personal details, address and pincode, education and experience, languages spoken, availability — captured in short guided steps in the candidate's chosen language, with a mobile number as the resumable identity.</li>
+  <li><b>Progressive document collection</b> so that non-blocking documents are deferred to a later stage, protecting funnel conversion.</li>
+  <li><b>Screening and ranking</b> with fit scores against the role rubric and explainable match reasons (distance, language, education, availability, experience).</li>
+  <li><b>Interview scheduling</b> with structured question sets, and operational queues for scheduling, form review, evaluation, document verification, BGV and offer.</li>
+  <li><b>Offer and appointment letter</b> generation from templates.</li>
+  <li><b>Pipeline analytics:</b> source performance, stage conversion, ageing, SLA breach and fill rate.</li>
+</ul>
+
+<h2 class="sec"><span class="num">7</span>Background verification</h2>
+<h3><span class="num">7.1</span>Check catalogue</h3>
+<p>Verification is organised under six heads, with check packs configurable per role and per contractor category.</p>
+<table class="tight">
+  <tr><th style="width:18%">Head</th><th>Checks available</th></tr>
+  <tr><td><b>Identity</b></td><td>Aadhaar, PAN, Driving Licence, Voter ID, Passport, with face match and liveness detection</td></tr>
+  <tr><td><b>Address</b></td><td>Physical (field visit), postal and digital address verification</td></tr>
+  <tr><td><b>Career</b></td><td>Education, employment history, UAN-based employment validation, reference checks, CV validation, professional licence where applicable</td></tr>
+  <tr><td><b>Financial</b></td><td>Bank account validation, credit check</td></tr>
+  <tr><td><b>Health</b></td><td>Drug tests, medical certificates, fitness certificates, physical examination</td></tr>
+  <tr><td><b>Legal</b></td><td>Criminal record including narcotics and psychotropic cases, organised crime and police acts, civil litigation and Motor Vehicles Act matters, Supreme and High Court records, law-firm reports, police verification certificates, global database screening</td></tr>
+</table>
+<h3><span class="num">7.2</span>Operating model</h3>
+<ul>
+  <li>Per-candidate check selection, so a gate-entry worker and a skilled technician can carry different packs.</li>
+  <li><b>Bulk initiation</b> across a date range or a selected set of onboarded profiles in a single action.</li>
+  <li>Portfolio view with overall progress and red / amber / green segmentation, filterable by location and period, with triage queues per bucket.</li>
+  <li>Individual case report with per-check initiated and verified dates, colour-coded status, employment tenure timeline and downloadable PDF report.</li>
+  <li>Status signalling that distinguishes an initiated check from one that never started, so operations can re-trigger failures.</li>
+  <li>Re-verification on rehire drawn from the existing verified record.</li>
+</ul>
+<div class="note"><b>Service levels.</b> Identity checks typically complete within minutes. Composite case turnaround is targeted at under 24 hours for digital checks; physical address and court verification are subject to field and registry timelines and are agreed as separate SLAs in Section 23.</div>
+
+<h2 class="sec"><span class="num">8</span>Digital onboarding</h2>
+<ul>
+  <li><b>Document collection</b> from the worker's own phone — identity documents, certificates, bank proof — with API-based validation, configurable by state and worker category.</li>
+  <li><b>e-Sign</b> of contracts, appointment letters and policy acknowledgements.</li>
+  <li><b>Bank and statutory setup</b> captured once, with PF and ESI templates generated and the record made payroll-ready without re-entry.</li>
+  <li><b>Bulk onboarding</b> by Excel upload for batch mobilisation, with per-row error reporting and correction in a single cycle.</li>
+  <li><b>Vendor-led onboarding</b> through the same interface, so every contractor follows one standard regardless of size.</li>
+  <li><b>Platform provisioning</b> — app access, role, site and shift assigned on completion.</li>
+  <li><b>First-day journey</b> with role-based checklists, induction content and policies in the worker's language.</li>
+  <li><b>Onboarding status tracking</b> across every joiner, with a funnel view identifying where a batch is held.</li>
+</ul>
+
+<h2 class="sec"><span class="num">9</span>Gate pass, safety induction and access control</h2>
+<ul>
+  <li><b>Conditional gate pass issue.</b> A pass is issued only when the governing conditions are satisfied — a valid and active work order, headcount within licensed and sanctioned strength, verification cleared to the required level, valid Workmen's Compensation cover, and a completed safety induction.</li>
+  <li><b>Safety induction</b> delivered on the worker's phone in their language, combining standard operating procedure content, video and an assessment, issuing a dated certificate on completion.</li>
+  <li><b>Validity and expiry management</b> for gate passes, induction certificates and insurance cover, with advance alerts and automatic withdrawal of access on expiry.</li>
+  <li><b>Biometric verification at the gate</b> through integrated devices, with face registration performed in the platform.</li>
+  <li><b>Visitor management</b> handled through the same flow.</li>
+  <li><b>Gate event log</b> retained per worker per day as evidence of presence and access control.</li>
+</ul>
+
+<h2 class="sec"><span class="num">10</span>Attendance, rostering and overtime</h2>
+<h3><span class="num">10.1</span>Capture</h3>
+<ul>
+  <li><b>Facial recognition with AI spoof detection</b>, preventing photograph-based and proxy marking, with a dedicated review queue for possible spoofs.</li>
+  <li><b>Geo-fenced marking</b> so attendance registers only within the defined site boundary; each site carries its own fence.</li>
+  <li><b>Biometric and face terminals</b> at plant gates, and mobile marking for field and project locations, both feeding the same record.</li>
+  <li><b>Face registration</b> performed within the attendance module before facial marking is enabled.</li>
+</ul>
+<h3><span class="num">10.2</span>Shifts and rostering</h3>
+<ul>
+  <li>Reusable shift cards defined by name and start/end time, with present and half-day values auto-calculated and a configurable tolerance buffer absorbing early or late punches.</li>
+  <li>Shifts created individually or uploaded in bulk; night and cross-midnight shifts supported.</li>
+  <li>Weekly roster grid by associate and day, with daily shift counts, site and associate filters, copy and bulk operations, undo, and an explicit publish step; Excel roster upload auto-publishes.</li>
+  <li>Weekly off, rest day and field designation per associate per day.</li>
+  <li>Associate-level view to inspect or change an individual's shifts across the week.</li>
+  <li>Demand planning and shortfall management across sites.</li>
+</ul>
+<h3><span class="num">10.3</span>Exceptions and regularisation</h3>
+<ul>
+  <li>Exception filter views for log summary, irregularity, leave, no-show, review, role review and weekly-off review.</li>
+  <li><b>Regularisation workflow</b> where the worker selects or corrects the time, reviews the associated shift, role and site, selects a predefined reason (no internet, unable to mark, manager-requested correction, wrong shift, wrong role), reviews and submits, with a mandatory reason and full audit trail.</li>
+  <li>Configurable self-service and manager regularisation limits.</li>
+  <li>Approval queue with sub-queues for regularisation, leave, optional holiday, reconciliation, attendance sync and possible spoofs, with bulk approve and reject and an SLA counter on pending items.</li>
+  <li>Bulk log edit for correcting many records in one operation, within an administrator-defined backdating window.</li>
+  <li>Manager approval of regularisation and leave from the mobile application.</li>
+</ul>
+<h3><span class="num">10.4</span>Overtime</h3>
+<ul>
+  <li>Overtime computed automatically from attendance against the configured shift and thresholds.</li>
+  <li><b>Monthly and quarterly overtime caps</b> configurable at organisation and site level, with alerts as thresholds approach and controls when limits are reached.</li>
+  <li><b>Pre-approval</b> of overtime configurable as a policy switch, so hours are authorised before they are worked.</li>
+  <li>Overtime disallowed automatically where punch records are missing.</li>
+  <li>Overtime flows into payroll at the applicable statutory multiple.</li>
+  <li><b>Overtime report</b> showing who worked overtime, how many hours and who approved it, exportable by date range and filterable by function, role and location, supporting the statutory overtime register.</li>
+</ul>
+<h3><span class="num">10.5</span>Policy configuration</h3>
+<p>Organisation-level configuration governs full-day and half-day hour thresholds, monthly overtime cap, login and logout tolerance, late-login and early-logout buffers, and how far back administrators may edit logs or rosters. Policy switches cover forced logout, elapsed-hour calculation from first login to last logout, associate regularisation, manager approvals, overtime pre-approval, leave management, attendance reconciliation, marking through the app, verification-status checks before marking, review of week-off attendance, weekly-off assignment on holidays, and site auto-configuration. Associate-level configuration supports open attendance, attendance cycles and restrictions based on profile parameters. Alert management covers shift-wise, overtime, leave summary, attendance sync, leave application and regularisation alerts.</p>
+
+<h2 class="sec"><span class="num">11</span>Leave and holiday management</h2>
+<ul>
+  <li>Leave policies and quotas configurable by leave period, worker category and location, with balances visible to the worker.</li>
+  <li>Leave application from the mobile app with approval routing to the reporting manager.</li>
+  <li>Holiday configuration separating regional, public and optional holidays, applied to all locations or selected sites, with distinct optional-holiday rules and an approval queue.</li>
+  <li>Leave and holiday events reflected in attendance computation and payroll.</li>
+</ul>
+
+<h2 class="sec"><span class="num">12</span>Payroll and statutory compliance</h2>
+<h3><span class="num">12.1</span>Payroll processing</h3>
+<ul>
+  <li>Payroll computed directly from verified attendance, with no manual entry of days or hours.</li>
+  <li>Payroll workspace organised around payroll inputs, run payroll, final settlement, invoice, reports, compliances and reimbursements.</li>
+  <li>Period-controlled pay runs with a month and cycle picker, batch pipeline showing processing stage and status, and visibility of where a run is waiting or has failed before drill-down.</li>
+  <li>Salary structure templates by worker category and skill grade, with component-level configuration.</li>
+  <li><b>Minimum wage validation</b> per state and skill category, applied before a structure is approved, blocking non-compliant configurations at entry.</li>
+  <li>Variable inputs — incentives, allowances and one-off payments — uploaded before the run and included in computation.</li>
+  <li>Overtime paid at the applicable statutory multiple.</li>
+  <li>Reimbursements, full and final settlement and exit processing within the same module.</li>
+  <li>Maker–checker approval, period lock and complete batch audit trail.</li>
+  <li>Bank-ready output files and payslips published to the worker application.</li>
+</ul>
+<h3><span class="num">12.2</span>Statutory compliance and vendor reconciliation</h3>
+<p>This is the control that addresses principal employer exposure directly.</p>
+<ul>
+  <li>Separate workspaces for PF, ESI, Professional Tax and Labour Welfare Fund, with scheduled filing support.</li>
+  <li><b>Vendor challan upload</b> by contractors into the platform.</li>
+  <li><b>OCR extraction</b> of UANs, amounts and contribution periods from uploaded challans without manual re-keying.</li>
+  <li><b>Worker-by-worker reconciliation</b> comparing amounts actually deposited against amounts computed as due for each named worker — the level at which short payments become visible, rather than at vendor totals.</li>
+  <li>Automatic flagging of short payments, non-payment, incorrect UANs and late filing.</li>
+  <li>Principal employer notification and vendor flagging on discrepancy, creating a documented and dated record of due diligence.</li>
+  <li>Compliance dashboard showing, for each period, which vendors are clear, which filed late and which carry gaps.</li>
+  <li>Wage register and statutory register support, and an audit file that remains current rather than being assembled retrospectively.</li>
+</ul>
+<div class="note"><b>Reference outcome.</b> On comparable deployments this control set has reduced payroll leakage by approximately 90% and vendor non-compliance risk by approximately 80% across a base of more than 3,000 vendors. Outcomes at JSL will depend on baseline maturity and are not warranted in this document.</div>
+
+<h2 class="sec"><span class="num">13</span>Vendor billing and invoice reconciliation</h2>
+<ul>
+  <li>Vendor invoices generated or uploaded against the governing work order.</li>
+  <li><b>Automatic reconciliation</b> of invoiced manpower against verified attendance for the period and against the rate card on the work order.</li>
+  <li>Variance reporting identifying billed-but-not-present, rate mismatches and headcount exceeding sanctioned strength.</li>
+  <li>Deduction handling for advances, penalties, recoveries and statutory withholdings.</li>
+  <li><b>Compliance-gated release</b>, where PF and ESI challan reconciliation for the period can be configured as a precondition to invoice approval.</li>
+  <li>Approval workflow to JSL's authorisation matrix, and posting of approved invoices to the finance system.</li>
+</ul>
+
+<h2 class="sec"><span class="num">14</span>Training and upskilling</h2>
+<ul>
+  <li>Mobile-first learning delivered in the worker's language, with content translated into Indian languages including audio, and short-format modules suited to shift patterns.</li>
+  <li>Safety, statutory, technical and process training, structured into courses, levels and chapters with configurable certificates.</li>
+  <li><b>Assessments</b> with multiple question types, configurable pass criteria, answer visibility rules and optional face-detection proctoring.</li>
+  <li><b>Mandatory course enforcement</b>, where a worker cannot proceed in the application until required training is complete — the mechanism used to gate deployment on induction.</li>
+  <li>Rule-based assignment of courses and assessments by role, site or event without manual distribution.</li>
+  <li>Certification tracking with expiry and refresher scheduling.</li>
+  <li>In-app live classes for instructor-led sessions and QR-based classroom attendance for in-person training.</li>
+  <li>Completion, score and certification analytics by site, department, contractor and role.</li>
+  <li>In-house content development available where JSL supplies source material such as SOPs or existing videos.</li>
+</ul>
+
+<h2 class="sec"><span class="num">15</span>Reports, MIS and analytics</h2>
+<ul>
+  <li><b>Standard reports</b> including muster roll, attendance log report and overtime report, with date-range selection, filters for function, role, gender and location, queued generation and Excel export.</li>
+  <li><b>Statutory registers and extracts</b> supporting CLRA registers, wage registers and returns preparation.</li>
+  <li><b>Self-serve report builder</b> with a tags-and-filters panel, so plant teams generate what they need without raising IT requests.</li>
+  <li><b>Custom forms</b> configurable to capture site-specific data.</li>
+  <li><b>Embedded BI dashboards</b> for attendance analytics, payroll analytics and workforce metrics, filterable by state, city and site, including trend charts, method-and-status breakdowns and shortfall analysis by site.</li>
+  <li><b>Scheduled distribution</b> of defined reports to named recipients.</li>
+</ul>
+<div class="warn"><b>Transparency on data currency.</b> Operational screens reflect transactions in near real time. Embedded BI dashboards are refreshed on a processing cycle and may lag the operational database by a short interval. Where JSL requires strictly real-time reporting for a specific metric, this will be identified during design and addressed either through an operational screen or an agreed event-push integration.</div>
+
+<h2 class="sec"><span class="num">16</span>Worker mobile application</h2>
+<ul>
+  <li>Attendance marking, attendance logs with a calendar-led history of hours and in/out times, and half-day, leave and pending-approval states.</li>
+  <li><b>Monthly summary</b> presenting total earnings, present days against working days, and separate totals for absent, half-day, leave, overtime, week off and holiday.</li>
+  <li>Focused half-day and overtime log view.</li>
+  <li>Day detail showing hours, in/out times, assigned shift, role, site and location, and the entry point for regularisation or adding a missing shift.</li>
+  <li>Leave balance and application, and visibility of public holidays.</li>
+  <li><b>Payslip access</b> by month.</li>
+  <li>Training modules, assessments and certificates.</li>
+  <li>Grievance raising and ticket status.</li>
+  <li>Multilingual interface for the worker's chosen language.</li>
+</ul>
+
+<h2 class="sec"><span class="num">17</span>AI Labs — intelligent agents</h2>
+<p>AI capability is delivered through BetterPlace AI Labs, which runs open-source models on BetterPlace-operated infrastructure in India. Worker data is not transmitted to external AI service providers. The platform holds ISO 27001 and SOC 2 certification.</p>
+<table class="tight">
+  <tr><th style="width:22%">Agent</th><th>Function in a JSL deployment</th><th style="width:12%">Status</th></tr>
+  <tr><td><b>Statutory reconciliation</b></td><td>Reads every vendor PF and ESI challan, matches deposits to computed dues worker by worker, and flags shortfalls, wrong identifiers and late filings within the same cycle</td><td>Beta</td></tr>
+  <tr><td><b>Verification</b></td><td>Runs identity, document and face-match checks on incoming contract workers, and assists criminal-record review by filtering false positives</td><td>Beta</td></tr>
+  <tr><td><b>Safety induction</b></td><td>Takes a worker through induction content, video and assessment in their language and issues the certificate that activates gate access</td><td>Live</td></tr>
+  <tr><td><b>Worker support</b></td><td>Answers routine worker questions — PF number, shift timing, payslip queries, leave balance, claim process — by chat or voice call, in 24 languages, at any hour</td><td>Live</td></tr>
+</table>
+<p>Agents operate under deterministic workflow control where a process must not deviate, with guardrails for personal-data masking and content safety, and full logging of interactions.</p>
+
+<h2 class="sec"><span class="num">18</span>Integrations</h2>
+<table class="tight">
+  <tr><th style="width:26%">Integration</th><th>Scope</th></tr>
+  <tr><td><b>SAP</b></td><td>JSL operates an established SAP landscape, including SAP HANA and BW/4HANA, with a migration to RISE with SAP under way. The platform integrates through documented APIs or scheduled file exchange for: vendor master and purchase order synchronisation, work order and cost centre alignment, worker master exchange, payroll cost posting and approved vendor invoice posting to finance. Interface design, direction and frequency are confirmed during the design phase with JSL's SAP team, and sequencing will account for the RISE migration timeline.</td></tr>
+  <tr><td><b>Biometric and face devices</b></td><td>Integration with gate terminals for attendance and access events, including device health monitoring and log re-drive where a device is offline.</td></tr>
+  <tr><td><b>Identity and access</b></td><td>Single sign-on for JSL corporate users through the customer's identity provider.</td></tr>
+  <tr><td><b>Statutory portals</b></td><td>Data preparation and extracts formatted for EPFO, ESIC and state portal submission. Filing is performed by JSL or its compliance partner.</td></tr>
+  <tr><td><b>Messaging</b></td><td>SMS and WhatsApp notification channels for worker communication, subject to template registration.</td></tr>
+  <tr><td><b>APIs and webhooks</b></td><td>Documented REST APIs and event webhooks for custom integration with JSL systems, including the analytics estate.</td></tr>
+</table>
+<div class="note"><b>Integration sequencing.</b> Where the RISE with SAP migration affects an interface in scope, BetterPlace will sequence that interface to avoid duplicated build. A file-based interface can be used as an interim mechanism so that platform rollout is not gated by ERP migration milestones.</div>
+
+<h2 class="sec"><span class="num">19</span>Implementation plan and timeline</h2>
+<p>Implementation is a structured deployment rather than a switch-on. The indicative plan below assumes a pilot at one plant followed by staged rollout. Dates are confirmed at project initiation.</p>
+<table class="tight">
+  <tr><th style="width:12%">Phase</th><th style="width:26%">Scope</th><th>Key activities</th><th style="width:16%">Indicative duration</th></tr>
+  <tr><td><b>0 — Initiate</b></td><td>Mobilisation</td><td>Project governance, team confirmation, site list, access provisioning, kickoff</td><td>1–2 weeks</td></tr>
+  <tr><td><b>1 — Design</b></td><td>Blueprint</td><td>Business requirement workshops, organisation and site structure, policy configuration decisions, approval matrices, integration design, data mapping, sign-off of configuration document</td><td>3–4 weeks</td></tr>
+  <tr><td><b>2 — Build</b></td><td>Configuration</td><td>Tenant setup, organisation hierarchy, sites, roles, shift and attendance policy, vendor and work order structures, verification packs, payroll structures, report configuration, integration development</td><td>4–6 weeks</td></tr>
+  <tr><td><b>3 — Pilot</b></td><td>One plant</td><td>Data migration for pilot scope, vendor and worker onboarding, device installation and face registration, parallel run of attendance and payroll, user training, defect resolution</td><td>6–8 weeks</td></tr>
+  <tr><td><b>4 — Rollout</b></td><td>Remaining sites</td><td>Site-by-site onboarding, contractor enablement, device deployment, training, hypercare per site</td><td>Per agreed schedule</td></tr>
+  <tr><td><b>5 — Steady state</b></td><td>Operations</td><td>Transition to support model, quarterly reviews, phase 2 and 3 module activation</td><td>Ongoing</td></tr>
+</table>
+<div class="note"><b>Sequencing recommendation.</b> Attendance should stabilise before payroll is cut over. Payroll accuracy is entirely downstream of attendance integrity, and customers who sequence in this order reach a stable payroll materially faster.</div>
+
+<h2 class="sec"><span class="num">20</span>Data migration</h2>
+<ul>
+  <li>Migration of active worker master data, vendor master, work orders in force, and opening balances for leave where applicable.</li>
+  <li>Templates provided by BetterPlace; extraction and data quality remain with JSL and its contractors.</li>
+  <li>Validation cycles with error reporting and correction before load.</li>
+  <li>Historical attendance and payroll data may be loaded for a defined period for reference; the scope and period are agreed during design.</li>
+  <li>Reconciliation and sign-off of migrated data before go-live at each site.</li>
+</ul>
+
+<h2 class="sec"><span class="num">21</span>Roles and responsibilities</h2>
+<table class="tight">
+  <tr><th style="width:38%">Activity</th><th style="width:31%">BetterPlace</th><th style="width:31%">Jindal Stainless</th></tr>
+  <tr><td>Project governance</td><td>Project manager, weekly status, risk log</td><td>Project sponsor, single point of contact, decision authority</td></tr>
+  <tr><td>Requirement definition</td><td>Facilitate workshops, document configuration</td><td>Provide policy, statutory interpretation and process decisions; sign off blueprint</td></tr>
+  <tr><td>Platform configuration</td><td>Configure to signed-off blueprint</td><td>Review and accept configuration</td></tr>
+  <tr><td>Data provision</td><td>Templates, validation tooling, load</td><td>Extract, cleanse and approve source data</td></tr>
+  <tr><td>Vendor enablement</td><td>Vendor training material and sessions</td><td>Mandate contractor participation and platform use</td></tr>
+  <tr><td>Devices</td><td>Specification, integration, configuration</td><td>Procurement, physical installation, network and power at gates</td></tr>
+  <tr><td>Integration</td><td>Platform-side development and testing</td><td>ERP-side development, connectivity, test environments and approvals</td></tr>
+  <tr><td>Testing</td><td>System and integration testing</td><td>User acceptance testing and sign-off</td></tr>
+  <tr><td>Training</td><td>Train-the-trainer, admin and supervisor training, materials</td><td>Nominate trainers, release users for training, cascade to workers</td></tr>
+  <tr><td>Statutory filing</td><td>Data, extracts and reconciliation</td><td>Filing, submissions and legal interpretation</td></tr>
+  <tr><td>Change management</td><td>Support and guidance</td><td>Internal communication and adoption mandate</td></tr>
+</table>
+
+<h2 class="sec"><span class="num">22</span>Security, data protection and compliance</h2>
+<ul>
+  <li><b>Certifications:</b> ISO 27001 and SOC 2.</li>
+  <li><b>Data residency:</b> data hosted in India.</li>
+  <li><b>Encryption</b> in transit and at rest.</li>
+  <li><b>Access control:</b> role-based permissions, site-scoped visibility, contractor users restricted to their own workers and orders, and single sign-on for corporate users.</li>
+  <li><b>Audit logging</b> of record changes, approvals and administrative actions.</li>
+  <li><b>Personal data handling</b> aligned to the Digital Personal Data Protection Act 2023, with consent capture, purpose limitation and defined retention. A data processing agreement will be executed alongside this SOW.</li>
+  <li><b>AI processing</b> performed on BetterPlace-operated infrastructure; worker data is not sent to third-party AI providers.</li>
+  <li><b>Business continuity:</b> backup, recovery objectives and disaster recovery arrangements as set out in the master agreement.</li>
+</ul>
+
+<h2 class="sec"><span class="num">23</span>Support model and service levels</h2>
+<table class="tight">
+  <tr><th style="width:22%">Element</th><th>Provision</th></tr>
+  <tr><td><b>Named ownership</b></td><td>Named BetterPlace SPOC assigned to the deployment, with a corresponding JSL SPOC, giving each site explicit operational ownership</td></tr>
+  <tr><td><b>Support channels</b></td><td>Portal ticketing, email and escalation telephone line</td></tr>
+  <tr><td><b>Coverage</b></td><td>Business hours standard; extended coverage during payroll cycles and hypercare, and for gate-critical incidents, as agreed</td></tr>
+  <tr><td><b>Severity 1</b></td><td>Platform unavailable or gate access blocked at a plant — response and continuous work to restoration, per master agreement</td></tr>
+  <tr><td><b>Severity 2</b></td><td>Module impaired, payroll or attendance processing at risk</td></tr>
+  <tr><td><b>Severity 3 / 4</b></td><td>Functional queries, configuration changes, report requests</td></tr>
+  <tr><td><b>Governance</b></td><td>Monthly operational review and quarterly business review covering adoption, compliance position, open items and roadmap</td></tr>
+  <tr><td><b>Enhancements</b></td><td>Configuration changes within the platform handled as support; new development handled under change control per Section 29</td></tr>
+</table>
+<p>Specific numeric response and resolution targets, uptime commitment and any service credits are set out in the master services agreement and referenced here rather than restated.</p>
+
+<h2 class="sec"><span class="num">24</span>Training and change management</h2>
+<ul>
+  <li>Train-the-trainer programme for JSL HR, IR and plant administrators.</li>
+  <li>Role-based training for supervisors, security and gate operators, and finance users.</li>
+  <li>Contractor training sessions covering vendor portal, worker onboarding, challan upload and invoice submission.</li>
+  <li>Worker enablement material in local languages, including short in-app guidance.</li>
+  <li>Reference documentation, configuration guides and recorded sessions.</li>
+  <li>Hypercare presence during the first payroll cycle at each site.</li>
+</ul>
+
+<h2 class="sec"><span class="num">25</span>Acceptance criteria</h2>
+<p>Each phase is accepted when the following are demonstrated in the JSL tenant:</p>
+<ol>
+  <li>Configuration matches the signed-off blueprint for organisation structure, sites, roles, shifts, policies and approval chains.</li>
+  <li>Migrated master data reconciles to JSL-approved source records within agreed tolerance.</li>
+  <li>Attendance captured at pilot site for a full cycle, with exception and regularisation workflows operating and spoof detection active.</li>
+  <li>Work orders in force, with deployment tracked against sanctioned and licensed strength and gate pass conditions enforced.</li>
+  <li>Verification cases initiated, tracked and reported with case-level audit trail.</li>
+  <li>A payroll cycle computed from platform attendance, parallel-run against JSL's existing output, with variances explained.</li>
+  <li>Vendor challan reconciliation executed for one period with discrepancies correctly identified.</li>
+  <li>Vendor invoice reconciled against attendance and work order for one period.</li>
+  <li>Standard and statutory reports generated and validated.</li>
+  <li>Integrations operating in the agreed direction and frequency.</li>
+  <li>User acceptance testing signed off by nominated JSL users.</li>
+</ol>
+
+<h2 class="sec"><span class="num">26</span>Assumptions</h2>
+<ol>
+  <li>JSL will nominate a project sponsor and empowered single point of contact for the duration.</li>
+  <li>Statutory interpretation, applicability determination and filing responsibility rest with JSL.</li>
+  <li>Contractors will be mandated by JSL to transact on the platform; contractual enforcement sits with JSL.</li>
+  <li>Source data for migration will be provided in the agreed templates and quality.</li>
+  <li>Network connectivity and power are available at gate and terminal locations.</li>
+  <li>Workers have access to a mobile phone where mobile marking or self-service is used; device-based marking is provided where they do not.</li>
+  <li>JSL will provide test environments and technical resources for integration work.</li>
+  <li>Decisions and sign-offs will be provided within agreed turnaround, as delays affect the schedule.</li>
+  <li>Configuration is delivered within the platform's configurable surface; requirements needing new development follow change control.</li>
+  <li>Contract workforce volumes, site counts and contractor counts used for sizing will be confirmed by JSL; figures in this document are placeholders pending Annexure A.</li>
+</ol>
+
+<h2 class="sec"><span class="num">27</span>Dependencies</h2>
+<ol>
+  <li>Availability of JSL HR, IR, compliance, finance, security and IT stakeholders for design workshops and testing.</li>
+  <li>Timely provision of the site list, organisation structure, policy documents and rate cards.</li>
+  <li>Contractor cooperation in onboarding, document submission and challan upload.</li>
+  <li>Procurement and installation of biometric devices where required.</li>
+  <li>ERP team availability for integration development and testing.</li>
+  <li>Execution of the master services agreement and data processing agreement.</li>
+</ol>
+
+<h2 class="sec"><span class="num">28</span>Out of scope</h2>
+<ol>
+  <li>Filing of statutory returns and representation before authorities.</li>
+  <li>Legal opinion on applicability of labour legislation.</li>
+  <li>Supply of contract manpower, unless separately contracted through BetterPlace staffing services.</li>
+  <li>Procurement or physical installation of hardware.</li>
+  <li>Payroll processing for permanent employees, unless separately agreed.</li>
+  <li>Modification of JSL's ERP or third-party systems.</li>
+  <li>Historical data remediation beyond the agreed migration scope.</li>
+  <li>Custom development not identified in this SOW.</li>
+</ol>
+
+<h2 class="sec"><span class="num">29</span>Change control</h2>
+<p>Any change to scope, timeline or commercials will be raised as a written change request describing the change, its rationale, functional impact, schedule impact and commercial impact. No change takes effect until authorised representatives of both parties approve it in writing. Configuration changes within the platform's existing capability are handled through the support process and do not require change control.</p>
+
+<h2 class="sec"><span class="num">30</span>Commercials</h2>
+<p>Commercial terms — licence model, per-worker or per-site pricing, one-time implementation and configuration charges, integration effort, device costs where applicable, verification charges per check, AI consumption and payment milestones — are set out in the accompanying commercial proposal and, once agreed, will be appended to this SOW as Annexure B. Taxes are additional and charged as applicable.</p>
+
+<h2 class="sec"><span class="num">31</span>Signatures</h2>
+<p>By signing below, the parties confirm agreement to the scope, approach and responsibilities described in this Statement of Work, subject to the master services agreement between them.</p>
+<div class="sign">
+  <div>
+    <b>For Jindal Stainless Limited</b>
+    <p class="role" style="margin-top:26px">Name<br>Designation<br>Date</p>
+  </div>
+  <div>
+    <b>For BetterPlace Safety Solutions Pvt. Ltd.</b>
+    <p class="role" style="margin-top:26px">Name<br>Designation<br>Date</p>
+  </div>
+</div>
+
+<h2 class="sec"><span class="num">A</span>Annexure A — Site list</h2>
+<p>To be completed jointly. For each site: legal entity, plant/unit name, address, state, worker categories in scope, expected contract headcount, number of contractors, gate count and device requirement, and target go-live.</p>
+<table class="tight">
+  <tr><th>Site</th><th>State</th><th>Entity</th><th>Contract headcount</th><th>Contractors</th><th>Gates</th><th>Target go-live</th></tr>
+  <tr><td colspan="7" style="color:#8a91ab;text-align:center;padding:14px">To be completed</td></tr>
+</table>
+
+<div class="footer">
+  <span>BetterPlace Safety Solutions Pvt. Ltd. · Confidential</span>
+  <span>Statement of Work v1.0 · Jindal Stainless Limited · 19 August 2026</span>
+</div>
+
+</div>
+</body>
+</html>
