@@ -18,6 +18,7 @@ import { gobetterSlides } from './gobetter'
 import { nkStorySlides } from './nk-story'
 import { nkRichStorySlides } from './nk-rich-story'
 import { saelSlides } from './sael'
+import { pwcClmsSlides } from './pwc-clms'
 
 export const decks: DeckDef[] = [
   {
@@ -37,6 +38,11 @@ export const decks: DeckDef[] = [
     id: 'why-betterplace-nikhil', next: 'group', title: 'BetterPlace · The Product-Rich Nikhil Cut', group: 'story',
     tagline: 'The original Ravi story, preserved and refined: designed product screens, worker versus employer value, operating proof and the business underneath.',
     slides: nkRichStorySlides,
+  },
+  {
+    id: 'pwc-clms', next: 'mfg-story', title: 'CLMS 2.0 · for PwC', group: 'story',
+    tagline: 'Joint proposal for PwC India — AI-driven contract-labour deployment optimisation (~30%) and time-office automation, grounded in BPCL and Reliance deployments.',
+    slides: pwcClmsSlides,
   },
   {
     id: 'sael', next: 'mfg-story', title: 'SAEL · Contract Labour & Plant Compliance', group: 'story',
