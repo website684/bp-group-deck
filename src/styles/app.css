@@ -1326,3 +1326,27 @@ body { overflow: auto; background: #05081f; }
 /* imported slides carry their own header — hide the deck's brand strip on them */
 .player:has(.slide.active .fullslide) .brandstrip,
 .player:has(.slide.on .fullslide) .brandstrip { display: none; }
+
+/* ---- flow strip (chips joined by arrows) + bullet lists inside cards ---- */
+.flowstrip { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; margin: 14px auto 0; }
+.flowstrip .fc { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: .82rem; padding: 9px 14px; border-radius: 12px; background: #fff; color: var(--ink); border: 1.5px solid rgba(27,45,147,.22); box-shadow: 0 6px 16px rgba(11,18,55,.06); }
+.flowstrip .fc small { display: block; font-family: 'Inter', sans-serif; font-weight: 500; font-size: .66rem; color: #5b6486; margin-top: 1px; }
+.flowstrip .fc.hot { background: var(--navy); color: #fff; border-color: var(--navy); }
+.flowstrip .fc.hot small { color: rgba(255,255,255,.7); }
+.flowstrip .fc.gold { background: var(--yellow); border-color: var(--yellow); }
+.flowstrip .fa { font-size: 1.1rem; color: rgba(27,45,147,.45); font-weight: 700; }
+.dark .flowstrip .fc, .darker .flowstrip .fc { background: rgba(255,255,255,.07); color: #fff; border-color: rgba(255,255,255,.18); box-shadow: none; }
+.dark .flowstrip .fc small, .darker .flowstrip .fc small { color: rgba(255,255,255,.6); }
+.dark .flowstrip .fa, .darker .flowstrip .fa { color: rgba(255,255,255,.35); }
+.case ul.cl { margin: 8px 0 0 16px; padding: 0; font-size: .84rem; line-height: 1.5; color: #4a5272; }
+.case ul.cl li { margin: 4px 0; }
+.case ul.cl li b { color: var(--ink); }
+/* hub-and-spoke diagram */
+.hub { max-width: 640px; margin: 10px auto 0; }
+.hub svg { width: 100%; height: auto; display: block; }
+.hub .hn { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 13px; fill: var(--ink); }
+.hub .hs { font-family: 'Inter', sans-serif; font-size: 10.5px; fill: #5b6486; }
+.hub .hc { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 15px; fill: #fff; }
+.hub .hcs { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1px; fill: rgba(255,255,255,.75); }
+.hub line { stroke: rgba(27,45,147,.35); stroke-width: 2; stroke-dasharray: 6 5; animation: metroflow 1.4s linear infinite; }
+.hub .spoke { fill: #fff; stroke: rgba(27,45,147,.25); stroke-width: 1.5; }
