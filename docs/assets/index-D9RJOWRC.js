@@ -3753,10 +3753,10 @@ Error generating stack: `+e.message+`
     <div class="glow"></div>
     <div class="mdcover">
       <span class="mdkicker rise" style="animation-delay:.05s">For PwC India · contract labour management · joint proposal</span>
-      <h1 class="rise" style="animation-delay:.15s;font-size:clamp(30px,3.6vw,54px);">Cut contract-labour deployment by 30%. <span style="color:var(--yellow)">Keep output, safety and compliance where they are.</span></h1>
-      <p class="sub rise" style="animation-delay:.3s">An AI upgrade to the client's existing CLMS: one clean master, a demand forecast, auto-scheduling, benchmarking and the integrations between them. Plus the automation that takes repetitive time-office work off 155+ people. The platform already runs contract workforces at BPCL and Reliance.</p>
+      <h1 class="rise" style="animation-delay:.15s;font-size:clamp(30px,3.6vw,54px);">A way to reach the client's 30% deployment target, <span style="color:var(--yellow)">with output, safety and compliance intact.</span></h1>
+      <p class="sub rise" style="animation-delay:.3s">An AI upgrade to the client's existing CLMS: one clean master, a demand forecast, auto-scheduling, overtime control, benchmarking and the integrations between them. Plus the automation that takes repetitive time-office work off 155+ people. These are the processes our clients use to run contract labour tighter; the platform already does this at BPCL and Reliance.</p>
       <div class="stats rise" style="animation-delay:.45s;margin-top:22px;">
-        <div class="stat"><div class="n">36K → 25K</div><div class="l">Daily deployment, target</div></div>
+        <div class="stat"><div class="n">36K → 25K</div><div class="l">The client's daily deployment target</div></div>
         <div class="stat"><div class="n">155+</div><div class="l">Time-office staff, manual today</div></div>
         <div class="stat"><div class="n">300K+</div><div class="l">Workers live at Reliance</div></div>
         <div class="stat"><div class="n">BPCL</div><div class="l">Contract workforce, live</div></div>
@@ -3765,7 +3765,7 @@ Error generating stack: `+e.message+`
     </div>`},{id:`pc2`,theme:`light`,title:`Executive summary`,html:`
     <div class="slidebody">
       <span class="eyebrow rise">Executive summary</span>
-      <h2 class="rise" style="animation-delay:.08s;max-width:44ch;">Why 36,000 people show up when 25,000 are needed, <span style="color:var(--navy)">and what closes the gap.</span></h2>
+      <h2 class="rise" style="animation-delay:.08s;max-width:44ch;">Why 36,000 people show up when the plan needs fewer, <span style="color:var(--navy)">and the levers that close the gap.</span></h2>
       <div class="cases rise" style="grid-template-columns:repeat(3,1fr);margin-top:14px;animation-delay:.2s">
         <div class="case" style="--pc:#D0271D">
           <div class="ch"><span class="cn">Where the client is</span></div>
@@ -3781,7 +3781,7 @@ Error generating stack: `+e.message+`
           <ul class="cl">
             <li>One master for positions, skills, vendors, work orders</li>
             <li>A demand forecast per shift and area, from the production plan</li>
-            <li>Auto-scheduling that deploys the plan, enforced at the gate</li>
+            <li>Auto-scheduling that deploys the plan, enforced at the gate, with overtime inside the cap</li>
             <li>Benchmarks across plants and contractors</li>
             <li>Worker self-service and AI agents take the time-office load</li>
           </ul>
@@ -3789,8 +3789,9 @@ Error generating stack: `+e.message+`
         <div class="case" style="--pc:#1d7a45">
           <div class="ch"><span class="cn">What it is worth</span></div>
           <ul class="cl">
-            <li><b>~11,000 fewer worker-days a day</b>, at the client's cost per day</li>
-            <li><b>60–70%</b> of time-office queries and reports handled by the system</li>
+            <li>Deployment falls as each gap closes. <b>The diagnostic puts a number on it</b> against the 25,000 target</li>
+            <li>Overtime paid at premium rates falls once rosters carry a cap</li>
+            <li>Most routine time-office queries and reports move to the system</li>
             <li>Leakage and vendor gaps cut at the rates we measured at Reliance (−90%, −80%)</li>
             <li>People redeployed, not removed</li>
           </ul>
@@ -3813,7 +3814,7 @@ Error generating stack: `+e.message+`
           <p class="tpprob" style="color:rgba(255,255,255,.72)"><b style="color:#fff">Target:</b> about 30% fewer contract workers a day, roughly 25,000, with the same output and no compromise on safety or compliance.</p>
           <div class="impacts" style="grid-template-columns:1fr 1fr;margin-top:10px;">
             <div class="imp"><div class="n">~36K</div><div class="l">deployed per day today</div></div>
-            <div class="imp" style="background:rgba(59,232,176,.08);border-color:rgba(59,232,176,.3)"><div class="n" style="color:#3BE8B0">~25K</div><div class="l">target, same output</div></div>
+            <div class="imp" style="background:rgba(59,232,176,.08);border-color:rgba(59,232,176,.3)"><div class="n" style="color:#3BE8B0">~25K</div><div class="l">the client's target, same output</div></div>
           </div>
           <p class="tpprob" style="color:rgba(255,255,255,.62);margin-top:10px"><b style="color:#fff">Their own diagnosis:</b> no standard master data, no forecast, scheduling left to contractors, no benchmarking, systems not integrated.</p>
         </div>
@@ -3830,7 +3831,7 @@ Error generating stack: `+e.message+`
     </div>`},{id:`pc4`,theme:`light`,title:`Root causes`,html:`
     <div class="slidebody">
       <span class="eyebrow rise">Why deployment runs high</span>
-      <h2 class="rise" style="animation-delay:.08s;max-width:44ch;">Why deployment runs 30% high: <span style="color:var(--navy)">five gaps in how the plan is made.</span></h2>
+      <h2 class="rise" style="animation-delay:.08s;max-width:44ch;">Why deployment runs above the plan: <span style="color:var(--navy)">five gaps in how it is made.</span></h2>
       <div class="capgrid rise" style="animation-delay:.2s;grid-template-columns:repeat(5,1fr);margin-top:14px;">
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.layers}</svg></span><h4>Master data drift</h4><p>The same job has different names, grades and rates in each plant and vendor. You cannot count what you name five ways.</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.clock}</svg></span><h4>Demand set by habit</h4><p>Tomorrow's requirement is yesterday's deployment. The production plan and maintenance calendar never enter the number.</p></div>
@@ -3839,27 +3840,27 @@ Error generating stack: `+e.message+`
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${w.plug}</svg></span><h4>Disconnected systems</h4><p>SAP has the PO, the gate has entries, attendance has punches, payroll has hours. Reconciling them is a person's job. 155 people, in fact.</p></div>
       </div>
       <div class="flowstrip rise" style="animation-delay:.4s">
-        <span class="fc">Drift<small>~2,500</small></span><span class="fa">+</span>
-        <span class="fc">Habit<small>~4,000</small></span><span class="fa">+</span>
-        <span class="fc">Padded rosters<small>~3,000</small></span><span class="fa">+</span>
-        <span class="fc">No benchmark<small>~1,500</small></span><span class="fa">=</span>
-        <span class="fc hot">~11,000 extra a day<small>illustrative, set in the diagnostic</small></span>
+        <span class="fc">Naming drift<small>ghost and duplicate workers</small></span><span class="fa">+</span>
+        <span class="fc">Habit<small>yesterday's number, again</small></span><span class="fa">+</span>
+        <span class="fc">Padded rosters<small>paid per head</small></span><span class="fa">+</span>
+        <span class="fc">Unplanned overtime<small>hours at 2× rate</small></span><span class="fa">+</span>
+        <span class="fc">No benchmark<small>best plant unknown</small></span><span class="fa">=</span>
+        <span class="fc hot">More people and premium hours than the plan needs<small>sized in the diagnostic</small></span>
       </div>
     </div>`},{id:`pc5`,theme:`dark`,title:`Value tree`,html:`
     <div class="slidebody">
-      <span class="eyebrow rise">Where the 11,000 comes from · illustrative split, confirmed in the diagnostic</span>
-      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:40ch;">How 36,000 becomes 25,000: <span style="color:var(--yellow)">the saving from each fix.</span></h2>
-      <div class="ajmix rise" style="animation-delay:.2s;margin-top:14px;max-width:1040px;">
-        <div class="ajrow"><span class="lb">Today's deployment</span><span class="ajbar"><i style="--w:100%;--bc:#8A93B8;--d:.3s"></i></span><span class="pc">36,000</span></div>
-        <div class="ajrow"><span class="lb">− Master data clean-up</span><span class="ajbar"><i style="--w:93%;--bc:#39D2E8;--d:.45s"></i></span><span class="pc">−2,500</span></div>
-        <div class="ajrow"><span class="lb">− Forecast instead of habit</span><span class="ajbar"><i style="--w:82%;--bc:#3BE8B0;--d:.6s"></i></span><span class="pc">−4,000</span></div>
-        <div class="ajrow"><span class="lb">− Auto-scheduling &amp; gate control</span><span class="ajbar"><i style="--w:74%;--bc:#8B7CFF;--d:.75s"></i></span><span class="pc">−3,000</span></div>
-        <div class="ajrow"><span class="lb">− Benchmark to best contractor</span><span class="ajbar"><i style="--w:69%;--bc:#FF9518;--d:.9s"></i></span><span class="pc">−1,500</span></div>
-        <div class="ajrow"><span class="lb">Target deployment</span><span class="ajbar"><i style="--w:69%;--bc:#FFC401;--d:1.05s"></i></span><span class="pc">25,000</span></div>
+      <span class="eyebrow rise">How the target is reached · each lever, what it removes, and the evidence we have</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:44ch;">Five levers between 36,000 and the client's 25,000. <span style="color:var(--yellow)">The diagnostic sizes each one.</span></h2>
+      <div class="compmap" style="grid-template-columns:repeat(5,1fr);margin-top:14px;">
+        <div class="compcell" style="--cc:#39D2E8;--d:.2s"><div class="act">Lever 1</div><h4>Clean master data</h4><p>Removes duplicate, ghost and unmapped workers, and workers on the wrong rate.</p><span class="who ok">Reliance: −90% payroll leakage</span></div>
+        <div class="compcell" style="--cc:#3BE8B0;--d:.28s"><div class="act">Lever 2</div><h4>Demand forecast</h4><p>Removes the buffer that comes from copying yesterday's number instead of reading the plan.</p><span class="who">Built and measured in the pilot</span></div>
+        <div class="compcell" style="--cc:#8B7CFF;--d:.36s"><div class="act">Lever 3</div><h4>Auto-roster and gate</h4><p>Removes contractor padding and billed-not-present. Nobody enters above the roster.</p><span class="who ok">Zepto: planned vs actual at 967 sites</span></div>
+        <div class="compcell" style="--cc:#FF9518;--d:.44s"><div class="act">Lever 4</div><h4>Overtime control</h4><p>Removes unplanned hours paid at the statutory 2× rate. Pre-approved, capped, registered.</p><span class="who ok">Platform standard · Factories Act caps</span></div>
+        <div class="compcell" style="--cc:#FFC401;--d:.52s"><div class="act">Lever 5</div><h4>Benchmarking</h4><p>Removes the gap between the best-run plant or contractor and the rest, on one definition.</p><span class="who ok">Reliance: 3,000 vendors, one rule engine</span></div>
       </div>
-      <div class="modelrow rise" style="animation-delay:.5s;margin-top:16px;">
-        <div class="mstat"><div class="n">11,000 × ₹/day</div><div class="l">Deployment saving · client's worker-day cost is the input</div></div>
-        <div class="mstat"><div class="n">60–70%</div><div class="l">Time-office queries and reports handled by the system</div></div>
+      <div class="modelrow rise" style="animation-delay:.6s;margin-top:16px;">
+        <div class="mstat"><div class="n">36K → 25K</div><div class="l">The client's target · we size the path, we do not set the number</div></div>
+        <div class="mstat"><div class="n">Wk 0–6</div><div class="l">Diagnostic puts a figure against each lever, by plant and area</div></div>
         <div class="mstat"><div class="n">−90%</div><div class="l">Payroll leakage · measured at Reliance</div></div>
         <div class="mstat"><div class="n">−80%</div><div class="l">Vendor non-compliance risk · measured at Reliance</div></div>
       </div>
@@ -3914,7 +3915,7 @@ Error generating stack: `+e.message+`
         <div class="ajrow"><span class="lb">Material handling</span><span class="ajbar"><i style="--w:61%;--bc:#FF9518;--d:.65s"></i></span><span class="pc">640 req · 1,050 dep</span></div>
         <div class="ajrow"><span class="lb">Housekeeping and utilities</span><span class="ajbar"><i style="--w:56%;--bc:#FF7A6B;--d:.8s"></i></span><span class="pc">390 req · 700 dep</span></div>
       </div>
-      <div class="probfoot rise" style="animation-delay:.5s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">Bar = required as a share of deployed. <b>The short bars are the 30%.</b> The roster agent (AI Zara) chases confirmations and re-plans shortfalls before the shift starts.</div>
+      <div class="probfoot rise" style="animation-delay:.5s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">Bar = required as a share of deployed. <b>The gap between the bars is where deployment can fall.</b> The roster agent (AI Zara) chases confirmations and re-plans shortfalls before the shift starts.</div>
     </div>`},{id:`pc9`,theme:`light`,title:`Lever 3 · auto-scheduling`,html:`
     <div class="slidebody split">
       <div>
@@ -3925,6 +3926,7 @@ Error generating stack: `+e.message+`
           ${b(w.shield,`Hard caps`,`Work-order strength and CLRA licensed strength cap every roster. The 51st worker on a 50-worker licence is refused, not reconciled later.`,.3)}
           ${b(w.lock,`The gate enforces the roster`,`A pass works only for a rostered worker with induction, verification and EC cover in place. This is the BPCL gate-pass logic, applied to a plan.`,.38)}
           ${b(w.eye,`Planned vs actual, live`,`Plant leadership sees required, rostered and inside-the-gate per area, per shift, as it happens.`,.46)}
+          ${b(w.clock,`Overtime inside the roster`,`Extra hours need approval before the shift, sit under the Factories Act cap, and are paid at the statutory multiple. Unplanned overtime is a cost line, not a habit.`,.54)}
         </div>
       </div>
       <div class="rise" style="animation-delay:.35s">
@@ -3961,7 +3963,7 @@ Error generating stack: `+e.message+`
     </div>`},{id:`pc11`,theme:`light`,title:`Use case 2 · time office`,html:`
     <div class="slidebody">
       <span class="eyebrow rise">Use case 2 · time-office automation</span>
-      <h2 class="rise" style="animation-delay:.08s;max-width:44ch;">Time office: what 155 people do today, <span style="color:var(--navy)">and how the system takes over 60 to 70% of it.</span></h2>
+      <h2 class="rise" style="animation-delay:.08s;max-width:44ch;">Time office: what 155 people do today, <span style="color:var(--navy)">and which of it the system can take over.</span></h2>
       <div class="twopane">
         <div class="tp emp rise" style="animation-delay:.2s">
           <span class="panetag e"><i></i>Today · manual</span>
@@ -3993,7 +3995,7 @@ Error generating stack: `+e.message+`
               </div>
             </div>
           </div>
-          <div class="mockcap"><b>60–70% of the load</b> handled by the system · the rest is exception handling</div>
+          <div class="mockcap"><b>Routine queries, corrections and reports</b> move to the system · people keep the exceptions · the activity study sizes the share</div>
         </div>
       </div>
     </div>`},{id:`pc12`,theme:`dark`,title:`Wage Board and IR`,html:`
@@ -4128,11 +4130,12 @@ Error generating stack: `+e.message+`
     </div>`},{id:`pc18`,theme:`dark`,title:`Business case and risks`,html:`
     <div class="slidebody">
       <span class="eyebrow rise">Business case shape, and the risks we would raise ourselves</span>
-      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:44ch;">The business case, <span style="color:var(--yellow)">and the four risks we would raise ourselves.</span></h2>
-      <div class="aival" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
-        <div class="vt rise" style="--vc:#FFC401;animation-delay:.2s"><div class="n">11,000 <small>× ₹/day × 300</small></div><div class="w">Deployment run-rate saving</div><p>Blended cost per contract worker-day is the client's input. At ₹700/day, for illustration, about ₹230 crore a year.</p></div>
-        <div class="vt rise" style="--vc:#39D2E8;animation-delay:.28s"><div class="n">~100 <small>FTE</small></div><div class="w">Time-office capacity redeployed</div><p>Counted as work the plant lacks today (vendor audit, safety observation), not as salary removed.</p></div>
-        <div class="vt rise" style="--vc:#3BE8B0;animation-delay:.36s"><div class="n">−90% <small>leakage</small></div><div class="w">Payroll and billing leakage</div><p>Billed-not-present and unverified overtime, at the rates measured at Reliance, sized on the client's vendor spend.</p></div>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:44ch;">What the business case is built from, <span style="color:var(--yellow)">and the four risks we would raise ourselves.</span></h2>
+      <div class="aival" style="grid-template-columns:repeat(4,1fr);margin-top:14px;">
+        <div class="vt rise" style="--vc:#FFC401;animation-delay:.2s"><div class="n">Worker-days <small>× ₹/day</small></div><div class="w">Deployment saving</div><p>Worker-days removed, at the client's blended cost per day. The diagnostic sets the number; the client's 30% target is the upper case.</p></div>
+        <div class="vt rise" style="--vc:#FF9518;animation-delay:.28s"><div class="n">OT hours <small>× 2× rate</small></div><div class="w">Overtime premium</div><p>Unplanned hours above the roster, paid at the statutory multiple. Sized on the client's current overtime bill.</p></div>
+        <div class="vt rise" style="--vc:#39D2E8;animation-delay:.36s"><div class="n">FTE <small>redeployed</small></div><div class="w">Time-office capacity</div><p>Counted as work the plant lacks today (vendor audit, safety observation), not as salary removed. The activity study sizes it.</p></div>
+        <div class="vt rise" style="--vc:#3BE8B0;animation-delay:.44s"><div class="n">−90% <small>leakage</small></div><div class="w">Billing leakage</div><p>Billed-not-present and unverified overtime, at the rate measured at Reliance, applied to the client's vendor spend.</p></div>
       </div>
       <div class="funmock rise" style="animation-delay:.5s;max-width:none;margin-top:14px;">
         <div class="fm-bar"><i></i><i></i><i></i><span>risk register · opening position</span></div>
@@ -4151,7 +4154,7 @@ Error generating stack: `+e.message+`
       <span class="eyebrow rise">Why BetterPlace as the platform partner, and how we start</span>
       <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:36ch;">Why BetterPlace, and the next step: <span style="color:var(--yellow)">a six-week diagnostic at one plant.</span></h2>
       <div class="ctacards" style="margin-top:20px;">
-        <div class="ctac rise" style="animation-delay:.24s"><div class="num">01</div><h4>Proven at the client's scale</h4><p>A PSU oil major and a 300,000-worker conglomerate run their contract workforces on this platform. Every item in this deck is live somewhere.</p></div>
+        <div class="ctac rise" style="animation-delay:.24s"><div class="num">01</div><h4>Proven at the client's scale</h4><p>A PSU oil major and a 300,000-worker conglomerate run their contract workforces on this platform. Every process in this deck is running for a client today; the forecast and scheduling models are built in the pilot.</p></div>
         <div class="ctac rise" style="animation-delay:.32s"><div class="num">02</div><h4>AI a works committee can accept</h4><p>Agents run on open-source models on our own cloud in India. Worker data stays there. Deterministic where the process must not deviate; logged everywhere. ISO 27001, SOC 2.</p></div>
         <div class="ctac rise" style="animation-delay:.4s"><div class="num">03</div><h4>A clean split of roles</h4><p>PwC owns the business case, IR and programme. BetterPlace owns the platform, data and integrations. One governance forum, joint benefits tracking.</p></div>
       </div>
