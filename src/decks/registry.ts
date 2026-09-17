@@ -19,6 +19,7 @@ import { nkStorySlides } from './nk-story'
 import { nkRichStorySlides } from './nk-rich-story'
 import { saelSlides } from './sael'
 import { pwcClmsSlides } from './pwc-clms'
+import { clmsPillarSlides } from './clms-pillars'
 
 export const decks: DeckDef[] = [
   {
@@ -38,6 +39,11 @@ export const decks: DeckDef[] = [
     id: 'why-betterplace-nikhil', next: 'group', title: 'BetterPlace · The Product-Rich Nikhil Cut', group: 'story',
     tagline: 'The original Ravi story, preserved and refined: designed product screens, worker versus employer value, operating proof and the business underneath.',
     slides: nkRichStorySlides,
+  },
+  {
+    id: 'clms-pillars', next: 'pwc-clms', title: 'CLMS · The Six Capabilities', group: 'story',
+    tagline: 'The campaign deck — onboarding and verification, attendance and rostering, compliance, manpower budget and productivity, worker voice, and payroll and billing reconciliation. One slide per capability, each written to double as a mailer.',
+    slides: clmsPillarSlides,
   },
   {
     id: 'pwc-clms', next: 'mfg-story', title: 'CLMS 2.0 · for PwC', group: 'story',
