@@ -166,8 +166,8 @@ export const clmsSlides: SlideDef[] = [
     id: 'cm5b', theme: 'dark', title: 'Headcount budget and positions',
     html: `
     <div class="slidebody">
-      <span class="eyebrow rise">Between the order and the gate · headcount budget and position management</span>
-      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:44ch;">Every contract position is sanctioned before it is filled. <span style="color:var(--yellow)">Deployed against budget, by site, every day.</span></h2>
+      <span class="eyebrow rise">Headcount budget and position management · illustrative numbers · forecast from the production plan is pilot-built, not a shipped module</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:44ch;">Sanctioned before it is filled. <span style="color:var(--yellow)">Deployed against budget, by site, every day.</span></h2>
       <div class="ajmix rise" style="animation-delay:.2s;margin-top:14px;max-width:1040px;">
         <div class="ajrow"><span class="lb">Plant 1 · housekeeping</span><span class="ajbar"><i style="--w:97%;--bc:#3BE8B0;--d:.3s"></i></span><span class="pc">174 dep · 180 sanctioned</span></div>
         <div class="ajrow"><span class="lb">Plant 1 · material handling</span><span class="ajbar"><i style="--w:100%;--bc:#FF7A6B;--d:.45s"></i></span><span class="pc">263 dep · 240 sanctioned · over</span></div>
@@ -180,7 +180,6 @@ export const clmsSlides: SlideDef[] = [
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.chart}</svg></span><h4>Budget reports by site</h4><p>Deployed against sanctioned per order, per site, per contractor, with cost landing on the right cost centre in finance.</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.warn}</svg></span><h4>Shortfall and overshoot, named</h4><p>Under-deployed lines that risk output and over-deployed lines that cost money, on one screen, filterable by state, city and site.</p></div>
       </div>
-      <div class="pmfoot rise" style="animation-delay:.6s;color:rgba(255,255,255,.55)">Illustrative numbers. A demand forecast from the production plan is built and measured in a pilot, not sold as a shipped module. Source: SOW §5.2, §15; Reliance position and budget reports.</div>
     </div>`,
   },
   {
