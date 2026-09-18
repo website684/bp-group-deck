@@ -22,7 +22,7 @@ export const jllSlides: SlideDef[] = [
       <p class="sub rise" style="animation-delay:.3s">The five things you asked about, and the platform underneath them: how a housekeeping associate, an MEP technician or a security guard is onboarded, inducted, permitted, signed in, rostered and paid, with the client able to see it live.</p>
       <div class="stats rise" style="animation-delay:.45s;margin-top:22px;">
         <div class="stat"><div class="n">15M+</div><div class="l">Verified frontline worker profiles</div></div>
-        <div class="stat"><div class="n">1,000+</div><div class="l">Enterprises on the platform</div></div>
+        <div class="stat"><div class="n">500+</div><div class="l">Enterprises live on the platform</div></div>
         <div class="stat"><div class="n">300K</div><div class="l">Workers live at Reliance alone</div></div>
         <div class="stat"><div class="n">10 yrs</div><div class="l">Building for people who work on their feet</div></div>
       </div>
@@ -44,7 +44,7 @@ export const jllSlides: SlideDef[] = [
       <div class="cases rise" style="grid-template-columns:repeat(3,1fr);margin-top:14px;animation-delay:.4s">
         <div class="case" style="--pc:#1B2D93"><div class="ch"><span class="cn">Software · goBetter</span></div><ul class="cl"><li>Hire, verify, onboard, attend, pay, upskill</li><li>Contract labour management for principal employers</li></ul></div>
         <div class="case" style="--pc:#1d7a45"><div class="ch"><span class="cn">Services · staffBetter, gigBetter</span></div><ul class="cl"><li>Full-time staffing with employer-of-record compliance</li><li>On-demand gig deployment, billed on outcome</li></ul></div>
-        <div class="case" style="--pc:#FF9518"><div class="ch"><span class="cn">Trust</span></div><ul class="cl"><li>ISO 27001 · SOC 2 · hosted in India · DPDP Act aligned</li><li>Clients include Reliance Retail, Zepto, BPCL, Hindalco, Accenture, Tata, Coca-Cola</li></ul></div>
+        <div class="case" style="--pc:#FF9518"><div class="ch"><span class="cn">Trust</span></div><ul class="cl"><li>ISO 27001 · SOC 2 · hosted on AWS Mumbai · DPDP Act aligned</li><li>Clients include Reliance, Zepto, BPCL, Titan, PhonePe, Amazon, Accenture, Yokohama</li></ul></div>
       </div>
     </div>`,
   },
@@ -453,7 +453,7 @@ export const jllSlides: SlideDef[] = [
             <li><b>Career</b>: education, employment, UAN, references</li>
             <li><b>Financial</b>: bank, credit</li>
             <li><b>Health</b>: medical, fitness</li>
-            <li><b>Legal</b>: criminal, court records, police verification</li>
+            <li><b>Legal</b>: criminal and FIR records, court records, police verification</li>
           </ul>
         </div>
         <div class="case" style="--pc:#FF9518">
@@ -510,7 +510,7 @@ export const jllSlides: SlideDef[] = [
         <div class="case rise" style="--pc:#D0271D;animation-delay:.3s"><div class="ch"><span class="cn">Zepto</span><span class="ct">Quick commerce · 22 cities</span></div><ul class="cl"><li>Geo attendance with AI spoof detection</li><li>Real-time dashboard for the client's ops team</li></ul><div class="cm"><div class="m"><div class="mn">15K</div><div class="ml">workers</div></div><div class="m"><div class="mn">967</div><div class="ml">sites</div></div><div class="m"><div class="mn">40%</div><div class="ml">cost saved</div></div></div></div>
         <div class="case rise" style="--pc:#1B2D93;animation-delay:.38s"><div class="ch"><span class="cn">Reliance Industries</span><span class="ct">Retail · Jio · O2C</span></div><ul class="cl"><li>300K+ workers, 3,000+ vendors, one rule engine</li><li>Sub-vendor capture, bulk onboarding at scale</li></ul><div class="cm"><div class="m"><div class="mn">−90%</div><div class="ml">payroll leakage</div></div><div class="m"><div class="mn">−80%</div><div class="ml">vendor non-compliance</div></div></div></div>
       </div>
-      <div class="probfoot rise" style="animation-delay:.5s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">Also on the platform: <b>Hindalco · Accenture · Tata · Coca-Cola · Sodexo-managed sites</b>. We can walk your team through the BPCL gate and the Zepto dashboard live.</div>
+      <div class="probfoot rise" style="animation-delay:.5s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">Also on the platform: <b>Titan · PhonePe · Amazon · Accenture · Yokohama · Hindalco</b>, and attendance already demonstrated with JLL account teams at client sites. We can walk your team through the BPCL gate and the Zepto dashboard live.</div>
     </div>`,
   },
   {

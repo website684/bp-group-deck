@@ -72,7 +72,7 @@ export const attendanceSlides: SlideDef[] = [
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.card}</svg></span><h4>Payslip in the worker app</h4><p>The same app that marks attendance shows each worker their payslip, holidays and salary by month</p></div>
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.chart}</svg></span><h4>Reports, self-serve</h4><p>Muster Roll, Attendance Log &amp; Overtime — the OT report names who worked it, how long, who approved</p></div>
       </div>
-      <div class="clientline rise" style="animation-delay:.4s;margin-top:14px;">Live dashboards: real-time present/absent by site · exception filter pills: irregularity, no-show, review, weekly-off</div>
+      <div class="clientline rise" style="animation-delay:.4s;margin-top:14px;">Live dashboards: present and absent by site as punches land · exception filters: irregularity, no-show, review, weekly-off · AI agents for rostering, backfilling and shift notifications</div>
     </div>`,
   },
 

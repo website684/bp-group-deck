@@ -161,6 +161,28 @@ export const clmsSlides: SlideDef[] = [
       </div>
     </div>`,
   },
+
+  {
+    id: 'cm5b', theme: 'dark', title: 'Headcount budget and positions',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">Between the order and the gate · headcount budget and position management</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:44ch;">Every contract position is sanctioned before it is filled. <span style="color:var(--yellow)">Deployed against budget, by site, every day.</span></h2>
+      <div class="ajmix rise" style="animation-delay:.2s;margin-top:14px;max-width:1040px;">
+        <div class="ajrow"><span class="lb">Plant 1 · housekeeping</span><span class="ajbar"><i style="--w:97%;--bc:#3BE8B0;--d:.3s"></i></span><span class="pc">174 dep · 180 sanctioned</span></div>
+        <div class="ajrow"><span class="lb">Plant 1 · material handling</span><span class="ajbar"><i style="--w:100%;--bc:#FF7A6B;--d:.45s"></i></span><span class="pc">263 dep · 240 sanctioned · over</span></div>
+        <div class="ajrow"><span class="lb">Plant 2 · maintenance</span><span class="ajbar"><i style="--w:71%;--bc:#39D2E8;--d:.6s"></i></span><span class="pc">85 dep · 120 sanctioned</span></div>
+        <div class="ajrow"><span class="lb">Plant 2 · security</span><span class="ajbar"><i style="--w:94%;--bc:#3BE8B0;--d:.75s"></i></span><span class="pc">47 dep · 50 sanctioned</span></div>
+      </div>
+      <div class="capgrid rise" style="animation-delay:.45s;grid-template-columns:repeat(4,1fr);margin-top:14px;">
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.layers}</svg></span><h4>Position codes as the master</h4><p>Each contract position carries a code, skill grade, cost centre and department. Reliance runs 300,000 workers on position codes and budgets this way.</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.card}</svg></span><h4>Sanctioned strength on the order</h4><p>Headcount by skill category sits on the work order. Deployment above it is flagged, or blocked, per your choice.</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.chart}</svg></span><h4>Budget reports by site</h4><p>Deployed against sanctioned per order, per site, per contractor, with cost landing on the right cost centre in finance.</p></div>
+        <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.warn}</svg></span><h4>Shortfall and overshoot, named</h4><p>Under-deployed lines that risk output and over-deployed lines that cost money, on one screen, filterable by state, city and site.</p></div>
+      </div>
+      <div class="pmfoot rise" style="animation-delay:.6s;color:rgba(255,255,255,.55)">Illustrative numbers. A demand forecast from the production plan is built and measured in a pilot, not sold as a shipped module. Source: SOW §5.2, §15; Reliance position and budget reports.</div>
+    </div>`,
+  },
   {
     id: 'cm6', theme: 'light', title: 'CLRA licensed strength',
     html: `
@@ -204,10 +226,10 @@ export const clmsSlides: SlideDef[] = [
           <ul class="cl">
             <li><b>Identity</b>: Aadhaar, PAN, DL, Voter ID, Passport, with face match and liveness</li>
             <li><b>Address</b>: physical, postal, digital</li>
-            <li><b>Career</b>: education, employment, UAN, references</li>
+            <li><b>Career</b>: education, employment, PF/UAN and ESIC history, references</li>
             <li><b>Financial</b>: bank account, credit</li>
             <li><b>Health</b>: medical, fitness, drug tests</li>
-            <li><b>Legal</b>: criminal, court records, police verification</li>
+            <li><b>Legal</b>: criminal and FIR records, court records, police verification</li>
           </ul>
         </div>
         <div class="case" style="--pc:#FF9518">
@@ -427,8 +449,8 @@ export const clmsSlides: SlideDef[] = [
         <div class="featlist">
           ${fi(icons.plug, 'SAP or ERP', 'Vendor, PO and cost-centre masters in; approved invoices out. Done at BPCL. A file interface goes first if your ERP calendar is busy.', 0.22)}
           ${fi(icons.lock, 'Gate and biometric devices', 'Face and fingerprint terminals at the gate, our roster and pass logic behind them. Fifty-plus device makes supported.', 0.3)}
-          ${fi(icons.bot, 'AI agents, with their real status', 'Safety induction and worker support agents: live. Statutory reconciliation and verification agents: Beta. Open-source models on our own cloud in India; worker data stays there.', 0.38)}
-          ${fi(icons.shield, 'Security', 'ISO 27001, SOC 2, hosted in India, DPDP Act 2023 aligned. Role-based access; vendors see only their own workers and orders.', 0.46)}
+          ${fi(icons.bot, 'AI agents, with their real status', 'Rostering, backfilling, notification and calling agents, and the induction and worker-support agents: live. Statutory reconciliation and verification agents: Beta. Open-source models on our own cloud in India; worker data stays there.', 0.38)}
+          ${fi(icons.shield, 'Security', 'ISO 27001, SOC 2, hosted on AWS Mumbai, DPDP Act 2023 aligned. Role-based access; vendors see only their own workers and orders.', 0.46)}
         </div>
       </div>
       <div class="rise" style="animation-delay:.35s">
@@ -460,10 +482,10 @@ export const clmsSlides: SlideDef[] = [
       <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:40ch;">A PSU oil major, a 300,000-worker conglomerate <span style="color:var(--yellow)">and a 967-site quick-commerce network run on this.</span></h2>
       <div class="cases" style="grid-template-columns:repeat(3,1fr);margin-top:16px;">
         <div class="case rise" style="--pc:#FFC401;animation-delay:.22s"><div class="ch"><span class="cn">Bharat Petroleum</span><span class="ct">Energy · PSU</span></div><ul class="cl"><li>Vendors, contracts and work orders from SAP, locked on our side</li><li>Labour licence and EC policy per contract; licence created past 20 workers</li><li>Gate pass issue, renewal and auto-termination on rules</li><li>Visitor management, debarring and delegation workflows</li></ul></div>
-        <div class="case rise" style="--pc:#1B2D93;animation-delay:.3s"><div class="ch"><span class="cn">Reliance Industries</span><span class="ct">Retail · Jio · O2C</span></div><ul class="cl"><li>300K+ workers, 3,000+ vendors, one rule engine</li><li>Position codes and budgets as governing masters</li><li>Sub-vendor capture, bulk onboarding at scale</li></ul><div class="cm"><div class="m"><div class="mn">−90%</div><div class="ml">payroll leakage</div></div><div class="m"><div class="mn">−80%</div><div class="ml">vendor non-compliance</div></div></div></div>
+        <div class="case rise" style="--pc:#1B2D93;animation-delay:.3s"><div class="ch"><span class="cn">Reliance Industries</span><span class="ct">Retail · Jio · O2C</span></div><ul class="cl"><li>Measured outcomes on 300K+ workers and 3,000+ vendors; today 4 lakh+ contract workmen across 4,000+ sites</li><li>Position codes and budgets as governing masters</li><li>Sub-vendor capture, bulk onboarding at scale</li></ul><div class="cm"><div class="m"><div class="mn">−90%</div><div class="ml">payroll leakage</div></div><div class="m"><div class="mn">−80%</div><div class="ml">vendor non-compliance</div></div></div></div>
         <div class="case rise" style="--pc:#D0271D;animation-delay:.38s"><div class="ch"><span class="cn">Zepto</span><span class="ct">Quick commerce · 22 cities</span></div><ul class="cl"><li>Geo attendance with AI spoof detection</li><li>Planned versus actual, live, per site</li></ul><div class="cm"><div class="m"><div class="mn">15K</div><div class="ml">workers</div></div><div class="m"><div class="mn">967</div><div class="ml">sites</div></div><div class="m"><div class="mn">40%</div><div class="ml">cost saved</div></div></div></div>
       </div>
-      <div class="probfoot rise" style="animation-delay:.5s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">Manufacturing peers on the platform: <b>Hindalco · AGI Glaspac · Yokohama</b>. We can walk you through the BPCL and Reliance systems live.</div>
+      <div class="probfoot rise" style="animation-delay:.5s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">Also on the platform: <b>Hindalco · Yokohama · AGI Glaspac · Titan · Amazon · Accenture · JLL</b>. We can walk you through the BPCL and Reliance systems live.</div>
     </div>`,
   },
   {
