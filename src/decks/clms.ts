@@ -168,11 +168,11 @@ export const clmsSlides: SlideDef[] = [
     <div class="slidebody">
       <span class="eyebrow rise">Headcount budget and position management · illustrative numbers · forecast from the production plan is pilot-built, not a shipped module</span>
       <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:44ch;">Sanctioned before it is filled. <span style="color:var(--yellow)">Deployed against budget, by site, every day.</span></h2>
-      <div class="ajmix rise" style="animation-delay:.2s;margin-top:14px;max-width:1040px;">
-        <div class="ajrow"><span class="lb">Plant 1 · housekeeping</span><span class="ajbar"><i style="--w:97%;--bc:#3BE8B0;--d:.3s"></i></span><span class="pc">174 dep · 180 sanctioned</span></div>
-        <div class="ajrow"><span class="lb">Plant 1 · material handling</span><span class="ajbar"><i style="--w:100%;--bc:#FF7A6B;--d:.45s"></i></span><span class="pc">263 dep · 240 sanctioned · over</span></div>
-        <div class="ajrow"><span class="lb">Plant 2 · maintenance</span><span class="ajbar"><i style="--w:71%;--bc:#39D2E8;--d:.6s"></i></span><span class="pc">85 dep · 120 sanctioned</span></div>
-        <div class="ajrow"><span class="lb">Plant 2 · security</span><span class="ajbar"><i style="--w:94%;--bc:#3BE8B0;--d:.75s"></i></span><span class="pc">47 dep · 50 sanctioned</span></div>
+      <div class="ajmix rise" style="animation-delay:.2s;margin-top:10px;max-width:1040px;">
+        <div class="ajrow"><span class="lb">Plant 1 · housekeeping</span><span class="ajbar"><i style="--w:97%;--bc:#3BE8B0;--d:.3s"></i></span><span class="pc">174 / 180</span></div>
+        <div class="ajrow"><span class="lb">Plant 1 · material handling</span><span class="ajbar"><i style="--w:100%;--bc:#FF7A6B;--d:.45s"></i></span><span class="pc">263 / 240 · over</span></div>
+        <div class="ajrow"><span class="lb">Plant 2 · maintenance</span><span class="ajbar"><i style="--w:71%;--bc:#39D2E8;--d:.6s"></i></span><span class="pc">85 / 120</span></div>
+        <div class="ajrow"><span class="lb">Plant 2 · security</span><span class="ajbar"><i style="--w:94%;--bc:#3BE8B0;--d:.75s"></i></span><span class="pc">47 / 50</span></div>
       </div>
       <div class="capgrid rise" style="animation-delay:.45s;grid-template-columns:repeat(4,1fr);margin-top:14px;">
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.layers}</svg></span><h4>Position codes as the master</h4><p>Each contract position carries a code, skill grade, cost centre and department. Reliance runs 300,000 workers on position codes and budgets this way.</p></div>
