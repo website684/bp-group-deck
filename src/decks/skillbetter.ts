@@ -415,7 +415,7 @@ export const skillbetterSlides: SlideDef[] = [
         <div class="ctac rise" style="animation-delay:.32s"><div class="num">02</div><h4>The translation proof</h4><p>Send us any training video or PDF. It comes back in Hindi and one more language within the hour.</p></div>
         <div class="ctac rise" style="animation-delay:.40s"><div class="num">03</div><h4>An AI tutor on your SOPs</h4><p>A chatbot trained on your public website and brochures — ask it anything, in any language.</p></div>
       </div>
-      <div class="clientline" style="color:rgba(255,255,255,.6);margin-top:24px;">Anuj Saxena — Director, Product · anuj.saxena@betterplace.co.in · Onkar Vartak — Sales · onkar.vartak@betterplace.co.in</div>
+      <div class="clientline" style="color:rgba(255,255,255,.6);margin-top:24px;">Anuj Saxena — Director, Product · anuj.saxena@betterplace.co.in</div>
     </div>`,
   },
 ]

@@ -23,7 +23,7 @@ export const attendanceSlides: SlideDef[] = [
     </div>`,
   },
   ...problemSlides('at1b', 'For the ops leader', 'You already suspect the muster is lying to you.', 'And the exceptions are eating your supervisors’ week.', [
-    { pain: 'Buddy punching pays ghosts every month', painDetail: '74% of employers lose to time theft — a colleague swipes for a friend who isn’t on site, and payroll pays reality it never saw.', painStat: '≈2.2% of gross payroll lost · Nucleus Research', fix: 'Face + geo check-in, spoofs queued for review', fixDetail: 'AI face-match with liveness inside a geo-fence; suspect punches land in a "Possible spoofs" approval tab, not in payroll.', fixStat: 'Zepto: 0 spoofs across 967 sites' },
+    { pain: 'Buddy punching pays ghosts every month', painDetail: '74% of employers lose to time theft — a colleague swipes for a friend who isn’t on site, and payroll pays reality it never saw.', painStat: '≈2.2% of gross payroll lost · Nucleus Research', fix: 'Face + geo check-in, spoofs queued for review', fixDetail: 'AI face-match with liveness inside a geo-fence; suspect punches land in a "Possible spoofs" approval tab, not in payroll.', fixStat: 'Zepto: spoof detection live across 967 sites' },
     { pain: 'You learn about no-shows at shift start', painDetail: 'The gap surfaces when the line is already short — then it’s WhatsApp panic and overtime you didn’t budget.', painStat: 'Frontline attrition peaks 23% in festive months', fix: 'Live present/absent by site, roster gaps flagged', fixDetail: 'Real-time dashboards and weekly roster grids show tomorrow’s shortfall today — filled in minutes, not discovered at 9 AM.', fixStat: 'Shortfall fixes: hours → minutes' },
     { pain: 'OT and attendance disputes eat supervisor hours', painDetail: 'Missed punches become arguments; corrections happen in Excel with no trail an auditor will accept.', painStat: 'Manual musters = unauditable corrections', fix: 'Worker self-service with controlled regularisation', fixDetail: 'Workers see hours, earnings and IN/OUT proof on their phone and correct errors through a guided, reasoned, approved flow.', fixStat: 'Every correction logged + approved' },
     { pain: 'Every site runs its own attendance culture', painDetail: 'Thresholds, buffers and holiday rules live in local spreadsheets — policy exists on paper, not in practice.', painStat: 'Multi-site = multi-truth', fix: 'One policy engine across every site and vendor', fixDetail: 'Org-level thresholds, OT caps, edit windows, holiday tables and per-vendor rules — configured once, enforced everywhere.', fixStat: 'Reliance: 3,000+ vendors, one rule engine' },
@@ -34,7 +34,7 @@ export const attendanceSlides: SlideDef[] = [
     html: `
     <div class="slidebody">
       <span class="eyebrow rise">The worker's own phone · latest product design</span>
-      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:28ch;">Workers see their hours, their pay — and fix errors themselves.</h2>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:28ch;">Workers see their hours and their pay, and fix errors themselves.</h2>
       <div class="mediasplit" style="align-items:center;">
         <div>
           <div class="featlist" style="margin-top:10px;">
@@ -73,6 +73,94 @@ export const attendanceSlides: SlideDef[] = [
         <div class="cap"><span class="ci"><svg viewBox="0 0 24 24">${icons.chart}</svg></span><h4>Reports, self-serve</h4><p>Muster Roll, Attendance Log &amp; Overtime — the OT report names who worked it, how long, who approved</p></div>
       </div>
       <div class="clientline rise" style="animation-delay:.4s;margin-top:14px;">Live dashboards: real-time present/absent by site · exception filter pills: irregularity, no-show, review, weekly-off</div>
+    </div>`,
+  },
+
+  {
+    id: 'at-modes', theme: 'light', title: 'Ways to sign in',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">Sign in and sign out · one record, five ways to capture it</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:44ch;">Tablet at the gate, phone in the field, device for high security. <span style="color:var(--navy)">Same record, same rules.</span></h2>
+      <div class="compmap" style="grid-template-columns:repeat(5,1fr);margin-top:14px;">
+        <div class="compcell" style="--cc:#1B2D93;--d:.2s"><div class="act">Tablet · face</div><h4>Face at the entrance</h4><p>One-time face registration. Workers look at a wall-mounted tablet and are in. No card, no fingerprint reader to clean.</p><span class="who ok">Shown to JLL, SILA, Sodexo</span></div>
+        <div class="compcell" style="--cc:#1B2D93;--d:.28s"><div class="act">Mobile · geo</div><h4>Phone inside a fence</h4><p>The goBetter app marks attendance only inside a 50 to 75 metre geo-fence per site. Made for sites with fewer than 50 people.</p><span class="who ok">Live · Zepto 967 sites</span></div>
+        <div class="compcell" style="--cc:#1B2D93;--d:.36s"><div class="act">Device · hybrid</div><h4>Fingerprint plus face</h4><p>Godrej and Mantra terminals for high-security sites. Both factors on the same punch.</p><span class="who ok">Supported hardware</span></div>
+        <div class="compcell" style="--cc:#1d7a45;--d:.44s"><div class="act">Open · multi-site</div><h4>Guards who move</h4><p>Open attendance with login and logout across several sites in a day, no device anchoring. For escort and patrol roles.</p><span class="who ok">Configurable</span></div>
+        <div class="compcell" style="--cc:#1d7a45;--d:.52s"><div class="act">Visitors</div><h4>Same door, same log</h4><p>Visitors and contractors sign in through the same gate flow, so security runs one system and one muster.</p><span class="who ok">Live · BPCL</span></div>
+      </div>
+      <div class="flowstrip rise" style="animation-delay:.6s">
+        <span class="fc">Register face once<small>inside Attend</small></span><span class="fa">→</span>
+        <span class="fc">Punch<small>tablet · phone · device</small></span><span class="fa">→</span>
+        <span class="fc">Rules run<small>fence · shift · threshold</small></span><span class="fa">→</span>
+        <span class="fc hot">Log written<small>with location and photo proof</small></span><span class="fa">→</span>
+        <span class="fc gold">Payroll reads it<small>no re-entry</small></span>
+      </div>
+    </div>`,
+  },
+  {
+    id: 'at-sec', theme: 'dark', title: 'Controls and reliability',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">What security and IT ask about · controls and reliability</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:44ch;">Spoof attempts caught, overrides logged, <span style="color:var(--yellow)">and the punch survives a dead network.</span></h2>
+      <div class="twopane">
+        <div class="tp emp rise" style="animation-delay:.2s">
+          <span class="panetag e" style="background:rgba(255,255,255,.1);color:#fff;"><i></i>Security controls</span>
+          <ul class="cl" style="color:rgba(255,255,255,.78);margin-top:8px;">
+            <li><b style="color:#fff">Liveness detection</b> on every face punch. Suspect punches go to a Possible Spoofs queue, not to payroll</li>
+            <li><b style="color:#fff">High-security single-user mode</b>: one person in frame, one punch, for sensitive sites. It adds queue time, so it needs more devices</li>
+            <li><b style="color:#fff">Maker-checker</b> on manual overrides. Supervisor and manager override rights can be switched off per client</li>
+            <li><b style="color:#fff">Backdating window</b> set by the admin. Nothing edited outside it</li>
+          </ul>
+        </div>
+        <div class="tp wrk rise" style="animation-delay:.32s;background:rgba(255,196,1,.08)">
+          <span class="panetag w"><i></i>Reliability in the field</span>
+          <ul class="cl" style="color:rgba(255,255,255,.78);margin-top:8px;">
+            <li><b style="color:#fff">Offline caching.</b> Devices store punches when the network drops and sync when it returns, within a set retention window</li>
+            <li><b style="color:#fff">SIM fallback.</b> Tablets carry a Vodafone or Jio SIM where site Wi-Fi is not offered</li>
+            <li><b style="color:#fff">Remote device management.</b> Tablets enrolled in MDM, updated and locked from our side</li>
+            <li><b style="color:#fff">Hourly nudges</b> for roles that must confirm presence through the shift</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pmfoot rise" style="animation-delay:.55s;color:rgba(255,255,255,.55)">Plain about two things. Liveness models are tuned per deployment and we test them with your security team before go-live. Location consent for mobile marking is being formalised with a DPDP-compliant notice in the worker's language; raised by IBM and JLL, on our roadmap.</div>
+    </div>`,
+  },
+  {
+    id: 'at-dash', theme: 'light', title: 'Dashboards and payroll sync',
+    html: `
+    <div class="slidebody split">
+      <div>
+        <span class="eyebrow rise">What the client sees · dashboards, reports and the payroll feed</span>
+        <h2 class="rise" style="animation-delay:.08s;">Your own dashboard, live. <span style="color:var(--navy)">Not a report emailed on Monday.</span></h2>
+        <div class="featlist">
+          ${fi(icons.eye, 'Direct access for the client', 'Site heads and client managers log in and see present, absent and late by site and vendor as it happens. Shell and JLL asked for this over emailed reports; it is how we deploy now.', 0.22)}
+          ${fi(icons.users, 'Vendor-wise attendance and utilisation', 'Deployed against the manning norm per vendor and shift, so SLA penalties and incentives rest on data both sides can see.', 0.3)}
+          ${fi(icons.chart, 'Absenteeism patterns', 'Who is absent, on which days, at which sites. Fed into the roster so next week is planned on it.', 0.38)}
+          ${fi(icons.plug, 'Attendance to payroll by API', 'Verified days and hours flow to your payroll or ours. Payable-day logic, including weekly offs and holidays, is configured with you in design, because that is where it goes wrong.', 0.46)}
+        </div>
+      </div>
+      <div class="rise" style="animation-delay:.35s">
+        <div class="panewrap"><span class="panetag e"><i></i>Client dashboard · today</span></div>
+        <div class="funmock">
+          <div class="fm-bar"><i></i><i></i><i></i><span>Attend · client view · 6 sites · 14:10</span></div>
+          <div class="fm-body">
+            <div class="fm-sum">
+              <span class="g">1,240<small>present now</small></span>
+              <span class="y">38<small>late today</small></span>
+              <span class="r">17<small>no-show · roster gap</small></span>
+            </div>
+            <div class="fm-rows">
+              <div class="fm-row" style="--d:.5s"><span><b>Facility A · housekeeping</b> <small>Vendor 1 · 212 of 220 rostered · 96%</small></span><span class="fm-chip g">ON NORM</span></div>
+              <div class="fm-row hl" style="--d:.65s"><span><b>Facility B · technicians</b> <small>Vendor 2 · 41 of 52 rostered · 79% · 4 possible spoofs in review</small></span><span class="fm-chip r">SHORT 11</span></div>
+              <div class="fm-row" style="--d:.8s"><span><b>Facility C · security</b> <small>Vendor 3 · open attendance · 88 of 90 · 2 late</small></span><span class="fm-chip y">98%</span></div>
+              <div class="fm-row" style="--d:.95s"><span><b>Month to date</b> <small>utilisation 94% against norm · OT 3.1% of hours · 0 unapproved OT</small></span><span class="fm-chip g">EXPORT</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mockcap">Illustrative numbers. Present, late and no-show update as punches land; utilisation refreshes on a processing cycle</div>
+      </div>
     </div>`,
   },
   {
@@ -190,7 +278,7 @@ export const attendanceSlides: SlideDef[] = [
       </div>
       <p class="lede rise" style="animation-delay:.4s;margin-top:16px;max-width:92ch;">Approve All / Reject All with expiring-SLA counters: managers clear a day's exceptions in one sitting, and every correction stays on the log.</p>
     </div>
-    ${aiNote('Spoof detection', 'Computer vision on every punch', 'Liveness and face-match models score each check-in; suspect punches route to the Possible Spoofs queue instead of payroll.', 'Zepto: 0 spoofs across 967 sites')}
+    ${aiNote('Spoof detection', 'Computer vision on every punch', 'Liveness and face-match models score each check-in; suspect punches route to the Possible Spoofs queue instead of payroll.', 'Zepto: spoof review live across 967 sites')}
     `,
   },
   {
@@ -224,7 +312,7 @@ export const attendanceSlides: SlideDef[] = [
         <div class="ctac rise" style="animation-delay:.32s"><div class="num">02</div><h4>Side-by-side month</h4><p>Run one payroll cycle on our attendance data next to your current source and count the difference.</p></div>
         <div class="ctac rise" style="animation-delay:.40s"><div class="num">03</div><h4>Scale by site, not by contract</h4><p>Add sites, cities and vendors on the same policy engine — one dashboard for all of it.</p></div>
       </div>
-      <div class="clientline" style="color:rgba(255,255,255,.6);margin-top:24px;">Anuj Saxena — Director, Product · anuj.saxena@betterplace.co.in · Onkar Vartak — Sales · onkar.vartak@betterplace.co.in</div>
+      <div class="clientline" style="color:rgba(255,255,255,.6);margin-top:24px;">Anuj Saxena — Director, Product · anuj.saxena@betterplace.co.in</div>
     </div>`,
   },
 ]

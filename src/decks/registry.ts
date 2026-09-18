@@ -19,6 +19,8 @@ import { nkStorySlides } from './nk-story'
 import { nkRichStorySlides } from './nk-rich-story'
 import { saelSlides } from './sael'
 import { pwcClmsSlides } from './pwc-clms'
+import { clmsSlides } from './clms'
+import { jllSlides } from './jll'
 import { clmsPillarSlides } from './clms-pillars'
 
 export const decks: DeckDef[] = [
@@ -39,6 +41,11 @@ export const decks: DeckDef[] = [
     id: 'why-betterplace-nikhil', next: 'group', title: 'BetterPlace · The Product-Rich Nikhil Cut', group: 'story',
     tagline: 'The original Ravi story, preserved and refined: designed product screens, worker versus employer value, operating proof and the business underneath.',
     slides: nkRichStorySlides,
+  },
+  {
+    id: 'jll', next: 'clms', title: 'JLL · Site Workforce Capabilities', group: 'story',
+    tagline: 'For JLL India Work Dynamics — sign in and sign out, digitised attendance, induction, work order permits and safe work method, on the CLMS and HCM platform. Link-only.',
+    slides: jllSlides,
   },
   {
     id: 'clms-pillars', next: 'pwc-clms', title: 'CLMS · The Six Capabilities', group: 'story',
@@ -86,9 +93,14 @@ export const decks: DeckDef[] = [
     slides: hireOnboardSlides,
   },
   {
-    id: 'verify', next: 'attendance', title: 'verifyBetter · BGV', group: 'product',
+    id: 'verify', next: 'clms', title: 'verifyBetter · BGV', group: 'product',
     tagline: 'India’s first digital frontline BGV — 50K cases/day, <24hr TAT, red/yellow/green portfolio view.',
     slides: verifySlides,
+  },
+  {
+    id: 'clms', next: 'attendance', title: 'goBetter CLMS · Contract Labour', group: 'product',
+    tagline: 'Vendor, work order, licence, worker, induction, gate, attendance, overtime, wages, challans, invoice, registers — one record, in the order it happens on site.',
+    slides: clmsSlides,
   },
   {
     id: 'attendance', next: 'payroll', title: 'Attendance · manageBetter', group: 'product',

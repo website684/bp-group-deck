@@ -63,7 +63,7 @@ export default function Roi({ client, onBack }: Props) {
           <div className="roi-row"><div className="rn">{fmt(training)}</div><div><h4>Training cost, cut</h4><p>60% lower cost per certified worker via AI translation and the ready course library — measured at Reliance across 500K associates.</p></div></div>
           <div className="roi-row"><div className="rn">{fmt(attritionSave)}</div><div><h4>Attrition saving</h4><p>Benefits, upskilling and engagement cut attrition ~15% — every avoided exit cancels a hiring and training cycle.</p></div></div>
           <div className="roi-total"><span>Directional annual saving</span><b>{fmt(total)}</b></div>
-          <a className="btn-primary big" href={`mailto:anuj.saxena@betterplace.co.in,onkar.vartak@betterplace.co.in?subject=${encodeURIComponent(`ROI model${client?.name ? ' — ' + client.name : ''}: ${fmt(total)}/yr`)}&body=${encodeURIComponent(`Our inputs: ${size} workers · ₹${wage} avg wage · ${attrition}% monthly attrition · ₹${trainCost} training cost/hire.\nDirectional saving: ${fmt(total)}/year.\n\nLet's validate this on a call.`)}`}>
+          <a className="btn-primary big" href={`mailto:anuj.saxena@betterplace.co.in?subject=${encodeURIComponent(`ROI model${client?.name ? ' — ' + client.name : ''}: ${fmt(total)}/yr`)}&body=${encodeURIComponent(`Our inputs: ${size} workers · ₹${wage} avg wage · ${attrition}% monthly attrition · ₹${trainCost} training cost/hire.\nDirectional saving: ${fmt(total)}/year.\n\nLet's validate this on a call.`)}`}>
             Send us these numbers → get the detailed model
           </a>
         </div>

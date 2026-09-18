@@ -81,7 +81,7 @@ export const staffbetterSlides: SlideDef[] = [
         <div class="ctac rise" style="animation-delay:.32s"><div class="num">02</div><h4>EoR compliance takeover</h4><p>We become employer of record for your contract workforce — statutory load moves to us, reporting moves to your dashboard.</p></div>
         <div class="ctac rise" style="animation-delay:.40s"><div class="num">03</div><h4>Scale across markets</h4><p>Extend the same contract to Indonesia and Malaysia through MyRobin and Troopers.</p></div>
       </div>
-      <div class="clientline" style="color:rgba(255,255,255,.6);margin-top:24px;">Anuj Saxena — Director, Product · anuj.saxena@betterplace.co.in · Onkar Vartak — Sales · onkar.vartak@betterplace.co.in</div>
+      <div class="clientline" style="color:rgba(255,255,255,.6);margin-top:24px;">Anuj Saxena — Director, Product · anuj.saxena@betterplace.co.in</div>
     </div>`,
   },
 ]

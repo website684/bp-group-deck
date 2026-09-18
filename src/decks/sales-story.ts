@@ -173,7 +173,7 @@ export const salesStorySlides: SlideDef[] = [
         <div class="ctac rise" style="animation-delay:.32s"><div class="num">02</div><h4>Hiring sprint</h4><p>Your next sales intake run through AI-call screening and 10-minute onboarding — TAT and cost benchmarked against today.</p></div>
         <div class="ctac rise" style="animation-delay:.40s"><div class="num">03</div><h4>Incentives live</h4><p>One region's schemes on goBetter Incentives — live numbers in seller pockets before the next festive push.</p></div>
       </div>
-      <div class="clientline" style="color:rgba(255,255,255,.6);margin-top:24px;">Anuj Saxena — Director, Product · anuj.saxena@betterplace.co.in · Onkar Vartak — Sales · onkar.vartak@betterplace.co.in</div>
+      <div class="clientline" style="color:rgba(255,255,255,.6);margin-top:24px;">Anuj Saxena — Director, Product · anuj.saxena@betterplace.co.in</div>
     </div>`,
   },
 ]

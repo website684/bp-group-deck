@@ -77,7 +77,7 @@ export const gobetterSlides: SlideDef[] = [
         <div class="ctac rise" style="animation-delay:.32s"><div class="num">02</div><h4>Prove it in a quarter</h4><p>Live in days, measured against your current numbers — leakage, TAT, completion, disputes.</p></div>
         <div class="ctac rise" style="animation-delay:.40s"><div class="num">03</div><h4>Switch on the next module</h4><p>Same record, same login, no integration project — each addition compounds the last.</p></div>
       </div>
-      <div class="clientline" style="color:rgba(255,255,255,.6);margin-top:24px;">Anuj Saxena — Director, Product · anuj.saxena@betterplace.co.in · Onkar Vartak — Sales · onkar.vartak@betterplace.co.in</div>
+      <div class="clientline" style="color:rgba(255,255,255,.6);margin-top:24px;">Anuj Saxena — Director, Product · anuj.saxena@betterplace.co.in</div>
     </div>`,
   },
 ]

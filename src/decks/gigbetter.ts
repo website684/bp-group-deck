@@ -89,7 +89,7 @@ export const gigbetterSlides: SlideDef[] = [
         <div class="ctac rise" style="animation-delay:.32s"><div class="num">02</div><h4>A standing gig bench</h4><p>A rated pool sized to your seasonal curve — drawn down when you need it, zero cost when you don't.</p></div>
         <div class="ctac rise" style="animation-delay:.40s"><div class="num">03</div><h4>AI data annotation pilot</h4><p>Our newest vertical: trained, verified annotators on outcome billing for your AI/data teams.</p></div>
       </div>
-      <div class="clientline" style="color:rgba(255,255,255,.6);margin-top:24px;">Anuj Saxena — Director, Product · anuj.saxena@betterplace.co.in · Onkar Vartak — Sales · onkar.vartak@betterplace.co.in</div>
+      <div class="clientline" style="color:rgba(255,255,255,.6);margin-top:24px;">Anuj Saxena — Director, Product · anuj.saxena@betterplace.co.in</div>
     </div>`,
   },
 ]

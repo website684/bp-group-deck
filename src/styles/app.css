@@ -1350,3 +1350,19 @@ body { overflow: auto; background: #05081f; }
 .hub .hcs { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1px; fill: rgba(255,255,255,.75); }
 .hub line { stroke: rgba(27,45,147,.35); stroke-width: 2; stroke-dasharray: 6 5; animation: metroflow 1.4s linear infinite; }
 .hub .spoke { fill: #fff; stroke: rgba(27,45,147,.25); stroke-width: 1.5; }
+
+/* Ledger on light slides + print stability */
+.slide.light .lrow { background: #fff; border-color: rgba(11,18,55,.12); box-shadow: 0 8px 24px rgba(11,18,55,.06); }
+.slide.light .lrow .lw h4 { color: var(--ink); }
+.slide.light .lrow .lw p { color: #5b6486; }
+.slide.light .lrow .lp { color: var(--navy); font-weight: 700; }
+.slide.light .lrow .ln { color: var(--navy); }
+@media print {
+  .player .lrow { grid-template-columns: 200px 1fr 220px !important; gap: 18px !important; }
+  .player .lrow .lp { text-align: right !important; }
+}
+@media print {
+  .player .ledger { gap: 7px !important; margin-top: 8px !important; }
+  .player .lrow { padding: 8px 18px !important; }
+  .player .lrow .lw p { font-size: .8rem !important; line-height: 1.35 !important; }
+}

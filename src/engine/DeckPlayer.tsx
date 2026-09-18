@@ -252,7 +252,7 @@ export default function DeckPlayer({ deck, client, initialSlide = 0, shareMode =
       {shareMode && (
         <a
           className="demo-cta"
-          href={`mailto:anuj.saxena@betterplace.co.in,onkar.vartak@betterplace.co.in?subject=${encodeURIComponent(`Demo request${client?.name ? ' — ' + client.name : ''} (via BetterPlace deck)`)}&body=${encodeURIComponent('Hi — we went through the BetterPlace deck and would like a 30-minute demo. Areas of interest: ')}`}
+          href={`mailto:anuj.saxena@betterplace.co.in?subject=${encodeURIComponent(`Demo request${client?.name ? ' — ' + client.name : ''} (via BetterPlace deck)`)}&body=${encodeURIComponent('Hi — we went through the BetterPlace deck and would like a 30-minute demo. Areas of interest: ')}`}
         >
           Book a 30-min demo →
         </a>
