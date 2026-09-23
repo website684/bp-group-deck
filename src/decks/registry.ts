@@ -21,6 +21,7 @@ import { saelSlides } from './sael'
 import { pwcClmsSlides } from './pwc-clms'
 import { clmsSlides } from './clms'
 import { jllSlides } from './jll'
+import { jllCapgeminiSlides } from './jll-capgemini'
 import { clmsPillarSlides } from './clms-pillars'
 
 export const decks: DeckDef[] = [
@@ -41,6 +42,11 @@ export const decks: DeckDef[] = [
     id: 'why-betterplace-nikhil', next: 'group', title: 'BetterPlace · The Product-Rich Nikhil Cut', group: 'story',
     tagline: 'The original Ravi story, preserved and refined: designed product screens, worker versus employer value, operating proof and the business underneath.',
     slides: nkRichStorySlides,
+  },
+  {
+    id: 'jll-capgemini', next: 'jll', title: 'JLL × Capgemini · Attendance Response', group: 'story',
+    tagline: 'Response to the six requirement items for CG and WNS sites: workflow, sample reports, network backup, timeline to 15 Nov with UAT, risk assessment, data storage, hardware, liability. Link-only.',
+    slides: jllCapgeminiSlides,
   },
   {
     id: 'jll', next: 'clms', title: 'JLL · Site Workforce Capabilities', group: 'story',
