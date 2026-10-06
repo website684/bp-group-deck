@@ -21,9 +21,9 @@ export const rilContentSlides: SlideDef[] = [
     <div class="mdcover">
       <span class="mdkicker rise" style="animation-delay:.05s">For Reliance Industries · O2C · skilling content and commercials</span>
       <h1 class="rise" style="animation-delay:.15s;font-size:clamp(30px,3.6vw,54px);">Every trade, every skill, every language. <span style="color:var(--yellow)">Content built for the people who run your plants.</span></h1>
-      <p class="sub rise" style="animation-delay:.3s">Two hundred and fifty trades, five skills each, across the O2C sites. This deck shows how we produce that content at the quality each skill needs, from AI-generated animation to camera crews inside your facilities, what each minute costs, and the software it runs on, which is already on a Reliance purchase order.</p>
+      <p class="sub rise" style="animation-delay:.3s">One hundred and seventy trades with four skills each, plus seventy-odd soft skills, across the O2C sites: about 755 skills. This deck shows how we produce that content at the quality each skill needs, from AI-generated animation to camera crews inside your facilities, what each minute costs, and the software it runs on, which is already on a Reliance purchase order.</p>
       <div class="stats rise" style="animation-delay:.45s;margin-top:22px;">
-        <div class="stat"><div class="n">250</div><div class="l">Trades in scope · 5 skills each</div></div>
+        <div class="stat"><div class="n">755</div><div class="l">Skills · 170 trades × 4, plus 75 soft skills</div></div>
         <div class="stat"><div class="n">₹500</div><div class="l">Per minute, from · AI 2D animation</div></div>
         <div class="stat"><div class="n">35+</div><div class="l">Languages · 12+ with human voice</div></div>
         <div class="stat"><div class="n">₹5</div><div class="l">Per user per month · PO in place</div></div>
@@ -35,19 +35,19 @@ export const rilContentSlides: SlideDef[] = [
     id: 'rc2', theme: 'light', title: 'The scale of the need',
     html: `
     <div class="slidebody">
-      <span class="eyebrow rise">What 250 trades actually means in content</span>
-      <h2 class="rise" style="animation-delay:.08s;max-width:46ch;">About 1,250 skills to teach. <span style="color:var(--navy)">Each needs a short module a shift worker will finish.</span></h2>
+      <span class="eyebrow rise">What 170 trades actually means in content</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:46ch;">About 755 skills, ten minutes on average. <span style="color:var(--navy)">Each built as a micro-course of short clips, not one long video.</span></h2>
       <div class="flowstrip rise" style="animation-delay:.2s;margin-top:14px;">
-        <span class="fc">250 trades<small>welder · fitter · rigger · operator…</small></span><span class="fa">×</span>
-        <span class="fc">5 skills each<small>procedure · safety · equipment · quality · conduct</small></span><span class="fa">=</span>
-        <span class="fc hot">~1,250 skill modules<small>one video + one assessment each</small></span><span class="fa">×</span>
-        <span class="fc">~3 minutes<small>the length a worker finishes on a phone</small></span><span class="fa">=</span>
-        <span class="fc gold">~3,750 minutes<small>of finished content, in the first language</small></span>
+        <span class="fc">170 × 4<small>680 technical skills</small></span><span class="fa">+</span>
+        <span class="fc">~75 soft skills<small>shared track</small></span><span class="fa">=</span>
+        <span class="fc hot">~755 skills<small>5 clips + a check each</small></span><span class="fa">×</span>
+        <span class="fc">× 10 min<small>technical 8–12 · soft 4–6</small></span><span class="fa">=</span>
+        <span class="fc gold">~7,550 minutes<small>finished, base language</small></span>
       </div>
       <div class="cases rise" style="grid-template-columns:repeat(3,1fr);margin-top:16px;animation-delay:.4s">
-        <div class="case" style="--pc:#D0271D"><div class="ch"><span class="cn">Why it cannot all be shot on camera</span></div><ul class="cl"><li>3,750 minutes of camera production is years of shoot days across sites</li><li>A procedure changes; a shot video is re-shot, an animation is re-rendered</li><li>Many skills are the same across sites; the difference is the language</li></ul></div>
+        <div class="case" style="--pc:#D0271D"><div class="ch"><span class="cn">Why it cannot all be shot on camera</span></div><ul class="cl"><li>7,550 minutes of camera production is years of shoot days across sites</li><li>A procedure changes; a shot video is re-shot, an animation is re-rendered</li><li>Many skills are the same across sites; the difference is the language</li></ul></div>
         <div class="case" style="--pc:#1B2D93"><div class="ch"><span class="cn">Why it cannot all be AI either</span></div><ul class="cl"><li>Confined-space entry, hot work and lifting need the real equipment, the real site, a real person</li><li>Certification content for audit needs SCORM packaging and tracked interaction</li><li>Your SMEs have to approve every frame that goes to a worker</li></ul></div>
-        <div class="case" style="--pc:#1d7a45"><div class="ch"><span class="cn">So the answer is a mix</span></div><ul class="cl"><li>AI animation for the volume: fast, cheap to change, re-rendered per language</li><li>Camera crews at your facilities for the skills where realism matters</li><li>SCORM for what the auditor will ask about</li><li>One pipeline, your SMEs in the loop, one platform to deliver it</li></ul></div>
+        <div class="case" style="--pc:#1d7a45"><div class="ch"><span class="cn">So the answer is a mix</span></div><ul class="cl"><li>Each skill as 3 or 4 clips, so one SOP change re-renders one clip, not a ten-minute film</li><li>AI animation for the volume: fast, cheap to change, re-rendered per language</li><li>Camera crews at your facilities for the skills where realism matters</li><li>SCORM for what the auditor will ask about</li><li>One pipeline, your SMEs in the loop, one platform to deliver it</li></ul></div>
       </div>
     </div>`,
   },
@@ -96,6 +96,46 @@ export const rilContentSlides: SlideDef[] = [
     </div>`,
   },
   {
+    id: 'rc4b', theme: 'light', title: 'Anatomy of a skill module',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">Curriculum design · what one skill looks like · the same template for all 755, so quality does not depend on who made it</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:50ch;">Ten minutes is five clips and a check, <span style="color:var(--navy)">each clip doing one job.</span></h2>
+      <div class="flowstrip rise" style="animation-delay:.2s;margin-top:12px;">
+        <span class="fc">1 · Why it matters<small>45 s · a real consequence · 2D simple</small></span><span class="fa">→</span>
+        <span class="fc">2 · The hazard or the concept<small>2 min · what can go wrong, what good looks like · 3D where spatial</small></span><span class="fa">→</span>
+        <span class="fc hot">3 · The procedure, step by step<small>3–4 min · the core clip · 2D advanced, or camera on site</small></span><span class="fa">→</span>
+        <span class="fc">4 · Common mistakes<small>1–2 min · the three errors supervisors see most · 2D simple</small></span><span class="fa">→</span>
+        <span class="fc">5 · Recap card<small>60 s · the steps on one screen, saved to the phone</small></span><span class="fa">→</span>
+        <span class="fc gold">Check<small>8–10 questions · pass mark set by the SME · supervisor sign-off for hands-on skills</small></span>
+      </div>
+      <div class="cases rise" style="grid-template-columns:repeat(3,1fr);margin-top:14px;animation-delay:.4s">
+        <div class="case" style="--pc:#1B2D93"><div class="ch"><span class="cn">Why clips, not a film</span></div><ul class="cl"><li>Attention on a phone holds for 2 to 3 minutes; completion collapses on long single videos</li><li>Each clip has one learning objective, so the quiz can test it and the data can show where a trade is weak</li><li>One clip a day fits a shift; the module completes in a working week</li><li>An SOP change re-renders one clip</li></ul></div>
+        <div class="case" style="--pc:#1d7a45"><div class="ch"><span class="cn">Format follows the objective</span></div><ul class="cl"><li><b>Know</b> it: 2D simple. <b>See</b> the hazard in space: 3D. <b>Do</b> the steps on equipment: 2D advanced. <b>Copy</b> a craftsman on your site: camera. <b>Certify</b> it: SCORM interaction</li><li>So one skill mixes formats, and the minute shares on slide 13 are counted clip by clip, not skill by skill</li></ul></div>
+        <div class="case" style="--pc:#FF9518"><div class="ch"><span class="cn">Written for the worker</span></div><ul class="cl"><li>Audio-first; the picture carries the meaning, text stays minimal</li><li>Scripts at a grade-6 reading level in the worker's language; plant terms kept in the English the floor uses</li><li>Your own uniform, your own unit, your own permit form on screen</li><li>Soft skills use the same template with a scenario in place of a procedure</li></ul></div>
+      </div>
+    </div>`,
+  },
+  {
+    id: 'rc4c', theme: 'dark', title: 'Curriculum architecture',
+    html: `
+    <div class="slidebody">
+      <span class="eyebrow rise">Curriculum design · how 755 skills become a path a worker can follow, and a certification record you can audit</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:50ch;">Every trade gets a path: induction, core, advanced, refresh. <span style="color:var(--yellow)">Soft skills run as one shared track underneath.</span></h2>
+      <div class="rail rise" style="animation-delay:.2s;grid-template-columns:repeat(4,1fr);margin-top:14px;">
+        <div class="rstage"><div class="rn">Level 0</div><h4>Induction · all trades</h4><ul><li>Site safety, permits, PPE, emergency: the shared skills every trade needs</li><li>Mandatory before deployment; the pass can gate the gate</li><li>Built once, reused by all 170 trades</li></ul></div>
+        <div class="rstage"><div class="rn">Level 1</div><h4>Core · 4 skills per trade</h4><ul><li>The four skills the trade is hired for, in the order the job happens</li><li>Pre-assessment lets an experienced worker test out of a skill he already has</li><li>Practical sign-off by a supervisor for hands-on skills, recorded in the app</li></ul></div>
+        <div class="rstage"><div class="rn">Level 2</div><h4>Advanced and cross-skill</h4><ul><li>Skills from adjacent trades for multi-skilling and shutdown crews</li><li>Supervisor and permit-issuer tracks</li><li>Assigned by rule when Level 1 is complete</li></ul></div>
+        <div class="rstage"><div class="rn">Refresh</div><h4>Spaced, not annual by habit</h4><ul><li>Safety-critical skills: recertify every 12 months with a short re-test</li><li>Other skills: a two-minute recap and three questions at 90 days</li><li>A failed check reassigns only the clip that was missed</li></ul></div>
+      </div>
+      <div class="cases rise" style="grid-template-columns:repeat(3,1fr);margin-top:14px;animation-delay:.45s">
+        <div class="case" style="--pc:#FFC401"><div class="ch"><span class="cn">Soft skills · the shared track</span></div><ul class="cl"><li>75 skills in scenario form: speaking up, stop-work authority, handover, reporting, working with contractors, supervising</li><li>Assigned by role and level across every trade, so they are built once</li></ul></div>
+        <div class="case" style="--pc:#39D2E8"><div class="ch"><span class="cn">A skills taxonomy first</span></div><ul class="cl"><li>Trade → skill → clip, with one ID per skill, mapped to your job codes</li><li>Shared skills identified before production; a fifth of the 680 technical skills usually repeat across trades</li></ul></div>
+        <div class="case" style="--pc:#3BE8B0"><div class="ch"><span class="cn">What the record shows</span></div><ul class="cl"><li>Per worker: skills certified, score, date, expiry, practical sign-off, language used</li><li>Per trade and site: coverage, weak clips, time to certify</li><li>Exportable for audit and for your HRMS</li></ul></div>
+      </div>
+    </div>`,
+  },
+  {
     id: 'rc5', theme: 'light', title: 'Five formats',
     html: `
     <div class="slidebody">
@@ -108,7 +148,7 @@ export const rilContentSlides: SlideDef[] = [
         <div class="compcell" style="--cc:#FFC401;--d:.44s"><div class="act">Human · ₹4,500 / min</div><h4>Camera-shot at your facilities</h4><p>Our crew films the real equipment, the real site and your own expert, edited with graphics and 3D inserts.</p><span class="who ok">e.g. hot-work permit</span></div>
         <div class="compcell" style="--cc:#FFC401;--d:.52s"><div class="act">Human · ₹5,500 / min</div><h4>SCORM packages</h4><p>Interactive modules built on Storyline: branching, drag-and-drop, tracked scoring. For certification and audit.</p><span class="who ok">e.g. LOTO certification</span></div>
       </div>
-      <div class="probfoot rise" style="animation-delay:.6s">Every format includes the custom script, AI voice-over, an eight-to-ten question assessment and set-up on the platform. Human voice-over, translation and external SMEs are priced separately on slide 12. Sample videos for each format follow.</div>
+      <div class="probfoot rise" style="animation-delay:.6s">Every format includes the custom script, AI voice-over, an eight-to-ten question assessment and set-up on the platform. Human voice-over, translation and external SMEs are priced separately on slide 14. One skill usually mixes formats clip by clip, as slide 5 shows. Sample videos for each format follow.</div>
     </div>`,
   },
   {
@@ -117,7 +157,7 @@ export const rilContentSlides: SlideDef[] = [
     <div class="slidebody split">
       <div>
         <span class="eyebrow rise">Format 1 · AI-generated · 2D simple animation · ₹500 per minute</span>
-        <h2 class="rise" style="animation-delay:.08s;color:#fff;">The workhorse. <span style="color:var(--yellow)">Most of the 1,250 skills can be taught this way.</span></h2>
+        <h2 class="rise" style="animation-delay:.08s;color:#fff;">The workhorse. <span style="color:var(--yellow)">Most of the 755 skills start and end in this format.</span></h2>
         <div class="featlist">
           ${fi(icons.play, 'What it looks like', 'Animated characters in your uniform, icons, motion text and a clear voice-over. A scene changes every few seconds so attention holds on a phone.', 0.22)}
           ${fi(icons.check, 'Best for', 'Awareness and conduct, PPE and housekeeping, basic sequences, do-and-don’t lists, policy and reporting procedures.', 0.3)}
@@ -227,17 +267,17 @@ export const rilContentSlides: SlideDef[] = [
     id: 'rc11', theme: 'light', title: 'Which format for which skill',
     html: `
     <div class="slidebody">
-      <span class="eyebrow rise">Matching format to skill · how we would classify the 1,250 with your L&amp;D and safety teams</span>
-      <h2 class="rise" style="animation-delay:.08s;max-width:48ch;">The format follows the risk and the realism the skill needs. <span style="color:var(--navy)">Most skills sit in the cheapest two rows.</span></h2>
+      <span class="eyebrow rise">Matching format to skill · how we would classify the 755 with your L&amp;D and safety teams</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:48ch;">The format follows what the clip has to teach. <span style="color:var(--navy)">Most minutes sit in the two cheapest rows.</span></h2>
       <table class="rtable" style="margin-top:12px;">
-        <tr><th style="width:22%">Skill type</th><th>Examples across O2C trades</th><th style="width:18%">Format</th><th style="width:11%">Per minute</th><th style="width:14%">Illustrative share</th></tr>
-        <tr><td style="white-space:normal"><b>Awareness and conduct</b></td><td style="white-space:normal">PPE discipline, housekeeping and 5S, reporting a near miss, behaviour in hazardous areas, hygiene, communication on shift</td><td>AI · 2D simple</td><td>₹500</td><td class="ok">~45%</td></tr>
-        <tr><td style="white-space:normal"><b>Equipment and procedure</b></td><td style="white-space:normal">Pump and compressor start-up, valve line-ups, exchanger cleaning, instrument checks, welding parameters, painting prep</td><td>AI · 2D advanced</td><td>₹900</td><td class="ok">~30%</td></tr>
-        <tr><td style="white-space:normal"><b>Safety-critical and spatial</b></td><td style="white-space:normal">Confined-space entry, work at height, gas release and evacuation, lifting plans, column and vessel internals</td><td>AI · 3D</td><td>₹2,100</td><td class="warn">~12%</td></tr>
-        <tr><td style="white-space:normal"><b>Site-specific, person-led</b></td><td style="white-space:normal">Permit-to-work on a named unit, rigging signals with your crew, SOP walk-throughs where your expert should be on screen</td><td>Camera-shot</td><td>₹4,500</td><td class="warn">~7%</td></tr>
-        <tr><td style="white-space:normal"><b>Certification for audit</b></td><td style="white-space:normal">Permit-to-work certification, LOTO, fire-team and emergency roles, anything a regulator or auditor will ask evidence for</td><td>SCORM</td><td>₹5,500</td><td class="warn">~6%</td></tr>
+        <tr><th style="width:22%">Learning objective</th><th>Examples across O2C trades · counted clip by clip</th><th style="width:18%">Format</th><th style="width:11%">Per minute</th><th style="width:14%">Share of minutes</th></tr>
+        <tr><td style="white-space:normal"><b>Know it</b> · awareness, conduct, hooks and recaps</td><td style="white-space:normal">All soft-skill scenarios, every module’s why-it-matters, mistakes and recap clips, PPE, housekeeping, near-miss reporting</td><td>AI · 2D simple</td><td>₹500</td><td class="ok">46% · 3,470 min</td></tr>
+        <tr><td style="white-space:normal"><b>Do it</b> · equipment procedure</td><td style="white-space:normal">Pump and compressor start-up, valve line-ups, exchanger cleaning, instrument checks, welding parameters, painting prep</td><td>AI · 2D advanced</td><td>₹900</td><td class="ok">32% · 2,380 min</td></tr>
+        <tr><td style="white-space:normal"><b>See it</b> · spatial, safety-critical</td><td style="white-space:normal">Confined-space entry, work at height, gas release and evacuation, lifting plans, column and vessel internals</td><td>AI · 3D</td><td>₹2,100</td><td class="warn">11% · 816 min</td></tr>
+        <tr><td style="white-space:normal"><b>Copy it</b> · craft, site-specific</td><td style="white-space:normal">Permit-to-work on a named unit, rigging signals with your crew, SOP walk-throughs where your expert should be on screen</td><td>Camera-shot</td><td>₹4,500</td><td class="warn">7% · 544 min</td></tr>
+        <tr><td style="white-space:normal"><b>Certify it</b> · audit-grade</td><td style="white-space:normal">Permit-to-work certification, LOTO, fire-team and emergency roles, anything a regulator or auditor will ask evidence for</td><td>SCORM</td><td>₹5,500</td><td class="warn">4% · 340 min</td></tr>
       </table>
-      <div class="pmfoot rise" style="animation-delay:.5s">Shares are our starting assumption from comparable plant programmes. The classification is done trade by trade with your SMEs in the first two weeks, and the mix sets the budget on slide 14.</div>
+      <div class="pmfoot rise" style="animation-delay:.5s">Minutes assume 7,550 in total: 680 technical skills at 10 minutes and 75 soft skills at 10 minutes, with soft skills entirely in 2D simple. Classification is done trade by trade with your SMEs in the first two weeks; the mix sets the budget on slide 16.</div>
     </div>`,
   },
   {
@@ -259,7 +299,7 @@ export const rilContentSlides: SlideDef[] = [
         <tr><td style="white-space:normal">Human voice-over · 15–30 min</td><td>₹7,500</td><td style="white-space:normal">Voice-over sync to an existing video</td><td>₹1,000 per min</td></tr>
         <tr><td style="white-space:normal">Human voice-over · 30–60 min</td><td>₹15,000</td><td style="white-space:normal">Voice-over sync with on-screen text change</td><td>50% of base video cost</td></tr>
       </table>
-      <div class="pmfoot rise" style="animation-delay:.6s;color:rgba(255,255,255,.55)">Co-created content is a one-time cost with no licence or recurring fee. An external SME, if Reliance wants one beyond its own experts, is onboarded at additional cost. Taxes extra.</div>
+      <div class="pmfoot rise" style="animation-delay:.6s;color:rgba(255,255,255,.55)">Co-created content is a one-time cost with no licence or recurring fee. A <b style="color:#fff">20% programme discount</b> applies on the full 755-skill scope, worked out on slide 16. External SMEs, if wanted beyond your own experts, at additional cost. Taxes extra.</div>
     </div>`,
   },
   {
@@ -282,41 +322,47 @@ export const rilContentSlides: SlideDef[] = [
     </div>`,
   },
   {
-    id: 'rc14', theme: 'light', title: 'Budget scenario',
+    id: 'rc14', theme: 'darker', title: 'Budget and discount',
     html: `
     <div class="slidebody">
-      <span class="eyebrow rise">What a 250-trade programme costs · illustrative, from the mix on slide 11 · the classification sets the real number</span>
-      <h2 class="rise" style="animation-delay:.08s;max-width:48ch;">About ₹46 lakh of content for 1,250 skills in the base language. <span style="color:var(--navy)">Languages and software on top, both small against it.</span></h2>
-      <div class="ajmix rise" style="animation-delay:.2s;margin-top:12px;max-width:1080px;">
-        <div class="ajrow"><span class="lb">2D simple · 45% · 1,688 min × ₹500</span><span class="ajbar"><i style="--w:82%;--bc:#39D2E8;--d:.3s"></i></span><span class="pc">₹8.4 L</span></div>
-        <div class="ajrow"><span class="lb">2D advanced · 30% · 1,125 min × ₹900</span><span class="ajbar"><i style="--w:98%;--bc:#39D2E8;--d:.42s"></i></span><span class="pc">₹10.1 L</span></div>
-        <div class="ajrow"><span class="lb">3D · 12% · 450 min × ₹2,100</span><span class="ajbar"><i style="--w:92%;--bc:#8B7CFF;--d:.54s"></i></span><span class="pc">₹9.5 L</span></div>
-        <div class="ajrow"><span class="lb">Camera-shot · 7% · 263 min × ₹4,500</span><span class="ajbar"><i style="--w:100%;--bc:#FFC401;--d:.66s"></i></span><span class="pc">₹11.8 L</span></div>
-        <div class="ajrow"><span class="lb">SCORM · 6% · 225 min × ₹5,500</span><span class="ajbar"><i style="--w:100%;--bc:#FF9518;--d:.78s"></i></span><span class="pc">₹12.4 L</span></div>
+      <span class="eyebrow rise">The programme price · 755 skills · 7,550 minutes · treatment by format · list, discount and net</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:50ch;">About ₹79 lakh net for all 755 skills, <span style="color:var(--yellow)">after a 20% programme discount on the ₹99 lakh list.</span></h2>
+      <div class="rise" style="animation-delay:.2s;display:grid;grid-template-columns:1.15fr .85fr;gap:22px;margin-top:10px;align-items:start;">
+        <table class="rtable">
+          <caption>Treatment and list price · base language · one-time</caption>
+          <tr><th>Format</th><th>Minutes</th><th>Skills, approx.</th><th>Rate / min</th><th>List price</th></tr>
+          <tr><td>AI · 2D simple animation</td><td class="mono">3,470</td><td>75 soft + ~272 technical</td><td>₹500</td><td>₹17.35 L</td></tr>
+          <tr><td>AI · 2D advanced animation</td><td class="mono">2,380</td><td>~238</td><td>₹900</td><td>₹21.42 L</td></tr>
+          <tr><td>AI · 3D animation</td><td class="mono">816</td><td>~82</td><td>₹2,100</td><td>₹17.14 L</td></tr>
+          <tr><td>Camera-shot at Reliance facilities</td><td class="mono">544</td><td>~54</td><td>₹4,500</td><td>₹24.48 L</td></tr>
+          <tr><td>SCORM packages</td><td class="mono">340</td><td>~34</td><td>₹5,500</td><td>₹18.70 L</td></tr>
+          <tr><td><b>Total</b></td><td class="mono"><b>7,550</b></td><td><b>755</b></td><td>₹1,312 blended</td><td><b>₹99.09 L</b></td></tr>
+        </table>
+        <div>
+          <div class="aival" style="grid-template-columns:1fr;gap:10px;">
+            <div class="vt" style="--vc:#8A93B8"><div class="n">₹99.1 L <small>list</small></div><div class="w">Content at rate card</div><p>7,550 finished minutes, script, voice-over, assessment and set-up included.</p></div>
+            <div class="vt" style="--vc:#FFC401"><div class="n">− ₹19.8 L <small>20% programme discount</small></div><div class="w">Full 755-skill scope as one programme</div><p>Across all five formats; batches invoiced as delivered.</p></div>
+            <div class="vt" style="--vc:#3BE8B0"><div class="n">₹79.3 L <small>net · one-time</small></div><div class="w">Content, base language, taxes extra</div><p>Translation and human voice as chosen. Software ₹5 per user per month on the existing PO; 50,000 users is ₹30 L a year.</p></div>
+          </div>
+        </div>
       </div>
-      <div class="modelrow rise" style="animation-delay:.6s;margin-top:14px;grid-template-columns:repeat(4,1fr);">
-        <div class="mstat"><div class="n">₹46 L</div><div class="l">Content, 3,750 minutes, base language · one-time</div></div>
-        <div class="mstat"><div class="n">+ AI translation</div><div class="l">Included per language for AI formats · script translation at ₹2 a word where human-reviewed</div></div>
-        <div class="mstat"><div class="n">+ ₹4,500 / artist</div><div class="l">Human voice where you choose it · per 15-minute slot per language</div></div>
-        <div class="mstat"><div class="n">₹5 × users × 12</div><div class="l">Software per year · 50,000 users would be ₹30 L · on the existing PO</div></div>
-      </div>
-      <div class="pmfoot rise" style="animation-delay:.7s">Illustrative. Minutes assume three minutes per skill; the mix is the slide 11 starting point. Moving 10% of skills from 2D simple to camera-shot adds about ₹15 lakh; moving it the other way saves about ₹2 lakh. The classification exercise is where this number gets set, with you.</div>
+      <div class="pmfoot rise" style="animation-delay:.6s;color:rgba(255,255,255,.55)">Minutes and mix come from the slide 13 classification, set with your SMEs before the first batch. Shared skills across trades can cut unique content by a fifth; that comes off the list before the discount.</div>
     </div>`,
   },
   {
     id: 'rc15', theme: 'light', title: 'Delivery plan',
     html: `
     <div class="slidebody">
-      <span class="eyebrow rise">How we would deliver 1,250 skills · batches by trade, your SMEs in the loop from week one</span>
+      <span class="eyebrow rise">How we would deliver 755 skills · batches by trade, your SMEs in the loop from week one</span>
       <h2 class="rise" style="animation-delay:.08s;max-width:50ch;">Classify in two weeks, then produce in fortnightly batches. <span style="color:var(--navy)">First trades live inside the first month.</span></h2>
       <div class="ghead" style="margin-top:12px;"><span></span><div class="wk"><span>Wk 1–2</span><span>Wk 3–4</span><span>Wk 5–6</span><span>Wk 7–8</span><span>Wk 9–10</span><span>Wk 11–12</span><span>Wk 13–14</span><span>Wk 15+</span></div></div>
       <div class="gantt">
         <div class="grow rise" style="animation-delay:.2s"><span class="nm">Trade and skill classification<small>with Reliance L&amp;D, safety and trade SMEs</small></span><span class="gtrack"><span class="gbar" style="--l:0%;--w:12.5%;--d:.3s">Weeks 1–2</span></span></div>
         <div class="grow rise" style="animation-delay:.26s"><span class="nm">Sample set · one skill per format<small>approved before the first batch is ordered</small></span><span class="gtrack"><span class="gbar teal" style="--l:6%;--w:12.5%;--d:.38s">Weeks 2–3</span></span></div>
-        <div class="grow rise" style="animation-delay:.32s"><span class="nm">Scripts and SME review<small>rolling, two weeks ahead of production</small></span><span class="gtrack"><span class="gbar" style="--l:12.5%;--w:87.5%;--d:.46s">Rolling · 100 skills a fortnight</span></span></div>
-        <div class="grow rise" style="animation-delay:.38s"><span class="nm">AI production · 2D and 3D<small>batches of 100 skills · priority trades first</small></span><span class="gtrack"><span class="gbar" style="--l:25%;--w:75%;--d:.54s">Fortnightly batches · ~1,100 skills</span></span></div>
+        <div class="grow rise" style="animation-delay:.32s"><span class="nm">Scripts and SME review<small>rolling, two weeks ahead of production</small></span><span class="gtrack"><span class="gbar" style="--l:12.5%;--w:87.5%;--d:.46s">Rolling · 60 skills a fortnight</span></span></div>
+        <div class="grow rise" style="animation-delay:.38s"><span class="nm">AI production · 2D and 3D<small>batches of 60 skills · priority trades first</small></span><span class="gtrack"><span class="gbar" style="--l:25%;--w:75%;--d:.54s">Fortnightly batches · ~665 skills · ~6,700 min</span></span></div>
         <div class="grow rise" style="animation-delay:.44s"><span class="nm">Camera shoots<small>scheduled per site · 3 to 5 shoot days per visit</small></span><span class="gtrack"><span class="gbar gold" style="--l:31%;--w:50%;--d:.62s">Site visits by region</span></span></div>
-        <div class="grow rise" style="animation-delay:.5s"><span class="nm">SCORM builds<small>certification modules</small></span><span class="gtrack"><span class="gbar gold" style="--l:37.5%;--w:50%;--d:.7s">Parallel · ~75 modules</span></span></div>
+        <div class="grow rise" style="animation-delay:.5s"><span class="nm">SCORM builds<small>certification modules</small></span><span class="gtrack"><span class="gbar gold" style="--l:37.5%;--w:50%;--d:.7s">Parallel · ~34 modules</span></span></div>
         <div class="grow rise" style="animation-delay:.56s"><span class="nm">Translation and voice<small>per approved module · languages you pick</small></span><span class="gtrack"><span class="gbar teal" style="--l:31%;--w:69%;--d:.78s">Follows approval by one week</span></span></div>
         <div class="grow rise" style="animation-delay:.62s"><span class="nm">Publish and assign<small>by trade, site, mandatory status</small></span><span class="gtrack"><span class="gbar hot" style="--l:31%;--w:69%;--d:.86s">First trades live in week 5</span></span></div>
       </div>
@@ -367,9 +413,9 @@ export const rilContentSlides: SlideDef[] = [
       <div class="ctacards" style="margin-top:20px;">
         <div class="ctac rise" style="animation-delay:.24s"><div class="num">01</div><h4>Ten priority trades</h4><p>You name the ten trades that matter most, by incident rate or headcount, and give us their SOPs and one SME hour each.</p></div>
         <div class="ctac rise" style="animation-delay:.32s"><div class="num">02</div><h4>Five samples in three weeks</h4><p>One skill in each format, 2D simple to SCORM, in Hindi and English with assessments, on the platform your users are already on.</p></div>
-        <div class="ctac rise" style="animation-delay:.40s"><div class="num">03</div><h4>Classify, then order by batch</h4><p>We classify the 1,250 skills together, agree the mix, and the first fortnightly batch goes into production on the content rate card.</p></div>
+        <div class="ctac rise" style="animation-delay:.40s"><div class="num">03</div><h4>Classify, then order by batch</h4><p>We classify the 755 skills together, agree the mix, and the first fortnightly batch goes into production at the discounted programme price.</p></div>
       </div>
-      <div class="probfoot rise" style="animation-delay:.5s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">The software is on the existing purchase order at ₹5 per user per month. Content is a one-time cost per finished minute, no licence fee, priced on slide 12.</div>
+      <div class="probfoot rise" style="animation-delay:.5s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">The software is on the existing purchase order at ₹5 per user per month. Content is a one-time cost per finished minute, no licence fee: ₹99.1 lakh list, ₹79.3 lakh net after the 20% programme discount.</div>
       <div class="clientline" style="color:rgba(255,255,255,.6);margin-top:16px;">Anuj Saxena — Director, Product · anuj.saxena@betterplace.co.in</div>
     </div>`,
   },
