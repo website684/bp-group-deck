@@ -1397,3 +1397,40 @@ body { overflow: auto; background: #05081f; }
   .player .ctacards { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 16px !important; }
   .player .cases { display: grid !important; }
 }
+
+/* Video placeholder frames (Reliance content deck) */
+.vidph { position: relative; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; background: radial-gradient(120% 120% at 20% 10%, #1B2D93 0%, #0B1237 60%, #05081f 100%); border: 1.5px solid rgba(255,255,255,.14); box-shadow: 0 14px 36px rgba(11,18,55,.22); display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; }
+.vidph .play { width: 58px; height: 58px; border-radius: 50%; background: var(--yellow); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; box-shadow: 0 0 0 10px rgba(255,196,1,.18); }
+.vidph .play::after { content: ''; border-left: 18px solid var(--ink); border-top: 11px solid transparent; border-bottom: 11px solid transparent; margin-left: 4px; }
+.vidph .vt { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: .95rem; }
+.vidph .vs { font-family: 'JetBrains Mono', monospace; font-size: .58rem; letter-spacing: 1.4px; text-transform: uppercase; color: rgba(255,255,255,.6); margin-top: 4px; }
+.vidph .slot { position: absolute; left: 12px; bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: .56rem; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255,255,255,.45); }
+.vidph .tag { position: absolute; right: 12px; top: 10px; font-family: 'JetBrains Mono', monospace; font-size: .56rem; letter-spacing: 1.2px; text-transform: uppercase; background: rgba(255,196,1,.18); color: var(--yellow); padding: 3px 8px; border-radius: 10px; }
+.vidph.sm .play { width: 40px; height: 40px; box-shadow: 0 0 0 7px rgba(255,196,1,.18); }
+.vidph.sm .play::after { border-left-width: 12px; border-top-width: 8px; border-bottom-width: 8px; }
+.vidph.sm .vt { font-size: .8rem; }
+.vidgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.linkcards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.linkcard { display: block; text-decoration: none; background: #fff; border: 1px solid rgba(11,18,55,.1); border-left: 4px solid var(--pc, var(--navy)); border-radius: 12px; padding: 12px 14px; box-shadow: 0 8px 22px rgba(11,18,55,.06); color: var(--ink); }
+.linkcard b { display: block; font-family: 'Poppins', sans-serif; font-size: .86rem; line-height: 1.25; }
+.linkcard span { display: block; font-size: .72rem; color: #5b6486; margin-top: 4px; line-height: 1.35; }
+.linkcard em { display: inline-block; font-style: normal; font-family: 'JetBrains Mono', monospace; font-size: .56rem; letter-spacing: 1.1px; text-transform: uppercase; color: var(--navy); margin-top: 8px; }
+.dark .linkcard, .darker .linkcard { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.12); color: #fff; }
+.dark .linkcard span, .darker .linkcard span { color: rgba(255,255,255,.65); }
+.dark .linkcard em, .darker .linkcard em { color: var(--yellow); }
+.pricegrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 14px; }
+.pricecard { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.13); border-radius: 16px; padding: 16px 16px 14px; position: relative; }
+.pricecard.ai { border-color: rgba(57,210,232,.45); }
+.pricecard.hu { border-color: rgba(255,196,1,.45); }
+.pricecard .pk { font-family: 'JetBrains Mono', monospace; font-size: .56rem; letter-spacing: 1.3px; text-transform: uppercase; color: rgba(255,255,255,.55); }
+.pricecard.ai .pk { color: #39D2E8; } .pricecard.hu .pk { color: var(--yellow); }
+.pricecard h4 { font-family: 'Poppins', sans-serif; color: #fff; font-size: .98rem; margin: 4px 0 6px; line-height: 1.2; }
+.pricecard .pr { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.7rem; color: #fff; letter-spacing: -.5px; line-height: 1; }
+.pricecard .pr small { font-size: .62rem; font-weight: 600; color: rgba(255,255,255,.6); margin-left: 4px; letter-spacing: 0; }
+.pricecard ul { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 4px; }
+.pricecard li { font-size: .74rem; color: rgba(255,255,255,.8); padding-left: 14px; position: relative; line-height: 1.35; }
+.pricecard li::before { content: '✓'; position: absolute; left: 0; color: #3BE8B0; font-weight: 700; }
+@media print { .vidph { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .player .vidgrid, .player .linkcards, .player .pricegrid { display: grid !important; } }
+
+.light .ajmix .lb, .light .ajmix .pc { color: var(--ink); }
+.light .ajmix .lb { opacity: .85; }

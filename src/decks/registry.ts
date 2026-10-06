@@ -22,6 +22,7 @@ import { pwcClmsSlides } from './pwc-clms'
 import { clmsSlides } from './clms'
 import { jllSlides } from './jll'
 import { jllCapgeminiSlides } from './jll-capgemini'
+import { rilContentSlides } from './ril-content'
 import { clmsPillarSlides } from './clms-pillars'
 
 export const decks: DeckDef[] = [
@@ -42,6 +43,11 @@ export const decks: DeckDef[] = [
     id: 'why-betterplace-nikhil', next: 'group', title: 'BetterPlace · The Product-Rich Nikhil Cut', group: 'story',
     tagline: 'The original Ravi story, preserved and refined: designed product screens, worker versus employer value, operating proof and the business underneath.',
     slides: nkRichStorySlides,
+  },
+  {
+    id: 'ril-content', next: 'skillbetter', title: 'Reliance O2C · Skilling Content & Commercials', group: 'story',
+    tagline: 'Content pitch for Reliance O2C: 250 trades, five formats from AI 2D to camera and SCORM, per-minute rates, software at ₹5 per user per month on the existing PO. Link-only.',
+    slides: rilContentSlides,
   },
   {
     id: 'jll-capgemini', next: 'jll', title: 'JLL × Capgemini · Attendance Response', group: 'story',
