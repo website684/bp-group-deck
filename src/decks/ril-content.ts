@@ -166,8 +166,8 @@ export const rilContentSlides: SlideDef[] = [
         </div>
       </div>
       <div class="rise" style="animation-delay:.35s">
-        ${vid('AI-2D-SIMPLE', 'Sample · 2D simple animation', 'an O2C skill in this format', 'AI · 2D simple')}
-        <div class="mockcap" style="margin-top:10px;">Link to be added · one sample skill, Hindi and English, with its assessment</div>
+        ${vid('AI-2D-SIMPLE', 'Sample · 2D simple animation', 'click to watch', 'AI · 2D simple', false, 'https://drive.google.com/file/d/1ic1H6syWplv3M6xLx3fLwVpDQCEZPe7i/view')}
+        <div class="mockcap" style="margin-top:10px;">Sample linked · opens in Google Drive</div>
       </div>
     </div>`,
   },
@@ -186,8 +186,8 @@ export const rilContentSlides: SlideDef[] = [
         </div>
       </div>
       <div class="rise" style="animation-delay:.35s">
-        ${vid('AI-2D-ADVANCED', 'Sample · 2D advanced animation', 'equipment cutaway and procedure', 'AI · 2D advanced')}
-        <div class="mockcap" style="margin-top:10px;">Link to be added · one equipment procedure with on-screen call-outs</div>
+        ${vid('AI-2D-ADVANCED', 'Sample · 2D advanced animation', 'click to watch', 'AI · 2D advanced', false, 'https://drive.google.com/file/d/1p7bCnHhoMQZDvnaYREDWDGxbEThZlVsw/view')}
+        <div class="mockcap" style="margin-top:10px;">Sample linked · opens in Google Drive</div>
       </div>
     </div>`,
   },
@@ -206,8 +206,8 @@ export const rilContentSlides: SlideDef[] = [
         </div>
       </div>
       <div class="rise" style="animation-delay:.35s">
-        ${vid('AI-3D', 'Sample · 3D animation', 'safety-critical procedure, modelled unit', 'AI · 3D')}
-        <div class="mockcap" style="margin-top:10px;">Link to be added · one safety-critical procedure inside a modelled unit</div>
+        ${vid('AI-3D', 'Sample · 3D animation', 'click to watch', 'AI · 3D', false, 'https://drive.google.com/file/d/1_jb9AoJGwXk262mFkxJlq57Lzh7jZDHP/view')}
+        <div class="mockcap" style="margin-top:10px;">Sample linked · opens in Google Drive</div>
       </div>
     </div>`,
   },

@@ -5557,8 +5557,8 @@ Error generating stack: `+e.message+`
         </div>
       </div>
       <div class="rise" style="animation-delay:.35s">
-        ${Ie(`AI-2D-SIMPLE`,`Sample · 2D simple animation`,`an O2C skill in this format`,`AI · 2D simple`)}
-        <div class="mockcap" style="margin-top:10px;">Link to be added · one sample skill, Hindi and English, with its assessment</div>
+        ${Ie(`AI-2D-SIMPLE`,`Sample · 2D simple animation`,`click to watch`,`AI · 2D simple`,!1,`https://drive.google.com/file/d/1ic1H6syWplv3M6xLx3fLwVpDQCEZPe7i/view`)}
+        <div class="mockcap" style="margin-top:10px;">Sample linked · opens in Google Drive</div>
       </div>
     </div>`},{id:`rc7`,theme:`dark`,title:`AI · 2D advanced`,html:`
     <div class="slidebody split">
@@ -5573,8 +5573,8 @@ Error generating stack: `+e.message+`
         </div>
       </div>
       <div class="rise" style="animation-delay:.35s">
-        ${Ie(`AI-2D-ADVANCED`,`Sample · 2D advanced animation`,`equipment cutaway and procedure`,`AI · 2D advanced`)}
-        <div class="mockcap" style="margin-top:10px;">Link to be added · one equipment procedure with on-screen call-outs</div>
+        ${Ie(`AI-2D-ADVANCED`,`Sample · 2D advanced animation`,`click to watch`,`AI · 2D advanced`,!1,`https://drive.google.com/file/d/1p7bCnHhoMQZDvnaYREDWDGxbEThZlVsw/view`)}
+        <div class="mockcap" style="margin-top:10px;">Sample linked · opens in Google Drive</div>
       </div>
     </div>`},{id:`rc8`,theme:`dark`,title:`AI · 3D`,html:`
     <div class="slidebody split">
@@ -5589,8 +5589,8 @@ Error generating stack: `+e.message+`
         </div>
       </div>
       <div class="rise" style="animation-delay:.35s">
-        ${Ie(`AI-3D`,`Sample · 3D animation`,`safety-critical procedure, modelled unit`,`AI · 3D`)}
-        <div class="mockcap" style="margin-top:10px;">Link to be added · one safety-critical procedure inside a modelled unit</div>
+        ${Ie(`AI-3D`,`Sample · 3D animation`,`click to watch`,`AI · 3D`,!1,`https://drive.google.com/file/d/1_jb9AoJGwXk262mFkxJlq57Lzh7jZDHP/view`)}
+        <div class="mockcap" style="margin-top:10px;">Sample linked · opens in Google Drive</div>
       </div>
     </div>`},{id:`rc9`,theme:`light`,title:`Human-made formats`,html:`
     <div class="slidebody">
