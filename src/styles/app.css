@@ -1406,6 +1406,7 @@ body { overflow: auto; background: #05081f; }
 .vidph .vs { font-family: 'JetBrains Mono', monospace; font-size: .58rem; letter-spacing: 1.4px; text-transform: uppercase; color: rgba(255,255,255,.6); margin-top: 4px; }
 .vidph .slot { position: absolute; left: 12px; bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: .56rem; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255,255,255,.45); }
 .vidph .tag { position: absolute; right: 12px; top: 10px; font-family: 'JetBrains Mono', monospace; font-size: .56rem; letter-spacing: 1.2px; text-transform: uppercase; background: rgba(255,196,1,.18); color: var(--yellow); padding: 3px 8px; border-radius: 10px; }
+.vidph.sm { aspect-ratio: 21/8; }
 .vidph.sm .play { width: 40px; height: 40px; box-shadow: 0 0 0 7px rgba(255,196,1,.18); }
 .vidph.sm .play::after { border-left-width: 12px; border-top-width: 8px; border-bottom-width: 8px; }
 .vidph.sm .vt { font-size: .8rem; }
