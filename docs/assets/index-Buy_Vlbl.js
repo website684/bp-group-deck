@@ -5435,7 +5435,7 @@ Error generating stack: `+e.message+`
       </div>
       <div class="probfoot rise" style="animation-delay:.5s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));"><b>Offer:</b> a live walkthrough of the tablet, the offline sync and the client dashboard on a running deployment, this week, for the CG and WNS evaluation teams.</div>
       <div class="clientline" style="color:rgba(255,255,255,.6);margin-top:16px;">Anuj Saxena — Director, Product · anuj.saxena@betterplace.co.in</div>
-    </div>`}],Ie=(e,t,n,r,i=!1,a=``)=>`<${a?`a href="${a}" target="_blank" rel="noopener"`:`div`} class="vidph${i?` sm`:``}" data-slot="${e}"><span class="tag">${r}</span><div><div class="play"></div><div class="vt">${t}</div><div class="vs">${n}</div></div><span class="slot">${a?`opens sample`:`video link · slot `+e}</span></${a?`a`:`div`}>`,Le=(e,t,n,r,i)=>`<a class="linkcard" href="${e}" target="_blank" rel="noopener" style="--pc:${i}"><b>${t}</b><span>${n}</span><em>${r} ↗</em></a>`,Re=[{id:`rc1`,theme:`darker`,title:`Cover`,html:`
+    </div>`}],Ie=(e,t,n,r,i=!1,a=``)=>`<${a?`a href="${a}" target="_blank" rel="noopener"`:`div`} class="vidph${i?` sm`:``}" data-slot="${e}"><span class="tag">${r}</span><div><div class="play"></div><div class="vt">${t}</div><div class="vs">${n}</div></div><span class="slot">${a?`watch sample ↗`:`video link · slot `+e}</span></${a?`a`:`div`}>`,Le=(e,t,n,r,i)=>`<a class="linkcard" href="${e}" target="_blank" rel="noopener" style="--pc:${i}"><b>${t}</b><span>${n}</span><em>${r} ↗</em></a>`,Re=[{id:`rc1`,theme:`darker`,title:`Cover`,html:`
     <div class="glow"></div>
     <div class="mdcover">
       <span class="mdkicker rise" style="animation-delay:.05s">For Reliance Industries · O2C · skilling content and commercials</span>
@@ -5467,19 +5467,23 @@ Error generating stack: `+e.message+`
     </div>`},{id:`rc3`,theme:`dark`,title:`Credentials`,html:`
     <div class="slidebody">
       <span class="eyebrow rise">Who you would be working with · content as a professional service</span>
-      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:46ch;">A decade of making frontline training people finish. <span style="color:var(--yellow)">Including five lakh of your own retail associates.</span></h2>
-      <div class="modelrow rise" style="animation-delay:.2s;margin-top:14px;grid-template-columns:repeat(6,1fr);">
-        <div class="mstat"><div class="n">1 lakh+</div><div class="l">Courses created</div></div>
-        <div class="mstat"><div class="n">10,000</div><div class="l">Minutes of content recorded a year</div></div>
-        <div class="mstat"><div class="n">50+</div><div class="l">Enterprises on co-created content</div></div>
-        <div class="mstat"><div class="n">250+</div><div class="l">Library micro-courses · rated 4.3 / 5</div></div>
-        <div class="mstat"><div class="n">12+</div><div class="l">Languages with human voice-over</div></div>
-        <div class="mstat"><div class="n">88%</div><div class="l">Completion on our LMS · 25% on a typical one</div></div>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:46ch;">A decade of making frontline training <span style="color:var(--yellow)">people finish.</span></h2>
+      <div class="modelrow rise" style="animation-delay:.2s;margin-top:18px;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <div class="mstat" style="padding:26px 28px;"><div class="n" style="font-size:2.4rem;">1 lakh+</div><div class="l">Courses created</div></div>
+        <div class="mstat" style="padding:26px 28px;"><div class="n" style="font-size:2.4rem;">10,000</div><div class="l">Minutes of content recorded a year</div></div>
+        <div class="mstat" style="padding:26px 28px;"><div class="n" style="font-size:2.4rem;">50+</div><div class="l">Enterprises on co-created content</div></div>
+        <div class="mstat" style="padding:26px 28px;"><div class="n" style="font-size:2.4rem;">250+</div><div class="l">Library micro-courses · rated 4.3 / 5</div></div>
+        <div class="mstat" style="padding:26px 28px;"><div class="n" style="font-size:2.4rem;">12+</div><div class="l">Languages with human voice-over · 35+ with AI</div></div>
+        <div class="mstat" style="padding:26px 28px;"><div class="n" style="font-size:2.4rem;">88%</div><div class="l">Completion on our LMS · 25% on a typical one</div></div>
       </div>
-      <div class="cases" style="grid-template-columns:repeat(3,1fr);margin-top:16px;">
-        <div class="case rise" style="--pc:#FFC401;animation-delay:.35s"><div class="ch"><span class="cn">Reliance Retail · Samarth</span><span class="ct">The programme you already know</span></div><ul class="cl"><li>500,000+ associates trained in 14 languages</li><li>Live in eight weeks across 18,000+ stores</li><li>60%+ reduction in training cost</li><li>4.7 stars on the Play Store, 1.7 lakh+ downloads</li></ul></div>
-        <div class="case rise" style="--pc:#39D2E8;animation-delay:.43s"><div class="ch"><span class="cn">Hindalco · E-Karyashala</span><span class="ct">Shop floor · Aditya Birla Group</span></div><ul class="cl"><li>60+ technical modules, 50+ assessments</li><li>3× training coverage, 1,000+ workers upskilled</li><li>"Turns customer feedback into reality by co-creating solutions." Dr Mayuk Dasgupta, Hindalco</li></ul></div>
-        <div class="case rise" style="--pc:#3BE8B0;animation-delay:.51s"><div class="ch"><span class="cn">Amazon · Zepto · Meesho</span><span class="ct">Scale and completion</span></div><ul class="cl"><li>Amazon GSF Learning Academy: 91% completion against under 30% industry</li><li>Zepto: order delivery gated on training completion for 15,000 riders</li><li>Meesho: 2M+ resellers trained, 85% completion</li></ul></div>
+    </div>`},{id:`rc3b`,theme:`dark`,title:`Credentials · proof`,html:`
+    <div class="slidebody">
+      <span class="eyebrow rise">Who you would be working with · content as a professional service</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:46ch;">Including five lakh of <span style="color:var(--yellow)">your own retail associates.</span></h2>
+      <div class="cases" style="grid-template-columns:repeat(3,1fr);margin-top:18px;">
+        <div class="case rise" style="--pc:#FFC401;animation-delay:.25s"><div class="ch"><span class="cn">Reliance Retail · Samarth</span><span class="ct">The programme you already know</span></div><ul class="cl"><li>500,000+ associates trained in 14 languages</li><li>Live in eight weeks across 18,000+ stores</li><li>60%+ reduction in training cost</li><li>4.7 stars on the Play Store, 1.7 lakh+ downloads</li></ul></div>
+        <div class="case rise" style="--pc:#39D2E8;animation-delay:.33s"><div class="ch"><span class="cn">Hindalco · E-Karyashala</span><span class="ct">Shop floor · Aditya Birla Group</span></div><ul class="cl"><li>60+ technical modules, 50+ assessments</li><li>3× training coverage, 1,000+ workers upskilled</li><li>"Turns customer feedback into reality by co-creating solutions." Dr Mayuk Dasgupta, Hindalco</li></ul></div>
+        <div class="case rise" style="--pc:#3BE8B0;animation-delay:.41s"><div class="ch"><span class="cn">Amazon · Zepto · Meesho</span><span class="ct">Scale and completion</span></div><ul class="cl"><li>Amazon GSF Learning Academy: 91% completion against under 30% industry</li><li>Zepto: order delivery gated on training completion for 15,000 riders</li><li>Meesho: 2M+ resellers trained, 85% completion</li></ul></div>
       </div>
     </div>`},{id:`rc4`,theme:`light`,title:`How content gets made`,html:`
     <div class="slidebody">
@@ -5514,7 +5518,7 @@ Error generating stack: `+e.message+`
       </div>
       <div class="cases rise" style="grid-template-columns:repeat(3,1fr);margin-top:14px;animation-delay:.4s">
         <div class="case" style="--pc:#1B2D93"><div class="ch"><span class="cn">Why clips, not a film</span></div><ul class="cl"><li>Attention on a phone holds for 2 to 3 minutes; completion collapses on long single videos</li><li>Each clip has one learning objective, so the quiz can test it and the data can show where a trade is weak</li><li>One clip a day fits a shift; the module completes in a working week</li><li>An SOP change re-renders one clip</li></ul></div>
-        <div class="case" style="--pc:#1d7a45"><div class="ch"><span class="cn">Format follows the objective</span></div><ul class="cl"><li><b>Know</b> it: 2D simple. <b>See</b> the hazard in space: 3D. <b>Do</b> the steps on equipment: 2D advanced. <b>Copy</b> a craftsman on your site: camera. <b>Certify</b> it: SCORM interaction</li><li>So one skill mixes formats, and the minute shares on slide 13 are counted clip by clip, not skill by skill</li></ul></div>
+        <div class="case" style="--pc:#1d7a45"><div class="ch"><span class="cn">Format follows the objective</span></div><ul class="cl"><li><b>Know</b> it: 2D simple. <b>See</b> the hazard in space: 3D. <b>Do</b> the steps on equipment: 2D advanced. <b>Copy</b> a craftsman on your site: camera. <b>Certify</b> it: SCORM interaction</li><li>So one skill mixes formats, and the minute shares on slide 15 are counted clip by clip, not skill by skill</li></ul></div>
         <div class="case" style="--pc:#FF9518"><div class="ch"><span class="cn">Written for the worker</span></div><ul class="cl"><li>Audio-first; the picture carries the meaning, text stays minimal</li><li>Scripts at a grade-6 reading level in the worker's language; plant terms kept in the English the floor uses</li><li>Your own uniform, your own unit, your own permit form on screen</li><li>Soft skills use the same template with a scenario in place of a procedure</li></ul></div>
       </div>
     </div>`},{id:`rc4c`,theme:`dark`,title:`Curriculum architecture`,html:`
@@ -5543,7 +5547,7 @@ Error generating stack: `+e.message+`
         <div class="compcell" style="--cc:#FFC401;--d:.44s"><div class="act">Human · ₹4,500 / min</div><h4>Camera-shot at your facilities</h4><p>Our crew films the real equipment, the real site and your own expert, edited with graphics and 3D inserts.</p><span class="who ok">e.g. hot-work permit</span></div>
         <div class="compcell" style="--cc:#FFC401;--d:.52s"><div class="act">Human · ₹5,500 / min</div><h4>SCORM packages</h4><p>Interactive modules built on Storyline: branching, drag-and-drop, tracked scoring. For certification and audit.</p><span class="who ok">e.g. LOTO certification</span></div>
       </div>
-      <div class="probfoot rise" style="animation-delay:.6s">Every format includes the custom script, AI voice-over, an eight-to-ten question assessment and set-up on the platform. Human voice-over, translation and external SMEs are priced separately on slide 14. One skill usually mixes formats clip by clip, as slide 5 shows. Sample videos for each format follow.</div>
+      <div class="probfoot rise" style="animation-delay:.6s">Every format includes the custom script, AI voice-over, an eight-to-ten question assessment and set-up on the platform. Human voice-over, translation and external SMEs are priced separately on slide 17. One skill usually mixes formats clip by clip, as slide 6 shows. Sample videos for each format follow.</div>
     </div>`},{id:`rc6`,theme:`dark`,title:`AI · 2D simple`,html:`
     <div class="slidebody split">
       <div>
@@ -5617,15 +5621,19 @@ Error generating stack: `+e.message+`
       <div class="pmfoot rise" style="animation-delay:.5s">Frames link to existing samples; Reliance-specific ones replace them once the first modules are approved.</div>
     </div>`},{id:`rc10`,theme:`light`,title:`What we have already made`,html:`
     <div class="slidebody">
-      <span class="eyebrow rise">Work you can watch now · tailor-made content and the library · links open the videos</span>
-      <h2 class="rise" style="animation-delay:.08s;max-width:48ch;">Four tailor-made examples <span style="color:var(--navy)">and a library of 250+ micro-courses across eight playlists.</span></h2>
-      <div class="linkcards rise" style="animation-delay:.2s;margin-top:12px;">
+      <span class="eyebrow rise">Work you can watch now · tailor-made content · links open the videos</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:48ch;">Four tailor-made examples. <span style="color:var(--navy)">Each one opens the video.</span></h2>
+      <div class="linkcards rise" style="animation-delay:.2s;margin-top:18px;grid-template-columns:1fr 1fr;gap:18px;">
         ${Le(`http://drive.google.com/file/d/1gNkz4JVSEEAElUcpAJ1BNTnZ4RP4ASVA/view`,`Machine operators on SOPs`,`Content to train machine operators on standard operating procedures, shot and animated for a manufacturing client.`,`Watch sample`,`#1B2D93`)}
         ${Le(`http://drive.google.com/file/d/1qrn06QoVnF0SiGJK3JqiCvIQLkadQdTr/view`,`Delivery partner app training`,`New features, processes and benefits explained to delivery partners in short animated modules.`,`Watch sample`,`#D0271D`)}
         ${Le(`http://drive.google.com/file/d/1Xm97yUfOI_AqmV1-IJoP6jlzTXTZEqvz/view`,`Facility manager safety refresher`,`Refresher course for facility managers built from the client’s own safety manual.`,`Watch sample`,`#1d7a45`)}
         ${Le(`http://drive.google.com/file/d/1DB9IwVHN1PhEJUKanpfA9RPE61VhbX_H/view`,`App training · home services, Dubai`,`App training videos for a Dubai-based home services provider, multilingual.`,`Watch sample`,`#FF9518`)}
       </div>
-      <div class="linkcards rise" style="animation-delay:.4s;margin-top:12px;grid-template-columns:repeat(8,1fr);">
+    </div>`},{id:`rc10b`,theme:`light`,title:`The library`,html:`
+    <div class="slidebody">
+      <span class="eyebrow rise">Work you can watch now · the library · links open the playlists</span>
+      <h2 class="rise" style="animation-delay:.08s;max-width:48ch;">A library of 250+ micro-courses <span style="color:var(--navy)">across eight playlists.</span></h2>
+      <div class="linkcards rise" style="animation-delay:.4s;margin-top:12px;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:18px;">
         ${Le(`https://www.youtube.com/playlist?list=PL_0NHLYgHzhvwvEFviVTkSQeWeZKFT-Os`,`Manufacturing &amp; technicians`,``,`Playlist`,`#1B2D93`)}
         ${Le(`https://www.youtube.com/playlist?list=PL_0NHLYgHzhuSLQrY3fpnZ2ShNnU61N66`,`Facility &amp; hospitality`,``,`Playlist`,`#1B2D93`)}
         ${Le(`https://www.youtube.com/playlist?list=PL_0NHLYgHzhu8oXcQAaZgTKf6DBAOuEn9`,`Soft skills`,``,`Playlist`,`#1B2D93`)}
@@ -5648,7 +5656,7 @@ Error generating stack: `+e.message+`
         <tr><td style="white-space:normal"><b>Copy it</b> · craft, site-specific</td><td style="white-space:normal">Permit-to-work on a named unit, rigging signals with your crew, SOP walk-throughs where your expert should be on screen</td><td>Camera-shot</td><td>₹4,500</td><td class="warn">7% · 544 min</td></tr>
         <tr><td style="white-space:normal"><b>Certify it</b> · audit-grade</td><td style="white-space:normal">Permit-to-work certification, LOTO, fire-team and emergency roles, anything a regulator or auditor will ask evidence for</td><td>SCORM</td><td>₹5,500</td><td class="warn">4% · 340 min</td></tr>
       </table>
-      <div class="pmfoot rise" style="animation-delay:.5s">Minutes assume 7,550 in total: 680 technical skills at 10 minutes and 75 soft skills at 10 minutes, with soft skills entirely in 2D simple. Classification is done trade by trade with your SMEs in the first two weeks; the mix sets the budget on slide 16.</div>
+      <div class="pmfoot rise" style="animation-delay:.5s">Minutes assume 7,550 in total: 680 technical skills at 10 minutes and 75 soft skills at 10 minutes, with soft skills entirely in 2D simple. Classification is done trade by trade with your SMEs in the first two weeks; the mix sets the budget on slide 19.</div>
     </div>`},{id:`rc12`,theme:`darker`,title:`Commercials · content`,html:`
     <div class="slidebody">
       <span class="eyebrow rise">Commercials · content · per finished minute, one-time cost, no licence fee on co-created content</span>
@@ -5660,13 +5668,25 @@ Error generating stack: `+e.message+`
         <div class="pricecard hu rise" style="animation-delay:.44s"><div class="pk">Human-generated</div><h4>Camera-shot, edited</h4><div class="pr">₹4,500<small>/ min</small></div><ul><li>Crew at Reliance facilities</li><li>Videography and equipment</li><li>Edit with graphics and 3D inserts</li><li>Raw footage handed over</li><li>Travel and stay at actuals</li></ul></div>
         <div class="pricecard hu rise" style="animation-delay:.52s"><div class="pk">Human-generated</div><h4>SCORM package</h4><div class="pr">₹5,500<small>/ min</small></div><ul><li>Built on Storyline</li><li>Interactions and scoring</li><li>Runs on any SCORM LMS</li><li>Assessment and set-up</li></ul></div>
       </div>
-      <table class="rtable" style="margin-top:14px;">
-        <tr><th>Add-on</th><th>Rate</th><th>Add-on</th><th>Rate</th></tr>
-        <tr><td style="white-space:normal">Human voice-over, per artist, per Indian language · 0–15 min</td><td>₹4,500</td><td style="white-space:normal">Script translation, Indian language</td><td>₹2 per word</td></tr>
-        <tr><td style="white-space:normal">Human voice-over · 15–30 min</td><td>₹7,500</td><td style="white-space:normal">Voice-over sync to an existing video</td><td>₹1,000 per min</td></tr>
-        <tr><td style="white-space:normal">Human voice-over · 30–60 min</td><td>₹15,000</td><td style="white-space:normal">Voice-over sync with on-screen text change</td><td>50% of base video cost</td></tr>
-      </table>
-      <div class="pmfoot rise" style="animation-delay:.6s;color:rgba(255,255,255,.55)">Co-created content is a one-time cost with no licence or recurring fee. A <b style="color:#fff">20% programme discount</b> applies on the full 755-skill scope, worked out on slide 16. External SMEs, if wanted beyond your own experts, at additional cost. Taxes extra.</div>
+    </div>`},{id:`rc12b`,theme:`darker`,title:`Commercials · add-ons`,html:`
+    <div class="slidebody">
+      <span class="eyebrow rise">Commercials · content · add-ons</span>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:46ch;">Add-ons, <span style="color:var(--yellow)">priced per language, per minute or per word.</span></h2>
+      <div class="rise" style="animation-delay:.2s;display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:18px;">
+        <table class="rtable">
+          <tr><th>Add-on · human voice-over</th><th style="text-align:right">Rate</th></tr>
+          <tr><td style="white-space:normal">Human voice-over, per artist, per Indian language · 0–15 min</td><td style="text-align:right"><b>₹4,500</b></td></tr>
+          <tr><td style="white-space:normal">Human voice-over · 15–30 min</td><td style="text-align:right"><b>₹7,500</b></td></tr>
+          <tr><td style="white-space:normal">Human voice-over · 30–60 min</td><td style="text-align:right"><b>₹15,000</b></td></tr>
+        </table>
+        <table class="rtable">
+          <tr><th>Add-on · translation and sync</th><th style="text-align:right">Rate</th></tr>
+          <tr><td style="white-space:normal">Script translation, Indian language</td><td style="text-align:right"><b>₹2 per word</b></td></tr>
+          <tr><td style="white-space:normal">Voice-over sync to an existing video</td><td style="text-align:right"><b>₹1,000 per min</b></td></tr>
+          <tr><td style="white-space:normal">Voice-over sync with on-screen text change</td><td style="text-align:right"><b>50% of base video cost</b></td></tr>
+        </table>
+      </div>
+      <div class="pmfoot rise" style="animation-delay:.6s;color:rgba(255,255,255,.55)">Co-created content is a one-time cost with no licence or recurring fee. A <b style="color:#fff">20% programme discount</b> applies on the full 755-skill scope, worked out on slide 19. External SMEs, if wanted beyond your own experts, at additional cost. Taxes extra.</div>
     </div>`},{id:`rc13`,theme:`darker`,title:`Commercials · software`,html:`
     <div class="slidebody">
       <span class="eyebrow rise">Commercials · software · skillBetter LMS · aligned with RIL procurement</span>
@@ -5705,7 +5725,7 @@ Error generating stack: `+e.message+`
           </div>
         </div>
       </div>
-      <div class="pmfoot rise" style="animation-delay:.6s;color:rgba(255,255,255,.55)">Minutes and mix come from the slide 13 classification, set with your SMEs before the first batch. Shared skills across trades can cut unique content by a fifth; that comes off the list before the discount.</div>
+      <div class="pmfoot rise" style="animation-delay:.6s;color:rgba(255,255,255,.55)">Minutes and mix come from the slide 15 classification, set with your SMEs before the first batch. Shared skills across trades can cut unique content by a fifth; that comes off the list before the discount.</div>
     </div>`},{id:`rc15`,theme:`light`,title:`Delivery plan`,html:`
     <div class="slidebody">
       <span class="eyebrow rise">How we would deliver 755 skills · batches by trade, your SMEs in the loop from week one</span>
