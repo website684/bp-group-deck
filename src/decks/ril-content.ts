@@ -339,9 +339,9 @@ export const rilContentSlides: SlideDef[] = [
           <tr><td><b>Total</b></td><td class="mono"><b>7,550</b></td><td><b>755</b></td><td>₹1,312 blended</td><td><b>₹99.09 L</b></td></tr>
         </table>
         <div>
-          <div class="aival" style="grid-template-columns:1fr;gap:10px;">
-            <div class="vt" style="--vc:#8A93B8"><div class="n">₹99.1 L <small>list</small></div><div class="w">Content at rate card</div><p>7,550 finished minutes, script, voice-over, assessment and set-up included.</p></div>
-            <div class="vt" style="--vc:#FFC401"><div class="n">− ₹19.8 L <small>20% programme discount</small></div><div class="w">Full 755-skill scope as one programme</div><p>Across all five formats; batches invoiced as delivered.</p></div>
+          <div class="aival" style="grid-template-columns:1fr;gap:8px;">
+            <div class="vt" style="--vc:#8A93B8"><div class="n">₹99.1 L <small>list</small></div><div class="w">Content at rate card, 7,550 minutes</div></div>
+            <div class="vt" style="--vc:#FFC401"><div class="n">− ₹19.8 L <small>20% programme discount</small></div><div class="w">Full 755-skill scope as one programme, all formats</div></div>
             <div class="vt" style="--vc:#3BE8B0"><div class="n">₹79.3 L <small>net · one-time</small></div><div class="w">Content, base language, taxes extra</div><p>Translation and human voice as chosen. Software ₹5 per user per month on the existing PO; 50,000 users is ₹30 L a year.</p></div>
           </div>
         </div>
