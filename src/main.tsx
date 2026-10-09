@@ -3,6 +3,6 @@ import App from './App'
 import './styles/legacy-deck.css'
 import './styles/app.css'
 import './styles/incentives.css'
-import './styles/tata.css'
+import './styles/story.css'
 
 createRoot(document.getElementById('root')!).render(<App />)

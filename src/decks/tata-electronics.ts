@@ -243,7 +243,7 @@ const compMock = `
           <div class="gt"><b>Weekly hours, plant-wide, before the week closes</b><p>Average 45.6 h. <b style="color:var(--red)">7 workers</b> cross 48 h with a Saturday shift: it runs as overtime only with recorded consent, at 2×, inside the quarterly cap. <b>0 workers</b> above Apple's 60.</p></div>
         </div>
         <div class="tm-recon"><div><div class="n">38</div><div class="l">Contractors</div></div><div><div class="n g">36</div><div class="l">Challans match</div></div><div><div class="n r">2</div><div class="l">Short-paid</div></div><div><div class="n r">₹1.9L</div><div class="l">PF gap flagged</div></div></div>
-        <div class="note"><b>Flag raised to Tata Electronics.</b> Contractor notified with the worker-level gap. Whether to hold the bill is your decision, with the wage-liability rule (s.55 OSH Code, s.8A EPF) in front of you.</div>
+        <div class="note"><b>Flag raised to Tata Electronics.</b> Contractor notified with the worker-level gap. Whether to hold the bill is your decision, with the wage-liability rule (OSH Code and Code on Social Security) in front of you.</div>
       </div>
     </div>
   </div>
@@ -551,7 +551,7 @@ export const tataElectronicsSlides: SlideDef[] = [
     changes: [
       { ic: icons.doc, b: 'Registers from the record, signed by the contractor.', t: 'Workers per contractor, muster roll, wage register, overtime register with the worker’s consent, strength ledger, the annual electronic return. Generated, then authenticated by the contractor in the portal.' },
       { ic: icons.clock, b: 'Weekly hours before the week closes.', t: 'Apple’s 60-hour week and rest-day rule, Tamil Nadu’s 48, per worker, apprentices included. Past 48 the roster asks for OT consent; past 60 it blocks. Evidence for RBA audits, not a reconstruction.' },
-      { ic: icons.shield, b: 'Contractor PF and ESI, worker by worker.', t: 'Challan OCR against computed dues. Short-payment flagged to you with the worker list; the contractor is notified. Whether to hold the bill is your call, with the wage-liability rule (s.55 OSH Code, s.8A EPF) shown.' },
+      { ic: icons.shield, b: 'Contractor PF and ESI, worker by worker.', t: 'Challan OCR against computed dues. Short-payment flagged to you with the worker list; the contractor is notified. Whether to hold the bill is your call, with the wage-liability rule (OSH Code and Code on Social Security) shown.' },
     ],
     proof: { n: '−80%', p: 'vendor non-compliance risk at <b>Reliance Retail</b> across 3,000 contractors. Challan matching is the feature our clients tell us they use most.' },
     vis: compMock,

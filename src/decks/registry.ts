@@ -117,7 +117,7 @@ export const decks: DeckDef[] = [
   },
   {
     id: 'clms', next: 'attendance', title: 'goBetter CLMS · Contract Labour', group: 'product',
-    tagline: 'Vendor, work order, licence, worker, induction, gate, attendance, overtime, wages, challans, invoice, registers — one record, in the order it happens on site.',
+    tagline: 'The full contract-labour story for a principal employer: vendor, work order, licence, worker, gate, attendance, overtime, wages and challans, invoice and registers, with real screens, security and an honest status table.',
     slides: clmsSlides,
   },
   {
