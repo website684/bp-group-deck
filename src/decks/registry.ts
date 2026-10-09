@@ -24,8 +24,14 @@ import { jllSlides } from './jll'
 import { jllCapgeminiSlides } from './jll-capgemini'
 import { rilContentSlides } from './ril-content'
 import { clmsPillarSlides } from './clms-pillars'
+import { tataElectronicsSlides } from './tata-electronics'
 
 export const decks: DeckDef[] = [
+  {
+    id: 'tata-electronics', title: 'Tata Electronics · CLMS working session', group: 'story',
+    tagline: 'Seven problems in lifecycle order for the Components business HR team: onboarding to first punch, absenteeism, rostering, line time, attrition, compliance reports, BI. Link-only.',
+    slides: tataElectronicsSlides,
+  },
   {
     id: 'group', next: 'ai-labs', title: 'The BetterPlace Group Story', group: 'story',
     tagline: 'The executive pitch in 16 slides — problem, cost, model, every product, proof and how to start. The one to open the meeting with.',
