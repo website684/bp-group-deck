@@ -7,12 +7,12 @@ import type { SlideDef, SlideTheme } from '../lib/types'
 export const svg = (d: string) => `<svg viewBox="0 0 24 24">${d}</svg>`
 
 /** A lifecycle rail. `seps` are the 1-based step numbers that get a gap before them. */
-export const makeRail = (labels: string[], seps: number[] = []) => (on: number, demo?: string) => `
+export const makeRail = (labels: string[], seps: number[] = [], numbered = true) => (on: number, demo?: string) => `
   <div class="tel-rail">
     ${labels.map((l, i) => {
       const n = i + 1
       const cls = n === on ? 'on' : n < on ? 'done' : ''
-      return `${seps.includes(n) ? '<span class="sep"></span>' : ''}<span class="rl ${cls}"><i>${n}</i>${l}</span>`
+      return `${seps.includes(n) ? '<span class="sep"></span>' : ''}<span class="rl ${cls}${numbered ? '' : ' nonum'}"><i>${numbered ? n : ''}</i>${l}</span>`
     }).join('')}
     ${demo ? `<span class="demo">${demo}</span>` : ''}
   </div>`
@@ -75,12 +75,12 @@ export const plainSlide = (id: string, theme: SlideTheme, title: string, kick: s
 })
 
 /** The cover ring: lifecycle steps orbiting one record. Uses data-cycle to light each node in turn. */
-export const coverRing = (labels: string[], centre: [string, string] = ['one', 'worker record']) => {
+export const coverRing = (labels: string[], centre: [string, string] = ['one', 'worker record'], numbered = true) => {
   const n = labels.length
   const nodes = labels.map((l, i) => {
     const a = (-90 + i * (360 / n)) * Math.PI / 180
     const x = 200 + Math.cos(a) * 150, y = 200 + Math.sin(a) * 150
-    return `<g class="cyc node"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="28"/><text x="${x.toFixed(1)}" y="${(y - 4).toFixed(1)}" text-anchor="middle" class="nn">${i + 1}</text><text x="${x.toFixed(1)}" y="${(y + 10).toFixed(1)}" text-anchor="middle" class="nl">${l}</text></g>`
+    return `<g class="cyc node"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="32"/><text x="${x.toFixed(1)}" y="${(y - 4).toFixed(1)}" text-anchor="middle" class="nn">${numbered ? i + 1 : ''}</text><text x="${x.toFixed(1)}" y="${(y + (numbered ? 10 : 4)).toFixed(1)}" text-anchor="middle" class="nl">${l}</text></g>`
   }).join('')
   return `<div class="tel-ring" data-cycle="1400"><svg viewBox="0 0 400 400"><circle class="orbit" cx="200" cy="200" r="150"/><circle class="orbit2" cx="200" cy="200" r="150"/>${nodes}<text x="200" y="192" text-anchor="middle" class="cn">${centre[0]}</text><text x="200" y="216" text-anchor="middle" class="cn">${centre[1]}</text></svg></div>`
 }

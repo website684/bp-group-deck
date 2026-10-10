@@ -39,6 +39,14 @@ export default function DeckPlayer({ deck, client, initialSlide = 0, shareMode =
   curRef.current = cur
   const n = deck.slides.length
 
+  // Story slides render on a fixed 1440x810 stage; scale it to the window so layouts never reflow.
+  useEffect(() => {
+    const fit = () => document.documentElement.style.setProperty('--stage-scale', String(Math.min(window.innerWidth / 1440, window.innerHeight / 810)))
+    fit()
+    window.addEventListener('resize', fit)
+    return () => window.removeEventListener('resize', fit)
+  }, [])
+
   const go = (i: number) => {
     if (i < 0 || i >= n) return
     setCur(i)
@@ -249,7 +257,7 @@ export default function DeckPlayer({ deck, client, initialSlide = 0, shareMode =
         )
       })()}
 
-      {shareMode && (
+      {shareMode && deck.group !== 'story' && (
         <a
           className="demo-cta"
           href={`mailto:anuj.saxena@betterplace.co.in?subject=${encodeURIComponent(`Demo request${client?.name ? ' — ' + client.name : ''} (via BetterPlace deck)`)}&body=${encodeURIComponent('Hi — we went through the BetterPlace deck and would like a 30-minute demo. Areas of interest: ')}`}
