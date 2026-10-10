@@ -1,6 +1,7 @@
 import type { SlideDef } from '../lib/types'
 import { icons } from './html'
 import { svg, makeRail, bar, shot, row, problemSlide, plainSlide, coverRing } from './story-kit'
+import { type PlantCfg, rosterUI, rulesUI, headcountMock, leaveMock, waPhones, accessMock } from './attend-kit'
 
 // Tata Electronics · contract and on-roll workforce deck, v3 (Oct 2026).
 // Restructured after the alignment call with Bhuvan (Head HR, Components) and Anuj's notes:
@@ -17,113 +18,55 @@ const AREAS = ['Time & roster', 'Absence', 'Payroll', 'Attrition', 'Vendors', 'C
 const rail = makeRail(AREAS, [3, 7], false)
 const P = 'The problem'
 
+const TE: PlantCfg = {
+  org: 'Tata Electronics', orgInitials: 'TE', site: 'Hosur campus', gate: 'Gate 3',
+  lineA: 'FATP-4', lineB: 'FATP-2', lineC: 'CNC-2', floatPool: 'float pool',
+  zones: [
+    { n: 'Gate 3 · shift change', s: '6 devices · A in, C out · cleared in 27 min', c: '212', d: 'queued', dc: 'in' },
+    { n: 'FATP lines 1–8', s: 'line kiosks · since 06:00', c: '6,900', d: '96% of plan', dc: 'in' },
+    { n: 'CNC enclosure', s: 'line kiosks', c: '3,960', d: '88%', dc: 'out' },
+    { n: 'Anodising · polishing', s: 'line kiosks', c: '1,800', d: '97%', dc: 'in' },
+    { n: 'Test and pack', s: 'line kiosks', c: '2,100', d: '99%', dc: 'in' },
+  ],
+  inside: 18412, insideSub: 'A shift in 16,970 · C shift still exiting 1,404 · visitors 38',
+  workers: [
+    { i: 'PS', n: 'Priya Selvam', id: 'TE20417', meta: 'G2 · FATP-4' },
+    { i: 'KM', n: 'Kaviya Murugan', id: 'TE20588', meta: 'G2 · FATP-4' },
+    { i: 'AR', n: 'Anitha Raj', id: 'TE19902', meta: 'G2 · night consent ✓' },
+    { i: 'DK', n: 'Divya Kumar', id: 'TE20133', meta: 'G3 · FATP-4' },
+    { i: 'MR', n: 'Meena Ravi', id: 'TE20711', meta: 'G2 · FATP-4' },
+    { i: 'SV', n: 'Sangeetha V.', id: 'TE20056', meta: 'G2 · FATP-4' },
+  ],
+  contractors: ['Shree', 'Ganpati', 'Krishna'],
+  ruleSetName: 'Rule set · Tamil Nadu plants',
+  rules: [
+    { k: 'Maximum hours per day', v: '9', u: 'h', law: 'OSH Code · TN' },
+    { k: 'Maximum ordinary hours per week', v: '48', u: 'h', law: 'OSH Code' },
+    { k: 'Weekly rest', v: '1 in 7', u: 'days', law: 'OSH Code' },
+    { k: 'Overtime at 2×, with worker consent', v: 'On', u: '', law: 'OSH Code · Wages' },
+    { k: 'Weekly cap incl. overtime', v: '60', u: 'h', law: 'Apple code' },
+    { k: 'Overtime cap per quarter', v: '75', u: 'h', law: 'State rule' },
+  ],
+  holidays: [
+    { n: 'Pongal', d: '14–15 Jan', w: 'Hosur, Chennai · Tamil Nadu', c: 'TN' },
+    { n: 'Ayudha Puja', d: '19 Oct', w: 'all southern plants', c: 'TN · KA' },
+    { n: 'Rajyotsava', d: '1 Nov', w: 'Narasapura · Karnataka', c: 'KA' },
+  ],
+  roleTitle: 'FATP operator · G2', roleMeta: 'OJT sign-off, ESD · per station',
+  persona: { first: 'Kaviya', full: 'Kaviya Murugan', initials: 'KM', role: 'FATP Operator (G2), A shift', city: 'Krishnagiri', phone: '98xxxx2210' },
+  lang: {
+    label: 'தமிழ்',
+    greet: 'வணக்கம் கவியா, நான் மியா. டாடா எலக்ட்ரானிக்ஸ், ஓசூரில் உங்கள் சேர்க்கையை நான் கவனித்துக்கொள்கிறேன்.',
+    accept: 'சலுகையை ஏற்கிறேன்', consent: 'உங்கள் சேர்க்கையை முடிக்க சில விவரங்களைச் சேகரிக்க உங்கள் ஒப்புதல் தேவை.', agree: 'ஒப்புக்கொள்கிறேன்',
+    upload: 'உங்கள் ஆதார் அட்டையைப் பதிவேற்றவும்.', verified: 'ஆதார் சரிபார்க்கப்பட்டது',
+  },
+  joinMsg: 'You\u2019re all set. Report to the <b>Training Centre, Hosur, tomorrow 13 Oct, 07:00</b> for medical, ESD kit and your hostel bed.',
+  reel3: 'Safe at work · ESD', quiz: ['Before you touch a board, you wear…', 'ESD wrist strap'],
+  access: [['Training centre', 'Active from 06:30 day 1'], ['Canteen · hostel gate', 'Active from day 1'], ['FATP-4 line', 'After checks clear and OJT sign-off', '#FF9518'], ['Build area', 'Kiosk only · no phone', '#8A93B8']],
+  week: 'Oct 13 – Oct 19, 2026', days: [['Mon', 'Oct 13'], ['Tue', 'Oct 14'], ['Wed', 'Oct 15'], ['Thu', 'Oct 16'], ['Fri', 'Oct 17'], ['Sat', 'Oct 18'], ['Sun', 'Oct 19']], todayIdx: 3,
+}
+
 /* ---------------- mocks ---------------- */
-
-const headcountMock = `
-<div class="tm">
-  ${bar('goBetter · Attend · Hosur campus · live headcount', 'Live')}
-  <div class="tm-body">
-    <div class="tm-hc">
-      <div class="big">
-        <div class="l">Inside the gate now · 06:42</div>
-        <div class="n"><span data-t="18412">0</span></div>
-        <div class="s">A shift in 16,970 · C shift still exiting 1,404 · visitors 38</div>
-        <div class="split"><i style="width:71%;background:#ffc401"></i><i style="width:22%;background:#32cad4"></i><i style="width:7%;background:#8a93b8"></i></div>
-        <div class="leg"><span style="--c:#ffc401">Gate face devices 71%</span><span style="--c:#32cad4">Line kiosks 22%</span><span style="--c:#8a93b8">Training centre · app 7%</span></div>
-      </div>
-      <div class="tm-zones">
-        <div class="z"><div><b>Gate 3 · shift change</b><small>6 devices · A in, C out · cleared in 27 min</small></div><span class="n">212</span><span class="d in">queued</span></div>
-        <div class="z" style="animation-delay:.1s"><div><b>FATP lines 1–8</b><small>line kiosks · since 06:00</small></div><span class="n">6,900</span><span class="d in">96% of plan</span></div>
-        <div class="z" style="animation-delay:.2s"><div><b>CNC enclosure</b><small>line kiosks</small></div><span class="n">3,960</span><span class="d out">88%</span></div>
-        <div class="z" style="animation-delay:.3s"><div><b>Anodising · polishing</b><small>line kiosks</small></div><span class="n">1,800</span><span class="d in">97%</span></div>
-        <div class="z" style="animation-delay:.4s"><div><b>Test and pack</b><small>line kiosks</small></div><span class="n">2,100</span><span class="d in">99%</span></div>
-      </div>
-    </div>
-    <div class="tm-stream"><span><b>Priya S.</b> Gate 3 · 05:52</span><span><b>Priya S.</b> FATP-4 kiosk · 06:08</span><span><b>Ravi S.</b> Gate 1 out · 06:31</span><span><b>Offline</b> Gate 5 device · 14 punches queued, synced 06:40</span></div>
-  </div>
-</div>`
-
-const rulesAlerts = `
-<div class="tm" style="margin-top:12px">
-  ${bar('goBetter · Alerts · Hosur · this week', 'Live')}
-  <div class="tm-body">
-    <div class="tm-rows">
-      ${row('Roster change refused · SMT-4 · Sat', '7 workers would cross 48 h. Saturday can run only as consented overtime at 2×.', 'Blocked', 'r', 'hot')}
-      ${row('Bus R12 arrived 06:14 · 41 late punches', 'Matched to the route log and excused automatically, not regularised by hand', 'Excused', 'g')}
-    </div>
-  </div>
-</div>`
-
-const scenTab = (label: string) => `<span class="cyc">${label}</span>`
-const autoRosterMock = `
-<div class="tm tm-scen" data-cycle="3000">
-  ${bar('goBetter · Roster · Hosur · week of 20 Oct · built from demand and rules', 'Auto-built')}
-  <div class="tm-body">
-    <div class="tabs">${scenTab('Normal week')}${scenTab('6 absent on SMT-4')}${scenTab('Line 2 shutdown')}${scenTab('Dasara week')}</div>
-    <div class="cycpane">
-      <div class="tm-roster">
-        <span class="rh">Line · plan</span><span class="rh">A · 06–14</span><span class="rh">B · 14–22</span><span class="rh">C · 22–06</span>
-        <div class="rl2">FATP-4<small>150 · station-certified</small></div><div class="cell ok">150</div><div class="cell ok">150</div><div class="cell ok">150</div>
-        <div class="rl2">FATP-2<small>120 · station-certified</small></div><div class="cell ok">120</div><div class="cell ok">120</div><div class="cell ok">120</div>
-        <div class="rl2">CNC-2<small>84 · G3</small></div><div class="cell ok">84</div><div class="cell ok">84</div><div class="cell ok">84</div>
-        <div class="rl2">Narasapura · FATP<small>12 h · 4 on, 3 off · KA</small></div><div class="cell ok">Day 12 h</div><div class="cell off">—</div><div class="cell ok">Night 12 h</div>
-      </div>
-      <div class="why"><b>Built from inputs:</b> demand per line, station certifications, 48-hour week, 1 rest day in 7, rotating weekly off, night-shift consent. 12-hour patterns only where the state allows them.</div>
-    </div>
-    <div class="cycpane">
-      <div class="tm-roster">
-        <span class="rh">Line · plan</span><span class="rh">A · 06–14</span><span class="rh">B · 14–22</span><span class="rh">C · 22–06</span>
-        <div class="rl2">FATP-4<small>150 · certified</small></div><div class="cell gap" style="display:flex">144<small>6 absent</small></div><div class="cell ok">150</div><div class="cell ok">150</div>
-        <div class="rl2">Float pool<small>certified on FATP-4</small></div><div class="cell mv">4 → FATP-4</div><div class="cell ok">12</div><div class="cell ok">9</div>
-        <div class="rl2">Test and pack<small>surplus, certified</small></div><div class="cell mv">2 → FATP-4</div><div class="cell ok">60</div><div class="cell ok">60</div>
-      </div>
-      <div class="why"><b>Rebuilt in seconds:</b> 4 from your certified float pool and 2 certified from Test and pack moved to FATP-4. Nobody uncertified, nobody past 48 hours.</div>
-    </div>
-    <div class="cycpane">
-      <div class="tm-roster">
-        <span class="rh">Line · plan</span><span class="rh">A · 06–14</span><span class="rh">B · 14–22</span><span class="rh">C · 22–06</span>
-        <div class="rl2">FATP-2<small>shutdown Wed–Thu</small></div><div class="cell rel">0 · maint.</div><div class="cell rel">0</div><div class="cell rel">0</div>
-        <div class="rl2">FATP-4<small>absorbs 40 certified</small></div><div class="cell mv">+20</div><div class="cell mv">+20</div><div class="cell ok">150</div>
-        <div class="rl2">Training room<small>refreshers</small></div><div class="cell mv">60 · ESD</div><div class="cell off">—</div><div class="cell off">—</div>
-      </div>
-      <div class="why"><b>Shutdown handled:</b> 40 certified operators moved to FATP-4, 60 sent to due paid refresher training instead of idle time. No overtime created.</div>
-    </div>
-    <div class="cycpane">
-      <div class="tm-roster">
-        <span class="rh">Line · plan</span><span class="rh">Mon 19</span><span class="rh">Tue 20</span><span class="rh">Wed 21</span>
-        <div class="rl2">FATP-4<small>forecast short</small></div><div class="cell ok">150</div><div class="cell gap" style="display:flex">−46<small>covered</small></div><div class="cell gap" style="display:flex">−31<small>covered</small></div>
-        <div class="rl2">Float pool + Krishna<small>pre-booked, certified</small></div><div class="cell off">—</div><div class="cell mv">+40</div><div class="cell mv">+25</div>
-        <div class="rl2">Leave approvals<small>staggered</small></div><div class="cell ok">12</div><div class="cell ok">18</div><div class="cell ok">14</div>
-      </div>
-      <div class="why"><b>Festival planned two weeks out:</b> leave staggered, standby pre-booked with the contractor, travel batches spread across the week.</div>
-    </div>
-  </div>
-</div>`
-
-const leaveMock = `
-<div class="tm">
-  ${bar('goBetter · Leave, holidays and roles · Hosur and Narasapura', 'Live')}
-  <div class="tm-body">
-    <div class="tm-mini3">
-      <div><div class="l">Leave · this week</div>
-        <div class="it"><div><b>Kaviya M. · 2 days</b><small>Pongal travel · approved on mobile</small></div><span class="chip g">Approved</span></div>
-        <div class="it"><div><b>Arun P. · 1 day</b><small>sick · balance 4 left</small></div><span class="chip y">Pending</span></div>
-        <div class="it"><div><b>On-roll leave</b><small>stays in e-Sparsh · synced nightly</small></div><span class="chip b">Synced</span></div>
-      </div>
-      <div><div class="l">Holidays · by state and site</div>
-        <div class="it"><div><b>Pongal · 14–15 Jan</b><small>Hosur, Chennai · Tamil Nadu</small></div><span class="chip b">TN</span></div>
-        <div class="it"><div><b>Ayudha Puja · 19 Oct</b><small>all southern plants</small></div><span class="chip b">TN · KA</span></div>
-        <div class="it"><div><b>Rajyotsava · 1 Nov</b><small>Narasapura · Karnataka</small></div><span class="chip b">KA</span></div>
-      </div>
-      <div><div class="l">Roles and station certifications</div>
-        <div class="it"><div><b>FATP operator · G2</b><small>OJT sign-off, ESD · per station</small></div><span class="chip g">Role</span></div>
-        <div class="it"><div><b>212 certifications expire this month</b><small>roster will not place an expired operator</small></div><span class="chip y">Due</span></div>
-        <div class="it"><div><b>Default site, line and station</b><small>used by roster, gate and pay</small></div><span class="chip b">Master</span></div>
-      </div>
-    </div>
-    <div class="note"><b>One record.</b> A holiday on the state calendar changes the roster, the pay rate for anyone who works it, and the muster roll, without anyone re-entering it.</div>
-  </div>
-</div>`
 
 const festMock = `
 <div class="tm">
@@ -271,56 +214,6 @@ const hireMock = `
       </div>
     </div>
     <div class="note"><b>No re-keying.</b> A selected candidate starts onboarding on WhatsApp with the contractor, role, line and shift already filled in.</div>
-  </div>
-</div>`
-
-const waTop = `<div class="top"><i>M</i><div>Mia · Tata Electronics joining<small>BetterPlace verified business</small></div></div>`
-const waPhones = `
-<div class="wa-row">
-  <div class="wa" style="--d:.1s" data-cycle="4200">
-    <div class="scr">
-      ${waTop}
-      <div class="lang"><span class="cyc">English</span><span class="cyc">தமிழ்</span></div>
-      <div class="chat">
-        <div class="cycpane">
-          <div class="m" style="--d:.3s">Hi Kaviya, I\u2019m Mia. I\u2019ll handle your joining at Tata Electronics, Hosur. You\u2019ve been offered <b>FATP Operator (G2), A shift.</b><div class="doc">Offer_Letter_Kaviya.pdf</div><div class="btns"><span>Accept offer</span></div></div>
-          <div class="m me" style="--d:.7s">Accept offer</div>
-          <div class="m" style="--d:1s">To finish your joining I\u2019ll collect a few details. Do you consent?<div class="btns"><span>Yes, I consent</span></div></div>
-          <div class="m" style="--d:1.3s">From your application: <b>Kaviya Murugan · 98xxxx2210 · Krishnagiri.</b> Correct?</div>
-          <div class="m me" style="--d:1.6s">Correct</div>
-        </div>
-        <div class="cycpane">
-          <div class="m">வணக்கம் கவியா, நான் மியா. டாடா எலக்ட்ரானிக்ஸ், ஓசூரில் உங்கள் சேர்க்கையை நான் கவனித்துக்கொள்கிறேன்.<div class="doc">Offer_Letter_Kaviya.pdf</div><div class="btns"><span>சலுகையை ஏற்கிறேன்</span></div></div>
-          <div class="m me">சலுகையை ஏற்கிறேன்</div>
-          <div class="m">உங்கள் சேர்க்கையை முடிக்க சில விவரங்களைச் சேகரிக்க உங்கள் ஒப்புதல் தேவை.<div class="btns"><span>ஒப்புக்கொள்கிறேன்</span></div></div>
-        </div>
-      </div>
-    </div>
-    <div class="wa-cap">1 · Offer, consent, details</div>
-  </div>
-  <div class="wa" style="--d:.3s">
-    <div class="scr">
-      ${waTop}
-      <div class="chat">
-        <div class="m" style="--d:.5s">Please upload your Aadhaar.</div>
-        <div class="m me" style="--d:.8s"><div class="img">Aadhaar · XXXX XXXX 4417</div></div>
-        <div class="m sys" style="--d:1.1s">Aadhaar verified · name matches · age 18+</div>
-        <div class="m" style="--d:1.4s">Did you pay anyone a fee to get this job?<div class="btns"><span>No, I paid no fee</span></div></div>
-        <div class="m sys" style="--d:1.8s">UAN fetched and filled · EPF history clear · record check clear · 1 min 40 s</div>
-      </div>
-    </div>
-    <div class="wa-cap">2 · Aadhaar, checks, declarations</div>
-  </div>
-  <div class="wa" style="--d:.5s">
-    <div class="scr">
-      ${waTop}
-      <div class="chat">
-        <div class="m" style="--d:.7s">Three short videos before you join:<div class="reels"><span style="--rc1:#1B2D93;--rc2:#2142B9">Welcome to Tata Electronics<small>2 min</small></span><span style="--rc1:#7a1f5c;--rc2:#c2397d">POSH · respect at work<small>3 min</small></span><span style="--rc1:#0d6b4f;--rc2:#1a9a6c">Safe at work · ESD<small>3 min</small></span></div></div>
-        <div class="m" style="--d:1.1s">Before you touch a board, you wear…<div class="btns"><span>✓ ESD wrist strap</span></div></div>
-        <div class="m" style="--d:1.5s">You\u2019re all set. Report to the <b>Training Centre, Hosur, tomorrow 13 Oct, 07:00</b> for medical, ESD kit and your hostel bed.<div class="qrp"><span class="qr"></span><span>Pass · Kaviya M.<br/>Training centre · hostel</span></div><div class="btns"><span>I\u2019ll be there</span></div></div>
-      </div>
-    </div>
-    <div class="wa-cap">3 · Induction, joining slot, pass</div>
   </div>
 </div>`
 
@@ -512,7 +405,7 @@ export const tataElectronicsSlides: SlideDef[] = [
       { ic: icons.users, b: 'A live count inside the gate.', t: 'Contract, on-roll and visitors, at any moment, for safety and audit. Devices keep working offline and sync when the network returns.' },
     ],
     proof: { n: 'BPCL', p: 'knows the count of people inside its refinery gates at any moment from these punches. <b>Zepto</b> runs the same engine across 967 sites.' },
-    vis: headcountMock,
+    vis: headcountMock(TE),
     foot: 'Face and geo capture, device integration and live headcount are live. Line kiosks are configured per plant. Numbers illustrative.',
   }),
 
@@ -527,8 +420,8 @@ export const tataElectronicsSlides: SlideDef[] = [
       { ic: icons.warn, b: 'Reality checked against the rules.', t: 'When punches cross 48 hours, overtime runs without consent or a rest day is missed, the supervisor and HR get an alert the same hour. Overrides need a named role, a reason and an expiry, and show on the register.' },
     ],
     proof: { n: '7×', p: 'faster rule changes at <b>Reliance</b> than the systems it replaced, across 300K workers on this rules engine.' },
-    vis: `<div style="position:relative">${shot('assets/product/clms/policy-engine.jpg', 'goBetter · Attend · org-level rules', 'Real screen · demo org', { h: '196px' })}<div class="tm-callout" style="right:16px;bottom:14px;--d:.7s;--ay:auto"><b>Rules as settings</b>Full and half day, overtime cap, tolerance and edit window, with history.</div></div>${rulesAlerts}`,
-    foot: 'Policy engine, roster validation and alerts are live. Screen shows a demo organisation’s settings; your values follow your state rules.',
+    vis: rulesUI(TE),
+    foot: 'Policy engine, roster validation and alerts are live. Authored view of the rule-set screen; values follow your state rules.',
   }),
 
   problemSlide({
@@ -542,8 +435,8 @@ export const tataElectronicsSlides: SlideDef[] = [
       { ic: icons.layers, b: 'No scheduling tool in between.', t: 'Roster, attendance, overtime and pay on one record. Nothing to sync, nothing to reconcile.' },
     ],
     proof: { n: 'Minutes', p: 'for shortfall management at <b>Reliance Retail</b> on this roster engine, down from hours. Rostering and backfill agents are live.' },
-    vis: autoRosterMock, wide: true,
-    foot: 'Roster engine, patterns and the rostering and backfill agents are live. Building the roster from a production-plan forecast is configured in the pilot. Numbers illustrative.',
+    vis: rosterUI(TE), wide: true,
+    foot: 'Roster, patterns and the rostering agent are live; plan-driven building is configured in the pilot. Authored view, names illustrative.',
   }),
 
   problemSlide({
@@ -557,7 +450,7 @@ export const tataElectronicsSlides: SlideDef[] = [
       { ic: icons.user, b: 'Roles and station certifications.', t: 'Designation, skill grade, default line and station, OJT sign-off and ESD certification with expiry. The roster will not place an uncertified or expired operator.' },
     ],
     proof: { n: '18,026', p: 'face-registered workers in a single client organisation on this attendance record, with roles, sites and leave attached.' },
-    vis: leaveMock,
+    vis: leaveMock(TE),
     foot: 'Leave, holiday, shift and role configuration are live. The e-Sparsh sync for on-roll leave is agreed with Tata group IT in the pilot. Names illustrative.',
   }),
 
@@ -667,7 +560,7 @@ export const tataElectronicsSlides: SlideDef[] = [
           </ul></div>
           <div class="proof"><div class="n">45 min</div><p>average onboarding at <b>Zepto</b> on this flow, documents to certificate.</p></div>
         </div>
-        <div class="tel-vis">${waPhones}</div>
+        <div class="tel-vis">${waPhones(TE)}</div>
         <div class="foot">WhatsApp onboarding, Aadhaar OCR, the calling agent and induction are live. Kaviya is a composite.</div>
       </div>
     </div>`,
@@ -684,24 +577,7 @@ export const tataElectronicsSlides: SlideDef[] = [
       { ic: icons.lock, b: 'Access by zone, set up the same minute.', t: 'Training centre, canteen and hostel from day 1; the line once checks clear and OJT is signed off. Pushed to your devices.' },
     ],
     proof: { n: '1–2 min', p: 'for UAN fetch and record checks in most cases in production. 25M+ verified profiles behind them.' },
-    vis: `<div class="tm">
-      ${bar('goBetter · Kaviya M. · verification and access', 'Live')}
-      <div class="tm-body">
-        <div class="tm-rows">
-          ${row('Aadhaar · age 18+ · recruitment-fee declaration', 'Verified on WhatsApp · stored for RBA audits', 'Clear', 'g')}
-          ${row('UAN fetched and filled · EPF history · record check', 'By API · 1 min 40 s', 'Clear', 'g')}
-          ${row('Address and court checks', 'Returned clear in 19 hours · line access unlocked', 'Clear', 'g')}
-          ${row('Medical · ESD kit · hostel bed D-2', 'Recorded at the training centre on day 1', 'Done', 'g')}
-        </div>
-        <div class="tm-h" style="margin:12px 0 0"><b>Access by zone · pushed to your devices</b><span>no pass office</span></div>
-        <div class="tm-zones2">
-          <div><b>Training centre</b>Active from 06:30 day 1</div>
-          <div><b>Canteen · hostel gate</b>Active from day 1</div>
-          <div style="--zc:#FF9518"><b>FATP-4 line</b>After checks clear and OJT sign-off</div>
-          <div style="--zc:#8A93B8"><b>Build area</b>Kiosk only · no phone</div>
-        </div>
-      </div>
-    </div>`,
+    vis: accessMock(TE),
     foot: 'Verification, UAN fetch and device enrolment are live. Line access waits for checks and OJT sign-off by default.',
   }),
 

@@ -1,6 +1,7 @@
 import type { SlideDef } from '../lib/types'
 import { icons } from './html'
 import { svg, makeRail, bar, shot, row, problemSlide, plainSlide, coverRing } from './story-kit'
+import { type PlantCfg, rosterUI, rulesUI, headcountMock, leaveMock, waPhones } from './attend-kit'
 
 // goBetter CLMS · the general contract-labour deck for a principal employer (plant, refinery,
 // facility). v3, Oct 2026: rebuilt on the shared story grammar after the Tata Electronics
@@ -15,6 +16,53 @@ import { svg, makeRail, bar, shot, row, problemSlide, plainSlide, coverRing } fr
 const STEPS = ['Vendor', 'Work order', 'Worker', 'Gate', 'Attend', 'Overtime', 'Wages', 'Invoice']
 const rail = makeRail(STEPS, [5, 7])
 const Q = 'On site today'
+
+const PL: PlantCfg = {
+  org: 'Sahyadri Auto', orgInitials: 'SA', site: 'Chakan plant', gate: 'Gate 2',
+  lineA: 'Assembly-3', lineB: 'Assembly-1', lineC: 'Machining', floatPool: 'float pool',
+  zones: [
+    { n: 'Gate 2 · shift change', s: '4 devices · A in, C out · cleared in 22 min', c: '146', d: 'queued', dc: 'in' },
+    { n: 'Assembly lines 1–4', s: 'line kiosks · since 06:00', c: '1,980', d: '97% of plan', dc: 'in' },
+    { n: 'Machining', s: 'line kiosks', c: '1,120', d: '91%', dc: 'out' },
+    { n: 'Paint shop', s: 'line kiosks', c: '640', d: '98%', dc: 'in' },
+    { n: 'Stores and dispatch', s: 'line kiosks', c: '520', d: '99%', dc: 'in' },
+  ],
+  inside: 5280, insideSub: 'A shift in 4,860 · C shift still exiting 362 · visitors 58',
+  workers: [
+    { i: 'RS', n: 'Ravi Sharma', id: 'P1-10417', meta: 'Skilled · Assembly-3' },
+    { i: 'SY', n: 'Sunita Yadav', id: 'P1-10588', meta: 'Semi-skilled · Assembly-3' },
+    { i: 'AK', n: 'Arjun Kale', id: 'P1-09902', meta: 'Skilled · night consent ✓' },
+    { i: 'MP', n: 'Manoj Patil', id: 'P1-10133', meta: 'Skilled · Assembly-3' },
+    { i: 'PD', n: 'Pooja Desai', id: 'P1-10711', meta: 'Semi-skilled · Assembly-3' },
+    { i: 'IK', n: 'Imran Khan', id: 'P1-10056', meta: 'Skilled · Assembly-3' },
+  ],
+  contractors: ['Shree', 'Ganpati', 'Krishna'],
+  ruleSetName: 'Rule set · Maharashtra plants',
+  rules: [
+    { k: 'Maximum hours per day', v: '9', u: 'h', law: 'OSH Code · state' },
+    { k: 'Maximum ordinary hours per week', v: '48', u: 'h', law: 'OSH Code' },
+    { k: 'Weekly rest', v: '1 in 7', u: 'days', law: 'OSH Code' },
+    { k: 'Overtime at 2×, with worker consent', v: 'On', u: '', law: 'OSH Code · Wages' },
+    { k: 'Overtime cap per quarter', v: '75', u: 'h', law: 'State rule' },
+  ],
+  holidays: [
+    { n: 'Gudi Padwa', d: '19 Mar', w: 'Plants 1 and 2 · Maharashtra', c: 'MH' },
+    { n: 'Ganesh Chaturthi', d: '14 Sep', w: 'all Maharashtra plants', c: 'MH' },
+    { n: 'Diwali', d: '8–9 Nov', w: 'all plants', c: 'All' },
+  ],
+  roleTitle: 'Assembly operator · skilled', roleMeta: 'OJT sign-off, forklift licence · per station',
+  persona: { first: 'Sunita', full: 'Sunita Yadav', initials: 'SY', role: 'Assembly Operator (semi-skilled), A shift', city: 'Chakan', phone: '97xxxx3381' },
+  lang: {
+    label: 'हिंदी',
+    greet: 'नमस्ते सुनीता, मैं मिया हूँ। सह्याद्री ऑटो, चाकण प्लांट में आपकी जॉइनिंग मैं संभालूँगी। आपको असेंबली ऑपरेटर, A शिफ्ट का ऑफर मिला है।',
+    accept: 'ऑफर स्वीकार है', consent: 'जॉइनिंग पूरी करने के लिए कुछ जानकारी लेने हेतु आपकी सहमति चाहिए।', agree: 'मैं सहमत हूँ',
+    upload: 'कृपया अपना आधार अपलोड करें।', verified: 'आधार सत्यापित',
+  },
+  joinMsg: 'You\u2019re all set. Report to the <b>Training Centre, Chakan, tomorrow, 07:00</b> for medical, PPE kit and induction.',
+  reel3: 'Safe on the shop floor', quiz: ['Which PPE is mandatory on the line?', 'Safety shoes and gloves'],
+  access: [['Training centre', 'Active from 06:30 day 1'], ['Canteen', 'Active from day 1'], ['Assembly-3 line', 'After checks clear and OJT sign-off', '#FF9518']],
+  week: 'Oct 13 – Oct 19, 2026', days: [['Mon', 'Oct 13'], ['Tue', 'Oct 14'], ['Wed', 'Oct 15'], ['Thu', 'Oct 16'], ['Fri', 'Oct 17'], ['Sat', 'Oct 18'], ['Sun', 'Oct 19']], todayIdx: 3,
+}
 
 /* ---------------- mocks ---------------- */
 
@@ -83,23 +131,6 @@ const gateMock = `
       ${row('Safety induction certificate', 'Passed 9/10 in Hindi · photo PPE check · valid to 12 Mar 2027', 'Clear', 'g')}
     </div>
     <div class="note"><b>Pass not issued.</b> Bhoomi Facility is 10 over its licence. The contractor sees why in the portal; you see it on the vendor dashboard.</div>
-  </div>
-</div>`
-
-const rosterMock = `
-<div class="tm">
-  ${bar('goBetter · Roster · Plant 1 · week of 13 Oct · against work orders', 'Published')}
-  <div class="tm-body">
-    <div class="tm-roster" data-cycle="1800">
-      <span class="rh">Order · line</span><span class="rh">A · 06:00–14:00</span><span class="rh">B · 14:00–22:00</span><span class="rh">C · 22:00–06:00</span>
-      <div class="rl2">Housekeeping<small>WO-114 · plan 60/shift</small></div><div class="cell ok" style="--d:.2s">60 / 60<small>Shree</small></div><div class="cell ok" style="--d:.25s">60 / 60<small>Shree</small></div><div class="cell gap" style="--d:.3s"><span class="cyc">52 / 60<small>8 short</small></span><span class="cyc g2">Asked Shree<small>8 · by 20:00</small></span><span class="cyc g3">60 / 60<small>filled 19:12</small></span></div>
-      <div class="rl2">Material handling<small>WO-122 · plan 80</small></div><div class="cell ok" style="--d:.35s">80 / 80<small>Ganpati</small></div><div class="cell ok" style="--d:.4s">80 / 80<small>Excel upload</small></div><div class="cell off" style="--d:.45s">No C shift</div>
-      <div class="rl2">Maintenance<small>WO-127 · plan 40</small></div><div class="cell ok" style="--d:.5s">40 / 40</div><div class="cell ok" style="--d:.55s">40 / 40</div><div class="cell ok" style="--d:.6s">40 / 40<small>cross-midnight</small></div>
-      <div class="rl2">Security<small>WO-131 · plan 16</small></div><div class="cell ok" style="--d:.65s">16 / 16</div><div class="cell ok" style="--d:.7s">16 / 16</div><div class="cell ok" style="--d:.75s">16 / 16</div>
-    </div>
-    <div class="tm-rules">
-      <span class="chip b">Daily and weekly hours per state rule</span><span class="chip b">Weekly off · rest day per person</span><span class="chip b">Night shift conditions</span><span class="chip b">Inside sanctioned strength</span><span class="chip r">3 breaches blocked this week</span>
-    </div>
   </div>
 </div>`
 
@@ -344,20 +375,27 @@ export const clmsSlides: SlideDef[] = [
     foot: 'Licence ledger and block-or-flag are live (SOW §5.3). Applicability thresholds and filing stay with you and your advisors. Numbers illustrative.',
   }),
 
-  problemSlide({
-    id: 'cm7', theme: 'light', title: 'Worker onboarding', rail, step: 3, demo: 'Live · onboarding',
-    kick: 'Step 3 · the worker · onboarding',
-    h2: 'Documents from his own phone, checked as they arrive, <em>so the time office stops being a queue.</em>',
-    qLabel: Q, quote: 'Joiners queue at the time office with photocopies. Half the forms come back incomplete.',
-    changes: [
-      { ic: icons.user, b: 'Self-onboarding on his phone.', t: 'Aadhaar eKYC through a UIDAI-licensed partner, documents validated by API, configured by state and category. Assisted at a desk when he needs help.' },
-      { ic: icons.doc, b: 'Signed and payroll-ready once.', t: 'e-Sign on contract, appointment letter and policies. Bank, UAN and ESIC captured once, never re-entered.' },
-      { ic: icons.layers, b: 'Mobilisation at scale.', t: 'Bulk upload with every error returned in one file. Contractors onboard on the same screens, to your standard.' },
-    ],
-    proof: { n: '45 min', p: 'to onboard a delivery partner at <b>Zepto</b> on the same flow, from documents to certificate.' },
-    vis: `<div style="position:relative">${shot('assets/product/clms/onboarding-funnel.jpg', 'goBetter · Onboard · Insights · onboarding status', 'Real screen · demo org')}<div class="tm-callout" style="right:18px;top:52px;--d:.8s;--ay:auto"><b>Where joiners stall</b>Each step shows how many profiles finished it and how many are stuck, so you chase the step, not the person.</div></div>`,
-    foot: 'Onboarding, eKYC and e-Sign are live. Screen captured from a demo organisation.',
-  }),
+  {
+    id: 'cm7', theme: 'dark', title: 'Worker onboarding · WhatsApp',
+    html: `
+    <div class="tel">
+      ${rail(3, 'Live · WhatsApp onboarding')}
+      <div class="tel-head"><div><span class="kick">Step 3 · the worker · onboarding on WhatsApp, in his language</span><h2>Hired today, onboarded on WhatsApp by evening, <em>at the training centre the next morning.</em></h2></div></div>
+      <div class="tel-body" style="grid-template-columns:minmax(0,.3fr) minmax(0,.7fr)">
+        <div class="tel-say">
+          <div class="blk"><div class="lbl">${Q}</div><div class="tq">Joiners queue at the time office with photocopies. Half the forms come back incomplete.</div></div>
+          <div class="blk"><div class="lbl">What changes</div><ul>
+            <li><span class="ic">${svg(icons.zap)}</span><span><b>The hire triggers it.</b> Offer, consent and details on WhatsApp, prefilled from hiring or the contractor.</span></li>
+            <li><span class="ic">${svg(icons.lang)}</span><span><b>Their language.</b> Hindi, Marathi, Tamil or any of 35, switched at any step.</span></li>
+            <li><span class="ic">${svg(icons.mic)}</span><span><b>Stuck? Our agent calls.</b> An AI voice agent walks them through the step.</span></li>
+          </ul></div>
+          <div class="proof"><div class="n">45 min</div><p>average onboarding at <b>Zepto</b> on this flow, documents to certificate.</p></div>
+        </div>
+        <div class="tel-vis">${waPhones(PL)}</div>
+        <div class="foot">WhatsApp onboarding, Aadhaar OCR, UAN fetch, the calling agent and induction reels are live. Plant and worker are illustrative.</div>
+      </div>
+    </div>`,
+  },
 
   problemSlide({
     id: 'cm8', theme: 'light', title: 'Background verification', rail, step: 3, demo: 'Live · verification',
@@ -390,33 +428,63 @@ export const clmsSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'cm10', theme: 'light', title: 'Attendance policy', rail, step: 5, demo: 'Live · policy engine',
-    kick: 'Step 5 · attendance · capture and policy',
-    h2: 'Every attendance rule is a setting you can show an auditor, <em>not a formula in someone’s spreadsheet.</em>',
-    qLabel: Q, quote: 'Each site counts present days its own way. The muster roll depends on who prepared it.',
+    id: 'cm10', theme: 'light', title: 'Attendance · capture', rail, step: 5, demo: 'Live · headcount',
+    kick: 'Step 5 · attendance · 1 of 4 · capture down to the line',
+    h2: 'Know who is inside the plant, on which line, <em>right now, not at the end of the shift.</em>',
+    qLabel: Q, quote: 'We know who crossed the gate. Who reached the line, and how many are inside right now, is a guess.',
     changes: [
-      { ic: icons.cam, b: 'Three ways in, one record.', t: 'Face with spoof detection, geo-fence per site, and gate terminals all feed the same record. Suspected proxies go to a review queue.' },
-      { ic: icons.layers, b: 'Rules set once, per site.', t: 'Full-day and half-day thresholds, tolerance and buffers, monthly OT cap, how far back anyone may edit. Changes carry a history.' },
-      { ic: icons.map, b: 'Your hierarchy.', t: 'Country, state, city and site, each with its own holidays, shifts and rules. Works offline at the gate and syncs when the network returns.' },
+      { ic: icons.cam, b: 'Face at fixed devices, geo-face elsewhere.', t: 'Your face and biometric terminals integrated at gates and line kiosks. Geotagged face with liveness on a phone for field and outstation staff. A photo held to the camera does not count.' },
+      { ic: icons.map, b: 'Gate, line and canteen punches.', t: 'Each punch point is a zone in the plant hierarchy, so you see how many are active in each area as people go in and out.' },
+      { ic: icons.users, b: 'A live count inside the gate.', t: 'Contract, on-roll and visitors, at any moment, for safety and audit. Devices work offline and sync when the network returns.' },
     ],
-    proof: { n: '18,026', p: 'face-registered workers in a single client organisation on this attendance engine.' },
-    vis: `<div style="position:relative">${shot('assets/product/clms/policy-engine.jpg', 'goBetter · Attend · Org level configuration', 'Real screen · demo org', { h: '380px' })}<div class="tm-callout" style="left:36%;top:150px;--d:.7s;--ax:20px"><b>Thresholds</b>Hours for a full day and a half day, and the monthly OT cap.</div><div class="tm-callout" style="left:42%;bottom:28px;--d:.9s;--ay:auto"><b>Edit window</b>How far back logs may be edited, with history kept.</div></div>`,
-    foot: 'Attendance capture, spoof review and the policy engine are live. Screen and values are a demo organisation\u2019s settings; caps follow your state rules.',
+    proof: { n: 'BPCL', p: 'knows the count of people inside its refinery gates at any moment from these punches. <b>Zepto</b> runs the same engine across 967 sites.' },
+    vis: headcountMock(PL),
+    foot: 'Face and geo capture, device integration and live headcount are live. Line kiosks are configured per plant. Numbers illustrative.',
   }),
 
   problemSlide({
-    id: 'cm11', theme: 'light', title: 'Roster and exceptions', rail, step: 5, demo: 'Live · roster',
-    kick: 'Step 5 · attendance · rostering and exceptions',
-    h2: 'Shifts planned against the work order, published, <em>and enforced at the gate.</em>',
-    qLabel: Q, quote: 'Contractors roster in Excel. We see the names after the shift has started.',
+    id: 'cm10b', theme: 'light', title: 'Attendance · rules', rail, step: 5, demo: 'Live · policy engine',
+    kick: 'Step 5 · attendance · 2 of 4 · labour-law rules the roster cannot break',
+    h2: 'Set the labour-law rules once. <em>The roster never breaks them, and you hear the moment reality does.</em>',
+    qLabel: Q, quote: 'Hour limits live in a policy document. The roster is built in a spreadsheet that has never read it.',
     changes: [
-      { ic: icons.clock, b: 'A weekly grid that publishes.', t: 'Copy, bulk edit, undo, then publish. Contractors fill against the order in the portal or by Excel upload. Night and cross-midnight shifts, weekly off and rest day per person.' },
-      { ic: icons.check, b: 'One approvals queue.', t: 'Regularisation, leave, reconciliation and possible spoofs in one place, with an SLA counter. Managers approve on mobile, with a reason from a fixed list.' },
-      { ic: icons.doc, b: 'Three reports, no ticket.', t: 'Muster roll, attendance log and overtime report, by date range and filters, to Excel.' },
+      { ic: icons.layers, b: 'Rules as settings, per state and plant.', t: 'Daily and weekly hour limits, a rest day in seven, overtime consent and the quarterly cap, night-shift conditions, any customer code you answer to.' },
+      { ic: icons.lock, b: 'The roster refuses a breach.', t: 'A shift that would cross a limit cannot be published. The planner sees which rule and which workers.' },
+      { ic: icons.warn, b: 'Reality checked against the rules.', t: 'When punches cross 48 hours, overtime runs without consent or a rest day is missed, the supervisor gets an alert the same hour. Overrides need a named role, a reason and an expiry.' },
     ],
-    proof: { n: '967', p: 'sites at <b>Zepto</b> run planned against actual on this engine, live, per site, for 15,000 workers. 40% cost saved.' },
-    vis: rosterMock, flip: true,
-    foot: 'Roster, approvals and reports are live. Daily and weekly hour rules are configured to your state rules. Numbers illustrative.',
+    proof: { n: '7×', p: 'faster rule changes at <b>Reliance</b> than the systems it replaced, across 300K workers on this rules engine.' },
+    vis: rulesUI(PL),
+    foot: 'Policy engine, roster validation and alerts are live. Authored view of the rule-set screen; values follow your state rules.',
+  }),
+
+  problemSlide({
+    id: 'cm11', theme: 'dark', title: 'Attendance · auto roster', rail, step: 5, demo: 'Live · auto roster',
+    kick: 'Step 5 · attendance · 3 of 4 · intelligent rostering',
+    h2: 'Give us demand and the rules. <em>We build the roster, and rebuild it when a line stops or a festival hits.</em>',
+    qLabel: Q, quote: 'Contractors roster in Excel. We see the names after the shift has started, and absences are fixed by phone.',
+    changes: [
+      { ic: icons.clock, b: 'Any pattern the law allows.', t: 'Three 8-hour shifts, 12-hour patterns where the state allows them with consent, 5- or 6-day weeks, a weekly off that rotates per person.' },
+      { ic: icons.repeat, b: 'Rebuilt on the day.', t: 'Absences filled only with operators certified on those stations. Shutdowns move crews or send them to paid training. Festivals planned two weeks out.' },
+      { ic: icons.layers, b: 'No scheduling tool in between.', t: 'Roster, attendance, overtime and pay on one record. Contractors fill against the work order in the portal or by Excel upload.' },
+    ],
+    proof: { n: 'Minutes', p: 'for shortfall management at <b>Reliance Retail</b> on this roster engine, down from hours. Rostering and backfill agents are live.' },
+    vis: rosterUI(PL), wide: true,
+    foot: 'Roster, patterns and the rostering agent are live; plan-driven building is configured in the pilot. Authored view, names illustrative.',
+  }),
+
+  problemSlide({
+    id: 'cm11b', theme: 'light', title: 'Attendance · leave, holidays, roles', rail, step: 5, demo: 'Live · leave and holidays',
+    kick: 'Step 5 · attendance · 4 of 4 · leave, holidays, roles and certifications',
+    h2: 'Every rule knows who it applies to, <em>because leave, holidays, roles and certifications live on one record.</em>',
+    qLabel: Q, quote: 'Leave sits in one system, holidays in a circular, roles in a spreadsheet. The roster and payroll see none of them.',
+    changes: [
+      { ic: icons.check, b: 'Leave for the contract workforce.', t: 'Policies and balances per contractor and role, applied and approved on the phone. On-roll leave can stay in your HR system and sync.' },
+      { ic: icons.map, b: 'Holidays by state and site.', t: 'National, state and optional holidays, each applied to the right plants, with the right pay rate for anyone who works one.' },
+      { ic: icons.user, b: 'Roles and station certifications.', t: 'Designation, skill grade, default line and station, OJT sign-off and licences with expiry. The roster will not place an uncertified or expired operator.' },
+    ],
+    proof: { n: '18,026', p: 'face-registered workers in a single client organisation on this attendance record, with roles, sites and leave attached.' },
+    vis: leaveMock(PL),
+    foot: 'Leave, holiday, shift and role configuration are live. Names illustrative.',
   }),
 
   {
