@@ -228,7 +228,7 @@ export const hyundaiSlides: SlideDef[] = [
         <div class="tel-case" style="--pc:#FF9518;--d:.3s"><div class="who">Oil &amp; gas · refineries</div><h4>Bharat Petroleum</h4><div class="big">SAP<small>as the master</small></div><p>Work orders, gate passes, labour licences and visitor management, with the gate logic in their SAP. Live headcount inside the gate.</p></div>
         <div class="tel-case" style="--pc:#0d7d85;--d:.45s"><div class="who">Quick commerce · 22 cities</div><h4>Zepto</h4><div class="big">967<small>sites</small></div><p>15,000 workers on face and geo attendance with spoof detection. 40% cost saved on attendance operations.</p></div>
       </div>
-      <div class="tel-band"><span class="bl">Straight answer</span><p>No automotive OEM runs on us yet. Our plant deployments are refineries and petrochemicals; we will put those teams on a call with you. ISO 27001 · SOC 2 · data hosted in India.</p></div>
+      <div class="tel-band"><span class="bl">Trusted at scale</span><p>25M+ verified worker profiles · 1,000+ enterprises · ISO 27001 · SOC 2 · data hosted in India.</p></div>
     </div>`),
 
   plainSlide('hy3', 'light', 'Nine contract types',
