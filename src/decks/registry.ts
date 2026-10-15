@@ -25,8 +25,14 @@ import { jllCapgeminiSlides } from './jll-capgemini'
 import { rilContentSlides } from './ril-content'
 import { clmsPillarSlides } from './clms-pillars'
 import { tataElectronicsSlides } from './tata-electronics'
+import { hyundaiSlides } from './hyundai'
 
 export const decks: DeckDef[] = [
+  {
+    id: 'hyundai', title: 'Hyundai Motor India · CLMS demo', group: 'story',
+    tagline: 'Vendor management first (vendors, work orders, onboarding chain, gate passes, scorecard), then attendance, shifts, OT and billing, statutory and the live dashboard. Link-only.',
+    slides: hyundaiSlides,
+  },
   {
     id: 'tata-electronics', title: 'Tata Electronics · CLMS working session', group: 'story',
     tagline: 'Seven problems in lifecycle order for the Components business HR team: onboarding to first punch, absenteeism, rostering, line time, attrition, compliance reports, BI. Link-only.',
