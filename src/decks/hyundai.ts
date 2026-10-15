@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { icons } from './html'
-import { svg, makeRail, bar, row, problemSlide, plainSlide, coverRing } from './story-kit'
+import { svg, makeRail, bar, row, shot, problemSlide, plainSlide, coverRing } from './story-kit'
 import { type PlantCfg, rosterUI, rulesUI, headcountMock, waPhones } from './attend-kit'
 
 // Hyundai Motor India (HMIL) · CLMS demo deck (Oct 2026). Built from HMIL's requirement workbook
@@ -231,6 +231,31 @@ export const hyundaiSlides: SlideDef[] = [
       <div class="tel-band"><span class="bl">Trusted at scale</span><p>25M+ verified worker profiles · 1,000+ enterprises · ISO 27001 · SOC 2 · data hosted in India.</p></div>
     </div>`),
 
+  plainSlide('hy2b', 'darker', 'Why now',
+    'Why now · what is at stake on a plant of this size',
+    'Contract labour is no longer an HR file. <em>It decides output, audits and the principal employer\u2019s liability.</em>',
+    `<div class="tel-stakes">
+      <div class="st" style="--d:.15s"><div class="n">21 Nov 2025</div><div class="l">the four Labour Codes in force · central rules May 2026</div><p>Contractor registers, licensed strength, the core-activity bar and one annual electronic return. State rules for Tamil Nadu and Maharashtra are still landing.</p><div class="src">Labour Codes notification</div></div>
+      <div class="st" style="--d:.3s"><div class="n">You pay</div><div class="l">wages, PF and ESI when a contractor defaults</div><p>The principal employer pays and recovers. With nine contract types and dozens of vendors, one unmatched challan becomes your notice.</p><div class="src">OSH Code · Code on Social Security</div></div>
+      <div class="st" style="--d:.45s"><div class="n">48 h</div><div class="l">ordinary hours a week · overtime at 2×, with consent</div><p>Every hour beyond the limit needs the worker\u2019s consent, is paid at twice the rate and sits inside a quarterly cap. It has to be provable, worker by worker.</p><div class="src">OSH Code · Code on Wages</div></div>
+      <div class="st" style="--d:.6s"><div class="n">Right now</div><div class="l">how many contract workers are inside the gate, and where</div><p>At BPCL\u2019s refineries that count must be known at any moment, and it comes from our gate swipes. Safety and auditors at an auto plant ask for the same.</p><div class="src">BPCL deployment</div></div>
+    </div>`, { glow: true }),
+
+  plainSlide('hy2c', 'light', 'The rules',
+    'The rules your records must prove · the new labour codes and state rules',
+    'Every pass, hour and rupee now has to satisfy the labour codes. <em>The software keeps you inside them.</em>',
+    `<div>
+      <div class="tel-codes">
+        <div class="cd" style="--d:.1s"><span class="law">OSH Code · contract labour</span><h4>Licensed strength and the core-activity bar</h4><p>Each contractor deploys only up to its licence, and only in roles open to contract work.</p><div class="we"><b>We enforce:</b> a pass that would cross the licence is blocked at issue.</div></div>
+        <div class="cd" style="--d:.18s"><span class="law">OSH Code · working hours</span><h4>Daily and weekly limits, a weekly rest day</h4><p>Tamil Nadu and Maharashtra: 9 hours a day, 48 a week. Sunday work needs a permit.</p><div class="we"><b>We enforce:</b> the roster refuses a breach; swipes that cross a limit raise an alert.</div></div>
+        <div class="cd" style="--d:.26s"><span class="law">OSH Code + Code on Wages · overtime</span><h4>Overtime needs consent and pays twice</h4><p>Only with the worker\u2019s consent, at twice the ordinary rate, inside a quarterly cap.</p><div class="we"><b>We enforce:</b> consent per OT shift, 2× computed, approval inside the billing cycle.</div></div>
+        <div class="cd" style="--d:.34s"><span class="law">Code on Wages · pay</span><h4>Minimum wage by skill, paid on time</h4><p>Minimum wage by state and skill, bonus, holiday wages and deductions within limits.</p><div class="we"><b>We enforce:</b> a rate below the floor is refused in the price master.</div></div>
+        <div class="cd" style="--d:.42s"><span class="law">Code on Social Security · PF, ESI, gratuity</span><h4>The principal employer pays if a contractor doesn\u2019t</h4><p>PF, ESI and gratuity for contract workers fall back on you when the contractor defaults.</p><div class="we"><b>We enforce:</b> every challan matched to every worker, every month.</div></div>
+        <div class="cd" style="--d:.5s"><span class="law">OSH Code · registers and returns</span><h4>Registers on demand, one annual return</h4><p>Workers per contractor, muster roll, wages, overtime, wage slips, the annual return.</p><div class="we"><b>We generate:</b> any register, any day, signed off by the contractor.</div></div>
+      </div>
+      <div class="foot" style="margin-top:10px">Central rules were notified in May 2026; until each state notifies its rules, saved state rules apply. We configure the rules you confirm; interpretation stays with you and your advisors.</div>
+    </div>`),
+
   plainSlide('hy3', 'light', 'Nine contract types',
     'One platform for every kind of contractor at your plants',
     'Nine contract types, each with its own pass validity, approvals and modules. <em>Set once, applied every time.</em>',
@@ -384,6 +409,33 @@ export const hyundaiSlides: SlideDef[] = [
     proof: { n: '−90%', p: 'payroll leakage at <b>Reliance</b> once billing ran from verified attendance.' },
     vis: otUI, wide: true,
     foot: 'OT, invoice checks and challan reconciliation are live; the HMIL OT chain and gratuity reimbursement flow are configured. Figures illustrative.',
+  }),
+
+  problemSlide({
+    id: 'hp1', theme: 'light', title: 'Payroll and compliances', rail, step: 9, demo: 'Live · payroll',
+    kick: 'Payroll · wages and statutory compliances from verified attendance',
+    h2: 'Run or validate contract payroll from swipes, <em>with PF, ESI, PT and LWF compliance built in.</em>',
+    qLabel: P, quote: 'Wages are computed by each contractor in its own Excel, and statutory payments are checked only when an inspector asks.',
+    changes: [
+      { ic: icons.clock, b: 'Pay from verified attendance.', t: 'Present days, holidays worked and approved OT flow in. Pongal bonus or Diwali advance as one-time components.' },
+      { ic: icons.layers, b: 'Structures and registers.', t: 'Salary structures by skill code from the price master, wage registers by contractor and location, payslips in the worker app.' },
+      { ic: icons.shield, b: 'Statutory compliances.', t: 'PF, ESI, Professional Tax and Labour Welfare Fund computed per worker; challans uploaded and matched; gaps flagged before you pay.' },
+    ],
+    proof: { n: '−90%', p: 'payroll leakage at <b>Reliance</b> once pay ran from verified attendance, across 300K+ workers.' },
+    vis: `<div style="position:relative">${shot('assets/product/clms/pongal-bonus-component.jpg', 'goBetter · Payroll · add a one-time component', 'Production design', { h: '150px' })}<div class="tm-callout" style="right:16px;top:44px;--d:.7s"><b>Festival bonus</b>One month only, with PF, ESI and OT applicability set on it.</div></div>
+    <div class="ui" style="margin-top:12px">
+      ${side(5)}
+      <div class="ui-main">
+        ${top('Hyundai Motor India / Payroll / <b>Compliances · September</b>', 'Statutory compliances · 41 contractors')}
+        <div class="hv-comp">
+          <div class="c"><b>PF</b><span class="n">38 / 41</span><small>challans matched</small><em class="r">3 short · ₹1.9 L</em></div>
+          <div class="c"><b>ESI</b><span class="n">40 / 41</span><small>challans matched</small><em class="y">1 late</em></div>
+          <div class="c"><b>Professional Tax</b><span class="n">41 / 41</span><small>TN and MH slabs</small><em class="g">Filed</em></div>
+          <div class="c"><b>Labour Welfare Fund</b><span class="n">41 / 41</span><small>half-yearly</small><em class="g">Due Dec</em></div>
+        </div>
+      </div>
+    </div>`,
+    foot: 'Payroll, salary structures and the PF, ESI, PT and LWF compliance workspace are live. Figures illustrative.',
   }),
 
   plainSlide('hs1', 'light', 'Statutory and training',
