@@ -399,6 +399,55 @@ export const hyundaiSlides: SlideDef[] = [
     </div>`),
 
   problemSlide({
+    id: 'ht1', theme: 'dark', title: 'Training', rail, step: 9, demo: 'Live · skillBetter',
+    kick: 'Training · induction and safety refreshers on the worker\u2019s phone',
+    h2: 'Induction and safety refreshers on every worker\u2019s phone, <em>in Tamil or Marathi, with proof of who passed.</em>',
+    qLabel: P, quote: 'Induction is a signed self-declaration and refresher attendance is a scanned sheet. Nobody can say who is due.',
+    changes: [
+      { ic: icons.play, b: 'Short courses in their language.', t: 'Induction, safety, height and forklift refreshers as bite-sized videos with a test, in 35 languages, offline too.' },
+      { ic: icons.check, b: 'Proof, not paper.', t: 'Self-declaration signed in the app, test scores and certificates dated per worker. Refreshers pushed before they lapse.' },
+      { ic: icons.lock, b: 'Linked to the pass.', t: 'A lapsed mandatory course can hold the gate pass or the work permit. The dashboard shows who is due, by contractor.' },
+    ],
+    proof: { n: '88%', p: 'course completion across our clients, against about 25% in the industry. <b>Hindalco</b> tripled shop-floor training coverage on skillBetter.' },
+    vis: `<div class="tm-fan">
+      <div class="ph"><img src="assets/product/figma/skilling/mobile-learning-home-new-feed.png" alt="Learning home"/><em>Learning home</em></div>
+      <div class="ph"><img src="assets/product/figma/skilling/skillbetter-mobile-course-overview-chapter-states.png" alt="Factory operations course"/><em>Mandatory course</em></div>
+      <div class="ph"><img src="assets/product/figma/skilling/skillbetter-mobile-offline-downloads-sheet.png" alt="Offline downloads"/><em>Works offline</em></div>
+      <div class="chipf" style="left:0;top:16%;animation-delay:0s,.8s"><b>212</b>refreshers due this month</div>
+      <div class="chipf" style="right:0;top:40%;animation-delay:1.5s,1s"><b>9 / 10</b>safety test passed</div>
+    </div>`,
+    foot: 'skillBetter LMS is live (production app screens). Linking course status to gate passes and permits is configured for HMIL.',
+  }),
+
+  problemSlide({
+    id: 'hr1', theme: 'light', title: 'Reimbursements', rail, step: 9, demo: 'Live · reimbursements',
+    kick: 'Reimbursements · claims and gratuity on the same record',
+    h2: 'Claims raised, approved and paid in the system, <em>with gratuity reimbursement checked automatically.</em>',
+    qLabel: P, quote: 'Reimbursement claims and gratuity cases move on email with attachments, and eligibility is worked out by hand.',
+    changes: [
+      { ic: icons.doc, b: 'Raise with the bill attached.', t: 'Contractor or worker raises a claim against a category and limit, with the receipt uploaded.' },
+      { ic: icons.check, b: 'Approve and pay through the run.', t: 'Approved claims flow into the next payroll or bill; nothing is retyped.' },
+      { ic: icons.shield, b: 'Gratuity on termination.', t: 'Pass terminated, eligibility checked by the system, HR approves, cost and worker details mailed to the contractor.' },
+    ],
+    proof: { n: '1 record', p: 'claims, pay, passes and exits sit on the same worker record, so eligibility is never worked out by hand.' },
+    vis: `<div class="ui">
+      ${side(5)}
+      <div class="ui-main">
+        ${top('Hyundai Motor India / Payroll / <b>Reimbursements · October</b>', 'Reimbursement claims')}
+        <div class="ui-bar"><span class="ui-box">Pending 18</span><span class="ui-box">Approved 46</span><span class="ui-box">Paid in run 112</span><span class="ui-sp"></span><span class="ui-btn pri">Approve selected</span></div>
+        <div class="hv-tbl" style="grid-template-columns:1.2fr 1fr .7fr .9fr .7fr">
+          <div class="h">Claim</div><div class="h">Category</div><div class="h">Amount</div><div class="h">Receipt</div><div class="h">Status</div>
+          <div><b>Karthik M.</b><small>Sri Sakthi · CL-30417</small></div><div>Safety shoes</div><div>₹1,450</div><div><span class="hv-d g">Uploaded</span></div><div><span class="hv-s y">Pending</span></div>
+          <div><b>Suresh R.</b><small>Ganesh · CL-30588</small></div><div>Medical test</div><div>₹600</div><div><span class="hv-d g">Uploaded</span></div><div><span class="hv-s g">Approved</span></div>
+          <div><b>Velan Engineering</b><small>contractor claim</small></div><div>Travel · Pune site</div><div>₹8,200</div><div><span class="hv-d g">Uploaded</span></div><div><span class="hv-s g">Paid</span></div>
+        </div>
+        <div class="hv-ai" style="background:#f0fdf4;border-color:#bbf7d0"><b style="color:#166534">Gratuity · 12 workers eligible</b> Passes terminated in September · 5+ years · cost ₹6.8 L · details mailed to 3 contractors · HR approval pending</div>
+      </div>
+    </div>`,
+    foot: 'The reimbursement module (claims, approval, payout through payroll) is live in a basic form; the gratuity eligibility workflow is configured for HMIL. Authored view; figures illustrative.',
+  }),
+
+  problemSlide({
     id: 'hd1', theme: 'dark', title: 'Live dashboard', rail, step: 10, demo: 'Live · dashboard',
     kick: 'Live dashboard · every report on one screen',
     h2: 'TO against actual, attendance, attrition, compliance and payments, <em>for every contractor, live.</em>',
