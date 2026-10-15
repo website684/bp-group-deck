@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { icons } from './html'
-import { svg, makeRail, bar, row, shot, problemSlide, plainSlide, coverRing } from './story-kit'
+import { svg, makeRail, bar, row, problemSlide, plainSlide, coverRing } from './story-kit'
 import { type PlantCfg, rosterUI, rulesUI, headcountMock, waPhones } from './attend-kit'
 
 // Hyundai Motor India (HMIL) · CLMS demo deck (Oct 2026). Built from HMIL's requirement workbook
@@ -412,30 +412,37 @@ export const hyundaiSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'hp1', theme: 'light', title: 'Payroll and compliances', rail, step: 9, demo: 'Live · payroll',
-    kick: 'Payroll · wages and statutory compliances from verified attendance',
-    h2: 'Run or validate contract payroll from swipes, <em>with PF, ESI, PT and LWF compliance built in.</em>',
-    qLabel: P, quote: 'Wages are computed by each contractor in its own Excel, and statutory payments are checked only when an inspector asks.',
+    id: 'hp1', theme: 'light', title: 'Payroll · PF and ESI compliance', rail, step: 9, demo: 'Live · challan match',
+    kick: 'Payroll · PF and ESI compliance monitoring for the principal employer',
+    h2: 'Every vendor\u2019s PF and ESI challan checked against every worker, <em>every month, before you pay the bill.</em>',
+    qLabel: P, quote: 'Vendors send challans as PDFs. Nobody checks whether each worker\u2019s PF and ESI was actually paid, until a notice arrives for the principal employer.',
     changes: [
-      { ic: icons.clock, b: 'Pay from verified attendance.', t: 'Present days, holidays worked and approved OT flow in. Pongal bonus or Diwali advance as one-time components.' },
-      { ic: icons.layers, b: 'Structures and registers.', t: 'Salary structures by skill code from the price master, wage registers by contractor and location, payslips in the worker app.' },
-      { ic: icons.shield, b: 'Statutory compliances.', t: 'PF, ESI, Professional Tax and Labour Welfare Fund computed per worker; challans uploaded and matched; gaps flagged before you pay.' },
+      { ic: icons.doc, b: 'Vendor uploads, we read it.', t: 'The PF ECR and ESI challan are uploaded on the vendor portal; OCR reads every UAN, IP number, amount and wage month.' },
+      { ic: icons.shield, b: 'Matched against actual numbers.', t: 'Each deposit is compared with the dues computed from that worker\u2019s verified attendance and wages. Not paid, short paid, wrong UAN and late deposits are flagged.' },
+      { ic: icons.check, b: 'Compliance proven, payment protected.', t: 'The vendor is notified with the worker list, the gap shows on the scorecard, and the bill can be held until it is cleared. Due diligence on record.' },
     ],
-    proof: { n: '−90%', p: 'payroll leakage at <b>Reliance</b> once pay ran from verified attendance, across 300K+ workers.' },
-    vis: `<div style="position:relative">${shot('assets/product/clms/pongal-bonus-component.jpg', 'goBetter · Payroll · add a one-time component', 'Production design', { h: '150px' })}<div class="tm-callout" style="right:16px;top:44px;--d:.7s"><b>Festival bonus</b>One month only, with PF, ESI and OT applicability set on it.</div></div>
-    <div class="ui" style="margin-top:12px">
+    proof: { n: '−80%', p: 'vendor non-compliance at <b>Reliance</b> across 3,000+ vendors. Clients name challan matching among the features they use most.' },
+    vis: `<div class="ui">
       ${side(5)}
       <div class="ui-main">
-        ${top('Hyundai Motor India / Payroll / <b>Compliances · September</b>', 'Statutory compliances · 41 contractors')}
-        <div class="hv-comp">
-          <div class="c"><b>PF</b><span class="n">38 / 41</span><small>challans matched</small><em class="r">3 short · ₹1.9 L</em></div>
-          <div class="c"><b>ESI</b><span class="n">40 / 41</span><small>challans matched</small><em class="y">1 late</em></div>
-          <div class="c"><b>Professional Tax</b><span class="n">41 / 41</span><small>TN and MH slabs</small><em class="g">Filed</em></div>
-          <div class="c"><b>Labour Welfare Fund</b><span class="n">41 / 41</span><small>half-yearly</small><em class="g">Due Dec</em></div>
+        ${top('Hyundai Motor India / Payroll / Compliances / <b>PF and ESI · September</b>', 'Challan reconciliation · Ganesh Logistics')}
+        <div class="hv-up"><span class="doc"></span><div><b>PF ECR challan · TRRN 2610…4418 · uploaded by vendor 05 Oct</b><small>OCR read 182 UANs, amounts and wage month · ESI challan read: 182 IP numbers</small></div><span class="hv-s g">OCR read</span></div>
+        <div class="hv-comp" style="margin-bottom:0">
+          <div class="c"><b>Workers billed</b><span class="n">186</span><small>from verified attendance</small></div>
+          <div class="c"><b>PF matched</b><span class="n">180</span><small>dues = deposit</small><em class="g">On time</em></div>
+          <div class="c"><b>PF gaps</b><span class="n">6</span><small>4 not paid · 2 short</small><em class="r">₹8,600</em></div>
+          <div class="c"><b>ESI gaps</b><span class="n">2</span><small>wrong IP number</small><em class="y">Review</em></div>
         </div>
+        <div class="hv-price" style="grid-template-columns:1.1fr 1fr .8fr .8fr 1fr">
+          <div class="h">Worker</div><div class="h">UAN</div><div class="h">PF due</div><div class="h">PF paid</div><div class="h">Status</div>
+          <div><b>Suresh R.</b></div><div>1009…2231</div><div>₹1,800</div><div>₹1,800</div><div><span class="hv-d g">Match</span></div>
+          <div><b>Vignesh G.</b></div><div>1014…0912</div><div>₹1,800</div><div>₹0</div><div><span class="hv-d r">Not paid</span></div>
+          <div><b>Dinesh S.</b></div><div>1012…3305</div><div>₹1,800</div><div>₹1,100</div><div><span class="hv-d r">Short ₹700</span></div>
+        </div>
+        <div class="hv-ai" style="background:#fef2f2;border-color:#fecaca"><b style="color:#b91c1c">Flag raised to HMIL HR.</b> Vendor notified · scorecard updated · bill held until cleared.</div>
       </div>
     </div>`,
-    foot: 'Payroll, salary structures and the PF, ESI, PT and LWF compliance workspace are live. Figures illustrative.',
+    foot: 'Challan OCR and worker-by-worker PF and ESI reconciliation are live; payroll, PT and LWF compliance too. Figures illustrative.',
   }),
 
   plainSlide('hs1', 'light', 'Statutory and training',
