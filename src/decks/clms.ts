@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { icons } from './html'
-import { svg, makeRail, bar, shot, row, problemSlide, plainSlide, coverRing } from './story-kit'
+import { svg, makeRail, bar, row, shot, problemSlide, plainSlide, coverRing } from './story-kit'
 import { type PlantCfg, rosterUI, rulesUI, headcountMock, leaveMock, waPhones } from './attend-kit'
 
 // goBetter CLMS · the general contract-labour deck for a principal employer (plant, refinery,
@@ -13,8 +13,8 @@ import { type PlantCfg, rosterUI, rulesUI, headcountMock, leaveMock, waPhones } 
 // Real screenshots are cleaned crops in public/assets/product/clms/ (demo org, PII blurred).
 // No prices, uptime figures or numeric SLAs. Mock numbers are illustrative and footers say so.
 
-const STEPS = ['Vendor', 'Work order', 'Worker', 'Gate', 'Attend', 'Overtime', 'Wages', 'Invoice']
-const rail = makeRail(STEPS, [5, 7])
+const STEPS = ['Vendors', 'Orders', 'Hire', 'Onboard', 'Verify', 'Train', 'Gate', 'Attend', 'OT', 'Pay', 'Comply']
+const rail = makeRail(STEPS, [3, 8], false)
 const Q = 'On site today'
 
 const PL: PlantCfg = {
@@ -65,41 +65,6 @@ const PL: PlantCfg = {
 }
 
 /* ---------------- mocks ---------------- */
-
-const vendorMock = `
-<div class="tm">
-  ${bar('goBetter CLMS · Vendors · Plant 1 · documents and expiry', 'Live')}
-  <div class="tm-body">
-    <div class="tm-stats" style="--n:4"><div><div class="n">41</div><div class="l">Vendors active</div></div><div><div class="n y">4</div><div class="l">Expiring in 30 days</div></div><div><div class="n r">1</div><div class="l">Lapsed · passes held</div></div><div><div class="n">2</div><div class="l">Uploads awaiting checker</div></div></div>
-    <div class="tm-rows">
-      ${row('Shree Manpower', 'Contractor licence · PF · ESIC · WC policy · GST · all valid', 'All valid', 'g')}
-      ${row('Ganpati Services', 'WC policy expires 07 Oct · renewal requested 3 Sep', '19 days', 'y', 'warn')}
-      ${row('Patel Housekeeping', 'Contractor licence lapsed 31 Aug · 22 workers · new gate passes blocked', 'Lapsed', 'r', 'hot')}
-      ${row('Krishna Logistics', 'ESIC registration uploaded today · maker-checker review', 'Review', 'b')}
-      ${row('Om Sai Security', 'Allowed sites: Plant 1, Plant 2 · roles: guard, supervisor · rate card v3', 'All valid', 'g')}
-    </div>
-  </div>
-</div>`
-
-const woMock = `
-<div class="tm tm-wo">
-  ${bar('goBetter CLMS · Work order · Plant 1', 'Live')}
-  <div class="tm-body">
-    <div class="woh"><div><b>WO-2026-P1-114</b><span>Housekeeping and utilities · Plant 1 · from SAP PO 4500018822</span></div><span class="chip g">Valid to 31 Mar 2027</span></div>
-    <div class="kv2">
-      <div><span>Contractor</span><b>Shree Manpower</b></div><div><span>Sanctioned headcount</span><b>180 · 3 skill grades</b></div>
-      <div><span>Rate card</span><b>Unskilled · semi-skilled · skilled</b></div><div><span>Cost centre</span><b>P1-UTL-204</b></div>
-    </div>
-    <div class="tm-h" style="margin:12px 0 0"><b>Sanctioned vs deployed · this contractor's orders</b><span>today</span></div>
-    <div class="tm-gauges" style="margin-top:8px">
-      <div class="gg"><b>WO-114 · Housekeeping</b><span class="tr"><i style="--w:96%;--d:.3s"></i><em style="--cap:100%"></em></span><span class="v">174 / 180</span></div>
-      <div class="gg"><b>WO-122 · Material handling</b><span class="tr"><i style="--w:100%;--bc:var(--red);--d:.4s"></i><em style="--cap:91%"></em></span><span class="v r">263 / 240 · over</span></div>
-      <div class="gg"><b>WO-127 · Maintenance</b><span class="tr"><i style="--w:71%;--bc:#FF9518;--d:.5s"></i><em style="--cap:100%"></em></span><span class="v">85 / 120 · short</span></div>
-      <div class="gg"><b>WO-131 · Security</b><span class="tr"><i style="--w:94%;--d:.6s"></i><em style="--cap:100%"></em></span><span class="v">47 / 50</span></div>
-    </div>
-    <div class="note"><b>WO-122 is 23 over sanction.</b> New passes on it are held until the order is amended.</div>
-  </div>
-</div>`
 
 const licenceMock = `
 <div class="tm">
@@ -161,23 +126,6 @@ const payrunMock = `
       ${row('2 · Variables', 'Festival bonus · PF and ESI applicability on the component', 'Done', 'g')}
       ${row('3 · Wage checks', '2 records below the minimum wage returned to the contractor', 'Checking', 'y', 'warn')}
     </div>
-  </div>
-</div>`
-
-const challanMock = `
-<div class="tm">
-  ${bar('goBetter · PF challan reconciliation · Shree Manpower · September', 'Live')}
-  <div class="tm-body">
-    <div class="tm-ocr"><span class="doc"></span><div><b>PF ECR challan · TRRN 2610…4418 · ESI challan next</b><small>OCR read 168 UANs, amounts and the wage month</small></div><span class="chip g">OCR read</span></div>
-    <div class="tm-stats" style="--n:4"><div><div class="n">174</div><div class="l">On the wage register</div></div><div><div class="n g">168</div><div class="l">UANs on the challan</div></div><div><div class="n r">6</div><div class="l">No deposit · ₹10,800</div></div><div><div class="n r">2</div><div class="l">Short-paid · ₹2,100</div></div></div>
-    <div class="tm-tbl">
-      <div class="h">Worker</div><div class="h">UAN</div><div class="h">PF due</div><div class="h">PF paid</div><div class="h">Match</div>
-      <div>Anil P.</div><div>1009…2231</div><div>₹1,800</div><div>₹1,800</div><div><span class="chip g">Match</span></div>
-      <div>Rekha S.</div><div>1011…8740</div><div>₹1,800</div><div>₹1,800</div><div><span class="chip g">Match</span></div>
-      <div class="bad">Imran K.</div><div class="bad">1014…0912</div><div class="bad">₹1,800</div><div class="bad">₹0</div><div class="bad"><span class="chip r">Not paid</span></div>
-      <div class="bad">Lata M.</div><div class="bad">1012…3305</div><div class="bad">₹1,800</div><div class="bad">₹1,100</div><div class="bad"><span class="chip r">Short ₹700</span></div>
-    </div>
-    <div class="note"><b>Flag raised to you.</b> Contractor notified with the worker list and a dated record. Whether to hold the bill is your decision.</div>
   </div>
 </div>`
 
@@ -267,6 +215,111 @@ const archMock = `
   </div>
 </div>`
 
+const side = (on: number) => `<div class="ui-side"><span class="lg"></span>${[0, 1, 2, 3, 4, 5].map((i) => `<i class="${i === on ? 'on' : ''}${i === 0 || i === 5 ? ' r' : ''}"></i>`).join('')}</div>`
+const top = (crumb: string, title: string) => `<div class="ui-top"><div><div class="ui-crumb">${crumb}</div><div class="ui-title">${title}</div></div><div class="ui-org"><span>SA</span>Sahyadri Auto</div></div>`
+
+const vendorUI = `
+<div class="ui">
+  ${side(1)}
+  <div class="ui-main">
+    ${top('Sahyadri Auto / CLMS / <b>Vendors</b>', 'Vendor master · all plants')}
+    <div class="ui-bar"><span class="ui-box">64 vendors</span><span class="ui-box">Type: All 9</span><span class="ui-box">Location: All plants</span><span class="ui-sp"></span><span class="ui-btn">Bulk upload</span><span class="ui-btn pri">+ Add vendor</span></div>
+    <div class="hv-tbl">
+      <div class="h">Vendor</div><div class="h">Contract type</div><div class="h">Documents</div><div class="h">Workers · licence</div><div class="h">Login</div>
+      <div><b>Sri Sakthi Services</b><small>Plant 1 · since 2019</small></div><div><span class="hv-t m">Manpower</span></div><div><span class="hv-d g">PF</span><span class="hv-d g">ESI</span><span class="hv-d g">WC</span><span class="hv-d g">Licence</span></div><div>412 / 500</div><div><span class="hv-s g">Active</span></div>
+      <div><b>Ganesh Logistics</b><small>Plant 1 · logistics</small></div><div><span class="hv-t j">Job · attendance</span></div><div><span class="hv-d g">PF</span><span class="hv-d g">ESI</span><span class="hv-d y">WC 19 d</span><span class="hv-d g">Licence</span></div><div>186 / 200</div><div><span class="hv-s g">Active</span></div>
+      <div><b>Velan Engineering</b><small>Plant 2 · AMC</small></div><div><span class="hv-t a">AMC</span></div><div><span class="hv-d g">PF</span><span class="hv-d g">ESI</span><span class="hv-d g">WC</span><span class="hv-d n">n/a</span></div><div>24 · 3-month passes</div><div><span class="hv-s g">Active</span></div>
+      <div><b>Kumaran Builders</b><small>Plant 2 · new block</small></div><div><span class="hv-t c">Construction</span></div><div><span class="hv-d g">PF</span><span class="hv-d r">ESI missing</span><span class="hv-d g">WC</span><span class="hv-d g">BOCW</span></div><div>58 · held</div><div><span class="hv-s y">IC approval</span></div>
+      <div><b>Royal Caterers</b><small>Plant 1 · canteen</small></div><div><span class="hv-t s">Service</span></div><div><span class="hv-d g">PF</span><span class="hv-d g">ESI</span><span class="hv-d g">FSSAI</span><span class="hv-d g">WC</span></div><div>96</div><div><span class="hv-s g">Active</span></div>
+    </div>
+    <div class="hv-foot">Contract type sets the pass validity, the modules that apply and the approval chain · login created on IC approval</div>
+  </div>
+</div>`
+
+const woUI = `
+<div class="ui">
+  ${side(2)}
+  <div class="ui-main">
+    ${top('Sahyadri Auto / CLMS / Work orders / <b>WO-your-2026-0312</b>', 'Work order · Material handling, Plant 1')}
+    <div class="hv-wo">
+      <div class="hv-kv"><span>Contractor</span><b>Ganesh Logistics</b><span>Type</span><b>Job contract · attendance based</b><span>Domain head</span><b>R. Srinivasan · Logistics</b><span>Validity</span><b>01 Apr 2026 – 31 Mar 2027</b></div>
+      <div class="hv-chain"><span class="ok">HR created</span><i>→</i><span class="ok">HR TL</span><i>→</i><span class="ok">HR DH</span><i>→</i><span class="ok">Contractor assigned</span><i>→</i><span class="ok">User and DH informed</span></div>
+    </div>
+    <div class="hv-price">
+      <div class="h">Skill code</div><div class="h">Headcount</div><div class="h">Rate / day</div><div class="h">Min wage · state</div><div class="h">Statutory</div>
+      <div><b>MH-SK</b> Skilled</div><div>60 / 60</div><div>₹1,040</div><div><span class="hv-d g">₹ OK</span></div><div>PF · ESI · bonus auto</div>
+      <div><b>MH-SS</b> Semi-skilled</div><div>94 / 100</div><div>₹930</div><div><span class="hv-d g">₹ OK</span></div><div>PF · ESI · bonus auto</div>
+      <div><b>MH-FL</b> Forklift</div><div>32 / 40</div><div>₹980</div><div><span class="hv-d r">Below floor</span></div><div>Upload refused</div>
+    </div>
+    <div class="hv-foot">Price master by Excel upload · minimum wage checked per skill code · a revision notifies only the contractors on that skill code</div>
+  </div>
+</div>`
+
+const scoreUI = `
+<div class="ui">
+  ${side(4)}
+  <div class="ui-main">
+    ${top('Sahyadri Auto / CLMS / <b>Contractor performance · September</b>', 'Contractor scorecard')}
+    <div class="ui-bar"><span class="ui-box">Manpower and job contracts · 41</span><span class="hv-rag"><i class="g"></i>29 green<i class="o"></i>9 orange<i class="r"></i>3 red</span><span class="ui-sp"></span><span class="ui-btn">Monthly report</span><span class="ui-btn pri">Send for DH approval</span></div>
+    <div class="hv-score">
+      <div class="h">Contractor</div><div class="h">Attendance vs TO</div><div class="h">Attrition</div><div class="h">Statutory</div><div class="h">User score</div><div class="h">Overall</div>
+      <div><b>Sri Sakthi Services</b></div><div class="bar"><i style="--w:98%"></i>98%</div><div>3.1%</div><div><span class="hv-d g">On time</span></div><div>4.6 / 5</div><div><span class="hv-g g">92</span></div>
+      <div><b>Velan Engineering</b></div><div class="bar"><i style="--w:96%"></i>96%</div><div>2.4%</div><div><span class="hv-d g">On time</span></div><div>4.4 / 5</div><div><span class="hv-g g">89</span></div>
+      <div><b>Ganesh Logistics</b></div><div class="bar"><i style="--w:91%;--bc:#f59e0b"></i>91%</div><div>6.8%</div><div><span class="hv-d y">ESI late</span></div><div>3.7 / 5</div><div><span class="hv-g o">71</span></div>
+      <div><b>Kumaran Builders</b></div><div class="bar"><i style="--w:78%;--bc:#ef4444"></i>78%</div><div>14.2%</div><div><span class="hv-d r">PF short</span></div><div>2.9 / 5</div><div><span class="hv-g r">48</span></div>
+    </div>
+    <div class="hv-ai"><b>✦ Next work order · 120 material handlers</b> Suggested split: Sri Sakthi 70, Velan 50. Hold Kumaran until the PF gap is cleared.</div>
+  </div>
+</div>`
+
+const hireMock = `
+<div class="tm">
+  ${bar('goBetter Hire · contractor portal · Plant 1', 'Live')}
+  <div class="tm-body">
+    <div class="tm-hire">
+      <div class="card">
+        <div class="l">Opening · from work order WO-2026-P1-114</div>
+        <h5>Assembly operator · semi-skilled · 120 by 20 Oct</h5>
+        <div class="sub">Split across contractors by scorecard grade</div>
+        <div class="tm-funnel">
+          <div class="f"><span>Krishna</span><span class="b"><i style="--w:100%;--d:.3s"></i></span><span class="v">60/60</span></div>
+          <div class="f"><span>Shree</span><span class="b"><i style="--w:78%;--d:.4s"></i></span><span class="v">31/40</span></div>
+          <div class="f"><span>Ganpati</span><span class="b"><i style="--w:55%;--d:.5s"></i></span><span class="v">11/20</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="l">Walk-in drive · QR link · Shree Manpower</div>
+        <div style="display:flex;gap:10px;align-items:center;margin-top:6px"><span class="qr"></span><div><h5 style="margin:0">Chakan ITI · 9 Oct</h5><div class="sub">Scan to apply on WhatsApp · Hindi, Marathi, Odia</div></div></div>
+        <div class="tm-funnel">
+          <div class="f"><span>Scanned</span><span class="b"><i style="--w:100%;--d:.3s"></i></span><span class="v">412</span></div>
+          <div class="f"><span>Applied</span><span class="b"><i style="--w:49%;--d:.4s"></i></span><span class="v">203</span></div>
+          <div class="f"><span>Screened</span><span class="b"><i style="--w:34%;--d:.5s"></i></span><span class="v">141</span></div>
+          <div class="f"><span>Selected</span><span class="b"><i style="--w:24%;--d:.6s"></i></span><span class="v">99</span></div>
+          <div class="f"><span>Onboarding</span><span class="b"><i style="--w:24%;--d:.7s"></i></span><span class="v">99</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="note"><b>No re-keying.</b> A selected candidate starts onboarding on WhatsApp with the contractor, role, line and shift already filled in.</div>
+  </div>
+</div>`
+
+const verifyUI = `
+<div class="ui">
+  ${side(3)}
+  <div class="ui-main">
+    ${top('Sahyadri Auto / verifyBetter / Cases / <b>Sunita Yadav</b>', 'Background verification · Assembly operator pack')}
+    <div class="ui-bar"><span class="ui-box">Batch: 48 joiners · Shree Manpower</span><span class="hv-rag"><i class="g"></i>41 green<i class="o"></i>5 amber<i class="r"></i>2 red</span><span class="ui-sp"></span><span class="ui-btn">Case report PDF</span><span class="ui-btn pri">Initiate batch</span></div>
+    <div class="hv-steps">
+      <div class="hv-st done"><span class="n">✓</span><div><b>Identity · Aadhaar, PAN, face match, liveness</b><small>Returned in 2 minutes</small></div><em>Green</em></div>
+      <div class="hv-st done"><span class="n">✓</span><div><b>Employment · UAN and EPF history</b><small>2 previous employers · no gaps flagged</small></div><em>Green</em></div>
+      <div class="hv-st done"><span class="n">✓</span><div><b>Address · digital and physical</b><small>Chakan, Pune · verified 6 Oct</small></div><em>Green</em></div>
+      <div class="hv-st on"><span class="n">4</span><div><b>Legal · court records, police verification</b><small>Court clear · police report awaited</small></div><em>Running</em></div>
+      <div class="hv-st"><span class="n">5</span><div><b>Health · fitness for the role</b><small>Medical at the plant on day 1</small></div><em>Day 1</em></div>
+    </div>
+    <div class="hv-ai" style="background:#f0fdf4;border-color:#bbf7d0"><b style="color:#166534">Pass rule:</b> identity and employment green → provisional pass · full pass when legal checks return · red stops the pass and alerts HR.</div>
+  </div>
+</div>`
+
 /* ---------------- slides ---------------- */
 
 export const clmsSlides: SlideDef[] = [
@@ -286,10 +339,78 @@ export const clmsSlides: SlideDef[] = [
             <div><div class="n">967</div><div class="l">Sites on the attendance engine at Zepto</div></div>
           </div>
         </div>
-        ${coverRing(STEPS)}
+        ${coverRing(['Vendors', 'Hire', 'Onboard', 'Verify', 'Train', 'Attend', 'Pay', 'Comply'], ['one', 'worker record'], false)}
       </div>
     </div>`,
   },
+
+  {
+    id: 'cmA', theme: 'dark', title: 'Who we are',
+    html: `
+    <div class="tel norail">
+      <div class="tel-head"><div><span class="kick">Credentials · 1 of 2</span><h2>Ten years on the frontline, 25 million worker profiles, <em>built for your scale.</em></h2></div></div>
+      <div class="tel-cred">
+        <div>
+          <div class="tel-nums">
+            <div><div class="n">25M<em>+</em></div><div class="l">Verified worker profiles</div></div>
+            <div><div class="n">1,000<em>+</em></div><div class="l">Enterprises on the platform</div></div>
+            <div><div class="n">8</div><div class="l">Markets · India, SEA, GCC</div></div>
+            <div><div class="n">300K</div><div class="l">Contract workers run for one client</div></div>
+            <div><div class="n">₹1,000 Cr<em>+</em></div><div class="l">Group revenue · FY25 · incl. staffing</div></div>
+            <div><div class="n">$95M</div><div class="l">Raised · Series A to D</div></div>
+          </div>
+          <div class="tel-backers"><span>Jungle Ventures</span><span>British International Investment</span><span>Macquarie Capital</span><span>Capria</span><span>3one4 Capital</span><span>CX Partners</span><span>SITE Capital</span></div>
+          <div class="tel-badges"><img src="assets/compliance/iso-27001.svg" alt="ISO 27001"/><img src="assets/compliance/soc-2.svg" alt="SOC 2"/><span>ISO 27001 · SOC 2 · DPDPA-aligned: data processing agreement, India residency, consent in 35 languages, retention schedule</span></div>
+        </div>
+        <div class="tel-time">
+          <div class="ev" style="--d:.2s"><b>2015</b><span>Founded. Background verification for frontline hiring. 200 customers in two years.</span></div>
+          <div class="ev" style="--d:.3s"><b>2018</b><span>Onboarding and attendance. Face and geo punches at scale.</span></div>
+          <div class="ev" style="--d:.4s"><b>2019–20</b><span>Learning platform. Acquired OkayGo (gig) and Ezedox.</span></div>
+          <div class="ev" style="--d:.5s"><b>2021–22</b><span>Gig deployment and worker fintech. Extended Series C, $40M.</span></div>
+          <div class="ev" style="--d:.6s"><b>2023–24</b><span>goBetter platform. Reliance Retail live with 300K contract workers and 3,000 vendors. Factory face devices at Reliance O2C.</span></div>
+          <div class="ev" style="--d:.7s"><b>2026</b><span>AI Labs. Agents that onboard, induct, roster and reconcile, inside the same record.</span></div>
+        </div>
+      </div>
+    </div>`,
+  },
+  plainSlide('cmB', 'light', 'Customer impact',
+    'Customer impact · whole contract workforces, run on BetterPlace',
+    'We run the entire contract workforce for India\u2019s largest enterprises, <em>from vendor to gate to wage.</em>',
+    `<div>
+      <div class="tel-clients" style="grid-template-columns:1.15fr 1.15fr .8fr">
+        <div class="tel-case" style="--pc:var(--navy);--d:.15s"><div class="who">Reliance · Retail, Jio, O2C</div><h4>Reliance Industries</h4><div class="big">300K<small>contract workers, end to end</small></div><p>Their entire contract workforce on one platform: 3,000+ vendors, work orders and position codes, onboarding and verification, attendance, payroll, PF and ESI challan reconciliation and registers, across 18,000+ stores, Jio sites and O2C plants.</p><div class="mini"><div><b>−90%</b><span>payroll leakage</span></div><div><b>−80%</b><span>vendor non-compliance</span></div><div><b>7×</b><span>faster rule changes</span></div></div></div>
+        <div class="tel-case" style="--pc:#FF9518;--d:.3s"><div class="who">Energy · PSU · refineries and plants</div><h4>Bharat Petroleum</h4><div class="big">Every<small>contract worker at the gate</small></div><p>BPCL\u2019s contract workforce runs on our CLMS: vendors and work orders from SAP, labour licences and insurance per contract, gate pass issue, renewal and auto-termination, visitor management, and a live count of everyone inside the refinery.</p><div class="mini"><div><b>SAP</b><span>integrated master</span></div><div><b>Live</b><span>headcount inside</span></div><div><b>30 days</b><span>no swipe → pass lapses</span></div></div></div>
+        <div class="tel-case" style="--pc:#0d7d85;--d:.45s"><div class="who">Quick commerce · 22 cities</div><h4>Zepto</h4><div class="big">967<small>sites</small></div><p>15,000 workers on face and geo attendance with spoof detection; deployment gated on training.</p><div class="mini"><div><b>−40%</b><span>attendance ops cost</span></div></div></div>
+      </div>
+      <div class="tel-logos"><span class="lbl">Also on the platform</span>
+        <img src="assets/logo/c-basf.png" alt="BASF"/><img src="assets/logo/c-tcs.png" alt="TCS"/><img src="assets/logo/c-accenture.png" alt="Accenture"/><img src="assets/logo/c-amazon.jpg" alt="Amazon"/><img src="assets/logo/c-titan.png" alt="Titan"/><img src="assets/logo/c-jll.png" alt="JLL"/><img src="assets/logo/c-ibm.png" alt="IBM"/>
+      </div>
+    </div>`),
+
+  plainSlide('cmC', 'darker', 'Why now',
+    'Why now · what is at stake on a plant of this size',
+    'Contract labour is no longer an HR file. <em>It decides output, audits and the principal employer\u2019s liability.</em>',
+    `<div class="tel-stakes">
+      <div class="st" style="--d:.15s"><div class="n">21 Nov 2025</div><div class="l">the four Labour Codes in force · central rules May 2026</div><p>Contractor registers, licensed strength, the core-activity bar and one annual electronic return. State rules are still landing, differently in every state you operate in.</p><div class="src">Labour Codes notification</div></div>
+      <div class="st" style="--d:.3s"><div class="n">You pay</div><div class="l">wages, PF and ESI when a contractor defaults</div><p>The principal employer pays and recovers. With dozens of vendors across your plants, one unmatched challan becomes your notice.</p><div class="src">OSH Code · Code on Social Security</div></div>
+      <div class="st" style="--d:.45s"><div class="n">48 h</div><div class="l">ordinary hours a week · overtime at 2×, with consent</div><p>Every hour beyond the limit needs the worker\u2019s consent, is paid at twice the rate and sits inside a quarterly cap. It has to be provable, worker by worker.</p><div class="src">OSH Code · Code on Wages</div></div>
+      <div class="st" style="--d:.6s"><div class="n">Right now</div><div class="l">how many contract workers are inside the gate, and where</div><p>At BPCL\u2019s refineries that count must be known at any moment, and it comes from our gate swipes. Safety and auditors at a manufacturing plant ask for the same.</p><div class="src">BPCL deployment</div></div>
+    </div>`, { glow: true }),
+
+  plainSlide('cmD', 'light', 'The rules',
+    'The rules your records must prove · the new labour codes and state rules',
+    'Every pass, hour and rupee now has to satisfy the labour codes. <em>The software keeps you inside them.</em>',
+    `<div>
+      <div class="tel-codes">
+        <div class="cd" style="--d:.1s"><span class="law">OSH Code · contract labour</span><h4>Licensed strength and the core-activity bar</h4><p>Each contractor deploys only up to its licence, and only in roles open to contract work.</p><div class="we"><b>We enforce:</b> a pass that would cross the licence is blocked at issue.</div></div>
+        <div class="cd" style="--d:.18s"><span class="law">OSH Code · working hours</span><h4>Daily and weekly limits, a weekly rest day</h4><p>Typically 9 hours a day and 48 a week, set state by state for every plant and site. Sunday work needs a permit.</p><div class="we"><b>We enforce:</b> the roster refuses a breach; swipes that cross a limit raise an alert.</div></div>
+        <div class="cd" style="--d:.26s"><span class="law">OSH Code + Code on Wages · overtime</span><h4>Overtime needs consent and pays twice</h4><p>Only with the worker\u2019s consent, at twice the ordinary rate, inside a quarterly cap.</p><div class="we"><b>We enforce:</b> consent per OT shift, 2× computed, approval inside the billing cycle.</div></div>
+        <div class="cd" style="--d:.34s"><span class="law">Code on Wages · pay</span><h4>Minimum wage by skill, paid on time</h4><p>Minimum wage by state and skill, bonus, holiday wages and deductions within limits.</p><div class="we"><b>We enforce:</b> a rate below the floor is refused in the price master.</div></div>
+        <div class="cd" style="--d:.42s"><span class="law">Code on Social Security · PF, ESI, gratuity</span><h4>The principal employer pays if a contractor doesn\u2019t</h4><p>PF, ESI and gratuity for contract workers fall back on you when the contractor defaults.</p><div class="we"><b>We enforce:</b> every challan matched to every worker, every month.</div></div>
+        <div class="cd" style="--d:.5s"><span class="law">OSH Code · registers and returns</span><h4>Registers on demand, one annual return</h4><p>Workers per contractor, muster roll, wages, overtime, wage slips, the annual return.</p><div class="we"><b>We generate:</b> any register, any day, signed off by the contractor.</div></div>
+      </div>
+      <div class="foot" style="margin-top:10px">Central rules were notified in May 2026; until each state notifies its rules, saved state rules apply. We configure the rules you confirm; interpretation stays with you and your advisors.</div>
+    </div>`),
 
   plainSlide('cm2', 'light', 'The problem',
     'Why contract labour is a board-level number now',
@@ -304,27 +425,22 @@ export const clmsSlides: SlideDef[] = [
         <span class="eqs">=</span>
         <div class="res"><b>Five records that never meet until the audit.</b><span>Billed-but-absent shifts paid every month. Overtime past the cap. A contractor's unpaid PF arriving as your notice. Three to four weeks of audit preparation.</span></div>
       </div>
-      <div class="tel-law">
-        <div style="--d:.7s"><b>Wages and PF, if the contractor defaults</b><span>Under the OSH Code and the Code on Social Security the principal employer pays and recovers from the contractor. The liability lands on you, not the vendor.</span></div>
-        <div style="--d:.8s"><b>Strength on the licence and the order</b><span>A contractor's licence and your work order cap how many people may be deployed. A breach on the floor is a breach in your name.</span></div>
-        <div style="--d:.9s"><b>Registers you must produce on demand</b><span>Workers per contractor, muster roll, wage register, overtime, wage slips and the annual return. Current, producible, consistent with each other.</span></div>
-      </div>
       <div class="foot" style="margin-top:12px">The OSH Code 2020 subsumed the Contract Labour Act on 21 Nov 2025; central rules were notified in May 2026. State rules are still landing, and saved state rules apply meanwhile. We supply data, registers and the audit trail; legal interpretation stays with you and your advisors.</div>
     </div>`),
 
   plainSlide('cm3', 'light', 'One record',
     'What CLMS does · one worker record, in the order things happen on site',
-    'Eight steps, one record. <em>Each step checks the ones before it.</em>',
+    'From vendor to wage, one record. <em>Each step checks the ones before it.</em>',
     `<div>
       <div class="tel-map" style="--cols:8">
-        <div class="mp" data-n="1" style="--d:.1s"><div class="ph">Onboard the vendor</div><h4>Vendor</h4><p>PAN, GST, PF and ESIC codes, licence and insurance tracked to expiry.</p><span class="ic">${svg(icons.building)}</span></div>
-        <div class="mp" data-n="2" style="--d:.18s"><div class="ph">Before deployment</div><h4>Work order</h4><p>Scope, plant, sanctioned headcount by skill, rate card, validity.</p><span class="ic">${svg(icons.doc)}</span></div>
-        <div class="mp" data-n="3" style="--d:.26s"><div class="ph">Day 0</div><h4>Worker</h4><p>Documents from his phone, eKYC, verification pack by role.</p><span class="ic">${svg(icons.user)}</span></div>
-        <div class="mp" data-n="4" style="--d:.34s"><div class="ph">Day 0</div><h4>Gate</h4><p>Induction with a test. Pass only if five conditions clear.</p><span class="ic">${svg(icons.lock)}</span></div>
-        <div class="mp" data-n="5" style="--d:.42s"><div class="ph">Every shift</div><h4>Attend</h4><p>Face, geo or gate terminal. Roster published and enforced.</p><span class="ic">${svg(icons.clock)}</span></div>
-        <div class="mp" data-n="6" style="--d:.5s"><div class="ph">Every shift</div><h4>Overtime</h4><p>From punches, with consent, inside caps, at twice the rate.</p><span class="ic">${svg(icons.zap)}</span></div>
-        <div class="mp" data-n="7" style="--d:.58s"><div class="ph">Every month</div><h4>Wages</h4><p>Payroll from attendance. PF and ESI challans matched per worker.</p><span class="ic">${svg(icons.shield)}</span></div>
-        <div class="mp" data-n="8" style="--d:.66s"><div class="ph">Every month</div><h4>Invoice</h4><p>Billed against verified shifts. Registers come out of the record.</p><span class="ic">${svg(icons.card)}</span></div>
+        <div class="mp" data-n="" style="--d:.1s"><div class="ph">Before deployment</div><h4>Vendors &amp; orders</h4><p>Vendor master, work orders, licensed strength, price master, scorecard.</p><span class="ic">${svg(icons.building)}</span></div>
+        <div class="mp" data-n="" style="--d:.17s"><div class="ph">Sourcing</div><h4>Hire</h4><p>Contractors source on the platform: openings, QR drives, screening.</p><span class="ic">${svg(icons.search)}</span></div>
+        <div class="mp" data-n="" style="--d:.24s"><div class="ph">Day 0</div><h4>Onboard &amp; verify</h4><p>WhatsApp onboarding, eKYC, background checks by role.</p><span class="ic">${svg(icons.shield)}</span></div>
+        <div class="mp" data-n="" style="--d:.31s"><div class="ph">Day 0</div><h4>Train &amp; gate</h4><p>Induction on the LMS. Pass only if every condition clears.</p><span class="ic">${svg(icons.lock)}</span></div>
+        <div class="mp" data-n="" style="--d:.38s"><div class="ph">Every shift</div><h4>Attend</h4><p>Face, geo or devices. Labour-law roster, live headcount.</p><span class="ic">${svg(icons.clock)}</span></div>
+        <div class="mp" data-n="" style="--d:.45s"><div class="ph">Every shift</div><h4>Overtime</h4><p>From punches, with consent, inside caps, at twice the rate.</p><span class="ic">${svg(icons.zap)}</span></div>
+        <div class="mp" data-n="" style="--d:.52s"><div class="ph">Every month</div><h4>Pay</h4><p>Payroll from attendance. PF and ESI challans matched per worker.</p><span class="ic">${svg(icons.card)}</span></div>
+        <div class="mp" data-n="" style="--d:.59s"><div class="ph">Every month</div><h4>Comply</h4><p>Invoices against verified shifts. Registers from the record.</p><span class="ic">${svg(icons.doc)}</span></div>
       </div>
       <div class="tel-phases" style="grid-template-columns:4fr 2fr 2fr"><span>Before the gate opens</span><span>While the shift runs</span><span>When the month closes</span></div>
       <div class="tel-band light"><span class="bl">How to read the next slides</span><p>One step per slide, in this order. <b>What happens on site today</b> on the left, <b>what changes</b> and the <b>proof</b> below it, the <b>product</b> on the right. Screens marked <b>Real screen</b> are captures from the platform with demo data; the rest are authored views of the same flows.</p></div>
@@ -332,7 +448,7 @@ export const clmsSlides: SlideDef[] = [
 
   problemSlide({
     id: 'cm4', theme: 'light', title: 'Vendor master', rail, step: 1, demo: 'Live · vendor register',
-    kick: 'Step 1 · the vendor',
+    kick: 'the vendor',
     h2: 'Every contractor on file, <em>every document with an expiry date</em> and a consequence when it lapses.',
     qLabel: Q, quote: 'Licences and insurance live in a folder. Someone finds the expiry when an inspector asks for it.',
     changes: [
@@ -341,13 +457,13 @@ export const clmsSlides: SlideDef[] = [
       { ic: icons.check, b: 'Maker-checker on every document.', t: 'Nothing goes live on the vendor’s word. Every approval is on the audit trail.' },
     ],
     proof: { n: '3,000+', p: 'vendors on one rule engine at <b>Reliance</b>, each with documents, licences and expiry tracked this way.' },
-    vis: vendorMock,
+    vis: vendorUI, wide: true,
     foot: 'Vendor master, expiry alerts and the deployment hold are live (SOW §5.1). Names and numbers are illustrative.',
   }),
 
   problemSlide({
     id: 'cm5', theme: 'light', title: 'Work orders', rail, step: 2, demo: 'Live · work order',
-    kick: 'Step 2 · the work order and sanctioned headcount',
+    kick: 'the work order and sanctioned headcount',
     h2: 'Nothing happens on site without a work order behind it, <em>and nobody is deployed above it.</em>',
     qLabel: Q, quote: 'Contractors send whoever they have. We learn the real headcount when the invoice arrives.',
     changes: [
@@ -356,13 +472,13 @@ export const clmsSlides: SlideDef[] = [
       { ic: icons.layers, b: 'Position codes and cost centres.', t: 'Each contract position carries a code, grade and cost centre, so cost lands on the right line in finance.' },
     ],
     proof: { n: '300K', p: 'contract workers at <b>Reliance</b> run on position codes and budgets as the governing master.' },
-    vis: woMock,
+    vis: woUI, wide: true,
     foot: 'Work orders, sanctioned strength and position codes are live. A demand forecast from the production plan is pilot-built, not a shipped module. Numbers illustrative.',
   }),
 
   problemSlide({
     id: 'cm6', theme: 'dark', title: 'Licensed strength', rail, step: 2, demo: 'Live · licence ledger',
-    kick: 'Step 2 · the contractor licence as a ceiling',
+    kick: 'the contractor licence as a ceiling',
     h2: 'Deploy past a contractor’s licensed strength and <em>the gate stops it, not the inspector.</em>',
     qLabel: Q, quote: 'Nobody adds up headcount across work orders against the contractor’s licence until audit week.',
     changes: [
@@ -375,12 +491,42 @@ export const clmsSlides: SlideDef[] = [
     foot: 'Licence ledger and block-or-flag are live (SOW §5.3). Applicability thresholds and filing stay with you and your advisors. Numbers illustrative.',
   }),
 
+  problemSlide({
+    id: 'cm6b', theme: 'dark', title: 'Scorecard', rail, step: 1, demo: 'Live · scorecard',
+    kick: 'Vendors · the contractor scorecard',
+    h2: 'Every contractor scored green, orange or red each month, <em>on data, not on who complains loudest.</em>',
+    qLabel: Q, quote: 'Contractor reviews are opinions collected once a year. Renewals go to the familiar name.',
+    changes: [
+      { ic: icons.chart, b: 'Performance from the system.', t: 'Attendance against the TO, attrition, fill time and statutory record, measured every month.' },
+      { ic: icons.users, b: 'User score, DH approval.', t: 'Users rate the contractor; the domain head approves; HR adds the statutory score.' },
+      { ic: icons.zap, b: 'AI picks the split.', t: 'For the next work order, a suggested allocation across the best-scoring contractors.' },
+    ],
+    proof: { n: '−80%', p: 'vendor non-compliance at <b>Reliance</b> once contractors were measured this way every month.' },
+    vis: scoreUI, wide: true,
+    foot: 'Scorecard and monthly report are live; user scoring with DH approval is configured; AI allocation is a pilot. Authored view; scores illustrative.',
+  }),
+
+  problemSlide({
+    id: 'cm6c', theme: 'light', title: 'Hire', rail, step: 3, demo: 'Live · contractor hiring',
+    kick: 'Hire · contractors source on the same platform',
+    h2: 'Contractors hire on the same platform, <em>so every candidate arrives with the data already in place.</em>',
+    qLabel: Q, quote: 'Contractors source on paper and WhatsApp. HR sees a name list the day before joining and retypes everything.',
+    changes: [
+      { ic: icons.doc, b: 'Openings from the work order.', t: 'Roles, lines, skill grades and numbers split across contractors by their scorecard grade.' },
+      { ic: icons.search, b: 'Sourcing that measures itself.', t: 'QR links for walk-in drives at ITIs and villages, WhatsApp apply in Hindi, Marathi or Odia, screening questions and skill tests.' },
+      { ic: icons.zap, b: 'Straight into onboarding.', t: 'Selected candidates move to onboarding with contractor, role, line and shift filled. You see each contractor’s funnel and time to fill.' },
+    ],
+    proof: { n: '−60%', p: 'hiring lead time across our enterprise clients when sourcing, verification and onboarding sit on one record.' },
+    vis: hireMock, flip: true,
+    foot: 'goBetter Hire is live (in production for store and sales hiring). The contractor portal is configured per client. Numbers illustrative.',
+  }),
+
   {
     id: 'cm7', theme: 'dark', title: 'Worker onboarding · WhatsApp',
     html: `
     <div class="tel">
-      ${rail(3, 'Live · WhatsApp onboarding')}
-      <div class="tel-head"><div><span class="kick">Step 3 · the worker · onboarding on WhatsApp, in his language</span><h2>Hired today, onboarded on WhatsApp by evening, <em>at the training centre the next morning.</em></h2></div></div>
+      ${rail(4, 'Live · WhatsApp onboarding')}
+      <div class="tel-head"><div><span class="kick">the worker · onboarding on WhatsApp, in his language</span><h2>Hired today, onboarded on WhatsApp by evening, <em>at the training centre the next morning.</em></h2></div></div>
       <div class="tel-body" style="grid-template-columns:minmax(0,.3fr) minmax(0,.7fr)">
         <div class="tel-say">
           <div class="blk"><div class="lbl">${Q}</div><div class="tq">Joiners queue at the time office with photocopies. Half the forms come back incomplete.</div></div>
@@ -398,8 +544,8 @@ export const clmsSlides: SlideDef[] = [
   },
 
   problemSlide({
-    id: 'cm8', theme: 'light', title: 'Background verification', rail, step: 3, demo: 'Live · verification',
-    kick: 'Step 3 · the worker · background verification',
+    id: 'cm8', theme: 'light', title: 'Background verification', rail, step: 5, demo: 'Live · verification',
+    kick: 'the worker · background verification',
     h2: 'Verified once, by role, <em>and trusted at every site and every rehire.</em>',
     qLabel: Q, quote: 'Checks run on a spreadsheet with an agency. We cannot say who is cleared on any given day.',
     changes: [
@@ -408,13 +554,34 @@ export const clmsSlides: SlideDef[] = [
       { ic: icons.repeat, b: 'Rehire reuses it.', t: 'A returning worker draws on his verified record. No second verification for the same facts.' },
     ],
     proof: { n: '<24 h', p: 'turnaround target for a digital case. Identity checks return in minutes. 25M+ verified profiles behind it.' },
-    vis: `<div class="tm-shotpair">${shot('assets/product/clms/bgv-insights.jpg', 'verifyBetter · Insights · portfolio progress', 'Real screen · demo org', { h: '170px' })}${shot('assets/product/clms/bgv-legal.jpg', 'verifyBetter · Case report · legal checks', 'Real screen · demo org', { h: '170px', pos: 'center bottom' })}</div>`,
-    foot: 'Verification is live. Captures from a demo organisation; personal details blurred.', flip: true,
+    vis: verifyUI, wide: true,
+    foot: 'Verification is live: identity, employment, address, legal and health checks by role. Authored view; names illustrative.',
   }),
 
   problemSlide({
-    id: 'cm9', theme: 'dark', title: 'Gate pass and induction', rail, step: 4, demo: 'Live · gate pass',
-    kick: 'Step 4 · gate pass, safety induction and access',
+    id: 'cm8b', theme: 'dark', title: 'Training', rail, step: 6, demo: 'Live · skillBetter',
+    kick: 'Training · induction and safety refreshers on the worker\u2019s phone',
+    h2: 'Induction and safety refreshers on every worker\u2019s phone, <em>in the worker\u2019s own language, with proof of who passed.</em>',
+    qLabel: Q, quote: 'Induction is a signed self-declaration and refresher attendance is a scanned sheet. Nobody can say who is due.',
+    changes: [
+      { ic: icons.play, b: 'Short courses in their language.', t: 'Induction, safety, height and forklift refreshers as bite-sized videos with a test, in 35 languages, offline too.' },
+      { ic: icons.check, b: 'Proof, not paper.', t: 'Self-declaration signed in the app, test scores and certificates dated per worker. Refreshers pushed before they lapse.' },
+      { ic: icons.lock, b: 'Linked to the pass.', t: 'A lapsed mandatory course can hold the gate pass or the work permit. The dashboard shows who is due, by contractor.' },
+    ],
+    proof: { n: '88%', p: 'course completion across our clients, against about 25% in the industry. <b>Hindalco</b> tripled shop-floor training coverage on skillBetter.' },
+    vis: `<div class="tm-fan">
+      <div class="ph"><img src="assets/product/figma/skilling/mobile-learning-home-new-feed.png" alt="Learning home"/><em>Learning home</em></div>
+      <div class="ph"><img src="assets/product/figma/skilling/skillbetter-mobile-course-overview-chapter-states.png" alt="Factory operations course"/><em>Mandatory course</em></div>
+      <div class="ph"><img src="assets/product/figma/skilling/skillbetter-mobile-offline-downloads-sheet.png" alt="Offline downloads"/><em>Works offline</em></div>
+      <div class="chipf" style="left:0;top:16%;animation-delay:0s,.8s"><b>212</b>refreshers due this month</div>
+      <div class="chipf" style="right:0;top:40%;animation-delay:1.5s,1s"><b>9 / 10</b>safety test passed</div>
+    </div>`,
+    foot: 'skillBetter LMS is live (production app screens). Linking course status to gate passes and permits is configured per client.',
+  }),
+
+  problemSlide({
+    id: 'cm9', theme: 'dark', title: 'Gate pass and induction', rail, step: 7, demo: 'Live · gate pass',
+    kick: 'gate pass, safety induction and access',
     h2: 'The gate pass opens <em>only when everything behind it is true,</em> and closes when any of it stops being true.',
     qLabel: Q, quote: 'Induction is a signature on a register. Badges never expire.',
     changes: [
@@ -428,8 +595,8 @@ export const clmsSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'cm10', theme: 'light', title: 'Attendance · capture', rail, step: 5, demo: 'Live · headcount',
-    kick: 'Step 5 · attendance · 1 of 4 · capture down to the line',
+    id: 'cm10', theme: 'light', title: 'Attendance · capture', rail, step: 8, demo: 'Live · headcount',
+    kick: 'attendance · 1 of 4 · capture down to the line',
     h2: 'Know who is inside the plant, on which line, <em>right now, not at the end of the shift.</em>',
     qLabel: Q, quote: 'We know who crossed the gate. Who reached the line, and how many are inside right now, is a guess.',
     changes: [
@@ -443,8 +610,8 @@ export const clmsSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'cm10b', theme: 'light', title: 'Attendance · rules', rail, step: 5, demo: 'Live · policy engine',
-    kick: 'Step 5 · attendance · 2 of 4 · labour-law rules the roster cannot break',
+    id: 'cm10b', theme: 'light', title: 'Attendance · rules', rail, step: 8, demo: 'Live · policy engine',
+    kick: 'attendance · 2 of 4 · labour-law rules the roster cannot break',
     h2: 'Set the labour-law rules once. <em>The roster never breaks them, and you hear the moment reality does.</em>',
     qLabel: Q, quote: 'Hour limits live in a policy document. The roster is built in a spreadsheet that has never read it.',
     changes: [
@@ -458,8 +625,8 @@ export const clmsSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'cm11', theme: 'dark', title: 'Attendance · auto roster', rail, step: 5, demo: 'Live · auto roster',
-    kick: 'Step 5 · attendance · 3 of 4 · intelligent rostering',
+    id: 'cm11', theme: 'dark', title: 'Attendance · auto roster', rail, step: 8, demo: 'Live · auto roster',
+    kick: 'attendance · 3 of 4 · intelligent rostering',
     h2: 'Give us demand and the rules. <em>We build the roster, and rebuild it when a line stops or a festival hits.</em>',
     qLabel: Q, quote: 'Contractors roster in Excel. We see the names after the shift has started, and absences are fixed by phone.',
     changes: [
@@ -473,8 +640,8 @@ export const clmsSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'cm11b', theme: 'light', title: 'Attendance · leave, holidays, roles', rail, step: 5, demo: 'Live · leave and holidays',
-    kick: 'Step 5 · attendance · 4 of 4 · leave, holidays, roles and certifications',
+    id: 'cm11b', theme: 'light', title: 'Attendance · leave, holidays, roles', rail, step: 8, demo: 'Live · leave and holidays',
+    kick: 'attendance · 4 of 4 · leave, holidays, roles and certifications',
     h2: 'Every rule knows who it applies to, <em>because leave, holidays, roles and certifications live on one record.</em>',
     qLabel: Q, quote: 'Leave sits in one system, holidays in a circular, roles in a spreadsheet. The roster and payroll see none of them.',
     changes: [
@@ -491,8 +658,8 @@ export const clmsSlides: SlideDef[] = [
     id: 'cm12', theme: 'dark', title: 'The worker app',
     html: `
     <div class="tel">
-      ${rail(5, 'Live · worker app')}
-      <div class="tel-head"><div><span class="kick">Step 5 · what the worker sees</span><h2>He sees his own hours, pay and corrections, <em>so disputes end on his phone, not at your gate.</em></h2></div></div>
+      ${rail(8, 'Live · worker app')}
+      <div class="tel-head"><div><span class="kick">what the worker sees</span><h2>He sees his own hours, pay and corrections, <em>so disputes end on his phone, not at your gate.</em></h2></div></div>
       <div class="tel-body">
         <div class="tel-say">
           <div class="blk"><div class="lbl">${Q}</div><div class="tq">Workers queue at the time office every month to ask about days and deductions.</div></div>
@@ -516,8 +683,8 @@ export const clmsSlides: SlideDef[] = [
   },
 
   problemSlide({
-    id: 'cm13', theme: 'light', title: 'Overtime', rail, step: 6, demo: 'Live · OT register',
-    kick: 'Step 6 · overtime',
+    id: 'cm13', theme: 'light', title: 'Overtime', rail, step: 9, demo: 'Live · OT register',
+    kick: 'overtime',
     h2: 'Overtime computed from punches, consented, capped, <em>and paid at twice the rate.</em>',
     qLabel: Q, quote: 'OT is claimed on a slip, approved after it is worked and paid at the single rate.',
     changes: [
@@ -531,8 +698,8 @@ export const clmsSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'cm14', theme: 'light', title: 'Wages and minimum wage', rail, step: 7, demo: 'Live · pay run',
-    kick: 'Step 7 · wages',
+    id: 'cm14', theme: 'light', title: 'Wages and minimum wage', rail, step: 10, demo: 'Live · pay run',
+    kick: 'wages',
     h2: 'Wages computed from verified attendance, <em>with the minimum wage checked before anyone is paid.</em>',
     qLabel: Q, quote: 'The contractor’s wage sheet is the only record of what the workers were actually paid.',
     changes: [
@@ -546,8 +713,8 @@ export const clmsSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'cm15', theme: 'darker', title: 'Challan reconciliation', rail, step: 7, demo: 'Live · challan OCR',
-    kick: 'Step 7 · the contractor’s PF and ESI challans',
+    id: 'cm15', theme: 'darker', title: 'Challan reconciliation', rail, step: 10, demo: 'Live · challan OCR',
+    kick: 'the contractor’s PF and ESI challans',
     h2: 'A challan upload is not compliance. <em>Matching it to every worker is.</em>',
     qLabel: Q, quote: 'PF challans arrive as PDFs in email. Nobody checks them against the workers we paid for.',
     changes: [
@@ -556,13 +723,32 @@ export const clmsSlides: SlideDef[] = [
       { ic: icons.shield, b: 'Your decision, documented.', t: 'Release can wait on reconciliation if you set it so. The wage and PF liability falls back to you if the contractor defaults, so the rule sits in front of whoever decides.' },
     ],
     proof: { n: '−80%', p: 'vendor non-compliance risk at <b>Reliance</b>. Clients name challan matching among the features they use most.' },
-    vis: challanMock, wide: true,
+    vis: `<div class="ui">
+      ${side(5)}
+      <div class="ui-main">
+        ${top('Sahyadri Auto / Payroll / Compliances / <b>PF and ESI · September</b>', 'Challan reconciliation · Shree Manpower')}
+        <div class="hv-up"><span class="doc"></span><div><b>PF ECR challan · TRRN 2610…4418 · uploaded by vendor 05 Oct</b><small>OCR read 182 UANs, amounts and wage month · ESI challan read: 182 IP numbers</small></div><span class="hv-s g">OCR read</span></div>
+        <div class="hv-comp" style="margin-bottom:0">
+          <div class="c"><b>Workers billed</b><span class="n">186</span><small>from verified attendance</small></div>
+          <div class="c"><b>PF matched</b><span class="n">180</span><small>dues = deposit</small><em class="g">On time</em></div>
+          <div class="c"><b>PF gaps</b><span class="n">6</span><small>4 not paid · 2 short</small><em class="r">₹8,600</em></div>
+          <div class="c"><b>ESI gaps</b><span class="n">2</span><small>wrong IP number</small><em class="y">Review</em></div>
+        </div>
+        <div class="hv-price" style="grid-template-columns:1.1fr 1fr .8fr .8fr 1fr">
+          <div class="h">Worker</div><div class="h">UAN</div><div class="h">PF due</div><div class="h">PF paid</div><div class="h">Status</div>
+          <div><b>Suresh R.</b></div><div>1009…2231</div><div>₹1,800</div><div>₹1,800</div><div><span class="hv-d g">Match</span></div>
+          <div><b>Vignesh G.</b></div><div>1014…0912</div><div>₹1,800</div><div>₹0</div><div><span class="hv-d r">Not paid</span></div>
+          <div><b>Dinesh S.</b></div><div>1012…3305</div><div>₹1,800</div><div>₹1,100</div><div><span class="hv-d r">Short ₹700</span></div>
+        </div>
+        <div class="hv-ai" style="background:#fef2f2;border-color:#fecaca"><b style="color:#b91c1c">Flag raised to your HR.</b> Vendor notified · scorecard updated · bill held until cleared.</div>
+      </div>
+    </div>`, wide: true,
     foot: 'The OCR-and-match flow is live. The statutory reconciliation AI agent is in Beta. Numbers illustrative.',
   }),
 
   problemSlide({
-    id: 'cm16', theme: 'light', title: 'Invoice check', rail, step: 8, demo: 'Live · invoice check',
-    kick: 'Step 8 · vendor billing',
+    id: 'cm16', theme: 'light', title: 'Invoice check', rail, step: 11, demo: 'Live · invoice check',
+    kick: 'vendor billing',
     h2: 'You pay for shifts that happened, at the rate on the order, <em>after the challans match.</em>',
     qLabel: Q, quote: 'Invoices are checked against the contractor’s own timesheet, by hand, once a month.',
     changes: [
@@ -576,8 +762,8 @@ export const clmsSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'cm17', theme: 'light', title: 'Registers and returns', rail, step: 8, demo: 'Live · registers',
-    kick: 'Step 8 · registers, returns and the audit trail',
+    id: 'cm17', theme: 'light', title: 'Registers and returns', rail, step: 11, demo: 'Live · registers',
+    kick: 'registers, returns and the audit trail',
     h2: 'Registers, returns and audit packs come out of the record. <em>Nobody compiles them.</em>',
     qLabel: Q, quote: 'Audit preparation is three to four weeks of chasing contractors for registers that never agree.',
     changes: [
@@ -649,33 +835,19 @@ export const clmsSlides: SlideDef[] = [
     'The honest table · what runs today, what we configure, what we do not do',
     'Most of the lifecycle runs at clients today. <em>Here is exactly what runs, and what does not.</em>',
     `<div class="tel-status tight">
-      <div class="h">#</div><div class="h">Capability</div><div class="h">Where it runs today</div><div class="h">Status</div>
-      <div class="r" style="--d:.05s"><i>1</i><b>Vendor master and expiry</b><span>Documents, maker-checker, alerts, deployment hold. Reliance, BPCL.</span><em class="live">Live</em></div>
-      <div class="r" style="--d:.1s"><i>2</i><b>Work orders and licensed strength</b><span>Sanctioned headcount, position codes, block or flag. Reliance, BPCL.</span><em class="live">Live</em></div>
-      <div class="r" style="--d:.15s"><i>3</i><b>Onboarding and verification</b><span>eKYC, e-Sign, six-head verification packs, rehire reuse.</span><em class="live">Live</em></div>
-      <div class="r" style="--d:.2s"><i>4</i><b>Gate pass and induction</b><span>Five-condition pass, expiry, induction agent with test and photo.</span><em class="live">Live</em></div>
-      <div class="r" style="--d:.25s"><i>5</i><b>Attendance, roster, worker app</b><span>Face, geo, gate terminals, approvals queue, policy engine. Zepto 967 sites.</span><em class="live">Live</em></div>
-      <div class="r" style="--d:.3s"><i>6</i><b>Overtime</b><span>Computed from punches, caps, approvals, register. Worker-consent field configured per client.</span><em class="live">Live · consent configured</em></div>
-      <div class="r" style="--d:.35s"><i>7</i><b>Wages and challan reconciliation</b><span>Payroll from attendance, minimum wage at entry, challan OCR and match. Reconciliation agent in Beta.</span><em class="mix">Live · agent Beta</em></div>
-      <div class="r" style="--d:.4s"><i>8</i><b>Invoice check and registers</b><span>Invoice against verified shifts and rate card, registers, audit trail.</span><em class="live">Live</em></div>
-      <div class="r" style="--d:.45s"><i>9</i><b>Demand forecast from the production plan</b><span>Built and measured in a pilot at a PSU oil major. Not a shipped module.</span><em class="pilot">Pilot-built</em></div>
-      <div class="r" style="--d:.5s"><i>10</i><b>Grievance and engagement</b><span>Raise from the app and track status. No case management or escalation matrix.</span><em class="cfg">Basic</em></div>
-      <div class="r" style="--d:.55s"><i>11</i><b>True hourly payroll</b><span>Overtime is measured in hours and normalised to days. Hourly pay models are scoped in design.</span><em class="no">Not supported</em></div>
-    </div>`),
-
-  plainSlide('cm22', 'light', 'Proof',
-    'Proof · running today',
-    'A PSU oil major, a 300,000-worker conglomerate and a 967-site network <em>run their contract workforce on this.</em>',
-    `<div>
-      <div class="tel-clients">
-        <div class="tel-case" style="--pc:#FF9518;--d:.15s"><div class="who">Energy · PSU · refineries and plants</div><h4>Bharat Petroleum</h4><div class="big">SAP<small>as the master</small></div><p>Vendors, contracts and work orders from SAP, locked on our side. Labour licence and compensation policy per contract. Gate pass issue, renewal and auto-termination on rules. Visitor management, debarring and delegation.</p><div class="mini"><div><b>SAP</b><span>vendor and order master</span></div><div><b>30 days</b><span>no punch → pass lapses</span></div></div></div>
-        <div class="tel-case" style="--pc:var(--navy);--d:.3s"><div class="who">Retail · Jio · O2C</div><h4>Reliance Industries</h4><div class="big">300K+<small>contract workers</small></div><p>Measured outcomes on 300K+ workers and 3,000+ vendors; today 4 lakh+ contract workmen across 4,000+ sites. Position codes and budgets as governing masters. Sub-vendor capture and bulk onboarding at scale. Face devices at O2C factory sites.</p><div class="mini"><div><b>−90%</b><span>payroll leakage</span></div><div><b>−80%</b><span>vendor non-compliance</span></div></div></div>
-        <div class="tel-case" style="--pc:#0d7d85;--d:.45s"><div class="who">Quick commerce · 22 cities</div><h4>Zepto</h4><div class="big">967<small>sites</small></div><p>Geo attendance with AI spoof detection. Planned against actual, live, per site. Deployment gated on training completion.</p><div class="mini"><div><b>15K</b><span>workers</span></div><div><b>−40%</b><span>cost</span></div></div></div>
-      </div>
-      <div class="tel-logos"><span class="lbl">Also on the platform</span>
-        <img src="assets/logo/c-basf.png" alt="BASF"/><img src="assets/logo/c-titan.png" alt="Titan"/><img src="assets/logo/c-amazon.jpg" alt="Amazon"/><img src="assets/logo/c-accenture.png" alt="Accenture"/><img src="assets/logo/c-jll.png" alt="JLL"/><img src="assets/logo/c-tcs.png" alt="TCS"/><img src="assets/logo/c-ibm.png" alt="IBM"/>
-      </div>
-      <div class="tel-band"><span class="bl">See it live</span><p>We can walk you through the BPCL and Reliance systems and put their plant teams on a call. Outcomes are client-reported against their own prior year; baselines come in the case notes.</p></div>
+      <div class="h"></div><div class="h">Capability</div><div class="h">Where it runs today</div><div class="h">Status</div>
+      <div class="r" style="--d:.05s"><i>·</i><b>Vendor master and expiry</b><span>Documents, maker-checker, alerts, deployment hold. Reliance, BPCL.</span><em class="live">Live</em></div>
+      <div class="r" style="--d:.1s"><i>·</i><b>Work orders and licensed strength</b><span>Sanctioned headcount, position codes, block or flag. Reliance, BPCL.</span><em class="live">Live</em></div>
+      <div class="r" style="--d:.12s"><i>·</i><b>Contractor hiring</b><span>Openings from the work order, QR and WhatsApp sourcing, screening, pipeline.</span><em class="live">Live</em></div>
+      <div class="r" style="--d:.15s"><i>·</i><b>Onboarding and verification</b><span>WhatsApp onboarding, eKYC, background checks by role, rehire reuse.</span><em class="live">Live</em></div>
+      <div class="r" style="--d:.18s"><i>·</i><b>Training on the LMS</b><span>skillBetter: induction and refreshers in 35 languages, tests, certificates.</span><em class="live">Live</em></div>
+      <div class="r" style="--d:.2s"><i>·</i><b>Gate pass and induction</b><span>Five-condition pass, expiry, induction agent with test and photo.</span><em class="live">Live</em></div>
+      <div class="r" style="--d:.25s"><i>·</i><b>Attendance, roster, worker app</b><span>Face, geo, gate terminals, approvals queue, policy engine. Zepto 967 sites.</span><em class="live">Live</em></div>
+      <div class="r" style="--d:.3s"><i>·</i><b>Overtime</b><span>Computed from punches, caps, approvals, register. Worker-consent field configured per client.</span><em class="live">Live · consent configured</em></div>
+      <div class="r" style="--d:.35s"><i>·</i><b>Wages and challan reconciliation</b><span>Payroll from attendance, minimum wage at entry, challan OCR and match. Reconciliation agent in Beta.</span><em class="mix">Live · agent Beta</em></div>
+      <div class="r" style="--d:.4s"><i>·</i><b>Invoice check and registers</b><span>Invoice against verified shifts and rate card, registers, audit trail.</span><em class="live">Live</em></div>
+      <div class="r" style="--d:.45s"><i>·</i><b>Demand forecast from the production plan</b><span>Built and measured in a pilot at a PSU oil major. Not a shipped module.</span><em class="pilot">Pilot-built</em></div>
+      <div class="r" style="--d:.55s"><i>·</i><b>True hourly payroll</b><span>Overtime is measured in hours and normalised to days. Hourly pay models are scoped in design.</span><em class="no">Not supported</em></div>
     </div>`),
 
   plainSlide('cm23', 'darker', 'How this starts',
