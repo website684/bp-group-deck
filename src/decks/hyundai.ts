@@ -37,13 +37,13 @@ const HM: PlantCfg = {
   contractors: ['Sri Sakthi', 'Ganesh', 'Velan'],
   ruleSetName: 'Rule set · Chennai plant',
   rules: [
-    { k: 'Maximum hours per day', v: '9', u: 'h', law: 'OSH Code · TN' },
+    { k: 'Maximum hours per day', v: '9', u: 'h', law: 'OSH Code · state' },
     { k: 'Maximum ordinary hours per week', v: '48', u: 'h', law: 'OSH Code' },
     { k: 'Weekly rest · Sunday work needs a permit', v: '1 in 7', u: 'days', law: 'OSH Code · HMIL' },
     { k: 'Overtime at 2×, with worker consent', v: 'On', u: '', law: 'OSH Code · Wages' },
     { k: 'OT approved inside the billing cycle', v: 'On', u: '', law: 'HMIL rule' },
   ],
-  holidays: [{ n: 'Pongal', d: '14–15 Jan', w: 'Chennai', c: 'TN' }, { n: 'Ayudha Puja', d: '19 Oct', w: 'Chennai', c: 'TN' }, { n: 'Diwali', d: '8 Nov', w: 'Chennai, Pune', c: 'All' }],
+  holidays: [{ n: 'Pongal', d: '14–15 Jan', w: 'Tamil Nadu sites', c: 'TN' }, { n: 'Gudi Padwa', d: '19 Mar', w: 'Maharashtra sites', c: 'MH' }, { n: 'Diwali', d: '8 Nov', w: 'all India', c: 'All' }],
   roleTitle: 'Body shop operator · skilled', roleMeta: 'Height, confined space, forklift permits',
   persona: { first: 'Karthik', full: 'Karthik Murugan', initials: 'KM', role: 'Body Shop Operator (skilled), A shift', city: 'Sriperumbudur', phone: '98xxxx4410' },
   lang: {
@@ -66,15 +66,15 @@ const vendorUI = `
 <div class="ui">
   ${side(1)}
   <div class="ui-main">
-    ${top('Hyundai Motor India / CLMS / <b>Vendors</b>', 'Vendor master · Chennai and Pune')}
-    <div class="ui-bar"><span class="ui-box">64 vendors</span><span class="ui-box">Type: All 9</span><span class="ui-box">Location: All</span><span class="ui-sp"></span><span class="ui-btn">Bulk upload</span><span class="ui-btn pri">+ Add vendor</span></div>
+    ${top('Hyundai Motor India / CLMS / <b>Vendors</b>', 'Vendor master · every plant and site across India')}
+    <div class="ui-bar"><span class="ui-box">64 vendors</span><span class="ui-box">Type: All 9</span><span class="ui-box">Location: All India</span><span class="ui-sp"></span><span class="ui-btn">Bulk upload</span><span class="ui-btn pri">+ Add vendor</span></div>
     <div class="hv-tbl">
       <div class="h">Vendor</div><div class="h">Contract type</div><div class="h">Documents</div><div class="h">Workers · licence</div><div class="h">Login</div>
-      <div><b>Sri Sakthi Services</b><small>Chennai · since 2019</small></div><div><span class="hv-t m">Manpower</span></div><div><span class="hv-d g">PF</span><span class="hv-d g">ESI</span><span class="hv-d g">WC</span><span class="hv-d g">Licence</span></div><div>412 / 500</div><div><span class="hv-s g">Active</span></div>
-      <div><b>Ganesh Logistics</b><small>Chennai · port</small></div><div><span class="hv-t j">Job · attendance</span></div><div><span class="hv-d g">PF</span><span class="hv-d g">ESI</span><span class="hv-d y">WC 19 d</span><span class="hv-d g">Licence</span></div><div>186 / 200</div><div><span class="hv-s g">Active</span></div>
-      <div><b>Velan Engineering</b><small>Chennai · AMC</small></div><div><span class="hv-t a">AMC</span></div><div><span class="hv-d g">PF</span><span class="hv-d g">ESI</span><span class="hv-d g">WC</span><span class="hv-d n">n/a</span></div><div>24 · 3-month passes</div><div><span class="hv-s g">Active</span></div>
-      <div><b>Kumaran Builders</b><small>Pune · new canteen block</small></div><div><span class="hv-t c">Construction</span></div><div><span class="hv-d g">PF</span><span class="hv-d r">ESI missing</span><span class="hv-d g">WC</span><span class="hv-d g">BOCW</span></div><div>58 · held</div><div><span class="hv-s y">IC approval</span></div>
-      <div><b>Royal Caterers</b><small>Chennai · canteen</small></div><div><span class="hv-t s">Service</span></div><div><span class="hv-d g">PF</span><span class="hv-d g">ESI</span><span class="hv-d g">FSSAI</span><span class="hv-d g">WC</span></div><div>96</div><div><span class="hv-s g">Active</span></div>
+      <div><b>Sri Sakthi Services</b><small>Chennai plant · since 2019</small></div><div><span class="hv-t m">Manpower</span></div><div><span class="hv-d g">PF</span><span class="hv-d g">ESI</span><span class="hv-d g">WC</span><span class="hv-d g">Licence</span></div><div>412 / 500</div><div><span class="hv-s g">Active</span></div>
+      <div><b>Ganesh Logistics</b><small>Ennore port · logistics</small></div><div><span class="hv-t j">Job · attendance</span></div><div><span class="hv-d g">PF</span><span class="hv-d g">ESI</span><span class="hv-d y">WC 19 d</span><span class="hv-d g">Licence</span></div><div>186 / 200</div><div><span class="hv-s g">Active</span></div>
+      <div><b>Velan Engineering</b><small>Hyderabad R&amp;D · AMC</small></div><div><span class="hv-t a">AMC</span></div><div><span class="hv-d g">PF</span><span class="hv-d g">ESI</span><span class="hv-d g">WC</span><span class="hv-d n">n/a</span></div><div>24 · 3-month passes</div><div><span class="hv-s g">Active</span></div>
+      <div><b>Kumaran Builders</b><small>Talegaon plant · new block</small></div><div><span class="hv-t c">Construction</span></div><div><span class="hv-d g">PF</span><span class="hv-d r">ESI missing</span><span class="hv-d g">WC</span><span class="hv-d g">BOCW</span></div><div>58 · held</div><div><span class="hv-s y">IC approval</span></div>
+      <div><b>Royal Caterers</b><small>Gurugram HQ · canteen</small></div><div><span class="hv-t s">Service</span></div><div><span class="hv-d g">PF</span><span class="hv-d g">ESI</span><span class="hv-d g">FSSAI</span><span class="hv-d g">WC</span></div><div>96</div><div><span class="hv-s g">Active</span></div>
     </div>
     <div class="hv-foot">Contract type sets the pass validity, the modules that apply and the approval chain · login created on IC approval</div>
   </div>
@@ -85,7 +85,7 @@ const woUI = `
 <div class="ui">
   ${side(2)}
   <div class="ui-main">
-    ${top('Hyundai Motor India / CLMS / Work orders / <b>WO-HMIL-2026-0312</b>', 'Work order · Material handling, Chennai')}
+    ${top('Hyundai Motor India / CLMS / Work orders / <b>WO-HMIL-2026-0312</b>', 'Work order · Material handling, Chennai plant')}
     <div class="hv-wo">
       <div class="hv-kv"><span>Contractor</span><b>Ganesh Logistics</b><span>Type</span><b>Job contract · attendance based</b><span>Domain head</span><b>R. Srinivasan · Logistics</b><span>Validity</span><b>01 Apr 2026 – 31 Mar 2027</b></div>
       <div class="hv-chain"><span class="ok">HR created</span><i>→</i><span class="ok">HR TL</span><i>→</i><span class="ok">HR DH</span><i>→</i><span class="ok">Contractor assigned</span><i>→</i><span class="ok">User and DH informed</span></div>
@@ -210,7 +210,7 @@ export const hyundaiSlides: SlideDef[] = [
       <div class="tel-coverwrap">
         <div class="tel-covertext">
           <span class="kick">BetterPlace × Hyundai Motor India · October 2026</span>
-          <h1>Every contractor, every pass, every swipe, <em>on one CLMS for Chennai and Pune.</em></h1>
+          <h1>Every contractor, every pass, every swipe, <em>on one CLMS for every plant and site across India.</em></h1>
           <p>Vendors and work orders, onboarding and gate passes, contractor scorecards, attendance, overtime, billing, statutory checks and the live dashboard. Shown on the software that runs 300,000 contract workers today.</p>
           <div class="meta"><span>CLMS demo · HR and Security</span><span>Slides + live software</span><span>Confidential</span></div>
         </div>
@@ -219,23 +219,54 @@ export const hyundaiSlides: SlideDef[] = [
     </div>`,
   },
 
-  plainSlide('hy2', 'light', 'Who runs on us',
-    'Credentials · who already runs their contract workforce on this',
-    'Ten years on the frontline, 25 million worker profiles, <em>and the largest CLMS deployments in India.</em>',
-    `<div>
-      <div class="tel-clients">
-        <div class="tel-case" style="--pc:var(--navy);--d:.15s"><div class="who">Retail · 18,918 stores</div><h4>Reliance Retail</h4><div class="big">300K<small>contract workers</small></div><p>3,000+ vendors on one rule engine. Payroll leakage down 90%, vendor non-compliance down 80%.</p></div>
-        <div class="tel-case" style="--pc:#FF9518;--d:.3s"><div class="who">Oil &amp; gas · refineries</div><h4>Bharat Petroleum</h4><div class="big">SAP<small>as the master</small></div><p>Work orders, gate passes, labour licences and visitor management, with the gate logic in their SAP. Live headcount inside the gate.</p></div>
-        <div class="tel-case" style="--pc:#0d7d85;--d:.45s"><div class="who">Quick commerce · 22 cities</div><h4>Zepto</h4><div class="big">967<small>sites</small></div><p>15,000 workers on face and geo attendance with spoof detection. 40% cost saved on attendance operations.</p></div>
+  {
+    id: 'hy2a', theme: 'dark', title: 'Who we are',
+    html: `
+    <div class="tel norail">
+      <div class="tel-head"><div><span class="kick">Credentials · 1 of 2</span><h2>Ten years on the frontline, 25 million worker profiles, <em>built for your scale.</em></h2></div></div>
+      <div class="tel-cred">
+        <div>
+          <div class="tel-nums">
+            <div><div class="n">25M<em>+</em></div><div class="l">Verified worker profiles</div></div>
+            <div><div class="n">1,000<em>+</em></div><div class="l">Enterprises on the platform</div></div>
+            <div><div class="n">8</div><div class="l">Markets · India, SEA, GCC</div></div>
+            <div><div class="n">300K</div><div class="l">Contract workers run for one client</div></div>
+            <div><div class="n">₹1,000 Cr<em>+</em></div><div class="l">Group revenue · FY25 · incl. staffing</div></div>
+            <div><div class="n">$95M</div><div class="l">Raised · Series A to D</div></div>
+          </div>
+          <div class="tel-backers"><span>Jungle Ventures</span><span>British International Investment</span><span>Macquarie Capital</span><span>Capria</span><span>3one4 Capital</span><span>CX Partners</span><span>SITE Capital</span></div>
+          <div class="tel-badges"><img src="assets/compliance/iso-27001.svg" alt="ISO 27001"/><img src="assets/compliance/soc-2.svg" alt="SOC 2"/><span>ISO 27001 · SOC 2 · DPDPA-aligned: data processing agreement, India residency, consent in 35 languages, retention schedule</span></div>
+        </div>
+        <div class="tel-time">
+          <div class="ev" style="--d:.2s"><b>2015</b><span>Founded. Background verification for frontline hiring. 200 customers in two years.</span></div>
+          <div class="ev" style="--d:.3s"><b>2018</b><span>Onboarding and attendance. Face and geo punches at scale.</span></div>
+          <div class="ev" style="--d:.4s"><b>2019–20</b><span>Learning platform. Acquired OkayGo (gig) and Ezedox.</span></div>
+          <div class="ev" style="--d:.5s"><b>2021–22</b><span>Gig deployment and worker fintech. Extended Series C, $40M.</span></div>
+          <div class="ev" style="--d:.6s"><b>2023–24</b><span>goBetter platform. Reliance Retail live with 300K contract workers and 3,000 vendors. Factory face devices at Reliance O2C.</span></div>
+          <div class="ev" style="--d:.7s"><b>2026</b><span>AI Labs. Agents that onboard, induct, roster and reconcile, inside the same record.</span></div>
+        </div>
       </div>
-      <div class="tel-band"><span class="bl">Trusted at scale</span><p>25M+ verified worker profiles · 1,000+ enterprises · ISO 27001 · SOC 2 · data hosted in India.</p></div>
+    </div>`,
+  },
+  plainSlide('hy2', 'light', 'Customer impact',
+    'Customer impact · whole contract workforces, run on BetterPlace',
+    'We run the entire contract workforce for India\u2019s largest enterprises, <em>from vendor to gate to wage.</em>',
+    `<div>
+      <div class="tel-clients" style="grid-template-columns:1.15fr 1.15fr .8fr">
+        <div class="tel-case" style="--pc:var(--navy);--d:.15s"><div class="who">Reliance · Retail, Jio, O2C</div><h4>Reliance Industries</h4><div class="big">300K<small>contract workers, end to end</small></div><p>Their entire contract workforce on one platform: 3,000+ vendors, work orders and position codes, onboarding and verification, attendance, payroll, PF and ESI challan reconciliation and registers, across 18,000+ stores, Jio sites and O2C plants.</p><div class="mini"><div><b>−90%</b><span>payroll leakage</span></div><div><b>−80%</b><span>vendor non-compliance</span></div><div><b>7×</b><span>faster rule changes</span></div></div></div>
+        <div class="tel-case" style="--pc:#FF9518;--d:.3s"><div class="who">Energy · PSU · refineries and plants</div><h4>Bharat Petroleum</h4><div class="big">Every<small>contract worker at the gate</small></div><p>BPCL\u2019s contract workforce runs on our CLMS: vendors and work orders from SAP, labour licences and insurance per contract, gate pass issue, renewal and auto-termination, visitor management, and a live count of everyone inside the refinery.</p><div class="mini"><div><b>SAP</b><span>integrated master</span></div><div><b>Live</b><span>headcount inside</span></div><div><b>30 days</b><span>no swipe → pass lapses</span></div></div></div>
+        <div class="tel-case" style="--pc:#0d7d85;--d:.45s"><div class="who">Quick commerce · 22 cities</div><h4>Zepto</h4><div class="big">967<small>sites</small></div><p>15,000 workers on face and geo attendance with spoof detection; deployment gated on training.</p><div class="mini"><div><b>−40%</b><span>attendance ops cost</span></div></div></div>
+      </div>
+      <div class="tel-logos"><span class="lbl">Also on the platform</span>
+        <img src="assets/logo/c-basf.png" alt="BASF"/><img src="assets/logo/c-tcs.png" alt="TCS"/><img src="assets/logo/c-accenture.png" alt="Accenture"/><img src="assets/logo/c-amazon.jpg" alt="Amazon"/><img src="assets/logo/c-titan.png" alt="Titan"/><img src="assets/logo/c-jll.png" alt="JLL"/><img src="assets/logo/c-ibm.png" alt="IBM"/>
+      </div>
     </div>`),
 
   plainSlide('hy2b', 'darker', 'Why now',
     'Why now · what is at stake on a plant of this size',
     'Contract labour is no longer an HR file. <em>It decides output, audits and the principal employer\u2019s liability.</em>',
     `<div class="tel-stakes">
-      <div class="st" style="--d:.15s"><div class="n">21 Nov 2025</div><div class="l">the four Labour Codes in force · central rules May 2026</div><p>Contractor registers, licensed strength, the core-activity bar and one annual electronic return. State rules for Tamil Nadu and Maharashtra are still landing.</p><div class="src">Labour Codes notification</div></div>
+      <div class="st" style="--d:.15s"><div class="n">21 Nov 2025</div><div class="l">the four Labour Codes in force · central rules May 2026</div><p>Contractor registers, licensed strength, the core-activity bar and one annual electronic return. State rules are still landing, differently in every state you operate in.</p><div class="src">Labour Codes notification</div></div>
       <div class="st" style="--d:.3s"><div class="n">You pay</div><div class="l">wages, PF and ESI when a contractor defaults</div><p>The principal employer pays and recovers. With nine contract types and dozens of vendors, one unmatched challan becomes your notice.</p><div class="src">OSH Code · Code on Social Security</div></div>
       <div class="st" style="--d:.45s"><div class="n">48 h</div><div class="l">ordinary hours a week · overtime at 2×, with consent</div><p>Every hour beyond the limit needs the worker\u2019s consent, is paid at twice the rate and sits inside a quarterly cap. It has to be provable, worker by worker.</p><div class="src">OSH Code · Code on Wages</div></div>
       <div class="st" style="--d:.6s"><div class="n">Right now</div><div class="l">how many contract workers are inside the gate, and where</div><p>At BPCL\u2019s refineries that count must be known at any moment, and it comes from our gate swipes. Safety and auditors at an auto plant ask for the same.</p><div class="src">BPCL deployment</div></div>
@@ -247,7 +278,7 @@ export const hyundaiSlides: SlideDef[] = [
     `<div>
       <div class="tel-codes">
         <div class="cd" style="--d:.1s"><span class="law">OSH Code · contract labour</span><h4>Licensed strength and the core-activity bar</h4><p>Each contractor deploys only up to its licence, and only in roles open to contract work.</p><div class="we"><b>We enforce:</b> a pass that would cross the licence is blocked at issue.</div></div>
-        <div class="cd" style="--d:.18s"><span class="law">OSH Code · working hours</span><h4>Daily and weekly limits, a weekly rest day</h4><p>Tamil Nadu and Maharashtra: 9 hours a day, 48 a week. Sunday work needs a permit.</p><div class="we"><b>We enforce:</b> the roster refuses a breach; swipes that cross a limit raise an alert.</div></div>
+        <div class="cd" style="--d:.18s"><span class="law">OSH Code · working hours</span><h4>Daily and weekly limits, a weekly rest day</h4><p>Typically 9 hours a day and 48 a week, set state by state for every plant and site. Sunday work needs a permit.</p><div class="we"><b>We enforce:</b> the roster refuses a breach; swipes that cross a limit raise an alert.</div></div>
         <div class="cd" style="--d:.26s"><span class="law">OSH Code + Code on Wages · overtime</span><h4>Overtime needs consent and pays twice</h4><p>Only with the worker\u2019s consent, at twice the ordinary rate, inside a quarterly cap.</p><div class="we"><b>We enforce:</b> consent per OT shift, 2× computed, approval inside the billing cycle.</div></div>
         <div class="cd" style="--d:.34s"><span class="law">Code on Wages · pay</span><h4>Minimum wage by skill, paid on time</h4><p>Minimum wage by state and skill, bonus, holiday wages and deductions within limits.</p><div class="we"><b>We enforce:</b> a rate below the floor is refused in the price master.</div></div>
         <div class="cd" style="--d:.42s"><span class="law">Code on Social Security · PF, ESI, gratuity</span><h4>The principal employer pays if a contractor doesn\u2019t</h4><p>PF, ESI and gratuity for contract workers fall back on you when the contractor defaults.</p><div class="we"><b>We enforce:</b> every challan matched to every worker, every month.</div></div>
@@ -370,9 +401,9 @@ export const hyundaiSlides: SlideDef[] = [
     id: 'ha2', theme: 'dark', title: 'Shifts', rail, step: 7, demo: 'Live · shift mapping',
     kick: 'Attendance · shift mapping by location',
     h2: 'Contractors map shifts by location, <em>and the system changes shifts on rotation by itself.</em>',
-    qLabel: P, quote: 'Shift mapping lives with each contractor in Excel, different at Chennai, Pune, the welfare centre and the port.',
+    qLabel: P, quote: 'Shift mapping lives with each contractor in Excel, different at every plant, port, warehouse, welfare centre and regional office.',
     changes: [
-      { ic: icons.map, b: 'By location.', t: 'Chennai, Pune, welfare centre, port, each with its own shifts.' },
+      { ic: icons.map, b: 'By location.', t: 'Every plant, port, warehouse, R&D centre and office, each with its own shifts and state rules.' },
       { ic: icons.repeat, b: 'Auto shift change.', t: 'Rotations change on schedule; contractors edit or delete within the rules.' },
       { ic: icons.lock, b: 'Rules it will not break.', t: 'Daily and weekly hours, weekly rest, certification for the station.' },
     ],
@@ -460,7 +491,7 @@ export const hyundaiSlides: SlideDef[] = [
   problemSlide({
     id: 'ht1', theme: 'dark', title: 'Training', rail, step: 9, demo: 'Live · skillBetter',
     kick: 'Training · induction and safety refreshers on the worker\u2019s phone',
-    h2: 'Induction and safety refreshers on every worker\u2019s phone, <em>in Tamil or Marathi, with proof of who passed.</em>',
+    h2: 'Induction and safety refreshers on every worker\u2019s phone, <em>in the worker\u2019s own language, with proof of who passed.</em>',
     qLabel: P, quote: 'Induction is a signed self-declaration and refresher attendance is a scanned sheet. Nobody can say who is due.',
     changes: [
       { ic: icons.play, b: 'Short courses in their language.', t: 'Induction, safety, height and forklift refreshers as bite-sized videos with a test, in 35 languages, offline too.' },
@@ -498,7 +529,7 @@ export const hyundaiSlides: SlideDef[] = [
           <div class="h">Claim</div><div class="h">Category</div><div class="h">Amount</div><div class="h">Receipt</div><div class="h">Status</div>
           <div><b>Karthik M.</b><small>Sri Sakthi · CL-30417</small></div><div>Safety shoes</div><div>₹1,450</div><div><span class="hv-d g">Uploaded</span></div><div><span class="hv-s y">Pending</span></div>
           <div><b>Suresh R.</b><small>Ganesh · CL-30588</small></div><div>Medical test</div><div>₹600</div><div><span class="hv-d g">Uploaded</span></div><div><span class="hv-s g">Approved</span></div>
-          <div><b>Velan Engineering</b><small>contractor claim</small></div><div>Travel · Pune site</div><div>₹8,200</div><div><span class="hv-d g">Uploaded</span></div><div><span class="hv-s g">Paid</span></div>
+          <div><b>Velan Engineering</b><small>contractor claim</small></div><div>Travel · Talegaon site</div><div>₹8,200</div><div><span class="hv-d g">Uploaded</span></div><div><span class="hv-s g">Paid</span></div>
         </div>
         <div class="hv-ai" style="background:#f0fdf4;border-color:#bbf7d0"><b style="color:#166534">Gratuity · 12 workers eligible</b> Passes terminated in September · 5+ years · cost ₹6.8 L · details mailed to 3 contractors · HR approval pending</div>
       </div>
@@ -527,7 +558,7 @@ export const hyundaiSlides: SlideDef[] = [
     `<div class="tel-body" style="grid-template-columns:minmax(0,.36fr) minmax(0,.64fr);align-items:center">
       <div class="tel-say">
         <ul>
-          <li><span class="ic">${svg(icons.zap)}</span><span><b>WhatsApp self-onboarding.</b> Workers upload Aadhaar and documents in Tamil or Marathi; UAN fetched; checks in minutes.</span></li>
+          <li><span class="ic">${svg(icons.zap)}</span><span><b>WhatsApp self-onboarding.</b> Workers upload Aadhaar and documents in their own language; UAN fetched; checks in minutes.</span></li>
           <li><span class="ic">${svg(icons.search)}</span><span><b>Contractor hiring.</b> Openings from the work order, QR walk-in drives, candidates straight into onboarding.</span></li>
           <li><span class="ic">${svg(icons.eye)}</span><span><b>Absence prediction.</b> Festival and seasonal shortfalls by line, two weeks ahead.</span></li>
           <li><span class="ic">${svg(icons.users)}</span><span><b>Attrition prediction.</b> Who is likely to leave, and which teams lose people.</span></li>
@@ -542,7 +573,7 @@ export const hyundaiSlides: SlideDef[] = [
     'Start with one plant and three contractors, <em>and decide on your own data.</em>',
     `<div class="tel-close">
       <div class="asks">
-        <div class="ask" style="--d:.15s"><div class="n">1</div><div><h4>Pick Chennai or Pune and three contractor types</h4><p>Manpower, AMC and construction show every chain: passes, attendance, billing and statutory.</p></div></div>
+        <div class="ask" style="--d:.15s"><div class="n">1</div><div><h4>Pick one plant or site and three contractor types</h4><p>Manpower, AMC and construction show every chain: passes, attendance, billing and statutory.</p></div></div>
         <div class="ask" style="--d:.3s"><div class="n">2</div><div><h4>A working session with HR and Security</h4><p>We configure the nine contract types, the seven-step chain, forms and the price master from it.</p></div></div>
         <div class="ask" style="--d:.45s"><div class="n">3</div><div><h4>Security and legal review this week</h4><p>ISO 27001 and SOC 2 reports, the draft DPA and the hosting model to your InfoSec team.</p></div></div>
       </div>
