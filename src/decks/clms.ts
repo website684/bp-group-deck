@@ -796,7 +796,7 @@ export const clmsSlides: SlideDef[] = [
   problemSlide({
     id: 'cm8b', theme: 'dark', title: 'Training', rail, step: 11, demo: 'Live · skillBetter',
     kick: 'Training · induction and safety refreshers on the worker\u2019s phone',
-    h2: 'Induction and safety refreshers on every worker\u2019s phone, <em>in the worker\u2019s own language, with proof of who passed.</em>',
+    h2: 'Induction and refreshers on every worker\u2019s phone, <em>with proof of who passed.</em>',
     qLabel: Q, quote: 'Induction is a signed self-declaration and refresher attendance is a scanned sheet. Nobody can say who is due.',
     changes: [
       { ic: icons.play, b: 'Short courses in their language.', t: 'Induction, safety, height and forklift refreshers as bite-sized videos with a test, in 35 languages, offline too.' },
