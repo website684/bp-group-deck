@@ -13,8 +13,8 @@ import { type PlantCfg, rosterUI, rulesUI, headcountMock, leaveMock, waPhones } 
 // Real screenshots are cleaned crops in public/assets/product/clms/ (demo org, PII blurred).
 // No prices, uptime figures or numeric SLAs. Mock numbers are illustrative and footers say so.
 
-const STEPS = ['Vendors', 'Orders', 'Hire', 'Onboard', 'Verify', 'Train', 'Gate', 'Attend', 'OT', 'Pay', 'Comply']
-const rail = makeRail(STEPS, [3, 8], false)
+const STEPS = ['Vendors', 'Orders', 'Hire', 'Onboard', 'Verify', 'Gate', 'Attend', 'OT', 'Pay', 'Comply', 'Train']
+const rail = makeRail(STEPS, [3, 7, 11], false)
 const Q = 'On site today'
 
 const PL: PlantCfg = {
@@ -320,6 +320,29 @@ const verifyUI = `
   </div>
 </div>`
 
+const bulkUI = `
+<div class="ui">
+  ${side(2)}
+  <div class="ui-main">
+    ${top('Sahyadri Auto / Onboard / <b>Bulk upload · Batch B-1042</b>', 'Bulk onboarding · Shree Manpower · WO-2026-P1-114')}
+    <div class="hv-up"><span class="doc"></span><div><b>Joiners_Oct_Week3.xlsx · 212 rows · uploaded by contractor 14 Oct, 10:42</b><small>Template by contract type · Aadhaar, PAN, UAN, bank, skill code, line, shift, documents as links or a zip</small></div><span class="hv-s g">Validated in 38 s</span></div>
+    <div class="hv-comp" style="margin-bottom:0">
+      <div class="c"><b>Ready</b><span class="n">196</span><small>all checks passed</small><em class="g">Onboarded</em></div>
+      <div class="c"><b>Fix and resend</b><span class="n">12</span><small>errors in one file</small><em class="y">Returned</em></div>
+      <div class="c"><b>Blocked</b><span class="n">4</span><small>duplicate · under 18</small><em class="r">Held</em></div>
+      <div class="c"><b>Next, in bulk</b><span class="n">196</span><small>BGV · face · passes</small><em class="g">Started</em></div>
+    </div>
+    <div class="hv-price" style="grid-template-columns:.5fr 1.2fr 1.6fr .8fr">
+      <div class="h">Row</div><div class="h">Worker</div><div class="h">Check</div><div class="h">Result</div>
+      <div>14</div><div><b>Rahul Pawar</b></div><div>Aadhaar · UAN · bank IFSC · skill MH-SS</div><div><span class="hv-d g">Ready</span></div>
+      <div>57</div><div><b>Amit Shinde</b></div><div>UAN belongs to another name</div><div><span class="hv-d y">Fix</span></div>
+      <div>88</div><div><b>Sagar Jadhav</b></div><div>Already active with Ganpati Services</div><div><span class="hv-d r">Duplicate</span></div>
+      <div>131</div><div><b>Kiran More</b></div><div>Date of birth: age 17</div><div><span class="hv-d r">Under 18</span></div>
+    </div>
+    <div class="hv-ai" style="background:#f0fdf4;border-color:#bbf7d0"><b style="color:#166534">196 workers onboarded in one go.</b> Background checks initiated, face enrolment slots booked, provisional passes queued for approval.</div>
+  </div>
+</div>`
+
 /* ---------------- slides ---------------- */
 
 export const clmsSlides: SlideDef[] = [
@@ -339,7 +362,7 @@ export const clmsSlides: SlideDef[] = [
             <div><div class="n">967</div><div class="l">Sites on the attendance engine at Zepto</div></div>
           </div>
         </div>
-        ${coverRing(['Vendors', 'Hire', 'Onboard', 'Verify', 'Train', 'Attend', 'Pay', 'Comply'], ['one', 'worker record'], false)}
+        ${coverRing(['Vendors', 'Hire', 'Onboard', 'Verify', 'Attend', 'Pay', 'Comply', 'Train'], ['one', 'worker record'], false)}
       </div>
     </div>`,
   },
@@ -436,11 +459,11 @@ export const clmsSlides: SlideDef[] = [
         <div class="mp" data-n="" style="--d:.1s"><div class="ph">Before deployment</div><h4>Vendors &amp; orders</h4><p>Vendor master, work orders, licensed strength, price master, scorecard.</p><span class="ic">${svg(icons.building)}</span></div>
         <div class="mp" data-n="" style="--d:.17s"><div class="ph">Sourcing</div><h4>Hire</h4><p>Contractors source on the platform: openings, QR drives, screening.</p><span class="ic">${svg(icons.search)}</span></div>
         <div class="mp" data-n="" style="--d:.24s"><div class="ph">Day 0</div><h4>Onboard &amp; verify</h4><p>WhatsApp onboarding, eKYC, background checks by role.</p><span class="ic">${svg(icons.shield)}</span></div>
-        <div class="mp" data-n="" style="--d:.31s"><div class="ph">Day 0</div><h4>Train &amp; gate</h4><p>Induction on the LMS. Pass only if every condition clears.</p><span class="ic">${svg(icons.lock)}</span></div>
+        <div class="mp" data-n="" style="--d:.31s"><div class="ph">Day 0</div><h4>Gate</h4><p>Induction with a test. Pass only if every condition clears.</p><span class="ic">${svg(icons.lock)}</span></div>
         <div class="mp" data-n="" style="--d:.38s"><div class="ph">Every shift</div><h4>Attend</h4><p>Face, geo or devices. Labour-law roster, live headcount.</p><span class="ic">${svg(icons.clock)}</span></div>
         <div class="mp" data-n="" style="--d:.45s"><div class="ph">Every shift</div><h4>Overtime</h4><p>From punches, with consent, inside caps, at twice the rate.</p><span class="ic">${svg(icons.zap)}</span></div>
         <div class="mp" data-n="" style="--d:.52s"><div class="ph">Every month</div><h4>Pay</h4><p>Payroll from attendance. PF and ESI challans matched per worker.</p><span class="ic">${svg(icons.card)}</span></div>
-        <div class="mp" data-n="" style="--d:.59s"><div class="ph">Every month</div><h4>Comply</h4><p>Invoices against verified shifts. Registers from the record.</p><span class="ic">${svg(icons.doc)}</span></div>
+        <div class="mp" data-n="" style="--d:.59s"><div class="ph">Every month</div><h4>Comply &amp; train</h4><p>Registers from the record. Refreshers on the LMS, tracked.</p><span class="ic">${svg(icons.doc)}</span></div>
       </div>
       <div class="tel-phases" style="grid-template-columns:4fr 2fr 2fr"><span>Before the gate opens</span><span>While the shift runs</span><span>When the month closes</span></div>
       <div class="tel-band light"><span class="bl">How to read the next slides</span><p>One step per slide, in this order. <b>What happens on site today</b> on the left, <b>what changes</b> and the <b>proof</b> below it, the <b>product</b> on the right. Screens marked <b>Real screen</b> are captures from the platform with demo data; the rest are authored views of the same flows.</p></div>
@@ -521,12 +544,27 @@ export const clmsSlides: SlideDef[] = [
     foot: 'goBetter Hire is live (in production for store and sales hiring). The contractor portal is configured per client. Numbers illustrative.',
   }),
 
+  problemSlide({
+    id: 'cm6d', theme: 'light', title: 'Bulk onboarding', rail, step: 4, demo: 'Live · bulk upload',
+    kick: 'Onboard · 1 of 2 · bulk onboarding for a whole batch',
+    h2: 'Two hundred joiners onboarded from one file, <em>with every row checked before anyone reaches the gate.</em>',
+    qLabel: Q, quote: 'Contractors send a spreadsheet and a folder of scans. The time office retypes it, and mistakes surface at payroll.',
+    changes: [
+      { ic: icons.layers, b: 'One template per contract type.', t: 'Contractor or HR uploads the batch: identity, UAN, bank, skill code, line, shift and documents, against the work order.' },
+      { ic: icons.shield, b: 'Every row validated.', t: 'Aadhaar and PAN verified, UAN matched to the name, IFSC checked, age 18+, duplicates across contractors caught, sanctioned strength respected.' },
+      { ic: icons.zap, b: 'Errors back in one file, the rest moves on.', t: 'Fixes go back to the contractor in a single sheet. Clean rows start background checks, face enrolment and passes in bulk.' },
+    ],
+    proof: { n: '300K', p: 'contract workers at <b>Reliance</b>, mobilised through bulk onboarding and sub-vendor capture at this scale.' },
+    vis: bulkUI, wide: true,
+    foot: 'Bulk onboarding with row-level validation and bulk initiation of checks is live. Authored view; names and numbers illustrative.',
+  }),
+
   {
     id: 'cm7', theme: 'dark', title: 'Worker onboarding · WhatsApp',
     html: `
     <div class="tel">
       ${rail(4, 'Live · WhatsApp onboarding')}
-      <div class="tel-head"><div><span class="kick">the worker · onboarding on WhatsApp, in his language</span><h2>Hired today, onboarded on WhatsApp by evening, <em>at the training centre the next morning.</em></h2></div></div>
+      <div class="tel-head"><div><span class="kick">Onboard · 2 of 2 · or self-onboarding on WhatsApp, in their language</span><h2>Hired today, onboarded on WhatsApp by evening, <em>at the training centre the next morning.</em></h2></div></div>
       <div class="tel-body" style="grid-template-columns:minmax(0,.3fr) minmax(0,.7fr)">
         <div class="tel-say">
           <div class="blk"><div class="lbl">${Q}</div><div class="tq">Joiners queue at the time office with photocopies. Half the forms come back incomplete.</div></div>
@@ -559,28 +597,7 @@ export const clmsSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'cm8b', theme: 'dark', title: 'Training', rail, step: 6, demo: 'Live · skillBetter',
-    kick: 'Training · induction and safety refreshers on the worker\u2019s phone',
-    h2: 'Induction and safety refreshers on every worker\u2019s phone, <em>in the worker\u2019s own language, with proof of who passed.</em>',
-    qLabel: Q, quote: 'Induction is a signed self-declaration and refresher attendance is a scanned sheet. Nobody can say who is due.',
-    changes: [
-      { ic: icons.play, b: 'Short courses in their language.', t: 'Induction, safety, height and forklift refreshers as bite-sized videos with a test, in 35 languages, offline too.' },
-      { ic: icons.check, b: 'Proof, not paper.', t: 'Self-declaration signed in the app, test scores and certificates dated per worker. Refreshers pushed before they lapse.' },
-      { ic: icons.lock, b: 'Linked to the pass.', t: 'A lapsed mandatory course can hold the gate pass or the work permit. The dashboard shows who is due, by contractor.' },
-    ],
-    proof: { n: '88%', p: 'course completion across our clients, against about 25% in the industry. <b>Hindalco</b> tripled shop-floor training coverage on skillBetter.' },
-    vis: `<div class="tm-fan">
-      <div class="ph"><img src="assets/product/figma/skilling/mobile-learning-home-new-feed.png" alt="Learning home"/><em>Learning home</em></div>
-      <div class="ph"><img src="assets/product/figma/skilling/skillbetter-mobile-course-overview-chapter-states.png" alt="Factory operations course"/><em>Mandatory course</em></div>
-      <div class="ph"><img src="assets/product/figma/skilling/skillbetter-mobile-offline-downloads-sheet.png" alt="Offline downloads"/><em>Works offline</em></div>
-      <div class="chipf" style="left:0;top:16%;animation-delay:0s,.8s"><b>212</b>refreshers due this month</div>
-      <div class="chipf" style="right:0;top:40%;animation-delay:1.5s,1s"><b>9 / 10</b>safety test passed</div>
-    </div>`,
-    foot: 'skillBetter LMS is live (production app screens). Linking course status to gate passes and permits is configured per client.',
-  }),
-
-  problemSlide({
-    id: 'cm9', theme: 'dark', title: 'Gate pass and induction', rail, step: 7, demo: 'Live · gate pass',
+    id: 'cm9', theme: 'dark', title: 'Gate pass and induction', rail, step: 6, demo: 'Live · gate pass',
     kick: 'gate pass, safety induction and access',
     h2: 'The gate pass opens <em>only when everything behind it is true,</em> and closes when any of it stops being true.',
     qLabel: Q, quote: 'Induction is a signature on a register. Badges never expire.',
@@ -595,7 +612,7 @@ export const clmsSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'cm10', theme: 'light', title: 'Attendance · capture', rail, step: 8, demo: 'Live · headcount',
+    id: 'cm10', theme: 'light', title: 'Attendance · capture', rail, step: 7, demo: 'Live · headcount',
     kick: 'attendance · 1 of 4 · capture down to the line',
     h2: 'Know who is inside the plant, on which line, <em>right now, not at the end of the shift.</em>',
     qLabel: Q, quote: 'We know who crossed the gate. Who reached the line, and how many are inside right now, is a guess.',
@@ -610,7 +627,7 @@ export const clmsSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'cm10b', theme: 'light', title: 'Attendance · rules', rail, step: 8, demo: 'Live · policy engine',
+    id: 'cm10b', theme: 'light', title: 'Attendance · rules', rail, step: 7, demo: 'Live · policy engine',
     kick: 'attendance · 2 of 4 · labour-law rules the roster cannot break',
     h2: 'Set the labour-law rules once. <em>The roster never breaks them, and you hear the moment reality does.</em>',
     qLabel: Q, quote: 'Hour limits live in a policy document. The roster is built in a spreadsheet that has never read it.',
@@ -625,7 +642,7 @@ export const clmsSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'cm11', theme: 'dark', title: 'Attendance · auto roster', rail, step: 8, demo: 'Live · auto roster',
+    id: 'cm11', theme: 'dark', title: 'Attendance · auto roster', rail, step: 7, demo: 'Live · auto roster',
     kick: 'attendance · 3 of 4 · intelligent rostering',
     h2: 'Give us demand and the rules. <em>We build the roster, and rebuild it when a line stops or a festival hits.</em>',
     qLabel: Q, quote: 'Contractors roster in Excel. We see the names after the shift has started, and absences are fixed by phone.',
@@ -640,7 +657,7 @@ export const clmsSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'cm11b', theme: 'light', title: 'Attendance · leave, holidays, roles', rail, step: 8, demo: 'Live · leave and holidays',
+    id: 'cm11b', theme: 'light', title: 'Attendance · leave, holidays, roles', rail, step: 7, demo: 'Live · leave and holidays',
     kick: 'attendance · 4 of 4 · leave, holidays, roles and certifications',
     h2: 'Every rule knows who it applies to, <em>because leave, holidays, roles and certifications live on one record.</em>',
     qLabel: Q, quote: 'Leave sits in one system, holidays in a circular, roles in a spreadsheet. The roster and payroll see none of them.',
@@ -658,7 +675,7 @@ export const clmsSlides: SlideDef[] = [
     id: 'cm12', theme: 'dark', title: 'The worker app',
     html: `
     <div class="tel">
-      ${rail(8, 'Live · worker app')}
+      ${rail(7, 'Live · worker app')}
       <div class="tel-head"><div><span class="kick">what the worker sees</span><h2>He sees his own hours, pay and corrections, <em>so disputes end on his phone, not at your gate.</em></h2></div></div>
       <div class="tel-body">
         <div class="tel-say">
@@ -683,7 +700,7 @@ export const clmsSlides: SlideDef[] = [
   },
 
   problemSlide({
-    id: 'cm13', theme: 'light', title: 'Overtime', rail, step: 9, demo: 'Live · OT register',
+    id: 'cm13', theme: 'light', title: 'Overtime', rail, step: 8, demo: 'Live · OT register',
     kick: 'overtime',
     h2: 'Overtime computed from punches, consented, capped, <em>and paid at twice the rate.</em>',
     qLabel: Q, quote: 'OT is claimed on a slip, approved after it is worked and paid at the single rate.',
@@ -698,7 +715,7 @@ export const clmsSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'cm14', theme: 'light', title: 'Wages and minimum wage', rail, step: 10, demo: 'Live · pay run',
+    id: 'cm14', theme: 'light', title: 'Wages and minimum wage', rail, step: 9, demo: 'Live · pay run',
     kick: 'wages',
     h2: 'Wages computed from verified attendance, <em>with the minimum wage checked before anyone is paid.</em>',
     qLabel: Q, quote: 'The contractor’s wage sheet is the only record of what the workers were actually paid.',
@@ -713,7 +730,7 @@ export const clmsSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'cm15', theme: 'darker', title: 'Challan reconciliation', rail, step: 10, demo: 'Live · challan OCR',
+    id: 'cm15', theme: 'darker', title: 'Challan reconciliation', rail, step: 9, demo: 'Live · challan OCR',
     kick: 'the contractor’s PF and ESI challans',
     h2: 'A challan upload is not compliance. <em>Matching it to every worker is.</em>',
     qLabel: Q, quote: 'PF challans arrive as PDFs in email. Nobody checks them against the workers we paid for.',
@@ -747,7 +764,7 @@ export const clmsSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'cm16', theme: 'light', title: 'Invoice check', rail, step: 11, demo: 'Live · invoice check',
+    id: 'cm16', theme: 'light', title: 'Invoice check', rail, step: 10, demo: 'Live · invoice check',
     kick: 'vendor billing',
     h2: 'You pay for shifts that happened, at the rate on the order, <em>after the challans match.</em>',
     qLabel: Q, quote: 'Invoices are checked against the contractor’s own timesheet, by hand, once a month.',
@@ -762,7 +779,7 @@ export const clmsSlides: SlideDef[] = [
   }),
 
   problemSlide({
-    id: 'cm17', theme: 'light', title: 'Registers and returns', rail, step: 11, demo: 'Live · registers',
+    id: 'cm17', theme: 'light', title: 'Registers and returns', rail, step: 10, demo: 'Live · registers',
     kick: 'registers, returns and the audit trail',
     h2: 'Registers, returns and audit packs come out of the record. <em>Nobody compiles them.</em>',
     qLabel: Q, quote: 'Audit preparation is three to four weeks of chasing contractors for registers that never agree.',
@@ -774,6 +791,27 @@ export const clmsSlides: SlideDef[] = [
     proof: { n: '300K+', p: 'contract workers and 3,000+ vendors at <b>Reliance</b> on the same registers and audit trail.' },
     vis: regMock,
     foot: 'Registers and the audit trail are live. Formats follow your state rules; we configure, you and your advisors confirm interpretation.',
+  }),
+
+  problemSlide({
+    id: 'cm8b', theme: 'dark', title: 'Training', rail, step: 11, demo: 'Live · skillBetter',
+    kick: 'Training · induction and safety refreshers on the worker\u2019s phone',
+    h2: 'Induction and safety refreshers on every worker\u2019s phone, <em>in the worker\u2019s own language, with proof of who passed.</em>',
+    qLabel: Q, quote: 'Induction is a signed self-declaration and refresher attendance is a scanned sheet. Nobody can say who is due.',
+    changes: [
+      { ic: icons.play, b: 'Short courses in their language.', t: 'Induction, safety, height and forklift refreshers as bite-sized videos with a test, in 35 languages, offline too.' },
+      { ic: icons.check, b: 'Proof, not paper.', t: 'Self-declaration signed in the app, test scores and certificates dated per worker. Refreshers pushed before they lapse.' },
+      { ic: icons.lock, b: 'Linked to the pass.', t: 'A lapsed mandatory course can hold the gate pass or the work permit. The dashboard shows who is due, by contractor.' },
+    ],
+    proof: { n: '88%', p: 'course completion across our clients, against about 25% in the industry. <b>Hindalco</b> tripled shop-floor training coverage on skillBetter.' },
+    vis: `<div class="tm-fan">
+      <div class="ph"><img src="assets/product/figma/skilling/mobile-learning-home-new-feed.png" alt="Learning home"/><em>Learning home</em></div>
+      <div class="ph"><img src="assets/product/figma/skilling/skillbetter-mobile-course-overview-chapter-states.png" alt="Factory operations course"/><em>Mandatory course</em></div>
+      <div class="ph"><img src="assets/product/figma/skilling/skillbetter-mobile-offline-downloads-sheet.png" alt="Offline downloads"/><em>Works offline</em></div>
+      <div class="chipf" style="left:0;top:16%;animation-delay:0s,.8s"><b>212</b>refreshers due this month</div>
+      <div class="chipf" style="right:0;top:40%;animation-delay:1.5s,1s"><b>9 / 10</b>safety test passed</div>
+    </div>`,
+    foot: 'skillBetter LMS is live (production app screens). Linking course status to gate passes and permits is configured per client.',
   }),
 
   problemSlide({
