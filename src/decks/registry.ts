@@ -26,8 +26,14 @@ import { rilContentSlides } from './ril-content'
 import { clmsPillarSlides } from './clms-pillars'
 import { tataElectronicsSlides } from './tata-electronics'
 import { hyundaiSlides } from './hyundai'
+import { bpclAiSlides } from './bpcl-ai'
 
 export const decks: DeckDef[] = [
+  {
+    id: 'bpcl-ai', title: 'BPCL · AI Labs use cases', group: 'story',
+    tagline: 'IOWMS processes, the agents that take the chasing out of each, three agents in action, how to start, then AI Labs capabilities. Link-only.',
+    slides: bpclAiSlides,
+  },
   {
     id: 'hyundai', title: 'Hyundai Motor India · CLMS demo', group: 'story',
     tagline: 'Vendor management first (vendors, work orders, onboarding chain, gate passes, scorecard), then attendance, shifts, OT and billing, statutory and the live dashboard. Link-only.',
