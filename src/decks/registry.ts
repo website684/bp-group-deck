@@ -27,8 +27,14 @@ import { clmsPillarSlides } from './clms-pillars'
 import { tataElectronicsSlides } from './tata-electronics'
 import { hyundaiSlides } from './hyundai'
 import { bpclAiSlides } from './bpcl-ai'
+import { skhSlides } from './skh'
 
 export const decks: DeckDef[] = [
+  {
+    id: 'skh', title: 'SKH · goBetter CLMS', group: 'story',
+    tagline: 'CLMS re-cut for SKH: their numbers, the CHRO\'s four questions answered in flow, 12-hour overtime at 2x, worker voice, references and commercials. Link-only.',
+    slides: skhSlides,
+  },
   {
     id: 'bpcl-ai', title: 'BPCL · AI Labs use cases', group: 'story',
     tagline: 'IOWMS processes, the agents that take the chasing out of each, three agents in action, how to start, then AI Labs capabilities. Link-only.',
