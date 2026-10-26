@@ -1435,3 +1435,10 @@ body { overflow: auto; background: #05081f; }
 
 .light .ajmix .lb, .light .ajmix .pc { color: var(--ink); }
 .light .ajmix .lb { opacity: .85; }
+
+/* Client decks page (#/clients) */
+.cd-search { margin-top: 18px; width: min(420px, 100%); padding: 11px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06); color: #fff; font: inherit; }
+.cd-search::placeholder { color: rgba(255,255,255,.5); }
+.cd-card { cursor: default; border-top: 4px solid var(--cd); }
+.cd-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 12px; }
+.cd-actions a { text-decoration: none; }

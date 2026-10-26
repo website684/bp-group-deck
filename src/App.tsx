@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Setup from './pages/Setup'
 import Hub from './pages/Hub'
 import Roi from './pages/Roi'
+import ClientDecks from './pages/ClientDecks'
 import DeckPlayer from './engine/DeckPlayer'
 import { loadClient } from './lib/client'
 import { parseShare } from './lib/share'
@@ -17,6 +18,7 @@ function parseHash(): { route: string; id?: string; mods?: string[]; slide?: num
   if (parts[0] === 'setup') return { route: 'setup' }
   if (parts[0] === 'hub') return { route: 'hub' }
   if (parts[0] === 'roi') return { route: 'roi' }
+  if (parts[0] === 'clients') return { route: 'clients' }
   if (parts[0] === 'deck' && parts[1]) {
     const q = new URLSearchParams(query || '')
     const mods = q.get('mods')?.split(',').filter(Boolean)
@@ -43,6 +45,11 @@ export default function App() {
   // The front page is the hub; client setup is opt-in via the top-right button.
   if (!share.active && hash.route === 'setup') {
     return <Setup initial={client} onDone={() => { bump((x) => x + 1); nav('/hub') }} />
+  }
+
+  // Client decks list: seller view only, never inside a client's share link.
+  if (!share.active && hash.route === 'clients') {
+    return <ClientDecks onBack={() => nav('/hub')} />
   }
 
   if (hash.route === 'roi') {

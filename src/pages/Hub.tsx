@@ -82,6 +82,7 @@ export default function Hub({ client, shareMode = false, onOpen, onEditClient }:
             </button>
           )}
           <button className="btn-ghost" onClick={() => { window.location.hash = '/roi' }}>💰 What you'd save</button>
+          {!shareMode && <button className="btn-ghost" onClick={() => { window.location.hash = '/clients' }}>📁 Client decks</button>}
           <button className="btn-ghost" onClick={() => { setPicking(!picking); setPicked([]) }}>
             {picking ? 'Cancel' : 'Mix your own deck'}
           </button>
