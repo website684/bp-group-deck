@@ -494,7 +494,7 @@ export const tataElectronicsSlides: SlideDef[] = [
       { ic: icons.chart, b: 'Team trends, not just names.', t: 'When people under one supervisor leave at twice the plant rate, it shows as a trend for plant HR to take up.' },
       { ic: icons.zap, b: 'One action, in her language.', t: 'A check-in script, a shift swap, a pay query closed the same day, tracked so you learn what works.' },
     ],
-    proof: { n: '−15%', p: 'attrition, client-reported across our enterprise deployments once these signals were acted on every week.' },
+    proof: { n: '−15%', p: 'attrition, client-reported across our enterprise deployments against their own prior year. The pilot measures yours.' },
     vis: attrMock,
     foot: 'Pilot model on live signals; scores after ~90 days of history, validated at week 16. People are composites.',
   }),
@@ -522,7 +522,7 @@ export const tataElectronicsSlides: SlideDef[] = [
     changes: [
       { ic: icons.doc, b: 'Licence against headcount.', t: 'Licensed strength per contractor measured against deployment across every work order; new passes blocked when it is exceeded.' },
       { ic: icons.check, b: 'Audit-ready on any day.', t: 'Muster roll, wage and overtime registers, the weekly hours file, recruitment-fee and age declarations for RBA, and exits closed on time.' },
-      { ic: icons.shield, b: 'PF and ESI, worker by worker.', t: 'Contractor challans read by OCR and matched to payroll. Gaps flagged to you; holding a bill stays your decision.' },
+      { ic: icons.shield, b: 'PF and ESI, worker by worker.', t: 'A PF number only proves she is registered. We read every contractor challan and match the amount to each worker’s wage, every month. Gaps flagged to you; holding a bill stays your decision.' },
     ],
     proof: { n: '−80%', p: 'vendor non-compliance risk at <b>Reliance</b> across 3,000 contractors on these checks.' },
     vis: compMock,
@@ -549,12 +549,13 @@ export const tataElectronicsSlides: SlideDef[] = [
     html: `
     <div class="tel">
       ${rail(8, 'Live · WhatsApp onboarding')}
-      <div class="tel-head"><div><span class="kick">Onboard · 1 of 2 · on WhatsApp, in her language</span><h2>Hired today, onboarded on WhatsApp by evening, <em>at the training centre the next morning.</em></h2></div></div>
+      <div class="tel-head"><div><span class="kick">Onboard · 1 of 2 · in batches or on WhatsApp, in her language</span><h2>Hired today, onboarded on WhatsApp by evening, <em>at the training centre the next morning.</em></h2></div></div>
       <div class="tel-body" style="grid-template-columns:minmax(0,.3fr) minmax(0,.7fr)">
         <div class="tel-say">
           <div class="blk"><div class="lbl">${P}</div><div class="tq">Days between offer and first day: forms, photocopies and a queue at the pass office for every joiner.</div></div>
           <div class="blk"><div class="lbl">What changes</div><ul>
-            <li><span class="ic">${svg(icons.zap)}</span><span><b>The hire triggers it.</b> Offer, consent and details on WhatsApp, prefilled from hiring.</span></li>
+            <li><span class="ic">${svg(icons.users)}</span><span><b>A whole batch from the contractor.</b> One file, every row checked against the work order, errors sent back to fix.</span></li>
+            <li><span class="ic">${svg(icons.zap)}</span><span><b>Or one by one on WhatsApp.</b> Offer, consent and details, prefilled from hiring.</span></li>
             <li><span class="ic">${svg(icons.lang)}</span><span><b>Her language.</b> Tamil or any of 35 languages, switched at any step.</span></li>
             <li><span class="ic">${svg(icons.mic)}</span><span><b>Stuck? Our agent calls.</b> An AI voice agent walks her through the step. Live at Zepto.</span></li>
           </ul></div>
