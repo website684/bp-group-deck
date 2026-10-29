@@ -19,7 +19,7 @@ export const pwcClmsSlides: SlideDef[] = [
       <div class="stats rise" style="animation-delay:.45s;margin-top:22px;">
         <div class="stat"><div class="n">36K → 25K</div><div class="l">The client's daily deployment target</div></div>
         <div class="stat"><div class="n">155+</div><div class="l">Time-office staff, manual today</div></div>
-        <div class="stat"><div class="n">300K+</div><div class="l">Workers live at Reliance</div></div>
+        <div class="stat"><div class="n">500K+</div><div class="l">Workers live at Reliance</div></div>
         <div class="stat"><div class="n">BPCL</div><div class="l">Contract workforce, live</div></div>
       </div>
       <div class="mdcover ghost">CLMS</div>
@@ -413,7 +413,7 @@ export const pwcClmsSlides: SlideDef[] = [
     <div class="slidebody split">
       <div>
         <span class="eyebrow rise">Credential · Reliance Industries</span>
-        <h2 class="rise" style="animation-delay:.08s;color:#fff;">See how Reliance Industries runs 300,000 workers and 3,000 vendors <span style="color:var(--yellow)">on one rule engine.</span></h2>
+        <h2 class="rise" style="animation-delay:.08s;color:#fff;">See how Reliance Industries runs 500,000 workers and 3,000 vendors <span style="color:var(--yellow)">on one rule engine.</span></h2>
         <p class="lede rise" style="animation-delay:.16s;margin-top:6px;">Contract workforce management across Reliance Retail, Jio and O2C. The largest deployment of its kind we know of in India, and the closest to the client's scale.</p>
         <div class="featlist">
           ${fi(icons.layers, 'Position and budget control', 'Position codes and budgets as governing masters. Position dashboards and budget reports at site-admin level, so deployment is planned against sanctioned positions.', 0.24)}
@@ -487,7 +487,7 @@ export const pwcClmsSlides: SlideDef[] = [
       <span class="eyebrow rise">Why BetterPlace as the platform partner, and how we start</span>
       <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:36ch;">Why BetterPlace, and the next step: <span style="color:var(--yellow)">a six-week diagnostic at one plant.</span></h2>
       <div class="ctacards" style="margin-top:20px;">
-        <div class="ctac rise" style="animation-delay:.24s"><div class="num">01</div><h4>Proven at the client's scale</h4><p>A PSU oil major and a 300,000-worker conglomerate run their contract workforces on this platform. Every process in this deck is running for a client today; the forecast and scheduling models are built in the pilot.</p></div>
+        <div class="ctac rise" style="animation-delay:.24s"><div class="num">01</div><h4>Proven at the client's scale</h4><p>A PSU oil major and a 500,000-worker conglomerate run their contract workforces on this platform. Every process in this deck is running for a client today; the forecast and scheduling models are built in the pilot.</p></div>
         <div class="ctac rise" style="animation-delay:.32s"><div class="num">02</div><h4>AI a works committee can accept</h4><p>Agents run on open-source models on our own cloud in India. Worker data stays there. Deterministic where the process must not deviate; logged everywhere. ISO 27001, SOC 2.</p></div>
         <div class="ctac rise" style="animation-delay:.4s"><div class="num">03</div><h4>A clean split of roles</h4><p>PwC owns the business case, IR and programme. BetterPlace owns the platform, data and integrations. One governance forum, joint benefits tracking.</p></div>
       </div>

@@ -296,7 +296,7 @@ export const tataElectronicsSlides: SlideDef[] = [
         <div class="tel-covertext">
           <span class="kick">BetterPlace × Tata Electronics · October 2026</span>
           <h1>One operating system for your plants, <em>for every contract and on-roll worker.</em></h1>
-          <p>Time and rosters, absence, payroll, attrition, contractors, compliance, hiring and onboarding on one record. Shown on the software that runs 300,000 contract workers today, configured for electronics manufacturing in Tamil Nadu and Karnataka.</p>
+          <p>Time and rosters, absence, payroll, attrition, contractors, compliance, hiring and onboarding on one record. Shown on the software that runs 500,000 contract workers today, configured for electronics manufacturing in Tamil Nadu and Karnataka.</p>
           <div class="meta"><span>Working session · Components business HR</span><span>Slides + live software</span><span>Confidential</span></div>
         </div>
         ${coverRing(['Time', 'Absence', 'Payroll', 'Attrition', 'Vendors', 'Comply', 'Hire', 'Onboard'], ['one operating', 'system'], false)}
@@ -314,7 +314,7 @@ export const tataElectronicsSlides: SlideDef[] = [
             <div><div class="n">25M<em>+</em></div><div class="l">Verified worker profiles</div></div>
             <div><div class="n">1,000<em>+</em></div><div class="l">Enterprises on the platform</div></div>
             <div><div class="n">8</div><div class="l">Markets · India, SEA, GCC</div></div>
-            <div><div class="n">300K</div><div class="l">Contract workers run for one client</div></div>
+            <div><div class="n">500K</div><div class="l">Contract workers a month at Reliance</div></div>
             <div><div class="n">₹1,000 Cr<em>+</em></div><div class="l">Group revenue · FY25 · incl. staffing</div></div>
             <div><div class="n">$95M</div><div class="l">Raised · Series A to D</div></div>
           </div>
@@ -326,7 +326,7 @@ export const tataElectronicsSlides: SlideDef[] = [
           <div class="ev" style="--d:.3s"><b>2018</b><span>Onboarding and attendance. Face and geo punches at scale.</span></div>
           <div class="ev" style="--d:.4s"><b>2019–20</b><span>Learning platform. Acquired OkayGo (gig) and Ezedox.</span></div>
           <div class="ev" style="--d:.5s"><b>2021–22</b><span>Gig deployment and worker fintech. Extended Series C, $40M.</span></div>
-          <div class="ev" style="--d:.6s"><b>2023–24</b><span>goBetter platform. Reliance Retail live with 300K contract workers and 3,000 vendors. Factory face devices at Reliance O2C.</span></div>
+          <div class="ev" style="--d:.6s"><b>2023–24</b><span>goBetter platform. Reliance live with 500K contract workers a month and 3,000+ vendors across Retail, Jio and O2C. Factory face devices at Reliance O2C.</span></div>
           <div class="ev" style="--d:.7s"><b>2026</b><span>AI Labs. Agents that onboard, induct, roster and reconcile, inside the same record.</span></div>
         </div>
       </div>
@@ -339,7 +339,7 @@ export const tataElectronicsSlides: SlideDef[] = [
       <div class="tel-head"><div><span class="kick">Credentials · 2 of 2</span><h2>Three large operators already run their contract workforce on this.</h2></div></div>
       <div>
         <div class="tel-clients">
-          <div class="tel-case" style="--pc:var(--navy);--d:.15s"><div class="who">Retail · 18,918 stores</div><h4>Reliance Retail</h4><div class="big">300K<small>contract workers</small></div><p>3,000+ vendors on one rule engine. Payroll leakage down 90%, vendor non-compliance down 80%, customisation 7× faster than the systems it replaced.</p><div class="mini"><div><b>3,000+</b><span>vendors</span></div><div><b>−90%</b><span>payroll leakage</span></div><div><b>−80%</b><span>vendor non-compliance</span></div></div></div>
+          <div class="tel-case" style="--pc:var(--navy);--d:.15s"><div class="who">Retail · Jio · O2C · 18,918 stores</div><h4>Reliance Industries</h4><div class="big">500K<small>contract workers active every month</small></div><p>3,000+ vendors on one rule engine. Payroll leakage down 90%, vendor non-compliance down 80%, customisation 7× faster than the systems it replaced.</p><div class="mini"><div><b>3,000+</b><span>vendors</span></div><div><b>−90%</b><span>payroll leakage</span></div><div><b>−80%</b><span>vendor non-compliance</span></div></div></div>
           <div class="tel-case" style="--pc:#FF9518;--d:.3s"><div class="who">Oil &amp; gas · refineries and plants</div><h4>Bharat Petroleum</h4><div class="big">Gate<small>inside SAP</small></div><p>Work orders, gate passes and contract workers on our platform, with the gate logic living in their SAP. The count of people inside the gate is known at any moment.</p><div class="mini"><div><b>SAP</b><span>vendor and order master</span></div><div><b>30 days</b><span>no punch → pass lapses</span></div></div></div>
           <div class="tel-case" style="--pc:#0d7d85;--d:.45s"><div class="who">Quick commerce · 22 cities</div><h4>Zepto</h4><div class="big">967<small>sites</small></div><p>15,000 workers on face and geo attendance with spoof detection. Deployment gated on training completion. 40% cost saved on attendance operations.</p><div class="mini"><div><b>15,000</b><span>workers</span></div><div><b>22</b><span>cities</span></div><div><b>−40%</b><span>attendance ops cost</span></div></div></div>
         </div>
@@ -419,7 +419,7 @@ export const tataElectronicsSlides: SlideDef[] = [
       { ic: icons.lock, b: 'The roster refuses a breach.', t: 'A shift that would cross a limit cannot be published. The planner sees which rule and which workers.' },
       { ic: icons.warn, b: 'Reality checked against the rules.', t: 'When punches cross 48 hours, overtime runs without consent or a rest day is missed, the supervisor and HR get an alert the same hour. Overrides need a named role, a reason and an expiry, and show on the register.' },
     ],
-    proof: { n: '7×', p: 'faster rule changes at <b>Reliance</b> than the systems it replaced, across 300K workers on this rules engine.' },
+    proof: { n: '7×', p: 'faster rule changes at <b>Reliance</b> than the systems it replaced, across 500K workers on this rules engine.' },
     vis: rulesUI(TE),
     foot: 'Policy engine, roster validation and alerts are live. Authored view of the rule-set screen; values follow your state rules.',
   }),
@@ -479,7 +479,7 @@ export const tataElectronicsSlides: SlideDef[] = [
       { ic: icons.layers, b: 'Your structures and registers.', t: 'Salary structures by state and skill grade, multiple wage registers by contractor and plant, payslips in the worker app in Tamil.' },
       { ic: icons.shield, b: 'Or validate the contractor’s payroll.', t: 'Upload their wage register; we check it against attendance, rates and the minimum wage before you release payment.' },
     ],
-    proof: { n: '−90%', p: 'payroll leakage at <b>Reliance</b> once pay ran from verified attendance, across 300K+ workers.' },
+    proof: { n: '−90%', p: 'payroll leakage at <b>Reliance</b> once pay ran from verified attendance, across 500K+ workers.' },
     vis: payrollMock,
     foot: 'Payroll and wage-register checks are live. OT is measured in hours, normalised to days; no true hourly payroll.',
   }),
@@ -607,7 +607,7 @@ export const tataElectronicsSlides: SlideDef[] = [
       { ic: icons.building, b: 'Vendor intelligence.', t: 'Fill, absence, attrition and compliance by contractor, side by side, every month.' },
       { ic: icons.plug, b: 'Your tools too.', t: 'Dashboards in the platform, or the same data to Power BI and SAP by API.' },
     ],
-    proof: { n: '7×', p: 'faster customisation of rules and reports at <b>Reliance</b>, where these dashboards run for 300K workers and 3,000 contractors.' },
+    proof: { n: '7×', p: 'faster customisation of rules and reports at <b>Reliance</b>, where these dashboards run for 500K workers and 3,000 contractors.' },
     vis: biMock, wide: true,
     foot: 'Embedded analytics are live (Amazon QuickSight, hosted in India) and refresh near real time. Attrition and absence tiles depend on the pilot models. Values illustrative.',
   }),

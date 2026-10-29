@@ -23,7 +23,7 @@ export const jllSlides: SlideDef[] = [
       <div class="stats rise" style="animation-delay:.45s;margin-top:22px;">
         <div class="stat"><div class="n">15M+</div><div class="l">Verified frontline worker profiles</div></div>
         <div class="stat"><div class="n">500+</div><div class="l">Enterprises live on the platform</div></div>
-        <div class="stat"><div class="n">300K</div><div class="l">Workers live at Reliance alone</div></div>
+        <div class="stat"><div class="n">500K</div><div class="l">Workers live at Reliance alone</div></div>
         <div class="stat"><div class="n">10 yrs</div><div class="l">Building for people who work on their feet</div></div>
       </div>
       <div class="mdcover ghost">JLL</div>
@@ -504,11 +504,11 @@ export const jllSlides: SlideDef[] = [
     html: `
     <div class="slidebody">
       <span class="eyebrow rise">Proof · this runs today</span>
-      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:44ch;">Site access at a PSU oil major, attendance across 967 sites, <span style="color:var(--yellow)">and 300,000 contract workers on one rule engine.</span></h2>
+      <h2 class="rise" style="animation-delay:.08s;color:#fff;max-width:44ch;">Site access at a PSU oil major, attendance across 967 sites, <span style="color:var(--yellow)">and 500,000 contract workers on one rule engine.</span></h2>
       <div class="cases" style="grid-template-columns:repeat(3,1fr);margin-top:16px;">
         <div class="case rise" style="--pc:#FFC401;animation-delay:.22s"><div class="ch"><span class="cn">Bharat Petroleum</span><span class="ct">Energy · PSU · multiple sites</span></div><ul class="cl"><li>Face and fingerprint at site access, our pass logic behind it</li><li>Gate pass issue, renewal and auto-termination on rules</li><li>Visitor management on the same flow</li><li>Vendors and work orders from SAP</li></ul></div>
         <div class="case rise" style="--pc:#D0271D;animation-delay:.3s"><div class="ch"><span class="cn">Zepto</span><span class="ct">Quick commerce · 22 cities</span></div><ul class="cl"><li>Geo attendance with AI spoof detection</li><li>Real-time dashboard for the client's ops team</li></ul><div class="cm"><div class="m"><div class="mn">15K</div><div class="ml">workers</div></div><div class="m"><div class="mn">967</div><div class="ml">sites</div></div><div class="m"><div class="mn">40%</div><div class="ml">cost saved</div></div></div></div>
-        <div class="case rise" style="--pc:#1B2D93;animation-delay:.38s"><div class="ch"><span class="cn">Reliance Industries</span><span class="ct">Retail · Jio · O2C</span></div><ul class="cl"><li>300K+ workers, 3,000+ vendors, one rule engine</li><li>Sub-vendor capture, bulk onboarding at scale</li></ul><div class="cm"><div class="m"><div class="mn">−90%</div><div class="ml">payroll leakage</div></div><div class="m"><div class="mn">−80%</div><div class="ml">vendor non-compliance</div></div></div></div>
+        <div class="case rise" style="--pc:#1B2D93;animation-delay:.38s"><div class="ch"><span class="cn">Reliance Industries</span><span class="ct">Retail · Jio · O2C</span></div><ul class="cl"><li>500K+ workers, 3,000+ vendors, one rule engine</li><li>Sub-vendor capture, bulk onboarding at scale</li></ul><div class="cm"><div class="m"><div class="mn">−90%</div><div class="ml">payroll leakage</div></div><div class="m"><div class="mn">−80%</div><div class="ml">vendor non-compliance</div></div></div></div>
       </div>
       <div class="probfoot rise" style="animation-delay:.5s;background:linear-gradient(90deg,var(--navy),var(--navy-deep));">Also on the platform: <b>Titan · PhonePe · Amazon · Accenture · Yokohama · Hindalco</b>, and attendance already demonstrated with JLL account teams at client sites. We can walk your team through the BPCL gate and the Zepto dashboard live.</div>
     </div>`,

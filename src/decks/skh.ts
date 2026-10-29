@@ -152,7 +152,7 @@ export const skhSlides: SlideDef[] = [
           <h1>15,000 workers across your plants, <em>one record from vendor to wage slip.</em></h1>
           <p>Every contractor’s licence, every joiner, every punch, every overtime hour, every PF challan and every invoice, checked against each other and visible from head office without waiting for a plant MIS.</p>
           <div class="tel-nums" style="margin-top:24px">
-            <div><div class="n">300K</div><div class="l">Contract workers live at Reliance</div></div>
+            <div><div class="n">500K</div><div class="l">Contract workers a month at Reliance · Retail, Jio, O2C</div></div>
             <div><div class="n">3,000<em>+</em></div><div class="l">Vendors on one rule engine</div></div>
             <div><div class="n">967</div><div class="l">Sites on the attendance engine at Zepto</div></div>
           </div>

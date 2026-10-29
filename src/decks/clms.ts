@@ -357,7 +357,7 @@ export const clmsSlides: SlideDef[] = [
           <h1>Every contract worker on your site, <em>from work order to wage slip,</em> on one record.</h1>
           <p>The contractor's licence, the work order, the gate pass, the induction certificate, the attendance, the overtime, the PF challan and the invoice. Held together, checked against each other, and visible to you before the inspector or the auditor asks.</p>
           <div class="tel-nums" style="margin-top:24px">
-            <div><div class="n">300K</div><div class="l">Contract workers live at Reliance</div></div>
+            <div><div class="n">500K</div><div class="l">Contract workers a month at Reliance · Retail, Jio, O2C</div></div>
             <div><div class="n">3,000<em>+</em></div><div class="l">Vendors on one rule engine</div></div>
             <div><div class="n">967</div><div class="l">Sites on the attendance engine at Zepto</div></div>
           </div>
@@ -378,7 +378,7 @@ export const clmsSlides: SlideDef[] = [
             <div><div class="n">25M<em>+</em></div><div class="l">Verified worker profiles</div></div>
             <div><div class="n">1,000<em>+</em></div><div class="l">Enterprises on the platform</div></div>
             <div><div class="n">8</div><div class="l">Markets · India, SEA, GCC</div></div>
-            <div><div class="n">300K</div><div class="l">Contract workers run for one client</div></div>
+            <div><div class="n">500K</div><div class="l">Contract workers a month at Reliance</div></div>
             <div><div class="n">₹1,000 Cr<em>+</em></div><div class="l">Group revenue · FY25 · incl. staffing</div></div>
             <div><div class="n">$95M</div><div class="l">Raised · Series A to D</div></div>
           </div>
@@ -390,7 +390,7 @@ export const clmsSlides: SlideDef[] = [
           <div class="ev" style="--d:.3s"><b>2018</b><span>Onboarding and attendance. Face and geo punches at scale.</span></div>
           <div class="ev" style="--d:.4s"><b>2019–20</b><span>Learning platform. Acquired OkayGo (gig) and Ezedox.</span></div>
           <div class="ev" style="--d:.5s"><b>2021–22</b><span>Gig deployment and worker fintech. Extended Series C, $40M.</span></div>
-          <div class="ev" style="--d:.6s"><b>2023–24</b><span>goBetter platform. Reliance Retail live with 300K contract workers and 3,000 vendors. Factory face devices at Reliance O2C.</span></div>
+          <div class="ev" style="--d:.6s"><b>2023–24</b><span>goBetter platform. Reliance live with 500K contract workers a month and 3,000+ vendors across Retail, Jio and O2C. Factory face devices at Reliance O2C.</span></div>
           <div class="ev" style="--d:.7s"><b>2026</b><span>AI Labs. Agents that onboard, induct, roster and reconcile, inside the same record.</span></div>
         </div>
       </div>
@@ -401,7 +401,7 @@ export const clmsSlides: SlideDef[] = [
     'We run the entire contract workforce for India\u2019s largest enterprises, <em>from vendor to gate to wage.</em>',
     `<div>
       <div class="tel-clients" style="grid-template-columns:1.15fr 1.15fr .8fr">
-        <div class="tel-case" style="--pc:var(--navy);--d:.15s"><div class="who">Reliance · Retail, Jio, O2C</div><h4>Reliance Industries</h4><div class="big">300K<small>contract workers, end to end</small></div><p>Their entire contract workforce on one platform: 3,000+ vendors, work orders and position codes, onboarding and verification, attendance, payroll, PF and ESI challan reconciliation and registers, across 18,000+ stores, Jio sites and O2C plants.</p><div class="mini"><div><b>−90%</b><span>payroll leakage</span></div><div><b>−80%</b><span>vendor non-compliance</span></div><div><b>7×</b><span>faster rule changes</span></div></div></div>
+        <div class="tel-case" style="--pc:var(--navy);--d:.15s"><div class="who">Reliance · Retail, Jio, O2C</div><h4>Reliance Industries</h4><div class="big">500K<small>contract workers active every month</small></div><p>Their entire contract workforce on one platform: 3,000+ vendors, work orders and position codes, onboarding and verification, attendance, payroll, PF and ESI challan reconciliation and registers, across 18,000+ stores, Jio sites and O2C plants.</p><div class="mini"><div><b>−90%</b><span>payroll leakage</span></div><div><b>−80%</b><span>vendor non-compliance</span></div><div><b>7×</b><span>faster rule changes</span></div></div></div>
         <div class="tel-case" style="--pc:#FF9518;--d:.3s"><div class="who">Energy · PSU · refineries and plants</div><h4>Bharat Petroleum</h4><div class="big">Every<small>contract worker at the gate</small></div><p>BPCL\u2019s contract workforce runs on our CLMS: vendors and work orders from SAP, labour licences and insurance per contract, gate pass issue, renewal and auto-termination, visitor management, and a live count of everyone inside the refinery.</p><div class="mini"><div><b>SAP</b><span>integrated master</span></div><div><b>Live</b><span>headcount inside</span></div><div><b>30 days</b><span>no swipe → pass lapses</span></div></div></div>
         <div class="tel-case" style="--pc:#0d7d85;--d:.45s"><div class="who">Quick commerce · 22 cities</div><h4>Zepto</h4><div class="big">967<small>sites</small></div><p>15,000 workers on face and geo attendance with spoof detection; deployment gated on training.</p><div class="mini"><div><b>−40%</b><span>attendance ops cost</span></div></div></div>
       </div>
@@ -494,7 +494,7 @@ export const clmsSlides: SlideDef[] = [
       { ic: icons.shield, b: 'Sanction enforced at the gate.', t: 'Deployment above the order is flagged or blocked, your choice per site. Shortfalls that risk output show up on the same screen.' },
       { ic: icons.layers, b: 'Position codes and cost centres.', t: 'Each contract position carries a code, grade and cost centre, so cost lands on the right line in finance.' },
     ],
-    proof: { n: '300K', p: 'contract workers at <b>Reliance</b> run on position codes and budgets as the governing master.' },
+    proof: { n: '500K', p: 'contract workers at <b>Reliance</b> run on position codes and budgets as the governing master.' },
     vis: woUI, wide: true,
     foot: 'Work orders, sanctioned strength and position codes are live. A demand forecast from the production plan is pilot-built, not a shipped module. Numbers illustrative.',
   }),
@@ -554,7 +554,7 @@ export const clmsSlides: SlideDef[] = [
       { ic: icons.shield, b: 'Every row validated.', t: 'Aadhaar and PAN verified, UAN matched to the name, IFSC checked, age 18+, duplicates across contractors caught, sanctioned strength respected.' },
       { ic: icons.zap, b: 'Errors back in one file, the rest moves on.', t: 'Fixes go back to the contractor in a single sheet. Clean rows start background checks, face enrolment and passes in bulk.' },
     ],
-    proof: { n: '300K', p: 'contract workers at <b>Reliance</b>, mobilised through bulk onboarding and sub-vendor capture at this scale.' },
+    proof: { n: '500K', p: 'contract workers at <b>Reliance</b>, mobilised through bulk onboarding and sub-vendor capture at this scale.' },
     vis: bulkUI, wide: true,
     foot: 'Bulk onboarding with row-level validation and bulk initiation of checks is live. Authored view; names and numbers illustrative.',
   }),
@@ -636,7 +636,7 @@ export const clmsSlides: SlideDef[] = [
       { ic: icons.lock, b: 'The roster refuses a breach.', t: 'A shift that would cross a limit cannot be published. The planner sees which rule and which workers.' },
       { ic: icons.warn, b: 'Reality checked against the rules.', t: 'When punches cross 48 hours, overtime runs without consent or a rest day is missed, the supervisor gets an alert the same hour. Overrides need a named role, a reason and an expiry.' },
     ],
-    proof: { n: '7×', p: 'faster rule changes at <b>Reliance</b> than the systems it replaced, across 300K workers on this rules engine.' },
+    proof: { n: '7×', p: 'faster rule changes at <b>Reliance</b> than the systems it replaced, across 500K workers on this rules engine.' },
     vis: rulesUI(PL),
     foot: 'Policy engine, roster validation and alerts are live. Authored view of the rule-set screen; values follow your state rules.',
   }),
@@ -724,7 +724,7 @@ export const clmsSlides: SlideDef[] = [
       { ic: icons.shield, b: 'Minimum wage at entry.', t: 'Validated per state and skill grade when the salary structure is set. A basic below the floor is refused, not corrected after an inspection.' },
       { ic: icons.layers, b: 'Statutory behaviour on every component.', t: 'One-time bonuses and variables carry PF, ESI, PT and OT applicability on the component itself. Salary structures are effective-dated.' },
     ],
-    proof: { n: '−90%', p: 'payroll leakage at <b>Reliance</b>, measured across 300K+ workers once pay ran from verified attendance.' },
+    proof: { n: '−90%', p: 'payroll leakage at <b>Reliance</b>, measured across 500K+ workers once pay ran from verified attendance.' },
     vis: `<div style="position:relative">${shot('assets/product/clms/wage-guardrail.jpg', 'goBetter · Payroll · salary structure · validation', 'Production design', { h: '160px', pos: 'left 78%' })}<div class="tm-callout" style="right:24px;top:64px;--d:.7s;--ax:24px"><b>Below the floor</b>Basic of ₹5,999 is refused. The floor is set per state and skill grade.</div></div>${payrunMock}`,
     foot: 'Payroll and minimum-wage validation are live. Pay-run screen is an authored view; numbers illustrative.',
   }),
@@ -788,7 +788,7 @@ export const clmsSlides: SlideDef[] = [
       { ic: icons.check, b: 'Signed by the contractor.', t: 'Registers are generated, then authenticated by each contractor in the portal. Pending sign-offs are chased automatically.' },
       { ic: icons.eye, b: 'Every edit on the trail.', t: 'Who changed what, when, old and new value, inside a backdating window you set. Exportable for the auditor.' },
     ],
-    proof: { n: '300K+', p: 'contract workers and 3,000+ vendors at <b>Reliance</b> on the same registers and audit trail.' },
+    proof: { n: '500K+', p: 'contract workers and 3,000+ vendors at <b>Reliance</b> on the same registers and audit trail.' },
     vis: regMock,
     foot: 'Registers and the audit trail are live. Formats follow your state rules; we configure, you and your advisors confirm interpretation.',
   }),

@@ -251,7 +251,7 @@ export const nkInvestorStorySlides: SlideDef[] = [
       <span class="eyebrow rise">Evidence beats feature breadth</span>
       <h2 class="rise" style="animation-delay:.08s;max-width:38ch;">Different customers validate different parts of the same system.</h2>
       <div class="nk-proof rise" style="animation-delay:.2s;">
-        <div><h3>Reliance Retail</h3><section><p>300K+ workers · 3,000+ vendors</p><span><b>-90%</b> payroll leakage</span><span><b>-80%</b> vendor non-compliance</span></section></div>
+        <div><h3>Reliance Retail</h3><section><p>500K+ workers · 3,000+ vendors</p><span><b>-90%</b> payroll leakage</span><span><b>-80%</b> vendor non-compliance</span></section></div>
         <div><h3>Zepto</h3><section><p>15K workers · 967 sites · 22 cities</p><span><b>40%</b> cost saving</span><span>Training gates deployment</span></section></div>
         <div><h3>IFFCO Tokio</h3><section><p>~30K sales professionals</p><span>AI roleplay coaching live</span><span>Structured scoring at scale</span></section></div>
         <div><h3>Meesho</h3><section><p>2M+ resellers trained</p><span><b>85%</b> completion</span><span><b>+19.7%</b> WoW retention</span></section></div>

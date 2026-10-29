@@ -361,7 +361,7 @@ export const saelSlides: SlideDef[] = [
       <div class="rise" style="animation-delay:.35s">
         <div class="panewrap"><span class="panetag e" style="background:rgba(255,255,255,.1);color:#fff;"><i></i>Also running on this stack</span></div>
         <div class="compmap" style="grid-template-columns:1fr 1fr;">
-          <div class="compcell" style="--cc:#FFC401;--d:.4s"><div class="act">Retail · 300K+ workers</div><h4>Reliance</h4><p>3,000+ vendors on one rule engine. Payroll leakage down 90%, vendor non-compliance down 80%.</p><span class="who ok">Live</span></div>
+          <div class="compcell" style="--cc:#FFC401;--d:.4s"><div class="act">Retail · 500K+ workers</div><h4>Reliance</h4><p>3,000+ vendors on one rule engine. Payroll leakage down 90%, vendor non-compliance down 80%.</p><span class="who ok">Live</span></div>
           <div class="compcell" style="--cc:#39D2E8;--d:.48s"><div class="act">Metals · Aditya Birla</div><h4>Hindalco</h4><p>Shop-floor skilling across plants — 1,000+ workers, 60+ technical modules.</p><span class="who ok">Live</span></div>
           <div class="compcell" style="--cc:#3BE8B0;--d:.56s"><div class="act">Glass manufacturing</div><h4>AGI Glaspac</h4><p>Plant workforce running on the same attendance and compliance spine.</p><span class="who ok">Live</span></div>
           <div class="compcell" style="--cc:#8B7CFF;--d:.64s"><div class="act">Auto components</div><h4>Yokohama</h4><p>Plant operations, contract workforce managed on platform.</p><span class="who ok">Live</span></div>

@@ -26,7 +26,7 @@ export const clmsPillarSlides: SlideDef[] = [
       <h1 class="rise" style="animation-delay:.15s;font-size:clamp(30px,3.6vw,54px);">Your contractors' compliance is your liability. <span style="color:var(--yellow)">Today you find out at the audit.</span></h1>
       <p class="sub rise" style="animation-delay:.3s">goBetter CLMS puts the work order, the licence, the gate, the attendance, the payroll and the vendor's PF challan on one worker record. A worker who fails a condition does not get a pass. A contractor who short-pays does not get paid. Six capabilities, in the order plants buy them.</p>
       <div class="stats rise" style="animation-delay:.45s;margin-top:22px;">
-        <div class="stat"><div class="n">300K</div><div class="l">Workers live at Reliance</div></div>
+        <div class="stat"><div class="n">500K</div><div class="l">Workers live at Reliance</div></div>
         <div class="stat"><div class="n">3,000+</div><div class="l">Vendors on one rule engine</div></div>
         <div class="stat"><div class="n">−90%</div><div class="l">Payroll leakage, measured</div></div>
         <div class="stat"><div class="n">BPCL</div><div class="l">Gate logic running in SAP</div></div>
@@ -153,7 +153,7 @@ export const clmsPillarSlides: SlideDef[] = [
             <li>Cost centre and department mapping, so contract labour cost lands where it belongs in finance</li>
             <li><b>Overtime caps</b> at organisation and site level, with pre-approval as a policy switch</li>
             <li>Shortfall analysis by site in the BI layer, filterable by state, city and site</li>
-            <li>Position codes and budget reports — the governing masters at Reliance across 300,000 workers</li>
+            <li>Position codes and budget reports — the governing masters at Reliance across 500,000 workers</li>
           </ul>
         </div>
         <div class="case" style="--pc:#FF9518">
@@ -258,7 +258,7 @@ export const clmsPillarSlides: SlideDef[] = [
         <div class="lrow rise" style="animation-delay:.42s"><div class="ln">03</div><div class="lw"><h4>Pilot one plant — 6 to 8 weeks</h4><p>Gate pass conditional on all five checks, attendance and overtime live, vendor challans reconciled worker by worker for a full cycle.</p></div><div class="lp">Measured</div></div>
         <div class="lrow rise" style="animation-delay:.51s"><div class="ln">04</div><div class="lw"><h4>Roll out on your schedule</h4><p>Payroll, billing, leave and training follow in phase 2. AI agents in phase 3, on our own infrastructure in India.</p></div><div class="lp">Staged</div></div>
       </div>
-      <div class="clientline rise" style="color:rgba(255,255,255,.6);margin-top:14px;animation-delay:.7s">Reliance runs 300,000 workers and 3,000+ vendors on this. BPCL runs contract labour, vendors and visitors through it, wired into SAP. Durations are indicative, confirmed at initiation. ISO 27001 · SOC 2 · hosted in India · DPDP Act 2023 aligned.</div>
+      <div class="clientline rise" style="color:rgba(255,255,255,.6);margin-top:14px;animation-delay:.7s">Reliance runs 500,000 workers and 3,000+ vendors on this. BPCL runs contract labour, vendors and visitors through it, wired into SAP. Durations are indicative, confirmed at initiation. ISO 27001 · SOC 2 · hosted in India · DPDP Act 2023 aligned.</div>
     </div>`,
   },
 ]

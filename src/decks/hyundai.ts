@@ -211,7 +211,7 @@ export const hyundaiSlides: SlideDef[] = [
         <div class="tel-covertext">
           <span class="kick">BetterPlace × Hyundai Motor India · October 2026</span>
           <h1>Every contractor, every pass, every swipe, <em>on one CLMS for every plant and site across India.</em></h1>
-          <p>Vendors and work orders, onboarding and gate passes, contractor scorecards, attendance, overtime, billing, statutory checks and the live dashboard. Shown on the software that runs 300,000 contract workers today.</p>
+          <p>Vendors and work orders, onboarding and gate passes, contractor scorecards, attendance, overtime, billing, statutory checks and the live dashboard. Shown on the software that runs 500,000 contract workers today.</p>
           <div class="meta"><span>CLMS demo · HR and Security</span><span>Slides + live software</span><span>Confidential</span></div>
         </div>
         ${coverRing(['Vendors', 'Orders', 'Onboard', 'Passes', 'Score', 'Attend', 'Billing', 'Dashboard'], ['one', 'CLMS'], false)}
@@ -230,7 +230,7 @@ export const hyundaiSlides: SlideDef[] = [
             <div><div class="n">25M<em>+</em></div><div class="l">Verified worker profiles</div></div>
             <div><div class="n">1,000<em>+</em></div><div class="l">Enterprises on the platform</div></div>
             <div><div class="n">8</div><div class="l">Markets · India, SEA, GCC</div></div>
-            <div><div class="n">300K</div><div class="l">Contract workers run for one client</div></div>
+            <div><div class="n">500K</div><div class="l">Contract workers a month at Reliance</div></div>
             <div><div class="n">₹1,000 Cr<em>+</em></div><div class="l">Group revenue · FY25 · incl. staffing</div></div>
             <div><div class="n">$95M</div><div class="l">Raised · Series A to D</div></div>
           </div>
@@ -242,7 +242,7 @@ export const hyundaiSlides: SlideDef[] = [
           <div class="ev" style="--d:.3s"><b>2018</b><span>Onboarding and attendance. Face and geo punches at scale.</span></div>
           <div class="ev" style="--d:.4s"><b>2019–20</b><span>Learning platform. Acquired OkayGo (gig) and Ezedox.</span></div>
           <div class="ev" style="--d:.5s"><b>2021–22</b><span>Gig deployment and worker fintech. Extended Series C, $40M.</span></div>
-          <div class="ev" style="--d:.6s"><b>2023–24</b><span>goBetter platform. Reliance Retail live with 300K contract workers and 3,000 vendors. Factory face devices at Reliance O2C.</span></div>
+          <div class="ev" style="--d:.6s"><b>2023–24</b><span>goBetter platform. Reliance live with 500K contract workers a month and 3,000+ vendors across Retail, Jio and O2C. Factory face devices at Reliance O2C.</span></div>
           <div class="ev" style="--d:.7s"><b>2026</b><span>AI Labs. Agents that onboard, induct, roster and reconcile, inside the same record.</span></div>
         </div>
       </div>
@@ -253,7 +253,7 @@ export const hyundaiSlides: SlideDef[] = [
     'We run the entire contract workforce for India\u2019s largest enterprises, <em>from vendor to gate to wage.</em>',
     `<div>
       <div class="tel-clients" style="grid-template-columns:1.15fr 1.15fr .8fr">
-        <div class="tel-case" style="--pc:var(--navy);--d:.15s"><div class="who">Reliance · Retail, Jio, O2C</div><h4>Reliance Industries</h4><div class="big">300K<small>contract workers, end to end</small></div><p>Their entire contract workforce on one platform: 3,000+ vendors, work orders and position codes, onboarding and verification, attendance, payroll, PF and ESI challan reconciliation and registers, across 18,000+ stores, Jio sites and O2C plants.</p><div class="mini"><div><b>−90%</b><span>payroll leakage</span></div><div><b>−80%</b><span>vendor non-compliance</span></div><div><b>7×</b><span>faster rule changes</span></div></div></div>
+        <div class="tel-case" style="--pc:var(--navy);--d:.15s"><div class="who">Reliance · Retail, Jio, O2C</div><h4>Reliance Industries</h4><div class="big">500K<small>contract workers active every month</small></div><p>Their entire contract workforce on one platform: 3,000+ vendors, work orders and position codes, onboarding and verification, attendance, payroll, PF and ESI challan reconciliation and registers, across 18,000+ stores, Jio sites and O2C plants.</p><div class="mini"><div><b>−90%</b><span>payroll leakage</span></div><div><b>−80%</b><span>vendor non-compliance</span></div><div><b>7×</b><span>faster rule changes</span></div></div></div>
         <div class="tel-case" style="--pc:#FF9518;--d:.3s"><div class="who">Energy · PSU · refineries and plants</div><h4>Bharat Petroleum</h4><div class="big">Every<small>contract worker at the gate</small></div><p>BPCL\u2019s contract workforce runs on our CLMS: vendors and work orders from SAP, labour licences and insurance per contract, gate pass issue, renewal and auto-termination, visitor management, and a live count of everyone inside the refinery.</p><div class="mini"><div><b>SAP</b><span>integrated master</span></div><div><b>Live</b><span>headcount inside</span></div><div><b>30 days</b><span>no swipe → pass lapses</span></div></div></div>
         <div class="tel-case" style="--pc:#0d7d85;--d:.45s"><div class="who">Quick commerce · 22 cities</div><h4>Zepto</h4><div class="big">967<small>sites</small></div><p>15,000 workers on face and geo attendance with spoof detection; deployment gated on training.</p><div class="mini"><div><b>−40%</b><span>attendance ops cost</span></div></div></div>
       </div>
@@ -332,7 +332,7 @@ export const hyundaiSlides: SlideDef[] = [
       { ic: icons.shield, b: 'Price master with a wage floor.', t: 'Excel upload by skill code; statutory components calculated automatically; a rate below the floor is refused.' },
       { ic: icons.repeat, b: 'Revisions reach the right contractors.', t: 'A wage revision notifies only the contractors on that skill code. Users can see the skill rates that apply to them.' },
     ],
-    proof: { n: '300K', p: 'contract workers at <b>Reliance</b> run on work orders and position codes as the governing master.' },
+    proof: { n: '500K', p: 'contract workers at <b>Reliance</b> run on work orders and position codes as the governing master.' },
     vis: woUI, wide: true,
     foot: 'Work orders, sanctioned headcount and minimum-wage validation are live. The HR approval chain is configured. Authored view; rates illustrative.',
   }),
@@ -547,7 +547,7 @@ export const hyundaiSlides: SlideDef[] = [
       { ic: icons.layers, b: 'Drill down.', t: 'By vendor, domain, contract type, location, down to one worker.' },
       { ic: icons.plug, b: 'Your tools too.', t: 'Embedded dashboards or the same data to your BI and SAP by API.' },
     ],
-    proof: { n: '7×', p: 'faster report changes at <b>Reliance</b>, where these dashboards run for 300K workers.' },
+    proof: { n: '7×', p: 'faster report changes at <b>Reliance</b>, where these dashboards run for 500K workers.' },
     vis: dashUI, wide: true,
     foot: 'Embedded dashboards are live; HMIL’s report set is configured in the pilot. Values illustrative.',
   }),
