@@ -1048,3 +1048,15 @@
 .wa .reels span { height: 58px; font-size: 10px !important; line-height: 1.15; padding: 17px 6px 5px; justify-content: flex-end; }
 .wa .reels span small { font-size: 9.5px !important; }
 .wa .reels span::before { top: 4px; left: 6px; font-size: 9px !important; }
+
+/* best-practice line under the proof: how a named client runs this step */
+.tel-say .practice { margin-top: 10px; padding: 10px 14px; border-left: 3px solid var(--yellow); background: rgba(27,45,147,.05); border-radius: 0 10px 10px 0; animation: telpop .5s var(--ease) both; animation-delay: .5s; }
+.tel-say .practice .lbl { display: block; font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--navy); margin-bottom: 4px; }
+.tel-say .practice p { margin: 0; font-size: .84rem; line-height: 1.45; color: var(--text); }
+.dark .tel-say .practice, .darker .tel-say .practice { background: rgba(255,255,255,.05); }
+.dark .tel-say .practice .lbl, .darker .tel-say .practice .lbl { color: var(--yellow); }
+.dark .tel-say .practice p, .darker .tel-say .practice p { color: rgba(255,255,255,.8); }
+.tel-say .practice { margin-top: 8px; padding: 8px 12px; }
+.tel-say .practice .lbl { font-size: 10px; margin-bottom: 2px; }
+.tel-say .practice p { font-size: .8rem; line-height: 1.4; }
+.tel-say .practice { margin-top: -10px; }

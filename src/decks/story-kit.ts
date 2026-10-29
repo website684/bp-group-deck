@@ -41,6 +41,8 @@ export type ProblemSlide = {
   /** label for the first word block: "You told us" (client deck) or "On site today" (generic deck) */
   qLabel?: string; quote: string
   changes: Change[]; proof: { n: string; p: string }
+  /** optional best-practice line: how a named client runs this step (who omitted → "Best practice") */
+  practice?: { who?: string; t: string }
   vis: string; foot?: string; flip?: boolean; wide?: boolean
 }
 
@@ -57,6 +59,7 @@ export const problemSlide = (p: ProblemSlide): SlideDef => ({
         <div class="blk"><div class="lbl">${p.qLabel || 'You told us'}</div><div class="tq">${p.quote}</div></div>
         <div class="blk"><div class="lbl">What changes</div><ul>${p.changes.map((c) => `<li><span class="ic">${svg(c.ic)}</span><span><b>${c.b}</b> ${c.t}</span></li>`).join('')}</ul></div>
         <div class="proof"><div class="n">${p.proof.n}</div><p>${p.proof.p}</p></div>
+        ${p.practice ? `<div class="practice"><span class="lbl">${p.practice.who ? `How ${p.practice.who} runs it` : 'Best practice'}</span><p>${p.practice.t}</p></div>` : ''}
       </div>
       ${p.flip ? '' : `<div class="tel-vis">${p.vis}</div>`}
       ${p.foot ? `<div class="foot">${p.foot}</div>` : ''}
