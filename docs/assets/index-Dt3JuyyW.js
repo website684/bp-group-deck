@@ -4344,12 +4344,12 @@ Error generating stack: `+e.message+`
     </div>
     <div class="note"><b>One record.</b> A holiday on the state calendar changes the roster, the pay rate for anyone who works it, and the muster roll, without anyone re-entering it.</div>
   </div>
-</div>`,Ke=e=>{let t=e.persona,n=e.lang,r=`<div class="top"><i>M</i><div>Mia · ${e.org} joining<small>BetterPlace verified business</small></div></div>`;return`
+</div>`,Ke=e=>{let t=e.persona,n=e.lang,r=`<div class="top"><i>M</i><div>Mia<small>${e.org} joining · verified</small></div></div>`;return`
 <div class="wa-row">
   <div class="wa" style="--d:.1s" data-cycle="4200">
     <div class="scr">
       ${r}
-      <div class="lang"><span class="cyc">English</span><span class="cyc">${n.label}</span></div>
+      <div class="langbar"><div class="lang"><span class="cyc">English</span><span class="cyc">${n.label}</span></div></div>
       <div class="chat">
         <div class="cycpane">
           <div class="m">Hi ${t.first}, I’m Mia. I’ll handle your joining at ${e.org}, ${e.site}. You’ve been offered <b>${t.role}.</b><div class="doc">Offer_Letter_${t.first}.pdf</div><div class="btns"><span>Accept offer</span></div></div>

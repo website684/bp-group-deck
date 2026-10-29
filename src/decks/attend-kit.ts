@@ -146,13 +146,13 @@ export const leaveMock = (c: PlantCfg) => `
 /* ---------- WhatsApp onboarding: three bare phones ---------- */
 export const waPhones = (c: PlantCfg) => {
   const p = c.persona, L = c.lang
-  const top = `<div class="top"><i>M</i><div>Mia · ${c.org} joining<small>BetterPlace verified business</small></div></div>`
+  const top = `<div class="top"><i>M</i><div>Mia<small>${c.org} joining · verified</small></div></div>`
   return `
 <div class="wa-row">
   <div class="wa" style="--d:.1s" data-cycle="4200">
     <div class="scr">
       ${top}
-      <div class="lang"><span class="cyc">English</span><span class="cyc">${L.label}</span></div>
+      <div class="langbar"><div class="lang"><span class="cyc">English</span><span class="cyc">${L.label}</span></div></div>
       <div class="chat">
         <div class="cycpane">
           <div class="m">Hi ${p.first}, I’m Mia. I’ll handle your joining at ${c.org}, ${c.site}. You’ve been offered <b>${p.role}.</b><div class="doc">Offer_Letter_${p.first}.pdf</div><div class="btns"><span>Accept offer</span></div></div>
