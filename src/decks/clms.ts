@@ -218,7 +218,7 @@ const archMock = `
 const side = (on: number) => `<div class="ui-side"><span class="lg"></span>${[0, 1, 2, 3, 4, 5].map((i) => `<i class="${i === on ? 'on' : ''}${i === 0 || i === 5 ? ' r' : ''}"></i>`).join('')}</div>`
 const top = (crumb: string, title: string) => `<div class="ui-top"><div><div class="ui-crumb">${crumb}</div><div class="ui-title">${title}</div></div><div class="ui-org"><span>SA</span>Sahyadri Auto</div></div>`
 
-const vendorUI = `
+export const vendorUI = `
 <div class="ui">
   ${side(1)}
   <div class="ui-main">
@@ -344,6 +344,27 @@ const bulkUI = `
 </div>`
 
 /* ---------------- slides ---------------- */
+
+export const challanUI = `<div class="ui">
+      ${side(5)}
+      <div class="ui-main">
+        ${top('Sahyadri Auto / Payroll / Compliances / <b>PF and ESI · September</b>', 'Challan reconciliation · Shree Manpower')}
+        <div class="hv-up"><span class="doc"></span><div><b>PF ECR challan · TRRN 2610…4418 · uploaded by vendor 05 Oct</b><small>OCR read 182 UANs, amounts and wage month · ESI challan read: 182 IP numbers</small></div><span class="hv-s g">OCR read</span></div>
+        <div class="hv-comp" style="margin-bottom:0">
+          <div class="c"><b>Workers billed</b><span class="n">186</span><small>from verified attendance</small></div>
+          <div class="c"><b>PF matched</b><span class="n">180</span><small>dues = deposit</small><em class="g">On time</em></div>
+          <div class="c"><b>PF gaps</b><span class="n">6</span><small>4 not paid · 2 short</small><em class="r">₹8,600</em></div>
+          <div class="c"><b>ESI gaps</b><span class="n">2</span><small>wrong IP number</small><em class="y">Review</em></div>
+        </div>
+        <div class="hv-price" style="grid-template-columns:1.1fr 1fr .8fr .8fr 1fr">
+          <div class="h">Worker</div><div class="h">UAN</div><div class="h">PF due</div><div class="h">PF paid</div><div class="h">Status</div>
+          <div><b>Suresh R.</b></div><div>1009…2231</div><div>₹1,800</div><div>₹1,800</div><div><span class="hv-d g">Match</span></div>
+          <div><b>Vignesh G.</b></div><div>1014…0912</div><div>₹1,800</div><div>₹0</div><div><span class="hv-d r">Not paid</span></div>
+          <div><b>Dinesh S.</b></div><div>1012…3305</div><div>₹1,800</div><div>₹1,100</div><div><span class="hv-d r">Short ₹700</span></div>
+        </div>
+        <div class="hv-ai" style="background:#fef2f2;border-color:#fecaca"><b style="color:#b91c1c">Flag raised to your HR.</b> Vendor notified · scorecard updated · bill held until cleared.</div>
+      </div>
+    </div>`
 
 export const clmsSlides: SlideDef[] = [
   {
@@ -740,26 +761,7 @@ export const clmsSlides: SlideDef[] = [
       { ic: icons.shield, b: 'Your decision, documented.', t: 'Release can wait on reconciliation if you set it so. The wage and PF liability falls back to you if the contractor defaults, so the rule sits in front of whoever decides.' },
     ],
     proof: { n: '−80%', p: 'vendor non-compliance risk at <b>Reliance</b>. Clients name challan matching among the features they use most.' },
-    vis: `<div class="ui">
-      ${side(5)}
-      <div class="ui-main">
-        ${top('Sahyadri Auto / Payroll / Compliances / <b>PF and ESI · September</b>', 'Challan reconciliation · Shree Manpower')}
-        <div class="hv-up"><span class="doc"></span><div><b>PF ECR challan · TRRN 2610…4418 · uploaded by vendor 05 Oct</b><small>OCR read 182 UANs, amounts and wage month · ESI challan read: 182 IP numbers</small></div><span class="hv-s g">OCR read</span></div>
-        <div class="hv-comp" style="margin-bottom:0">
-          <div class="c"><b>Workers billed</b><span class="n">186</span><small>from verified attendance</small></div>
-          <div class="c"><b>PF matched</b><span class="n">180</span><small>dues = deposit</small><em class="g">On time</em></div>
-          <div class="c"><b>PF gaps</b><span class="n">6</span><small>4 not paid · 2 short</small><em class="r">₹8,600</em></div>
-          <div class="c"><b>ESI gaps</b><span class="n">2</span><small>wrong IP number</small><em class="y">Review</em></div>
-        </div>
-        <div class="hv-price" style="grid-template-columns:1.1fr 1fr .8fr .8fr 1fr">
-          <div class="h">Worker</div><div class="h">UAN</div><div class="h">PF due</div><div class="h">PF paid</div><div class="h">Status</div>
-          <div><b>Suresh R.</b></div><div>1009…2231</div><div>₹1,800</div><div>₹1,800</div><div><span class="hv-d g">Match</span></div>
-          <div><b>Vignesh G.</b></div><div>1014…0912</div><div>₹1,800</div><div>₹0</div><div><span class="hv-d r">Not paid</span></div>
-          <div><b>Dinesh S.</b></div><div>1012…3305</div><div>₹1,800</div><div>₹1,100</div><div><span class="hv-d r">Short ₹700</span></div>
-        </div>
-        <div class="hv-ai" style="background:#fef2f2;border-color:#fecaca"><b style="color:#b91c1c">Flag raised to your HR.</b> Vendor notified · scorecard updated · bill held until cleared.</div>
-      </div>
-    </div>`, wide: true,
+    vis: challanUI, wide: true,
     foot: 'The OCR-and-match flow is live. The statutory reconciliation AI agent is in Beta. Numbers illustrative.',
   }),
 

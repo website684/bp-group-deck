@@ -2,6 +2,13 @@ import type { SlideDef } from '../lib/types'
 import { icons } from './html'
 import { svg, makeRail, bar, shot, row, problemSlide, plainSlide, coverRing } from './story-kit'
 import { type PlantCfg, rosterUI, rulesUI, headcountMock, leaveMock, waPhones, accessMock } from './attend-kit'
+import { vendorUI, challanUI } from './clms'
+
+// CLMS product screens, relabelled for Tata Electronics and its contractors.
+const te = (h: string) => h
+  .replace(/Sahyadri Auto/g, 'Tata Electronics').replace(/<span>SA<\/span>/g, '<span>TE</span>')
+  .replace(/Sri Sakthi Services/g, 'Shree Manpower').replace(/Ganesh Logistics/g, 'Krishna Logistics').replace(/Kumaran Builders/g, 'Ganpati Services')
+  .replace(/all plants/g, 'Hosur campus').replace(/bill held until cleared/g, 'bill held under your rule').replace(/login created on IC approval/g, 'login created once HR approves').replace(/>IC approval</g, '>HR approval<')
 
 // Tata Electronics · contract and on-roll workforce deck, v3 (Oct 2026).
 // Restructured after the alignment call with Bhuvan (Head HR, Components) and Anuj's notes:
@@ -507,8 +514,24 @@ export const tataElectronicsSlides: SlideDef[] = [
   }),
 
   problemSlide({
+    id: 'tp5a', theme: 'light', title: 'Vendors · master', rail, step: 5, demo: 'Live · vendor register',
+    kick: 'Vendors · 1 of 2 · every contractor and every document on file',
+    h2: 'Every contractor on file, <em>every document with an expiry date</em> and a consequence when it lapses.',
+    qLabel: P, quote: 'Licences and insurance for thirty-plus contractors live in folders. The expiry is found when an inspector asks for it.',
+    changes: [
+      { ic: icons.building, b: 'One vendor master.', t: 'PAN, GST, PF and ESIC codes, licence, compensation policy, sites and rate cards. Uploaded by the vendor, checked by your team.' },
+      { ic: icons.clock, b: 'Expiry with teeth.', t: 'Alerts at 60 and 30 days. A lapsed licence or policy holds new gate passes for that contractor until it is renewed.' },
+      { ic: icons.check, b: 'A second person approves every document.', t: 'Nothing goes live on the vendor’s word. Every approval is on the audit trail.' },
+    ],
+    proof: { n: 'BPCL', p: 'keeps vendors, contracts and work orders in its SAP, with labour licence and insurance tracked per contract on our side.' },
+    practice: { t: 'No contractor deploys without a live work order and a valid licence behind it, checked at the gate.' },
+    vis: te(vendorUI), wide: true,
+    foot: 'Vendor master, expiry alerts and the deployment hold are live. Names and numbers illustrative.',
+  }),
+
+  problemSlide({
     id: 'tp5', theme: 'light', title: 'Vendors', rail, step: 5, demo: 'Live · vendor scorecard',
-    kick: 'Vendors · work orders, supply and a scorecard',
+    kick: 'Vendors · 2 of 2 · supply and an AI scorecard',
     h2: 'Every contractor, every work order and every worker they supply, <em>scored on how they actually perform.</em>',
     qLabel: P, quote: 'Thirty-plus contractors, and the renewal decision rests on who shouts loudest, not who supplies, retains and complies.',
     changes: [
@@ -524,7 +547,7 @@ export const tataElectronicsSlides: SlideDef[] = [
 
   problemSlide({
     id: 'tp6', theme: 'dark', title: 'Compliance', rail, step: 6, demo: 'Live · month close',
-    kick: 'Compliance · checked continuously, not at audit time',
+    kick: 'Compliance · 1 of 2 · checked continuously, not at audit time',
     h2: 'Licences, registers, overtime and contractor PF and ESI, <em>checked every day, ready for any auditor.</em>',
     qLabel: P, quote: 'A contractor licensed for 100 is quietly running 200, and the PF challan is a PDF nobody has matched.',
     changes: [
@@ -536,6 +559,22 @@ export const tataElectronicsSlides: SlideDef[] = [
     practice: { who: 'BPCL', t: 'Licence and insurance tracked per contract, wired to SAP. A pass with no punch for 30 days lapses on its own.' },
     vis: compMock,
     foot: 'Registers, licence ledger and challan reconciliation are live. The Apple weekly-hours format and night-shift log are configured in the pilot. Figures illustrative.',
+  }),
+
+  problemSlide({
+    id: 'tp6b', theme: 'darker', title: 'Compliance · PF and ESI challans', rail, step: 6, demo: 'Live · challan check',
+    kick: 'Compliance · 2 of 2 · contractor PF and ESI, worker by worker',
+    h2: 'A challan upload is not compliance. <em>Matching it to every worker is.</em>',
+    qLabel: P, quote: 'Thirty-plus contractors send PF challans as PDFs. Nobody checks them against the workers we paid for.',
+    changes: [
+      { ic: icons.doc, b: 'Challans read automatically.', t: 'The contractor uploads. UANs, amounts and the wage month are read and compared with the dues for each named worker.' },
+      { ic: icons.warn, b: 'Gaps in the same cycle.', t: 'Short payment, non-payment, wrong UAN and late deposit flagged while the bill is still with you, with a dated notice to the contractor.' },
+      { ic: icons.shield, b: 'Your decision, documented.', t: 'Release can wait on the match if you set it so. The PF liability falls back to you if a contractor defaults, so the rule sits in front of whoever decides.' },
+    ],
+    proof: { n: '500K', p: 'contract workers a month at <b>Reliance</b>, with PF and ESI challans matched this way. Clients name it among the features they use most.' },
+    practice: { t: 'Send each contractor its own gap list the day the challan is read, and let the scorecard carry it into the next renewal.' },
+    vis: te(challanUI), wide: true,
+    foot: 'Challan reading and matching are live. The statutory reconciliation AI agent is in Beta. Numbers illustrative.',
   }),
 
   problemSlide({
