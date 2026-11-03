@@ -1065,3 +1065,31 @@
 .tel-agents.tai { grid-template-columns: repeat(4, 1fr); }
 .tel-agents .ag2 .ar { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--yellow); margin-top: 6px; }
 .tel-agents .st2.pilot { background: rgba(255,149,24,.2); color: #ffc27a; }
+
+/* "How it comes together" ring: four steps light in turn, arcs draw between them, proof at the core */
+.fr-wrap { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 40px; align-items: center; margin-top: 6px; }
+.fr-ring svg { width: 100%; max-width: 440px; display: block; margin: 0 auto; overflow: visible; }
+.fr-ring .orbit { fill: none; stroke: rgba(255,255,255,.12); stroke-width: 2; }
+.fr-ring .arc { fill: none; stroke: var(--yellow); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 236; stroke-dashoffset: 236; filter: drop-shadow(0 0 6px rgba(255,196,1,.55)); }
+.fr-ring .fnode2.on .arc { animation: frdraw 2.4s linear forwards; }
+.fr-ring .fnode2.done .arc { stroke-dashoffset: 0; }
+@keyframes frdraw { to { stroke-dashoffset: 0; } }
+.fr-ring .fnode2 circle { fill: #0f1a5c; stroke: rgba(255,255,255,.25); stroke-width: 1.5; transition: .4s; }
+.fr-ring .fnode2.on circle { fill: var(--yellow); stroke: var(--yellow); filter: drop-shadow(0 0 16px rgba(255,196,1,.7)); }
+.fr-ring .fnode2.done circle { fill: #1B2D93; stroke: var(--yellow); }
+.fr-ring .nn { font-family: var(--mono); font-size: 11px; font-weight: 700; fill: var(--yellow); }
+.fr-ring .nl { font-family: var(--disp); font-size: 12.5px; font-weight: 700; fill: #fff; }
+.fr-ring .fnode2.on .nn, .fr-ring .fnode2.on .nl { fill: var(--ink); }
+.fr-ring .core { fill: rgba(255,196,1,.1); stroke: var(--yellow); stroke-width: 1.5; animation: frpulse 2.4s ease-in-out infinite; transform-origin: 200px 200px; }
+@keyframes frpulse { 0%, 100% { transform: scale(1); opacity: .9; } 50% { transform: scale(1.06); opacity: 1; } }
+.fr-ring .cn { font-family: var(--disp); font-size: 24px; font-weight: 800; fill: var(--yellow); }
+.fr-ring .cs { font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; fill: rgba(255,255,255,.75); }
+.fr-side { display: flex; flex-direction: column; gap: 18px; }
+.fr-side .fpane { display: none; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-left: 4px solid var(--yellow); border-radius: 16px; padding: 22px 24px; min-height: 196px; }
+.fr-side .fpane.on { display: block; animation: telpop .45s var(--ease) both; }
+.fr-side .fpane .t { font-family: var(--disp); font-size: 1.5rem; font-weight: 800; color: #fff; letter-spacing: -.01em; }
+.fr-side .fpane p { margin: 10px 0 0; font-size: 1.02rem; line-height: 1.55; color: rgba(255,255,255,.85); }
+.fr-side .fpane .pr { margin-top: 16px; display: inline-flex; align-items: center; gap: 10px; font-weight: 700; color: #fff; font-size: .95rem; }
+.fr-side .fpane .pr span { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; background: var(--yellow); color: var(--ink); padding: 4px 9px; border-radius: 999px; }
+.fr-thread { font-size: .98rem; line-height: 1.6; color: rgba(255,255,255,.72); border-top: 1px dashed rgba(255,255,255,.18); padding-top: 14px; }
+.fr-thread b { color: var(--yellow); }
