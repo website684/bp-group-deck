@@ -2,13 +2,14 @@ import type { SlideDef } from '../lib/types'
 import { icons } from './html'
 import { svg, makeRail, bar, shot, row, problemSlide, plainSlide, coverRing } from './story-kit'
 import { type PlantCfg, rosterUI, rulesUI, headcountMock, leaveMock, waPhones, accessMock } from './attend-kit'
-import { vendorUI, challanUI } from './clms'
+import { vendorUI, challanUI, woUI, licenceMock } from './clms'
 
 // CLMS product screens, relabelled for Tata Electronics and its contractors.
 const te = (h: string) => h
   .replace(/Sahyadri Auto/g, 'Tata Electronics').replace(/<span>SA<\/span>/g, '<span>TE</span>')
   .replace(/Sri Sakthi Services/g, 'Shree Manpower').replace(/Ganesh Logistics/g, 'Krishna Logistics').replace(/Kumaran Builders/g, 'Ganpati Services')
-  .replace(/all plants/g, 'Hosur campus').replace(/bill held until cleared/g, 'bill held under your rule').replace(/login created on IC approval/g, 'login created once HR approves').replace(/>IC approval</g, '>HR approval<')
+  .replace(/all plants/g, 'Hosur campus').replace(/MH-(SK|SS|FL)/g, 'TN-$1').replace(/licence ledger · Plant 1/gi, 'licence ledger · Hosur').replace(/WO-your-/g, 'WO-').replace(/Material handling, Plant 1/g, 'Material handling, Hosur')
+  .replace('63 / 53 · over', '214 / 100 · over').replace('10 over the licensed strength', '114 over the licensed strength').replace(/bill held until cleared/g, 'bill held under your rule').replace(/login created on IC approval/g, 'login created once HR approves').replace(/>IC approval</g, '>HR approval<')
 
 // Tata Electronics · contract and on-roll workforce deck, v3 (Oct 2026).
 // Restructured after the alignment call with Bhuvan (Head HR, Components) and Anuj's notes:
@@ -515,7 +516,7 @@ export const tataElectronicsSlides: SlideDef[] = [
 
   problemSlide({
     id: 'tp5a', theme: 'light', title: 'Vendors · master', rail, step: 5, demo: 'Live · vendor register',
-    kick: 'Vendors · 1 of 2 · every contractor and every document on file',
+    kick: 'Vendors · 1 of 4 · every contractor and every document on file',
     h2: 'Every contractor on file, <em>every document with an expiry date</em> and a consequence when it lapses.',
     qLabel: P, quote: 'Licences and insurance for thirty-plus contractors live in folders. The expiry is found when an inspector asks for it.',
     changes: [
@@ -523,15 +524,47 @@ export const tataElectronicsSlides: SlideDef[] = [
       { ic: icons.clock, b: 'Expiry with teeth.', t: 'Alerts at 60 and 30 days. A lapsed licence or policy holds new gate passes for that contractor until it is renewed.' },
       { ic: icons.check, b: 'A second person approves every document.', t: 'Nothing goes live on the vendor’s word. Every approval is on the audit trail.' },
     ],
-    proof: { n: 'BPCL', p: 'keeps vendors, contracts and work orders in its SAP, with labour licence and insurance tracked per contract on our side.' },
+    proof: { n: '3,000+', p: 'vendors at <b>Reliance</b>, each with documents, licences and expiry tracked this way.' },
     practice: { t: 'No contractor deploys without a live work order and a valid licence behind it, checked at the gate.' },
     vis: te(vendorUI), wide: true,
     foot: 'Vendor master, expiry alerts and the deployment hold are live. Names and numbers illustrative.',
   }),
 
   problemSlide({
+    id: 'tp5w', theme: 'light', title: 'Vendors · work orders', rail, step: 5, demo: 'Live · work order',
+    kick: 'Vendors · 2 of 4 · the work order and sanctioned headcount',
+    h2: 'Nothing happens on site without a work order behind it, <em>and nobody is deployed above it.</em>',
+    qLabel: P, quote: 'Contractors send whoever they have. The real headcount shows up when the invoice arrives.',
+    changes: [
+      { ic: icons.doc, b: 'The order is the anchor.', t: 'Scope, line, sanctioned headcount by skill grade, validity, rate card and billing terms. Pulled from your SAP purchase order where you have one.' },
+      { ic: icons.shield, b: 'Sanction enforced at the gate.', t: 'Deployment above the order is flagged or blocked, your choice per site. Shortfalls that risk output show on the same screen.' },
+      { ic: icons.layers, b: 'Cost on the right line.', t: 'Each contract position carries a code, grade and cost centre, so cost lands where finance expects it.' },
+    ],
+    proof: { n: '500K', p: 'contract workers a month at <b>Reliance</b> run on position codes and budgets as the governing master.' },
+    practice: { who: 'Reliance', t: 'Every contract position has a code and a budget; vendors are paid only against them.' },
+    vis: te(woUI), wide: true,
+    foot: 'Work orders, sanctioned strength and position codes are live. Numbers illustrative.',
+  }),
+
+  problemSlide({
+    id: 'tp5l', theme: 'dark', title: 'Vendors · licence ceiling', rail, step: 5, demo: 'Live · licence ledger',
+    kick: 'Vendors · 3 of 4 · the contractor licence as a ceiling',
+    h2: 'Deploy past a contractor’s licensed strength and <em>the gate stops it, not the inspector.</em>',
+    qLabel: P, quote: 'Nobody adds up headcount across work orders against the contractor’s licence until audit week.',
+    changes: [
+      { ic: icons.doc, b: 'The licence as a record.', t: 'Licensed strength, validity and issuing authority for every contractor, measured against deployment across every work order.' },
+      { ic: icons.lock, b: 'Block or flag.', t: 'A gate pass that would breach the licence is blocked at issue. You choose block or flag per site.' },
+      { ic: icons.check, b: 'The register writes itself.', t: 'The register of contractors is a view on this data. Nothing is kept twice.' },
+    ],
+    proof: { n: 'BPCL', p: 'runs labour licence and compensation policy per contract, wired into its SAP, with gate passes ending on rules.' },
+    practice: { t: 'Count a contractor’s total across every work order, not one order at a time. That total is what the inspector counts.' },
+    vis: te(licenceMock),
+    foot: 'Licence ledger and block-or-flag are live. Applicability thresholds and filing stay with you and your advisors. Numbers illustrative.',
+  }),
+
+  problemSlide({
     id: 'tp5', theme: 'light', title: 'Vendors', rail, step: 5, demo: 'Live · vendor scorecard',
-    kick: 'Vendors · 2 of 2 · supply and an AI scorecard',
+    kick: 'Vendors · 4 of 4 · supply and an AI scorecard',
     h2: 'Every contractor, every work order and every worker they supply, <em>scored on how they actually perform.</em>',
     qLabel: P, quote: 'Thirty-plus contractors, and the renewal decision rests on who shouts loudest, not who supplies, retains and complies.',
     changes: [
@@ -539,8 +572,8 @@ export const tataElectronicsSlides: SlideDef[] = [
       { ic: icons.users, b: 'Supply you can see.', t: 'Requested against supplied per shift, time to fill, absence and attrition of each contractor’s workers.' },
       { ic: icons.chart, b: 'An AI scorecard.', t: 'Contractors graded on fill, absence, attrition, onboarding speed and compliance, with a recommended split for the next order.' },
     ],
-    proof: { n: '3,000+', p: 'vendors on one rule engine at <b>Reliance</b>, each tracked against its work orders this way.' },
-    practice: { who: 'Reliance', t: 'Every contract position has a code and a budget; vendors are paid only against them and scored every month.' },
+    proof: { n: '−80%', p: 'vendor non-compliance at <b>Reliance</b> once every contractor was scored every month.' },
+    practice: { t: 'Review the grades with each contractor every month, and let the split of the next order follow the grade.' },
     vis: vendorMock, flip: true,
     foot: 'Vendor master, work orders and the scorecard are live. The AI allocation recommendation is a pilot. Names and numbers illustrative.',
   }),
@@ -555,7 +588,7 @@ export const tataElectronicsSlides: SlideDef[] = [
       { ic: icons.check, b: 'Audit-ready on any day.', t: 'Muster roll, wage and overtime registers, the weekly hours file, recruitment-fee and age declarations for RBA, and exits closed on time.' },
       { ic: icons.shield, b: 'PF and ESI, worker by worker.', t: 'A PF number only proves she is registered. We read every contractor challan and match the amount to each worker’s wage, every month. Gaps flagged to you; holding a bill stays your decision.' },
     ],
-    proof: { n: '−80%', p: 'vendor non-compliance risk at <b>Reliance</b> across 3,000 contractors on these checks.' },
+    proof: { n: '500K', p: 'contract workers a month and 3,000+ vendors at <b>Reliance</b> on the same registers and audit trail.' },
     practice: { who: 'BPCL', t: 'Licence and insurance tracked per contract, wired to SAP. A pass with no punch for 30 days lapses on its own.' },
     vis: compMock,
     foot: 'Registers, licence ledger and challan reconciliation are live. The Apple weekly-hours format and night-shift log are configured in the pilot. Figures illustrative.',
@@ -571,7 +604,7 @@ export const tataElectronicsSlides: SlideDef[] = [
       { ic: icons.warn, b: 'Gaps in the same cycle.', t: 'Short payment, non-payment, wrong UAN and late deposit flagged while the bill is still with you, with a dated notice to the contractor.' },
       { ic: icons.shield, b: 'Your decision, documented.', t: 'Release can wait on the match if you set it so. The PF liability falls back to you if a contractor defaults, so the rule sits in front of whoever decides.' },
     ],
-    proof: { n: '500K', p: 'contract workers a month at <b>Reliance</b>, with PF and ESI challans matched this way. Clients name it among the features they use most.' },
+    proof: { n: 'Monthly', p: 'challan matching across <b>Reliance</b>’s 3,000+ contractors. Clients name it among the features they use most.' },
     practice: { t: 'Send each contractor its own gap list the day the challan is read, and let the scorecard carry it into the next renewal.' },
     vis: te(challanUI), wide: true,
     foot: 'Challan reading and matching are live. The statutory reconciliation AI agent is in Beta. Numbers illustrative.',

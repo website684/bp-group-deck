@@ -66,7 +66,7 @@ const PL: PlantCfg = {
 
 /* ---------------- mocks ---------------- */
 
-const licenceMock = `
+export const licenceMock = `
 <div class="tm">
   ${bar('goBetter CLMS · Contractor licence ledger · Plant 1', 'Live')}
   <div class="tm-body">
@@ -236,7 +236,7 @@ export const vendorUI = `
   </div>
 </div>`
 
-const woUI = `
+export const woUI = `
 <div class="ui">
   ${side(2)}
   <div class="ui-main">
