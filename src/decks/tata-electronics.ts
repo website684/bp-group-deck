@@ -24,8 +24,10 @@ const te = (h: string) => h
 // knowledge/13-clms-legal-facts.md. Public facts: Tata Sons AR 2025-26 (86,466 people),
 // Apple supplier accountability report 2025 (60-hour week incl. overtime).
 
-const AREAS = ['Time & roster', 'Absence', 'Payroll', 'Attrition', 'Vendors', 'Compliance', 'Hire', 'Onboard']
-const rail = makeRail(AREAS, [3, 7], false)
+const AREAS = ['Time & roster', 'Absence', 'Payroll', 'Attrition', 'Vendors', 'Compliance', 'Hire', 'Onboard', 'Train', 'AI']
+const rail = makeRail(AREAS, [3, 7, 10], false)
+// AI Labs slides are plain slides; give them the module bar with AI lit.
+const withRail = (sl: SlideDef, step: number, demo: string): SlideDef => ({ ...sl, html: sl.html.replace('<div class="tel norail">', `<div class="tel">${rail(step, demo)}`) })
 const P = 'The problem'
 
 const TE: PlantCfg = {
@@ -720,6 +722,28 @@ export const tataElectronicsSlides: SlideDef[] = [
   }),
 
   problemSlide({
+    id: 'ttr1', theme: 'dark', title: 'Train · induction and refreshers', rail, step: 9, demo: 'Live · skillBetter',
+    kick: 'Train · induction and safety refreshers on her phone',
+    h2: 'Induction and refreshers on every worker’s phone, <em>with proof of who passed.</em>',
+    qLabel: P, quote: 'Induction is a signed self-declaration and refresher attendance is a scanned sheet. Nobody can say who is due.',
+    changes: [
+      { ic: icons.play, b: 'Short courses in her language.', t: 'Induction, ESD, line SOP and safety refreshers as bite-sized videos with a test, in Tamil or any of 35 languages, offline too.' },
+      { ic: icons.check, b: 'Proof, not paper.', t: 'Declarations signed in the app, test scores and certificates dated per worker. Refreshers pushed before they lapse.' },
+      { ic: icons.lock, b: 'Linked to the pass.', t: 'A lapsed mandatory course can hold line access. The dashboard shows who is due, by contractor and line.' },
+    ],
+    proof: { n: '88%', p: 'course completion across our clients, against about 25% in the industry. <b>Hindalco</b> tripled shop-floor training coverage on skillBetter.' },
+    practice: { who: 'Hindalco', t: 'Mandatory shop-floor modules tracked to completion, each with its own assessment, on web and mobile.' },
+    vis: `<div class="tm-fan">
+      <div class="ph"><img src="assets/product/figma/skilling/mobile-learning-home-new-feed.png" alt="Learning home"/><em>Learning home</em></div>
+      <div class="ph"><img src="assets/product/figma/skilling/skillbetter-mobile-course-overview-chapter-states.png" alt="Mandatory course"/><em>Mandatory course</em></div>
+      <div class="ph"><img src="assets/product/figma/skilling/skillbetter-mobile-offline-downloads-sheet.png" alt="Offline downloads"/><em>Works offline</em></div>
+      <div class="chipf" style="left:0;top:16%;animation-delay:0s,.8s"><b>212</b>refreshers due this month</div>
+      <div class="chipf" style="right:0;top:40%;animation-delay:1.5s,1s"><b>9 / 10</b>ESD test passed</div>
+    </div>`,
+    foot: 'skillBetter LMS is live (production app screens). Linking course status to line access is configured per client.',
+  }),
+
+  problemSlide({
     id: 'tw1', theme: 'light', title: 'Plant workflows', demo: 'Live · workflows',
     kick: 'Across every area · gate management and plant workflows',
     h2: 'Gates, entry, exit and every plant routine as workflows you configure. <em>The operating system for your factories.</em>',
@@ -749,7 +773,7 @@ export const tataElectronicsSlides: SlideDef[] = [
     foot: 'Embedded analytics are live (Amazon QuickSight, hosted in India) and refresh near real time. Attrition and absence tiles depend on the pilot models. Values illustrative.',
   }),
 
-  plainSlide('tai1', 'darker', 'AI Labs · agents',
+  withRail(plainSlide('tai1', 'darker', 'AI Labs · agents',
     'AI Labs · agents on the same record as your plants',
     'Agents do the chasing, checking and answering, <em>on the same worker record your plants run on.</em>',
     `<div>
@@ -764,9 +788,9 @@ export const tataElectronicsSlides: SlideDef[] = [
         <div class="ag2" style="--d:.52s"><h4>Verification agent <span class="st2 beta">Beta</span></h4><div class="ar">Onboard</div><p>Chases missing documents and pre-checks each pack before it reaches your team.</p></div>
       </div>
       <div class="tel-band ghost" style="margin-top:14px"><span class="bl">Built in AI Labs</span><p>Our agent studio: each agent is configured, not coded, on your SOPs and rules, and every conversation writes structured data back to the worker record.</p></div>
-    </div>`, { demo: 'Live · AI Labs', glow: true }),
+    </div>`, { glow: true }), 10, 'Live · AI Labs'),
 
-  plainSlide('tai2', 'light', 'AI Labs · safe by design',
+  withRail(plainSlide('tai2', 'light', 'AI Labs · safe by design',
     'AI Labs · why an agent can run a plant process',
     'A chatbot might skip step five. <em>Our workflows run every mandatory step, in order, every time.</em>',
     `<div class="tel-sec">
@@ -784,7 +808,7 @@ export const tataElectronicsSlides: SlideDef[] = [
         <div class="row"><b>Only your documents</b><span>Answers come from your SOPs and policies, with the source shown.</span></div>
         <div class="row"><b>Private, in India, guarded</b><span>Private models hosted in India, PII masked, and a breach pauses the agent for human review.</span></div>
       </div>
-    </div>`),
+    </div>`), 10, 'AI Labs · guardrails'),
 
   plainSlide('tfit', 'light', 'How it fits with e-Sparsh',
     'Fit · e-Sparsh, SAP and your gate hardware',
