@@ -1,6 +1,6 @@
 import type { SlideDef } from '../lib/types'
 import { icons } from './html'
-import { svg, makeRail, bar, shot, row, problemSlide, plainSlide, coverRing } from './story-kit'
+import { svg, makeRail, bar, row, problemSlide, plainSlide, coverRing } from './story-kit'
 import { type PlantCfg, rosterUI, rulesUI, headcountMock, leaveMock, waPhones, accessMock } from './attend-kit'
 import { vendorUI, challanUI, woUI, licenceMock, verifyUI, gateMock } from './clms'
 
@@ -107,12 +107,22 @@ const festMock = `
 </div>`
 
 const payrollMock = `
-<div style="position:relative">${shot('assets/product/clms/pongal-bonus-component.jpg', 'goBetter · Payroll · add a one-time component', 'Production design', { h: '236px' })}<div class="tm-callout" style="right:16px;bottom:14px;--d:.7s;--ay:auto"><b>Festival bonus</b>Pongal or Deepavali bonus for one month, with PF, ESI and OT applicability set on it.</div></div>
-<div class="tm" style="margin-top:12px">
+<div class="tm">
   ${bar('goBetter · Pay run · October · Hosur · all contractors', 'Running')}
   <div class="tm-body">
-    <div class="tm-stats" style="--n:4;margin:0"><div><div class="n">23,400</div><div class="l">Workers in run</div></div><div><div class="n">38</div><div class="l">Contractors · wage registers</div></div><div><div class="n g">1,204 h</div><div class="l">Consented OT at 2×</div></div><div><div class="n r">3</div><div class="l">Below minimum wage · returned</div></div></div>
     <div class="tm-rows">
+      ${row('1 · Days from verified punches · 23,400 workers', 'Present days, half days and holidays worked · no manual entry', 'Done', 'g')}
+      ${row('2 · Overtime at 2×', '1,204 consented hours · computed at twice the ordinary rate', 'Done', 'g')}
+      ${row('3 · Minimum wage by skill grade', '3 records below the Tamil Nadu floor · returned to the contractor', 'Returned', 'r', 'hot')}
+    </div>
+  </div>
+</div>
+<div class="tm" style="margin-top:12px">
+  ${bar('goBetter · Wage register check · Ganpati Services · 412 workers', 'Live')}
+  <div class="tm-body">
+    <div class="tm-rows">
+      ${row('14 workers · overtime paid at 1×', 'Shortfall ₹21,600 · flagged before you release payment', 'Flagged', 'r', 'hot')}
+      ${row('6 workers · days paid without a punch', '9 days · flagged on the invoice; holding it is your call', 'Review', 'y', 'warn')}
     </div>
   </div>
 </div>`

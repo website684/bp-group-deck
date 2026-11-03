@@ -6213,12 +6213,22 @@ Error generating stack: `+e.message+`
     <div class="note"><b>Learned from your own history:</b> punches, leave, home district, hostel block, line, contractor and the festival calendar. Forecast two weeks out, refreshed daily.</div>
   </div>
 </div>`,Tt=`
-<div style="position:relative">${Pe(`assets/product/clms/pongal-bonus-component.jpg`,`goBetter · Payroll · add a one-time component`,`Production design`,{h:`236px`})}<div class="tm-callout" style="right:16px;bottom:14px;--d:.7s;--ay:auto"><b>Festival bonus</b>Pongal or Deepavali bonus for one month, with PF, ESI and OT applicability set on it.</div></div>
-<div class="tm" style="margin-top:12px">
+<div class="tm">
   ${k(`goBetter · Pay run · October · Hosur · all contractors`,`Running`)}
   <div class="tm-body">
-    <div class="tm-stats" style="--n:4;margin:0"><div><div class="n">23,400</div><div class="l">Workers in run</div></div><div><div class="n">38</div><div class="l">Contractors · wage registers</div></div><div><div class="n g">1,204 h</div><div class="l">Consented OT at 2×</div></div><div><div class="n r">3</div><div class="l">Below minimum wage · returned</div></div></div>
     <div class="tm-rows">
+      ${A(`1 · Days from verified punches · 23,400 workers`,`Present days, half days and holidays worked · no manual entry`,`Done`,`g`)}
+      ${A(`2 · Overtime at 2×`,`1,204 consented hours · computed at twice the ordinary rate`,`Done`,`g`)}
+      ${A(`3 · Minimum wage by skill grade`,`3 records below the Tamil Nadu floor · returned to the contractor`,`Returned`,`r`,`hot`)}
+    </div>
+  </div>
+</div>
+<div class="tm" style="margin-top:12px">
+  ${k(`goBetter · Wage register check · Ganpati Services · 412 workers`,`Live`)}
+  <div class="tm-body">
+    <div class="tm-rows">
+      ${A(`14 workers · overtime paid at 1×`,`Shortfall ₹21,600 · flagged before you release payment`,`Flagged`,`r`,`hot`)}
+      ${A(`6 workers · days paid without a punch`,`9 days · flagged on the invoice; holding it is your call`,`Review`,`y`,`warn`)}
     </div>
   </div>
 </div>`,Et=e=>`<div class="tm-sig">${e.map(([e,t,n])=>`<div class="s"><b>${e}</b><span class="w${n?` ok`:``}">${t}</span></div>`).join(``)}</div>`,Dt=`
