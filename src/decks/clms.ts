@@ -84,7 +84,7 @@ export const licenceMock = `
   </div>
 </div>`
 
-const gateMock = `
+export const gateMock = `
 <div class="tm">
   ${bar('goBetter CLMS · Gate pass · Suresh Yadav · Bhoomi Facility · WO-2026-P1-131', 'Checking')}
   <div class="tm-body">
@@ -303,7 +303,7 @@ const hireMock = `
   </div>
 </div>`
 
-const verifyUI = `
+export const verifyUI = `
 <div class="ui">
   ${side(3)}
   <div class="ui-main">

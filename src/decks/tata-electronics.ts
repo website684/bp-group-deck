@@ -2,13 +2,15 @@ import type { SlideDef } from '../lib/types'
 import { icons } from './html'
 import { svg, makeRail, bar, shot, row, problemSlide, plainSlide, coverRing } from './story-kit'
 import { type PlantCfg, rosterUI, rulesUI, headcountMock, leaveMock, waPhones, accessMock } from './attend-kit'
-import { vendorUI, challanUI, woUI, licenceMock } from './clms'
+import { vendorUI, challanUI, woUI, licenceMock, verifyUI, gateMock } from './clms'
 
 // CLMS product screens, relabelled for Tata Electronics and its contractors.
 const te = (h: string) => h
   .replace(/Sahyadri Auto/g, 'Tata Electronics').replace(/<span>SA<\/span>/g, '<span>TE</span>')
   .replace(/Sri Sakthi Services/g, 'Shree Manpower').replace(/Ganesh Logistics/g, 'Krishna Logistics').replace(/Kumaran Builders/g, 'Ganpati Services')
-  .replace(/all plants/g, 'Hosur campus').replace(/MH-(SK|SS|FL)/g, 'TN-$1').replace(/licence ledger · Plant 1/gi, 'licence ledger · Hosur').replace(/WO-your-/g, 'WO-').replace(/Material handling, Plant 1/g, 'Material handling, Hosur')
+  .replace(/all plants/g, 'Hosur campus').replace(/MH-(SK|SS|FL)/g, 'TN-$1').replace(/licence ledger · Plant 1/gi, 'licence ledger · Hosur').replace(/WO-your-/g, 'WO-')
+  .replace(/Sunita Yadav/g, 'Kaviya Murugan').replace(/Chakan, Pune/g, 'Krishnagiri, Tamil Nadu').replace(/Assembly operator pack/g, 'Technician pack')
+  .replace('63 deployed against 53 licensed', '214 deployed against 100 licensed').replace('Bhoomi Facility is 10 over its licence', 'Bhoomi Facility is 114 over its licence').replace(/in Hindi/g, 'in Tamil').replace(/Material handling, Plant 1/g, 'Material handling, Hosur')
   .replace('63 / 53 · over', '214 / 100 · over').replace('10 over the licensed strength', '114 over the licensed strength').replace(/bill held until cleared/g, 'bill held under your rule').replace(/login created on IC approval/g, 'login created once HR approves').replace(/>IC approval</g, '>HR approval<')
 
 // Tata Electronics · contract and on-roll workforce deck, v3 (Oct 2026).
@@ -631,7 +633,7 @@ export const tataElectronicsSlides: SlideDef[] = [
     html: `
     <div class="tel">
       ${rail(8, 'Live · WhatsApp onboarding')}
-      <div class="tel-head"><div><span class="kick">Onboard · 1 of 2 · in batches or on WhatsApp, in her language</span><h2>Hired today, onboarded on WhatsApp by evening, <em>at the training centre the next morning.</em></h2></div></div>
+      <div class="tel-head"><div><span class="kick">Onboard · 1 of 4 · in batches or on WhatsApp, in her language</span><h2>Hired today, onboarded on WhatsApp by evening, <em>at the training centre the next morning.</em></h2></div></div>
       <div class="tel-body" style="grid-template-columns:minmax(0,.3fr) minmax(0,.7fr)">
         <div class="tel-say">
           <div class="blk"><div class="lbl">${P}</div><div class="tq">Days between offer and first day: forms, photocopies and a queue at the pass office for every joiner.</div></div>
@@ -651,7 +653,7 @@ export const tataElectronicsSlides: SlideDef[] = [
 
   problemSlide({
     id: 'to2', theme: 'light', title: 'Onboard · verified and through the gate', rail, step: 8, demo: 'Live · BGV and gate pass',
-    kick: 'Onboard · 2 of 2 · verified, audit-ready, access by zone',
+    kick: 'Onboard · 2 of 4 · verified, audit-ready, access by zone',
     h2: 'The minute onboarding finishes, she is verified, cleared for audits <em>and her access is set up, zone by zone.</em>',
     qLabel: P, quote: 'Verification runs for days with an agency, induction is a signature, and the gate pass needs another trip to an office.',
     changes: [
@@ -663,6 +665,38 @@ export const tataElectronicsSlides: SlideDef[] = [
     practice: { t: 'Verify once and reuse it: a returning worker keeps her verified record; only what has expired is checked again.' },
     vis: accessMock(TE),
     foot: 'Verification, UAN fetch and device enrolment are live. Line access waits for checks and OJT sign-off by default.',
+  }),
+
+  problemSlide({
+    id: 'tv1', theme: 'light', title: 'Onboard · background verification', rail, step: 8, demo: 'Live · verification',
+    kick: 'Onboard · 3 of 4 · background verification by role',
+    h2: 'Verified once, by role, <em>and trusted at every site and every rehire.</em>',
+    qLabel: P, quote: 'Checks run on a spreadsheet with an agency. Nobody can say who is cleared on any given day.',
+    changes: [
+      { ic: icons.shield, b: 'Six heads, packed by role.', t: 'Identity with face match and liveness, address, career and UAN history, financial, health, and legal: court, criminal and police. A line technician and a forklift driver carry different packs.' },
+      { ic: icons.chart, b: 'A portfolio, not a pile.', t: 'Started in bulk per batch, red, amber or green across the workforce, dated per check, with a case report you can download.' },
+      { ic: icons.repeat, b: 'Rehire reuses it.', t: 'A returning worker draws on her verified record. No second check for the same facts.' },
+    ],
+    proof: { n: '<24 h', p: 'turnaround target for a digital case. Identity checks return in minutes. 25M+ verified profiles behind it.' },
+    practice: { t: 'Let identity and employment open a provisional pass, and the line only when legal checks return. Red stops the pass on its own.' },
+    vis: te(verifyUI), wide: true,
+    foot: 'Verification is live: identity, employment, address, legal and health checks by role. Authored view; names illustrative.',
+  }),
+
+  problemSlide({
+    id: 'tv2', theme: 'dark', title: 'Onboard · gate pass and induction', rail, step: 8, demo: 'Live · gate pass',
+    kick: 'Onboard · 4 of 4 · gate pass, safety induction and access',
+    h2: 'The gate pass opens <em>only when everything behind it is true,</em> and closes when any of it stops being true.',
+    qLabel: P, quote: 'Induction is a signature on a register. Badges never expire.',
+    changes: [
+      { ic: icons.check, b: 'Five conditions, checked together.', t: 'Work order inside strength, contractor licence inside strength, identity and background check, compensation cover current, induction certificate valid. Miss one and no pass is issued.' },
+      { ic: icons.lang, b: 'Induction in her language, with a test.', t: 'ESD and safety SOP video, a short test and a photo check on her phone before she reaches the line. The certificate is dated and expires.' },
+      { ic: icons.clock, b: 'Expiry is automatic.', t: 'Passes, certificates and cover carry dates. Advance alerts, then access withdrawn.' },
+    ],
+    proof: { n: '30 days', p: 'without a punch and a pass lapses at <b>BPCL</b>, where pass issue, renewal and termination run on rules.' },
+    practice: { t: 'Tie the pass to the induction certificate, not to a signature. When the certificate lapses, so does line access.' },
+    vis: te(gateMock),
+    foot: 'Conditional gate pass and the induction agent are live. Names and numbers illustrative.',
   }),
 
   problemSlide({
@@ -694,6 +728,43 @@ export const tataElectronicsSlides: SlideDef[] = [
     vis: biMock, wide: true,
     foot: 'Embedded analytics are live (Amazon QuickSight, hosted in India) and refresh near real time. Attrition and absence tiles depend on the pilot models. Values illustrative.',
   }),
+
+  plainSlide('tai1', 'darker', 'AI Labs · agents',
+    'AI Labs · agents on the same record as your plants',
+    'Agents do the chasing, checking and answering, <em>on the same worker record your plants run on.</em>',
+    `<div>
+      <div class="tel-agents tai">
+        <div class="ag2" style="--d:.1s"><h4>Roster agent <span class="st2 live">Live</span></h4><div class="ar">Time &amp; roster</div><p>Fills short cells from certified standby and contractors, inside the 48-hour rule, and rebuilds the roster when a line stops.</p></div>
+        <div class="ag2" style="--d:.16s"><h4>Absence and attrition signals <span class="st2 pilot">Pilot</span></h4><div class="ar">Absence · attrition</div><p>Forecasts festival gaps two weeks out and flags who may leave. A person always decides what to do.</p></div>
+        <div class="ag2" style="--d:.22s"><h4>Mia · onboarding <span class="st2 live">Live</span></h4><div class="ar">Onboard</div><p>WhatsApp in Tamil: offer, consent, Aadhaar, UAN fetch, induction videos and a joining slot.</p></div>
+        <div class="ag2" style="--d:.28s"><h4>Calling agent <span class="st2 live">Live</span></h4><div class="ar">Onboard · attendance</div><p>Calls a joiner who is stuck, or a no-show before the shift, in her language.</p></div>
+        <div class="ag2" style="--d:.34s"><h4>Induction agent <span class="st2 live">Live</span></h4><div class="ar">Gate</div><p>Your ESD and safety SOP as a fixed flow: every step, a test and photo proof, every time.</p></div>
+        <div class="ag2" style="--d:.4s"><h4>Worker helpdesk <span class="st2 live">Live</span></h4><div class="ar">Payroll · attrition</div><p>Answers pay, leave and shift questions 24/7 in Tamil, and raises a ticket only when it must.</p></div>
+        <div class="ag2" style="--d:.46s"><h4>Challan agent <span class="st2 beta">Beta</span></h4><div class="ar">Compliance</div><p>Works the gaps the challan check raises with each contractor until they close.</p></div>
+        <div class="ag2" style="--d:.52s"><h4>Verification agent <span class="st2 beta">Beta</span></h4><div class="ar">Onboard</div><p>Chases missing documents and pre-checks each pack before it reaches your team.</p></div>
+      </div>
+      <div class="tel-band ghost" style="margin-top:14px"><span class="bl">Built in AI Labs</span><p>Our agent studio: each agent is configured, not coded, on your SOPs and rules, and every conversation writes structured data back to the worker record.</p></div>
+    </div>`, { demo: 'Live · AI Labs', glow: true }),
+
+  plainSlide('tai2', 'light', 'AI Labs · safe by design',
+    'AI Labs · why an agent can run a plant process',
+    'A chatbot might skip step five. <em>Our workflows run every mandatory step, in order, every time.</em>',
+    `<div class="tel-sec">
+      <div class="col">
+        <div class="lbl">A generic chatbot</div>
+        <div class="row"><b>May skip or reorder steps</b><span>Free to improvise in an eight-step onboarding or induction.</span></div>
+        <div class="row"><b>No proof per worker</b><span>Nothing shows that a given worker completed the flow.</span></div>
+        <div class="row"><b>Answers from anywhere</b><span>Your SOPs are optional; the open internet is not.</span></div>
+        <div class="row"><b>A compliance risk</b><span>Unfit for manufacturing, where a skipped step is an incident.</span></div>
+      </div>
+      <div class="col pack">
+        <div class="lbl">An AI Labs workflow</div>
+        <div class="row"><b>Every mandatory step, in order</b><span>Fixed flows where the process matters; open conversation only where it helps.</span></div>
+        <div class="row"><b>An audit trail per worker</b><span>Every step, answer and photo dated and kept for RBA and statutory audits.</span></div>
+        <div class="row"><b>Only your documents</b><span>Answers come from your SOPs and policies, with the source shown.</span></div>
+        <div class="row"><b>Private, in India, guarded</b><span>Private models hosted in India, PII masked, and a breach pauses the agent for human review.</span></div>
+      </div>
+    </div>`),
 
   plainSlide('tfit', 'light', 'How it fits with e-Sparsh',
     'Fit · e-Sparsh, SAP and your gate hardware',

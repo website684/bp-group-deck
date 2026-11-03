@@ -1060,3 +1060,8 @@
 .tel-say .practice .lbl { font-size: 10px; margin-bottom: 2px; }
 .tel-say .practice p { font-size: .8rem; line-height: 1.4; }
 .tel-say .practice { margin-top: -10px; }
+
+/* Tata · AI Labs agent grid */
+.tel-agents.tai { grid-template-columns: repeat(4, 1fr); }
+.tel-agents .ag2 .ar { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--yellow); margin-top: 6px; }
+.tel-agents .st2.pilot { background: rgba(255,149,24,.2); color: #ffc27a; }
