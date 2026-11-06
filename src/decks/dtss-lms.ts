@@ -15,7 +15,7 @@ const STEPS = ['Integrate', 'Assign', 'Content', 'Learn', 'Trainers', 'Certify',
 const rail = makeRail(STEPS, [3, 6, 9], false)
 const Q = 'On site today'
 
-const css = `<style>
+export const dtssCss = `<style>
 .dt-tl { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; position: relative; margin-top: 10px; }
 .dt-tl::before { content: ""; position: absolute; left: 4%; right: 4%; top: 15px; height: 3px; background: linear-gradient(90deg, var(--yellow), #F39200); border-radius: 3px; }
 .dt-tl .e { position: relative; padding: 38px 10px 0; animation: telpop .45s var(--ease) both; animation-delay: var(--d); }
@@ -152,7 +152,7 @@ const trainerCal = `
   </div>
 </div>`
 
-const trainerPhones = `
+export const trainerPhones = `
 <div class="dt-ph2">
   <div><div class="ph"><div class="top">Trainer · Sunil M.<small>Hospital, Gurugram · Chemical safety</small></div><div class="bd">
     <div class="it"><div>Ramesh K.<small>Housekeeping</small></div><span class="ok">Present</span></div>
@@ -184,7 +184,7 @@ const nudgeUI = `
   </div>
 </div>`
 
-const custReport = `
+export const custReport = `
 <div class="tm">
   ${bar('skillBetter · Customer training report · City Hospital, Gurugram · October', 'Shareable')}
   <div class="tm-body">
@@ -240,10 +240,10 @@ const SITE_RISK = [
 
 const cred = clmsSlides.find((s) => s.id === 'cmA')!
 
-export const dtssLmsSlides: SlideDef[] = [
+export const dtssFeatureSlides: SlideDef[] = [
   {
     id: 'dt1', theme: 'darker', title: 'Cover',
-    html: `${css}
+    html: `${dtssCss}
     <div class="glow"></div>
     <div class="tel center" style="padding-top:0">
       <div class="tel-coverwrap">
@@ -329,11 +329,11 @@ export const dtssLmsSlides: SlideDef[] = [
     'The first 90 days decide whether a new joiner stays. <em>Training decides whether they stay, and whether the customer is happy.</em>',
     `<div class="dt-days">
       ${[
-        ['Day 0', 'Joins through the onboarding app', 'Training starts when a trainer is free, maybe weeks later.', 'Compulsory path assigned the day he joins, in Hindi or his language.'],
-        ['Day 1', 'Deployed to a hospital site', 'Told the site rules verbally. Infection control is a guess.', 'Hospital pack and site instructions on his phone before the shift.'],
+        ['Day 0', 'Joins through the onboarding app', 'Training starts when a trainer is free, maybe weeks later.', 'Compulsory path assigned the day they join, in Hindi or their language.'],
+        ['Day 1', 'Deployed to a hospital site', 'Told the site rules verbally. Infection control is a guess.', 'Hospital pack and site instructions on their phone before the shift.'],
         ['Week 2', 'First chemical spill', 'Mixes cleaners because nobody showed him the label.', '“Never Mix Chemicals” reel, then a trainer demo on site with a quiz.'],
         ['Month 2', 'Customer audit', 'Supervisor cannot prove who was trained on what.', 'Customer report: everyone on site certified, with dates.'],
-        ['Month 3', 'Thinking of leaving', 'No recognition, no sense of a future.', 'Badges, site leaderboard, and a visible path to supervisor.'],
+        ['Month 3', 'Thinking of leaving', 'No recognition, no sense of a future.', 'Badges, team leaderboard, and a visible path to supervisor.'],
       ].map(([w, h, x, y], i) => `<div class="s" style="--d:${0.1 + i * 0.1}s"><div class="w">${w}</div><h4>${h}</h4><div class="x">${x}</div><div class="y">${y}</div></div>`).join('')}
     </div>`, { glow: true }),
 

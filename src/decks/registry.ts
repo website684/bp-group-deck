@@ -28,7 +28,7 @@ import { tataElectronicsSlides } from './tata-electronics'
 import { hyundaiSlides } from './hyundai'
 import { bpclAiSlides } from './bpcl-ai'
 import { skhSlides } from './skh'
-import { dtssLmsSlides } from './dtss-lms'
+import { dtssLmsSlides } from './dtss-story'
 import { rilIncentiveOsSlides } from './ril-incentive-os'
 
 export const decks: DeckDef[] = [
