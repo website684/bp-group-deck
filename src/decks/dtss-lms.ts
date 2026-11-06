@@ -16,6 +16,33 @@ const rail = makeRail(STEPS, [3, 6, 9], false)
 const Q = 'On site today'
 
 const css = `<style>
+.dt-tl { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; position: relative; margin-top: 10px; }
+.dt-tl::before { content: ""; position: absolute; left: 4%; right: 4%; top: 15px; height: 3px; background: linear-gradient(90deg, var(--yellow), #F39200); border-radius: 3px; }
+.dt-tl .e { position: relative; padding: 38px 10px 0; animation: telpop .45s var(--ease) both; animation-delay: var(--d); }
+.dt-tl .e::before { content: ""; position: absolute; left: 10px; top: 7px; width: 18px; height: 18px; border-radius: 50%; background: #fff; border: 4px solid var(--yellow); box-shadow: 0 0 0 4px rgba(255,196,1,.18); }
+.dt-tl .e .d { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--yellow); }
+.dt-tl .e b { display: block; font-family: var(--disp); font-size: .98rem; color: #fff; margin: 4px 0 6px; line-height: 1.25; }
+.dt-tl .e p { margin: 0; font-size: .8rem; line-height: 1.45; color: rgba(255,255,255,.78); }
+.dt-sites { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.dt-sites .c { background: #fff; border: 1px solid var(--border); border-top: 4px solid var(--sc); border-radius: 14px; padding: 13px 14px; display: flex; flex-direction: column; gap: 7px; animation: telpop .45s var(--ease) both; animation-delay: var(--d); }
+.dt-sites .c h4 { margin: 0; font-family: var(--disp); font-size: 1rem; color: var(--ink); }
+.dt-sites .c .k { font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #6b7280; }
+.dt-sites .c p { margin: 0; font-size: .78rem; line-height: 1.42; color: var(--text); }
+.dt-sites .c .pk { display: flex; flex-wrap: wrap; gap: 4px; }
+.dt-sites .c .pk span { font-size: 10.5px; background: #f3f4f6; border-radius: 999px; padding: 3px 8px; color: #1f2937; }
+.dt-sites .c .ce { margin-top: auto; font-size: .76rem; font-weight: 600; color: #1a8f52; border-top: 1px dashed var(--border); padding-top: 7px; }
+.dt-days { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.dt-days .s { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 8px; animation: telpop .45s var(--ease) both; animation-delay: var(--d); }
+.dt-days .s .w { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--yellow); }
+.dt-days .s h4 { margin: 0; font-family: var(--disp); font-size: 1rem; color: #fff; }
+.dt-days .s .x { font-size: .78rem; line-height: 1.4; color: #ffb4ae; background: rgba(208,39,29,.14); border-radius: 8px; padding: 7px 8px; }
+.dt-days .s .y { font-size: .78rem; line-height: 1.4; color: #c8f5dc; background: rgba(61,190,123,.14); border-radius: 8px; padding: 7px 8px; flex: 1; }
+.dt-why { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; }
+.dt-why .r { display: grid; grid-template-columns: 1fr 26px 1.25fr; gap: 10px; align-items: center; background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 11px 14px; animation: telpop .45s var(--ease) both; animation-delay: var(--d); }
+.dt-why .r .p { font-size: .84rem; color: #b91c1c; font-weight: 600; line-height: 1.35; }
+.dt-why .r .a { color: var(--navy); font-weight: 700; text-align: center; }
+.dt-why .r .f { font-size: .82rem; color: var(--text); line-height: 1.4; }
+.dt-why .r .f b { color: var(--ink); }
 .dt-asks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .dt-asks .a { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 13px 15px; display: flex; flex-direction: column; gap: 6px; animation: telpop .45s var(--ease) both; animation-delay: var(--d); }
 .dt-asks .a .n { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--navy); display: flex; justify-content: space-between; }
@@ -94,6 +121,7 @@ const integUI = `
       ${row('Onboarding app · new joiner', 'Ramesh K. · Housekeeping · joined today · enrolled in the compulsory path in his language', 'Enrolled', 'g')}
       ${row('ERP · employee-site mapping', 'Moved to a hospital site · hospital industry pack assigned automatically', 'Assigned', 'b')}
       ${row('ERP · site master', 'New customer site added · site appears in trainer schedules and reports', 'Synced', 'g')}
+      ${row('ERP ← completion status', 'Certificates and completions written back, so both systems show the same picture', 'Synced', 'g')}
       ${row('ERP · employee exit', 'Access closed, learning record kept for customer and audit reports', 'Closed', 'y')}
     </div>
     <div class="tm-h" style="margin:12px 0 0"><b>How it connects</b><span>API · webhooks · SSO</span></div>
@@ -202,6 +230,14 @@ const ringPanes = [
   ['04 · Prove to customers', 'Each customer sees that the people on their premises are trained, and kept trained, every month.', 'A report you can put in front of any customer'],
 ].map(([t, d, p]) => `<div class="cycpane fpane"><div class="t">${t}</div><p>${d}</p><div class="pr"><span>Proof</span>${p}</div></div>`).join('')
 
+const SITE_RISK = [
+  ['a wrong mop in an ICU spreads infection; waste in the wrong bin is a violation.', 'the trainer demonstrates colour-coded mops and bins, then a quiz on every phone.'],
+  ['a dirty washroom or a rude reply reaches the client’s admin head the same day.', 'grooming check and a washroom walk-through with the supervisor.'],
+  ['a wet floor without a sign means a fall and a claim.', 'spill drill at the store, with the wet-floor sign and the reporting step.'],
+  ['a room not ready on time costs a guest complaint.', 'room readiness checklist practised on a real room, timed.'],
+  ['a missed PPE step on an industrial floor is an incident.', 'PPE check and hazard walk before the first shift, certificate issued.'],
+]
+
 const cred = clmsSlides.find((s) => s.id === 'cmA')!
 
 export const dtssLmsSlides: SlideDef[] = [
@@ -212,11 +248,11 @@ export const dtssLmsSlides: SlideDef[] = [
     <div class="tel center" style="padding-top:0">
       <div class="tel-coverwrap">
         <div class="tel-covertext">
-          <span class="kick">BetterPlace × DTSS · skillBetter · November 2026</span>
+          <span class="kick">BetterPlace × DTSS and SMC · SIS Group · skillBetter · November 2026</span>
           <h1>Every person on every customer site, <em>trained, and able to prove it.</em></h1>
-          <p>One app for your trainers and your people. Content upgraded with AI into reels they finish, trainer sessions recorded at the site, and a report every customer can see.</p>
+          <p>Built for 75,000 facility staff across DTSS and SMC. One app for your trainers and your people. Content upgraded with AI into reels they finish, trainer sessions recorded at the site, and a report every customer can see.</p>
           <div class="tel-nums" style="margin-top:24px">
-            <div><div class="n">25L<em>+</em></div><div class="l">Frontline learners every month</div></div>
+            <div><div class="n">75,000</div><div class="l">DTSS and SMC staff, each brand on its own app</div></div>
             <div><div class="n">88%</div><div class="l">Course completion, against ~25% in the industry</div></div>
             <div><div class="n">35<em>+</em></div><div class="l">Languages, from one upload</div></div>
           </div>
@@ -242,6 +278,21 @@ export const dtssLmsSlides: SlideDef[] = [
         ['09 · Reports', 'Configured', 'Customer, trainer, employee, career', 'Dashboards set up to your format, on live data.'],
       ].map(([n, st, b, p], i) => `<div class="a" style="--d:${0.05 + i * 0.05}s"><div class="n">${n}<em${st === 'Live' ? '' : ' class="c"'}>${st}</em></div><b>${b}</b><p>${p}</p></div>`).join('')}
     </div>`),
+
+  plainSlide('dt2b', 'darker', 'Built with you since July',
+    'What we have built together · since our first demo in July',
+    'Four months of working on your content, <em>so today you are judging a platform already shaped for DTSS and SMC.</em>',
+    `<div><div class="dt-tl">
+      ${[
+        ['2 Jul', 'First demo', 'Reels, live classes, AI content, white-labelling for DTSS and SMC separately.'],
+        ['8 Jul', 'Your scripts, made into courses', 'AIDET Process and Hand Hygiene, built from SMC’s scripts, on your demo app.'],
+        ['13 Jul', 'Your SCORM, cut into bite-size', '“Wet and Dry Vacuum Cleaners” reused and broken into short lessons.'],
+        ['28 Jul', 'Realistic AI video', 'A first cut using SMC staff in your uniform, for learning by watching.'],
+        ['24 Aug', 'Your 11 requirements', 'Integration, assessments, journeys by site type, nudges, client reports, classroom training.'],
+        ['Nov', 'DTSS reels live', 'Eight housekeeping reels, a DTSS catalogue by role and on-site classes in your org.'],
+      ].map(([d, b, t], i) => `<div class="e" style="--d:${0.1 + i * 0.1}s"><div class="d">${d}</div><b>${b}</b><p>${t}</p></div>`).join('')}
+    </div>
+    <div class="tel-band ghost" style="margin-top:22px"><span class="bl">Your feedback, applied</span><p>You asked for content your people relate to, assessments at intervals, and journeys that follow the customer site. Every one of those is in the slides that follow.</p></div></div>`, { glow: true }),
 
   { ...cred },
 
@@ -273,6 +324,33 @@ export const dtssLmsSlides: SlideDef[] = [
       </ul></div>
     </div>`, { glow: true }),
 
+  plainSlide('dt4b', 'dark', 'A housekeeping associate’s first 90 days',
+    'The problem we are solving · a housekeeping associate’s first 90 days',
+    'The first 90 days decide whether a new joiner stays. <em>Training decides whether they stay, and whether the customer is happy.</em>',
+    `<div class="dt-days">
+      ${[
+        ['Day 0', 'Joins through the onboarding app', 'Training starts when a trainer is free, maybe weeks later.', 'Compulsory path assigned the day he joins, in Hindi or his language.'],
+        ['Day 1', 'Deployed to a hospital site', 'Told the site rules verbally. Infection control is a guess.', 'Hospital pack and site instructions on his phone before the shift.'],
+        ['Week 2', 'First chemical spill', 'Mixes cleaners because nobody showed him the label.', '“Never Mix Chemicals” reel, then a trainer demo on site with a quiz.'],
+        ['Month 2', 'Customer audit', 'Supervisor cannot prove who was trained on what.', 'Customer report: everyone on site certified, with dates.'],
+        ['Month 3', 'Thinking of leaving', 'No recognition, no sense of a future.', 'Badges, site leaderboard, and a visible path to supervisor.'],
+      ].map(([w, h, x, y], i) => `<div class="s" style="--d:${0.1 + i * 0.1}s"><div class="w">${w}</div><h4>${h}</h4><div class="x">${x}</div><div class="y">${y}</div></div>`).join('')}
+    </div>`, { glow: true }),
+
+  plainSlide('dt4c', 'light', 'Training follows the site',
+    'Use cases · the customer site decides the training',
+    'A hospital, a mall and a corporate office need different housekeeping. <em>The ERP says where he works; the right pack follows.</em>',
+    `<div class="dt-sites">
+      ${[
+        ['#d9452f', 'Hospital', 'Infection risk, patient areas', ['Infection control', 'Biomedical waste', 'Hand hygiene', 'AIDET'], 'Certified before entering patient areas'],
+        ['#1B2D93', 'Corporate office', 'Visible, customer-facing', ['Washroom SOP', 'Pantry hygiene', 'Grooming', 'Single disc machine'], 'Customer service sign-off'],
+        ['#F39200', 'Retail and malls', 'High footfall, public spaces', ['Spill response', 'Wet floor safety', 'Crowd courtesy', 'Common areas'], 'Safety test every 6 months'],
+        ['#0d6b4f', 'Hotel and airport', 'Guest experience, strict standards', ['Room readiness', 'Guest courtesy', 'Fire response', 'Lost and found'], 'Ready Before They Arrive, certified'],
+        ['#3b2a8a', 'Factory and campus', 'Industrial hazards', ['PPE', 'Chemical safety', 'Spot the hazard', 'Emergency drill'], 'Safety induction certificate'],
+      ].map(([c, h, k, pk, ce], i) => `<div class="c" style="--sc:${c};--d:${0.08 + i * 0.08}s"><h4>${h}</h4><div class="k">${k}</div><div class="pk">${(pk as string[]).map((x) => `<span>${x}</span>`).join('')}</div><p><b>Risk:</b> ${SITE_RISK[i][0]}</p><p><b>On site:</b> ${SITE_RISK[i][1]}</p><div class="ce">✓ ${ce}</div></div>`).join('')}
+    </div>
+    <div class="tel-band light" style="margin-top:12px"><span class="bl">Same for every role</span><p>Security, landscaping and F&amp;B staff get their own packs on the same rules. A move from a mall to a hospital re-assigns training automatically.</p></div>`),
+
   problemSlide({
     id: 'dt5', theme: 'light', title: 'Integration', rail, step: 1, demo: 'Live · integrations',
     kick: 'Integrate · your onboarding app and your ERP',
@@ -281,7 +359,7 @@ export const dtssLmsSlides: SlideDef[] = [
     changes: [
       { ic: icons.plug, b: 'From the onboarding app.', t: 'A new joiner arrives with role and language, and the compulsory path is assigned the same day.' },
       { ic: icons.building, b: 'From the ERP.', t: 'Site details and employee-site mapping drive the industry pack and the trainer schedule. A site move changes the assignment.' },
-      { ic: icons.lock, b: 'Exits handled.', t: 'An exit closes access and keeps the record for customer and audit reports.' },
+      { ic: icons.repeat, b: 'Both ways.', t: 'Completion status goes back to your ERP; an exit closes access and keeps the record for audits.' },
     ],
     proof: { n: 'Zepto', p: 'ties deployment to training through a deep API link: only trained riders get orders.' },
     vis: integUI, wide: true,
@@ -310,7 +388,7 @@ export const dtssLmsSlides: SlideDef[] = [
     qLabel: Q, quote: 'Long videos and slide decks that nobody finishes on a phone, mostly in English.',
     changes: [
       { ic: icons.play, b: 'Existing content into reels.', t: 'A 40-minute deck becomes a set of short reels, each with one idea and a question at the end.' },
-      { ic: icons.zap, b: 'New AI videos.', t: '1–3 minute videos made with AI, in 2D, 3D or realistic style, for any new topic or site.' },
+      { ic: icons.zap, b: 'New AI videos.', t: '1–3 minute videos in 2D, 3D or realistic style, with your staff in your uniform, as in the SMC first cut, with questions at intervals.' },
       { ic: icons.lang, b: 'Every language from one upload.', t: 'Any video, PDF or PPT translated into 35+ languages in under 15 minutes, conversational, not literal.' },
     ],
     proof: { n: '<15 min', p: 'to translate a course into another language with AI. 500K+ translations done on the platform.' },
@@ -341,7 +419,7 @@ export const dtssLmsSlides: SlideDef[] = [
             ['Spot the Hazard', 'Safety', '#1f3b52', '#32607f'],
           ].map(([t, s, a, b], i) => `<div class="t" style="--c1:${a};--c2:${b};--d:${0.05 + i * 0.05}s"><b>${t}</b><small>${s}</small></div>`).join('')}
         </div>
-        <div class="tel-band ghost" style="margin-top:12px"><span class="bl">In your app</span><p>“Your Role as a Housekeeping Assistant” plays in Hindi and English, with DTSS branding. Each reel can end with a question that counts toward the path.</p></div>
+        <div class="tel-band ghost" style="margin-top:12px"><span class="bl">In your app</span><p>“Your Role as a Housekeeping Assistant” plays in Hindi and English, with DTSS branding. Also on your demo app: AIDET and Hand Hygiene from SMC’s scripts, and your SCORM vacuum-cleaner course cut into bite-size lessons.</p></div>
       </div>
     </div>`),
 
@@ -421,7 +499,7 @@ export const dtssLmsSlides: SlideDef[] = [
     h2: 'Points, badges and a site leaderboard. <em>Simple, fair, and nothing fancy.</em>',
     qLabel: Q, quote: 'Field staff have no reason to open a training app after the first day.',
     changes: [
-      { ic: icons.trophy, b: 'Points and badges.', t: 'For finishing paths, passing tests and keeping refreshers on time.' },
+      { ic: icons.trophy, b: 'Stars, badges and certificates.', t: 'As you asked: stars and ratings for finishing paths, passing tests and keeping refreshers on time.' },
       { ic: icons.users, b: 'Site and team leaderboards.', t: 'Sites compete, not just individuals, so supervisors push their teams.' },
       { ic: icons.eye, b: 'Recognition on the feed.', t: 'Employee of the month and best performer posts on the app’s home screen, already used in your demo org.' },
     ],
@@ -437,6 +515,21 @@ export const dtssLmsSlides: SlideDef[] = [
     </div></div></div>`,
     foot: 'Points, badges, leaderboards and feed posts are live. Sites and numbers illustrative.',
   }),
+
+  plainSlide('dt13b', 'light', 'Why they stop, what brings them back',
+    'Engagement · why facility staff stop learning, and what brings them back',
+    'Your people do not lack time or interest. <em>They lack a reason, a format that fits a shift, and someone noticing.</em>',
+    `<div class="dt-why">
+      ${[
+        ['“It’s in English.”', '<b>His language.</b> Hindi or any of 35, chosen per course.'],
+        ['“It’s too long.”', '<b>Reels of a minute or two.</b> One idea each, between tasks.'],
+        ['“No data on my phone.”', '<b>Download at the site office,</b> finish offline on the bus.'],
+        ['“Nobody notices.”', '<b>Recognition on the feed,</b> employee of the month, site leaderboard.'],
+        ['“Why should I?”', '<b>A path to supervisor,</b> visible in the app, unlocked by training.'],
+        ['“I forgot.”', '<b>Reminders, then the supervisor,</b> then an AI call if it is compulsory.'],
+      ].map(([p, f], i) => `<div class="r" style="--d:${0.06 + i * 0.06}s"><div class="p">${p}</div><div class="a">→</div><div class="f">${f}</div></div>`).join('')}
+    </div>
+    <div class="tel-band light" style="margin-top:12px"><span class="bl">Proof</span><p><b>Meesho:</b> +19.7% week-on-week retention with gamified reels. <b>Across clients:</b> 88% completion against about 25% in the industry. WhatsApp campaigns can carry the first nudge.</p></div>`),
 
   problemSlide({
     id: 'dt14', theme: 'light', title: 'Nudges and escalation', rail, step: 8, demo: 'Live · notifications',
@@ -480,7 +573,7 @@ export const dtssLmsSlides: SlideDef[] = [
     `<div>
       <div class="tel-agents tai">
         ${[
-          ['AI tutor', 'Live', 'Learn', 'Answers questions from your SOPs and site instructions, 24/7, in Hindi or his own language, with the source shown.'],
+          ['Saathi · DTSS coach', 'Pilot', 'Learn', 'Your training and sales coach: answers from your SOPs, runs quizzes and customer role-play, and helps with the Mitra app, in an Indian voice.'],
           ['Content studio', 'Live', 'Content', 'Turns a deck or a PDF into reels, questions and translations, ready for review.'],
           ['Calling agent', 'Live', 'Nudge', 'Calls people with overdue compulsory training and walks them through it.'],
           ['Induction agent', 'Live', 'Certify', 'Your safety SOP as a fixed flow: every step, a test and photo proof, every time.'],
@@ -506,6 +599,7 @@ export const dtssLmsSlides: SlideDef[] = [
       <div class="h"></div><div class="h">Capability</div><div class="h">What it covers</div><div class="h">Status</div>
       ${[
         ['Learner app, reels, lessons, offline', 'DTSS-branded app with your reels today', 'live', 'Live'],
+        ['White-label for DTSS and SMC', 'Each brand on its own app and catalogue, one admin', 'live', 'Live'],
         ['AI reels, AI video, translation', 'Existing content into reels; new 1–3 min videos; 35+ languages', 'live', 'Live'],
         ['Catalogues and assignment rules', 'Topic, role, industry; compulsory, refresher, levels', 'live', 'Live'],
         ['Live and offline classes, attendance, feedback', 'Site sessions, QR check-in, post-session forms', 'live', 'Live'],
@@ -522,7 +616,7 @@ export const dtssLmsSlides: SlideDef[] = [
     'Six weeks to your first customer report, <em>with your content, your sites and your trainers.</em>',
     `<div>
       <div class="tel-phase4">
-        <div class="ph4" style="--d:.15s"><div class="w">Weeks 1–2</div><h4>Connect and set up</h4><p>Onboarding app and ERP connected, catalogues and rules by role and industry, trainers and sites loaded.</p><div class="who">Joint</div></div>
+        <div class="ph4" style="--d:.15s"><div class="w">Weeks 1–2</div><h4>Connect and set up</h4><p>First region of the 75,000; onboarding app and ERP connected, catalogues and rules by role and industry, trainers and sites loaded.</p><div class="who">Joint</div></div>
         <div class="ph4" style="--d:.3s"><div class="w">Weeks 2–4</div><h4>Upgrade content</h4><p>Your priority SOPs cut into reels, new AI videos for gaps, translated into your top languages.</p><div class="who">BetterPlace</div></div>
         <div class="ph4" style="--d:.45s"><div class="w">Weeks 3–6</div><h4>Go live on sites</h4><p>Employees on the app, trainers running site sessions with attendance and quizzes, nudges on.</p><div class="who">Joint</div></div>
         <div class="ph4" style="--d:.6s"><div class="w">Week 6</div><h4>First customer report</h4><p>Trained-and-deployed proof for your first customers, plus trainer and employee dashboards.</p><div class="who">Measured</div></div>
