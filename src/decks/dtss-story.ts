@@ -243,6 +243,62 @@ export const dtssLmsSlides: SlideDef[] = [
       <div class="tel-band ghost" style="margin-top:14px"><span class="bl">Facility teams already</span><p><b>JLL</b> trains the facility staff it deploys to clients like Accenture and Google on BetterPlace. <b>Reliance</b> trains its housekeeping and facility staff across manufacturing.</p></div>
     </div>`, { glow: true }),
 
+  plainSlide('ds9', 'light', 'Who learns with us',
+    'Who learns with us · the frontline of India’s largest employers',
+    'From refineries to delivery fleets to facility teams, <em>their frontline learns on BetterPlace.</em>',
+    `<div class="wall">
+      ${[
+        [`<img src="assets/logo/t-reliance.png" alt="" style="max-height:40px"/><span class="wm" style="color:#1d3c6e;margin-left:8px">Reliance</span>`, 'Retail · O2C · manufacturing', 'Store associates, and housekeeping and facility staff across manufacturing.'],
+        [logo('assets/logo/t-jll.png', 'JLL'), 'Facility management', 'Safety training for vendor and sub-vendor staff across client sites.'],
+        [logo('assets/logo/t-bpcl.png', 'Bharat Petroleum'), 'Energy · refineries', 'Contract workforce across refineries, on the same platform.'],
+        [logo(null, 'zepto', '#5b1a99'), 'Quick commerce', 'Riders deployed only after training is complete.'],
+        [logo('assets/logo/t-accenture.png', 'Accenture'), 'Drivers and fleets', 'Training for drivers and fleet staff.'],
+        [logo('assets/logo/c-meesho.svg', 'Meesho'), 'Delivery partners', 'Delivery partners trained end to end.'],
+        [logo(null, 'EJADAH', '#0b3d5c'), 'Dubai Holding · facilities', 'Training for their entire staff.'],
+        [logo('assets/logo/c-iffco-tokio.svg', 'IFFCO Tokio'), 'Insurance', 'India’s largest composite insurer; ~30,000 sales staff coached by AI.'],
+        [logo(null, 'purplle', '#d61f69'), 'Beauty retail', 'Retail sales associates in stores.'],
+        [`<span class="wm" style="color:#111">amazon</span><img src="assets/logo/t-amazon.png" alt="" style="max-height:30px;margin-left:6px"/>`, 'Logistics', 'GSF Learning Academy across two business units.'],
+      ].map(([l, w, p], i) => `<div class="b" style="--d:${0.04 + i * 0.04}s"><div class="lg">${l}</div><div class="w">${w}</div><p>${p}</p></div>`).join('')}
+    </div>
+    <div class="foot" style="margin-top:10px">Logos shown with the work we do for each. Outcomes on the next slides are client-reported.</div>`),
+
+  plainSlide('ds8', 'darker', 'Built for Bharat',
+    'Why BetterPlace · built for Bharat, and already used by Bharat',
+    'Built for the people who keep India’s buildings, stores and roads running. <em>Not adapted for them. Built for them.</em>',
+    `<div>
+      <div class="bharat">
+        ${[
+          ['🗣️', 'Their language first', '35+ Indian languages in voice and text. They choose, everything follows.'],
+          ['📱', 'Any phone, little data', 'Runs on entry-level Android phones. Download at the site office, learn offline on the bus.'],
+          ['🎬', 'Reels, not lectures', 'One idea in a minute or two. The format they already watch every day.'],
+          ['🖼️', 'Pictures and voice', 'Picture questions and spoken answers for people who read little.'],
+          ['📌', 'Enforcement', 'What matters pops up over everything, until it is done.'],
+          ['📣', 'Announcements', 'Site rules, recognition and news at the top of home, for one site or all.'],
+          ['💬', 'Nudges that work', 'WhatsApp, push and SMS on a cadence you set, then the supervisor.'],
+          ['🏅', 'Recognition', 'Stars, badges and employee of the month. Being noticed keeps people.'],
+        ].map(([ic, h, p], i) => `<div class="t" style="--d:${0.06 + i * 0.05}s"><div class="ic">${ic}</div><h4>${h}</h4><p>${p}</p></div>`).join('')}
+      </div>
+      <div class="bharat-who"><span class="l">Used every month by</span><span>delivery partners</span><span>store associates</span><span>housekeepers</span><span>security guards</span><span>drivers and fleets</span><span>field sales</span><span>factory operators</span></div>
+    </div>`, { glow: true }),
+
+  plainSlide('dsR', 'light', 'Your requirements, met',
+    'Your requirements · what you asked for, and what we have built',
+    'Everything in your brief, <em>and where you will see it today.</em>',
+    `<div class="tel-status tight">
+      <div class="h"></div><div class="h">You asked for</div><div class="h">What we built</div><div class="h">Status</div>
+      ${[
+        ['Engage with bite-size content', 'AI reels of a minute or two, in Hindi and English, for DTSS housekeeping; your old SCORM cut into short lessons', 'live', 'In today’s demo'],
+        ['Get their attention', 'Enforcement: an assessment or questionnaire pops up over everything when they open the app', 'live', 'In today’s demo'],
+        ['Trainers and live classes', 'Online and offline classes; the trainer marks attendance for everyone allocated at the site', 'live', 'In today’s demo'],
+        ['Trainer-led quiz and certificate', 'Housekeeping safety questionnaire on their phone; a certificate when they pass', 'live', 'In today’s demo'],
+        ['New AI videos, 1–3 minutes', 'AIDET and Hand Hygiene from SMC’s scripts; realistic video with SMC staff in uniform', 'live', 'Built for you'],
+        ['Content by topic, role, industry', 'DTSS catalogue by role: housekeeping, security, landscaping, F&B, sales, supervisor', 'live', 'In your org'],
+        ['Nudges and escalation', 'WhatsApp, push and SMS; overdue goes to supervisor, then manager', 'mix', 'Live · escalation configured'],
+        ['Onboarding app and ERP', 'New joiners enrolled automatically; completion sent back to your ERP', 'mix', 'Configured in weeks 1–3'],
+        ['Reports for customers and trainers', 'Customer, trainer, employee and career dashboards', 'mix', 'Dashboard shown today'],
+      ].map(([b, sp, c, t], i) => `<div class="r" style="--d:${0.04 + i * 0.04}s"><i>·</i><b>${b}</b><span>${sp}</span><em class="${c}">${t}</em></div>`).join('')}
+    </div>`),
+
   plainSlide('ds2', 'light', 'Your trainer’s reality',
     'The problem · seen from the ground, through one of your trainers',
     'One trainer, forty sites, six languages. <em>By the time they reach site forty, site one has new joiners.</em>',
@@ -303,6 +359,8 @@ export const dtssLmsSlides: SlideDef[] = [
     ['+65%', 'voluntary participation across our clients when nudges and recognition run together.'],
     nudgePhones),
 
+  pick('dt13b'),
+
   probSlide('ds6', 'light', 'Practice between visits',
     'Problem 4 · practice between visits',
     'The trainer visits once a month. <em>A coach in their pocket keeps the lesson alive in between.</em>',
@@ -322,6 +380,8 @@ export const dtssLmsSlides: SlideDef[] = [
      ['Straight to the customer report.', 'Who is certified for that site, refreshed every month.']],
     ['QR', 'check-in and post-session quizzes are live on the platform today.'],
     trainerPhones),
+
+  pick('dt10'),
 
   plainSlide('ds7v', 'dark', 'Video generation',
     'Problem 6 · content people relate to · AI video generation',
@@ -348,44 +408,6 @@ export const dtssLmsSlides: SlideDef[] = [
 
   pick('dt4b'),
   pick('dt4c'),
-
-  plainSlide('ds8', 'darker', 'Built for Bharat',
-    'Why BetterPlace · built for Bharat, and already used by Bharat',
-    'Built for the people who keep India’s buildings, stores and roads running. <em>Not adapted for them. Built for them.</em>',
-    `<div>
-      <div class="bharat">
-        ${[
-          ['🗣️', 'Their language first', '35+ Indian languages in voice and text. They choose, everything follows.'],
-          ['📱', 'Any phone, little data', 'Runs on entry-level Android phones. Download at the site office, learn offline on the bus.'],
-          ['🎬', 'Reels, not lectures', 'One idea in a minute or two. The format they already watch every day.'],
-          ['🖼️', 'Pictures and voice', 'Picture questions and spoken answers for people who read little.'],
-          ['📌', 'Enforcement', 'What matters pops up over everything, until it is done.'],
-          ['📣', 'Announcements', 'Site rules, recognition and news at the top of home, for one site or all.'],
-          ['💬', 'Nudges that work', 'WhatsApp, push and SMS on a cadence you set, then the supervisor.'],
-          ['🏅', 'Recognition', 'Stars, badges and employee of the month. Being noticed keeps people.'],
-        ].map(([ic, h, p], i) => `<div class="t" style="--d:${0.06 + i * 0.05}s"><div class="ic">${ic}</div><h4>${h}</h4><p>${p}</p></div>`).join('')}
-      </div>
-      <div class="bharat-who"><span class="l">Used every month by</span><span>delivery partners</span><span>store associates</span><span>housekeepers</span><span>security guards</span><span>drivers and fleets</span><span>field sales</span><span>factory operators</span></div>
-    </div>`, { glow: true }),
-
-  plainSlide('ds9', 'light', 'Who learns with us',
-    'Who learns with us · the frontline of India’s largest employers',
-    'From refineries to delivery fleets to facility teams, <em>their frontline learns on BetterPlace.</em>',
-    `<div class="wall">
-      ${[
-        [`<img src="assets/logo/t-reliance.png" alt="" style="max-height:40px"/><span class="wm" style="color:#1d3c6e;margin-left:8px">Reliance</span>`, 'Retail · O2C · manufacturing', 'Store associates, and housekeeping and facility staff across manufacturing.'],
-        [logo('assets/logo/t-jll.png', 'JLL'), 'Facility management', 'Safety training for vendor and sub-vendor staff across client sites.'],
-        [logo('assets/logo/t-bpcl.png', 'Bharat Petroleum'), 'Energy · refineries', 'Contract workforce across refineries, on the same platform.'],
-        [logo(null, 'zepto', '#5b1a99'), 'Quick commerce', 'Riders deployed only after training is complete.'],
-        [logo('assets/logo/t-accenture.png', 'Accenture'), 'Drivers and fleets', 'Training for drivers and fleet staff.'],
-        [logo('assets/logo/c-meesho.svg', 'Meesho'), 'Delivery partners', 'Delivery partners trained end to end.'],
-        [logo(null, 'EJADAH', '#0b3d5c'), 'Dubai Holding · facilities', 'Training for their entire staff.'],
-        [logo('assets/logo/c-iffco-tokio.svg', 'IFFCO Tokio'), 'Insurance', 'India’s largest composite insurer; ~30,000 sales staff coached by AI.'],
-        [logo(null, 'purplle', '#d61f69'), 'Beauty retail', 'Retail sales associates in stores.'],
-        [`<span class="wm" style="color:#111">amazon</span><img src="assets/logo/t-amazon.png" alt="" style="max-height:30px;margin-left:6px"/>`, 'Logistics', 'GSF Learning Academy across two business units.'],
-      ].map(([l, w, p], i) => `<div class="b" style="--d:${0.04 + i * 0.04}s"><div class="lg">${l}</div><div class="w">${w}</div><p>${p}</p></div>`).join('')}
-    </div>
-    <div class="foot" style="margin-top:10px">Logos shown with the work we do for each. Outcomes on the next slides are client-reported.</div>`),
 
   plainSlide('ds10', 'light', 'Case studies · facility and frontline',
     'Case studies · 1 of 2 · facility teams at scale',
@@ -458,5 +480,5 @@ export const dtssLmsSlides: SlideDef[] = [
       ${[['Your brief, point by point', 'All nine areas, live or configured'], ['Credentials', 'Ten years, 25M+ profiles'], ['How it comes together', 'Join, learn, train, prove'], ['Two users', 'Trainer and employee'], ['Integration', 'Onboarding app and ERP, both ways'], ['Assignment', 'Role, site and industry rules'], ['AI content', 'Reels, videos, translation'], ['Content governance', 'Your SMEs approve'], ['Learner app', 'Offline, any phone'], ['Trainer schedules', 'Sites and sessions'], ['No signal, shared phones', 'Trainer flow'], ['Certification', 'Tests and certificates'], ['Gamification and engagement', 'Stars, badges, teams'], ['Nudges and escalation', 'The full ladder'], ['Who sees what', 'Access by role'], ['AI agents and status', 'Saathi, what is live']].map(([b, t]) => `<div><b>${b}</b>${t}</div>`).join('')}
     </div>`, { glow: true }),
 
-  ...['dt2', 'cmA', 'dt3', 'dt4', 'dt5', 'dt6', 'dt7', 'dt7b', 'dt9', 'dt10', 'dt11', 'dt11b', 'dt12', 'dt13', 'dt13b', 'dt14', 'dt15', 'dt15b', 'dt16', 'dt17', 'dt18', 'dt19'].map(pick),
+  ...['dt2', 'cmA', 'dt3', 'dt4', 'dt5', 'dt6', 'dt7', 'dt7b', 'dt9', 'dt11', 'dt11b', 'dt12', 'dt13', 'dt14', 'dt15', 'dt15b', 'dt16', 'dt17', 'dt18', 'dt19'].map(pick),
 ]
