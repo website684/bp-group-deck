@@ -118,7 +118,7 @@ const integUI = `
   ${bar('skillBetter · Integrations · onboarding app and ERP', 'Live')}
   <div class="tm-body">
     <div class="tm-rows">
-      ${row('Onboarding app · new joiner', 'Ramesh K. · Housekeeping · joined today · enrolled in the compulsory path in his language', 'Enrolled', 'g')}
+      ${row('Onboarding app · new joiner', 'Ramesh K. · Housekeeping · joined today · enrolled in the compulsory path in their language', 'Enrolled', 'g')}
       ${row('ERP · employee-site mapping', 'Moved to a hospital site · hospital industry pack assigned automatically', 'Assigned', 'b')}
       ${row('ERP · site master', 'New customer site added · site appears in trainer schedules and reports', 'Synced', 'g')}
       ${row('ERP ← completion status', 'Certificates and completions written back, so both systems show the same picture', 'Synced', 'g')}
@@ -167,7 +167,7 @@ const trainerPhones = `
     <div class="it"><div>Score<small>5 of 5 · certificate issued</small></div><span class="ok">Pass</span></div>
     <div class="it"><div>Rate the session<small>★★★★★ · clear and practical</small></div></div>
     <div class="btn">Done</div>
-  </div></div><div class="cap">2 · questionnaire on his phone</div></div>
+  </div></div><div class="cap">2 · questionnaire on their phone</div></div>
 </div>`
 
 const nudgeUI = `
@@ -175,10 +175,10 @@ const nudgeUI = `
   ${bar('skillBetter · Nudges and escalation · compulsory onboarding path', 'Live')}
   <div class="tm-body">
     <div class="tm-rows">
-      ${row('Day 0 · assigned', 'Push notification and in-app banner, in his language', 'Push', 'b')}
+      ${row('Day 0 · assigned', 'Push notification and in-app banner, in their language', 'Push', 'b')}
       ${row('Day 2 · not started', 'Reminder with a 60-second reel to restart', 'Reminder', 'b')}
-      ${row('Day 5 · still pending', 'Site supervisor alerted with the names on his site', 'Supervisor', 'y', 'warn')}
-      ${row('Day 7 · overdue', 'Escalated to the area manager; shows red on the customer report', 'Escalated', 'r', 'hot')}
+      ${row('Day 5 · still pending', 'Site supervisor alerted with the names on that site', 'Supervisor', 'y', 'warn')}
+      ${row('Day 7 · overdue', 'Escalated to the area manager; shows on your internal dashboard only', 'Escalated', 'r', 'hot')}
     </div>
     <div class="tm-h" style="margin:12px 0 0"><b>Cadence and escalation levels are set by you</b><span>per path</span></div>
   </div>
@@ -225,7 +225,7 @@ const nodes: [number, number, string, string, string][] = [
 const ringG = nodes.map(([x, y, a, l1, l2], i) => `<g class="cyc fnode2"><path class="arc" d="${a}"/><circle cx="${x}" cy="${y}" r="44"/><text x="${x}" y="${y - 12}" text-anchor="middle" class="nn">0${i + 1}</text><text x="${x}" y="${y + 5}" text-anchor="middle" class="nl">${l1}</text><text x="${x}" y="${y + 20}" text-anchor="middle" class="nl">${l2}</text></g>`).join('')
 const ringPanes = [
   ['01 · Join and assign', 'A new joiner arrives from your onboarding app; the ERP says which site and industry. The right compulsory path is assigned the same day.', 'Nobody starts on site untrained'],
-  ['02 · Learn on the app', 'Reels of a minute or two, lessons and site instructions in Hindi or his own language, on his phone, between shifts.', 'Learning that actually gets finished'],
+  ['02 · Learn on the app', 'Reels of a minute or two, lessons and site instructions in Hindi or their own language, on their phone, between shifts.', 'Learning that actually gets finished'],
   ['03 · Train on site', 'Trainers are scheduled to customer sites, mark attendance there, and run a questionnaire on each participant’s phone.', 'Proof of every session, and how well it landed'],
   ['04 · Prove to customers', 'Each customer sees that the people on their premises are trained, and kept trained, every month.', 'A report you can put in front of any customer'],
 ].map(([t, d, p]) => `<div class="cycpane fpane"><div class="t">${t}</div><p>${d}</p><div class="pr"><span>Proof</span>${p}</div></div>`).join('')
@@ -264,7 +264,7 @@ export const dtssLmsSlides: SlideDef[] = [
 
   plainSlide('dt2', 'light', 'What you asked for',
     'What you asked for · and where each one is answered today',
-    'Nine things you asked for. <em>Each one runs on the platform today, or is set up for you on what does.</em>',
+    'Nine areas from your brief. <em>Each one runs on the platform today, or is set up for you on what does.</em>',
     `<div class="dt-asks">
       ${[
         ['01 · Two users', 'Live', 'Trainers and employees, one app', 'Trainers run site sessions; employees learn on their own.'],
@@ -288,7 +288,7 @@ export const dtssLmsSlides: SlideDef[] = [
         ['8 Jul', 'Your scripts, made into courses', 'AIDET Process and Hand Hygiene, built from SMC’s scripts, on your demo app.'],
         ['13 Jul', 'Your SCORM, cut into bite-size', '“Wet and Dry Vacuum Cleaners” reused and broken into short lessons.'],
         ['28 Jul', 'Realistic AI video', 'A first cut using SMC staff in your uniform, for learning by watching.'],
-        ['24 Aug', 'Your 11 requirements', 'Integration, assessments, journeys by site type, nudges, client reports, classroom training.'],
+        ['24 Aug', 'Your requirement list', 'Integration, assessments, journeys by site type, nudges, client reports, classroom training.'],
         ['Nov', 'DTSS reels live', 'Eight housekeeping reels, a DTSS catalogue by role and on-site classes in your org.'],
       ].map(([d, b, t], i) => `<div class="e" style="--d:${0.1 + i * 0.1}s"><div class="d">${d}</div><b>${b}</b><p>${t}</p></div>`).join('')}
     </div>
@@ -316,11 +316,11 @@ export const dtssLmsSlides: SlideDef[] = [
         <li>Marks attendance at the site, or people check in by QR</li>
         <li>Starts a short questionnaire on every participant’s phone</li>
       </ul></div>
-      <div class="u" style="--d:.3s"><div class="r">The employee</div><h4>Learns on his own phone</h4><ul>
-        <li>Opens the app to reels of a minute or two, in Hindi or his own language</li>
-        <li>Finishes his compulsory path, refreshers and site instructions</li>
-        <li>Takes the test inside the content and gets his certificate</li>
-        <li>Earns points and sees his site on the leaderboard</li>
+      <div class="u" style="--d:.3s"><div class="r">The employee</div><h4>Learns on their own phone</h4><ul>
+        <li>Opens the app to reels of a minute or two, in Hindi or their own language</li>
+        <li>Finishes the compulsory path, refreshers and site instructions</li>
+        <li>Takes the test inside the content and gets a certificate</li>
+        <li>Earns points and sees their team on the leaderboard</li>
       </ul></div>
     </div>`, { glow: true }),
 
@@ -339,7 +339,7 @@ export const dtssLmsSlides: SlideDef[] = [
 
   plainSlide('dt4c', 'light', 'Training follows the site',
     'Use cases · the customer site decides the training',
-    'A hospital, a mall and a corporate office need different housekeeping. <em>The ERP says where he works; the right pack follows.</em>',
+    'A hospital, a mall and a corporate office need different housekeeping. <em>The ERP says where each person works; the right pack follows.</em>',
     `<div class="dt-sites">
       ${[
         ['#d9452f', 'Hospital', 'Infection risk, patient areas', ['Infection control', 'Biomedical waste', 'Hand hygiene', 'AIDET'], 'Certified before entering patient areas'],
@@ -354,7 +354,7 @@ export const dtssLmsSlides: SlideDef[] = [
   problemSlide({
     id: 'dt5', theme: 'light', title: 'Integration', rail, step: 1, demo: 'Live · integrations',
     kick: 'Integrate · your onboarding app and your ERP',
-    h2: 'A new joiner is enrolled the day he joins, <em>and his training follows him from site to site.</em>',
+    h2: 'A new joiner is enrolled the day they join, <em>and their training follows them from site to site.</em>',
     qLabel: Q, quote: 'Joiners, site moves and exits live in other systems. Training lists are updated by hand, late.',
     changes: [
       { ic: icons.plug, b: 'From the onboarding app.', t: 'A new joiner arrives with role and language, and the compulsory path is assigned the same day.' },
@@ -402,6 +402,25 @@ export const dtssLmsSlides: SlideDef[] = [
     foot: 'The reel shown is live in the DTSS app today. AI reels, translation and AI video are live; site-instruction generation is configured on your SOPs.',
   }),
 
+  plainSlide('dt7b', 'light', 'How content gets made and approved',
+    'Content governance · who writes, who checks, who approves',
+    'Your SMEs stay in charge of what your people learn. <em>AI does the heavy lifting in between.</em>',
+    `<div>
+      <div class="dt-days" style="grid-template-columns:repeat(5,1fr)">
+        ${[
+          ['01 · Brief', 'Your SME shares the source', 'An SOP, a SCORM file, a long video or a 5-line idea.'],
+          ['02 · Draft', 'We draft the script', 'Steps, scenes and questions, in your words and uniforms.'],
+          ['03 · Review', 'Your SME checks the script', 'Fixes are cheapest here, before any video is made.'],
+          ['04 · Produce', 'Video, reels and quiz made', '2D, 3D or realistic; translated into your languages.'],
+          ['05 · Approve', 'You approve, then publish', 'Nothing reaches your people without your sign-off.'],
+        ].map(([w, h, y], i) => `<div class="s" style="--d:${0.08 + i * 0.08}s;background:var(--surface,#f7f8fb);border-color:var(--border)"><div class="w" style="color:var(--navy)">${w}</div><h4 style="color:var(--ink)">${h}</h4><div class="y" style="color:var(--text);background:#fff">${y}</div></div>`).join('')}
+      </div>
+      <div class="tel-close" style="margin-top:14px;grid-template-columns:1fr 1fr">
+        <div class="tel-band light" style="margin:0"><span class="bl">Your content stays yours</span><p>Everything made for DTSS and SMC belongs to you, and exports in standard formats if you ever leave. One to two revision rounds are built into every video.</p></div>
+        <div class="tel-band light" style="margin:0"><span class="bl">Ready from day one</span><p>250+ ready courses come with the platform: safety, communication, financial literacy, workplace basics. Your library list is in the pack.</p></div>
+      </div>
+    </div>`),
+
   plainSlide('dt8', 'light', 'Already built for DTSS',
     'Sample content · already built for DTSS and live in your app',
     'We did not wait for the contract. <em>These DTSS housekeeping reels are already on the platform.</em>',
@@ -425,12 +444,12 @@ export const dtssLmsSlides: SlideDef[] = [
 
   problemSlide({
     id: 'dt9', theme: 'light', title: 'Learn on the app', rail, step: 4, demo: 'Live · learner app',
-    kick: 'Learn · on his phone, in his language, between shifts',
+    kick: 'Learn · on their phone, in their language, between shifts',
     h2: 'An app your people open on their own, <em>and finish what they start.</em>',
     qLabel: Q, quote: 'Training means a classroom day off the floor, or a link nobody opens.',
     changes: [
       { ic: icons.play, b: 'Reels first.', t: 'A reel feed on the home screen leads into lessons, assessments, events and catalogues.' },
-      { ic: icons.lang, b: 'His language.', t: 'He picks the language before he starts; progress and coins stay with him.' },
+      { ic: icons.lang, b: 'Their language.', t: 'Each person picks the language before starting; progress and coins stay with them.' },
       { ic: icons.check, b: 'Works on any phone, offline too.', t: 'Download at the site office, finish on the bus.' },
     ],
     proof: { n: '88%', p: 'course completion across our clients, against about 25% in the industry. <b>Amazon</b> reached 91%.' },
@@ -474,6 +493,19 @@ export const dtssLmsSlides: SlideDef[] = [
     foot: 'Classroom attendance, post-session feedback and assessments are live. Screens are authored views of the same flows.',
   }),
 
+  plainSlide('dt11b', 'dark', 'No signal, shared phones',
+    'Trainers · when the site has no signal and not everyone has a phone',
+    'A basement, a factory floor, three people to one phone. <em>The session still counts, and you can prove it happened.</em>',
+    `<div class="dt-days" style="grid-template-columns:repeat(4,1fr);align-items:start">
+      ${[
+        ['No signal', 'Trainer’s phone works offline', 'Roster for the session downloaded beforehand; attendance and scores saved on the phone and synced when back on the network.'],
+        ['No smartphone', 'Trainer marks it for them', 'For anyone without a phone, the trainer asks the questions aloud and records each answer on their own device.'],
+        ['Shared phones', 'One phone, many learners', 'Each person signs in by number on the same phone in turn; results stay with the right person.'],
+        ['Proof of visit', 'Time, place and a group photo', 'Session start time and location captured, with a group photo attached to the record your customer report uses.'],
+      ].map(([w, h, y], i) => `<div class="s" style="--d:${0.1 + i * 0.1}s"><div class="w">${w}</div><h4>${h}</h4><div class="y">${y}</div></div>`).join('')}
+    </div>
+    <div class="foot" style="margin-top:12px">Offline learning, QR check-in and post-session quizzes are live. Trainer-side offline sync, assisted marking and photo proof are set up and tested on your sites in the pilot.</div>`, { glow: true }),
+
   problemSlide({
     id: 'dt12', theme: 'light', title: 'Evaluation and certification', rail, step: 6, demo: 'Live · assessments',
     kick: 'Certify · tests inside the content, certificates on completion',
@@ -482,9 +514,9 @@ export const dtssLmsSlides: SlideDef[] = [
     changes: [
       { ic: icons.doc, b: 'Tests in the content.', t: 'Questions inside reels and lessons, and a final assessment: 12+ question types, including picture questions.' },
       { ic: icons.shield, b: 'Fair and controlled.', t: 'Random order, pass marks, retakes and due dates; face-checked proctoring for exams that matter.' },
-      { ic: icons.trophy, b: 'A certificate he keeps.', t: 'Issued on passing, with a refresher date. Customers can see it in their report.' },
+      { ic: icons.trophy, b: 'A certificate they keep.', t: 'Issued on passing, with a refresher date. Customers can see it in their report.' },
     ],
-    proof: { n: '99.2%', p: 'face-detection accuracy in proctored assessments, with strikes and auto-pause.' },
+    proof: { n: '12+', p: 'question types, including picture questions that work for staff who read little. Face-checked proctoring is optional, for exams that need it.' },
     vis: `<div class="dt-cust"><div class="tm-fan" style="height:420px"><div class="ph" style="left:20%"><img src="assets/product/figma/skilling/skillbetter-mobile-image-mcq-feedback.png" alt="Picture question"/><em>Picture question</em></div></div>
       <div style="display:flex;flex-direction:column;gap:12px;justify-content:center">
         <div class="dt-cert"><div class="k">Certificate · DTSS</div><h4>Chemical Safety</h4><p>Ramesh K. · Housekeeping<br/>Passed 5 of 5 · 14 Oct 2026 · refresher due Apr 2027</p></div>
@@ -504,11 +536,11 @@ export const dtssLmsSlides: SlideDef[] = [
       { ic: icons.eye, b: 'Recognition on the feed.', t: 'Employee of the month and best performer posts on the app’s home screen, already used in your demo org.' },
     ],
     proof: { n: '+19.7%', p: 'week-on-week retention at <b>Meesho</b> with gamified learning; +65% voluntary participation across clients.' },
-    vis: `<div class="tm">${bar('skillBetter · Site leaderboard · North zone · October', 'Live')}<div class="tm-body"><div class="tm-gauges" style="margin-top:0">
-      <div class="gg"><b>City Hospital, Gurugram</b><span class="tr"><i style="--w:96%;--d:.3s"></i></span><span class="v">9,420 pts</span></div>
-      <div class="gg"><b>Tech park, Noida</b><span class="tr"><i style="--w:84%;--d:.4s"></i></span><span class="v">8,210 pts</span></div>
-      <div class="gg"><b>Hotel, Aerocity</b><span class="tr"><i style="--w:71%;--d:.5s"></i></span><span class="v">6,940 pts</span></div>
-      <div class="gg"><b>Mall, Delhi</b><span class="tr"><i style="--w:52%;--bc:#FF9518;--d:.6s"></i></span><span class="v">5,080 pts</span></div>
+    vis: `<div class="tm">${bar('skillBetter · Team leaderboard · North zone · October', 'Live')}<div class="tm-body"><div class="tm-gauges" style="margin-top:0">
+      <div class="gg"><b>Team Gurugram · hospitals</b><span class="tr"><i style="--w:96%;--d:.3s"></i></span><span class="v">9,420 pts</span></div>
+      <div class="gg"><b>Team Noida · offices</b><span class="tr"><i style="--w:84%;--d:.4s"></i></span><span class="v">8,210 pts</span></div>
+      <div class="gg"><b>Team Aerocity · hotels</b><span class="tr"><i style="--w:71%;--d:.5s"></i></span><span class="v">6,940 pts</span></div>
+      <div class="gg"><b>Team Delhi · retail</b><span class="tr"><i style="--w:52%;--bc:#FF9518;--d:.6s"></i></span><span class="v">5,080 pts</span></div>
     </div><div class="tm-rows" style="margin-top:12px">
       ${row('Badge · Safety Champion', 'All four safety reels and the test passed', '312 earned', 'g')}
       ${row('Recognition · Employee of the month', 'Posted to the app feed for the whole region', 'Live', 'b')}
@@ -521,7 +553,7 @@ export const dtssLmsSlides: SlideDef[] = [
     'Your people do not lack time or interest. <em>They lack a reason, a format that fits a shift, and someone noticing.</em>',
     `<div class="dt-why">
       ${[
-        ['“It’s in English.”', '<b>His language.</b> Hindi or any of 35, chosen per course.'],
+        ['“It’s in English.”', '<b>Their language.</b> Hindi or any of 35, chosen per course.'],
         ['“It’s too long.”', '<b>Reels of a minute or two.</b> One idea each, between tasks.'],
         ['“No data on my phone.”', '<b>Download at the site office,</b> finish offline on the bus.'],
         ['“Nobody notices.”', '<b>Recognition on the feed,</b> employee of the month, site leaderboard.'],
@@ -537,7 +569,7 @@ export const dtssLmsSlides: SlideDef[] = [
     h2: 'Reminders bring people back. <em>If they don’t, their manager hears about it.</em>',
     qLabel: Q, quote: 'Pending training is chased by phone, one supervisor at a time.',
     changes: [
-      { ic: icons.zap, b: 'Push and in-app reminders.', t: 'On a cadence you set, in his language, with a short reel to restart.' },
+      { ic: icons.zap, b: 'Push and in-app reminders.', t: 'On a cadence you set, in their language, with a short reel to restart.' },
       { ic: icons.warn, b: 'Escalation by level.', t: 'Overdue goes to the site supervisor, then the area manager, with the names to push.' },
       { ic: icons.mic, b: 'An AI call if needed.', t: 'For compulsory training, an AI voice agent can call and walk him through it.' },
     ],
@@ -561,6 +593,22 @@ export const dtssLmsSlides: SlideDef[] = [
     foot: 'Reports are built on live platform data and configured to your format in the first weeks. Customer and numbers illustrative.',
   }),
 
+  plainSlide('dt15b', 'dark', 'Who sees what',
+    'Access · who sees what, across DTSS, SMC and your customers',
+    'A hospital never sees a mall’s staff. <em>DTSS and SMC each see their own, and leadership sees both.</em>',
+    `<div class="tel-status tight">
+      <div class="h"></div><div class="h">Who</div><div class="h">What they see</div><div class="h">Access</div>
+      ${[
+        ['SIS leadership', 'DTSS and SMC together, every region and site', 'mix', 'Both brands'],
+        ['DTSS or SMC admins', 'Only their own brand: people, content, trainers, reports', 'live', 'One brand'],
+        ['Area manager · supervisor', 'Their region or site, and who to push', 'live', 'Their sites'],
+        ['Trainer', 'Their schedule, attendees and session results', 'live', 'Own sessions'],
+        ['Customer admin head', 'Only the staff deployed at their premises, certified status and visits', 'mix', 'Configured · one site'],
+        ['Employee', 'Their own path, scores, certificates and next role', 'live', 'Self'],
+      ].map(([b, sp, c, t], i) => `<div class="r" style="--d:${0.05 + i * 0.05}s"><i>·</i><b>${b}</b><span>${sp}</span><em class="${c}">${t}</em></div>`).join('')}
+    </div>
+    <div class="foot" style="margin-top:10px">Role-based access by brand, region and site is live. Customer access is set up per site as a read-only report or login, agreed with you. Hosted in India.</div>`, { glow: true }),
+
   plainSlide('dt16', 'light', 'Trainer, employee and career reports',
     'Reports · 2 of 2 · trainers, employees and career paths',
     'Know which trainer is good at what, who is ready to deploy, <em>and who is ready for the next role.</em>',
@@ -573,7 +621,7 @@ export const dtssLmsSlides: SlideDef[] = [
     `<div>
       <div class="tel-agents tai">
         ${[
-          ['Saathi · DTSS coach', 'Pilot', 'Learn', 'Your training and sales coach: answers from your SOPs, runs quizzes and customer role-play, and helps with the Mitra app, in an Indian voice.'],
+          ['Saathi · DTSS coach', 'Pilot', 'Learn', 'Your training and sales coach: answers from your SOPs, runs quizzes and customer role-play, in an Indian voice.'],
           ['Content studio', 'Live', 'Content', 'Turns a deck or a PDF into reels, questions and translations, ready for review.'],
           ['Calling agent', 'Live', 'Nudge', 'Calls people with overdue compulsory training and walks them through it.'],
           ['Induction agent', 'Live', 'Certify', 'Your safety SOP as a fixed flow: every step, a test and photo proof, every time.'],
@@ -612,14 +660,14 @@ export const dtssLmsSlides: SlideDef[] = [
     </div>`),
 
   plainSlide('dt20', 'darker', 'How we start',
-    'How we start · live with your people in six weeks',
-    'Six weeks to your first customer report, <em>with your content, your sites and your trainers.</em>',
+    'How we start · one region first, then every wave',
+    'One region live in eight weeks, <em>then the rest of the 75,000 in waves you control.</em>',
     `<div>
       <div class="tel-phase4">
-        <div class="ph4" style="--d:.15s"><div class="w">Weeks 1–2</div><h4>Connect and set up</h4><p>First region of the 75,000; onboarding app and ERP connected, catalogues and rules by role and industry, trainers and sites loaded.</p><div class="who">Joint</div></div>
-        <div class="ph4" style="--d:.3s"><div class="w">Weeks 2–4</div><h4>Upgrade content</h4><p>Your priority SOPs cut into reels, new AI videos for gaps, translated into your top languages.</p><div class="who">BetterPlace</div></div>
-        <div class="ph4" style="--d:.45s"><div class="w">Weeks 3–6</div><h4>Go live on sites</h4><p>Employees on the app, trainers running site sessions with attendance and quizzes, nudges on.</p><div class="who">Joint</div></div>
-        <div class="ph4" style="--d:.6s"><div class="w">Week 6</div><h4>First customer report</h4><p>Trained-and-deployed proof for your first customers, plus trainer and employee dashboards.</p><div class="who">Measured</div></div>
+        <div class="ph4" style="--d:.15s"><div class="w">Weeks 1–3</div><h4>Data and set-up</h4><p>ERP field map and site-type clean-up, a default pack by role where data is missing; onboarding app and ERP connected, catalogues and rules by role and industry, trainers and sites loaded.</p><div class="who">Joint</div></div>
+        <div class="ph4" style="--d:.3s"><div class="w">Weeks 2–6</div><h4>Upgrade content</h4><p>Your priority SOPs cut into reels, new AI videos for gaps, translated into your top languages.</p><div class="who">BetterPlace</div></div>
+        <div class="ph4" style="--d:.45s"><div class="w">Weeks 4–8</div><h4>First region live</h4><p>Employees on the app, trainers running site sessions with attendance and quizzes, nudges on.</p><div class="who">Joint</div></div>
+        <div class="ph4" style="--d:.6s"><div class="w">Then, wave by wave</div><h4>All 75,000</h4><p>Region by region, train-the-trainer at each wave. First customer reports go out from the first region.</p><div class="who">Measured</div></div>
       </div>
       <div class="tel-close" style="margin-top:16px;grid-template-columns:1.2fr .8fr">
         <div class="tel-band ghost" style="margin:0;grid-template-columns:auto 1fr"><span class="bl">What we measure</span><p>Completion of compulsory paths, time from joining to certified, trainer sessions per site, and customers receiving a monthly training report.</p></div>
