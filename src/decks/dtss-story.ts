@@ -1,5 +1,5 @@
 import type { SlideDef } from '../lib/types'
-import { plainSlide } from './story-kit'
+import { plainSlide, bar, row } from './story-kit'
 import { dtssFeatureSlides, dtssCss, trainerPhones, custReport } from './dtss-lms'
 
 // DTSS and SMC (SIS Group) · skillBetter, CEO cut (Nov 2026).
@@ -220,7 +220,7 @@ export const dtssLmsSlides: SlideDef[] = [
           <h1>75,000 people, many languages, thousands of sites. <em>Every one of them good at the job.</em></h1>
           <p>How your trainers reach every person on every shift, in the language they think in, and how you prove it to every customer.</p>
           <div class="tel-nums" style="margin-top:24px">
-            <div><div class="n">25L<em>+</em></div><div class="l">Frontline people learning on our app every month</div></div>
+            <div><div class="n">1M<em>+</em></div><div class="l">Frontline people learning on our app every month</div></div>
             <div><div class="n">35<em>+</em></div><div class="l">Languages, voice and text</div></div>
             <div><div class="n">88%</div><div class="l">Completion, against ~25% in the industry</div></div>
           </div>
@@ -229,6 +229,19 @@ export const dtssLmsSlides: SlideDef[] = [
       </div>
     </div>`,
   },
+
+  plainSlide('ds1b', 'darker', 'Who we are',
+    'BetterPlace · India’s frontline learning platform',
+    'Over 10 lakh frontline workers learn on BetterPlace every month. <em>Across India’s largest employers and every major industry.</em>',
+    `<div>
+      <div class="tel-stakes">
+        <div class="st" style="--d:.1s"><div class="n">1M<em>+</em></div><div class="l">frontline users every month</div><p>Housekeepers, guards, store staff, delivery partners, drivers and plant workers, on their own phones.</p><div class="src">Monthly active users</div></div>
+        <div class="st" style="--d:.2s"><div class="n">1,000<em>+</em></div><div class="l">companies on the platform</div><p>Retail, energy, facility management, logistics, quick commerce, insurance and manufacturing.</p><div class="src">Enterprise clients</div></div>
+        <div class="st" style="--d:.3s"><div class="n">1.2L</div><div class="l">monthly users at Meesho alone</div><p>Their entire delivery fleet trained on our app. <b>Bharat Petroleum:</b> about 45,000 people.</p><div class="src">Client deployments</div></div>
+        <div class="st" style="--d:.4s"><div class="n">35<em>+</em></div><div class="l">Indian languages, voice and text</div><p>Every reel, quiz and screen in the language your people think in.</p><div class="src">On the platform today</div></div>
+      </div>
+      <div class="tel-band ghost" style="margin-top:14px"><span class="bl">Facility teams already</span><p><b>JLL</b> trains the facility staff it deploys to clients like Accenture and Google on BetterPlace. <b>Reliance</b> trains its housekeeping and facility staff across manufacturing.</p></div>
+    </div>`, { glow: true }),
 
   plainSlide('ds2', 'light', 'Your trainer’s reality',
     'The problem · seen from the ground, through one of your trainers',
@@ -309,6 +322,29 @@ export const dtssLmsSlides: SlideDef[] = [
      ['Straight to the customer report.', 'Who is certified for that site, refreshed every month.']],
     ['QR', 'check-in and post-session quizzes are live on the platform today.'],
     trainerPhones),
+
+  plainSlide('ds7v', 'dark', 'Video generation',
+    'Problem 6 · content people relate to · AI video generation',
+    'Your SOPs become videos your people recognise themselves in. <em>Your staff, your uniform, your sites, in their language.</em>',
+    `<div class="tel-body" style="grid-template-columns:minmax(0,.44fr) minmax(0,.56fr);align-items:center">
+      <div class="tel-say">
+        <div class="blk"><div class="lbl">On the ground today</div><div class="tq">Training videos are long, in English, and show people who don’t look like your staff. Nobody relates, nobody finishes.</div></div>
+        <div class="blk"><div class="lbl">What changes</div><ul>
+          <li><span class="ic" style="font-size:13px;font-weight:800;color:#F39200">✓</span><span><b>Script to video.</b> An SOP, a SCORM file or five lines become a 1–3 minute video, with questions at intervals.</span></li>
+          <li><span class="ic" style="font-size:13px;font-weight:800;color:#F39200">✓</span><span><b>Three styles.</b> 2D animation for scale, 3D, or realistic video with DTSS and SMC staff in uniform.</span></li>
+          <li><span class="ic" style="font-size:13px;font-weight:800;color:#F39200">✓</span><span><b>Every language from one video.</b> Voice and captions in Hindi, Bengali, Tamil and more.</span></li>
+        </ul></div>
+        <div class="proof"><div class="n">Already made</div><p>AIDET and Hand Hygiene from SMC’s scripts, your vacuum-cleaner SCORM cut into lessons, and a realistic first cut with SMC staff.</p></div>
+      </div>
+      <div class="tel-vis"><div class="dt-reels"><div class="ph"><img src="assets/product/dtss/reel-housekeeping-role.jpg" alt="DTSS AI video"/></div>
+        <div class="tm" style="margin:0">${bar('skillBetter · AI video studio · DTSS', 'Live')}<div class="tm-body"><div class="tm-rows">
+          ${row('1 · Script', 'From your SOP · your SME edits it', 'Approved', 'g')}
+          ${row('2 · Style', 'Realistic · SMC uniform · hospital ward', 'Chosen', 'b')}
+          ${row('3 · Video', '2 min 10 s · 3 questions in between', 'Ready', 'g')}
+          ${row('4 · Languages', 'Hindi, Bengali, Tamil, Odia', 'Voicing', 'y')}
+          ${row('5 · Publish', 'As a reel and a course, to hospital staff', 'Scheduled', 'g')}
+        </div></div></div></div></div>
+    </div>`),
 
   pick('dt4b'),
   pick('dt4c'),
