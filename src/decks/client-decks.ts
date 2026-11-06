@@ -5,6 +5,8 @@
 export interface ClientDeck { id: string; client: string; colour: string; topic: string; when: string; note: string }
 
 export const clientDecks: ClientDeck[] = [
+  { id: 'dtss-lms', client: 'DTSS (SIS Group)', colour: 'F39200', topic: 'LMS', when: 'Nov 2026', note: 'Final leadership call: their nine asks answered, AI reels built for DTSS, trainer site sessions, certification, nudges and customer training reports.' },
+  { id: 'ril-incentive-os', client: 'Reliance Retail', colour: '0A2D6E', topic: 'Incentives', when: 'Nov 2026', note: 'Leadership deck for the new SPOC: Excel chain today, four verticals on one engine, 100% pilot match for March and April, controls, system fit, 8-week go-live.' },
   { id: 'skh', client: 'SKH', colour: 'C8102E', topic: 'CLMS', when: 'Oct 2026', note: 'Second meeting with the CHRO: their numbers, his five questions answered, 12-hour overtime at 2×, worker voice, references and commercials.' },
   { id: 'bpcl-ai', client: 'Bharat Petroleum', colour: '0B4EA2', topic: 'AI Labs', when: 'Oct 2026', note: 'IOWMS processes, eight agents mapped to them, three agents in action, how to start, then AI Labs capabilities.' },
   { id: 'hyundai', client: 'Hyundai Motor India', colour: '002C5F', topic: 'CLMS', when: 'Oct 2026', note: 'Vendor management first: vendors, work orders, onboarding chain, passes, scorecard, then attendance, OT, PF/ESI challans, training, reimbursements.' },

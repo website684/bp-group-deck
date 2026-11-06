@@ -4,5 +4,6 @@ import './styles/legacy-deck.css'
 import './styles/app.css'
 import './styles/incentives.css'
 import './styles/story.css'
+import './styles/ril-incentive-os.css'
 
 createRoot(document.getElementById('root')!).render(<App />)

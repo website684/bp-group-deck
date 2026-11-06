@@ -1,0 +1,293 @@
+/* ------------------------------------------------------------------
+   Incentive OS for Reliance Retail (deck id ril-incentive-os), Nov 2026.
+   Built on story.css; everything here is prefixed rio-. Each slide carries an
+   <i class="rio-mark"> so the brand fonts and ink from the leadership-kit brief
+   (Bricolage Grotesque, Inter, IBM Plex Mono · ink #0c1442) apply to this deck only.
+   Entrance animations key off .slide.active so they replay on every visit.
+------------------------------------------------------------------- */
+.slide:has(.rio-mark) {
+  --disp: 'Bricolage Grotesque', 'Poppins', sans-serif;
+  --mono: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  --ink: #0c1442;
+}
+.slide:has(.rio-mark) .tel h2 { font-weight: 700; letter-spacing: -.015em; }
+
+@keyframes riopop { from { opacity: 0; transform: translateY(8px) } to { opacity: 1; transform: none } }
+@keyframes riodraw { from { stroke-dashoffset: 400 } to { stroke-dashoffset: 0 } }
+@keyframes riogrow { from { transform: scaleX(0) } to { transform: scaleX(1) } }
+@keyframes rioring { 0% { box-shadow: 0 0 0 0 rgba(255,196,1,.55) } 70% { box-shadow: 0 0 0 22px rgba(255,196,1,0) } 100% { box-shadow: 0 0 0 0 rgba(255,196,1,0) } }
+.slide.active [style*="--d"].rio-in, .slide.active .rio-file, .slide.active .rio-step, .slide.active .rio-ask,
+.slide.active .rio-chain .arr, .slide.active .rio-io .it, .slide.active .rio-core .rows > div,
+.slide.active .rio-v, .slide.active .rio-pilot .pc, .slide.active .rio-pilot .plus, .slide.active .rio-pilot .ios,
+.slide.active .rio-pilot .ar, .slide.active .rio-pilot .vs, .slide.active .rio-pilot .rv, .slide.active .rio-ctl,
+.slide.active .rio-sor .r > *, .slide.active .rio-ba .r, .slide.active .rio-lane span, .slide.active .rio-check li,
+.slide.active .rio-cost .st {
+  animation: riopop .5s var(--ease) both; animation-delay: var(--d, 0s);
+}
+
+/* status chips (cover + ready) */
+.rio-stat { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.rio-stat span { display: inline-flex; align-items: center; gap: 7px; font-family: var(--mono); font-size: 11.5px; letter-spacing: .05em; text-transform: uppercase; padding: 7px 12px 7px 9px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); color: #fff; background: rgba(255,255,255,.05); }
+.rio-stat span svg { width: 14px; height: 14px; stroke: #7ee6ac; fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.rio-stat span.wait { border-color: rgba(255,196,1,.6); color: var(--yellow); background: rgba(255,196,1,.1); }
+.rio-stat span.wait i { width: 8px; height: 8px; border-radius: 50%; background: var(--yellow); animation: telpulse 1.6s infinite; }
+.rio-stat.big { margin-top: 0; gap: 10px; }
+.rio-stat.big span { font-size: 12.5px; padding: 9px 15px 9px 11px; }
+
+/* ---- 1 cover ---- */
+.rio-cover { display: grid; grid-template-columns: 1fr 600px; gap: 48px; align-items: center; width: 100%; }
+.rio-cover .tel-covertext h1 { font-size: 50px; line-height: 1.06; }
+.rio-cover .tel-covertext p { font-size: 17px; max-width: 46ch; }
+.rio-by { margin-top: 26px; font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+.rio-cvis { position: relative; height: 470px; }
+.rio-cdash { position: absolute; right: 0; top: 10px; width: 560px; transform: perspective(1400px) rotateY(-9deg) rotateX(3deg); transform-origin: right center; }
+.rio-cphone { position: absolute; left: -6px; bottom: -6px; width: 196px; border-radius: 28px; background: #0b1030; padding: 7px; box-shadow: 0 40px 80px -20px rgba(0,0,0,.8), 0 0 50px -10px rgba(255,196,1,.35); animation: telfloat 7s ease-in-out infinite; }
+.rio-cphone img { display: block; width: 100%; height: 330px; object-fit: cover; object-position: top; border-radius: 22px; }
+.rio-cchip { position: absolute; right: 18px; bottom: 26px; background: var(--yellow); color: var(--ink); border-radius: 14px; padding: 12px 16px; font-size: 12px; line-height: 1.35; box-shadow: 0 20px 40px -14px rgba(255,196,1,.6); font-weight: 600; }
+.rio-cchip b { display: block; font-family: var(--disp); font-size: 26px; font-weight: 800; letter-spacing: -.02em; }
+.slide.active .rio-cchip { animation: riopop .6s var(--ease) .9s both; }
+
+/* ---- 2 the Excel chain ---- */
+.rio-chainwrap { display: flex; flex-direction: column; gap: 16px; }
+.rio-chain { display: grid; grid-template-columns: 1.05fr 74px 1.25fr 74px .8fr 64px .78fr; align-items: center; }
+.rio-chain .col { display: flex; flex-direction: column; gap: 8px; }
+.rio-chain .ch { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+.rio-in, .rio-step { background: #fff; border: 1px solid var(--border); border-radius: 11px; padding: 9px 12px; }
+.rio-in b, .rio-step b { display: block; font-family: var(--disp); font-size: 14px; color: var(--ink); }
+.rio-in small, .rio-step small, .rio-file small { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; line-height: 1.3; }
+.rio-file { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; background: #fff; border: 1px solid #b9dcc6; border-left: 4px solid #1d6f42; border-radius: 10px; padding: 8px 11px; }
+.rio-file .x { font-family: var(--mono); font-size: 10px; font-weight: 700; color: #fff; background: #1d6f42; border-radius: 5px; text-align: center; padding: 5px 0; }
+.rio-file b { font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--ink); word-break: break-all; }
+.rio-chain .arr { position: relative; height: 100%; display: flex; align-items: center; justify-content: center; }
+.rio-chain .arr::before { content: ""; position: absolute; left: 8px; right: 10px; top: 50%; border-top: 2px dashed #c7cfe9; }
+.rio-chain .arr::after { content: ""; position: absolute; right: 6px; top: calc(50% - 5px); border-left: 8px solid #c7cfe9; border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+.rio-chain .arr span { position: relative; z-index: 1; background: #fff6d6; border: 1px solid #f3dc8a; color: #7a5d00; font-family: var(--mono); font-size: 10px; letter-spacing: .03em; text-align: center; line-height: 1.3; padding: 4px 5px; border-radius: 6px; margin-top: -46px; }
+.rio-step { border-style: dashed; }
+.rio-ask { background: linear-gradient(160deg, #0f1a5c, #070a24); color: #fff; border-radius: 14px; padding: 14px; }
+.rio-ask .amt { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.6); }
+.rio-ask .q { font-family: var(--disp); font-weight: 700; font-size: 19px; color: var(--yellow); margin-top: 6px; line-height: 1.2; }
+.rio-ask small { display: block; margin-top: 8px; font-size: 12px; color: rgba(255,255,255,.7); line-height: 1.35; }
+.rio-time { display: flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); background: #fff; border: 1px solid var(--border); border-radius: 999px; padding: 8px 16px; }
+.rio-time i { flex: 1; height: 2px; background: linear-gradient(90deg, #f3dc8a, var(--orange)); transform-origin: left; }
+.slide.active .rio-time i { animation: riogrow .9s var(--ease) both; animation-delay: 1.3s; }
+.rio-time em { font-style: normal; font-weight: 700; color: #b45309; background: #fff1d6; border-radius: 999px; padding: 4px 10px; }
+.rio-pains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.rio-pains > div { font-size: 13.5px; line-height: 1.45; color: var(--text); border-left: 3px solid var(--yellow); padding: 2px 0 2px 12px; }
+.rio-pains b { color: var(--ink); }
+
+/* ---- 3 cost ---- */
+.rio-cost { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.rio-cost .st { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 18px; padding: 24px 24px 22px; min-height: 290px; }
+.rio-cost .ic { width: 40px; height: 40px; border-radius: 12px; background: rgba(255,196,1,.14); color: var(--yellow); display: grid; place-items: center; }
+.rio-cost .ic svg { width: 21px; height: 21px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.rio-cost .n { font-family: var(--disp); font-weight: 800; font-size: 32px; letter-spacing: -.02em; color: var(--yellow); margin-top: 18px; line-height: 1.05; }
+.rio-cost p { margin: 14px 0 0; font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.85); }
+
+/* ---- 4 engine ---- */
+.rio-eng { display: grid; grid-template-columns: 300px 110px 1fr 110px 300px; align-items: center; height: 430px; }
+.rio-io { display: flex; flex-direction: column; justify-content: space-between; height: 430px; }
+.rio-io .it { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px; height: 74px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 10px 24px -16px rgba(12,20,66,.35); }
+.rio-io.out .it { height: 96px; border-left: 4px solid var(--yellow); }
+.rio-io .it b { font-family: var(--disp); font-size: 15px; color: var(--ink); }
+.rio-io .it small { font-size: 12.5px; color: var(--muted); margin-top: 3px; line-height: 1.3; }
+.rio-wires { width: 110px; height: 430px; overflow: visible; }
+.rio-wires .w { fill: none; stroke: #b9c4ea; stroke-width: 2; stroke-dasharray: 400; stroke-dashoffset: 0; }
+.rio-wires .w.y { stroke: #f1c84b; }
+.slide.active .rio-wires .w { animation: riodraw 1s var(--ease) both; animation-delay: var(--d); }
+.rio-wires .pulse { fill: var(--navy); } .rio-wires .pulse.y { fill: #d9a300; }
+.rio-core { background: linear-gradient(160deg, #1B2D93, #0c1442); color: #fff; border-radius: 22px; padding: 22px 24px; height: 400px; display: flex; flex-direction: column; box-shadow: 0 40px 80px -30px rgba(12,20,66,.6); position: relative; overflow: hidden; }
+.rio-core::after { content: ""; position: absolute; right: -60px; top: -60px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(255,196,1,.22), transparent 70%); }
+.rio-core .hd span { font-family: var(--disp); font-weight: 800; font-size: 26px; letter-spacing: -.02em; display: block; }
+.rio-core .hd em { font-style: normal; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--yellow); }
+.rio-core .rows { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; flex: 1; }
+.rio-core .rows > div { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 10px; padding: 9px 12px; }
+.rio-core .rows b { display: block; font-size: 14px; }
+.rio-core .rows span { font-size: 12.5px; color: rgba(255,255,255,.7); }
+.rio-core .ft { margin-top: 12px; font-family: var(--disp); font-weight: 700; font-size: 15px; color: var(--yellow); }
+
+/* ---- 5 verticals ---- */
+.rio-vs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.rio-v { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.13); border-radius: 18px; padding: 20px 18px 18px; display: flex; flex-direction: column; gap: 12px; border-top: 4px solid var(--vc); min-height: 340px; }
+.rio-v .vh { margin: 0; padding: 0; }
+.rio-v.dg { --vc: #5b8cff; } .rio-v.gr { --vc: #3dbe7b; } .rio-v.fl { --vc: #e8503f; } .rio-v.rb { --vc: #b48cff; }
+.rio-v h4 { margin: 0; font-family: var(--disp); font-weight: 800; font-size: 23px; color: #fff; letter-spacing: -.01em; }
+.rio-v .vh small { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-top: 4px; }
+.rio-v p { margin: 0; font-size: 14.5px; line-height: 1.5; color: rgba(255,255,255,.85); }
+.rio-v code { margin-top: auto; }
+.rio-v code { font-family: var(--mono); font-size: 11.5px; line-height: 1.55; color: #fff; background: rgba(0,0,0,.25); border: 1px solid rgba(255,255,255,.1); border-radius: 9px; padding: 9px 11px; }
+.rio-v .vchip { align-self: flex-start; font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 5px 9px; border-radius: 7px; }
+.rio-v .vchip.g { background: rgba(61,190,123,.18); color: #7ee6ac; }
+.rio-v .vchip.c { background: rgba(255,255,255,.12); color: #fff; }
+
+/* ---- 6 pilot ---- */
+.rio-pilot { display: flex; flex-direction: column; gap: 16px; }
+.rio-pilot .flow { display: grid; grid-template-columns: 270px 1fr 200px 1fr 270px 1fr 156px; align-items: center; }
+.rio-pilot .src, .rio-pilot .cmp { display: flex; flex-direction: column; gap: 6px; }
+.rio-pilot .pc { display: grid; grid-template-columns: 34px 1fr; gap: 11px; align-items: center; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 12px; padding: 11px 13px; }
+.rio-pilot .pc.out { border-color: rgba(255,196,1,.5); background: rgba(255,196,1,.08); }
+.rio-pilot .pc .ic { width: 34px; height: 34px; border-radius: 9px; background: rgba(255,255,255,.1); color: var(--yellow); display: grid; place-items: center; }
+.rio-pilot .pc .ic svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.rio-pilot .pc b { display: block; font-family: var(--disp); font-size: 15px; color: #fff; }
+.rio-pilot .pc small { display: block; font-size: 12px; color: rgba(255,255,255,.65); margin-top: 2px; }
+.rio-pilot .plus, .rio-pilot .vs { text-align: center; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+.rio-pilot .plus { font-size: 18px; color: var(--yellow); line-height: 1; }
+.rio-pilot .ar { height: 2px; margin: 0 8px; background: linear-gradient(90deg, rgba(255,255,255,.2), var(--yellow)); position: relative; }
+.rio-pilot .ar::after { content: ""; position: absolute; right: -2px; top: -5px; border-left: 9px solid var(--yellow); border-top: 6px solid transparent; border-bottom: 6px solid transparent; }
+.rio-pilot .ios { background: #fff; color: var(--ink); border-radius: 16px; padding: 18px 14px; text-align: center; box-shadow: 0 24px 50px -18px rgba(0,0,0,.7); }
+.rio-pilot .ios .lg { display: block; font-family: var(--disp); font-weight: 800; font-size: 21px; color: var(--navy); }
+.rio-pilot .ios small { display: block; font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.3; }
+.rio-pilot .match { width: 156px; height: 156px; border-radius: 50%; background: var(--yellow); box-shadow: 0 0 0 10px rgba(255,196,1,.12), 0 0 70px rgba(255,196,1,.35); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; justify-self: end; }
+.slide.active .rio-pilot .match { animation: riopop .6s var(--ease) both; animation-delay: var(--d); }
+.rio-pilot .match .n { font-family: var(--disp); font-weight: 800; font-size: 50px; letter-spacing: -.03em; line-height: 1; }
+.rio-pilot .match .l { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-top: 4px; }
+.rio-pilot .res { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.rio-pilot .rv { display: grid; grid-template-columns: 1fr auto auto; gap: 8px; align-items: center; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 12px 14px; }
+.rio-pilot .rv b { font-family: var(--disp); font-size: 18px; color: #fff; }
+.rio-pilot .rv small { display: block; font-size: 12px; color: rgba(255,255,255,.6); margin-top: 2px; }
+.rio-pilot .rv .mo { display: inline-flex; align-items: center; gap: 5px; font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #7ee6ac; background: rgba(61,190,123,.16); border-radius: 7px; padding: 5px 8px; }
+.rio-pilot .rv .mo svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
+.rio-pilot .how { display: grid; grid-template-columns: 1.6fr 1fr; gap: 14px; }
+.rio-pilot .how > div { background: rgba(255,255,255,.04); border-left: 3px solid var(--yellow); border-radius: 0 12px 12px 0; padding: 10px 16px; }
+.rio-pilot .bl, .rio-after .bl, .rio-check .bl { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--yellow); }
+.rio-pilot .how p { margin: 5px 0 0; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,.88); }
+.rio-pilot .foot { margin-top: -2px; }
+
+/* ---- 7 configure ---- */
+.rio-stack { position: relative; height: 470px; }
+.rio-stack .back { position: absolute; left: 0; top: 0; width: 64%; opacity: .96; }
+.rio-stack .front { position: absolute; right: 0; top: 60px; width: 66%; z-index: 2; }
+.rio-stack .tm-shotimg img { object-position: top center; }
+.rio-stack .front .tm-shotimg img { object-position: center 88%; }
+
+/* ---- 8 dashboard ---- */
+.rio-dash { display: flex; flex-direction: column; gap: 12px; position: relative; }
+
+/* ---- 9 approvals ---- */
+.rio-appr { display: flex; flex-direction: column; gap: 10px; }
+.rio-lane { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.rio-lane span { display: flex; align-items: center; gap: 8px; font-family: var(--disp); font-weight: 700; font-size: 13.5px; color: #fff; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.15); border-radius: 10px; padding: 8px 10px; }
+.rio-lane span:last-child { background: var(--yellow); color: var(--ink); border-color: var(--yellow); }
+.rio-lane i { font-style: normal; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-family: var(--mono); font-size: 11px; background: rgba(255,255,255,.14); }
+.rio-lane span:last-child i { background: var(--ink); color: var(--yellow); }
+
+/* ---- 10 mobile ---- */
+.rio-fan { min-height: 480px; }
+.rio-fan .ph { max-width: 215px; }
+.rio-fan .ph img { height: 440px; object-fit: cover; object-position: top; }
+
+/* ---- 11 access ---- */
+.rio-ctls { display: flex; flex-direction: column; gap: 6px; }
+.rio-ctl { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; }
+.rio-ctl b { display: block; font-size: 13.5px; color: var(--ink); }
+.rio-ctl small { display: block; font-size: 12px; color: var(--muted); margin-top: 1px; }
+
+/* ---- 12 fit ---- */
+.rio-sor { display: grid; grid-template-columns: 200px 1.3fr .95fr 1.6fr; gap: 0 18px; }
+.rio-sor .h { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5); padding-bottom: 9px; border-bottom: 1px solid rgba(255,255,255,.18); }
+.rio-sor .r { display: contents; }
+.rio-sor .r > * { padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,.09); font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.8); }
+.rio-sor .r b { font-family: var(--disp); font-size: 15.5px; color: #fff; }
+.rio-sor .r span:nth-child(3) { font-family: var(--mono); font-size: 12.5px; color: rgba(255,255,255,.65); }
+.rio-sor .r span:nth-child(4) { color: #fff; }
+
+/* ---- 13 before / after ---- */
+.rio-ba { display: flex; flex-direction: column; gap: 8px; }
+.rio-ba .hd, .rio-ba .r { display: grid; grid-template-columns: 190px 1fr 1fr; gap: 12px; align-items: stretch; }
+.rio-ba .hd span { font-family: var(--mono); font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); padding: 0 14px; }
+.rio-ba .hd span:last-child { color: var(--navy); font-weight: 700; }
+.rio-ba .k { font-family: var(--disp); font-weight: 700; font-size: 16px; color: var(--ink); display: flex; align-items: center; }
+.rio-ba .a, .rio-ba .b { display: grid; grid-template-columns: 24px 1fr; gap: 10px; align-items: center; border-radius: 12px; padding: 12px 14px; font-size: 14.5px; line-height: 1.4; }
+.rio-ba .a { background: #fff4f2; border: 1px solid #f6d3cd; color: #6a2a22; }
+.rio-ba .b { background: #0c1442; color: #fff; border: 1px solid #0c1442; font-weight: 500; }
+.rio-ba .mk { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; }
+.rio-ba .a .mk { background: rgba(208,39,29,.12); color: var(--red); }
+.rio-ba .b .mk { background: var(--yellow); color: var(--ink); }
+.rio-ba .mk svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---- 14 ready ---- */
+.rio-ready { display: flex; flex-direction: column; gap: 16px; }
+.rio-gantt { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.12); border-radius: 16px; padding: 14px 18px; display: flex; flex-direction: column; gap: 6px; }
+.rio-gantt .gh, .rio-gantt .gr { display: grid; grid-template-columns: 330px 1fr; gap: 14px; align-items: center; }
+.rio-gantt .gh { grid-template-columns: 330px repeat(8, 1fr); gap: 0; }
+.rio-gantt .gh span { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-right: 14px; }
+.rio-gantt .gh b { font-family: var(--mono); font-size: 11px; color: rgba(255,255,255,.6); text-align: center; border-left: 1px solid rgba(255,255,255,.1); padding: 2px 0; }
+.rio-gantt .gr > span { font-size: 13.5px; color: rgba(255,255,255,.88); }
+.rio-gantt .gr > span b { color: var(--yellow); font-family: var(--disp); font-size: 15px; }
+.rio-gantt .tr { position: relative; height: 22px; background: repeating-linear-gradient(90deg, transparent 0, transparent calc(12.5% - 1px), rgba(255,255,255,.08) calc(12.5% - 1px), rgba(255,255,255,.08) 12.5%); }
+.rio-gantt .tr i { position: absolute; top: 3px; bottom: 3px; left: calc((var(--a) - 1) * 12.5% + 3px); width: calc((var(--b) - var(--a) + 1) * 12.5% - 6px); border-radius: 6px; transform-origin: left; }
+.slide.active .rio-gantt .tr i { animation: riogrow .7s var(--ease) both; animation-delay: var(--d); }
+.rio-gantt .tr i.req { background: #9aa8e8; } .rio-gantt .tr i.int { background: #32cad4; } .rio-gantt .tr i.bld { background: #5b8cff; }
+.rio-gantt .tr i.cld { background: #b48cff; } .rio-gantt .tr i.tst { background: #3dbe7b; }
+.rio-gantt .tr em { position: absolute; right: 0; top: -1px; font-style: normal; font-family: var(--mono); font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); background: var(--yellow); border-radius: 6px; padding: 4px 9px; }
+.slide.active .rio-gantt .tr em { animation: riopop .5s var(--ease) both; animation-delay: var(--d); }
+.rio-gantt .gr.live { margin-top: 4px; }
+.rio-after { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.rio-after > div { background: rgba(255,255,255,.04); border-left: 3px solid var(--yellow); border-radius: 0 12px 12px 0; padding: 10px 16px; }
+.rio-after p { margin: 5px 0 0; font-size: 14.5px; line-height: 1.5; color: rgba(255,255,255,.85); }
+.rio-after p b { color: #fff; }
+
+/* ---- 15 ask ---- */
+.rio-close { width: 100%; }
+.rio-close .ask { padding: 18px 20px; }
+.rio-close .ask h4 { font-size: 1.15rem; }
+.rio-close .ask p { font-size: .95rem; }
+.rio-check { background: #fff; color: var(--ink); border-radius: 18px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px; }
+.rio-check .bl { color: var(--navy); }
+.rio-check ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.rio-check li { display: grid; grid-template-columns: 30px 1fr; gap: 12px; font-size: 15px; line-height: 1.45; color: var(--text); }
+.rio-check li b { color: var(--ink); }
+.rio-check .ic { width: 30px; height: 30px; border-radius: 9px; background: var(--surface-2); color: var(--navy); display: grid; place-items: center; }
+.rio-check .ic svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.rio-check .who { border-top: 1px solid var(--border); padding-top: 12px; }
+.rio-check .who b { display: block; font-family: var(--disp); font-size: 17px; }
+.rio-check .who span { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  .slide:has(.rio-mark) *, .slide:has(.rio-mark) *::before, .slide:has(.rio-mark) *::after { animation: none !important; }
+  .rio-wires .pulse { display: none; }
+}
+
+/* ---- v2 · reviewer fixes (Nov 2026) ---- */
+/* 3 · sizing note */
+.rio-size { grid-template-columns: auto 1fr; align-items: start; }
+.rio-size p { margin: 0; }
+.rio-size ul { list-style: none; margin: 8px 0 0; padding: 0; display: flex; gap: 22px; flex-wrap: wrap; }
+.rio-size li { font-size: .9rem; color: rgba(255,255,255,.85); padding-left: 14px; position: relative; }
+.rio-size li::before { content: ""; position: absolute; left: 0; top: .55em; width: 6px; height: 6px; border-radius: 50%; background: var(--yellow); }
+.rio-size li b { color: #fff; }
+/* 6 · pilot sub-line and check panel */
+.rio-pilot .sub { margin: -6px 0 2px; font-size: 15px; color: rgba(255,255,255,.75); }
+.rio-pilot .how { grid-template-columns: 1fr 1fr; }
+.rio-pilot .how .chk { border-left-color: #7ee6ac; background: rgba(61,190,123,.08); }
+.rio-pilot .how .chk .bl { color: #7ee6ac; }
+/* 14 · data and security */
+.rio-secs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.rio-sec { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.13); border-radius: 16px; padding: 16px 18px; min-height: 196px; }
+.slide.active .rio-sec { animation: riopop .5s var(--ease) both; animation-delay: var(--d); }
+.rio-sec .top { display: flex; justify-content: space-between; align-items: center; }
+.rio-sec .ic { width: 34px; height: 34px; border-radius: 10px; background: rgba(255,196,1,.14); color: var(--yellow); display: grid; place-items: center; }
+.rio-sec .ic svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.rio-sec h4 { margin: 12px 0 0; font-family: var(--disp); font-weight: 700; font-size: 18px; color: #fff; }
+.rio-sec p { margin: 7px 0 0; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.82); }
+/* 15 · go-live plan */
+.rio-facts { display: grid; grid-template-columns: 1.2fr 1fr; gap: 12px; }
+.rio-facts p { margin: 0; display: flex; gap: 12px; align-items: baseline; font-size: 14.5px; color: rgba(255,255,255,.88); background: rgba(255,255,255,.04); border-left: 3px solid var(--yellow); border-radius: 0 10px 10px 0; padding: 9px 14px; }
+.rio-facts .bl { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--yellow); white-space: nowrap; }
+.rio-gl { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 14px; align-items: stretch; }
+.rio-gl .rio-gantt { gap: 5px; padding: 12px 16px; }
+.rio-gl .rio-gantt .gh, .rio-gl .rio-gantt .gr { grid-template-columns: 270px 1fr; }
+.rio-gl .rio-gantt .gh { grid-template-columns: 270px repeat(8, 1fr); }
+.rio-gl .rio-gantt .gr > span { font-size: 13px; }
+.rio-gantt .gr.gate { margin-top: 4px; }
+.rio-gantt .gr.gate small { display: block; font-size: 11.5px; color: rgba(255,255,255,.6); margin-top: 2px; line-height: 1.35; }
+.rio-gantt .gr.gate > span b { color: #7ee6ac; font-size: 14px; }
+.rio-gantt .tr em.g { background: #3dbe7b; color: #062b17; right: 0; }
+.rio-need { background: #fff; border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 7px; color: var(--ink); }
+.rio-need .hd { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--navy); font-weight: 700; margin-bottom: 2px; }
+.rio-need .need-it { display: grid; grid-template-columns: 1fr auto; gap: 1px 8px; border: 1px solid var(--border); border-radius: 10px; padding: 7px 10px; }
+.slide.active .rio-need .need-it { animation: riopop .5s var(--ease) both; animation-delay: var(--d); }
+.rio-need .need-it b { font-size: 13.5px; }
+.rio-need .need-it span { grid-column: 1; font-size: 12px; color: var(--muted); }
+.rio-need .need-it em { grid-column: 2; grid-row: 1 / span 2; align-self: center; font-style: normal; font-family: var(--mono); font-size: 10.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #8a6d00; background: rgba(255,196,1,.2); border-radius: 6px; padding: 4px 7px; white-space: nowrap; }
+.rio-need p { margin: 4px 0 0; font-size: 12.5px; line-height: 1.45; color: var(--text); }
+.rio-ready .foot { margin-top: -2px; }

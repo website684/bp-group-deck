@@ -28,8 +28,20 @@ import { tataElectronicsSlides } from './tata-electronics'
 import { hyundaiSlides } from './hyundai'
 import { bpclAiSlides } from './bpcl-ai'
 import { skhSlides } from './skh'
+import { dtssLmsSlides } from './dtss-lms'
+import { rilIncentiveOsSlides } from './ril-incentive-os'
 
 export const decks: DeckDef[] = [
+  {
+    id: 'dtss-lms', title: 'DTSS · skillBetter LMS', group: 'story',
+    tagline: 'LMS for DTSS (SIS): trainers and employees on one app, AI content upgrade, site trainer sessions, certification, nudges and customer-facing training reports. Link-only.',
+    slides: dtssLmsSlides,
+  },
+  {
+    id: 'ril-incentive-os', title: 'Reliance Retail · Incentive OS', group: 'story',
+    tagline: 'For the RIL SPOC who signs off adoption: the Excel chain today, one engine for four verticals, the 100% March–April pilot match, real screens, controls, system fit, data and security, and the 8-week go-live plan. Link-only.',
+    slides: rilIncentiveOsSlides,
+  },
   {
     id: 'skh', title: 'SKH · goBetter CLMS', group: 'story',
     tagline: 'CLMS re-cut for SKH: their numbers, the CHRO\'s four questions answered in flow, 12-hour overtime at 2x, worker voice, references and commercials. Link-only.',
