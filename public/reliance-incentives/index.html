@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incentive OS Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0c1442;--navy:#1B2D93;--yellow:#FFC401;--bg:#f6f7fb;--card:#ffffff;--text:#1a1f36;--muted:#5b6682;--line:#e3e6ef;--soft:#eef1fb;
+  --display:'Bricolage Grotesque','Avenir Next',sans-serif;--body:'Inter','Helvetica Neue',sans-serif;--mono:'IBM Plex Mono',Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0b1033;--card:#121a4a;--text:#eef0f8;--muted:#a3abc8;--line:#26306a;--soft:#18225c}}
+:root[data-theme="dark"]{--bg:#0b1033;--card:#121a4a;--text:#eef0f8;--muted:#a3abc8;--line:#26306a;--soft:#18225c}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6}
+a{color:var(--navy)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) a{color:#9fb0ff}}
+header.hero{background:var(--ink);color:#fff;padding:56px 16px 64px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.eyebrow{font-family:var(--mono);color:var(--yellow);letter-spacing:.14em;text-transform:uppercase;font-size:13px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,60px);line-height:1.05;margin:14px 0 16px;letter-spacing:-.01em}
+.hero p{color:rgba(255,255,255,.75);font-size:18px;max-width:720px;margin:0}
+.hero .bar{width:120px;height:5px;background:var(--yellow);margin:22px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chips a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:6px 14px;font-size:14px}
+.chips a:hover{border-color:var(--yellow);color:var(--yellow)}
+.layout{display:grid;grid-template-columns:230px 1fr;gap:40px;padding:40px 0 80px}
+main{min-width:0}
+nav.toc{position:sticky;top:20px;align-self:start;font-size:14px}
+nav.toc ol{list-style:none;padding:0;margin:0;counter-reset:t}
+nav.toc li{counter-increment:t;margin:2px 0}
+nav.toc a{display:block;padding:6px 10px;border-radius:8px;color:var(--muted);text-decoration:none}
+nav.toc a::before{content:counter(t,decimal-leading-zero) "  ";font-family:var(--mono);color:var(--navy);font-size:12px}
+nav.toc a:hover,nav.toc a.on{background:var(--soft);color:var(--text)}
+section{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px;margin-bottom:28px;scroll-margin-top:16px}
+section .num{font-family:var(--mono);color:var(--navy);font-size:13px;letter-spacing:.1em}
+h2{font-family:var(--display);font-weight:800;font-size:30px;line-height:1.15;margin:6px 0 10px}
+h3{font-family:var(--display);font-weight:600;font-size:20px;margin:28px 0 8px}
+.lede{color:var(--muted);font-size:17px;margin:0 0 20px}
+video{width:100%;border-radius:12px;background:#000;display:block;aspect-ratio:16/9}
+.vidmeta{font-size:13px;color:var(--muted);margin:8px 0 0}
+figure{margin:20px 0}
+figure img{width:100%;border-radius:10px;border:1px solid var(--line);display:block}
+figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+.phones{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px;margin:20px 0}
+.phones figure{margin:0}
+.phones img{border-radius:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:16px 0}
+.card{border:1px solid var(--line);border-left:4px solid var(--yellow);border-radius:10px;padding:14px 16px;background:var(--card)}
+.card b{display:block;font-family:var(--display);font-size:17px;margin-bottom:4px}
+.card span{color:var(--muted);font-size:14px}
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:14px 0}
+ol.steps>li{counter-increment:s;position:relative;padding:4px 0 12px 46px}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:2px;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--mono);font-size:14px;display:flex;align-items:center;justify-content:center}
+.tablewrap{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line)}
+th{background:var(--soft);font-weight:600}
+td.n,th.n{text-align:right;font-family:var(--mono)}
+tr.total td{font-weight:700;background:var(--soft)}
+.note{background:var(--soft);border-radius:10px;padding:12px 16px;font-size:14px;color:var(--text);margin:16px 0}
+.note b{color:var(--navy)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .note b{color:var(--yellow)}}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}
+.tabs button{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--card);color:var(--text);padding:7px 14px;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.panel[hidden]{display:none}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:0 16px 40px}
+@media (max-width:860px){.layout{grid-template-columns:1fr}nav.toc{display:none}section{padding:22px 18px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">BetterPlace · Incentive OS for Reliance Retail</div>
+    <h1>Incentive OS: the guide</h1>
+    <div class="bar"></div>
+    <p>Ten short videos and written walkthroughs: what the platform does, how to set up a plan, how to read the dashboard, how incentive is calculated for Digital, Reliance Brands, Fashion &amp; Lifestyle and Grocery, and what store staff see on the mobile app.</p>
+    <div class="chips">
+      <a href="#overview">Overview</a><a href="#features">Features</a><a href="#setup">Plan setup</a><a href="#dashboard">Dashboard</a><a href="#digital">Digital</a><a href="#rbl">Reliance Brands</a><a href="#fnl">F&amp;L</a><a href="#grocery">Grocery</a><a href="#mobile">Mobile app</a><a href="#controls">Approvals &amp; payroll</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap layout">
+<nav class="toc" aria-label="Contents"><ol>
+  <li><a href="#overview">What it is</a></li>
+  <li><a href="#features">All features</a></li>
+  <li><a href="#setup">Set up a plan</a></li>
+  <li><a href="#dashboard">Dashboard</a></li>
+  <li><a href="#digital">Digital calc</a></li>
+  <li><a href="#rbl">Reliance Brands calc</a></li>
+  <li><a href="#fnl">F&amp;L calc</a></li>
+  <li><a href="#grocery">Grocery calc</a></li>
+  <li><a href="#mobile">Mobile app</a></li>
+  <li><a href="#controls">Approvals &amp; payroll</a></li>
+</ol></nav>
+
+<main>
+<p class="note"><b>About the screens.</b> All screenshots come from the pilot build running on March 2026 pilot data. Employee names and IDs are replaced with placeholders (for example “Associate 0032”, “EMP0001”); store codes and rupee amounts are real pilot values. Worked examples marked “illustrative” use round numbers to show the method.</p>
+
+<!-- 1 -->
+<section id="overview">
+  <div class="num">01 · OVERVIEW</div>
+  <h2>What is Incentive OS?</h2>
+  <p class="lede">One platform to configure, calculate, approve and explain store incentives for every Reliance Retail format.</p>
+  <video controls preload="metadata" poster="/studio/reliance-incentives/videos/01-overview.jpg" src="/studio/reliance-incentives/videos/01-overview.mp4"></video>
+  <p class="vidmeta">Video 1 · about 2 minutes · English narration with on-screen captions</p>
+  <h3>The problem it solves</h3>
+  <p>Each format runs incentives on its own working file. Sales, attendance and store audit results are stitched together by hand; cycles take weeks to close; associates learn their number late and rarely know why it is zero.</p>
+  <h3>How it works</h3>
+  <div class="grid">
+    <div class="card"><b>Inputs</b><span>Sales bills and store totals, attendance, targets and budgets, store audits (PI, GM, POP, Mystery, Dry Shrink), employee inputs and overrides.</span></div>
+    <div class="card"><b>Rules engine</b><span>One plan per vertical or brand. Eligibility gates with reason codes, then slabs, pools or kitties.</span></div>
+    <div class="card"><b>Outputs</b><span>A payout row for every employee (including ₹0 rows with reasons), the HQ dashboard, the staff mobile app and a locked payroll CSV.</span></div>
+  </div>
+  <h3>Four verticals, one engine</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Vertical</th><th>Plan type</th><th>Cycle</th></tr>
+    <tr><td>Digital (Reliance Digital)</td><td>Per-unit slab by product family, brand and price band × department achievement multiplier</td><td>Monthly</td></tr>
+    <tr><td>Grocery (Smart, Smart Bazaar, FreshPik)</td><td>Sales and EBITDA slabs by role bucket, gated by store compliance; campaigns on top</td><td>Monthly</td></tr>
+    <tr><td>Fashion &amp; Lifestyle (Trends)</td><td>Store pool of 1% of sales when target is beaten, split by role among eligible staff</td><td>Weekly</td></tr>
+    <tr><td>Reliance Brands</td><td>Brand-specific: % of GSV, kitty split, service-charge pool, Sunglass Hut bill catalogue</td><td>Monthly (SGH weekly gates)</td></tr>
+  </table></div>
+  <p class="note"><b>Pilot proof.</b> F&amp;L week 1 of March 2026 reconciled to RIL’s own working file: ₹18,84,375.50 across 2,463 employees, ₹0 difference.</p>
+</section>
+
+<!-- 2 -->
+<section id="features">
+  <div class="num">02 · FEATURES</div>
+  <h2>A tour of every feature</h2>
+  <p class="lede">The admin console, page by page.</p>
+  <video controls preload="metadata" poster="/studio/reliance-incentives/videos/02-features.jpg" src="/studio/reliance-incentives/videos/02-features.mp4"></video>
+  <div class="tablewrap"><table>
+    <tr><th>Page</th><th>What it does</th></tr>
+    <tr><td><b>Dashboard</b></td><td>Sales vs target, potential and on-hold incentive, payout, a checklist of pending work, store drill-downs. Filter by vertical, month, week, brand.</td></tr>
+    <tr><td><b>Masters</b></td><td>Stores (format, city, status, headcount), Employees (role, store, payroll status), Store roster (F&amp;L eligible headcount), Targets catalogue.</td></tr>
+    <tr><td><b>Sales</b></td><td>Bill-level transactions by store and employee. CSV upload or Sales API.</td></tr>
+    <tr><td><b>Attendance</b></td><td>Daily present / absent / leave / week-off, rolled up to working days.</td></tr>
+    <tr><td><b>Incentives workspace</b></td><td>One per vertical. Tabs: Rules, Targets, Store Inputs, Employee Inputs, Attendance, Computed Payout, Spot Incentives (RBL), Approvals, Run Summary. Recalculate any period.</td></tr>
+    <tr><td><b>Plan page</b></td><td>Full configuration of a plan: mode, slab grids, gates and policy settings, version history.</td></tr>
+    <tr><td><b>Reconciliation</b></td><td>Compares engine payouts with RIL’s working files, row by row, within a ₹ tolerance.</td></tr>
+    <tr><td><b>Approvals</b></td><td>Checker inbox for plans, plan versions, targets and spot incentives.</td></tr>
+    <tr><td><b>Leaderboard</b></td><td>Store and staff rankings.</td></tr>
+    <tr><td><b>Admins</b></td><td>Grant admin access scoped to verticals, with separate rights: view all, upload data, edit incentives, submit, approve, manage users.</td></tr>
+    <tr><td><b>Audit log</b></td><td>Every create, submit, approve, reject, upload, update, calculation, lock, unlock and export. Filter and export to Excel.</td></tr>
+    <tr><td><b>Period lock</b></td><td>Freeze a vertical-period and download the payroll CSV.</td></tr>
+  </table></div>
+  <figure><img src="/studio/reliance-incentives/img/w-fnl-rules.jpg" alt="Incentives workspace for F&amp;L, Rules tab" loading="lazy"><figcaption>Incentives workspace, F&amp;L Rules tab: pool configuration and the role split table.</figcaption></figure>
+  <figure><img src="/studio/reliance-incentives/img/w-grocery-store-inputs.jpg" alt="Grocery store inputs" loading="lazy"><figcaption>Store Inputs (Grocery): Mystery audit, POP and Dry Shrink per store, with approval status.</figcaption></figure>
+  <figure><img src="/studio/reliance-incentives/img/a-masters-stores.jpg" alt="Store master" loading="lazy"><figcaption>Masters › Stores.</figcaption></figure>
+</section>
+
+<!-- 3 -->
+<section id="setup">
+  <div class="num">03 · PLAN SETUP</div>
+  <h2>How to set up a new incentive plan</h2>
+  <p class="lede">From a blank plan to live payouts, with every option.</p>
+  <video controls preload="metadata" poster="/studio/reliance-incentives/videos/03-plan-setup.jpg" src="/studio/reliance-incentives/videos/03-plan-setup.mp4"></video>
+  <h3>The life of a plan</h3>
+  <p>DRAFT → SUBMITTED → APPROVED / ACTIVE (or REJECTED back to DRAFT). Approving a plan retires any other active plan for the same vertical, mode and brand. Any edit to an active plan creates a new draft version; the live version keeps paying until the new one is approved.</p>
+  <h3>Step by step</h3>
+  <ol class="steps">
+    <li><b>Open the vertical’s Rules tab</b> (Incentives › pick vertical › Rules) and click <b>Create New Plan</b>.</li>
+    <li><b>Select vertical.</b> Electronics, Grocery, Fashion &amp; Lifestyle or RBL. This fixes the calculation family.</li>
+    <li><b>Plan details.</b> Plan name, effective from, effective to. Plans are always created as DRAFT.</li>
+    <li><b>Rules.</b> Depends on the vertical (see table below).</li>
+    <li><b>Review &amp; create.</b> Saves the draft. Fine-tune on the plan page, then <b>Submit for approval</b>.</li>
+  </ol>
+  <div class="tabs" role="tablist" data-group="wiz">
+    <button role="tab" aria-selected="true" data-panel="wiz-a">1 · Vertical</button>
+    <button role="tab" aria-selected="false" data-panel="wiz-b">2 · Details</button>
+    <button role="tab" aria-selected="false" data-panel="wiz-c">3 · Electronics rules</button>
+    <button role="tab" aria-selected="false" data-panel="wiz-d">3 · F&amp;L rules</button>
+    <button role="tab" aria-selected="false" data-panel="wiz-e">3 · RBL mode</button>
+    <button role="tab" aria-selected="false" data-panel="wiz-f">4 · Review</button>
+  </div>
+  <figure class="panel" id="wiz-a"><img src="/studio/reliance-incentives/img/wiz-0.jpg" alt="Wizard step 1" loading="lazy"><figcaption>Step 1: choose the vertical.</figcaption></figure>
+  <figure class="panel" id="wiz-b" hidden><img src="/studio/reliance-incentives/img/wiz-1.jpg" alt="Wizard step 2" loading="lazy"><figcaption>Step 2: name and effective dates. New plans start as DRAFT.</figcaption></figure>
+  <figure class="panel" id="wiz-c" hidden><img src="/studio/reliance-incentives/img/wiz-2.jpg" alt="Wizard step 3 Electronics" loading="lazy"><figcaption>Step 3 (Electronics): product slabs and achievement multipliers.</figcaption></figure>
+  <figure class="panel" id="wiz-d" hidden><img src="/studio/reliance-incentives/img/wiz-fnl-0.jpg" alt="Wizard step 3 F&amp;L" loading="lazy"><figcaption>Step 3 (F&amp;L): pool %, minimum attendance days, role split table.</figcaption></figure>
+  <figure class="panel" id="wiz-e" hidden><img src="/studio/reliance-incentives/img/wiz-rbl-0.jpg" alt="Wizard step 3 RBL" loading="lazy"><figcaption>Step 3 (RBL): choose one of four plan modes, optional brand scope.</figcaption></figure>
+  <figure class="panel" id="wiz-f" hidden><img src="/studio/reliance-incentives/img/wiz-3.jpg" alt="Wizard step 4" loading="lazy"><figcaption>Step 4: review and create.</figcaption></figure>
+  <h3>Every option, by vertical</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Vertical</th><th>Plan modes</th><th>Settings you control</th></tr>
+    <tr><td>Electronics</td><td>Associate per-unit plan; SM/DM manager plan</td><td>Product slab rows (family, brand, price from–to, ₹/unit); multiplier bands; brand exclusions; NSO threshold (default 90%); store open-days pro-rata. Manager plan: revenue and PMI slabs, kickers, CX/inventory and EBITDA factors.</td></tr>
+    <tr><td>Grocery</td><td>Sales; EBITDA; campaign (e.g. Dairy Day)</td><td>Slab grid per tier (Stores / Large Format) and role bucket; minimum achievement (Sales 95%, EBITDA 90% by default); pro-rata basis (attendance, fixed 31 days, days worked); POP amber scope (managers or whole store); OMNI/PT inclusion.</td></tr>
+    <tr><td>F&amp;L</td><td>Weekly store pool</td><td>Pool % of weekly sales (default 1%); CSA vs managerial share; role split table; minimum working days (default 5); PI hold threshold; PI hold and GM gate as <i>enforce</i> (block) or <i>advisory</i> (flag, still pay).</td></tr>
+    <tr><td>Reliance Brands</td><td>Brand slab (% of metric); Kitty &amp; role split; Service charge pool; SGH bill-spec catalogue</td><td>Metric (GSV / NSV); slab cells by store size and role; split method (equal, contribution-weighted, lookup table, individual slab with store gate); role shares; pro-rata basis; CTC cap %; grade points (café); Sunglass Hut multipliers and EOSS months.</td></tr>
+  </table></div>
+  <figure><img src="/studio/reliance-incentives/img/plan-superdry.jpg" alt="Plan page" loading="lazy"><figcaption>The plan page (Superdry SM/ASM, brand slab mode): slab grid by store size and achievement, metric, pro-rata and cap. Active plans are read-only; “Create draft” starts a new version.</figcaption></figure>
+  <p class="note"><b>Policy choices are plan settings.</b> Behaviours such as F&amp;L PI hold (block vs advisory), Grocery POP amber scope and Digital slab and multiplier tables are confirmed with each business at kickoff and set on the plan, not in code.</p>
+</section>
+
+<!-- 4 -->
+<section id="dashboard">
+  <div class="num">04 · DASHBOARD</div>
+  <h2>What the dashboard contains, and how to read it</h2>
+  <p class="lede">Where the incentive cycle stands, in one screen.</p>
+  <video controls preload="metadata" poster="/studio/reliance-incentives/videos/04-dashboard.jpg" src="/studio/reliance-incentives/videos/04-dashboard.mp4"></video>
+  <ol class="steps">
+    <li><b>Choose your view.</b> Vertical (All, Electronics, Grocery, F&amp;L, RBL), month, and for F&amp;L a single week (W1–W5) or the whole month. RBL adds a brand filter.</li>
+    <li><b>Work the checklist.</b> Targets uploaded, store inputs entered, attendance loaded, compliance approved. Each item links to the page that resolves it.</li>
+    <li><b>Read the headline numbers.</b> Sales achieved vs target, incentive potential, incentive on hold, payout this month, active plans.</li>
+    <li><b>Find the money on hold.</b> Stores held for PI or GM, and stores below sales target, listed by name.</li>
+    <li><b>Spot the pattern.</b> Stores by achievement band (click a band to filter) and daily sales against target pace.</li>
+    <li><b>Drill down.</b> City → store → employee, with staff earning, sales and incentive; plus a Top performers tab.</li>
+  </ol>
+  <figure><img src="/studio/reliance-incentives/img/a-dashboard.jpg" alt="Dashboard top" loading="lazy"><figcaption>Filters, checklist and headline numbers.</figcaption></figure>
+  <figure><img src="/studio/reliance-incentives/img/a-dashboard-scroll1.jpg" alt="Dashboard middle" loading="lazy"><figcaption>Stores on hold, stores below target, achievement bands and daily pace.</figcaption></figure>
+  <figure><img src="/studio/reliance-incentives/img/a-dashboard-scroll2.jpg" alt="Dashboard drill-down" loading="lazy"><figcaption>Per-vertical summary and city / store drill-down.</figcaption></figure>
+</section>
+
+<!-- 5 Digital -->
+<section id="digital">
+  <div class="num">05 · CALCULATION · DIGITAL</div>
+  <h2>How Digital incentive is calculated</h2>
+  <p class="lede">Per-unit slabs by product family, brand and price, scaled by department achievement. Monthly.</p>
+  <video controls preload="metadata" poster="/studio/reliance-incentives/videos/05-calc-digital.jpg" src="/studio/reliance-incentives/videos/05-calc-digital.mp4"></video>
+  <h3>Inputs</h3>
+  <div class="grid">
+    <div class="card"><b>Sales bills</b><span>POS/RPOS bills by upload or Sales API: article, brand, product family, units, price, associate.</span></div>
+    <div class="card"><b>Targets</b><span>Monthly family-level targets per store, rolled up to department.</span></div>
+    <div class="card"><b>Attendance</b><span>Daily upload, rolled up to monthly present days.</span></div>
+    <div class="card"><b>Store inputs</b><span>Days the store was operational; store type (regular or new store).</span></div>
+  </div>
+  <h3>Processing</h3>
+  <ol class="steps">
+    <li><b>Exclusions.</b> Apple, OnePlus phones and Microsoft Surface are excluded. Articles already paid by a brand campaign are not paid twice.</li>
+    <li><b>Rate per unit.</b> Family + brand + price band gives ₹ per unit; a brand-specific row beats a catch-all row. Example: Samsung / Oppo / Vivo phones pay ₹25 (₹500–18,000), ₹50 (₹18,001–20,000), ₹75 (above ₹20,000).</li>
+    <li><b>Department achievement.</b> Department actual ÷ target (Telecom + AIOT, and Large + Small Appliances, are combined), mapped to a multiplier.</li>
+    <li><b>Gates.</b> Store open under 15 days: no payout; 15–29 days: × days ÷ 30. A new store below 90% blocks the store. Associate needs 20 present days, and must not be on notice or disciplinary hold.</li>
+    <li><b>Payout</b> = Σ(rate × units) × multiplier × open-days factor.</li>
+  </ol>
+  <div class="tablewrap"><table>
+    <tr><th>Department achievement</th><th class="n">Multiplier</th></tr>
+    <tr><td>Below 85%</td><td class="n">0%</td></tr><tr><td>85% – 89.99%</td><td class="n">50%</td></tr><tr><td>90% – 99.99%</td><td class="n">80%</td></tr>
+    <tr><td>100% – 109.99%</td><td class="n">100%</td></tr><tr><td>110% – 119.99%</td><td class="n">110%</td></tr><tr><td>120% and above</td><td class="n">120%</td></tr>
+  </table></div>
+  <h3>Worked example (illustrative)</h3>
+  <div class="tablewrap"><table>
+    <tr><td>4 Samsung phones at ₹19,000 (slab ₹18,001–20,000)</td><td class="n">4 × ₹50 = ₹200</td></tr>
+    <tr><td>Telecom department at 92% of target</td><td class="n">× 80%</td></tr>
+    <tr><td>Store open 30 days; associate present 22 days</td><td class="n">× 1.0</td></tr>
+    <tr class="total"><td>Monthly payout</td><td class="n">₹160</td></tr>
+  </table></div>
+  <h3>Store and department managers</h3>
+  <p>A separate manager plan: no payout below 90% of store sales target. Above it, a revenue slab and a PMI slab (SM: ₹25,000 at 90%, +₹1,000 per point to 100%, +₹2,000 per point above; DM at lower rates), plus kickers for Attach+SDA, RCP, RHP, solution selling and end-of-life stock. The total is multiplied by a CX/inventory factor (×1, ×0.75 or ×0.5) and an EBITDA factor (×0.5 if the rule is missed).</p>
+  <div class="phones">
+    <figure><img src="/studio/reliance-incentives/img/m-dig-sa-home.jpg" alt="Digital associate home" loading="lazy"><figcaption>Associate home</figcaption></figure>
+    <figure><img src="/studio/reliance-incentives/img/m-dig-sa-breakdown.jpg" alt="Digital breakdown" loading="lazy"><figcaption>Breakdown: base ₹13,780, department at 74% → 0% multiplier → ₹0, with the reason.</figcaption></figure>
+  </div>
+</section>
+
+<!-- 6 RBL -->
+<section id="rbl">
+  <div class="num">06 · CALCULATION · RELIANCE BRANDS</div>
+  <h2>How Reliance Brands incentive is calculated</h2>
+  <p class="lede">Each brand runs its own plan mode on the same engine. Monthly.</p>
+  <video controls preload="metadata" poster="/studio/reliance-incentives/videos/06-calc-rbl.jpg" src="/studio/reliance-incentives/videos/06-calc-rbl.mp4"></video>
+  <div class="tablewrap"><table>
+    <tr><th>Brand / role</th><th>Plan mode</th><th>In one line</th></tr>
+    <tr><td>Superdry SM / ASM</td><td>Brand slab</td><td>% of store GSV by store size and achievement band, pro-rated by days worked</td></tr>
+    <tr><td>Superdry FC</td><td>Kitty split</td><td>Kitty = store NSV × slab %, shared by contribution</td></tr>
+    <tr><td>Ferragamo</td><td>Kitty split</td><td>30% SM/ASM, 70% FC; FC on individual slab × store gate (1.0 at ≥85% store achievement, else 0.9)</td></tr>
+    <tr><td>Armani Café</td><td>Service charge pool</td><td>50% of collections shared by grade points (L1–L2: 2, L3: 3, M4–M5: 4)</td></tr>
+    <tr><td>Sunglass Hut</td><td>Bill catalogue</td><td>Per-bill rate × store week band (≥100%: ×1, ≥85%: ×0.5) × individual and month gates; returns subtract</td></tr>
+  </table></div>
+  <h3>Inputs</h3>
+  <ul>
+    <li>Store GSV / NSV actual and budget.</li>
+    <li>Employee inputs: payout flag (Full, Half, Ineligible, Admin sales, Inter-store movement), days worked, individual NSV target and actual, payout override.</li>
+    <li>Sunglass Hut bills and weekly achievement; café service charge collections; spot incentives by CSV or API.</li>
+  </ul>
+  <h3>Processing</h3>
+  <ol class="steps">
+    <li><b>Employee flags.</b> Ineligible, Admin sales and Inter-store movement block payout, each with a reason code.</li>
+    <li><b>Achievement</b> = actual ÷ budget, mapped to the brand’s slab band.</li>
+    <li><b>Apply the plan mode</b>: slab %, kitty split, pool share or bill catalogue.</li>
+    <li><b>Pro-rate</b> by days worked (or attendance, per plan setting).</li>
+    <li><b>Signed overrides.</b> Where a brand signs off manual adjustments, they are applied as overrides and marked on the row.</li>
+  </ol>
+  <div class="tablewrap"><table>
+    <tr><th>Superdry SM/ASM: store GSV</th><th class="n">95%</th><th class="n">100%</th><th class="n">110%</th><th class="n">120%</th></tr>
+    <tr><td>Under ₹20L</td><td class="n">0.65%</td><td class="n">0.75%</td><td class="n">0.85%</td><td class="n">0.95%</td></tr>
+    <tr><td>₹20L – ₹50L</td><td class="n">0.40%</td><td class="n">0.50%</td><td class="n">0.60%</td><td class="n">0.70%</td></tr>
+    <tr><td>Above ₹50L</td><td class="n">0.25%</td><td class="n">0.35%</td><td class="n">0.45%</td><td class="n">0.55%</td></tr>
+  </table></div>
+  <h3>Worked example (illustrative)</h3>
+  <div class="tablewrap"><table>
+    <tr><td>Store GSV ₹35,00,000 (₹20–50L bucket), achievement 104% → 100% band</td><td class="n">0.50%</td></tr>
+    <tr><td>Slab amount: 0.50% × ₹35,00,000</td><td class="n">₹17,500</td></tr>
+    <tr><td>Worked 28 of 31 days</td><td class="n">× 28/31</td></tr>
+    <tr class="total"><td>Monthly payout</td><td class="n">₹15,806</td></tr>
+  </table></div>
+  <figure><img src="/studio/reliance-incentives/img/w-rbl-employee-inputs.jpg" alt="RBL employee inputs" loading="lazy"><figcaption>RBL Employee Inputs: flags, days worked, individual NSV, payout override.</figcaption></figure>
+  <figure><img src="/studio/reliance-incentives/img/w-rbl-payout.jpg" alt="RBL computed payout" loading="lazy"><figcaption>RBL Computed Payout, filterable by brand.</figcaption></figure>
+</section>
+
+<!-- 7 F&L -->
+<section id="fnl">
+  <div class="num">07 · CALCULATION · FASHION &amp; LIFESTYLE</div>
+  <h2>How F&amp;L incentive is calculated</h2>
+  <p class="lede">Trends: a weekly store pool (Sunday–Saturday), shared by role among eligible staff.</p>
+  <video controls preload="metadata" poster="/studio/reliance-incentives/videos/07-calc-fnl.jpg" src="/studio/reliance-incentives/videos/07-calc-fnl.mp4"></video>
+  <h3>Inputs, every week</h3>
+  <ul>
+    <li>Weekly sales target per store (upload).</li>
+    <li>Actual sales: sum of bills for the store-week, or the store total entered by the SPOC.</li>
+    <li>Store inputs: gross margin target and actual, pilferage index (PI) %, SM / DM / CSA headcount.</li>
+    <li>Daily attendance including leave; per-week eligibility override.</li>
+  </ul>
+  <h3>Processing</h3>
+  <ol class="steps">
+    <li><b>Sales gate.</b> The store must beat its weekly target (actual &gt; target), or there is no pool.</li>
+    <li><b>PI hold.</b> PI ≥ 0.30% holds the store-week.</li>
+    <li><b>GM gate.</b> GM target missed: SMs and DMs get no share; CSAs still earn.</li>
+    <li><b>Pool</b> = 1% of actual sales, split by role using the annexure table.</li>
+    <li><b>Eligibility per person.</b> At least 5 present days, no leave in the week, active, not on notice or disciplinary hold.</li>
+    <li><b>No pro-rata.</b> All or nothing per week; each role’s share is divided by the eligible people in that role only.</li>
+  </ol>
+  <div class="tablewrap"><table>
+    <tr><th>SMs / DMs</th><th class="n">CSA pool</th><th class="n">SM</th><th class="n">Each DM</th></tr>
+    <tr><td>1 / 0</td><td class="n">70%</td><td class="n">30%</td><td class="n">—</td></tr>
+    <tr><td>1 / 1</td><td class="n">60%</td><td class="n">24%</td><td class="n">16%</td></tr>
+    <tr><td>1 / 2</td><td class="n">60%</td><td class="n">16%</td><td class="n">12%</td></tr>
+    <tr><td>1 / 3</td><td class="n">60%</td><td class="n">12%</td><td class="n">9.33%</td></tr>
+    <tr><td>1 / 4</td><td class="n">60%</td><td class="n">10%</td><td class="n">7.5%</td></tr>
+  </table></div>
+  <p class="note"><b>Plan settings.</b> PI hold and GM gate can each be set to <i>enforce</i> (block payout) or <i>advisory</i> (show the reason, still pay). Pool %, shares and minimum days are editable.</p>
+  <h3>Worked example (pilot store, week 1 March 2026)</h3>
+  <div class="tablewrap"><table>
+    <tr><td>Actual sales (beat target)</td><td class="n">₹44,02,526</td></tr>
+    <tr><td>Pool at 1%</td><td class="n">₹44,025</td></tr>
+    <tr><td>CSA share at 60%</td><td class="n">₹26,415</td></tr>
+    <tr><td>Eligible CSAs</td><td class="n">÷ 23</td></tr>
+    <tr class="total"><td>Each eligible CSA</td><td class="n">₹1,148</td></tr>
+  </table></div>
+  <div class="phones">
+    <figure><img src="/studio/reliance-incentives/img/m-fnl-sa-home.jpg" alt="F&amp;L associate home" loading="lazy"><figcaption>Associate home, week view</figcaption></figure>
+    <figure><img src="/studio/reliance-incentives/img/m-fnl-sa-breakdown.jpg" alt="F&amp;L breakdown" loading="lazy"><figcaption>Pool → share → payout</figcaption></figure>
+  </div>
+  <figure><img src="/studio/reliance-incentives/img/w-fnl-store-inputs.jpg" alt="F&amp;L store inputs" loading="lazy"><figcaption>F&amp;L Store Inputs: GM and PI per store-week.</figcaption></figure>
+</section>
+
+<!-- 8 Grocery -->
+<section id="grocery">
+  <div class="num">08 · CALCULATION · GROCERY</div>
+  <h2>How Grocery incentive is calculated</h2>
+  <p class="lede">Smart, Smart Bazaar, FreshPik: Sales and EBITDA slabs by role, gated by compliance, plus campaigns. Monthly.</p>
+  <video controls preload="metadata" poster="/studio/reliance-incentives/videos/08-calc-grocery.jpg" src="/studio/reliance-incentives/videos/08-calc-grocery.mp4"></video>
+  <h3>Inputs</h3>
+  <ul>
+    <li>Store sales budget and actual; EBITDA budget and actual (upload or API).</li>
+    <li>Store compliance form (approved before use): Mystery audit (G/A/R), POP (G/A/R), Dry Shrink (pass/fail).</li>
+    <li>Employee monthly inputs: attendance, working days, absent-without-leave days, eligibility override.</li>
+    <li>Campaign quantities, e.g. Dairy Day articles.</li>
+  </ul>
+  <h3>Processing</h3>
+  <ol class="steps">
+    <li><b>Role bucket.</b> CSA, Other managerial, SM/ASM, Market manager. Large-format stores use their own tier.</li>
+    <li><b>Minimum achievement.</b> Sales 95%, EBITDA 90%; below that pays nothing.</li>
+    <li><b>Slab</b> by role and achievement band (tables below).</li>
+    <li><b>Compliance gates</b> (table below).</li>
+    <li><b>Pro-rata</b> = slab × working days ÷ divisor (plan setting).</li>
+    <li><b>Total</b> = Sales ₹ + EBITDA ₹ + Campaign ₹. Amounts lost to a gate are not redistributed.</li>
+  </ol>
+  <div class="tablewrap"><table>
+    <tr><th>Sales achievement (Stores tier)</th><th class="n">CSA</th><th class="n">Other Mgrl</th><th class="n">SM/ASM</th></tr>
+    <tr><td>95%</td><td class="n">₹500</td><td class="n">₹1,000</td><td class="n">₹1,400</td></tr>
+    <tr><td>100%</td><td class="n">₹650</td><td class="n">₹1,400</td><td class="n">₹1,800</td></tr>
+    <tr><td>110%</td><td class="n">₹850</td><td class="n">₹1,800</td><td class="n">₹2,400</td></tr>
+    <tr><td>120%</td><td class="n">₹1,100</td><td class="n">₹2,300</td><td class="n">₹3,000</td></tr>
+  </table></div>
+  <div class="tablewrap"><table>
+    <tr><th>EBITDA achievement</th><th class="n">CSA</th><th class="n">ASM</th><th class="n">SM</th></tr>
+    <tr><td>90%</td><td class="n">₹500</td><td class="n">₹1,000</td><td class="n">₹1,250</td></tr>
+    <tr><td>100%</td><td class="n">₹1,250</td><td class="n">₹2,500</td><td class="n">₹3,125</td></tr>
+    <tr><td>110%</td><td class="n">₹3,000</td><td class="n">₹6,000</td><td class="n">₹7,500</td></tr>
+  </table></div>
+  <div class="tablewrap"><table>
+    <tr><th>Compliance result</th><th>Effect</th></tr>
+    <tr><td>Dry Shrink FAIL, POP RED or Mystery RED</td><td>Whole store blocked</td></tr>
+    <tr><td>Mystery AMBER</td><td>Managers blocked</td></tr>
+    <tr><td>POP AMBER</td><td>Managers or whole store (plan setting)</td></tr>
+    <tr><td>All green / pass</td><td>Everyone eligible</td></tr>
+  </table></div>
+  <h3>Worked example (pilot store, March 2026)</h3>
+  <div class="tablewrap"><table>
+    <tr><td>Sales at 177% of budget → CSA top slab (31/31 days)</td><td class="n">₹1,100</td></tr>
+    <tr><td>EBITDA at 259% of budget → CSA slab (31/31 days)</td><td class="n">₹3,000</td></tr>
+    <tr><td>Campaigns</td><td class="n">₹0</td></tr>
+    <tr class="total"><td>Monthly payout</td><td class="n">₹4,100</td></tr>
+  </table></div>
+  <div class="phones">
+    <figure><img src="/studio/reliance-incentives/img/m-gro-sa-home.jpg" alt="Grocery associate home" loading="lazy"><figcaption>Associate home</figcaption></figure>
+    <figure><img src="/studio/reliance-incentives/img/m-gro-sa-breakdown.jpg" alt="Grocery breakdown" loading="lazy"><figcaption>Sales + EBITDA, with compliance gates</figcaption></figure>
+  </div>
+</section>
+
+<!-- 9 Mobile -->
+<section id="mobile">
+  <div class="num">09 · MOBILE APP</div>
+  <h2>The mobile app</h2>
+  <p class="lede">Every associate and manager sees their incentive, and the reason behind it.</p>
+  <video controls preload="metadata" poster="/studio/reliance-incentives/videos/09-mobile.jpg" src="/studio/reliance-incentives/videos/09-mobile.mp4"></video>
+  <div class="tablewrap"><table>
+    <tr><th>Role</th><th>What they see</th><th>Tabs</th></tr>
+    <tr><td>Associate</td><td>Own payout, attendance, store/department progress, calculation breakdown</td><td>Home, Leaderboard, History</td></tr>
+    <tr><td>Store / department manager</td><td>Store pool and own payout, quests, team roster with potential vs earned</td><td>Home, Team, Leaderboard, Transactions</td></tr>
+    <tr><td>Brand associate</td><td>Read-only view with eligibility notice</td><td>Home, Leaderboard</td></tr>
+    <tr><td>Central team</td><td>Org drill-down, stores, alerts</td><td>Overview, Leaderboard, Stores, Alerts</td></tr>
+  </table></div>
+  <ol class="steps">
+    <li><b>Log in</b> with employee ID; the app opens the home for the person’s role.</li>
+    <li><b>Home</b>: period picker (week for F&amp;L, month for others), incentive earned with status, attendance, progress to target.</li>
+    <li><b>View calculation breakdown</b>: each component with its formula, then the eligibility gates in plain language.</li>
+    <li><b>Leaderboard and History</b>: store rankings, and every sale credited to the associate, searchable by SKU, brand or transaction.</li>
+  </ol>
+  <div class="phones">
+    <figure><img src="/studio/reliance-incentives/img/m-fnl-sa-home.jpg" alt="" loading="lazy"><figcaption>F&amp;L associate</figcaption></figure>
+    <figure><img src="/studio/reliance-incentives/img/m-gro-sa-home.jpg" alt="" loading="lazy"><figcaption>Grocery associate</figcaption></figure>
+    <figure><img src="/studio/reliance-incentives/img/m-dig-sa-home.jpg" alt="" loading="lazy"><figcaption>Digital associate</figcaption></figure>
+    <figure><img src="/studio/reliance-incentives/img/m-dig-sa-leaderboard.jpg" alt="" loading="lazy"><figcaption>Leaderboard</figcaption></figure>
+    <figure><img src="/studio/reliance-incentives/img/m-dig-sa-history.jpg" alt="" loading="lazy"><figcaption>Sales history</figcaption></figure>
+    <figure><img src="/studio/reliance-incentives/img/m-fnl-sm-home.jpg" alt="" loading="lazy"><figcaption>Store manager home</figcaption></figure>
+    <figure><img src="/studio/reliance-incentives/img/m-fnl-sm-team.jpg" alt="" loading="lazy"><figcaption>Store manager team tab</figcaption></figure>
+  </div>
+</section>
+
+<!-- 10 Controls -->
+<section id="controls">
+  <div class="num">10 · CONTROLS</div>
+  <h2>Approvals, period lock and payroll</h2>
+  <p class="lede">How a calculated number becomes a payment, with a control at every step.</p>
+  <video controls preload="metadata" poster="/studio/reliance-incentives/videos/10-approvals.jpg" src="/studio/reliance-incentives/videos/10-approvals.mp4"></video>
+  <ol class="steps">
+    <li><b>Maker</b> edits a plan, version, targets or spot incentives and submits. Status becomes SUBMITTED.</li>
+    <li><b>Checker</b> (approval rights for that vertical) reviews in the approvals inbox: <b>Approve</b> → ACTIVE, or <b>Reject</b> with a reason → back to DRAFT.</li>
+    <li><b>Calculate.</b> Runs on upload, manual recalculation, plan approval or schedule; each run is logged in Run Summary.</li>
+    <li><b>Lock the period.</b> Choose vertical and period. A locked period refuses recalculation, input edits and uploads; its payout total is frozen. Unlocking needs a reason.</li>
+    <li><b>Download payroll CSV.</b> Only from a locked period, and only if the total still matches the lock-time total. Columns: employee ID, name, role, store, vertical, period start/end, amount.</li>
+    <li><b>Audit.</b> Every create, submit, approve, reject, upload, update, calculation, lock, unlock and export is in the audit log.</li>
+  </ol>
+  <figure><img src="/studio/reliance-incentives/img/a-settings-period-lock.jpg" alt="Period lock" loading="lazy"><figcaption>Period lock with payroll CSV export.</figcaption></figure>
+  <figure><img src="/studio/reliance-incentives/img/a-audit.jpg" alt="Audit log" loading="lazy"><figcaption>Audit log, filterable and exportable.</figcaption></figure>
+</section>
+</main>
+</div>
+<footer>BetterPlace · Incentive OS · Explainer guide · Pilot build, March 2026 data, names masked</footer>
+<script>
+document.querySelectorAll('.tabs').forEach(function(g){
+  var btns=g.querySelectorAll('button');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.setAttribute('aria-selected',x===b);var p=document.getElementById(x.dataset.panel);if(p)p.hidden=x!==b;});
+  });});
+});
+var links=document.querySelectorAll('nav.toc a');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id);});}});},{rootMargin:'-30% 0px -60% 0px'});
+  document.querySelectorAll('main section').forEach(function(s){io.observe(s);});
+}
+// Pause other videos when one plays.
+document.querySelectorAll('video').forEach(function(v){v.addEventListener('play',function(){document.querySelectorAll('video').forEach(function(o){if(o!==v)o.pause();});});});
+</script>
+</body>
+</html>
