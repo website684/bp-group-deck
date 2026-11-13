@@ -60,7 +60,7 @@ const pick = (id: string, edit: (h: string) => string = (h) => h) => {
 // SKH scope is contract manpower only: no hiring row in the status table.
 const noHire = (h: string) => h.replace(/<div class="r"[^>]*><i>·<\/i><b>Contractor hiring<\/b>.*?<\/div>/, '')
 
-const css = `<style>
+export const skhCss = `<style>
 .sk-asks { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
 .sk-asks .a { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 18px 18px 14px; display: flex; flex-direction: column; gap: 10px; animation: telpop .45s var(--ease) both; animation-delay: var(--d); }
 .sk-asks .q { font-family: var(--disp); font-size: 1.02rem; line-height: 1.3; color: var(--ink); }
@@ -143,7 +143,7 @@ const pulseMock = `
 export const skhSlides: SlideDef[] = [
   {
     id: 'sk1', theme: 'darker', title: 'Cover',
-    html: `${css}
+    html: `${skhCss}
     <div class="glow"></div>
     <div class="tel center" style="padding-top:0">
       <div class="tel-coverwrap">

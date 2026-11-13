@@ -28,10 +28,16 @@ import { tataElectronicsSlides } from './tata-electronics'
 import { hyundaiSlides } from './hyundai'
 import { bpclAiSlides } from './bpcl-ai'
 import { skhSlides } from './skh'
+import { syrmaSlides } from './syrma'
 import { dtssLmsSlides } from './dtss-story'
 import { rilIncentiveOsSlides } from './ril-incentive-os'
 
 export const decks: DeckDef[] = [
+  {
+    id: 'syrma', title: 'Syrma SGS · goBetter CLMS', group: 'story',
+    tagline: 'CLMS for Syrma SGS: 8,250 contract workers, 14 plants across states, new plants, 48% women, customer audits. Link-only.',
+    slides: syrmaSlides,
+  },
   {
     id: 'dtss-lms', title: 'DTSS · skillBetter LMS', group: 'story',
     tagline: 'LMS for DTSS (SIS): trainers and employees on one app, AI content upgrade, site trainer sessions, certification, nudges and customer-facing training reports. Link-only.',
