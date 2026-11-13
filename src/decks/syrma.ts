@@ -57,7 +57,33 @@ const sy = `<style>
 .sy-aud .a h4 { margin: 4px 0 8px; font-family: var(--disp); font-size: 1.05rem; color: var(--ink); }
 .sy-aud .a ul { margin: 0; padding-left: 16px; font-size: .82rem; line-height: 1.5; color: var(--text); }
 .sy-aud .a .g { margin-top: 10px; font-size: .78rem; font-weight: 600; color: #1a8f52; border-top: 1px dashed var(--border); padding-top: 8px; }
+.sy-cd { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+.sy-cd .k { background: #f7f8fb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 9px 10px; }
+.sy-cd .k b { display: block; font-family: var(--disp); font-size: 1.3rem; color: #111827; line-height: 1.1; }
+.sy-cd .k b.g { color: #1a8f52; } .sy-cd .k b.r { color: #c0392b; } .sy-cd .k b.y { color: #b7791f; }
+.sy-cd .k span { font-size: 10.5px; color: #6b7280; }
+.sy-hm { display: grid; grid-template-columns: 1.4fr repeat(6, 1fr); gap: 3px; margin-top: 10px; font-size: 10.5px; }
+.sy-hm .h { font-family: var(--mono); font-size: 9.5px; text-transform: uppercase; letter-spacing: .05em; color: #6b7280; padding: 3px 4px; }
+.sy-hm .n { color: #111827; font-weight: 600; padding: 6px 4px; }
+.sy-hm .c { border-radius: 5px; text-align: center; padding: 6px 2px; font-weight: 700; }
+.sy-hm .c.g { background: #dcf3e5; color: #146c3e; } .sy-hm .c.y { background: #fdf0d2; color: #8a5a00; } .sy-hm .c.r { background: #fbe0dc; color: #a12b1f; }
 </style>`
+
+const compUI = `
+<div class="tm">
+  ${bar('goBetter · Compliance dashboard · all plants · October', 'Live')}
+  <div class="tm-body">
+    <div class="sy-cd">
+      <div class="k"><b>214</b><span>contractors</span></div>
+      <div class="k"><b class="g">96%</b><span>licences valid</span></div>
+      <div class="k"><b class="y">4,547</b><span>at minimum wage · revision ready</span></div>
+      <div class="k"><b class="r">38</b><span>workers short on PF/ESI</span></div>
+      <div class="k"><b class="g">99%</b><span>registers signed off</span></div>
+      <div class="k"><b class="r">7</b><span>bills on hold</span></div>
+    </div>
+    <div class="sy-hm"><div class="h">Plant</div><div class="h">Licence</div><div class="h">PF/ESI</div><div class="h">Min wage</div><div class="h">Hours/OT</div><div class="h">Registers</div><div class="h">Women nights</div><div class="n">Chennai 1–4</div><div class="c g">✓</div><div class="c g">✓</div><div class="c g">✓</div><div class="c y">Due</div><div class="c g">✓</div><div class="c g">✓</div><div class="n">Bargur</div><div class="c g">✓</div><div class="c y">Due</div><div class="c g">✓</div><div class="c g">✓</div><div class="c g">✓</div><div class="c g">✓</div><div class="n">Manesar 1</div><div class="c g">✓</div><div class="c g">✓</div><div class="c r">Gap</div><div class="c g">✓</div><div class="c g">✓</div><div class="c y">Due</div><div class="n">Manesar 2</div><div class="c g">✓</div><div class="c g">✓</div><div class="c g">✓</div><div class="c g">✓</div><div class="c y">Due</div><div class="c g">✓</div><div class="n">Bawal</div><div class="c y">Due</div><div class="c g">✓</div><div class="c g">✓</div><div class="c r">Gap</div><div class="c g">✓</div><div class="c g">✓</div><div class="n">Bengaluru</div><div class="c g">✓</div><div class="c g">✓</div><div class="c g">✓</div><div class="c g">✓</div><div class="c g">✓</div><div class="c g">✓</div><div class="n">Baddi</div><div class="c g">✓</div><div class="c g">✓</div><div class="c y">Due</div><div class="c g">✓</div><div class="c g">✓</div><div class="c g">✓</div><div class="n">Pune</div><div class="c g">✓</div><div class="c r">Gap</div><div class="c g">✓</div><div class="c g">✓</div><div class="c g">✓</div><div class="c y">Due</div></div>
+  </div>
+</div>`
 
 const womenUI = `
 <div class="tm">
@@ -214,6 +240,21 @@ export const syrmaSlides: SlideDef[] = [
     proof: { n: '48%', p: 'women in your FY26 workforce. The same records serve your customers’ social audits.' },
     vis: womenUI,
     foot: 'Consent fields, roster rules and training tracking are live; transport logging is configured per plant. Conditions follow your state rules; interpretation stays with you and your advisors. Names illustrative.',
+  }),
+
+  problemSlide({
+    id: 'sy9', theme: 'light', title: 'Compliance dashboard', rail, step: 10, demo: 'Live · compliance dashboard',
+    kick: 'Compliance · every plant, every contractor, every month, on one screen',
+    h2: 'Every compliance gap across 14 plants, <em>on one screen, before an auditor or a customer finds it.</em>',
+    qLabel: Q, quote: 'Each plant sends a monthly compliance sheet. Head office finds a gap weeks later, after the bill has been paid.',
+    changes: [
+      { ic: icons.chart, b: 'Plant by plant, check by check.', t: 'Licences, PF and ESI, minimum wage, hours and overtime, registers and women’s night shifts, green, due or gap.' },
+      { ic: icons.shield, b: 'Proof before payment.', t: 'Your rule, enforced: a contractor’s bill waits until last month’s PF, ESI, welfare fund and tax are matched to each worker.' },
+      { ic: icons.doc, b: 'Ready for any audit.', t: 'Drill from a red cell to the worker, the challan and the register in two clicks; export for auditors and customers.' },
+    ],
+    proof: { n: '−80%', p: 'vendor non-compliance at <b>Reliance</b> once every contractor was checked this way every month.' },
+    vis: compUI, wide: true,
+    foot: 'Compliance dashboard, challan matching, registers and alerts are live. Plants, contractors and numbers illustrative.',
   }),
 
   pick('cm13'), pick('cm14'), pick('cm15'), pick('cm16'), pick('cm17'),
