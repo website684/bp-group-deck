@@ -201,7 +201,7 @@ const dashUI = `
 
 /* ---------- slides ---------- */
 
-export const hyundaiSlides: SlideDef[] = [
+const baseSlides: SlideDef[] = [
   {
     id: 'hy1', theme: 'darker', title: 'Cover',
     html: `
@@ -584,5 +584,364 @@ export const hyundaiSlides: SlideDef[] = [
       </div>
     </div>`, { glow: true }),
 ]
+
+
+/* =====================================================================================
+   Panel version (23 Nov 2026). HMIL's evaluation panel set the agenda: Overview 5 min,
+   Product features 15 min, Demo 10 min, Q&A 10 min. The base slides above are reordered to
+   that agenda, patched for current company facts, and joined by slides for what the MoM of
+   21 Oct asked for: float-pool replacement, access and approvals by location, vendor-wise
+   salary structures, PF verification, integrations, security, implementation, support and
+   the licensing model. Statuses stay honest: Live · Configured for HMIL · Pilot · Beta.
+   ===================================================================================== */
+
+const PROTO = 'https://www.betterplace.co.in/studio/hyundai'
+
+/* ---------- salary structures: vendor × location × department × skill ---------- */
+const salUI = `
+<div class="ui">
+  ${side(2)}
+  <div class="ui-main">
+    ${top('Hyundai Motor India / Payroll / <b>Salary structures</b>', 'Structures by vendor, location, department and skill')}
+    <div class="ui-bar"><span class="ui-box">Vendor: Sri Sakthi · V-10442</span><span class="ui-box">Location: Chennai Plant 1</span><span class="ui-box">Sub-vendors: 2</span><span class="ui-sp"></span><span class="ui-btn ai">✦ Check against minimum wage</span><span class="ui-btn pri">+ Structure</span></div>
+    <div class="hv-tbl" style="grid-template-columns:1.2fr 1fr .8fr .75fr .75fr .9fr">
+      <div class="h">Department · work order</div><div class="h">Skill</div><div class="h">Basic + DA / day</div><div class="h">Min wage TN</div><div class="h">OT</div><div class="h">Check</div>
+      <div><b>Body shop</b><small>WO-HMIL-0298 · welding</small></div><div>Skilled</div><div>₹742</div><div>₹698</div><div>2× · consent</div><div><span class="hv-d g">Above floor</span></div>
+      <div><b>Paint shop</b><small>WO-HMIL-0301 · sealing</small></div><div>Semi-skilled</div><div>₹668</div><div>₹652</div><div>2× · consent</div><div><span class="hv-d g">Above floor</span></div>
+      <div><b>Material handling</b><small>WO-HMIL-0312 · same vendor</small></div><div>Semi-skilled</div><div>₹671</div><div>₹652</div><div>2× · consent</div><div><span class="hv-d g">Above floor</span></div>
+      <div><b>Housekeeping</b><small>WO-HMIL-0330 · sub-vendor Annai</small></div><div>Unskilled</div><div>₹598</div><div>₹612</div><div>2× · consent</div><div><span class="hv-d r">Below floor · blocked</span></div>
+    </div>
+    <div class="hy-reimb"><span class="l">Non-CTC reimbursements</span><span>PPE kit · ₹1,450 / 6 months</span><span>Safety shoes · ₹1,200 / year</span><span>Uniform · 2 sets</span><span>Canteen subsidy</span></div>
+    <div class="hv-foot">Two structures for the same vendor at one plant are normal: each work order carries its own. Rates are illustrative, not notified minimum wages.</div>
+  </div>
+</div>`
+
+/* ---------- access and approvals by location, vendor, department, role ---------- */
+const accUI = `
+<div class="ui">
+  ${side(4)}
+  <div class="ui-main">
+    ${top('Hyundai Motor India / Settings / <b>Roles and approvals</b>', 'Who sees what, who approves what')}
+    <div class="hy-acc">
+      <div class="h">Role</div><div class="h">Locations</div><div class="h">Vendors</div><div class="h">Departments</div><div class="h">Can approve</div>
+      <div><b>Corporate HR · Gurugram</b></div><div>All India</div><div>All</div><div>All</div><div><span class="hv-d g">Work orders</span><span class="hv-d g">Wage revisions</span></div>
+      <div><b>Plant HR · Chennai</b></div><div>Chennai plants, port</div><div>All at Chennai</div><div>All</div><div><span class="hv-d g">Passes</span><span class="hv-d g">OT</span><span class="hv-d g">Invoices</span></div>
+      <div><b>Plant HR · Talegaon</b></div><div>Talegaon, Chakan</div><div>All at Pune</div><div>All</div><div><span class="hv-d g">Passes</span><span class="hv-d g">OT</span><span class="hv-d g">Invoices</span></div>
+      <div><b>Domain head · Body shop</b></div><div>Chennai Plant 1</div><div>4 vendors</div><div>Body shop</div><div><span class="hv-d g">Passes</span><span class="hv-d g">OT</span></div>
+      <div><b>Security · Gate 2</b></div><div>Chennai Plant 1</div><div>All</div><div>Read only</div><div><span class="hv-d n">Pass issue only</span></div>
+      <div><b>Vendor · Sri Sakthi</b></div><div>Own sites</div><div>Self + sub-vendors</div><div>Own work orders</div><div><span class="hv-d n">Submit only</span></div>
+    </div>
+    <div class="hy-flow"><span class="l">Approval chain · OT above 4 h in a day · Chennai</span><span class="ok">Vendor validates</span><i>→</i><span class="ok">Supervisor</span><i>→</i><span class="on">Domain head</span><i>→</i><span>Plant HR if &gt; 50 h in the quarter</span></div>
+  </div>
+</div>`
+
+/* ---------- float pool: skill-based replacement of absent workers ---------- */
+const fpUI = `
+<div class="ui">
+  ${side(3)}
+  <div class="ui-main">
+    ${top('Hyundai Motor India / Roster / <b>Absent today · Body shop B · A shift</b>', 'Replace from the vendor float pools')}
+    <div class="ui-bar"><span class="ui-box">Absent at 06:20 · <b>9</b></span><span class="ui-box">Float pool · 3 vendors · 41 ready</span><span class="ui-sp"></span><span class="ui-btn">Criteria</span><span class="ui-btn ai">✦ Fill all 9</span></div>
+    <div class="hy-fp">
+      <div class="col"><div class="l">Absent · station needs</div>
+        <div class="ab"><b>Karthik M.</b><small>Spot welding · station W-14</small></div>
+        <div class="ab"><b>Arun K.</b><small>Spot welding · station W-17</small></div>
+        <div class="ab"><b>Dinesh S.</b><small>Sealer · station S-03</small></div>
+      </div>
+      <div class="col wide"><div class="l">Ranked replacements for W-14</div>
+        <div class="cand top"><span class="rk">1</span><div><b>Prakash A.</b><small>Velan · float · spot welding certified · 18 shifts on W-line</small></div><em>94</em><span class="hv-s g">Notified</span></div>
+        <div class="cand"><span class="rk">2</span><div><b>Vignesh G.</b><small>Sri Sakthi · float · certified · 31 of 50 OT h used</small></div><em>88</em><span class="hv-s y">Standby</span></div>
+        <div class="cand dim"><span class="rk">–</span><div><b>Suresh R.</b><small>Ganesh · not certified for W-line</small></div><em>—</em><span class="hv-d r">Excluded</span></div>
+        <div class="why">Ranked on certification for the station, recent shifts on the line, hours left this week and quarter, rest since last shift, vendor fill rate. Criteria and weights are yours to set.</div>
+      </div>
+    </div>
+    <div class="hv-ai"><b>✦ 8 of 9 filled by 06:34.</b> Workers told on the app in Tamil; vendors and the supervisor informed. One open cell raised to the domain head.</div>
+  </div>
+</div>`
+
+/* ---------- Ask goBetter AI mock ---------- */
+const askUI = `
+<div class="hy-ask">
+  <div class="q"><span>✦</span>Which vendors have PF gaps this month, and how many workers are affected?</div>
+  <div class="a">
+    <p><b>3 vendors</b> have PF gaps for October: <b>Ganesh Logistics</b> (6 workers, ₹8,600), <b>Kumaran Builders</b> (11 workers, ₹19,400) and <b>Marina Housekeeping</b> (2 workers, ₹2,900).</p>
+    <div class="bars"><span style="--w:100%"><b>Kumaran</b><i>₹19.4K</i></span><span style="--w:44%"><b>Ganesh</b><i>₹8.6K</i></span><span style="--w:15%"><b>Marina</b><i>₹2.9K</i></span></div>
+    <div class="src">Read 41 challans · 6,212 wage lines · Oct 2026 · <u>Open the 19 workers</u> · <u>Draft vendor notice</u></div>
+  </div>
+</div>`
+
+/* ---------- integration map ---------- */
+const hmArch = `
+<div class="tm">
+  ${bar('Who is the system of record for what · SAP · HRMS · goBetter', 'Integration map')}
+  <div class="tm-body tm-arch">
+    <div class="tm-sor" style="margin-top:0">
+      <div class="h">Object</div><div class="h">System of record</div><div class="h">Flows to</div><div class="h">Interface</div>
+      <div>Vendor codes, work orders, POs, payments</div><div><b>SAP ERP</b></div><div>goBetter reads vendors and orders; bills checked before release</div><div>API or file · agreed with HMIL IT</div>
+      <div>On-roll employee master, org, cost centres</div><div><b>Your HRMS</b></div><div>goBetter reads for approvers and departments</div><div>API · with PeopleStrong, our partner</div>
+      <div>Contract worker, pass, attendance, wages, registers</div><div><b>goBetter</b></div><div>SAP for cost and invoices · HRMS for headcount</div><div>API · daily or per run</div>
+      <div>Biometric, card, turnstile, PDA</div><div><b>Your devices</b></div><div>Punches in, access decisions out</div><div>Device integration · offline queue</div>
+      <div>PF and ESI challans, UAN</div><div><b>EPFO · ESIC</b></div><div>Challans read by OCR; UAN checked on a sample</div><div>Upload + verification</div>
+      <div>Sign-in</div><div><b>Your directory</b></div><div>Single sign-on for HMIL users</div><div>SAML / Azure AD</div>
+    </div>
+  </div>
+</div>`
+
+/* ---------- new slides ---------- */
+const extra: Record<string, SlideDef> = {
+  hag: plainSlide('hag', 'darker', 'Agenda',
+    'Agenda · the panel’s format, in the panel’s order',
+    'Forty minutes, four parts. <em>Every point on your list has a slide and a screen.</em>',
+    `<div class="hy-agenda">
+      <div class="ag" style="--d:.1s"><div class="t">05 min</div><div><h4>Overview</h4><p>Company profile, products, CLMS experience, financials, workforce, clientele with manufacturing first.</p></div><span class="n">Slides 3–4</span></div>
+      <div class="ag" style="--d:.2s"><div class="t">15 min</div><div><h4>Product features</h4><p>The contract-labour lifecycle end to end: contractor onboarding, statutory monitoring, attendance and deployment, documents and workflows, invoicing and payments, dashboards, integrations, security, implementation, support and the licensing model.</p></div><span class="n">Slides 5–28</span></div>
+      <div class="ag hot" style="--d:.3s"><div class="t">10 min</div><div><h4>Product demo, end to end</h4><p>A clickable product built for HMIL: Chennai, Talegaon and Delhi on one screen, with AI that answers, rosters and checks.</p></div><span class="n">Slide 29 · live</span></div>
+      <div class="ag" style="--d:.4s"><div class="t">10 min</div><div><h4>Q&amp;A</h4><p>Product, implementation and technical experts on the call. Quotation sent separately, password-protected, to panel members only.</p></div><span class="n">Slide 30</span></div>
+    </div>`, { glow: true }),
+
+  hfm: plainSlide('hfm', 'dark', 'Your feature list',
+    'Product features · your list, with where it is shown and its status for HMIL',
+    'Thirteen areas on your list. <em>Here is each one, what runs today and what we configure for you.</em>',
+    `<div class="tel-status tight hy-status">
+      <div class="h"></div><div class="h">Your area</div><div class="h">What runs today</div><div class="h">Status for HMIL</div>
+      ${[
+        ['End-to-end lifecycle', 'Vendor → work order → onboarding → pass → attendance → wages → exit, on one worker record.', 'live', 'Live'],
+        ['Contractor onboarding', 'Vendor master, nine contract types, documents with expiry, vendor login on IC approval, sub-vendors.', 'live', 'Live · types configured'],
+        ['Statutory compliance', 'PF and ESI challans matched per worker, sampled UAN checks, licences, Labour Code registers, minimum wage.', 'live', 'Live'],
+        ['Attendance and deployment', 'Biometric, card and PDA devices, live headcount, shifts, roster rules, float-pool replacement.', 'live', 'Live · float criteria configured'],
+        ['Documents and workflows', 'Document vault with expiry; approval chains by location, vendor, department and role.', 'mix', 'Live · HMIL chains configured'],
+        ['Invoicing and payments', 'Work-order bills against verified attendance, OT inside the cycle, reimbursements, gratuity.', 'live', 'Live'],
+        ['Dashboards, MIS, analytics', 'Embedded dashboards, drill-down to the worker, scheduled reports, Ask goBetter AI.', 'mix', 'Live · Ask AI pilot'],
+        ['ERP and HRMS integration', 'SAP and HRMS by API or file, device integration, SSO.', 'cfg', 'Configured with HMIL IT'],
+        ['Security and privacy', 'ISO 27001, SOC 2, DPDPA-aligned processing, India hosting, role-based access, audit log.', 'live', 'Live · pack on request'],
+        ['Implementation', '6–8 weeks of configuration after selection; year-end go-live as discussed.', 'cfg', 'Plan on slide 26'],
+        ['Support', 'Named CSM, L1–L3, worker helpdesk in their language, Labour Code updates as configuration.', 'live', 'Live'],
+        ['Commercials', 'Per active worker per month, devices itemised, no one-time licence purchase.', 'cfg', 'Quotation sent separately'],
+        ['Hiring (ATS)', 'Openings from work orders, walk-in and WhatsApp sourcing, straight into onboarding.', 'live', 'Live · in the CLMS package'],
+      ].map(([a, b, c, d], i) => `<div class="r" style="--d:${0.04 + i * 0.04}s"><i>${String(i + 1).padStart(2, '0')}</i><b>${a}</b><span>${b}</span><em class="${c}">${d}</em></div>`).join('')}
+    </div>`),
+
+  hsal: problemSlide({
+    id: 'hsal', theme: 'dark', title: 'Salary structures', rail, step: 2, demo: 'Live · structures',
+    kick: 'Product features · vendor management · salary structures',
+    h2: 'A structure for every vendor, location, department and skill, <em>checked against the minimum wage before it saves.</em>',
+    qLabel: P, quote: 'One vendor can supply three departments at one plant on three rates. Rates live in each vendor’s Excel, and a rate under the floor is found at audit.',
+    changes: [
+      { ic: icons.layers, b: 'Structures per work order.', t: 'Vendor code, sub-vendor, location, department and skill each carry their own structure; one vendor, many structures.' },
+      { ic: icons.shield, b: 'Minimum wage as a gate.', t: 'A structure below the state floor for that skill cannot be saved; a revision re-checks every structure it touches.' },
+      { ic: icons.card, b: 'Non-CTC reimbursements.', t: 'PPE kits, safety shoes, uniforms and canteen subsidy as reimbursement heads outside CTC, paid through the bill.' },
+    ],
+    proof: { n: '500K', p: 'contract workers at <b>Reliance</b> are paid on structures configured this way across 3,000+ vendors.' },
+    vis: salUI, wide: true,
+    foot: 'Configurable structures, vendor codes, sub-vendors, minimum-wage validation and reimbursement heads are live. HMIL’s structures are configured from your rate sheets. Authored view; rates illustrative.',
+  }),
+
+  hwf: problemSlide({
+    id: 'hwf', theme: 'light', title: 'Access and approvals', rail, step: 3, demo: 'Live · roles and chains',
+    kick: 'Product features · documents, workflows and access control',
+    h2: 'Access by location, vendor, department and role, <em>and approval chains you change without code.</em>',
+    qLabel: P, quote: 'Chennai, Pune and Delhi each approve differently. Access is all or nothing, and every new approval step is a change request.',
+    changes: [
+      { ic: icons.lock, b: 'Four-way access control.', t: 'Each role sees only its locations, vendors and departments. Vendors see their own workers and sub-vendors, nothing else.' },
+      { ic: icons.repeat, b: 'Chains as settings.', t: 'Steps, approvers, conditions (hours, amount, contract type) and escalations set per location in the workflow builder.' },
+      { ic: icons.doc, b: 'One document vault.', t: 'Every licence, policy, challan and worker document stored once with expiry and version, retrievable by any approver with access.' },
+    ],
+    proof: { n: 'BPCL', p: 'runs gate pass issue, renewal and termination as configured approval chains on this platform.' },
+    vis: accUI, wide: true,
+    foot: 'Role-based access, the workflow builder and the document vault are live. HMIL’s role matrix and chains are set in the design workshop. Authored view.',
+  }),
+
+  hfp: problemSlide({
+    id: 'hfp', theme: 'dark', title: 'Float pool', rail, step: 7, demo: 'Live · roster agent',
+    kick: 'Product features · attendance and deployment · absent worker replacement',
+    h2: 'Nine absent at 06:20, eight replaced by 06:34, <em>each by skill, from the vendors’ float pools.</em>',
+    qLabel: P, quote: 'When a welder is absent, the supervisor phones the contractor, who sends whoever is free. Skill and hour limits are checked afterwards, if at all.',
+    changes: [
+      { ic: icons.users, b: 'Vendor-maintained float pools.', t: 'Each vendor keeps its trained standby workers on the system, tagged with skills, certifications and stations.' },
+      { ic: icons.chart, b: 'Ranked, inside the rules.', t: 'Candidates ranked on your criteria; anyone uncertified or near the weekly or quarterly hour limit is left out.' },
+      { ic: icons.zap, b: 'Notified, confirmed, logged.', t: 'The worker confirms on the app; vendor and supervisor are told; every replacement is on record for billing.' },
+    ],
+    proof: { n: 'Minutes', p: 'for shortfall management at <b>Reliance Retail</b> on this roster engine, down from hours.' },
+    vis: fpUI, wide: true,
+    foot: 'Roster, standby pools and the rostering and backfill agent are live. HMIL’s ranking criteria and notification rules are configured. Authored view; names illustrative.',
+  }),
+
+  hai: plainSlide('hai', 'darker', 'The AI layer',
+    'Product features · the AI layer on top of the CLMS',
+    'Ask in plain words, let agents do the rostering and checking, <em>and see every record checked, not a sample.</em>',
+    `<div class="tel-body" style="grid-template-columns:minmax(0,.5fr) minmax(0,.5fr);align-items:start">
+      <div class="tel-vis">${askUI}</div>
+      <div>
+        <div class="tel-agents" style="grid-template-columns:1fr 1fr">
+          <div class="ag2" style="--d:.15s"><h4>Ask goBetter AI <span class="st2 beta">Pilot</span></h4><p>Questions in English, Tamil or Hindi over your own CLMS data. Every number links to the records behind it.</p></div>
+          <div class="ag2" style="--d:.23s"><h4>Compliance monitor <span class="st2 live">Live</span></h4><p>Every licence, challan, wage line and punch checked against the rules each cycle. Blocks what breaks a rule.</p></div>
+          <div class="ag2" style="--d:.31s"><h4>Roster and backfill <span class="st2 live">Live</span></h4><p>Drafts the week inside every rule and refills absences from float pools. The supervisor approves.</p></div>
+          <div class="ag2" style="--d:.39s"><h4>Challan agent <span class="st2 beta">Beta</span></h4><p>Works the gaps the challan check raises with each vendor until they close.</p></div>
+          <div class="ag2" style="--d:.47s"><h4>Worker helpdesk <span class="st2 live">Live</span></h4><p>Answers pay, OT and shift questions in the worker’s language, 24/7.</p></div>
+          <div class="ag2" style="--d:.55s"><h4>Onboarding agent <span class="st2 live">Live</span></h4><p>WhatsApp in Tamil or Marathi: consent, Aadhaar, documents, induction.</p></div>
+        </div>
+        <div class="foot" style="margin-top:12px">Agents run on our infrastructure in India with PII masking; no training on your data; every agent action is on the audit log like a user’s.</div>
+      </div>
+    </div>`, { demo: 'Shown in the demo', glow: true }),
+
+  hint: plainSlide('hint', 'light', 'Integrations',
+    'Product features · integration with ERP, HRMS and your hardware',
+    'SAP stays the system for orders and payments, your HRMS for employees. <em>goBetter runs the contract worker and feeds both.</em>',
+    `<div class="tel-body" style="grid-template-columns:minmax(0,.38fr) minmax(0,.62fr);align-items:center">
+      <div class="tel-say">
+        <div class="blk"><div class="lbl">How it fits</div><ul>
+          <li><span class="ic">${svg(icons.plug)}</span><span><b>APIs and files, both ways.</b> REST APIs and scheduled files for SAP and HRMS; the interface list is agreed with HMIL IT in week 1.</span></li>
+          <li><span class="ic">${svg(icons.layers)}</span><span><b>One owner per object.</b> No double entry: each record has one system of record and flows from there.</span></li>
+          <li><span class="ic">${svg(icons.cam)}</span><span><b>Your devices stay.</b> Biometric, card, turnstile and PDA swipes come in through device integration, queued offline when the network drops.</span></li>
+        </ul></div>
+        <div class="proof"><div class="n">BPCL</div><p>runs vendors, contracts and work orders from <b>SAP</b> as master on this platform.</p></div>
+      </div>
+      <div class="tel-vis">${hmArch}</div>
+    </div>`, { demo: 'Configured with HMIL IT' }),
+
+  hsec: plainSlide('hsec', 'light', 'Security and privacy',
+    'Product features · information security and data privacy',
+    'Aadhaar, biometrics and wages for every contract worker. <em>What we can state today, and what the security pack covers.</em>',
+    `<div class="tel-sec">
+      <div class="col">
+        <div class="lbl">What we can state today</div>
+        <div class="row"><b>ISO 27001 · SOC 2</b><span>Certificates and the SOC 2 report go to HMIL InfoSec with the security pack.</span></div>
+        <div class="row"><b>DPDPA-aligned processing</b><span>Data processing agreement, consent per purpose in the worker’s language, retention schedule, deletion on exit evidenced against register-retention duties.</span></div>
+        <div class="row"><b>Hosted in India</b><span>Worker data, biometrics and documents stay in Indian regions.</span></div>
+        <div class="row"><b>Role-based access, full audit log</b><span>Access by location, vendor, department and role; every view and edit logged and exportable.</span></div>
+        <div class="row"><b>Aadhaar handled properly</b><span>eKYC through a UIDAI-licensed partner; Aadhaar masked on every screen; offline XML as an option.</span></div>
+        <div class="row"><b>AI behind guardrails</b><span>PII masked before any model, models hosted in India, no training on your data.</span></div>
+      </div>
+      <div class="col pack">
+        <div class="lbl">What the security pack covers · for InfoSec review</div>
+        <div class="row"><b>Architecture and tenant isolation</b><span>How HMIL’s data is separated from other clients, and vendors from each other.</span></div>
+        <div class="row"><b>Encryption and keys</b><span>In transit and at rest; key management; device-to-cloud traffic.</span></div>
+        <div class="row"><b>Biometric storage and deletion</b><span>What is stored, for how long, and how deletion is evidenced.</span></div>
+        <div class="row"><b>SSO, VAPT, incident response</b><span>SAML or Azure AD sign-in, the latest external test summary, breach-notification commitment.</span></div>
+        <div class="row"><b>Backup, DR and exit</b><span>Backup schedule, recovery approach, full export and a deletion certificate if you stop.</span></div>
+      </div>
+    </div>`, { demo: 'Pack on request' }),
+
+  himp: plainSlide('himp', 'light', 'Implementation',
+    'Product features · implementation methodology and timeline',
+    'Configured in six to eight weeks after selection, <em>live by year-end as discussed, one location wave at a time.</em>',
+    `<div>
+      <div class="tel-plan">
+        <div class="wk" style="--d:.15s"><div class="w">Weeks 1–2</div><h4>Design</h4><ul><li>Workshops on access, approval chains and reports</li><li>Contract types, salary structures, rate sheets</li><li>SAP, HRMS and device interface list with HMIL IT</li><li>Security pack review with InfoSec</li></ul><div class="out">Signed configuration workbook</div></div>
+        <div class="wk" style="--d:.3s"><div class="w">Weeks 3–6</div><h4>Configure and integrate</h4><ul><li>Masters: locations, departments, vendors, work orders</li><li>Workflows, roles, float-pool criteria, OT rules by state</li><li>Interfaces built and tested; devices connected</li><li>Any custom development, scoped in writing</li></ul><div class="out">HMIL tenant ready for testing</div></div>
+        <div class="wk" style="--d:.45s"><div class="w">Weeks 7–8</div><h4>Test and train</h4><ul><li>UAT with HR, Security, Finance and vendors</li><li>Vendor onboarding and portal training</li><li>Admin and approver training, Tamil and Marathi material for workers</li><li>Data migration of active workers</li></ul><div class="out">UAT sign-off</div></div>
+        <div class="wk" style="--d:.6s"><div class="w">Go-live</div><h4>Location waves</h4><ul><li>Wave 1: Chennai plants and port</li><li>Wave 2: Talegaon and Pune warehouse</li><li>Wave 3: Gurugram, Delhi and Hyderabad</li><li>Hypercare for one full pay cycle per wave</li></ul><div class="out">Year-end, ± 1–2 weeks</div></div>
+      </div>
+      <div class="tel-band light"><span class="bl">Who brings what</span><div class="two three"><div><h5>HMIL</h5><p>A project owner in HR, plant HR and Security leads per location, rate sheets and work orders, IT contacts for SAP, HRMS and devices, InfoSec for the pack.</p></div><div><h5>BetterPlace</h5><p>A named project manager and solution consultant, configuration, interfaces, vendor and admin training, data migration, a weekly review.</p></div><div><h5>PeopleStrong</h5><p>Our partner on this bid: HRMS-side integration and account governance alongside us.</p></div></div></div>
+    </div>`),
+
+  hsup: plainSlide('hsup', 'dark', 'Support',
+    'Product features · customer support and post-implementation services',
+    'After go-live you keep a named team, <em>and Labour Code changes arrive as configuration, not projects.</em>',
+    `<div class="hy-sup">
+      <div class="c" style="--d:.1s"><div class="k">Named team</div><h4>Customer success manager</h4><p>One owner for HMIL: monthly review of adoption, compliance gaps and vendor performance; quarterly business review.</p></div>
+      <div class="c" style="--d:.18s"><div class="k">L1</div><h4>Helpdesk for users and vendors</h4><p>Ticket, email and phone for HR, Security and vendors. Workers get a helpdesk in Tamil, Marathi or Hindi on the app.</p></div>
+      <div class="c" style="--d:.26s"><div class="k">L2</div><h4>Functional consultants</h4><p>Configuration changes: new work orders, chains, structures, reports, roles.</p></div>
+      <div class="c" style="--d:.34s"><div class="k">L3</div><h4>Engineering</h4><p>Product defects, interfaces and devices, with root-cause notes.</p></div>
+      <div class="c" style="--d:.42s"><div class="k">Updates</div><h4>Labour Code and state rules</h4><p>New central or state rules shipped as configuration; release notes before each release.</p></div>
+      <div class="c" style="--d:.5s"><div class="k">Hypercare</div><h4>First pay cycle per wave</h4><p>Daily stand-up with plant HR until the first month closes cleanly.</p></div>
+    </div>
+    <div class="foot" style="margin-top:12px">Response and resolution times are as written in the MSA.</div>`),
+
+  hcom: plainSlide('hcom', 'light', 'Commercial and licensing',
+    'Product features · commercial and licensing model',
+    'A subscription per active contract worker, pooled across locations. <em>Every cost head on your list itemised in the quotation.</em>',
+    `<div class="hy-com">
+      <div class="c" style="--d:.1s"><div class="k">Software licence</div><h4>Recurring, per active worker per month</h4><p>Pooled across every HMIL location; no one-time licence purchase. Billed on workers active in the month.</p></div>
+      <div class="c" style="--d:.18s"><div class="k">AMC</div><h4>Stated as its own line</h4><p>Upgrades, Labour Code rule changes and hosting, itemised so you can compare like for like.</p></div>
+      <div class="c" style="--d:.26s"><div class="k">Technical and service support</div><h4>Named team, L1 to L3</h4><p>As on the support slide; itemised in the quotation.</p></div>
+      <div class="c" style="--d:.34s"><div class="k">One-time</div><h4>Implementation and custom development</h4><p>Configuration, interfaces and migration; any custom development scoped in writing before work starts.</p></div>
+      <div class="c" style="--d:.42s"><div class="k">Other costs</div><h4>Devices and messaging</h4><p>Biometric or face devices itemised to buy or rent; WhatsApp and SMS at actuals or bundled.</p></div>
+      <div class="c hot" style="--d:.5s"><div class="k">Today</div><h4>Quotation in a password-protected file</h4><p>Sent by separate email to panel members only, as you asked.</p></div>
+    </div>`),
+
+  hdemo: {
+    id: 'hdemo', theme: 'darker', title: 'Demo',
+    html: `<div class="glow"></div>
+    <div class="tel norail">
+      <div class="tel-head"><div><span class="kick">Product demo · 10 minutes · end to end</span><h2>Now the product, built around HMIL: <em>Chennai, Talegaon and Delhi on one screen.</em></h2></div><span class="demo">Live · switch to the product</span></div>
+      <div class="hy-demo">
+        <div class="url"><span class="l">Open on any browser</span><a href="${PROTO}" target="_blank" rel="noopener">betterplace.co.in/studio/hyundai</a><p>Clickable for every panel member after the call. Demo data shaped like HMIL; not HMIL figures.</p></div>
+        <ol class="path">
+          ${[
+            ['Command Centre', 'All locations, then Chennai Plant 1, a vendor, one worker'],
+            ['Vendors &amp; Work Orders', 'Contractor onboarding, work orders, structures'],
+            ['Onboard &amp; Gate', 'Bulk upload, WhatsApp in Tamil, five-condition pass'],
+            ['Roster &amp; Float Pool', 'Absent at shift start, replaced by skill'],
+            ['Compliance Centre', 'PF, ESI, licences, registers, minimum wage'],
+            ['AI Monitor', 'Every record checked, live'],
+            ['Invoicing &amp; Payments', 'Bill against swipes, challan to wage'],
+            ['Ask goBetter AI', 'A question from the panel, answered'],
+            ['Access &amp; Integrations', 'Roles, chains, SAP and HRMS'],
+          ].map(([a, b], i) => `<li style="--d:${0.1 + i * 0.06}s"><span>${i + 1}</span><b>${a}</b><small>${b}</small></li>`).join('')}
+        </ol>
+      </div>
+    </div>`,
+  },
+}
+
+/* ---------- patches to the base slides ---------- */
+const patches: Record<string, (s: SlideDef) => SlideDef> = {
+  hy1: (s) => ({ ...s, html: s.html
+    .replace('BetterPlace × Hyundai Motor India · October 2026', 'BetterPlace × HMIL · Evaluation panel · 23 Nov 2026')
+    .replace('Every contractor, every pass, every swipe, <em>on one CLMS for every plant and site across India.</em>', 'Every contractor, every pass, every swipe, <em>on one AI-native CLMS for Chennai, Pune and Delhi.</em>')
+    .replace('Vendors and work orders, onboarding and gate passes, contractor scorecards, attendance, overtime, billing, statutory checks and the live dashboard. Shown on the software that runs 500,000 contract workers today.', 'Vendors and work orders, onboarding and gate passes, attendance and float pools, statutory compliance, invoicing and dashboards, with AI that answers, rosters and checks every record. On the platform that runs 5 lakh+ contract workers a month at Reliance.')
+    .replace('<span>CLMS demo · HR and Security</span><span>Slides + live software</span>', '<span>Overview · Features · Demo · Q&amp;A</span><span>Slides + clickable product</span>') }),
+  hy2a: (s) => ({ ...s, title: 'Company profile', html: s.html
+    .replace('Credentials · 1 of 2', 'Overview · company profile, products, financials')
+    .replace('Ten years on the frontline, 25 million worker profiles, <em>built for your scale.</em>', 'Eleven years on the frontline, 15 million worker profiles, <em>built for your scale.</em>')
+    .replace('<div class="n">25M<em>+</em></div><div class="l">Verified worker profiles</div>', '<div class="n">15M<em>+</em></div><div class="l">Worker profiles on the platform</div>')
+    .replace('<div class="n">8</div><div class="l">Markets · India, SEA, GCC</div>', '<div class="n">4</div><div class="l">Markets · India, Malaysia, Singapore, Indonesia</div>')
+    .replace('<div class="n">500K</div><div class="l">Contract workers a month at Reliance</div>', '<div class="n">5 lakh<em>+</em></div><div class="l">Contract workers a month at Reliance</div>')
+    .replace('<b>2026</b><span>AI Labs. Agents that onboard, induct, roster and reconcile, inside the same record.</span>', '<b>2026</b><span>AI-native CLMS. Agents that roster, reconcile and answer questions on the same record. Products: goBetter CLMS and HRMS, skillBetter, Verify, AI Labs, staffing.</span>') }),
+  hy2: (s) => ({ ...s, title: 'CLMS experience and clientele', html: s.html
+    .replace('Customer impact · whole contract workforces, run on BetterPlace', 'Overview · CLMS experience and clientele, manufacturing and energy first')
+    .replace('<div class="big">500K<small>contract workers active every month</small></div>', '<div class="big">5 lakh+<small>contract workers active every month</small></div>')
+    .replace('<div class="big">Every<small>contract worker at the gate</small></div>', '<div class="big">40,000+<small>contract workers at refineries and plants</small></div>')
+    .replace('<span class="lbl">Also on the platform</span>', '<span class="lbl">Manufacturing and enterprise clients</span>')
+    .replace('<img src="assets/logo/c-basf.png" alt="BASF"/><img src="assets/logo/c-tcs.png" alt="TCS"/><img src="assets/logo/c-accenture.png" alt="Accenture"/><img src="assets/logo/c-amazon.jpg" alt="Amazon"/><img src="assets/logo/c-titan.png" alt="Titan"/><img src="assets/logo/c-jll.png" alt="JLL"/><img src="assets/logo/c-ibm.png" alt="IBM"/>',
+      '<img src="assets/logo/c-hindalco.png" alt="Hindalco"/><img src="assets/logo/c-yokohama.png" alt="Yokohama" style="height:22px"/><img src="assets/logo/c-tata.png" alt="Tata"/><img src="assets/logo/c-titan.png" alt="Titan"/><img src="assets/logo/c-basf.png" alt="BASF"/><img src="assets/logo/c-amazon.jpg" alt="Amazon"/><img src="assets/logo/c-jll.png" alt="JLL"/>')
+    .replace('<div class="tel-logos">', '<div class="foot hy-cfoot">Outcome numbers are client-reported against their own prior year; case notes on request. Reference calls with Reliance and BPCL can be arranged.</div><div class="tel-logos">') }),
+  hy2c: (s) => ({ ...s, html: s.html.replace('The rules your records must prove · the new labour codes and state rules', 'Product features · statutory compliance · the Labour Codes, PF, ESI and state rules') }),
+  hy3: (s) => ({ ...s, html: s.html
+    .replace('One platform for every kind of contractor at your plants', 'Product features · the contract-labour lifecycle, for nine contract types')
+    .replace('<b>Vendor management first</b>: vendors, work orders, onboarding, gate passes, scorecard. Then <b>attendance</b>, shifts, overtime and billing, statutory and the dashboard. The yellow <b>▶ Live</b> marker is where we switch to the software.', 'The lifecycle runs <b>vendor → work order → structure → onboarding → pass → attendance → float pool → bill → statutory → dashboard</b>. The yellow <b>▶ Live</b> marker on each slide is the screen we open in the demo.') }),
+  hp1: (s) => ({ ...s, html: s.html
+    .replace('Each deposit is compared with the dues computed from that worker’s verified attendance and wages. Not paid, short paid, wrong UAN and late deposits are flagged.', 'Each deposit is compared with the dues from that worker’s verified attendance and wages, and a sample of UANs is checked against EPFO. Not paid, short paid, wrong UAN and late deposits are flagged.')
+    .replace('Challan OCR and worker-by-worker PF and ESI reconciliation are live; payroll, PT and LWF compliance too. Figures illustrative.', 'Challan OCR and worker-by-worker PF and ESI reconciliation are live; sampled UAN verification via EPFO and PT and LWF compliance too. Figures illustrative.') }),
+  hn1: (s) => ({ ...s, title: 'Q&A and next steps', html: s.html
+    .replace('<span class="kick">Next step</span>', '<span class="kick">Q&amp;A · and what happens next</span>')
+    .replace('Start with one plant and three contractors, <em>and decide on your own data.</em>', 'Your questions now. <em>Then three things we can start this week.</em>')
+    .replace('<h4>Pick one plant or site and three contractor types</h4><p>Manpower, AMC and construction show every chain: passes, attendance, billing and statutory.</p>', '<h4>Hands-on access for your operations and compliance teams</h4><p>As promised in the MoM: logins to a goBetter demo environment for Yogesh and the team, plus the clickable product at betterplace.co.in/studio/hyundai.</p>')
+    .replace('<h4>A working session with HR and Security</h4><p>We configure the nine contract types, the seven-step chain, forms and the price master from it.</p>', '<h4>Reference calls with Reliance and BPCL</h4><p>Speak to the teams who run their contract workforce on goBetter, at 5 lakh+ and 40,000+ workers.</p>')
+    .replace('<h4>Security and legal review this week</h4><p>ISO 27001 and SOC 2 reports, the draft DPA and the hosting model to your InfoSec team.</p>', '<h4>Design workshop and security pack</h4><p>Access, approval chains and structures for Chennai, Pune and Delhi; ISO 27001 and SOC 2 reports and the draft DPA to InfoSec.</p>')
+    .replace(encodeURIComponent('Hyundai Motor India · CLMS pilot'), encodeURIComponent('Hyundai Motor India · CLMS evaluation'))
+    .replace('Every contractor, every pass, every swipe on one CLMS. The software you saw today is what the pilot runs on.', 'Every contractor, every pass, every swipe on one AI-native CLMS. The product you clicked through today is the one HMIL would run on, configured for you.') }),
+}
+
+const featKick = (s: SlideDef) => ({ ...s, html: s.html.replace(/<span class="kick">(?!Product features)/, '<span class="kick">Product features · ') })
+
+const ORDER = [
+  'hy1', 'hag', 'hy2a', 'hy2',
+  'hfm', 'hy3', 'hv1', 'hv2', 'hsal', 'hv3', 'hwf', 'hv4', 'hv5',
+  'hy2c', 'ha1', 'ha2', 'hfp', 'ha4', 'hp1', 'ht1', 'hr1', 'hd1',
+  'hai', 'hint', 'hsec', 'himp', 'hsup', 'hcom',
+  'hdemo', 'hn1',
+]
+const FEATURE_IDS = new Set(['hv1', 'hv2', 'hv3', 'hv4', 'hv5', 'ha1', 'ha2', 'ha4', 'hp1', 'ht1', 'hr1', 'hd1'])
+const byId = Object.fromEntries(baseSlides.map((s) => [s.id, s])) as Record<string, SlideDef>
+
+export const hyundaiSlides: SlideDef[] = ORDER.map((id) => {
+  let s = extra[id] ?? byId[id]
+  if (!s) throw new Error('hyundai deck: missing slide ' + id)
+  if (patches[id]) s = patches[id](s)
+  if (FEATURE_IDS.has(id)) s = featKick(s)
+  return s
+})
 
 void bar

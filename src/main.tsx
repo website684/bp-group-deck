@@ -5,5 +5,6 @@ import './styles/app.css'
 import './styles/incentives.css'
 import './styles/story.css'
 import './styles/ril-incentive-os.css'
+import './styles/hyundai.css'
 
 createRoot(document.getElementById('root')!).render(<App />)

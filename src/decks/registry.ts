@@ -59,8 +59,8 @@ export const decks: DeckDef[] = [
     slides: bpclAiSlides,
   },
   {
-    id: 'hyundai', title: 'Hyundai Motor India · CLMS demo', group: 'story',
-    tagline: 'Vendor management first (vendors, work orders, onboarding chain, gate passes, scorecard), then attendance, shifts, OT and billing, statutory and the live dashboard. Link-only.',
+    id: 'hyundai', title: 'Hyundai Motor India · CLMS evaluation panel', group: 'story',
+    tagline: 'Panel agenda order (23 Nov 2026): overview and clientele, the 13 feature areas with status, lifecycle slides plus float pool, structures, access, AI, integrations, security, implementation, support and licensing, then the clickable demo. Link-only.',
     slides: hyundaiSlides,
   },
   {
