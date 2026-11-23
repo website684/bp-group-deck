@@ -191,3 +191,24 @@
 .hy-sumlogos { margin-top: 18px; display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-radius: 16px; background: #fff; animation: telpop .5s var(--ease) both; animation-delay: .45s; }
 .hy-sumlogos span { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #64748b; margin-right: 6px; white-space: nowrap; }
 .hy-sumlogos img { height: 34px; max-width: 120px; object-fit: contain; flex: 1; }
+.hy-price { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; margin-top: 10px; }
+.hy-price .lad { border-radius: 18px; overflow: hidden; border: 1px solid #d6dff7; background: #fff; }
+.hy-price .st { display: grid; grid-template-columns: 1fr 90px 120px; align-items: center; gap: 10px; padding: 12px 18px; border-bottom: 1px solid #e6ecfb; animation: telpop .45s var(--ease) both; animation-delay: var(--d); }
+.hy-price .st:last-child { border-bottom: 0; }
+.hy-price .st b { display: block; color: #060E2B; font-size: .95rem; } .hy-price .st span { font-size: .76rem; color: #6B7DB3; }
+.hy-price .st em { font-style: normal; text-align: right; font-family: var(--disp); font-weight: 700; font-size: 1.15rem; color: #060E2B; }
+.hy-price .st small { text-align: right; font-size: .8rem; color: #6B7DB3; }
+.hy-price .st.rack em { text-decoration: line-through; color: #94a3b8; }
+.hy-price .st.d em { color: #b91c1c; }
+.hy-price .st.net { background: #0C1442; } .hy-price .st.net b, .hy-price .st.net em { color: #fff; } .hy-price .st.net span, .hy-price .st.net small { color: #c4cbef; }
+.hy-price .st.best { background: linear-gradient(120deg, #2a1a7a, #1B2D93); } .hy-price .st.best b, .hy-price .st.best em { color: var(--yellow); } .hy-price .st.best em { font-size: 1.5rem; } .hy-price .st.best span, .hy-price .st.best small { color: #dfe4ff; }
+.hy-price .opts { display: grid; gap: 12px; align-content: start; }
+.hy-price .op { border-radius: 18px; padding: 16px 20px; background: #F6F8FF; border: 1px solid #d6dff7; animation: telpop .5s var(--ease) both; animation-delay: var(--d); }
+.hy-price .op.hot { background: #f7f2ff; border: 2px solid #8b3dff; }
+.hy-price .op .k { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: #2142B9; }
+.hy-price .op.hot .k { color: #7c3aed; }
+.hy-price .op .n { font-family: var(--disp); font-weight: 800; font-size: 40px; color: #060E2B; letter-spacing: -.03em; line-height: 1.05; margin-top: 4px; }
+.hy-price .op .n small { font-size: 14px; font-weight: 600; color: #6B7DB3; letter-spacing: 0; }
+.hy-price .op p { margin: 6px 0 0; font-size: .86rem; line-height: 1.45; color: #2A3260; } .hy-price .op p b { color: #060E2B; }
+.hy-price .op.sm p { margin-top: 4px; font-size: .8rem; }
+.hy-price .lad { align-self: start; }

@@ -716,7 +716,7 @@ const extra: Record<string, SlideDef> = {
         ['Security and privacy', 'ISO 27001, SOC 2, DPDPA-aligned processing, India hosting, role-based access, audit log.', 'live', 'Live · pack on request'],
         ['Implementation', '6–8 weeks of configuration after selection; year-end go-live as discussed.', 'cfg', 'Plan on slide 35'],
         ['Support', 'Named CSM, L1–L3, worker helpdesk in their language, Labour Code updates as configuration.', 'live', 'Live'],
-        ['Commercials', 'Per active worker per month, devices itemised, no one-time licence purchase.', 'cfg', 'Quotation sent separately'],
+        ['Commercials', 'Per active worker per month, devices itemised, no one-time licence purchase.', 'cfg', 'On the commercials slide'],
         ['Hiring (ATS)', 'Openings from work orders, walk-in and WhatsApp sourcing, straight into onboarding.', 'live', 'Live · in the CLMS package'],
       ].map(([a, b, c, d], i) => `<div class="r" style="--d:${0.04 + i * 0.04}s"><i>${String(i + 1).padStart(2, '0')}</i><b>${a}</b><span>${b}</span><em class="${c}">${d}</em></div>`).join('')}
     </div>`),
@@ -774,7 +774,7 @@ const extra: Record<string, SlideDef> = {
       <div>
         <div class="tel-agents" style="grid-template-columns:1fr 1fr">
           <div class="ag2" style="--d:.15s"><h4>Ask goBetter AI <span class="st2 beta">Pilot</span></h4><p>Questions in English, Tamil or Hindi over your own CLMS data. Every number links to the records behind it.</p></div>
-          <div class="ag2" style="--d:.23s"><h4>Compliance monitor <span class="st2 live">Live</span></h4><p>Every licence, challan, wage line and punch checked against the rules each cycle. Blocks what breaks a rule.</p></div>
+          <div class="ag2" style="--d:.23s"><h4>Compliance checks <span class="st2 live">Live</span></h4><p>Every licence, challan, wage line and punch checked against the rules each cycle. Blocks what breaks a rule.</p></div>
           <div class="ag2" style="--d:.31s"><h4>Roster and backfill <span class="st2 live">Live</span></h4><p>Drafts the week inside every rule and refills absences from float pools. The supervisor approves.</p></div>
           <div class="ag2" style="--d:.39s"><h4>Challan agent <span class="st2 beta">Beta</span></h4><p>Works the gaps the challan check raises with each vendor until they close.</p></div>
           <div class="ag2" style="--d:.47s"><h4>Worker helpdesk <span class="st2 live">Live</span></h4><p>Answers pay, OT and shift questions in the worker’s language, 24/7.</p></div>
@@ -848,16 +848,25 @@ const extra: Record<string, SlideDef> = {
     </div>
     <div class="foot" style="margin-top:12px">Response and resolution times are as written in the MSA.</div>`),
 
-  hcom: plainSlide('hcom', 'light', 'Commercial and licensing',
-    'Product features · commercial and licensing model',
-    'A subscription per active contract worker, pooled across locations. <em>Every cost head on your list itemised in the quotation.</em>',
-    `<div class="hy-com">
-      <div class="c" style="--d:.1s"><div class="k">Software licence</div><h4>Recurring, per active worker per month</h4><p>Pooled across every HMIL location; no one-time licence purchase. Billed on workers active in the month.</p></div>
-      <div class="c" style="--d:.18s"><div class="k">AMC</div><h4>Stated as its own line</h4><p>Upgrades, Labour Code rule changes and hosting, itemised so you can compare like for like.</p></div>
-      <div class="c" style="--d:.26s"><div class="k">Technical and service support</div><h4>Named team, L1 to L3</h4><p>As on the support slide; itemised in the quotation.</p></div>
-      <div class="c" style="--d:.34s"><div class="k">One-time</div><h4>Implementation and custom development</h4><p>Configuration, interfaces and migration; any custom development scoped in writing before work starts.</p></div>
-      <div class="c" style="--d:.42s"><div class="k">Other costs</div><h4>Devices and messaging</h4><p>Biometric or face devices itemised to buy or rent; WhatsApp and SMS at actuals or bundled.</p></div>
-      <div class="c hot" style="--d:.5s"><div class="k">Today</div><h4>Quotation in a password-protected file</h4><p>Sent by separate email to panel members only, as you asked.</p></div>
+  hcom: plainSlide('hcom', 'light', 'Commercials',
+    'Commercials · one subscription per active user, all modules included',
+    'All modules, 10,000 users, paid annually upfront: <em>\u20b960 per user per month, 40% below rack.</em>',
+    `<div class="hy-price">
+      <div class="lad">
+        ${[
+          ['rack', 'Rack rate', 'goBetter CLMS, per user per month', '\u20b9100', '\u20b91.20 Cr a year'],
+          ['d', 'All-modules discount', 'HMIL takes the full CLMS', '\u2212 \u20b920', '20%'],
+          ['d', 'Volume discount', 'Minimum guarantee of 10,000 users', '\u2212 \u20b915', '15%'],
+          ['net', 'HMIL price, billed monthly', 'per user per month', '\u20b965', '\u20b978 L a year'],
+          ['d', 'Annual-upfront discount', 'Year paid in advance', '\u2212 \u20b95', 'a further 7.7%'],
+          ['best', 'HMIL price, annual upfront', 'per user per month', '\u20b960', '\u20b972 L a year'],
+        ].map(([c, a, b, v, n], i) => `<div class="st ${c}" style="--d:${0.08 + i * 0.07}s"><div><b>${a}</b><span>${b}</span></div><em>${v}</em><small>${n}</small></div>`).join('')}
+      </div>
+      <div class="opts">
+        <div class="op" style="--d:.5s"><span class="k">Option 1 \u00b7 monthly billing</span><div class="n">\u20b965<small> /user/month</small></div><p><b>\u20b96,50,000 a month</b> for 10,000 users, \u20b978,00,000 a year. Billed on the higher of 10,000 or users active.</p></div>
+        <div class="op hot" style="--d:.58s"><span class="k">Option 2 \u00b7 annual upfront \u00b7 recommended</span><div class="n">\u20b960<small> /user/month</small></div><p><b>\u20b972,00,000 a year</b>, in advance. Saves \u20b96 L a year against monthly and \u20b948 L against rack.</p></div>
+        <div class="op sm" style="--d:.66s"><span class="k">Also in the order form</span><p>One-time set-up \u20b99,00,000 \u00b7 custom development scoped in writing at \u20b915,000 per person-day \u00b7 devices quoted separately \u00b7 3-year term, rates held \u00b7 amounts exclude GST.</p></div>
+      </div>
     </div>`),
 
   hdemo: {
@@ -874,7 +883,7 @@ const extra: Record<string, SlideDef> = {
             ['Onboard &amp; Gate', 'Bulk upload, WhatsApp in Tamil, five-condition pass'],
             ['Roster &amp; Float Pool', 'Absent at shift start, replaced by skill'],
             ['Compliance Centre', 'PF, ESI, licences, registers, minimum wage'],
-            ['AI Monitor', 'Every record checked, live'],
+            ['Attendance &amp; Shifts', 'Shift set-up and rules by state'],
             ['Invoicing &amp; Payments', 'Bill against swipes, challan to wage'],
             ['Ask goBetter AI', 'A question from the panel, answered'],
             ['Access &amp; Integrations', 'Roles, chains, SAP and HRMS'],
@@ -1010,7 +1019,7 @@ Object.assign(extra, {
       ].map(([h, p], i) => `<div class="st" style="--d:${0.06 + i * 0.05}s"><i>${String(i + 1).padStart(2, '0')}</i><b>${h}</b><span>${p}</span></div>`).join('')}</div>
       <div class="pil">
         <div class="pl" style="--d:.55s"><em class="b">Prevent</em><h4>Stopped before it happens</h4><p>A pass over licence strength, a rate below the floor, a shift over the daily limit: the product refuses them at entry.</p></div>
-        <div class="pl" style="--d:.62s"><em class="f">Detect</em><h4>Every record, every cycle</h4><p>The AI monitor checks 100% of workers, swipes, wages and challans each cycle, not a sample at audit time.</p></div>
+        <div class="pl" style="--d:.62s"><em class="f">Detect</em><h4>Every record, every cycle</h4><p>Rules-based checks run on 100% of workers, swipes, wages and challans each cycle, not a sample at audit time.</p></div>
         <div class="pl" style="--d:.69s"><em class="p">Prove</em><h4>Ready for any inspector</h4><p>Registers, challans, licences and the approval trail behind every pass and payment, in one click.</p></div>
       </div>
     </div>
@@ -1044,7 +1053,7 @@ Object.assign(extra, {
     <div class="foot hy-cfoot">We configure the rules you and your counsel confirm. When a state notifies new rules, we update the rule set and you approve it before it applies.</div>`),
 
   hcc: plainSlide('hcc', 'dark', 'Compliance Centre',
-    'Compliance by design · the Compliance Centre and the AI monitor',
+    'Compliance by design · the Compliance Centre',
     'One screen tells you where you are exposed today. <em>Before an inspector or a contractor default does.</em>',
     `<div class="hy-cs hy-cc">
       <div class="sc" style="--d:.1s">
@@ -1060,7 +1069,7 @@ Object.assign(extra, {
         ].map(([c, t, d]) => `<div class="it"><em class="${c}">${t}</em><span>${d}</span></div>`).join('')}</div>
       </div>
       <div class="tiles t2">
-        ${tile('radar', 'AI monitor, 100% of records', 'Every worker, swipe, wage line and challan checked every cycle. Exceptions go to the owner, with the evidence.', .14)}
+        ${tile('radar', 'Checks on 100% of records', 'Every worker, swipe, wage line and challan checked against your rules every cycle. Exceptions go to the owner, with the evidence.', .14)}
         ${tile('doc', 'Registers in one click', 'Contractors, workers per contractor, muster roll, wages, overtime, wage slips: any plant, any period.', .2)}
         ${tile('shield', 'Contractor compliance score', 'Licences, challans, wages on time and documents roll into a score that drives renewals.', .26)}
         ${tile('layers', 'Annual return, prepared', 'The data for the principal employer’s annual electronic return, built from the same records.', .32)}
@@ -1068,7 +1077,7 @@ Object.assign(extra, {
         ${tile('bolt', 'Audit trail on every action', 'Who approved which pass, rate, OT and bill, and when. Nothing changes without a record.', .44)}
       </div>
     </div>
-    <div class="foot hy-cfoot">Live in the demo: Compliance Centre and AI Monitor tabs. Figures illustrative.</div>`),
+    <div class="foot hy-cfoot">Live in the demo: the Compliance Centre tab. Figures illustrative.</div>`),
 })
 
 
@@ -1108,12 +1117,12 @@ Object.assign(extra, {
   happx2: plainSlide('happx2', 'darker', 'Appendix',
     'Appendix · every area in detail',
     'The detail behind each area on your list. <em>For your compliance, HR, IT and InfoSec teams.</em>',
-    `<div class="hy-appx">${['The Labour Codes, rule by rule', 'State rules engine: TN, MH, NCR', 'Lifecycle and contract types', 'Vendor master', 'Work orders', 'Gate passes', 'Contractor scorecard', 'Statutory checks', 'Attendance capture', 'Shifts', 'Attendance rules', 'OT and billing', 'Reimbursements', 'Training', 'Live dashboard', 'Security and privacy', 'Support', 'Commercial and licensing'].map((t, i) => `<span style="--d:${0.04 + i * 0.03}s"><i>A${i + 1}</i>${t}</span>`).join('')}</div>`, { glow: true }),
+    `<div class="hy-appx">${['The Labour Codes, rule by rule', 'State rules engine: TN, MH, NCR', 'Lifecycle and contract types', 'Vendor master', 'Work orders', 'Gate passes', 'Contractor scorecard', 'Statutory checks', 'Attendance capture', 'Shifts', 'Attendance rules', 'OT and billing', 'Reimbursements', 'Training', 'Live dashboard', 'Security and privacy', 'Support'].map((t, i) => `<span style="--d:${0.04 + i * 0.03}s"><i>A${i + 1}</i>${t}</span>`).join('')}</div>`, { glow: true }),
 })
 
 const sharePatches: Record<string, (s: SlideDef) => SlideDef> = {
   hfm: (s) => ({ ...s, html: s.html.replace('Plan on slide 35', 'Plan on slide 19') }),
-  hcc: (s) => ({ ...s, html: s.html.replace('Live in the demo: Compliance Centre and AI Monitor tabs. Figures illustrative.', 'Try it: betterplace.co.in/studio/hyundai, Compliance Centre and AI Monitor tabs. Figures illustrative.') }),
+  hcc: (s) => ({ ...s, html: s.html.replace('Live in the demo: the Compliance Centre tab. Figures illustrative.', 'Try it: betterplace.co.in/studio/hyundai, Compliance Centre tab. Figures illustrative.') }),
   hdemo: (s) => ({ ...s, title: 'Try the product', html: s.html
     .replace('Product demo · 10 minutes · end to end', 'The product · clickable, for your whole team')
     .replace('Now the product, built around HMIL: <em>Chennai, Talegaon and Delhi on one screen.</em>', 'Click through the product built around HMIL: <em>Chennai, Talegaon and Delhi on one screen.</em>')
@@ -1126,8 +1135,8 @@ const SHARE_ORDER = [
   'hy1', 'hsum', 'hy2a', 'hscale', 'hrel', 'hbpc', 'hcli',
   'hcx', 'hcc',
   'hfm', 'hsal', 'hv3', 'hwa', 'hfp', 'hp1', 'hwf',
-  'hai', 'hint', 'himp', 'hdemo', 'hn1',
-  'happx2', 'hy2c', 'hstate', 'hy3', 'hv1', 'hv2', 'hv4', 'hv5', 'hs1', 'ha1', 'ha2', 'ha3', 'ha4', 'hr1', 'ht1', 'hd1', 'hsec', 'hsup', 'hcom',
+  'hai', 'hint', 'himp', 'hcom', 'hdemo', 'hn1',
+  'happx2', 'hy2c', 'hstate', 'hy3', 'hv1', 'hv2', 'hv4', 'hv5', 'hs1', 'ha1', 'ha2', 'ha3', 'ha4', 'hr1', 'ht1', 'hd1', 'hsec', 'hsup',
 ]
 
 /* ---------- patches to the base slides ---------- */
