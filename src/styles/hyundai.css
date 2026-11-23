@@ -212,3 +212,14 @@
 .hy-price .op p { margin: 6px 0 0; font-size: .86rem; line-height: 1.45; color: #2A3260; } .hy-price .op p b { color: #060E2B; }
 .hy-price .op.sm p { margin-top: 4px; font-size: .8rem; }
 .hy-price .lad { align-self: start; }
+.hy-price.two { grid-template-columns: 1.15fr 1fr; }
+.hy-price.two .st { grid-template-columns: 1fr 120px 120px; padding: 10px 18px; }
+.hy-price.two .st .c { text-align: right; }
+.hy-price.two .st .c em, .hy-price.two .st .c small { display: block; }
+.hy-price.two .st.hd { background: #EEF2FF; padding: 8px 18px; }
+.hy-price.two .st.hd em { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: #2142B9; font-weight: 600; }
+.hy-price .g4 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.hy-price.two .op { padding: 12px 16px; }
+.hy-price.two .op .n { font-size: 32px; }
+.hy-price.two .op p { margin-top: 2px; font-size: .8rem; }
+.hy-price.two .op .k { font-size: 9.5px; }

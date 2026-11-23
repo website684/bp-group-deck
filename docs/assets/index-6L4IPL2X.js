@@ -6970,14 +6970,19 @@ Error generating stack: `+e.message+`
       <div class="c" style="--d:.42s"><div class="k">Updates</div><h4>Labour Code and state rules</h4><p>New central or state rules shipped as configuration; release notes before each release.</p></div>
       <div class="c" style="--d:.5s"><div class="k">Hypercare</div><h4>First pay cycle per wave</h4><p>Daily stand-up with plant HR until the first month closes cleanly.</p></div>
     </div>
-    <div class="foot" style="margin-top:12px">Response and resolution times are as written in the MSA.</div>`),hcom:M(`hcom`,`light`,`Commercials`,`Commercials · one subscription per active user, all modules included`,`All modules, 10,000 users, paid annually upfront: <em>₹60 per user per month, 40% below rack.</em>`,`<div class="hy-price">
+    <div class="foot" style="margin-top:12px">Response and resolution times are as written in the MSA.</div>`),hcom:M(`hcom`,`light`,`Commercials`,`Commercials · one subscription per active user, all modules included`,`All modules, paid annually upfront: <em>₹60 at 10,000 users, ₹55 at 15,000.</em>`,`<div class="hy-price two">
       <div class="lad">
-        ${[[`rack`,`Rack rate`,`goBetter CLMS, per user per month`,`₹100`,`₹1.20 Cr a year`],[`d`,`All-modules discount`,`HMIL takes the full CLMS`,`− ₹20`,`20%`],[`d`,`Volume discount`,`Minimum guarantee of 10,000 users`,`− ₹15`,`15%`],[`net`,`HMIL price, billed monthly`,`per user per month`,`₹65`,`₹78 L a year`],[`d`,`Annual-upfront discount`,`Year paid in advance`,`− ₹5`,`a further 7.7%`],[`best`,`HMIL price, annual upfront`,`per user per month`,`₹60`,`₹72 L a year`]].map(([e,t,n,r,i],a)=>`<div class="st ${e}" style="--d:${.08+a*.07}s"><div><b>${t}</b><span>${n}</span></div><em>${r}</em><small>${i}</small></div>`).join(``)}
+        <div class="st hd"><div></div><div class="c"><em>10,000 MG</em></div><div class="c"><em>15,000 MG</em></div></div>
+        ${[[`rack`,`Rack rate`,`goBetter CLMS, per user per month`,[`₹100`,`₹1.20 Cr a year`],[`₹100`,`₹1.80 Cr a year`]],[`d`,`All-modules discount`,`HMIL takes the full CLMS`,[`− ₹20`,`20%`],[`− ₹20`,`20%`]],[`d`,`Volume discount`,`Larger for the higher guarantee`,[`− ₹15`,`15%`],[`− ₹20`,`20%`]],[`net`,`HMIL price, billed monthly`,`per user per month`,[`₹65`,`₹78 L a year`],[`₹60`,`₹1.08 Cr a year`]],[`d`,`Annual-upfront discount`,`Year paid in advance`,[`− ₹5`,``],[`− ₹5`,``]],[`best`,`HMIL price, annual upfront`,`per user per month`,[`₹60`,`₹72 L a year`],[`₹55`,`₹99 L a year`]]].map(([e,t,n,r,i],a)=>`<div class="st ${e}" style="--d:${.08+a*.07}s"><div><b>${t}</b><span>${n}</span></div><div class="c"><em>${r[0]}</em><small>${r[1]}</small></div><div class="c"><em>${i[0]}</em><small>${i[1]}</small></div></div>`).join(``)}
       </div>
       <div class="opts">
-        <div class="op" style="--d:.5s"><span class="k">Option 1 \u00b7 monthly billing</span><div class="n">\u20b965<small> /user/month</small></div><p><b>\u20b96,50,000 a month</b> for 10,000 users, \u20b978,00,000 a year. Billed on the higher of 10,000 or users active.</p></div>
-        <div class="op hot" style="--d:.58s"><span class="k">Option 2 \u00b7 annual upfront \u00b7 recommended</span><div class="n">\u20b960<small> /user/month</small></div><p><b>\u20b972,00,000 a year</b>, in advance. Saves \u20b96 L a year against monthly and \u20b948 L against rack.</p></div>
-        <div class="op sm" style="--d:.66s"><span class="k">Also in the order form</span><p>One-time set-up \u20b99,00,000 \u00b7 custom development scoped in writing at \u20b915,000 per person-day \u00b7 devices quoted separately \u00b7 3-year term, rates held \u00b7 amounts exclude GST.</p></div>
+        <div class="g4">
+          <div class="op" style="--d:.5s"><span class="k">Option 1 \u00b7 10K \u00b7 monthly</span><div class="n">\u20b965</div><p><b>\u20b96.5 L a month</b>, \u20b978 L a year</p></div>
+          <div class="op" style="--d:.56s"><span class="k">Option 2 \u00b7 10K \u00b7 annual</span><div class="n">\u20b960</div><p><b>\u20b972 L a year</b>, in advance</p></div>
+          <div class="op" style="--d:.62s"><span class="k">Option 3 \u00b7 15K \u00b7 monthly</span><div class="n">\u20b960</div><p><b>\u20b99 L a month</b>, \u20b91.08 Cr a year</p></div>
+          <div class="op hot" style="--d:.68s"><span class="k">Option 4 \u00b7 15K \u00b7 annual \u00b7 best</span><div class="n">\u20b955</div><p><b>\u20b999 L a year</b>, in advance, 45% below rack</p></div>
+        </div>
+        <div class="op sm" style="--d:.74s"><span class="k">Also in the order form</span><p>Per user per month, pooled across locations; users above the guarantee billed at the plan rate \u00b7 one-time set-up \u20b99,00,000 \u00b7 custom development at \u20b915,000 per person-day \u00b7 devices separate \u00b7 3-year term, rates held \u00b7 amounts exclude GST.</p></div>
       </div>
     </div>`),hdemo:{id:`hdemo`,theme:`darker`,title:`Demo`,html:`<div class="glow"></div>
     <div class="tel norail">
