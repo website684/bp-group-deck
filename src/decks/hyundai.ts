@@ -714,7 +714,7 @@ const extra: Record<string, SlideDef> = {
         ['Dashboards, MIS, analytics', 'Embedded dashboards, drill-down to the worker, scheduled reports, Ask goBetter AI.', 'mix', 'Live · Ask AI pilot'],
         ['ERP and HRMS integration', 'SAP and HRMS by API or file, device integration, SSO.', 'cfg', 'Configured with HMIL IT'],
         ['Security and privacy', 'ISO 27001, SOC 2, DPDPA-aligned processing, India hosting, role-based access, audit log.', 'live', 'Live · pack on request'],
-        ['Implementation', '6–8 weeks of configuration after selection; year-end go-live as discussed.', 'cfg', 'Plan on slide 29'],
+        ['Implementation', '6–8 weeks of configuration after selection; year-end go-live as discussed.', 'cfg', 'Plan on slide 34'],
         ['Support', 'Named CSM, L1–L3, worker helpdesk in their language, Labour Code updates as configuration.', 'live', 'Live'],
         ['Commercials', 'Per active worker per month, devices itemised, no one-time licence purchase.', 'cfg', 'Quotation sent separately'],
         ['Hiring (ATS)', 'Openings from work orders, walk-in and WhatsApp sourcing, straight into onboarding.', 'live', 'Live · in the CLMS package'],
@@ -897,9 +897,9 @@ Object.assign(extra, {
     `<div class="hy-agenda">
       <div class="ag" style="--d:.1s"><div class="t">08 min</div><div><h4>Who we are, and the scale we run</h4><p>BetterPlace in numbers, Reliance (5 lakh+ contract workers) and Bharat Petroleum (20,000+), our clients and the AI layer.</p></div><span class="n">Slides 3–8</span></div>
       <div class="ag" style="--d:.16s"><div class="t">05 min</div><div><h4>Compliance by design</h4><p>Every module as a Labour Code control, rule by rule, your three states’ rules, and the Compliance Centre.</p></div><span class="n">Slides 9–12</span></div>
-      <div class="ag" style="--d:.22s"><div class="t">12 min</div><div><h4>Every module on your list</h4><p>Vendors, work orders, wage structures, onboarding, passes, scorecard, attendance, shifts, float pool, OT and billing, PF and ESI, dashboards, access, integrations, security, implementation, support, licensing.</p></div><span class="n">Slides 13–31</span></div>
-      <div class="ag hot" style="--d:.28s"><div class="t">10 min</div><div><h4>Product demo, end to end</h4><p>A clickable product built for HMIL: Chennai, Talegaon and Delhi on one screen.</p></div><span class="n">Slide 32</span></div>
-      <div class="ag" style="--d:.34s"><div class="t">05 min</div><div><h4>Q&amp;A</h4><p>Product, implementation and technical experts on the call. Quotation sent separately, password-protected.</p></div><span class="n">Slide 33</span></div>
+      <div class="ag" style="--d:.22s"><div class="t">12 min</div><div><h4>Every module on your list</h4><p>Lifecycle, contractor onboarding, statutory monitoring (PF, ESI, Labour Codes), attendance and deployment, documents and workflows, invoicing and payments, dashboards and MIS, ERP and HRMS integration, security and privacy, implementation, support.</p></div><span class="n">Slides 13–36</span></div>
+      <div class="ag hot" style="--d:.28s"><div class="t">10 min</div><div><h4>Product demo, end to end</h4><p>A clickable product built for HMIL: Chennai, Talegaon and Delhi on one screen.</p></div><span class="n">Slide 37</span></div>
+      <div class="ag" style="--d:.34s"><div class="t">05 min</div><div><h4>Q&amp;A</h4><p>Product, implementation and technical experts on the call. Quotation sent separately, password-protected.</p></div><span class="n">Slide 38</span></div>
     </div>`, { glow: true }),
 
   hscale: plainSlide('hscale', 'darker', 'The scale we run',
@@ -1113,16 +1113,19 @@ const patches: Record<string, (s: SlideDef) => SlideDef> = {
 const featKick = (s: SlideDef) => ({ ...s, html: s.html.replace(/<span class="kick">(?!Product features)/, '<span class="kick">Product features · ') })
 
 const ORDER = [
-  // 1 · who we are and the scale we run (~8 min)
+  // 1 · who we are and the scale we run
   'hy1', 'hag', 'hy2a', 'hscale', 'hrel', 'hbpc', 'hcli', 'hai',
-  // 2 · compliance by design (~5 min)
+  // 2 · compliance by design
   'hcx', 'hy2c', 'hstate', 'hcc',
-  // 3 · every module on HMIL's list (~12 min)
-  'hfm', 'hv1', 'hv2', 'hsal', 'hv3', 'hv4', 'hv5', 'ha1', 'ha2', 'hfp', 'ha4', 'hp1', 'hd1', 'hwf', 'hint', 'hsec', 'himp', 'hsup', 'hcom',
-  // 4 · demo (10 min) and Q&A
+  // 3 · every area on HMIL's list, in their order
+  'hfm', 'hy3', 'hv1', 'hv2', 'hsal', 'hv3', 'hv4', 'hv5',
+  'hs1', 'hp1',
+  'ha1', 'ha2', 'ha3', 'hfp',
+  'hwf',
+  'ha4', 'hr1', 'ht1',
+  'hd1', 'hint', 'hsec', 'himp', 'hsup', 'hcom',
+  // 4 · demo and Q&A
   'hdemo', 'hn1',
-  // appendix · for questions
-  'happx', 'hy3', 'ha3', 'hs1', 'ht1', 'hr1',
 ]
 const FEATURE_IDS = new Set(['hv1', 'hv2', 'hv3', 'hv4', 'hv5', 'ha1', 'ha2', 'ha4', 'hp1', 'ht1', 'hr1', 'hd1'])
 const byId = Object.fromEntries(baseSlides.map((s) => [s.id, s])) as Record<string, SlideDef>
