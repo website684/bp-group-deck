@@ -223,3 +223,11 @@
 .hy-price.two .op .n { font-size: 32px; }
 .hy-price.two .op p { margin-top: 2px; font-size: .8rem; }
 .hy-price.two .op .k { font-size: 9.5px; }
+.hy-sow { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 12px; }
+.hy-sow .m { display: grid; grid-template-columns: 26px 1fr auto; gap: 8px; align-items: start; padding: 9px 12px; border-radius: 12px; background: #fff; border: 1px solid #d6dff7; animation: telpop .45s var(--ease) both; animation-delay: var(--d); }
+.hy-sow .m i { font-style: normal; font-family: var(--mono); font-size: 11px; color: #2142B9; padding-top: 2px; }
+.hy-sow .m b { display: block; color: #060E2B; font-size: .84rem; line-height: 1.25; }
+.hy-sow .m span { display: block; font-size: .72rem; color: #5B6A99; line-height: 1.35; margin-top: 2px; }
+.hy-sow .m em { font-style: normal; font-family: var(--mono); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; padding: 3px 7px; border-radius: 999px; background: #dcfce7; color: #166534; white-space: nowrap; }
+.hy-sow .m em.cfg { background: #e0e7ff; color: #3730a3; }
+.hy-sow .m.x { background: #0C1442; border-color: #0C1442; } .hy-sow .m.x b { color: #FFC727; } .hy-sow .m.x span { color: #c4cbef; } .hy-sow .m.x i { color: #FFC727; }

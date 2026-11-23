@@ -714,11 +714,37 @@ const extra: Record<string, SlideDef> = {
         ['Dashboards, MIS, analytics', 'Embedded dashboards, drill-down to the worker, scheduled reports, Ask goBetter AI.', 'mix', 'Live · Ask AI pilot'],
         ['ERP and HRMS integration', 'SAP and HRMS by API or file, device integration, SSO.', 'cfg', 'Configured with HMIL IT'],
         ['Security and privacy', 'ISO 27001, SOC 2, DPDPA-aligned processing, India hosting, role-based access, audit log.', 'live', 'Live · pack on request'],
-        ['Implementation', '6–8 weeks of configuration after selection; year-end go-live as discussed.', 'cfg', 'Plan on slide 35'],
+        ['Implementation', '6–8 weeks of configuration after selection; year-end go-live as discussed.', 'cfg', 'Plan on slide 36'],
         ['Support', 'Named CSM, L1–L3, worker helpdesk in their language, Labour Code updates as configuration.', 'live', 'Live'],
         ['Commercials', 'Per active worker per month, devices itemised, no one-time licence purchase.', 'cfg', 'On the commercials slide'],
         ['Hiring (ATS)', 'Openings from work orders, walk-in and WhatsApp sourcing, straight into onboarding.', 'live', 'Live · in the CLMS package'],
       ].map(([a, b, c, d], i) => `<div class="r" style="--d:${0.04 + i * 0.04}s"><i>${String(i + 1).padStart(2, '0')}</i><b>${a}</b><span>${b}</span><em class="${c}">${d}</em></div>`).join('')}
+    </div>`),
+
+  hsow: plainSlide('hsow', 'light', 'Scope of work',
+    'Product features · scope of work · all included in one per-user subscription',
+    'Seventeen modules in scope, <em>from organization set-up to the vendor score card.</em>',
+    `<div class="hy-sow">
+      ${[
+        ['Organization Configuration & Workflow', 'Plant, shop, department hierarchy; role access; approval chains', 'live'],
+        ['Labour / Employee Onboarding', 'ATS, bulk or WhatsApp, Aadhaar eKYC, UAN, gate pass', 'live'],
+        ['Employee Master & Data Center', 'One record per worker across vendors and locations', 'live'],
+        ['Policy Maker', 'Rule sets for TN, MH, Haryana / Delhi: block, flag or inform', 'cfg'],
+        ['Attendance', 'Devices or access control, shifts, live headcount, float pool', 'live'],
+        ['Leave', 'Leave types by state and contract type, on the worker app', 'cfg'],
+        ['Holiday', 'Holiday calendars by location; holiday wages in payroll', 'cfg'],
+        ['Overtime', 'OT at 2× with consent, inside the state cap, approved first', 'live'],
+        ['Payroll', 'Structures by vendor × location × department × skill', 'live'],
+        ['Statutory Reconciliation · PF / ESIC / PT / LWF', 'Challans matched to each worker’s wage; UAN sample checks', 'live'],
+        ['Reimbursement', 'PPE, shoes, uniforms, canteen, transport, non-CTC', 'live'],
+        ['Exit & FnF', 'Clearance, pass block, full-and-final, gratuity eligibility', 'live'],
+        ['Vendor Management', 'Vendor master, sub-vendors, codes, licences with expiry', 'live'],
+        ['Vendor Work Orders', 'Activity-specific, sanctioned headcount, rates, validity', 'live'],
+        ['Vendor Invoice', 'Department-wise, from verified attendance and approved OT', 'live'],
+        ['Vendor Score Card & Performance', 'Compliance, fill rate, replacement time, disputes', 'live'],
+        ['MIS / Reports & Dashboards', 'All locations, drill-down to the worker, scheduled reports', 'live'],
+      ].map(([a, b, c], i) => `<div class="m" style="--d:${0.04 + i * 0.03}s"><i>${String(i + 1).padStart(2, '0')}</i><div><b>${a.replace(/&/g, '&amp;')}</b><span>${b}</span></div><em class="${c}">${c === 'live' ? 'Live' : 'Configured'}</em></div>`).join('')}
+      <div class="m x" style="--d:.6s"><i>+</i><div><b>Across every module</b><span>SAP / HRMS / SSO integration, ISO 27001 and SOC 2, India hosting, named CSM, L1–L3 support</span></div></div>
     </div>`),
 
   hsal: problemSlide({
@@ -911,9 +937,9 @@ Object.assign(extra, {
     `<div class="hy-agenda">
       <div class="ag" style="--d:.1s"><div class="t">08 min</div><div><h4>Who we are, and the scale we run</h4><p>BetterPlace in numbers, Reliance (5 lakh+ contract workers) and Bharat Petroleum (20,000+), our clients and the AI layer.</p></div><span class="n">Slides 3–8</span></div>
       <div class="ag" style="--d:.16s"><div class="t">05 min</div><div><h4>Compliance by design</h4><p>Every module as a Labour Code control, rule by rule, your three states’ rules, and the Compliance Centre.</p></div><span class="n">Slides 9–12</span></div>
-      <div class="ag" style="--d:.22s"><div class="t">12 min</div><div><h4>Every module on your list</h4><p>Lifecycle, contractor onboarding, statutory monitoring (PF, ESI, Labour Codes), attendance and deployment, documents and workflows, invoicing and payments, dashboards and MIS, ERP and HRMS integration, security and privacy, implementation, support.</p></div><span class="n">Slides 13–37</span></div>
-      <div class="ag hot" style="--d:.28s"><div class="t">10 min</div><div><h4>Product demo, end to end</h4><p>A clickable product built for HMIL: Chennai, Talegaon and Delhi on one screen.</p></div><span class="n">Slide 38</span></div>
-      <div class="ag" style="--d:.34s"><div class="t">05 min</div><div><h4>Q&amp;A</h4><p>Product, implementation and technical experts on the call. Quotation sent separately, password-protected.</p></div><span class="n">Slide 39</span></div>
+      <div class="ag" style="--d:.22s"><div class="t">12 min</div><div><h4>Every module on your list</h4><p>Lifecycle, contractor onboarding, statutory monitoring (PF, ESI, Labour Codes), attendance and deployment, documents and workflows, invoicing and payments, dashboards and MIS, ERP and HRMS integration, security and privacy, implementation, support.</p></div><span class="n">Slides 13–38</span></div>
+      <div class="ag hot" style="--d:.28s"><div class="t">10 min</div><div><h4>Product demo, end to end</h4><p>A clickable product built for HMIL: Chennai, Talegaon and Delhi on one screen.</p></div><span class="n">Slide 39</span></div>
+      <div class="ag" style="--d:.34s"><div class="t">05 min</div><div><h4>Q&amp;A</h4><p>Product, implementation and technical experts on the call. Quotation sent separately, password-protected.</p></div><span class="n">Slide 40</span></div>
     </div>`, { glow: true }),
 
   hscale: plainSlide('hscale', 'darker', 'The scale we run',
@@ -1126,7 +1152,7 @@ Object.assign(extra, {
 })
 
 const sharePatches: Record<string, (s: SlideDef) => SlideDef> = {
-  hfm: (s) => ({ ...s, html: s.html.replace('Plan on slide 35', 'Plan on slide 19') }),
+  hfm: (s) => ({ ...s, html: s.html.replace('Plan on slide 36', 'Plan on slide 20') }),
   hcc: (s) => ({ ...s, html: s.html.replace('Live in the demo: the Compliance Centre tab. Figures illustrative.', 'Try it: betterplace.co.in/studio/hyundai, Compliance Centre tab. Figures illustrative.') }),
   hdemo: (s) => ({ ...s, title: 'Try the product', html: s.html
     .replace('Product demo · 10 minutes · end to end', 'The product · clickable, for your whole team')
@@ -1139,7 +1165,7 @@ const sharePatches: Record<string, (s: SlideDef) => SlideDef> = {
 const SHARE_ORDER = [
   'hy1', 'hsum', 'hy2a', 'hscale', 'hrel', 'hbpc', 'hcli',
   'hcx', 'hcc',
-  'hfm', 'hsal', 'hv3', 'hwa', 'hfp', 'hp1', 'hwf',
+  'hfm', 'hsow', 'hsal', 'hv3', 'hwa', 'hfp', 'hp1', 'hwf',
   'hai', 'hint', 'himp', 'hcom', 'hdemo', 'hn1',
   'happx2', 'hy2c', 'hstate', 'hy3', 'hv1', 'hv2', 'hv4', 'hv5', 'hs1', 'ha1', 'ha2', 'ha3', 'ha4', 'hr1', 'ht1', 'hd1', 'hsec', 'hsup',
 ]
@@ -1191,7 +1217,7 @@ const ORDER = [
   // 2 · compliance by design
   'hcx', 'hy2c', 'hstate', 'hcc',
   // 3 · every area on HMIL's list, in their order
-  'hfm', 'hy3', 'hv1', 'hv2', 'hsal', 'hv3', 'hwa', 'hv4', 'hv5',
+  'hfm', 'hsow', 'hy3', 'hv1', 'hv2', 'hsal', 'hv3', 'hwa', 'hv4', 'hv5',
   'hs1', 'hp1',
   'ha1', 'ha2', 'ha3', 'hfp',
   'hwf',
