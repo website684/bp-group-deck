@@ -909,7 +909,7 @@ Object.assign(extra, {
       <div class="g">
         <div class="c" style="--d:.2s"><div class="n">3,000<em>+</em></div><div class="l">vendors with licences, work orders and challans</div></div>
         <div class="c" style="--d:.26s"><div class="n">4,000<em>+</em></div><div class="l">sites: plants, refineries, stores, depots</div></div>
-        <div class="c" style="--d:.32s"><div class="n">40,000<em>+</em></div><div class="l">contract workers at Bharat Petroleum</div></div>
+        <div class="c" style="--d:.32s"><div class="n">20,000<em>+</em></div><div class="l">contract workers at Bharat Petroleum</div></div>
         <div class="c" style="--d:.38s"><div class="n">15M<em>+</em></div><div class="l">worker profiles on BetterPlace</div></div>
         <div class="c" style="--d:.44s"><div class="n">1,000<em>+</em></div><div class="l">enterprises on the platform</div></div>
         <div class="c" style="--d:.5s"><div class="n">11 <em>yrs</em></div><div class="l">since 2015 · 4 markets · India, Malaysia, Singapore, Indonesia</div></div>
@@ -948,11 +948,11 @@ Object.assign(extra, {
       <div class="side">
         <div class="ctr" style="--d:.1s">
           <span class="live"><i></i>Live workforce counter · illustrative screen</span>
-          <div class="cn">6,482</div><div class="cl">inside the refinery right now</div>
-          <div class="sp"><div><b>5,214</b><span>contract</span></div><div><b>1,031</b><span>on-roll</span></div><div><b>237</b><span>visitors</span></div></div>
-          ${[['Main gate', 82, '2,904'], ['Process units', 64, '2,251'], ['Tank farm', 31, '1,086'], ['Jetty', 9, '241']].map(([g, w, n]) => `<div class="gt"><span>${g}</span><span class="bar"><i style="width:${w}%"></i></span><em>${n}</em></div>`).join('')}
+          <div class="cn">19,384</div><div class="cl">inside BPCL refineries and plants right now</div>
+          <div class="sp"><div><b>16,920</b><span>contract</span></div><div><b>2,104</b><span>on-roll</span></div><div><b>360</b><span>visitors</span></div></div>
+          ${[['Kochi refinery', 92, '7,140'], ['Mumbai refinery', 88, '6,812'], ['Bina refinery', 38, '2,906'], ['LPG plants and depots', 33, '2,526']].map(([g, w, n]) => `<div class="gt"><span>${g}</span><span class="bar"><i style="width:${w}%"></i></span><em>${n}</em></div>`).join('')}
         </div>
-        <div class="mini"><div><b>40,000+</b><span>contract workers on goBetter</span></div><div><b>3</b><span>refineries: Mumbai, Kochi, Bina*</span></div><div><b>54</b><span>LPG plants, ~80 depots*</span></div></div>
+        <div class="mini"><div><b>20,000+</b><span>contract workers on goBetter</span></div><div><b>3</b><span>refineries: Mumbai, Kochi, Bina*</span></div><div><b>54</b><span>LPG plants, ~80 depots*</span></div></div>
         <small>*BPCL-reported footprint (BRSR FY2024-25), not our deployment count.</small>
       </div>
       <div class="tiles t2">
@@ -973,7 +973,7 @@ Object.assign(extra, {
       ${[
         ['x-hindalco.png', 'Hindalco', 'Metals · Aditya Birla', '3× training coverage', 'Shop-floor training app, mandatory completion tracked, 1,000+ workers upskilled.'],
         ['c-yokohama.png', 'Yokohama', 'Tyre manufacturing', 'Plant workforce', 'Frontline workforce on the BetterPlace platform.'],
-        ['x-tata.png', 'Tata', 'Group companies', 'Frontline programmes', 'Workforce programmes across Tata companies.'],
+        ['c-dubai-holding.svg', 'Dubai Holding', 'Real estate and hospitality', 'Workforce operations', 'Frontline workforce on the BetterPlace platform.'],
         ['x-titan.png', 'Titan', 'Retail · Tata group', 'Sales incentives', 'Incentive programme for frontline retail staff.'],
         ['x-amazon.png', 'Amazon', 'E-commerce and logistics', '91% completion', 'Role-based learning across two business units; 222 custom audits.'],
         ['c-zepto.png', 'Zepto', 'Quick commerce · 22 cities', '15,000 workers · 967 sites', 'Face and geo attendance with spoof detection; 40% lower cost.'],
@@ -1006,7 +1006,7 @@ const patches: Record<string, (s: SlideDef) => SlideDef> = {
   hy2: (s) => ({ ...s, title: 'CLMS experience and clientele', html: s.html
     .replace('Customer impact · whole contract workforces, run on BetterPlace', 'Overview · CLMS experience and clientele, manufacturing and energy first')
     .replace('<div class="big">500K<small>contract workers active every month</small></div>', '<div class="big">5 lakh+<small>contract workers active every month</small></div>')
-    .replace('<div class="big">Every<small>contract worker at the gate</small></div>', '<div class="big">40,000+<small>contract workers at refineries and plants</small></div>')
+    .replace('<div class="big">Every<small>contract worker at the gate</small></div>', '<div class="big">20,000+<small>contract workers at refineries and plants</small></div>')
     .replace('<span class="lbl">Also on the platform</span>', '<span class="lbl">Manufacturing and enterprise clients</span>')
     .replace('<img src="assets/logo/c-basf.png" alt="BASF"/><img src="assets/logo/c-tcs.png" alt="TCS"/><img src="assets/logo/c-accenture.png" alt="Accenture"/><img src="assets/logo/c-amazon.jpg" alt="Amazon"/><img src="assets/logo/c-titan.png" alt="Titan"/><img src="assets/logo/c-jll.png" alt="JLL"/><img src="assets/logo/c-ibm.png" alt="IBM"/>',
       '<img src="assets/logo/c-hindalco.png" alt="Hindalco"/><img src="assets/logo/c-yokohama.png" alt="Yokohama" style="height:22px"/><img src="assets/logo/c-tata.png" alt="Tata"/><img src="assets/logo/c-titan.png" alt="Titan"/><img src="assets/logo/c-basf.png" alt="BASF"/><img src="assets/logo/c-amazon.jpg" alt="Amazon"/><img src="assets/logo/c-jll.png" alt="JLL"/>')
@@ -1022,7 +1022,7 @@ const patches: Record<string, (s: SlideDef) => SlideDef> = {
     .replace('<span class="kick">Next step</span>', '<span class="kick">Q&amp;A · and what happens next</span>')
     .replace('Start with one plant and three contractors, <em>and decide on your own data.</em>', 'Your questions now. <em>Then three things we can start this week.</em>')
     .replace('<h4>Pick one plant or site and three contractor types</h4><p>Manpower, AMC and construction show every chain: passes, attendance, billing and statutory.</p>', '<h4>Hands-on access for your operations and compliance teams</h4><p>As promised in the MoM: logins to a goBetter demo environment for Yogesh and the team, plus the clickable product at betterplace.co.in/studio/hyundai.</p>')
-    .replace('<h4>A working session with HR and Security</h4><p>We configure the nine contract types, the seven-step chain, forms and the price master from it.</p>', '<h4>Reference calls with Reliance and BPCL</h4><p>Speak to the teams who run their contract workforce on goBetter, at 5 lakh+ and 40,000+ workers.</p>')
+    .replace('<h4>A working session with HR and Security</h4><p>We configure the nine contract types, the seven-step chain, forms and the price master from it.</p>', '<h4>Reference calls with Reliance and BPCL</h4><p>Speak to the teams who run their contract workforce on goBetter, at 5 lakh+ and 20,000+ workers.</p>')
     .replace('<h4>Security and legal review this week</h4><p>ISO 27001 and SOC 2 reports, the draft DPA and the hosting model to your InfoSec team.</p>', '<h4>Design workshop and security pack</h4><p>Access, approval chains and structures for Chennai, Pune and Delhi; ISO 27001 and SOC 2 reports and the draft DPA to InfoSec.</p>')
     .replace(encodeURIComponent('Hyundai Motor India · CLMS pilot'), encodeURIComponent('Hyundai Motor India · CLMS evaluation'))
     .replace('Every contractor, every pass, every swipe on one CLMS. The software you saw today is what the pilot runs on.', 'Every contractor, every pass, every swipe on one AI-native CLMS. The product you clicked through today is the one HMIL would run on, configured for you.') }),
