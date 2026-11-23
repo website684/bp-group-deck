@@ -180,3 +180,14 @@
 .hy-cc .it { display: grid; grid-template-columns: 74px 1fr; gap: 10px; align-items: start; font-size: .76rem; line-height: 1.4; color: rgba(255,255,255,.82); padding: 7px 0; border-top: 1px solid rgba(255,255,255,.08); }
 .hy-cc .it em { text-align: center; }
 .hy-cc .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.hy-sum { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 18px; }
+.hy-sum .c { border-radius: 20px; padding: 26px 22px; background: linear-gradient(160deg, rgba(139,61,255,.22), rgba(61,107,255,.1)); border: 1px solid rgba(199,155,255,.35); animation: telpop .55s var(--ease) both; animation-delay: var(--d); }
+.hy-sum .n { font-family: var(--disp); font-weight: 800; font-size: 52px; letter-spacing: -.035em; line-height: 1; color: #fff; }
+.hy-sum .n em { font-style: normal; color: var(--yellow); font-size: .6em; }
+.hy-sum h4 { color: #fff; font-size: 1.15rem; margin: 18px 0 8px; }
+.hy-sum p { font-size: .88rem; line-height: 1.5; color: rgba(255,255,255,.78); margin: 0; }
+.hy-sum { align-items: start; }
+.hy-sum .c { min-height: 250px; }
+.hy-sumlogos { margin-top: 18px; display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-radius: 16px; background: #fff; animation: telpop .5s var(--ease) both; animation-delay: .45s; }
+.hy-sumlogos span { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #64748b; margin-right: 6px; white-space: nowrap; }
+.hy-sumlogos img { height: 34px; max-width: 120px; object-fit: contain; flex: 1; }

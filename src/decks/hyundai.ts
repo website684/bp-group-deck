@@ -1088,6 +1088,48 @@ Object.assign(extra, {
   }),
 })
 
+
+/* ---------- share (read-through) version ---------- */
+Object.assign(extra, {
+  hsum: plainSlide('hsum', 'darker', 'In one page',
+    'In one page · why goBetter for HMIL',
+    'goBetter runs India’s largest contract workforces. <em>It is built around compliance, and configured for your three states.</em>',
+    `<div class="hy-sum">
+      ${[
+        ['5 lakh<em>+</em>', 'Proven at plant scale', 'Contract workers a month at Reliance on one platform; 20,000+ at Bharat Petroleum’s refineries and plants.'],
+        ['100<em>%</em>', 'Compliance built in', 'Labour Codes, PF, ESI, minimum wage and state rules are controls in every module. Every record checked, every cycle.'],
+        ['13<em>/13</em>', 'Your list, covered', 'Structures by vendor, location, department and skill; float pools; PF and ESI validation; access by role. Live or configured.'],
+        ['6–8 <em>wks</em>', 'To go live', 'Configuration after selection, Chennai first, then Talegaon and Delhi, for the year-end go-live you asked for.'],
+      ].map(([n, h, p2], i) => `<div class="c" style="--d:${0.1 + i * 0.08}s"><div class="n">${n}</div><h4>${h}</h4><p>${p2}</p></div>`).join('')}
+    </div>
+    <div class="hy-sumlogos"><span>Running on BetterPlace</span>${['x-reliance.png', 'x-bpcl.png', 'x-hindalco.png', 'c-yokohama.png', 'c-dubai-holding.svg', 'x-titan.png', 'x-amazon.png', 'c-zepto.png'].map((f) => `<img src="assets/logo/${f}" alt=""/>`).join('')}</div>
+    <div class="foot hy-cfoot">Client figures are client-reported. The clickable product is at betterplace.co.in/studio/hyundai.</div>`, { glow: true }),
+
+  happx2: plainSlide('happx2', 'darker', 'Appendix',
+    'Appendix · every area in detail',
+    'The detail behind each area on your list. <em>For your compliance, HR, IT and InfoSec teams.</em>',
+    `<div class="hy-appx">${['The Labour Codes, rule by rule', 'State rules engine: TN, MH, NCR', 'Lifecycle and contract types', 'Vendor master', 'Work orders', 'Gate passes', 'Contractor scorecard', 'Statutory checks', 'Attendance capture', 'Shifts', 'Attendance rules', 'OT and billing', 'Reimbursements', 'Training', 'Live dashboard', 'Security and privacy', 'Support', 'Commercial and licensing'].map((t, i) => `<span style="--d:${0.04 + i * 0.03}s"><i>A${i + 1}</i>${t}</span>`).join('')}</div>`, { glow: true }),
+})
+
+const sharePatches: Record<string, (s: SlideDef) => SlideDef> = {
+  hfm: (s) => ({ ...s, html: s.html.replace('Plan on slide 35', 'Plan on slide 19') }),
+  hcc: (s) => ({ ...s, html: s.html.replace('Live in the demo: Compliance Centre and AI Monitor tabs. Figures illustrative.', 'Try it: betterplace.co.in/studio/hyundai, Compliance Centre and AI Monitor tabs. Figures illustrative.') }),
+  hdemo: (s) => ({ ...s, title: 'Try the product', html: s.html
+    .replace('Product demo · 10 minutes · end to end', 'The product · clickable, for your whole team')
+    .replace('Now the product, built around HMIL: <em>Chennai, Talegaon and Delhi on one screen.</em>', 'Click through the product built around HMIL: <em>Chennai, Talegaon and Delhi on one screen.</em>')
+    .replace('<span class="demo">Live · switch to the product</span>', '')
+    .replace('Clickable for every panel member after the call.', 'Open it on any browser; no login.') }),
+  hn1: (s) => ({ ...s, html: s.html.replace('Your questions now. <em>Then three things we can start this week.</em>', 'Three things we can start <em>this week.</em>') }),
+}
+
+const SHARE_ORDER = [
+  'hy1', 'hsum', 'hy2a', 'hscale', 'hrel', 'hbpc', 'hcli',
+  'hcx', 'hcc',
+  'hfm', 'hsal', 'hv3', 'hwa', 'hfp', 'hp1', 'hwf',
+  'hai', 'hint', 'himp', 'hdemo', 'hn1',
+  'happx2', 'hy2c', 'hstate', 'hy3', 'hv1', 'hv2', 'hv4', 'hv5', 'hs1', 'ha1', 'ha2', 'ha3', 'ha4', 'hr1', 'ht1', 'hd1', 'hsec', 'hsup', 'hcom',
+]
+
 /* ---------- patches to the base slides ---------- */
 const patches: Record<string, (s: SlideDef) => SlideDef> = {
   hy1: (s) => ({ ...s, html: s.html
@@ -1147,12 +1189,15 @@ const ORDER = [
 const FEATURE_IDS = new Set(['hv1', 'hv2', 'hv3', 'hv4', 'hv5', 'ha1', 'ha2', 'ha4', 'hp1', 'ht1', 'hr1', 'hd1'])
 const byId = Object.fromEntries(baseSlides.map((s) => [s.id, s])) as Record<string, SlideDef>
 
-export const hyundaiSlides: SlideDef[] = ORDER.map((id) => {
+const build = (order: string[], extraP: Record<string, (s: SlideDef) => SlideDef> = {}) => order.map((id) => {
   let s = extra[id] ?? byId[id]
   if (!s) throw new Error('hyundai deck: missing slide ' + id)
   if (patches[id]) s = patches[id](s)
+  if (extraP[id]) s = extraP[id](s)
   if (FEATURE_IDS.has(id)) s = featKick(s)
   return s
 })
+export const hyundaiSlides: SlideDef[] = build(ORDER)
+export const hyundaiBriefSlides: SlideDef[] = build(SHARE_ORDER, sharePatches)
 
 void bar

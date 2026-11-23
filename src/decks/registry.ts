@@ -25,7 +25,7 @@ import { jllCapgeminiSlides } from './jll-capgemini'
 import { rilContentSlides } from './ril-content'
 import { clmsPillarSlides } from './clms-pillars'
 import { tataElectronicsSlides } from './tata-electronics'
-import { hyundaiSlides } from './hyundai'
+import { hyundaiSlides, hyundaiBriefSlides } from './hyundai'
 import { bpclAiSlides } from './bpcl-ai'
 import { skhSlides } from './skh'
 import { syrmaSlides } from './syrma'
@@ -62,6 +62,11 @@ export const decks: DeckDef[] = [
     id: 'hyundai', title: 'Hyundai Motor India · CLMS evaluation panel', group: 'story',
     tagline: 'Panel agenda order (23 Nov 2026): overview and clientele, the 13 feature areas with status, lifecycle slides plus float pool, structures, access, AI, integrations, security, implementation, support and licensing, then the clickable demo. Link-only.',
     slides: hyundaiSlides,
+  },
+  {
+    id: 'hyundai-brief', title: 'Hyundai Motor India · goBetter CLMS (read-through)', group: 'story',
+    tagline: 'Leave-behind for the HMIL team: one-page summary, scale and case studies, compliance by design, their asks, AI, integrations, implementation; 18-slide appendix. Link-only.',
+    slides: hyundaiBriefSlides,
   },
   {
     id: 'tata-electronics', title: 'Tata Electronics · CLMS working session', group: 'story',
