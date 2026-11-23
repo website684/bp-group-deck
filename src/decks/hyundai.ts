@@ -714,7 +714,7 @@ const extra: Record<string, SlideDef> = {
         ['Dashboards, MIS, analytics', 'Embedded dashboards, drill-down to the worker, scheduled reports, Ask goBetter AI.', 'mix', 'Live · Ask AI pilot'],
         ['ERP and HRMS integration', 'SAP and HRMS by API or file, device integration, SSO.', 'cfg', 'Configured with HMIL IT'],
         ['Security and privacy', 'ISO 27001, SOC 2, DPDPA-aligned processing, India hosting, role-based access, audit log.', 'live', 'Live · pack on request'],
-        ['Implementation', '6–8 weeks of configuration after selection; year-end go-live as discussed.', 'cfg', 'Plan on slide 34'],
+        ['Implementation', '6–8 weeks of configuration after selection; year-end go-live as discussed.', 'cfg', 'Plan on slide 35'],
         ['Support', 'Named CSM, L1–L3, worker helpdesk in their language, Labour Code updates as configuration.', 'live', 'Live'],
         ['Commercials', 'Per active worker per month, devices itemised, no one-time licence purchase.', 'cfg', 'Quotation sent separately'],
         ['Hiring (ATS)', 'Openings from work orders, walk-in and WhatsApp sourcing, straight into onboarding.', 'live', 'Live · in the CLMS package'],
@@ -897,9 +897,9 @@ Object.assign(extra, {
     `<div class="hy-agenda">
       <div class="ag" style="--d:.1s"><div class="t">08 min</div><div><h4>Who we are, and the scale we run</h4><p>BetterPlace in numbers, Reliance (5 lakh+ contract workers) and Bharat Petroleum (20,000+), our clients and the AI layer.</p></div><span class="n">Slides 3–8</span></div>
       <div class="ag" style="--d:.16s"><div class="t">05 min</div><div><h4>Compliance by design</h4><p>Every module as a Labour Code control, rule by rule, your three states’ rules, and the Compliance Centre.</p></div><span class="n">Slides 9–12</span></div>
-      <div class="ag" style="--d:.22s"><div class="t">12 min</div><div><h4>Every module on your list</h4><p>Lifecycle, contractor onboarding, statutory monitoring (PF, ESI, Labour Codes), attendance and deployment, documents and workflows, invoicing and payments, dashboards and MIS, ERP and HRMS integration, security and privacy, implementation, support.</p></div><span class="n">Slides 13–36</span></div>
-      <div class="ag hot" style="--d:.28s"><div class="t">10 min</div><div><h4>Product demo, end to end</h4><p>A clickable product built for HMIL: Chennai, Talegaon and Delhi on one screen.</p></div><span class="n">Slide 37</span></div>
-      <div class="ag" style="--d:.34s"><div class="t">05 min</div><div><h4>Q&amp;A</h4><p>Product, implementation and technical experts on the call. Quotation sent separately, password-protected.</p></div><span class="n">Slide 38</span></div>
+      <div class="ag" style="--d:.22s"><div class="t">12 min</div><div><h4>Every module on your list</h4><p>Lifecycle, contractor onboarding, statutory monitoring (PF, ESI, Labour Codes), attendance and deployment, documents and workflows, invoicing and payments, dashboards and MIS, ERP and HRMS integration, security and privacy, implementation, support.</p></div><span class="n">Slides 13–37</span></div>
+      <div class="ag hot" style="--d:.28s"><div class="t">10 min</div><div><h4>Product demo, end to end</h4><p>A clickable product built for HMIL: Chennai, Talegaon and Delhi on one screen.</p></div><span class="n">Slide 38</span></div>
+      <div class="ag" style="--d:.34s"><div class="t">05 min</div><div><h4>Q&amp;A</h4><p>Product, implementation and technical experts on the call. Quotation sent separately, password-protected.</p></div><span class="n">Slide 39</span></div>
     </div>`, { glow: true }),
 
   hscale: plainSlide('hscale', 'darker', 'The scale we run',
@@ -1071,6 +1071,23 @@ Object.assign(extra, {
     <div class="foot hy-cfoot">Live in the demo: Compliance Centre and AI Monitor tabs. Figures illustrative.</div>`),
 })
 
+
+Object.assign(extra, {
+  hwa: problemSlide({
+    id: 'hwa', theme: 'dark', title: 'Worker onboarding · WhatsApp', rail, step: 3, demo: 'Live · WhatsApp onboarding',
+    kick: 'Product features · contractor onboarding · self-onboarding on WhatsApp, in their language',
+    h2: 'Hired today, onboarded on WhatsApp by evening, <em>at the plant gate the next morning.</em>',
+    qLabel: P, quote: 'Joiners queue at the time office with photocopies. Half the forms come back incomplete.',
+    changes: [
+      { ic: icons.zap, b: 'The contractor’s request triggers it.', t: 'Offer, consent and details on WhatsApp, prefilled from the contractor or hiring.' },
+      { ic: icons.lang, b: 'Their language.', t: 'Tamil, Hindi, Marathi or any of 35, switched at any step.' },
+      { ic: icons.mic, b: 'Stuck? Our agent calls.', t: 'An AI voice agent walks them through the step. Aadhaar OCR and UAN fetch on the way.' },
+    ],
+    proof: { n: '45 min', p: 'average onboarding at <b>Zepto</b> on this flow, documents to certificate.' },
+    vis: waPhones(HM), wide: true,
+  }),
+})
+
 /* ---------- patches to the base slides ---------- */
 const patches: Record<string, (s: SlideDef) => SlideDef> = {
   hy1: (s) => ({ ...s, html: s.html
@@ -1118,7 +1135,7 @@ const ORDER = [
   // 2 · compliance by design
   'hcx', 'hy2c', 'hstate', 'hcc',
   // 3 · every area on HMIL's list, in their order
-  'hfm', 'hy3', 'hv1', 'hv2', 'hsal', 'hv3', 'hv4', 'hv5',
+  'hfm', 'hy3', 'hv1', 'hv2', 'hsal', 'hv3', 'hwa', 'hv4', 'hv5',
   'hs1', 'hp1',
   'ha1', 'ha2', 'ha3', 'hfp',
   'hwf',
