@@ -714,7 +714,7 @@ const extra: Record<string, SlideDef> = {
         ['Dashboards, MIS, analytics', 'Embedded dashboards, drill-down to the worker, scheduled reports, Ask goBetter AI.', 'mix', 'Live · Ask AI pilot'],
         ['ERP and HRMS integration', 'SAP and HRMS by API or file, device integration, SSO.', 'cfg', 'Configured with HMIL IT'],
         ['Security and privacy', 'ISO 27001, SOC 2, DPDPA-aligned processing, India hosting, role-based access, audit log.', 'live', 'Live · pack on request'],
-        ['Implementation', '6–8 weeks of configuration after selection; year-end go-live as discussed.', 'cfg', 'Plan on slide 16'],
+        ['Implementation', '6–8 weeks of configuration after selection; year-end go-live as discussed.', 'cfg', 'Plan on slide 29'],
         ['Support', 'Named CSM, L1–L3, worker helpdesk in their language, Labour Code updates as configuration.', 'live', 'Live'],
         ['Commercials', 'Per active worker per month, devices itemised, no one-time licence purchase.', 'cfg', 'Quotation sent separately'],
         ['Hiring (ATS)', 'Openings from work orders, walk-in and WhatsApp sourcing, straight into onboarding.', 'live', 'Live · in the CLMS package'],
@@ -892,13 +892,14 @@ const tile = (i: string, h: string, p: string, d: number) => `<div class="t" sty
 
 Object.assign(extra, {
   hag: plainSlide('hag', 'darker', 'Agenda',
-    'Agenda · 40 minutes, in four parts',
-    'First the scale we already run. <em>Then your list, then the product.</em>',
+    'Agenda · 40 minutes, in five parts',
+    'First the scale we run, then compliance. <em>Then every module on your list, then the product.</em>',
     `<div class="hy-agenda">
-      <div class="ag" style="--d:.1s"><div class="t">10 min</div><div><h4>Who we are, and the scale we run</h4><p>BetterPlace in numbers, then two plant-scale case studies: Reliance (5 lakh+ contract workers) and Bharat Petroleum (refineries). Then the clients and the AI layer.</p></div><span class="n">Slides 3–8</span></div>
-      <div class="ag" style="--d:.2s"><div class="t">10 min</div><div><h4>The capabilities you asked for</h4><p>Your feature list with status, then what you raised in October: wage structures, onboarding chains, float pools, PF and ESI proof, access by role, SAP and HRMS, implementation.</p></div><span class="n">Slides 9–16</span></div>
-      <div class="ag hot" style="--d:.3s"><div class="t">10 min</div><div><h4>Product demo, end to end</h4><p>A clickable product built for HMIL: Chennai, Talegaon and Delhi on one screen.</p></div><span class="n">Slide 17</span></div>
-      <div class="ag" style="--d:.4s"><div class="t">10 min</div><div><h4>Q&amp;A</h4><p>Product, implementation and technical experts on the call. Detail slides for every area are in the appendix. Quotation sent separately, password-protected.</p></div><span class="n">Slide 18 + appendix</span></div>
+      <div class="ag" style="--d:.1s"><div class="t">08 min</div><div><h4>Who we are, and the scale we run</h4><p>BetterPlace in numbers, Reliance (5 lakh+ contract workers) and Bharat Petroleum (20,000+), our clients and the AI layer.</p></div><span class="n">Slides 3–8</span></div>
+      <div class="ag" style="--d:.16s"><div class="t">05 min</div><div><h4>Compliance by design</h4><p>Every module as a Labour Code control, rule by rule, your three states’ rules, and the Compliance Centre.</p></div><span class="n">Slides 9–12</span></div>
+      <div class="ag" style="--d:.22s"><div class="t">12 min</div><div><h4>Every module on your list</h4><p>Vendors, work orders, wage structures, onboarding, passes, scorecard, attendance, shifts, float pool, OT and billing, PF and ESI, dashboards, access, integrations, security, implementation, support, licensing.</p></div><span class="n">Slides 13–31</span></div>
+      <div class="ag hot" style="--d:.28s"><div class="t">10 min</div><div><h4>Product demo, end to end</h4><p>A clickable product built for HMIL: Chennai, Talegaon and Delhi on one screen.</p></div><span class="n">Slide 32</span></div>
+      <div class="ag" style="--d:.34s"><div class="t">05 min</div><div><h4>Q&amp;A</h4><p>Product, implementation and technical experts on the call. Quotation sent separately, password-protected.</p></div><span class="n">Slide 33</span></div>
     </div>`, { glow: true }),
 
   hscale: plainSlide('hscale', 'darker', 'The scale we run',
@@ -986,7 +987,88 @@ Object.assign(extra, {
   happx: plainSlide('happx', 'darker', 'Appendix',
     'Appendix · detail for Q&amp;A',
     'Every area on your list, in detail. <em>Open any of these when a question needs it.</em>',
-    `<div class="hy-appx">${['Lifecycle and contract types', 'Vendor master', 'Work orders', 'Gate passes', 'Contractor scorecard', 'Labour Codes and state rules', 'Attendance capture', 'Shifts', 'OT and billing', 'Live dashboard', 'Training', 'Reimbursements', 'Security and privacy', 'Support', 'Commercial and licensing'].map((t, i) => `<span style="--d:${0.04 + i * 0.03}s"><i>A${i + 1}</i>${t}</span>`).join('')}</div>`, { glow: true }),
+    `<div class="hy-appx">${['Lifecycle and contract types', 'Attendance rules engine', 'Statutory checks', 'Training', 'Reimbursements'].map((t, i) => `<span style="--d:${0.04 + i * 0.03}s"><i>A${i + 1}</i>${t}</span>`).join('')}</div>`, { glow: true }),
+})
+
+
+/* ---------- compliance by design ---------- */
+Object.assign(extra, {
+  hcx: plainSlide('hcx', 'darker', 'Compliance by design',
+    'Compliance by design · every module is a control',
+    'Compliance is not a report we run at month end. <em>It is how every screen in goBetter is built.</em>',
+    `<div class="hy-cx">
+      <div class="chain">${[
+        ['Vendor', 'Licence and licensed strength on file, with expiry'],
+        ['Work order', 'Only roles open to contract work; sanctioned headcount'],
+        ['Wage structure', 'No rate below minimum wage for the state and skill'],
+        ['Onboarding', 'Identity, age, eKYC, consent in the worker’s language'],
+        ['Gate pass', 'Five conditions met, or no pass'],
+        ['Attendance', 'Daily and weekly hours, rest day, OT with consent at 2×'],
+        ['Bill', 'Paid only on verified attendance and approved OT'],
+        ['PF and ESI', 'Every challan matched to every worker billed'],
+        ['Registers', 'Any register, any day; data for the annual return'],
+      ].map(([h, p], i) => `<div class="st" style="--d:${0.06 + i * 0.05}s"><i>${String(i + 1).padStart(2, '0')}</i><b>${h}</b><span>${p}</span></div>`).join('')}</div>
+      <div class="pil">
+        <div class="pl" style="--d:.55s"><em class="b">Prevent</em><h4>Stopped before it happens</h4><p>A pass over licence strength, a rate below the floor, a shift over the daily limit: the product refuses them at entry.</p></div>
+        <div class="pl" style="--d:.62s"><em class="f">Detect</em><h4>Every record, every cycle</h4><p>The AI monitor checks 100% of workers, swipes, wages and challans each cycle, not a sample at audit time.</p></div>
+        <div class="pl" style="--d:.69s"><em class="p">Prove</em><h4>Ready for any inspector</h4><p>Registers, challans, licences and the approval trail behind every pass and payment, in one click.</p></div>
+      </div>
+    </div>
+    <div class="foot hy-cfoot">The software flags and blocks as you configure it; HMIL decides, and legal interpretation stays with you and your advisors.</div>`, { glow: true }),
+
+  hstate: plainSlide('hstate', 'dark', 'State rules engine',
+    'Compliance by design · one CLMS, three states’ rules',
+    'Chennai, Talegaon and Delhi follow different state rules. <em>Each plant runs on its own rule set, automatically.</em>',
+    `<div class="hy-st">
+      <div class="stack">
+        ${[
+          ['Labour Codes and central rules', 'Wages, OSH, Social Security: the floor for every plant'],
+          ['State rules', 'Tamil Nadu · Maharashtra · Haryana / Delhi, as notified'],
+          ['HMIL policy', 'Your own limits; they can only be stricter'],
+          ['Plant, shop and shift', 'Shift patterns, holidays and approvers per location'],
+        ].map(([h, p], i) => `<div class="ly" style="--d:${0.08 + i * 0.07}s;--w:${100 - i * 7}%"><b>${h}</b><span>${p}</span></div>`).join('')}
+        <div class="out">
+          <div><em class="b">Block</em><span>Pass over licence strength · rate below minimum wage · roster over the daily limit</span></div>
+          <div><em class="f">Flag</em><span>OT nearing the quarterly cap · challan short · licence expiring in 30 days</span></div>
+          <div><em class="i">Inform</em><span>New state notification · minimum-wage revision · holiday list for the year</span></div>
+        </div>
+      </div>
+      <div class="pl3">
+        ${[
+          ['Chennai', 'Irungattukottai plants', 'Tamil Nadu', ['9 h a day, 48 h a week', 'OT at 2× with consent, inside the state quarterly cap', 'Women at night: consent, transport, batch size (TN rules)', 'TN minimum wage by skill', 'Pongal and state holidays']],
+          ['Pune', 'Talegaon', 'Maharashtra', ['Hours and rest day per Maharashtra rules', 'OT at 2× with consent, inside the state cap', 'Maharashtra minimum wage by zone and skill', 'Gudi Padwa and state holidays']],
+          ['Delhi NCR', 'Offices and sites', 'Haryana / Delhi', ['Hours and rest day per the notified state rules', 'OT at 2× with consent, inside the state cap', 'State minimum wage by skill', 'State holiday list']],
+        ].map(([c, s2, st, rows], i) => `<div class="pc" style="--d:${0.2 + i * 0.08}s"><div class="hd"><b>${c}</b><span>${s2}</span><em>${st}</em></div><ul>${(rows as string[]).map((r) => `<li>${r}</li>`).join('')}</ul></div>`).join('')}
+      </div>
+    </div>
+    <div class="foot hy-cfoot">We configure the rules you and your counsel confirm. When a state notifies new rules, we update the rule set and you approve it before it applies.</div>`),
+
+  hcc: plainSlide('hcc', 'dark', 'Compliance Centre',
+    'Compliance by design · the Compliance Centre and the AI monitor',
+    'One screen tells you where you are exposed today. <em>Before an inspector or a contractor default does.</em>',
+    `<div class="hy-cs hy-cc">
+      <div class="sc" style="--d:.1s">
+        <span class="live"><i></i>Compliance Centre · illustrative screen</span>
+        <div class="top"><div><div class="cn">97.8<small>%</small></div><div class="cl">records compliant, all plants, this cycle</div></div>
+          <div class="pls">${[['Chennai Plant 1', 98.6], ['Chennai Plant 2', 97.9], ['Talegaon', 96.4], ['Delhi NCR', 97.1]].map(([n, v]) => `<div><span>${n}</span><span class="bar"><i style="width:${(Number(v) - 90) * 10}%"></i></span><em>${v}%</em></div>`).join('')}</div></div>
+        <div class="items">${[
+          ['b', 'Blocked', 'Vendor C-14 at 150 of 150 licensed workers. New passes held until the licence is amended.'],
+          ['f', 'Flag', 'PF challan short for 19 workers, October. Shown before the bill is approved; you decide.'],
+          ['f', 'Flag', '42 workers past 80% of the quarterly OT cap. Roster agent moves OT to the float pool.'],
+          ['f', 'Flag', 'Safety refresher overdue for 61 workers across 4 contractors.'],
+          ['i', 'Inform', 'Minimum-wage revision notified. 212 rates updated in the price master, awaiting approval.'],
+        ].map(([c, t, d]) => `<div class="it"><em class="${c}">${t}</em><span>${d}</span></div>`).join('')}</div>
+      </div>
+      <div class="tiles t2">
+        ${tile('radar', 'AI monitor, 100% of records', 'Every worker, swipe, wage line and challan checked every cycle. Exceptions go to the owner, with the evidence.', .14)}
+        ${tile('doc', 'Registers in one click', 'Contractors, workers per contractor, muster roll, wages, overtime, wage slips: any plant, any period.', .2)}
+        ${tile('shield', 'Contractor compliance score', 'Licences, challans, wages on time and documents roll into a score that drives renewals.', .26)}
+        ${tile('layers', 'Annual return, prepared', 'The data for the principal employer’s annual electronic return, built from the same records.', .32)}
+        ${tile('alert', 'Liability in view', 'Where a contractor defaults on wages or PF, the exposure you carry is shown before you pay.', .38)}
+        ${tile('bolt', 'Audit trail on every action', 'Who approved which pass, rate, OT and bill, and when. Nothing changes without a record.', .44)}
+      </div>
+    </div>
+    <div class="foot hy-cfoot">Live in the demo: Compliance Centre and AI Monitor tabs. Figures illustrative.</div>`),
 })
 
 /* ---------- patches to the base slides ---------- */
@@ -1011,7 +1093,7 @@ const patches: Record<string, (s: SlideDef) => SlideDef> = {
     .replace('<img src="assets/logo/c-basf.png" alt="BASF"/><img src="assets/logo/c-tcs.png" alt="TCS"/><img src="assets/logo/c-accenture.png" alt="Accenture"/><img src="assets/logo/c-amazon.jpg" alt="Amazon"/><img src="assets/logo/c-titan.png" alt="Titan"/><img src="assets/logo/c-jll.png" alt="JLL"/><img src="assets/logo/c-ibm.png" alt="IBM"/>',
       '<img src="assets/logo/c-hindalco.png" alt="Hindalco"/><img src="assets/logo/c-yokohama.png" alt="Yokohama" style="height:22px"/><img src="assets/logo/c-tata.png" alt="Tata"/><img src="assets/logo/c-titan.png" alt="Titan"/><img src="assets/logo/c-basf.png" alt="BASF"/><img src="assets/logo/c-amazon.jpg" alt="Amazon"/><img src="assets/logo/c-jll.png" alt="JLL"/>')
     .replace('<div class="tel-logos">', '<div class="foot hy-cfoot">Outcome numbers are client-reported against their own prior year; case notes on request. Reference calls with Reliance and BPCL can be arranged.</div><div class="tel-logos">') }),
-  hy2c: (s) => ({ ...s, html: s.html.replace('The rules your records must prove · the new labour codes and state rules', 'Product features · statutory compliance · the Labour Codes, PF, ESI and state rules') }),
+  hy2c: (s) => ({ ...s, title: 'The Labour Codes, rule by rule', html: s.html.replace('The rules your records must prove · the new labour codes and state rules', 'Compliance by design · the Labour Codes, rule by rule').replace('Every pass, hour and rupee now has to satisfy the labour codes. <em>The software keeps you inside them.</em>', 'We know every rule your contract workforce must meet. <em>Each one is a control in the product.</em>') }),
   hy3: (s) => ({ ...s, html: s.html
     .replace('One platform for every kind of contractor at your plants', 'Product features · the contract-labour lifecycle, for nine contract types')
     .replace('<b>Vendor management first</b>: vendors, work orders, onboarding, gate passes, scorecard. Then <b>attendance</b>, shifts, overtime and billing, statutory and the dashboard. The yellow <b>▶ Live</b> marker is where we switch to the software.', 'The lifecycle runs <b>vendor → work order → structure → onboarding → pass → attendance → float pool → bill → statutory → dashboard</b>. The yellow <b>▶ Live</b> marker on each slide is the screen we open in the demo.') }),
@@ -1031,14 +1113,16 @@ const patches: Record<string, (s: SlideDef) => SlideDef> = {
 const featKick = (s: SlideDef) => ({ ...s, html: s.html.replace(/<span class="kick">(?!Product features)/, '<span class="kick">Product features · ') })
 
 const ORDER = [
-  // 1 · who we are and the scale we run (~10 min)
+  // 1 · who we are and the scale we run (~8 min)
   'hy1', 'hag', 'hy2a', 'hscale', 'hrel', 'hbpc', 'hcli', 'hai',
-  // 2 · the capabilities HMIL asked for (~10 min)
-  'hfm', 'hsal', 'hv3', 'hfp', 'hp1', 'hwf', 'hint', 'himp',
-  // 3 · demo (10 min) and Q&A
+  // 2 · compliance by design (~5 min)
+  'hcx', 'hy2c', 'hstate', 'hcc',
+  // 3 · every module on HMIL's list (~12 min)
+  'hfm', 'hv1', 'hv2', 'hsal', 'hv3', 'hv4', 'hv5', 'ha1', 'ha2', 'hfp', 'ha4', 'hp1', 'hd1', 'hwf', 'hint', 'hsec', 'himp', 'hsup', 'hcom',
+  // 4 · demo (10 min) and Q&A
   'hdemo', 'hn1',
   // appendix · for questions
-  'happx', 'hy3', 'hv1', 'hv2', 'hv4', 'hv5', 'hy2c', 'ha1', 'ha2', 'ha4', 'hd1', 'ht1', 'hr1', 'hsec', 'hsup', 'hcom',
+  'happx', 'hy3', 'ha3', 'hs1', 'ht1', 'hr1',
 ]
 const FEATURE_IDS = new Set(['hv1', 'hv2', 'hv3', 'hv4', 'hv5', 'ha1', 'ha2', 'ha4', 'hp1', 'ht1', 'hr1', 'hd1'])
 const byId = Object.fromEntries(baseSlides.map((s) => [s.id, s])) as Record<string, SlideDef>
