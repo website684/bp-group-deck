@@ -714,7 +714,7 @@ const extra: Record<string, SlideDef> = {
         ['Dashboards, MIS, analytics', 'Embedded dashboards, drill-down to the worker, scheduled reports, Ask goBetter AI.', 'mix', 'Live · Ask AI pilot'],
         ['ERP and HRMS integration', 'SAP and HRMS by API or file, device integration, SSO.', 'cfg', 'Configured with HMIL IT'],
         ['Security and privacy', 'ISO 27001, SOC 2, DPDPA-aligned processing, India hosting, role-based access, audit log.', 'live', 'Live · pack on request'],
-        ['Implementation', '6–8 weeks of configuration after selection; year-end go-live as discussed.', 'cfg', 'Plan on slide 26'],
+        ['Implementation', '6–8 weeks of configuration after selection; year-end go-live as discussed.', 'cfg', 'Plan on slide 16'],
         ['Support', 'Named CSM, L1–L3, worker helpdesk in their language, Labour Code updates as configuration.', 'live', 'Live'],
         ['Commercials', 'Per active worker per month, devices itemised, no one-time licence purchase.', 'cfg', 'Quotation sent separately'],
         ['Hiring (ATS)', 'Openings from work orders, walk-in and WhatsApp sourcing, straight into onboarding.', 'live', 'Live · in the CLMS package'],
@@ -885,6 +885,110 @@ const extra: Record<string, SlideDef> = {
   },
 }
 
+
+/* ---------- opening 10 minutes: who we are and the scale we run (Nov 23 restructure) ---------- */
+const cIc: Record<string, string> = {"gate": "<path d=\"M4 21V5l8-3 8 3v16\"/><path d=\"M9 21v-7h6v7\"/>", "dev": "<rect x=\"5\" y=\"3\" width=\"14\" height=\"18\" rx=\"2\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/><path d=\"M9 17h6\"/>", "clock": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/>", "shield": "<path d=\"M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z\"/><path d=\"M9 12l2 2 4-4\"/>", "users": "<circle cx=\"9\" cy=\"8\" r=\"3.5\"/><path d=\"M2.5 20c.5-3.5 3.3-5.5 6.5-5.5s6 2 6.5 5.5\"/><circle cx=\"17\" cy=\"9\" r=\"2.5\"/><path d=\"M16 14.5c2.6.2 4.8 1.9 5.3 4.8\"/>", "moon": "<path d=\"M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z\"/>", "alert": "<path d=\"M12 3l10 18H2z\"/><path d=\"M12 10v4M12 17.5v.5\"/>", "doc": "<path d=\"M6 2h9l5 5v15H6z\"/><path d=\"M14 2v6h6M9 13h8M9 17h8\"/>", "wallet": "<rect x=\"3\" y=\"6\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M3 10h18\"/>", "bolt": "<path d=\"M13 2L4 14h7l-1 8 9-12h-7z\"/>", "radar": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 3v2M12 19v2M3 12h2M19 12h2\"/>", "layers": "<path d=\"M12 3l9 5-9 5-9-5z\"/><path d=\"M3 13l9 5 9-5\"/>"}
+const tile = (i: string, h: string, p: string, d: number) => `<div class="t" style="--d:${d}s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${cIc[i]}</svg></span><h4>${h}</h4><p>${p}</p></div>`
+
+Object.assign(extra, {
+  hag: plainSlide('hag', 'darker', 'Agenda',
+    'Agenda · 40 minutes, in four parts',
+    'First the scale we already run. <em>Then your list, then the product.</em>',
+    `<div class="hy-agenda">
+      <div class="ag" style="--d:.1s"><div class="t">10 min</div><div><h4>Who we are, and the scale we run</h4><p>BetterPlace in numbers, then two plant-scale case studies: Reliance (5 lakh+ contract workers) and Bharat Petroleum (refineries). Then the clients and the AI layer.</p></div><span class="n">Slides 3–8</span></div>
+      <div class="ag" style="--d:.2s"><div class="t">10 min</div><div><h4>The capabilities you asked for</h4><p>Your feature list with status, then what you raised in October: wage structures, onboarding chains, float pools, PF and ESI proof, access by role, SAP and HRMS, implementation.</p></div><span class="n">Slides 9–16</span></div>
+      <div class="ag hot" style="--d:.3s"><div class="t">10 min</div><div><h4>Product demo, end to end</h4><p>A clickable product built for HMIL: Chennai, Talegaon and Delhi on one screen.</p></div><span class="n">Slide 17</span></div>
+      <div class="ag" style="--d:.4s"><div class="t">10 min</div><div><h4>Q&amp;A</h4><p>Product, implementation and technical experts on the call. Detail slides for every area are in the appendix. Quotation sent separately, password-protected.</p></div><span class="n">Slide 18 + appendix</span></div>
+    </div>`, { glow: true }),
+
+  hscale: plainSlide('hscale', 'darker', 'The scale we run',
+    'Who we are · the scale we run, every month',
+    'India’s largest contract workforces already run on goBetter. <em>HMIL would be one more plant network on the same platform.</em>',
+    `<div class="hy-scale">
+      <div class="hero" style="--d:.1s"><div class="n">5,00,000<em>+</em></div><div class="l">contract workers active every month at Reliance alone, on one platform</div></div>
+      <div class="g">
+        <div class="c" style="--d:.2s"><div class="n">3,000<em>+</em></div><div class="l">vendors with licences, work orders and challans</div></div>
+        <div class="c" style="--d:.26s"><div class="n">4,000<em>+</em></div><div class="l">sites: plants, refineries, stores, depots</div></div>
+        <div class="c" style="--d:.32s"><div class="n">40,000<em>+</em></div><div class="l">contract workers at Bharat Petroleum</div></div>
+        <div class="c" style="--d:.38s"><div class="n">15M<em>+</em></div><div class="l">worker profiles on BetterPlace</div></div>
+        <div class="c" style="--d:.44s"><div class="n">1,000<em>+</em></div><div class="l">enterprises on the platform</div></div>
+        <div class="c" style="--d:.5s"><div class="n">11 <em>yrs</em></div><div class="l">since 2015 · 4 markets · India, Malaysia, Singapore, Indonesia</div></div>
+      </div>
+    </div>
+    <div class="foot hy-cfoot">Client figures are client-reported; case notes and reference calls on request.</div>`, { glow: true }),
+
+  hrel: plainSlide('hrel', 'dark', 'Case study · Reliance',
+    'Case study · Reliance Industries · Retail, Jio, Oil-to-chemicals',
+    'Reliance’s entire contract workforce runs on goBetter. <em>Every gate, punch, wage and challan.</em>',
+    `<div class="hy-cs">
+      <div class="side">
+        <img class="lg" src="assets/logo/x-reliance.png" alt="Reliance"/>
+        <div class="big" style="--d:.1s"><div class="n">5,00,000<em>+</em></div><div class="l">contract workers active every month</div></div>
+        <div class="mini"><div><b>3,000+</b><span>vendors</span></div><div><b>4,000+</b><span>sites</span></div><div><b>14</b><span>manufacturing facilities*</span></div></div>
+        <div class="res"><div><b>−90%</b><span>payroll leakage</span></div><div><b>−80%</b><span>vendor non-compliance</span></div><div><b>7×</b><span>faster rule changes</span></div></div>
+        <small>Results client-reported after go-live, against their prior year. *Reliance-reported footprint.</small>
+      </div>
+      <div class="tiles">
+        ${tile('gate', 'Gate pass management', 'Passes issued only with licence, work order, verification and induction in place.', .1)}
+        ${tile('dev', 'Physical device integration', 'Face and biometric devices at plant gates, incl. O2C. Offline, then sync.', .14)}
+        ${tile('clock', 'Attendance to payroll', 'Every punch flows into shifts, OT and the wage sheet. No re-keying.', .18)}
+        ${tile('shield', '100% compliance monitoring', 'Every record checked every cycle: compliant at every point in time.', .22)}
+        ${tile('users', '3,000+ vendors, one system', 'Onboarding, licences, work orders, PF and ESIC matched per worker.', .26)}
+        ${tile('moon', 'Hibernation flows', 'Inactive workers parked, not deleted; back with their verified record.', .3)}
+        ${tile('alert', 'Absconding workflows', 'No-shows flagged after set days; access revoked; settlement started.', .34)}
+        ${tile('doc', 'Audit reports in one click', 'Muster, wage, OT and contractor registers for any site and period.', .38)}
+        ${tile('wallet', 'Payroll leakage control', 'Paid only on verified attendance; ghosts and duplicates caught.', .42)}
+      </div>
+    </div>`),
+
+  hbpc: plainSlide('hbpc', 'dark', 'Case study · Bharat Petroleum',
+    'Case study · Bharat Petroleum · Refineries and plants',
+    'At Bharat Petroleum, every contract worker at the gate runs on our CLMS. <em>And the count inside is always live.</em>',
+    `<div class="hy-cs bp">
+      <div class="side">
+        <div class="ctr" style="--d:.1s">
+          <span class="live"><i></i>Live workforce counter · illustrative screen</span>
+          <div class="cn">6,482</div><div class="cl">inside the refinery right now</div>
+          <div class="sp"><div><b>5,214</b><span>contract</span></div><div><b>1,031</b><span>on-roll</span></div><div><b>237</b><span>visitors</span></div></div>
+          ${[['Main gate', 82, '2,904'], ['Process units', 64, '2,251'], ['Tank farm', 31, '1,086'], ['Jetty', 9, '241']].map(([g, w, n]) => `<div class="gt"><span>${g}</span><span class="bar"><i style="width:${w}%"></i></span><em>${n}</em></div>`).join('')}
+        </div>
+        <div class="mini"><div><b>40,000+</b><span>contract workers on goBetter</span></div><div><b>3</b><span>refineries: Mumbai, Kochi, Bina*</span></div><div><b>54</b><span>LPG plants, ~80 depots*</span></div></div>
+        <small>*BPCL-reported footprint (BRSR FY2024-25), not our deployment count.</small>
+      </div>
+      <div class="tiles t2">
+        <img class="lg" src="assets/logo/x-bpcl.png" alt="Bharat Petroleum"/>
+        ${tile('radar', 'Real-time workforce counter', 'Contract, on-roll and visitors inside each gate and unit, any moment.', .1)}
+        ${tile('gate', 'Gate pass lifecycle', 'Issue, renew, auto-terminate. A pass lapses after 30 days without a punch.', .16)}
+        ${tile('layers', 'SAP as the master', 'Vendors, contracts and work orders flow from SAP. No double entry.', .22)}
+        ${tile('dev', 'Devices at the gate', 'Biometric at entry, tied to a valid pass. Offline, then sync.', .28)}
+        ${tile('doc', 'Licence and insurance per contract', 'Licence strength and compensation cover checked before deployment.', .34)}
+        ${tile('bolt', 'Audit-ready in one click', 'Gate, attendance and contractor registers for any refinery and period.', .4)}
+      </div>
+    </div>`),
+
+  hcli: plainSlide('hcli', 'dark', 'Clients',
+    'Who we are · clients across manufacturing, energy and commerce',
+    'Trusted by enterprises that run on frontline people. <em>1,000+ of them.</em>',
+    `<div class="hy-cli">
+      ${[
+        ['x-hindalco.png', 'Hindalco', 'Metals · Aditya Birla', '3× training coverage', 'Shop-floor training app, mandatory completion tracked, 1,000+ workers upskilled.'],
+        ['c-yokohama.png', 'Yokohama', 'Tyre manufacturing', 'Plant workforce', 'Frontline workforce on the BetterPlace platform.'],
+        ['x-tata.png', 'Tata', 'Group companies', 'Frontline programmes', 'Workforce programmes across Tata companies.'],
+        ['x-titan.png', 'Titan', 'Retail · Tata group', 'Sales incentives', 'Incentive programme for frontline retail staff.'],
+        ['x-amazon.png', 'Amazon', 'E-commerce and logistics', '91% completion', 'Role-based learning across two business units; 222 custom audits.'],
+        ['c-zepto.png', 'Zepto', 'Quick commerce · 22 cities', '15,000 workers · 967 sites', 'Face and geo attendance with spoof detection; 40% lower cost.'],
+        ['c-meesho.svg', 'Meesho', 'Social commerce', '1.5 lakh workforce', 'Gamified learning; 85% completion, +19.7% week-on-week retention.'],
+        ['c-iffco-tokio.svg', 'IFFCO Tokio', 'Insurance', '~30,000 trained by AI', 'Sales teams coached by an AI role-play agent with tone scoring.'],
+      ].map(([f, n, k, m, d], i) => `<div class="cc" style="--d:${0.06 + i * 0.05}s"><div class="lw"><img src="assets/logo/${f}" alt="${n}"/></div><span class="k">${k}</span><b>${m}</b><p>${d}</p></div>`).join('')}
+    </div>
+    <div class="foot hy-cfoot">Outcomes are client-reported. Reference calls with Reliance and BPCL can be arranged for the panel.</div>`),
+
+  happx: plainSlide('happx', 'darker', 'Appendix',
+    'Appendix · detail for Q&amp;A',
+    'Every area on your list, in detail. <em>Open any of these when a question needs it.</em>',
+    `<div class="hy-appx">${['Lifecycle and contract types', 'Vendor master', 'Work orders', 'Gate passes', 'Contractor scorecard', 'Labour Codes and state rules', 'Attendance capture', 'Shifts', 'OT and billing', 'Live dashboard', 'Training', 'Reimbursements', 'Security and privacy', 'Support', 'Commercial and licensing'].map((t, i) => `<span style="--d:${0.04 + i * 0.03}s"><i>A${i + 1}</i>${t}</span>`).join('')}</div>`, { glow: true }),
+})
+
 /* ---------- patches to the base slides ---------- */
 const patches: Record<string, (s: SlideDef) => SlideDef> = {
   hy1: (s) => ({ ...s, html: s.html
@@ -927,11 +1031,14 @@ const patches: Record<string, (s: SlideDef) => SlideDef> = {
 const featKick = (s: SlideDef) => ({ ...s, html: s.html.replace(/<span class="kick">(?!Product features)/, '<span class="kick">Product features · ') })
 
 const ORDER = [
-  'hy1', 'hag', 'hy2a', 'hy2',
-  'hfm', 'hy3', 'hv1', 'hv2', 'hsal', 'hv3', 'hwf', 'hv4', 'hv5',
-  'hy2c', 'ha1', 'ha2', 'hfp', 'ha4', 'hp1', 'ht1', 'hr1', 'hd1',
-  'hai', 'hint', 'hsec', 'himp', 'hsup', 'hcom',
+  // 1 · who we are and the scale we run (~10 min)
+  'hy1', 'hag', 'hy2a', 'hscale', 'hrel', 'hbpc', 'hcli', 'hai',
+  // 2 · the capabilities HMIL asked for (~10 min)
+  'hfm', 'hsal', 'hv3', 'hfp', 'hp1', 'hwf', 'hint', 'himp',
+  // 3 · demo (10 min) and Q&A
   'hdemo', 'hn1',
+  // appendix · for questions
+  'happx', 'hy3', 'hv1', 'hv2', 'hv4', 'hv5', 'hy2c', 'ha1', 'ha2', 'ha4', 'hd1', 'ht1', 'hr1', 'hsec', 'hsup', 'hcom',
 ]
 const FEATURE_IDS = new Set(['hv1', 'hv2', 'hv3', 'hv4', 'hv5', 'ha1', 'ha2', 'ha4', 'hp1', 'ht1', 'hr1', 'hd1'])
 const byId = Object.fromEntries(baseSlides.map((s) => [s.id, s])) as Record<string, SlideDef>
