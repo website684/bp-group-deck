@@ -34,6 +34,7 @@ export default function DeckPlayer({ deck, client, initialSlide = 0, shareMode =
   const [cur, setCur] = useState(Math.min(Math.max(initialSlide, 0), deck.slides.length - 1))
   const [aiMode, setAiMode] = useState(false)
   const [aiOpen, setAiOpen] = useState(false)
+  const [notesOn, setNotesOn] = useState(() => /[?&]notes=1/.test(window.location.href))
   const deckRef = useRef<HTMLDivElement>(null)
   const curRef = useRef(0)
   curRef.current = cur
@@ -59,6 +60,7 @@ export default function DeckPlayer({ deck, client, initialSlide = 0, shareMode =
       if (e.key === 'Home') go(0)
       if (e.key === 'End') go(n - 1)
       if (e.key === 'Escape') onExit()
+      if (e.key === 'n' || e.key === 'N') setNotesOn((v) => !v)
     }
     let sx = 0
     const onTS = (e: TouchEvent) => { sx = e.touches[0].clientX }
@@ -178,6 +180,13 @@ export default function DeckPlayer({ deck, client, initialSlide = 0, shareMode =
           {client?.name ? `Prepared for ${client.name} · ` : ''}Confidential · {String(cur + 1).padStart(2, '0')}
         </span>
       </div>
+
+      {notesOn && slide.notes && (
+        <div className="speaker-notes" onClick={() => setNotesOn(false)} title="Presenter cue · press N to hide">
+          <span className="sn-k">Presenter cue · {String(cur + 1).padStart(2, '0')} · N to hide</span>
+          <div dangerouslySetInnerHTML={{ __html: slide.notes }} />
+        </div>
+      )}
 
       <div className="nav">
         <button className="arrow" aria-label="Menu" title="Back to menu (Esc)" onClick={onExit}>

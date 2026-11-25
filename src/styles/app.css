@@ -1442,3 +1442,9 @@ body { overflow: auto; background: #05081f; }
 .cd-card { cursor: default; border-top: 4px solid var(--cd); }
 .cd-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 12px; }
 .cd-actions a { text-decoration: none; }
+
+/* Presenter cues (press N in the deck player) */
+.speaker-notes { position: fixed; right: 16px; top: 56px; width: min(380px, 32vw); max-height: 70vh; overflow: auto; z-index: 60; background: rgba(12,18,38,.94); color: #f3f4f6; border: 1px solid rgba(255,196,1,.5); border-radius: 12px; padding: 12px 14px; font: 13px/1.5 Inter, system-ui, sans-serif; box-shadow: 0 12px 40px rgba(0,0,0,.35); cursor: pointer; }
+.speaker-notes .sn-k { display: block; font: 600 10.5px/1 'JetBrains Mono', monospace; letter-spacing: .08em; text-transform: uppercase; color: #FFC401; margin-bottom: 8px; }
+.speaker-notes p { margin: 0 0 6px; } .speaker-notes ul { margin: 0; padding-left: 18px; } .speaker-notes li { margin: 0 0 4px; }
+@media print { .speaker-notes { display: none; } }

@@ -28,11 +28,17 @@ import { tataElectronicsSlides } from './tata-electronics'
 import { hyundaiSlides, hyundaiBriefSlides } from './hyundai'
 import { bpclAiSlides } from './bpcl-ai'
 import { skhSlides } from './skh'
+import { itcHotelsSlides } from './itc-hotels'
 import { syrmaSlides } from './syrma'
 import { dtssLmsSlides } from './dtss-story'
 import { rilIncentiveOsSlides } from './ril-incentive-os'
 
 export const decks: DeckDef[] = [
+  {
+    id: 'itc-hotels', title: 'ITC Hotels · goBetter for one property', group: 'story',
+    tagline: 'One hotel, the full associate journey: hire, verify, onboard, learn (grooming, food and fire safety), rosters with break shifts, attendance, leave, payroll, exit; GM dashboard, AI, Royal Orchid proof, one-property pilot. Presenter cues on N. Link-only.',
+    slides: itcHotelsSlides,
+  },
   {
     id: 'syrma', title: 'Syrma SGS · goBetter CLMS', group: 'story',
     tagline: 'CLMS for Syrma SGS: 8,250 contract workers, 14 plants across states, new plants, 48% women, customer audits. Link-only.',

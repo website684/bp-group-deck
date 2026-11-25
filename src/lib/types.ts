@@ -5,6 +5,8 @@ export interface SlideDef {
   theme: SlideTheme
   title: string
   html: string
+  /** presenter cue, shown only when the presenter presses N */
+  notes?: string
 }
 
 export interface DeckDef {
