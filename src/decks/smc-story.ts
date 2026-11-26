@@ -48,6 +48,21 @@ const css = `<style>
 .smc-bars .b .v { font-family: var(--disp); font-weight: 800; color: #0b1437; font-size: 1.1rem; }
 .smc-bars .b .col { width: 100%; border-radius: 10px 10px 4px 4px; background: linear-gradient(180deg, ${O}, #d97a00); animation: telpop .5s var(--ease) both; animation-delay: var(--d); }
 .smc-bars .b .k { font-size: .72rem; color: #4a5578; text-align: center; line-height: 1.25; min-height: 2.5em; }
+.smc-app { display: grid; grid-template-columns: 1.15fr 1fr 1fr 1fr; gap: 18px; align-items: start; margin-top: 6px; }
+.smc-app .ph, .smc-app .wa { animation: telpop .5s var(--ease) both; animation-delay: var(--d); }
+.smc-app .fr { border-radius: 26px; border: 6px solid #1a1f36; overflow: hidden; background: #fff; height: 470px; box-shadow: 0 16px 40px rgba(0,0,0,.35); }
+.smc-app .fr img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.smc-app .cap { margin-top: 8px; font-size: .78rem; color: #c9d0ee; text-align: center; }
+.smc-app .wa { }
+.smc-app .wah { display: flex; align-items: center; gap: 8px; background: #1f2c34; color: #e9edef; padding: 10px 12px; border-radius: 18px 18px 0 0; font-size: .82rem; }
+.smc-app .wah .av { width: 26px; height: 26px; border-radius: 50%; background: #1B2D93; color: #fff; display: grid; place-items: center; font-size: 10px; font-weight: 700; }
+.smc-app .wah i { font-style: normal; background: #53bdeb; color: #fff; border-radius: 50%; width: 14px; height: 14px; font-size: 9px; display: grid; place-items: center; }
+.smc-app .wab { background: #0b141a; padding: 12px; border-radius: 0 0 18px 18px; height: 424px; position: relative; }
+.smc-app .wab p { margin: 0 0 8px; color: #e9edef; font-size: .78rem; line-height: 1.45; background: #1f2c34; padding: 0 10px; }
+.smc-app .wab .lk { background: #1a252c; border-radius: 10px 10px 0 0; padding: 8px 10px; } .smc-app .wab .lk b { display: block; color: #e9edef; font-size: .76rem; } .smc-app .wab .lk span { color: #8696a0; font-size: .7rem; }
+.smc-app .wab u { color: #53bdeb; } .smc-app .wab em { position: absolute; right: 18px; bottom: 10px; color: #8696a0; font-size: .7rem; font-style: normal; }
+.smc-shot { border-radius: 16px; overflow: hidden; border: 1px solid #e3e8f4; box-shadow: 0 16px 40px rgba(11,20,55,.18); }
+.smc-shot img { width: 100%; display: block; }
 .smc-card { border-radius: 18px; background: #fff; border: 1px solid #e3e8f4; padding: 16px 18px; }
 .smc-card .hd { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: #2142B9; margin-bottom: 4px; }
 </style>`
@@ -85,7 +100,7 @@ const smcNew: Record<string, SlideDef> = {
         ['Training link on WhatsApp', 'Module sent to the employee’s phone on WhatsApp in their language; opens with no app install', 'live', 'Live'],
         ['Module + evaluation, 3 attempts', 'Role- and sector-mapped modules with a built-in test; attempts capped at three, completion mandatory to close', 'live', 'Live'],
         ['Certificate and rating', 'Certificate issued and tier awarded the moment the module is cleared', 'live', 'Live'],
-        ['Bronze to Diamond tiers, rewards', 'Five tiers, points and badges; tiers unlock coupons and rewards you choose', 'live', 'Live · tiers configured'],
+        ['Bronze to Diamond tiers, rewards', 'Five tiers, points and badges; tiers unlock coupons and rewards you choose', 'live', 'Available'],
         ['Escalation up six levels', 'Employee → Supervisor → Facility Exec → Facility Manager → Branch Head → P&L / L&D Head', 'live', 'Live · chain configured'],
         ['No training, no deployment', 'Blue Tree joiners auto-enrolled; orientation + H&S + 5 sector modules gate “SISCORE Ready”', 'cfg', 'Integration, weeks 1–3'],
         ['Sector tracks', 'General Housekeeping, Healthcare, Industrial FM, Retail; Engineering (M&E) next phase', 'live', 'Content built + AI'],
@@ -194,6 +209,34 @@ const smcNew: Record<string, SlideDef> = {
       <div class="tel-band ghost" style="margin-top:14px"><span class="bl">Career visibility</span><p>Every person sees the next level and what it takes. L&amp;D sees who is ready to move up, so supervisors come from within and attrition falls.</p></div>
     </div>`, { glow: true }),
 
+  app: plainSlide('smA', 'darker', 'In the app today',
+    'Built for SMC · the iLearnSMC app and the WhatsApp nudge, live in your demo org',
+    'A WhatsApp link opens iLearnSMC on their phone. <em>SMC branding, their language, a game-like path to SISCORE Ready.</em>',
+    `<div class="smc-app">
+      <div class="wa" style="--d:.1s"><div class="wah"><span class="av">bp</span><b>BetterPlace Onboarding</b><i>✓</i></div>
+        <div class="wab"><div class="lk"><b>goBetter : Your personal HR</b><span>bnc.go-better.com</span></div>
+          <p>प्रिय SMC साथी 👋,</p><p>आपके लिए <b>Day-1 Induction: Orientation, Health &amp; Safety</b> ट्रेनिंग उपलब्ध है। 📚</p>
+          <p>👉 ट्रेनिंग शुरू करने के लिए यहाँ क्लिक करें:<br/><u>https://bnc.go-better.com/…</u></p>
+          <p>📱 अपने मोबाइल नंबर से लॉगिन करें और OTP के माध्यम से प्रवेश करें।</p><p>धन्यवाद,<br/>Team iLearnSMC</p><em>10:00</em></div>
+        <div class="cap">WhatsApp link, in their language</div></div>
+      ${[['app-home.jpg', 'SMC home: skills, courses, assessments'], ['app-lang.jpg', 'Each course in English, Hindi, Marathi…'], ['app-path.jpg', 'New Joiner Path to SISCORE Ready, as a game']].map(([f, c], i) => `<div class="ph" style="--d:${0.2 + i * 0.1}s"><div class="fr"><img src="assets/product/smc/${f}" alt=""/></div><div class="cap">${c}</div></div>`).join('')}
+    </div>`, { glow: true }),
+
+  escShot: plainSlide('smE2', 'light', 'Escalation set-up',
+    'Escalation · how L&D sets it up, per course',
+    'L&amp;D sets the reminder and the chain once per course. <em>Up to five manager levels, each starting from the reminder you choose.</em>',
+    `<div style="display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;align-items:center">
+      <div style="display:grid;gap:10px">
+        ${[
+          ['Candidate push', 'Reminder in their language, at the time you set, until they finish.'],
+          ['Manager email, one a day', 'One consolidated email at 12:00 PM with the pending list and an Excel file.'],
+          ['Chain of five levels', 'L1 reporting manager, then the manager’s manager and up, read from the employee profile; each level starts from the 2nd, 3rd… reminder or only when overdue.'],
+          ['Start and stop rules', 'On a date or X days before the due date; stop on an end date or after N reminders.'],
+        ].map(([h, p]) => `<div class="smc-card"><div class="hd">${h}</div><p style="margin:0;font-size:.84rem;color:#4a5578">${p}</p></div>`).join('')}
+      </div>
+      <div class="smc-shot"><img src="assets/product/smc/escalation-settings.png" alt="Course settings, escalation chain"/></div>
+    </div>`),
+
   next: plainSlide('smN', 'darker', 'Start plan',
     'Next steps · iLearnSMC live in weeks, not quarters',
     'Four tracks live first, M&amp;E next. <em>Your 30,000 people on one standard, everywhere.</em>',
@@ -232,7 +275,9 @@ export const smcLmsSlides: SlideDef[] = [
   smcNew.req,
   keep('ds2b'),
   smcNew.deliver,
+  smcNew.app,
   smcNew.esc,
+  smcNew.escShot,
   smcNew.onboard,
   keep('ds3'),
   keep('ds4'),
@@ -244,5 +289,5 @@ export const smcLmsSlides: SlideDef[] = [
   keep('ds10'),
   keep('ds11'),
   smcNew.next,
-  ...['ds5', 'ds6', 'ds7', 'ds12'].map(keep),
+  ...['ds5', 'ds7', 'ds12'].map(keep),
 ]
