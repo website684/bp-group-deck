@@ -31,6 +31,7 @@ import { skhSlides } from './skh'
 import { itcHotelsSlides } from './itc-hotels'
 import { syrmaSlides } from './syrma'
 import { dtssLmsSlides } from './dtss-story'
+import { smcLmsSlides } from './smc-story'
 import { rilIncentiveOsSlides } from './ril-incentive-os'
 
 export const decks: DeckDef[] = [
@@ -43,6 +44,11 @@ export const decks: DeckDef[] = [
     id: 'syrma', title: 'Syrma SGS · goBetter CLMS', group: 'story',
     tagline: 'CLMS for Syrma SGS: 8,250 contract workers, 14 plants across states, new plants, 48% women, customer audits. Link-only.',
     slides: syrmaSlides,
+  },
+  {
+    id: 'smc-lms', title: 'SMC · iLearnSMC on skillBetter', group: 'story',
+    tagline: 'LMS for SMC India (SIS): their iLearnSMC concept met point by point — WhatsApp delivery, 3 attempts and certificate, Bronze→Diamond tiers, six-level escalation, Blue Tree onboarding gate, sector tracks, L&D dashboards. Link-only.',
+    slides: smcLmsSlides,
   },
   {
     id: 'dtss-lms', title: 'DTSS · skillBetter LMS', group: 'story',
